@@ -17453,9 +17453,10 @@ Citizen.CreateThread(function()
     end
   end
 end)
-
+-- fucked
 Citizen.CreateThread(function()
   while stealing == false do
+  	if burgRob == true then
     Citizen.Wait(5)
     for k, v in pairs(burglaryInside) do
       local playerPed = PlayerPedId()
@@ -17474,6 +17475,7 @@ Citizen.CreateThread(function()
       end
     end
   end
+end
 end)
 
 
@@ -17575,7 +17577,7 @@ function HouseBreak(house)
   SetCoords(playerPed, v.inside.x, v.inside.y, v.inside.z - 0.98)
   SetEntityHeading(playerPed, v.inside.h)
  -- SetEntityVisible(playerPed, false)
-  burgRob = true
+  local burgRob = true
 end 
 
 --[[	

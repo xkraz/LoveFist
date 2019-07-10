@@ -47,15 +47,15 @@ local fuelColorOver = {160, 255, 160}       -- Color used to display fuel when g
 local fuelColorUnder = {255, 96, 96}        -- Color used to display fuel warning
 
 -- SEATBELT PARAMETERS
-local seatbeltInput = 131                   -- Toggle Seatbelt with LShift+S
-local seatbeltInput2 = 8                     -- Toggle Seatbelt with LShift+S
-local seatbeltEjectSpeed = 45               -- Speed threshold to eject player (MPH)
+local seatbeltInput = 29                  -- Toggle Seatbelt with LShift+S
+--local seatbeltInput2 = 8                     -- Toggle Seatbelt with LShift+S
+local seatbeltEjectSpeed = 60               -- Speed threshold to eject player (MPH)
 local seatbeltEjectAccel = 100              -- Acceleration threshold to eject player (G's)
 local seatbeltColorOn = {160, 255, 160}     -- Color used when seatbelt is on
 local seatbeltColorOff = {255, 96, 96}      -- Color used when seatbelt is off
 
 -- CRUISE CONTROL PARAMETERS
-local cruiseInput = 154                     -- Toggle cruise on/off with CAPSLOCK or A button (controller)
+local cruiseInput = 20                     -- Toggle cruise on/off with CAPSLOCK or A button (controller)
 local cruiseColorOn = {160, 255, 160}       -- Color used when seatbelt is on
 local cruiseColorOff = {255, 96, 96}        -- Color used when seatbelt is off
 
@@ -159,7 +159,7 @@ Citizen.CreateThread(function()
         local vehicle = GetVehiclePedIsIn(player, false)
         Citizen.Wait(1)
         if (IsPedInAnyVehicle(player, false)) then
-            if IsControlPressed(0, seatbeltInput) and IsControlJustPressed(0, seatbeltInput2) then seatbeltIsOn = not seatbeltIsOn end
+            if IsControlJustReleased(0, seatbeltInput) then seatbeltIsOn = not seatbeltIsOn end
             if seatbeltIsOn then
              DisableControlAction(0, 75)
             end
