@@ -1,8 +1,0 @@
-Altered the menu's to display the buy and sell value.
-Altered the lua to withdraw from bank instead of wallet.
-Altered the lua to deposit the price in bank when you sell it.
-
-lines changed are marked with --Jinks
-
-Jinks 19/06/01
-
