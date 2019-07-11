@@ -1,0 +1,109 @@
+local rob = false
+local robbers = {}
+ESX = nil
+
+TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+
+RegisterServerEvent('esx_holdupmarducas:tooFar')
+AddEventHandler('esx_holdupmarducas:tooFar', function(currentStore)
+	local _source = source
+	local xPlayers = ESX.GetPlayers()
+	rob = false
+
+	for i=1, #xPlayers, 1 do
+		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+		
+		if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' then
+			TriggerClientEvent('esx:showNotification', xPlayers[i], _U('robbery_cancelled_at', Stores[currentStore].nameOfStore))
+			TriggerClientEvent('esx_holdupmarducas:killBlip', xPlayers[i])
+		end
+	end
+
+	if robbers[_source] then
+		TriggerClientEvent('esx_holdupmarducas:tooFar', _source)
+		robbers[_source] = nil
+		TriggerClientEvent('esx:showNotification', _source, _U('robbery_cancelled_at', Stores[currentStore].nameOfStore))
+	end
+end)
+
+RegisterServerEvent('esx_holdupmarducas:robberyStarted')
+AddEventHandler('esx_holdupmarducas:robberyStarted', function(currentStore)
+	local _source  = source
+	local xPlayer  = ESX.GetPlayerFromId(_source)
+	local xPlayers = ESX.GetPlayers()
+
+	if Stores[currentStore] then
+		local store = Stores[currentStore]
+
+		if (os.time() - store.lastRobbed) < Config.TimerBeforeNewRob and store.lastRobbed ~= 0 then
+			TriggerClientEvent('esx:showNotification', _source, _U('recently_robbed', Config.TimerBeforeNewRob - (os.time() - store.lastRobbed)))
+			return
+		end
+
+		local cops = 0
+		for i=1, #xPlayers, 1 do
+			local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+			if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' then
+				cops = cops + 1
+			end
+		end
+
+		if not rob then
+			if cops >= Config.PoliceNumberRequired then
+				rob = true
+
+				for i=1, #xPlayers, 1 do
+					local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+					if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' then
+						TriggerClientEvent('esx:showNotification', xPlayers[i], _U('rob_in_prog', store.nameOfStore))
+						TriggerClientEvent('esx_holdupmarducas:setBlip', xPlayers[i], Stores[currentStore].position)
+					end
+				end
+
+				TriggerClientEvent('esx:showNotification', _source, _U('started_to_rob', store.nameOfStore))
+				TriggerClientEvent('esx:showNotification', _source, _U('alarm_triggered'))
+				
+				TriggerClientEvent('esx_holdupmarducas:currentlyRobbing', _source, currentStore)
+				TriggerClientEvent('esx_holdupmarducas:startTimer', _source)
+				
+				Stores[currentStore].lastRobbed = os.time()
+				robbers[_source] = currentStore
+
+				SetTimeout(store.secondsRemaining * 1000, function()
+					if robbers[_source] then
+						rob = false
+						if xPlayer then
+							TriggerClientEvent('esx_holdupmarducas:robberyComplete', _source, store.reward)
+
+							if Config.GiveBlackMoney then
+								xPlayer.addAccountMoney('black_money', store.reward)
+								xPlayer.addInventoryItem('highrim', math.random(20,30))
+								xPlayer.addInventoryItem('highradio', math.random(15,20))
+								xPlayer.addInventoryItem('stockrim', math.random(20,30))
+								xPlayer.addInventoryItem('lowradio', math.random(15,20))
+								xPlayer.addInventoryItem('battery', math.random(20,30))
+								xPlayer.addInventoryItem('airbag', math.random(15,20))
+							else
+								xPlayer.addMoney(store.reward)
+							end
+							
+							local xPlayers, xPlayer = ESX.GetPlayers(), nil
+							for i=1, #xPlayers, 1 do
+								xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+
+								if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' then
+									TriggerClientEvent('esx:showNotification', xPlayers[i], _U('robbery_complete_at', store.nameOfStore))
+									TriggerClientEvent('esx_holdupmarducas:killBlip', xPlayers[i])
+								end
+							end
+						end
+					end
+				end)
+			else
+				TriggerClientEvent('esx:showNotification', _source, _U('min_police', Config.PoliceNumberRequired))
+			end
+		else
+			TriggerClientEvent('esx:showNotification', _source, _U('robbery_already'))
+		end
+	end
+end)
