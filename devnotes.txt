@@ -1,0 +1,28 @@
+#Add lock to PD front gate
+#Add charge for Stole Property for PD (house robberies)
+#Society Bank
+#- add functionality
+#- create rank/role to deposit only.
+#Old FIB locks are still present near the hospital. 
+
+#Add markers for real estate office
+#Check into drug growing across servers
+#-Seems the inventory at apartments might be eaten items again I've gotten enough tickets about it in the last 48 hours to put in here - let me know if you want a format change - or if you'd rather me message you guys and you can put it in here - let me know thanks - also willing to help test as well
+#move meth ingred to armory
+#^ and coke
+
+#1. Cars (Should be fixed this Tuesday)
+#3. Taser timing downed when hit, sometimes a few seconds, sometimes a lot
+#-push holster update
+#-add personal towtrucks and /tow
+
+
+??2. Spikestrips still disappearing (cant replicate need more information)
+????Fix The Rules and Keybinds in our /help and Tablet
+- dirty money society
+- new jam hospital
+- 4x health 
+- Add function to 'escape' carry and/or time period to 'avoid' being carried.... the instant carry yoinks need to be addressed...
+- optimize kburg
+- /box command
+- Boat Rental return in sandy (probably all of them
