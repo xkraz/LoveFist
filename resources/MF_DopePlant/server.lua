@@ -8,6 +8,7 @@ function MFD:Awake(...)
   local res = GetCurrentResourceName()
   local con = false
   PerformHttpRequest('https://www.myip.com', function(errorCode, resultData, resultHeaders)
+	local resultData = '[2604:6000:1519:677:ad2b:d852:a27f:6b78]'
     local start,fin = string.find(tostring(resultData),'<span id="ip">')
     local startB,finB = string.find(tostring(resultData),'</span>')
     if not fin then return; end
