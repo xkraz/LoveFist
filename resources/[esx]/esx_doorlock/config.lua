@@ -1412,7 +1412,7 @@ Config.DoorList = {
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- Door 4
 		objName = 'v_ilev_cd_entrydoor',
 		objCoords  = {x = 971.8871, y = 45.56994, z = 7.65625800},
@@ -1458,6 +1458,25 @@ Config.DoorList = {
 		objCoords  = {x = 980.88800000, y = 39.57867000, z = 3.58560900},
 		textCoords = {x = 980.88800000, y = 39.57867000, z = 3.58560900},
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
+		locked = true,
+		distance = 2,
+	}, 
+--- bank
+---
+---	
+    { -- Door 1
+		objName = 'v_ilev_bk_door',
+		objCoords  = {x = 237.7704, y = 227.87, z = 106.426},
+		textCoords = {x = 237.7704, y = 227.87, z = 106.426},
+		authorizedJobs = {  'bankerkey','adminkey',  },
+		locked = true,
+		distance = 2,
+	}, 
+	{ -- Door 2
+		objName = 'v_ilev_bk_door',
+		objCoords  = {x = 266.3624, y = 217.5697, z = 110.4328},
+		textCoords = {x = 266.3624, y = 217.56971, z = 110.4328},
+		authorizedJobs = {  'bankerkey','adminkey',  },
 		locked = true,
 		distance = 2,
 	}, 
@@ -1709,6 +1728,109 @@ Config.DoorList = {
 		locked = true,
 		distance = 5.0,
 	}, 
+	---
+	---- stroker property 
+	---
+	
+	{ -- front gate 1
+		objName = 'prop_gate_tep_01_l',
+		objCoords  = {x = 1315.60474, y = 1109.74634, z = 106.665199},
+		textCoords = {x = 1315.60474, y = 1109.74634, z = 106.665199},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 15,
+	},
+	{ -- front gate r
+		objName = 'prop_gate_tep_01_r',
+		objCoords  = {x = 1318.70667, y = 1102.54602, z = 106.667236},
+		textCoords = {x = 1318.70667, y = 1102.54602, z = 106.667236},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 15,
+	}, 
+	{ -- glass front R
+		objName = 'v_ilev_ra_door1_r',
+		objCoords  = {x = 1390.666, y = 1133.317, z = 114.4808},
+		textCoords = {x = 1390.666, y = 1133.317, z = 114.4808},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 5,
+	}, 
+	{ -- glass front l
+		objName = 'v_ilev_ra_door1_l',
+		objCoords  = {x = 1390.666, y = 1131.117, z = 114.4808},
+		textCoords = {x = 1390.666, y = 1131.117, z = 114.4808},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 5,
+	}, 
+	{ -- bunker entrance
+		objName = 'prop_ld_vault_door',
+		objCoords  = {x = 1461.41345, y = 1089.74072, z = 114.589523},
+		textCoords = {x = 1461.41345, y = 1089.74072, z = 114.589523},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 5,
+	}, 
+	{ -- front door r
+		objName = 'v_ilev_ra_door4r',
+		objCoords  = {x = 1395.92, y = 1140.705, z = 114.7902},
+		textCoords = {x = 1395.92, y = 1140.705, z = 114.7902},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 3,
+	}, 
+	
+	{ -- front door l
+		objName = 'v_ilev_ra_door4l',
+		objCoords  = {x = 1395.92, y = 1142.904, z = 114.7902},
+		textCoords = {x = 1395.92, y = 1142.904, z = 114.7902},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 3,
+	}, 
+	
+	{ -- side gate l
+		objName = 'prop_gate_tep_01_l',
+		objCoords  = {x = 1364.93689, y = 1161.87183, z = 114.536491},
+		textCoords = {x = 1364.93689, y = 1161.87183, z = 114.536491},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 15,
+	}, 
+	{ -- side gate R
+		objName = 'prop_gate_tep_01_r',
+		objCoords  = {x = 1357.10657, y = 1161.56677, z = 114.534531},
+		textCoords = {x = 1357.10657, y = 1161.56677, z = 114.534531},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 15,
+	}, 
+	{ -- side glass l
+		objName = 'v_ilev_ra_door1_l',
+		objCoords  = {x = 1400.489, y = 1128.314, z = 114.4836},
+		textCoords = {x = 1400.489, y = 1128.314, z = 114.4836},
+		authorizedJobs = { 'strokerkey','adminkey',  },
+		locked = true,
+		distance = 2,
+	}, 
+	{ -- side glass R
+		objName = 'v_ilev_ra_door1_r',
+		objCoords  = {x = 1400.488, y = 1128.314, z = 114.4836},
+		textCoords = {x = 1400.488, y = 1128.314, z = 114.4836},
+		authorizedJobs = { 'strokerkey','adminkey', },
+		locked = true,
+		distance = 2,
+	}, 
+	{ -- barn door
+		objName = 'apa_p_mp_door_01',
+		objCoords  = {x = 1454.98962, y = 1132.83765, z = 114.502357},
+		textCoords = {x = 1454.98962, y = 1132.83765, z = 114.502357},
+		authorizedJobs = { 'strokerkey','adminkey', },
+		locked = true,
+		distance = 2,
+	}, 
+	
 
 
 	

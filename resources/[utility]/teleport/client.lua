@@ -55,6 +55,10 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = 155.08, ['y'] = -1007.96, ['z'] = -98.33, nom = "EXIT APRT GLITCH"},
 		positionTo = { ['x'] = 310.43, ['y'] = -278.54, ['z'] = 59.53	, nom = ""},
 	},
+	["stroker bunker"] = {
+		positionFrom = { ['x'] = 1461.11, ['y'] = 1086.46, ['z'] = 114.33, nom = "Enter bunker"},
+		positionTo = { ['x'] = 1477.24, ['y'] = 1060.82, ['z'] = 27.71, nom = "Exit bunker"},
+	},
 
 
 
