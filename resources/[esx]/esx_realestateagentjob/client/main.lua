@@ -294,13 +294,13 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
-
+--[[
 -- Load IPLS
 Citizen.CreateThread(function()
 	LoadMpDlcMaps()
 	RequestIpl('ex_dt1_02_office_02c')
 end)
-
+]]
 RegisterNetEvent('esx_phone:loaded')
 AddEventHandler('esx_phone:loaded', function(phoneNumber, contacts)
 	local specialContact = {

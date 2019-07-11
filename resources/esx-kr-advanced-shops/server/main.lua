@@ -23,7 +23,7 @@ AddEventHandler('esx_kr_shops:RemoveItemFromShop', function(number, count, item)
   local identifier =  ESX.GetPlayerFromId(src).identifier
 
         MySQL.Async.fetchAll(
-        'SELECT count, item FROM playershops WHERE item = @item AND ShopNumber = @ShopNumber',
+        'SELECT count, item FROM shops WHERE item = @item AND ShopNumber = @ShopNumber',
         {
             ['@ShopNumber'] = number,
             ['@item'] = item,
@@ -37,7 +37,7 @@ AddEventHandler('esx_kr_shops:RemoveItemFromShop', function(number, count, item)
 
                 if data[1].count ~= count then
 
-                    MySQL.Async.fetchAll("UPDATE playershops SET count = @count WHERE item = @item AND ShopNumber = @ShopNumber",
+                    MySQL.Async.fetchAll("UPDATE shops SET count = @count WHERE item = @item AND ShopNumber = @ShopNumber",
                     {
                         ['@item'] = item,
                         ['@ShopNumber'] = number,
@@ -49,7 +49,7 @@ AddEventHandler('esx_kr_shops:RemoveItemFromShop', function(number, count, item)
     
                 elseif data[1].count == count then
 
-                    MySQL.Async.fetchAll("DELETE FROM playershops WHERE item = @name AND ShopNumber = @Number",
+                    MySQL.Async.fetchAll("DELETE FROM shops WHERE item = @name AND ShopNumber = @Number",
                     {
                         ['@Number'] = number,
                         ['@name'] = data[1].item
@@ -77,7 +77,7 @@ AddEventHandler('esx_kr_shops:setToSell', function(id, Item, ItemCount, Price)
     function(items)
     
       MySQL.Async.fetchAll(
-        'SELECT price, count FROM playershops WHERE item = @items AND ShopNumber = @ShopNumber',
+        'SELECT price, count FROM shops WHERE item = @items AND ShopNumber = @ShopNumber',
         {
             ['@items'] = Item,
             ['@ShopNumber'] = id,
@@ -93,7 +93,7 @@ AddEventHandler('esx_kr_shops:setToSell', function(id, Item, ItemCount, Price)
                 end
             end
 
-            MySQL.Async.execute('INSERT INTO playershops (ShopNumber, src, label, count, item, price) VALUES (@ShopNumber, @src, @label, @count, @item, @price)',
+            MySQL.Async.execute('INSERT INTO shops (ShopNumber, src, label, count, item, price) VALUES (@ShopNumber, @src, @label, @count, @item, @price)',
             {
                 ['@ShopNumber']    = id,
                 ['@src']        = imgsrc,
@@ -107,7 +107,7 @@ AddEventHandler('esx_kr_shops:setToSell', function(id, Item, ItemCount, Price)
 
             elseif data[1].price == Price then
             
-                MySQL.Async.fetchAll("UPDATE playershops SET count = @count WHERE item = @name AND ShopNumber = @ShopNumber",
+                MySQL.Async.fetchAll("UPDATE shops SET count = @count WHERE item = @name AND ShopNumber = @ShopNumber",
                 {
                     ['@name'] = Item,
                     ['@ShopNumber'] = id,
@@ -137,7 +137,7 @@ AddEventHandler('esx_kr_shops:Buy', function(id, Item, ItemCount)
         local ItemCount = tonumber(ItemCount)
 
         MySQL.Async.fetchAll(
-        'SELECT * FROM playershops WHERE ShopNumber = @Number AND item = @item',
+        'SELECT * FROM shops WHERE ShopNumber = @Number AND item = @item',
         {
             ['@Number'] = id,
             ['@item'] = Item,
@@ -167,14 +167,14 @@ AddEventHandler('esx_kr_shops:Buy', function(id, Item, ItemCount)
     
 
                 if result[1].count ~= ItemCount then
-                    MySQL.Async.execute("UPDATE playershops SET count = @count WHERE item = @name AND ShopNumber = @Number",
+                    MySQL.Async.execute("UPDATE shops SET count = @count WHERE item = @name AND ShopNumber = @Number",
                     {
                         ['@name'] = Item,
                         ['@Number'] = id,
                         ['@count'] = result[1].count - ItemCount
                     })
                 elseif result[1].count == ItemCount then
-                    MySQL.Async.fetchAll("DELETE FROM playershops WHERE item = @name AND ShopNumber = @Number",
+                    MySQL.Async.fetchAll("DELETE FROM shops WHERE item = @name AND ShopNumber = @Number",
                     {
                         ['@Number'] = id,
                         ['@name'] = result[1].item
@@ -251,7 +251,7 @@ end)
 ESX.RegisterServerCallback('esx_kr_shop:getShopItems', function(source, cb, number)
   local identifier = ESX.GetPlayerFromId(source).identifier
   
-        MySQL.Async.fetchAll('SELECT * FROM playershops WHERE ShopNumber = @ShopNumber',
+        MySQL.Async.fetchAll('SELECT * FROM shops WHERE ShopNumber = @ShopNumber',
         {
             ['@ShopNumber'] = number
         }, function(result)
@@ -438,7 +438,7 @@ AddEventHandler('esx_kr_shops:SellShop', function(number)
     },
     function(result)
       MySQL.Async.fetchAll(
-        'SELECT * FROM playershops WHERE ShopNumber = @ShopNumber',
+        'SELECT * FROM shops WHERE ShopNumber = @ShopNumber',
         {
           ['@ShopNumber'] = number,
         },
