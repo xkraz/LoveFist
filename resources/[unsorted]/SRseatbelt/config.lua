@@ -5,7 +5,7 @@ Cfg.Strings     = { belt_on = 'Seatbelt ^5 ON ^0.', belt_off = 'Seatbelt ^1 OFF 
 Cfg.BeltKey =  29
 Cfg.Displayx = 0.660    -- 0.508 far left
 Cfg.Displayy = 1.305    -- 0.505 top
-DoVehicleDammage = false --Not Working Yet
+DoVehicleDammage = true --Not Working Yet
 
 --local Keys = {
 -- "ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57,

@@ -86,7 +86,7 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 	end
 end)
-
+--[[
 Citizen.CreateThread(function()
 	while true do
 	Citizen.Wait(8)
@@ -103,7 +103,7 @@ Citizen.CreateThread(function()
 	end
 end)
 
-
+]]
 
 
 function DrawTxt(x,y ,width,height,scale, text, r,g,b,a)
