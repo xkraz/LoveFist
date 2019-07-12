@@ -107,8 +107,10 @@ function OpenCuffMenu()
                         if not err then
                             ESX.TriggerServerCallback('esx_thief:getItemQ', function(quantity)
                                 if quantity > 0 then
+									local targetPlayer = GetPlayerServerId(player)
                                     IsAbleToSearch = true
                                     TriggerServerEvent('cuffServer', GetPlayerServerId(player))
+									TriggerEvent('playerNOTalreadyhandcuffed', GetPlayerServerId(player))
                                 else
                                     ESX.ShowNotification(_U('no_handcuffs'))
                                 end
@@ -128,6 +130,7 @@ function OpenCuffMenu()
                         if quantity > 0 then
                             IsAbleToSearch = false
                             TriggerServerEvent('unCuffServer', GetPlayerServerId(player))
+							TriggerEvent('playeralreadyhandcuffed', GetPlayerServerId(player))
                         else
                             ESX.ShowNotification(_U('no_handcuffs'))
                         end

@@ -17,8 +17,8 @@ client_scripts {
   'JAM_Garage/JAM_Garage_Client.lua',
 
 	-- DNATracker
-	'JAM_DNATracker/JAM_DNATracker_Config.lua',
-	'JAM_DNATracker/JAM_DNATracker_Client.lua',
+--	'JAM_DNATracker/JAM_DNATracker_Config.lua',
+--	'JAM_DNATracker/JAM_DNATracker_Client.lua',
 
     -- VehicleShop
   'JAM_VehicleShop/JAM_VehicleShop_Config.lua', 
@@ -97,8 +97,8 @@ server_scripts {
   'JAM_Garage/JAM_Garage_Server.lua',
 
 	-- DNATracker
-	'JAM_DNATracker/JAM_DNATracker_Config.lua',
-	'JAM_DNATracker/JAM_DNATracker_Server.lua',
+	--'JAM_DNATracker/JAM_DNATracker_Config.lua',
+--	'JAM_DNATracker/JAM_DNATracker_Server.lua',
 
 	-- VehicleShop
 	'JAM_VehicleShop/JAM_VehicleShop_Config.lua',	

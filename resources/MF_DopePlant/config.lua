@@ -9,11 +9,11 @@ Citizen.CreateThread(function(...)
   end
 end)
 
-MFD.FoodDrainSpeed      = 0.0200
-MFD.WaterDrainSpeed     = 0.0200
-MFD.QualityDrainSpeed   = 0.0050
+MFD.FoodDrainSpeed      = 0.0100
+MFD.WaterDrainSpeed     = 0.0100
+MFD.QualityDrainSpeed   = 0.0025
 
-MFD.GrowthGainSpeed     = 1.0000
+MFD.GrowthGainSpeed     = 0.0500
 MFD.QualityGainSpeed    = 0.0100
 
 MFD.SyncDist = 50.0

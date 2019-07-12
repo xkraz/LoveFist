@@ -18,9 +18,9 @@ local stealing = false -- don't touch
 local peeking = false -- don't touch
 local CurrentAction		= nil
 local timer = false
+local robbinghouse = true
 local secsRemaining = nil
 local doorTime = {}
-local burgRob = false
 ------------------------------------------------------
 ------------------------------------------------------
 local usecCameraSystem = false --( https://github.com/qalle-fivem/esx-qalle-camerasystem )
@@ -16853,9 +16853,11 @@ RegisterNetEvent('99kr-burglary:Lockpick')
 AddEventHandler('99kr-burglary:Lockpick', function(xPlayer)
   GetClockTime()
   if GetClockHours() == 1 or GetClockHours() == 2 or GetClockHours() == 22 or GetClockHours() == 23 or GetClockHours() == 00 or GetClockHours() == 3 or GetClockHours() == 4 then
+  local robbinghouse = false
   lockpicking = true
   Citizen.Wait(100)
   lockpicking = false
+ 
   else
   TriggerClientEvent('esx:showNotification', playerPed, 'Its not dark out... (10pm-5am)')
   end
@@ -17453,10 +17455,11 @@ Citizen.CreateThread(function()
     end
   end
 end)
-
 Citizen.CreateThread(function()
   while stealing == false do
+  	if robbinghouse == false then
     Citizen.Wait(5)
+
     for k, v in pairs(burglaryInside) do
       local playerPed = PlayerPedId()
       local coords = GetEntityCoords(playerPed)
@@ -17471,6 +17474,7 @@ Citizen.CreateThread(function()
         if IsControlJustPressed(0, Keys["E"]) and dist <= 0.5 then
           ESX.ShowNotification(emptyMessage)
         end
+    end
       end
     end
   end
@@ -17524,7 +17528,7 @@ function confMenu(house)
         if LockpickAmount > 0 then
           HouseBreak(house)
           v.locked = false
-          Citizen.Wait(math.random(15000,30000))
+          Citizen.Wait(math.random(1500,3000))
           local random = math.random(0,100)
           if random <= chancePoliceNoti then 
             TriggerServerEvent('esx_addons_gcphone:startCall', 'police', burglaryDetected .. '\n ' .. house, { x = v.pos.x, y = v.pos.y, z = v.pos.z })
@@ -17575,7 +17579,6 @@ function HouseBreak(house)
   SetCoords(playerPed, v.inside.x, v.inside.y, v.inside.z - 0.98)
   SetEntityHeading(playerPed, v.inside.h)
  -- SetEntityVisible(playerPed, false)
-  burgRob = true
 end 
 
 --[[	
