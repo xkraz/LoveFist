@@ -1830,8 +1830,44 @@ Config.DoorList = {
 		locked = true,
 		distance = 2,
 	}, 
+	---
+	---
+	---  siquans penthouse garage
 	
-
-
+	{ -- garage door 
+		objName = 'hei_prop_com_mp_gar2',
+		objCoords  = {x = -33.80561, y = -621.6387, z = 36.06102},
+		textCoords = {x = -33.80561, y = -621.6387, z = 36.06102},
+		authorizedJobs = { 'penthousekey','adminkey', },
+		locked = true,
+		distance = 10,
+	}, 
+	---  emergency garage
+	
+	{ -- front door r 
+		objName = 'xm_prop_lab_door01_star_r',
+		objCoords  = {x = 393.798004, y = -1612.84546, z = 29.4582901},
+		textCoords = {x = 393.798004, y = -1612.84546, z = 29.4582901},
+		authorizedJobs = { 'police','fib','marducas','mechanic','warrant','adminkey', },
+		locked = true,
+		distance = 3,
+	}, 
+	{ -- front door L 
+		objName = 'xm_prop_lab_door01_star_l',
+		objCoords  = {x = 395.045532, y = -1611.18652, z = 29.44944},
+		textCoords = {x = 395.045532, y = -1611.18652, z = 29.44944},
+		authorizedJobs = { 'police','fib','marducas','mechanic','warrant','adminkey', },
+		locked = true,
+		distance = 3,
+	}, 
+	{ -- garage door 
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = 385.358215, y = -1623.62634, z = 30.1002388},
+		textCoords = {x = 385.358215, y = -1623.62634, z = 30.1002388},
+		authorizedJobs = { 'police','fib','marducas','mechanic','warrant','adminkey', },
+		locked = true,
+		distance = 15,
+	}, 
+	
 	
 }
