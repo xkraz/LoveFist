@@ -119,14 +119,14 @@
       ]
     },
    {
-      "display": "Fruit Auto Repair",
+      "display": "Private Eye",
       "backgroundColor": "green",
       "subMenu": [
         {
           "title": "Send a Message",
           "eventName": "esx_addons_gcphone:call",
           "type": {
-            "number": "fruitgang"
+            "number": "lawyer"
           }
         }
       ]
