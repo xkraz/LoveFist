@@ -49,13 +49,13 @@ local fuelColorUnder = {255, 96, 96}        -- Color used to display fuel warnin
 -- SEATBELT PARAMETERS
 local seatbeltInput = 29                  -- Toggle Seatbelt with LShift+S
 --local seatbeltInput2 = 8                     -- Toggle Seatbelt with LShift+S
-local seatbeltEjectSpeed = 60               -- Speed threshold to eject player (MPH)
-local seatbeltEjectAccel = 10              -- Acceleration threshold to eject player (G's)
+local seatbeltEjectSpeed = 0               -- Speed threshold to eject player (MPH)
+local seatbeltEjectAccel = 0             -- Acceleration threshold to eject player (G's)
 local seatbeltColorOn = {160, 255, 160}     -- Color used when seatbelt is on
 local seatbeltColorOff = {255, 96, 96}      -- Color used when seatbelt is off
 
 -- CRUISE CONTROL PARAMETERS
-local cruiseInput = 20                     -- Toggle cruise on/off with CAPSLOCK or A button (controller)
+local cruiseInput = 21                     -- Toggle cruise on/off with CAPSLOCK or A button (controller)
 local cruiseColorOn = {160, 255, 160}       -- Color used when seatbelt is on
 local cruiseColorOff = {255, 96, 96}        -- Color used when seatbelt is off
 
@@ -117,7 +117,7 @@ Citizen.CreateThread(function()
             
             -- Draw fuel gauge; always displays 100 but can be modified by setting currentFuel with an API call
             fuelColor = (newFuel >= fuelWarnLimit) and fuelColorOver or fuelColorUnder
-            drawTxt(("%.3d"):format(math.ceil(newFuel)), 2, fuelColor, 0.5, screenPosX + 0.060, screenPosY + 0.017)
+            drawTxt(("%.3d"):format(math.ceil(newFuel)), 2, fuelColor, 0.5, screenPosX + 0.0555, screenPosY + 0.017)
             drawTxt("FUEL", 2, fuelColorText, 0.4, screenPosX + 0.080, screenPosY + 0.020)
 
             -- Get time and display
@@ -161,11 +161,14 @@ Citizen.CreateThread(function()
         if (IsPedInAnyVehicle(player, false)) then
             if IsControlJustReleased(0, seatbeltInput) then seatbeltIsOn = not seatbeltIsOn end
             if seatbeltIsOn then
-             DisableControlAction(0, 75)
             end
         end
     end
 end)
+
+
+
+
 
 --[[
     if (IsPedInAnyVehicle(player, false)) then
