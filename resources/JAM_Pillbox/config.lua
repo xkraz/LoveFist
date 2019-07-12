@@ -29,7 +29,7 @@ JPB.EMSJobLabel = "Ambulance"
 JPB.PushToTalkKey = "N"
 
 JPB.ActionMarkers = {
-  [1] = vector3(339.93,-586.07,28.8),
+  [1] = vector3(341.52,-581.17,28.8),
 }
 
 JPB.ActionText = {
