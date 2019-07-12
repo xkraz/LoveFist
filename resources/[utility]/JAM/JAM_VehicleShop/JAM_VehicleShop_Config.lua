@@ -14,13 +14,13 @@ JVS.DealerMarkerPos = vector3(-33.79, -1101.7, 25.30)
 -- X, Y, Z, Heading.
 
 JVS.PurchasedCarPos = vector4(-31.06, -1090.79, 26.42, 340.0)
-JVS.PurchasedUtilPos = vector4(449.6, -1018.84, 29.00, 90.35)
+JVS.PurchasedUtilPos = vector4(390.6, -1625.84, 29.40, 319.35)
 
 JVS.SmallSpawnVeh = 'asea'
 JVS.SmallSpawnPos = vector4(-52.08, -1095.08, 25.98, 203.66)
 
 JVS.LargeSpawnVeh = 'police7'
-JVS.LargeSpawnPos = vector4(463.34, -1017.27, 28.09, 182.35)
+JVS.LargeSpawnPos = vector4(384.48, -1617.37, 29.49, 148.35)
 
 JVS.DisplayPositions = {
 	[1] = vector4(-49.05, -1100.63, 25.81, 40.00),
