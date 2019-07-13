@@ -225,7 +225,8 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
+		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
 	},
 	
 	captain = {
@@ -235,7 +236,8 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
+		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
 	},
 	
 	bossthree = {
@@ -245,7 +247,8 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
+		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
 	},
 
 	bosstwo = {
@@ -255,7 +258,8 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
+		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
 	},
 
 	boss = {
@@ -265,7 +269,8 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
+		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
 	}
 }
 

@@ -67,6 +67,7 @@ local weapons = {
 	'WEAPON_COMPACTLAUNCHER',
 	'WEAPON_PIPEBOMB',
 	'WEAPON_DOUBLEACTION',
+	'WEAPON_FLASHBANG',
 }
 
 local holstered = true

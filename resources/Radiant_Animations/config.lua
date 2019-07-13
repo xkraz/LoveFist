@@ -1,6 +1,7 @@
 Config = {}
-Config.ImmediatelyCancel = true -- Plays Exit animation if FALSE | Skips animation if TRUE
-Config.HoverHolsterKey = 312  --- Default setting is K
+Config.RadioKey = 303  --- Default setting is U
+Config.HandsUpKey = 74  --- Default setting is H
+Config.HoverHolsterKey = 39  --- Default setting is K
 
 Config.Anims = {
     {name = 'umbrella', data = {type = 'anim', ad = "amb@world_human_drinking@coffee@male@base", anim = "base", prop = 'p_amb_brolly_01', proptwo = 0, boneone = 57005, bonetwo = nil, body = 49, x = 0.15, y = 0.005, z = -0.02, xa = 80.0, yb = -20.0, zc = 175.0}},
@@ -17,10 +18,7 @@ Config.Anims = {
     {name = 'finger', data = {type = 'anim', ad = "anim@mp_player_intselfiethe_bird", anim = "idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'finger2', data = {type = 'anim', ad = "anim@mp_player_intupperfinger", anim = "idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'facepalm', data = {type = 'anim', ad = "anim@mp_player_intupperface_palm", anim = "idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-    
-	--{name = 'sitchair', data = {type = 'anim', ad = "amb@prop_human_seat_chair_mp@male@generic@base", anim = "base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-	
-	{name = 'foldarms2', data = {type = 'anim', ad = "missfbi_s4mop", anim = "guard_idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'foldarms2', data = {type = 'anim', ad = "missfbi_s4mop", anim = "guard_idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'foldarms', data = {type = 'anim', ad = "oddjobs@assassinate@construction@", anim = "unarmed_fold_arms", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'brief', data = {type = 'brief', ad = "", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'brief2', data = {type = 'brief', ad = "", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
@@ -43,18 +41,72 @@ Config.Anims = {
     {name = 'leanwall', data = {type = 'anim', ad = "amb@lo_res_idles@", anim = "world_human_lean_male_foot_up_lo_res_base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'copcrowd', data = {type = 'anim', ad = "amb@code_human_police_crowd_control@idle_a", anim = "idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'copcrowd2', data = {type = 'anim', ad = "amb@code_human_police_crowd_control@idle_b", anim = "idle_d", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-    
-	{name = 'copidle', data = {type = 'scenario', ad = "", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-    {name = 'sitchair', data = {type = 'sitchair', ad = "", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-
-	{name = 'shotbar', data = {type = 'anim', ad = "anim@amb@nightclub@mini@drinking@drinking_shots@ped_a@drunk", anim = "drink", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'copidle', data = {type = 'scenario', ad = "WORLD_HUMAN_COP_IDLES", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'smoking', data = {type = 'scenario', ad = "WORLD_HUMAN_AA_SMOKE", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'shotbar', data = {type = 'anim', ad = "anim@amb@nightclub@mini@drinking@drinking_shots@ped_a@drunk", anim = "drink", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 49, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'drunkbaridle', data = {type = 'anim', ad = "anim@amb@nightclub@mini@drinking@drinking_shots@ped_a@drunk", anim = "idle", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'djidle', data = {type = 'anim', ad = "anim@amb@nightclub@djs@dixon@", anim = "dixn_idle_cntr_b_dix", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'djidle2', data = {type = 'anim', ad = "anim@amb@nightclub@djs@dixon@", anim = "dixn_idle_cntr_e_dix", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-    {name = 'fdance1', data = {type = 'anim', ad = "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", anim = "high_center", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    
+	-------------------------------------- WALK STYLES ----------------------------------------------
+	
+	{name = 'fdance1', data = {type = 'anim', ad = "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", anim = "high_center", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'fdance2', data = {type = 'anim', ad = "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", anim = "high_center_down", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'mdance1', data = {type = 'anim', ad = "anim@amb@nightclub@mini@dance@dance_solo@male@var_b@", anim = "high_right_down", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'mdance2', data = {type = 'anim', ad = "anim@amb@nightclub@mini@dance@dance_solo@male@var_a@", anim = "low_left", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'sitdance1', data = {type = 'anim', ad = "misschinese1crazydance", anim = "crazy_dance_1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'sitdance2', data = {type = 'anim', ad = "misschinese1crazydance", anim = "crazy_dance_2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'sitdance3', data = {type = 'anim', ad = "misschinese1crazydance", anim = "crazy_dance_3", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'taodance', data = {type = 'anim', ad = "misschinese2_crystalmazemcs1_cs", anim = "dance_loop_tao", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'strip1', data = {type = 'anim', ad = "mini@strip_club@lap_dance@ld_girl_a_song_a_p1", anim = "ld_girl_a_song_a_p1_f", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'strip2', data = {type = 'anim', ad = "mini@strip_club@private_dance@part2", anim = "priv_dance_p2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'strip3', data = {type = 'anim', ad = "mini@strip_club@private_dance@part3", anim = "priv_dance_p3", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	-------------------------------------- WALK STYLES ----------------------------------------------
+	
+	{name = 'walk1', data = {type = 'walkstyle', ad = "ANIM_GROUP_MOVE_BALLISTIC", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk2', data = {type = 'walkstyle', ad = "ANIM_GROUP_MOVE_LEMAR_ALLEY", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk3', data = {type = 'walkstyle', ad = "clipset@move@trash_fast_turn", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk4', data = {type = 'walkstyle', ad = "FEMALE_FAST_RUNNER", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk5', data = {type = 'walkstyle', ad = "missfbi4prepp1_garbageman", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk6', data = {type = 'walkstyle', ad = "move_characters@franklin@fire", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk7', data = {type = 'walkstyle', ad = "move_characters@Jimmy@slow@", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk8', data = {type = 'walkstyle', ad = "move_characters@michael@fire", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk9', data = {type = 'walkstyle', ad = "move_f@flee@a", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk10', data = {type = 'walkstyle', ad = "move_f@scared", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk11', data = {type = 'walkstyle', ad = "move_f@sexy@a", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk12', data = {type = 'walkstyle', ad = "move_heist_lester", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk13', data = {type = 'walkstyle', ad = "move_injured_generic", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk14', data = {type = 'walkstyle', ad = "move_lester_CaneUp", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk15', data = {type = 'walkstyle', ad = "move_m@bag", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk16', data = {type = 'walkstyle', ad = "MOVE_M@BAIL_BOND_NOT_TAZERED", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk17', data = {type = 'walkstyle', ad = "MOVE_M@BAIL_BOND_TAZERED", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk18', data = {type = 'walkstyle', ad = "move_m@brave", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk19', data = {type = 'walkstyle', ad = "move_m@casual@d", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk20', data = {type = 'walkstyle', ad = "move_m@drunk@moderatedrunk", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk21', data = {type = 'walkstyle', ad = "MOVE_M@DRUNK@MODERATEDRUNK", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk22', data = {type = 'walkstyle', ad = "MOVE_M@DRUNK@MODERATEDRUNK_HEAD_UP", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk23', data = {type = 'walkstyle', ad = "MOVE_M@DRUNK@SLIGHTLYDRUNK", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk24', data = {type = 'walkstyle', ad = "MOVE_M@DRUNK@VERYDRUNK", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk25', data = {type = 'walkstyle', ad = "move_m@fire", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk26', data = {type = 'walkstyle', ad = "move_m@gangster@var_e", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk27', data = {type = 'walkstyle', ad = "move_m@gangster@var_f", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk28', data = {type = 'walkstyle', ad = "move_m@gangster@var_i", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk29', data = {type = 'walkstyle', ad = "move_m@JOG@", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk30', data = {type = 'walkstyle', ad = "MOVE_M@PRISON_GAURD", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk31', data = {type = 'walkstyle', ad = "MOVE_P_M_ONE", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk32', data = {type = 'walkstyle', ad = "MOVE_P_M_ONE_BRIEFCASE", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk33', data = {type = 'walkstyle', ad = "move_p_m_zero_janitor", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk34', data = {type = 'walkstyle', ad = "move_p_m_zero_slow", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk35', data = {type = 'walkstyle', ad = "move_ped_bucket", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk36', data = {type = 'walkstyle', ad = "move_ped_mop", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk37', data = {type = 'walkstyle', ad = "MOVE_M@FEMME@", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk38', data = {type = 'walkstyle', ad = "MOVE_F@FEMME@", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk39', data = {type = 'walkstyle', ad = "MOVE_M@GANGSTER@NG", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk40', data = {type = 'walkstyle', ad = "MOVE_F@GANGSTER@NG", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk41', data = {type = 'walkstyle', ad = "MOVE_M@POSH@", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk42', data = {type = 'walkstyle', ad = "MOVE_F@POSH@", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk43', data = {type = 'walkstyle', ad = "MOVE_M@TOUGH_GUY@", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'walk44', data = {type = 'walkstyle', ad = "MOVE_F@TOUGH_GUY@", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 }
 
 --If you want to add more animations:
