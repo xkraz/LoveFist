@@ -85,6 +85,28 @@ Config.DoorList = {
 		distance =15.0
 	},
 	
+	-- arve stroker
+	
+	--garage
+	{
+		objName = 'prop_ch_025c_g_door_01',
+		objCoords  = {x = 18.65038, y = 546.3401, z = 176.3448},
+		textCoords = {x = 18.65038, y = 546.3401, z = 176.3448},
+		authorizedJobs = { 'strokerkey', 'adminkey', },
+		locked = true,
+		distance = 15.0
+	},
+	-- front door
+	{
+		objName = 'v_ilev_fh_frontdoor',
+		objCoords  = {x = 7.518359, y = 539.5268, z = 176.1776},
+		textCoords = {x = 7.518359, y = 539.5268, z = 176.1776},
+		authorizedJobs = { 'strokerkey', 'adminkey', },
+		locked = true,
+		distance = 3.0
+	},
+	
+	
 	-- METH SPOT
 	
 	

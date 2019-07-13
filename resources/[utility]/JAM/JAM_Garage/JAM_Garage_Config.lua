@@ -521,5 +521,21 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 134.10, y = -1271.69, z = 29.07 },
 		},
+		tonystrokergarage = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 91.77,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = 13.25, y = 548.26, z = 176.10 },
+		},
+		rjsimmonsgarage = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 267.18,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = 136.35, y = 886.54, z = 200.86 },
+		},
 	},
 }
