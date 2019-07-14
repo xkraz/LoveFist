@@ -36,6 +36,13 @@ Config.Zones = {
         Color = { r = 255, g = 187, b = 255 },
         Type  = 27,
     },
+	
+	 Cloakrooms = {
+        Pos   = { x = 1391.67, y = 1159.69, z = 113.37 },
+        Size  = { x = 1.5, y = 1.5, z = 1.0 },
+        Color = { r = 255, g = 187, b = 255 },
+        Type  = 27,
+    },
 
     Vaults = {
         Pos   = { x = 93.406, y = -1291.753, z = 28.288 },
@@ -43,9 +50,23 @@ Config.Zones = {
         Color = { r = 30, g = 144, b = 255 },
         Type  = 23,
     },
+	
+	Vaults = {
+        Pos   = { x = 1486.52, y = 1104.19, z = 26.62 },
+        Size  = { x = 1.3, y = 1.3, z = 1.0 },
+        Color = { r = 30, g = 144, b = 255 },
+        Type  = 23,
+    },
 
     Fridge = {
         Pos   = { x = 135.478, y = -1288.615, z = 28.289 },
+        Size  = { x = 1.6, y = 1.6, z = 1.0 },
+        Color = { r = 248, g = 248, b = 255 },
+        Type  = 23,
+    },
+	
+	 Fridge = {
+        Pos   = { x = 1394.57, y = 1149.96, z = 113.33 },
         Size  = { x = 1.6, y = 1.6, z = 1.0 },
         Color = { r = 248, g = 248, b = 255 },
         Type  = 23,
