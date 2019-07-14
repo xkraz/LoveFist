@@ -239,6 +239,17 @@ RegisterCommand("e", function(source, args)
 								TriggerEvent('Radiant_Animations:Scenario', ad)
 							end 
 						end
+						
+						elseif Config.Anims[i].data.type == 'sitchair' then
+if vehiclecheck() then
+    if IsPedActiveInScenario(player) then
+        ClearPedTasks(player)
+    else
+	     pos = GetEntityCoords(player)
+	     head = GetEntityHeading(player)
+TaskStartScenarioAtPosition(player, 'PROP_HUMAN_SEAT_CHAIR_MP_PLAYER', pos['x'], pos['y'], pos['z'] - 1, head, 0, 0, false)
+		end 
+			end
 
 					elseif Config.Anims[i].data.type == 'walkstyle' then
 						local ad = Config.Anims[i].data.ad

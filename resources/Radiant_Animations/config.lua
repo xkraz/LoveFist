@@ -47,7 +47,7 @@ Config.Anims = {
     {name = 'drunkbaridle', data = {type = 'anim', ad = "anim@amb@nightclub@mini@drinking@drinking_shots@ped_a@drunk", anim = "idle", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'djidle', data = {type = 'anim', ad = "anim@amb@nightclub@djs@dixon@", anim = "dixn_idle_cntr_b_dix", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'djidle2', data = {type = 'anim', ad = "anim@amb@nightclub@djs@dixon@", anim = "dixn_idle_cntr_e_dix", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-    
+    {name = 'sitchair', data = {type = 'sitchair', ad = "", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	-------------------------------------- DANCES STYLES ----------------------------------------------
 	
 	{name = 'fdance1', data = {type = 'anim', ad = "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", anim = "high_center", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
