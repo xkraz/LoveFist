@@ -180,16 +180,7 @@ JAG.Config = {
 			Pos = { x = 1740.79, y = 3715.44, z = 34.1 },
 		},
 		
-		MayhemGarage = {
-			Zone = "Garage",
-			Sprite = 50,
-			Scale = 0.8,
-			Display = 4,
-			Color = 68,
-			Pos = { x = 1377.96, y = 3603.43, z = 34.89 },
-		},
-		
-			SeaviewGarage = {
+		SeaviewGarage = {
 			Zone = "Garage",
 			Sprite = 50,
 			Scale = 0.8,
@@ -230,17 +221,9 @@ JAG.Config = {
 			Scale = 0.8,
 			Display = 4,
 			Color = 68,
-			Pos = { x = 2780.5, y = -712.32, z = 5.35 },
+			Pos = { x = 2780.5, y = -712.32, z = 4.35 },
 		},
 		
-		WineryGarage = {
-			Zone = "Garage",
-			Sprite = 50,
-			Scale = 0.8,
-			Display = 4,
-			Color = 68,
-			Pos = { x = -1921.87, y = 2040.23, z = 140.74 },
-		},
 		
 		Route68Garage = {
 			Zone = "Garage",
@@ -248,17 +231,10 @@ JAG.Config = {
 			Scale = 0.8,
 			Display = 4,
 			Color = 68,
-			Pos = { x = 261.2, y = 2578.02, z = 44.85 },
+			Pos = { x = 261.2, y = 2578.02, z = 43.85 },
 		},
 		
-		StrokerGarage = {
-			Zone = "Garage",
-			Sprite = 50,
-			Scale = 0.8,
-			Display = 4,
-			Color = 68,
-			Pos = { x = 1410.29, y = 1118.42, z = 114.84 },
-		},
+
 	},
 
 	Markers = {
@@ -269,7 +245,7 @@ JAG.Config = {
 			Heading = 82,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 1410.29, y = 1118.42, z = 114.84 },
+			Pos = { x = 1410.29, y = 1118.42, z = 113.84 },
 		},
 	
 		Route68Garage = {
@@ -278,7 +254,7 @@ JAG.Config = {
 			Heading = 99.01,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 261.2, y = 2578.02, z = 44.85 },
+			Pos = { x = 261.2, y = 2578.02, z = 43.85 },
 		},
 	
 		WineryGarage = {
@@ -287,7 +263,7 @@ JAG.Config = {
 			Heading = 260.26,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = -1921.87, y = 2040.23, z = 140.74 },
+			Pos = { x = -1921.87, y = 2040.23, z = 139.74 },
 		},
 	
 	
@@ -297,7 +273,7 @@ JAG.Config = {
 			Heading = 98.92,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 2780.5, y = -712.32, z = 5.35 },
+			Pos = { x = 2780.5, y = -712.32, z = 4.35 },
 		},
 	
 	
@@ -342,7 +318,7 @@ JAG.Config = {
 			Heading = 197.14,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 1377.96, y = 3603.43, z = 34.89 },
+			Pos = { x = 1371.67, y = 3619.67, z = 33.89 },
 		},
 	
 		SandyGarage = {
@@ -519,15 +495,15 @@ JAG.Config = {
 			Heading = 114.54,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 134.10, y = -1271.69, z = 29.07 },
+			Pos = { x = 134.10, y = -1271.69, z = 28.07 },
 		},
 		tonystrokergarage = {
 			Zone = "Garage",
 			Type = 1,
-			Heading = 91.77,
+			Heading = 56.67,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 13.25, y = 548.26, z = 176.10 },
+			Pos = { x = 22.53, y = 544.2, z = 175.03 },
 		},
 		rjsimmonsgarage = {
 			Zone = "Garage",
@@ -535,7 +511,7 @@ JAG.Config = {
 			Heading = 267.18,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 136.35, y = 886.54, z = 200.86 },
+			Pos = { x = 136.35, y = 886.54, z = 199.86 },
 		},
 	},
 }
