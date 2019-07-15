@@ -513,5 +513,13 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 136.35, y = 886.54, z = 199.86 },
 		},
+		redsgarage = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 309.60,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -2689.04, y = -81.34, z = 16.64 },
+		},
 	},
 }
