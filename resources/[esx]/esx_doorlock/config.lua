@@ -101,7 +101,7 @@ Config.DoorList = {
 		objName = 'v_ilev_fh_frontdoor',
 		objCoords  = {x = 7.518359, y = 539.5268, z = 176.1776},
 		textCoords = {x = 7.518359, y = 539.5268, z = 176.1776},
-		authorizedJobs = { 'strokerkey', 'adminkey', },
+		authorizedJobs = {},
 		locked = true,
 		distance = 3.0
 	},
@@ -1889,7 +1889,25 @@ Config.DoorList = {
 		authorizedJobs = { 'police','fib','marducas','mechanic','warrant','adminkey', },
 		locked = true,
 		distance = 15,
-	}, 
+	},
+---  reds house
 	
+	{ -- front door  
+		objName = 'v_ilev_housedoor1',
+		objCoords  = {x = -2698.09, y = -80.15, z = 17.47},
+		textCoords = {x = -2698.09, y = -80.15, z = 17.47},
+		authorizedJobs = {}, 
+		locked = true,
+		distance = 3,
+	}, 
+	{ -- back door 
+		objName = 'hei_heist_apart2_door',
+		objCoords  = {x = -2704.52, y = -89.10, z = 17.54},
+		textCoords = {x = -2704.52, y = -89.10, z = 17.54},
+		authorizedJobs = { 'redskey','adminkey', },
+		locked = true,
+		distance = 3,
+	}, 
+
 	
 }
