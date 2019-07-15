@@ -1,4 +1,4 @@
-local txAdminClientVersion = "1.0.0"
+local txAdminClientVersion = "1.1.0"
 print("[txAdminClient] Version "..txAdminClientVersion.." starting...")
 
 -- Detect version compatibility issues
@@ -14,6 +14,29 @@ Citizen.CreateThread(function()
         end)
     end
 
+end)
+
+
+-- FIXME: temp function
+Citizen.CreateThread(function()
+    local apiPort = GetConvar("txAdmin-apiPort", "invalid");
+    local apiToken = GetConvar("txAdmin-apiToken", "invalid");
+    local url = "http://localhost:"..apiPort.."/intercom/monitor"
+
+    while true do
+        local exData = {
+            txAdminToken = apiToken,
+            alive = true
+        }
+        PerformHttpRequest(url, function(httpCode, data, resultHeaders)
+            local resp = tostring(data)
+            if httpCode ~= 200 or resp ~= 'okay' then
+                print("[txAdminClient] HeartBeat failed with message: "..resp)
+            end
+        end, 'POST', json.encode(exData), {['Content-Type']='application/json'})
+
+        Citizen.Wait(3000)
+    end
 end)
 
 
@@ -86,7 +109,7 @@ RegisterCommand("txaReportResources", function(source, args)
     print("===============================================")
     local max = GetNumResources() - 1
     -- max = 1
-    for i = 0, max do 
+    for i = 0, max do
         local name = GetResourceByFindIndex(i)
         local state = GetResourceState(name)
         local path = GetResourcePath(name)
