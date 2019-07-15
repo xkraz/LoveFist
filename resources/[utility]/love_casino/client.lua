@@ -206,7 +206,7 @@ function OpenRoulettesMenu()
 	print("Opening RoulettesMenu")
 	local elements           = {}
 	elements = {
-		{label = 'Bet on <font color="green">Green</font> Win Chance: <font color="red">2.7%</font>Winnings: <font color="yellow">x35</font>',  value = 'Green', times_by = 35},
+		{label = 'Bet on <font color="green">Green</font> Win Chance: <font color="red">2.7%</font>Winnings: <font color="yellow">x35</font>',  value = 'Green', times_by = 10},
 		{label = 'Bet on <font color="red">Red</font> Win Chance: <font color="green">48.65%</font>Winnings: <font color="yellow">x2</font>', value = 'Red', times_by = 2},
 		{label = 'Bet on <font color="grey">Black</font> Win Chance: <font color="green">48.65%</font>Winnings: <font color="yellow">x2</font>', value = 'Black', times_by = 2}
 	}
