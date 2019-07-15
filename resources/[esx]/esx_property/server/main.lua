@@ -447,5 +447,8 @@ function PayRent(d, h, m)
 		end
 	end)
 end
-
+RegisterServerEvent('openPropertyInventoryprivateserver')
+AddEventHandler('openPropertyInventoryprivateserver', function()
+	TriggerClientEvent('openPropertyInventoryprivate')
+	end)
 TriggerEvent('cron:runAt', 22, 0, PayRent)
