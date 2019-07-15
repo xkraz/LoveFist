@@ -196,7 +196,7 @@ RegisterCommand("e", function(source, args)
 	if argh == 'help' then -- List Anims in Chat Command
 		TriggerEvent('chat:addMessage', { args = { '[^1Animations^0]: salute, finger, finger2, phonecall, surrender, facepalm, notes, brief, brief2, foldarms, foldarms2, damn, fail, gang1, gang2, no, pickbutt, grabcrotch, peace, cigar, cigar2, joint, cig, holdcigar, holdcig, holdjoint, dead, holster, aim, aim2, slowclap, box, cheer, bum, leanwall, copcrowd, copcrowd2, copidle, shotbar, drunkbaridle, djidle, djidle2' } })
 	elseif argh == 'dance' then -- List Anims in Chat Command
-		TriggerEvent('chat:addMessage', { args = { '[^1Dance Animations^0]: fdance1, fdance2, mdance1, mdance2, sitdance1-3, strip1-3, taodance' } })
+		TriggerEvent('chat:addMessage', { args = { '[^1Dance Animations^0]: fdance1, fdance2, mdance1, mdance2, sitdance1-3, strip1-3, taodance, fdance3' } })
 	elseif argh == 'walk' then -- List Anims in Chat Command
 		TriggerEvent('chat:addMessage', { args = { '[^1Walk Animations^0]: walk1-44' } })
 	elseif argh == 'stuckprop' then -- Deletes Clients Props Command
