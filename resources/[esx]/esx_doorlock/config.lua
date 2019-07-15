@@ -1896,7 +1896,7 @@ Config.DoorList = {
 		objName = 'v_ilev_housedoor1',
 		objCoords  = {x = -2698.09, y = -80.15, z = 17.47},
 		textCoords = {x = -2698.09, y = -80.15, z = 17.47},
-		authorizedJobs = { 'redskey','adminkey', },
+		authorizedJobs = {}, 
 		locked = true,
 		distance = 3,
 	}, 
