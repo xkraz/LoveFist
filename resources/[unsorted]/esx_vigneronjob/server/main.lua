@@ -175,7 +175,7 @@ local function Sell(source, zone)
 			else
 				if (jus == 1) and (PlayerData.job.grade_name == 'boss') then
 					SetTimeout(1000, function()
-						local money = math.random(11,13)
+						local money = math.random(7,8)
 						xPlayer.removeInventoryItem('jus_raisin', 1)
 						local societyAccount = nil
 
@@ -190,7 +190,7 @@ local function Sell(source, zone)
 					end)
 				elseif (jus == 1) and (PlayerData.job.grade_name == 'bosstwo') then
 					SetTimeout(1000, function()
-						local money = math.random(9,11)
+						local money = math.random(6,7)
 						xPlayer.removeInventoryItem('jus_raisin', 1)
 						local societyAccount = nil
 
@@ -205,7 +205,7 @@ local function Sell(source, zone)
 					end)
 				elseif (jus == 1) and (PlayerData.job.grade_name == 'bossthree') then
 					SetTimeout(1000, function()
-						local money = math.random(7,9)
+						local money = math.random(5,6)
 						xPlayer.removeInventoryItem('jus_raisin', 1)
 						local societyAccount = nil
 
@@ -220,7 +220,7 @@ local function Sell(source, zone)
 					end)
 				elseif (jus == 1) and (PlayerData.job.grade_name == 'cdisenior') then
 					SetTimeout(1000, function()
-						local money = math.random(5,7)
+						local money = math.random(4,5)
 						xPlayer.removeInventoryItem('jus_raisin', 1)
 						local societyAccount = nil
 
@@ -235,7 +235,7 @@ local function Sell(source, zone)
 					end)
 				elseif (jus == 1) and (PlayerData.job.grade_name == 'novice') then
 					SetTimeout(1000, function()
-						local money = math.random(3,5)
+						local money = math.random(3,4)
 						xPlayer.removeInventoryItem('jus_raisin', 1)
 						local societyAccount = nil
 
@@ -250,7 +250,7 @@ local function Sell(source, zone)
 					end)
 				elseif (jus == 1) and (PlayerData.job.grade_name == 'manager') then
 					SetTimeout(1000, function()
-						local money = math.random(2,4)
+						local money = math.random(2,3)
 						xPlayer.removeInventoryItem('jus_raisin', 1)
 						local societyAccount = nil
 
@@ -280,7 +280,7 @@ local function Sell(source, zone)
 					end)
 				elseif (vine == 1) and (PlayerData.job.grade_name == 'boss') then
 					SetTimeout(1000, function()
-						local money = math.random(11,13)
+						local money = math.random(7,8)
 						xPlayer.removeInventoryItem('vine', 1)
 						local societyAccount = nil
 
@@ -295,7 +295,7 @@ local function Sell(source, zone)
 					end)
 				elseif (vine == 1) and (PlayerData.job.grade_name == 'bosstwo') then
 					SetTimeout(1000, function()
-						local money = math.random(9,11)
+						local money = math.random(6,7)
 						xPlayer.removeInventoryItem('vine', 1)
 						local societyAccount = nil
 
@@ -310,7 +310,7 @@ local function Sell(source, zone)
 					end)
 				elseif (vine == 1) and (PlayerData.job.grade_name == 'bossthree') then
 					SetTimeout(1000, function()
-						local money = math.random(7,9)
+						local money = math.random(5,6)
 						xPlayer.removeInventoryItem('vine', 1)
 						local societyAccount = nil
 
@@ -325,7 +325,7 @@ local function Sell(source, zone)
 					end)
 				elseif (vine == 1) and (PlayerData.job.grade_name == 'cdisenior') then
 					SetTimeout(1000, function()
-						local money = math.random(5,7)
+						local money = math.random(4,5)
 						xPlayer.removeInventoryItem('vine', 1)
 						local societyAccount = nil
 
@@ -340,7 +340,7 @@ local function Sell(source, zone)
 					end)
 				elseif (vine == 1) and (PlayerData.job.grade_name == 'novice') then
 					SetTimeout(1000, function()
-						local money = math.random(3,5)
+						local money = math.random(3,4)
 						xPlayer.removeInventoryItem('vine', 1)
 						local societyAccount = nil
 
@@ -355,7 +355,7 @@ local function Sell(source, zone)
 					end)
 				elseif (vine == 1) and (PlayerData.job.grade_name == 'manager') then
 					SetTimeout(1000, function()
-						local money = math.random(2,4)
+						local money = math.random(2,3)
 						xPlayer.removeInventoryItem('vine', 1)
 						local societyAccount = nil
 

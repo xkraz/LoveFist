@@ -65,7 +65,7 @@ Config.Anims = {
 	{name = 'night2', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@black_madonna_entourage@", anim = "li_dance_facedj_11_v1_male^1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'night3', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@black_madonna_entourage@", anim = "li_dance_facedj_15_v2_male^2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'night4', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_facedj_transitions@from_med_intensity", anim = "trans_dance_facedj_mi_to_hi_08_v1_male^2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-
+    {name = 'angel', data = {type = 'anim', ad = "special_ped@mountain_dancer@monologue_2@monologue_2a", anim = "mnt_dnc_angel", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	
 	-------------------------------------- WALK STYLES ----------------------------------------------
 	
