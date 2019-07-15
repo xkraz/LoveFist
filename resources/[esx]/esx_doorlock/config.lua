@@ -101,7 +101,7 @@ Config.DoorList = {
 		objName = 'v_ilev_fh_frontdoor',
 		objCoords  = {x = 7.518359, y = 539.5268, z = 176.1776},
 		textCoords = {x = 7.518359, y = 539.5268, z = 176.1776},
-		authorizedJobs = { 'strokerkey', 'adminkey', },
+		authorizedJobs = {},
 		locked = true,
 		distance = 3.0
 	},
