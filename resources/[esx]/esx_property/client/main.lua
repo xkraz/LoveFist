@@ -558,6 +558,140 @@ function OpenRoomMenu(property, owner)
 	end)
 end
 
+RegisterCommand('privateproperty', function()
+	TriggerServerEvent('openPropertyInventoryprivateserver')
+end)
+
+RegisterNetEvent('openPropertyInventoryprivate')
+AddEventHandler('openPropertyInventoryprivate', function()
+	OpenRoomMenu2()
+	end)
+
+function OpenRoomMenu2(property, owner)
+	local entering = nil
+	local elements = {}
+
+	if property.isSingle then
+		entering = property.entering
+	else
+		entering = GetGateway(property).entering
+	end
+
+	--table.insert(elements, {label = _U('invite_player'),  value = 'invite_player'})
+
+	if CurrentPropertyOwner == owner then
+		table.insert(elements, {label = _U('player_clothes'), value = 'player_dressing'})
+		table.insert(elements, {label = _U('remove_cloth'), value = 'remove_cloth'})
+	end
+
+	table.insert(elements, {label = "Property inventory", value = "property_inventory"})
+
+	ESX.UI.Menu.CloseAll()
+
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'room',
+	{
+		title    = property.label,
+		align    = 'top',
+		elements = elements
+	}, function(data, menu)
+
+		if data.current.value == 'invite_player' then
+
+			local playersInArea = ESX.Game.GetPlayersInArea(entering, 10.0)
+			local elements      = {}
+
+			for i=1, #playersInArea, 1 do
+				if playersInArea[i] ~= PlayerId() then
+					table.insert(elements, {label = GetPlayerName(playersInArea[i]), value = playersInArea[i]})
+				end
+			end
+
+			ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'room_invite',
+			{
+				title    = property.label .. ' - ' .. _U('invite'),
+				align    = 'top',
+				elements = elements,
+			}, function(data2, menu2)
+				TriggerEvent('instance:invite', 'property', GetPlayerServerId(data2.current.value), {property = property.name, owner = owner})
+				ESX.ShowNotification(_U('you_invited', GetPlayerName(data2.current.value)))
+			end, function(data2, menu2)
+				menu2.close()
+			end)
+
+		elseif data.current.value == 'player_dressing' then
+
+			ESX.TriggerServerCallback('esx_property:getPlayerDressing', function(dressing)
+				local elements = {}
+
+				for i=1, #dressing, 1 do
+					table.insert(elements, {
+						label = dressing[i],
+						value = i
+					})
+				end
+
+				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'player_dressing',
+				{
+					title    = property.label .. ' - ' .. _U('player_clothes'),
+					align    = 'top',
+					elements = elements
+				}, function(data2, menu2)
+
+					TriggerEvent('skinchanger:getSkin', function(skin)
+						ESX.TriggerServerCallback('esx_property:getPlayerOutfit', function(clothes)
+							TriggerEvent('skinchanger:loadClothes', skin, clothes)
+							TriggerEvent('esx_skin:setLastSkin', skin)
+
+							TriggerEvent('skinchanger:getSkin', function(skin)
+								TriggerServerEvent('esx_skin:save', skin)
+							end)
+						end, data2.current.value)
+					end)
+
+				end, function(data2, menu2)
+					menu2.close()
+				end)
+			end)
+
+		elseif data.current.value == 'remove_cloth' then
+
+			ESX.TriggerServerCallback('esx_property:getPlayerDressing', function(dressing)
+				local elements = {}
+
+				for i=1, #dressing, 1 do
+					table.insert(elements, {
+						label = dressing[i],
+						value = i
+					})
+				end
+
+				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'remove_cloth', {
+					title    = property.label .. ' - ' .. _U('remove_cloth'),
+					align    = 'top',
+					elements = elements
+				}, function(data2, menu2)
+					menu2.close()
+					TriggerServerEvent('esx_property:removeOutfit', data2.current.value)
+					ESX.ShowNotification(_U('removed_cloth'))
+				end, function(data2, menu2)
+					menu2.close()
+				end)
+			end)
+
+		elseif data.current.value == "property_inventory" then
+	menu.close()
+	OpenPropertyInventoryMenu(property, owner)
+		end
+
+	end, function(data, menu)
+		menu.close()
+
+		CurrentAction     = 'room_menu'
+		CurrentActionMsg  = _U('press_to_menu')
+		CurrentActionData = {property = property, owner = owner}
+	end)
+end
+
 function OpenRoomInventoryMenu(property, owner)
 
 	ESX.TriggerServerCallback('esx_property:getPropertyInventory', function(inventory)
