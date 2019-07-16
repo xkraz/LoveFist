@@ -36,7 +36,7 @@
 	  <FirstPersonDriveByLeftPassengerUnarmedIKOffset x="0.000000" y="0.000000" z="0.000000" />
 	  <FirstPersonDriveByRightPassengerUnarmedIKOffset x="0.000000" y="-0.100000" z="0.000000" />
 	  <FirstPersonMobilePhoneOffset x="0.130000" y="0.211000" z="0.580000" />
-	  <FirstPersonPassengerMobilePhoneOffset x="0.136000" y="0.156000" z="0.463000" />      
+	  <FirstPersonPassengerMobilePhoneOffset x="0.136000" y="0.156000" z="0.463000" />
       <PovCameraOffset x="0.000000" y="-0.200000" z="0.695000" />
       <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
       <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -65,9 +65,9 @@
       <lodDistances content="float_array">
         400.000000
         430.000000
-        460.000000	
-        480.000000	
-        500.000000	
+        460.000000
+        480.000000
+        500.000000
         500.000000
       </lodDistances>
       <minSeatHeight value="0.812" />
@@ -85,7 +85,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_BACK_PLATES</plateType>
 	  <dashboardType>VDT_RACE</dashboardType>
-      <vehicleClass>VC_SPORT</vehicleClass>
+      <vehicleClass>VC_SUPER</vehicleClass>
       <wheelType>VWT_HIEND</wheelType>
       <trailers />
       <additionalTrailers />
