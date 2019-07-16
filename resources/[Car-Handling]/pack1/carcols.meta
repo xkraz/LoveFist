@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    
-<CVehicleModelInfoVarGlobal> 
-   
+
+<CVehicleModelInfoVarGlobal>
+
   <Kits>
     <Item>
       <kitName>897_italia458_modkit</kitName>
-      <id value="897" />	 	  
+      <id value="897" />
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
          <Item>
@@ -133,7 +133,7 @@
           <modShopLabel>MASS_BNT1</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>bonnet</Item> 
+            <Item>bonnet</Item>
           </turnOffBones>
           <type>VMT_BONNET</type>
           <bone>bonnet</bone>
@@ -150,7 +150,7 @@
           <modShopLabel>MASS_BNT2</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>bonnet</Item> 
+            <Item>bonnet</Item>
           </turnOffBones>
           <type>VMT_BONNET</type>
           <bone>bonnet</bone>
@@ -167,7 +167,7 @@
           <modShopLabel>MASS_BNT3</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>bonnet</Item> 
+            <Item>bonnet</Item>
           </turnOffBones>
           <type>VMT_BONNET</type>
           <bone>bonnet</bone>
@@ -283,13 +283,13 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>        
+        </Item>
          <Item>
           <modelName>it458_ext1</modelName>
           <modShopLabel>MASS_EXT1</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_a</Item> 
+            <Item>misc_a</Item>
           </turnOffBones>
           <type>VMT_EXHAUST</type>
           <bone>chassis</bone>
@@ -300,7 +300,7 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>                  
+        </Item>
       </visibleMods>
       <linkMods />
       <statMods>
@@ -705,7 +705,7 @@
     </Item>
     <Item>
       <kitName>898_lykan_modkit</kitName>
-      <id value="898" />	 	  
+      <id value="898" />
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
         <Item>
@@ -741,9 +741,9 @@
          <Item>
           <modelName>lyk_1exh</modelName>
           <modShopLabel>MNU_EXH12</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_a</Item> 
+            <Item>misc_a</Item>
           </turnOffBones>
           <type>VMT_EXHAUST</type>
           <bone>chassis</bone>
@@ -754,7 +754,7 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>                                      
+        </Item>
 	<Item>
           <modelName>lyk_fsplit</modelName>
           <modShopLabel>OSIRIS_SPLIT2</modShopLabel>
@@ -784,7 +784,7 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>  
+        </Item>
 	<Item>
           <modelName>lyk_1dif</modelName>
           <modShopLabel>T20_1DIF</modShopLabel>
@@ -1218,15 +1218,15 @@
       <liveryNames />
     </Item>
     <Item>
-      <kitName>899_huracan_modkit</kitName>
-      <id value="899" />	 	  
+      <kitName>909_huracan_modkit</kitName>
+      <id value="899" />
       <kitType>MKT_SPECIAL</kitType>
-      <visibleMods>  
+      <visibleMods>
         <Item>
           <modelName>huracan_spol1</modelName>
           <modShopLabel>MNU_WING3</modShopLabel>
-          <linkedModels />    
-          <turnOffBones /> 
+          <linkedModels />
+          <turnOffBones />
           <type>VMT_SPOILER</type>
           <bone>bodyshell</bone>
           <collisionBone>mod_col_1</collisionBone>
@@ -1240,8 +1240,8 @@
         <Item>
           <modelName>huracan_spol2</modelName>
           <modShopLabel>MNU_WING9</modShopLabel>
-          <linkedModels />    
-          <turnOffBones /> 
+          <linkedModels />
+          <turnOffBones />
           <type>VMT_SPOILER</type>
           <bone>bodyshell</bone>
           <collisionBone>mod_col_1</collisionBone>
@@ -1255,8 +1255,8 @@
         <Item>
           <modelName>huracan_spol3</modelName>
           <modShopLabel>MNU_WING4</modShopLabel>
-          <linkedModels />    
-          <turnOffBones /> 
+          <linkedModels />
+          <turnOffBones />
           <type>VMT_SPOILER</type>
           <bone>bodyshell</bone>
           <collisionBone>mod_col_2</collisionBone>
@@ -1270,8 +1270,8 @@
         <Item>
           <modelName>huracan_spol4</modelName>
           <modShopLabel>MNU_WING1</modShopLabel>
-          <linkedModels />    
-          <turnOffBones /> 
+          <linkedModels />
+          <turnOffBones />
           <type>VMT_SPOILER</type>
           <bone>bodyshell</bone>
           <collisionBone>mod_col_2</collisionBone>
@@ -1281,9 +1281,9 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>      
+        </Item>
       </visibleMods>
-      <linkMods /> 
+      <linkMods />
       <statMods>
         <Item>
           <identifier />
@@ -1648,9 +1648,9 @@
     </Item>
     <Item>
       <kitName>900_fxxk16_modkit</kitName>
-      <id value="900" />	 	  
+      <id value="900" />
       <kitType>MKT_SPECIAL</kitType>
-      <visibleMods>  
+      <visibleMods>
         <Item>
           <modelName>fxx_roof1</modelName>
           <modShopLabel>MNU_ROOFP</modShopLabel>
@@ -1658,8 +1658,8 @@
             <Item>tur_roof2</Item>
           </linkedModels>
           <turnOffBones>
-            <Item>misc_b</Item> 
-            <Item>misc_c</Item> 
+            <Item>misc_b</Item>
+            <Item>misc_c</Item>
           </turnOffBones>
           <type>VMT_ROOF</type>
           <bone>chassis</bone>
@@ -2046,8 +2046,8 @@
     </Item>
     <Item>
       <kitName>901_lw458s_modkit</kitName>
-      <id value="901" />   
-      <kitType>MKT_SPECIAL</kitType> 
+      <id value="901" />
+      <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
 		<Item>
           <modelName>lw458s_bmf1</modelName>
@@ -2653,7 +2653,7 @@
     </Item>
     <Item>
       <kitName>902_laferrari15_modkit</kitName>
-      <id value="902" />	 	  
+      <id value="902" />
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods />
       <linkMods />
@@ -3024,7 +3024,7 @@
     </Item>
     <Item>
       <kitName>903_veneno_modkit</kitName>
-      <id value="903" />	 	  
+      <id value="903" />
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
         <Item>
@@ -3161,7 +3161,7 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>        
+        </Item>
         <Item>
           <modelName>veneno_skirt_carb</modelName>
           <modShopLabel>ZENT_SKIRT_CARB</modShopLabel>
@@ -3176,15 +3176,15 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item> 
+        </Item>
          <Item>
           <modelName>veneno_ext2</modelName>
           <modShopLabel>ZENT_EXT2</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_b</Item> 
-            <Item>exhaust</Item>  
-            <Item>exhaust_2</Item>  
+            <Item>misc_b</Item>
+            <Item>exhaust</Item>
+            <Item>exhaust_2</Item>
           </turnOffBones>
           <type>VMT_EXHAUST</type>
           <bone>chassis</bone>
@@ -3195,15 +3195,15 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>                  
+        </Item>
          <Item>
           <modelName>veneno_ext3</modelName>
           <modShopLabel>ZENT_EXT3</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_b</Item> 
-            <Item>exhaust</Item>  
-            <Item>exhaust_2</Item>  
+            <Item>misc_b</Item>
+            <Item>exhaust</Item>
+            <Item>exhaust_2</Item>
           </turnOffBones>
           <type>VMT_EXHAUST</type>
           <bone>chassis</bone>
@@ -3214,15 +3214,15 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>               
+        </Item>
          <Item>
           <modelName>veneno_ext4</modelName>
           <modShopLabel>ZENT_EXT4</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_b</Item> 
-            <Item>exhaust</Item>  
-            <Item>exhaust_2</Item>  
+            <Item>misc_b</Item>
+            <Item>exhaust</Item>
+            <Item>exhaust_2</Item>
           </turnOffBones>
           <type>VMT_EXHAUST</type>
           <bone>chassis</bone>
@@ -3233,15 +3233,15 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>    
+        </Item>
           <Item>
           <modelName>veneno_ext5</modelName>
           <modShopLabel>ZENT_EXT5</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_b</Item> 
-            <Item>exhaust</Item>  
-            <Item>exhaust_2</Item>  
+            <Item>misc_b</Item>
+            <Item>exhaust</Item>
+            <Item>exhaust_2</Item>
           </turnOffBones>
           <type>VMT_EXHAUST</type>
           <bone>chassis</bone>
@@ -3252,13 +3252,13 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>  
+        </Item>
          <Item>
           <modelName>veneno_b2_mod</modelName>
           <modShopLabel>ZENT_B2_MOD</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_d</Item> 
+            <Item>misc_d</Item>
           </turnOffBones>
           <type>VMT_BONNET</type>
           <bone>chassis</bone>
@@ -3269,13 +3269,13 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item> 
+        </Item>
          <Item>
           <modelName>veneno_b3_mod</modelName>
           <modShopLabel>ZENT_B3_MOD</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_d</Item> 
+            <Item>misc_d</Item>
           </turnOffBones>
           <type>VMT_BONNET</type>
           <bone>chassis</bone>
@@ -3286,13 +3286,13 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>  
+        </Item>
          <Item>
           <modelName>veneno_panel_bc1</modelName>
           <modShopLabel>ZENT_PANEL_BC1</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_c</Item> 
+            <Item>misc_c</Item>
           </turnOffBones>
           <type>VMT_CHASSIS</type>
           <bone>chassis</bone>
@@ -3303,13 +3303,13 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>    
+        </Item>
          <Item>
           <modelName>veneno_panel_bc2</modelName>
           <modShopLabel>ZENT_PANEL_BC2</modShopLabel>
-          <linkedModels />        
+          <linkedModels />
           <turnOffBones>
-            <Item>misc_c</Item> 
+            <Item>misc_c</Item>
           </turnOffBones>
           <type>VMT_CHASSIS</type>
           <bone>chassis</bone>
@@ -3320,7 +3320,7 @@
           <turnOffExtra value="false" />
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
-        </Item>   
+        </Item>
       </visibleMods>
       <linkMods />
       <statMods>
@@ -3766,7 +3766,7 @@
 
   <Lights>
     <Item>
-      <id value="905" />	
+      <id value="905" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
@@ -3898,7 +3898,7 @@
       <name>italia458</name>
     </Item>
     <Item>
-      <id value="906" />	
+      <id value="906" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
@@ -4030,7 +4030,7 @@
       <name>lykan</name>
     </Item>
     <Item>
-      <id value="907" />	
+      <id value="907" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
@@ -4557,7 +4557,7 @@
       </reversingLightCorona>
       <name>veneno</name>
     </Item>
-    </Lights>	
+    </Lights>
 
 
 </CVehicleModelInfoVarGlobal>

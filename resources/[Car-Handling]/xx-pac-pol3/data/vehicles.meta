@@ -62,11 +62,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
+15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.918" />
@@ -175,9 +175,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-300.000000	
+60.000000
+120.000000
+300.000000
 300.000000
 </lodDistances>
 <minSeatHeight value="0.793" />
@@ -295,11 +295,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-80.000000	
-160.000000	
-500.000000	
+15.000000
+40.000000
+80.000000
+160.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="1.048" />
@@ -422,11 +422,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-35.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+35.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -656,11 +656,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-20.000000	
-90.000000	
-130.000000	
-260.000000	
-750.000000	
+20.000000
+90.000000
+130.000000
+260.000000
+750.000000
 750.000000
 </lodDistances>
 <minSeatHeight value="0.984" />
@@ -893,11 +893,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-80.000000	
-160.000000	
-500.000000	
+15.000000
+40.000000
+80.000000
+160.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="1.048" />
@@ -993,7 +993,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -1122,7 +1122,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -1370,7 +1370,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.150000" z="0.665000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -1500,7 +1500,7 @@
 <Offset x="0.136000" y="0.269000" z="0.455000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.120000" z="0.565000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.070000" />
@@ -1646,11 +1646,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-20.000000	
-90.000000	
-130.000000	
-260.000000	
-750.000000	
+20.000000
+90.000000
+130.000000
+260.000000
+750.000000
 750.000000
 </lodDistances>
 <minSeatHeight value="0.984" />
@@ -1750,7 +1750,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -1836,7 +1836,7 @@
 <Item>STD_POLICE_REAR_LEFT</Item>
 <Item>STD_POLICE_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>  
+</Item>
 <!-- <Item>
 <modelName>sheriff4</modelName>
 <txdName>sheriff4</txdName>
@@ -2099,7 +2099,7 @@
 <Item>HELI_LEFT_SIDE_PASSENGER</Item>
 <Item>HELI_RIGHT_SIDE_PASSENGER</Item>
 </firstPersonDrivebyData>
-</Item>	  
+</Item>
 <Item>
 <modelName>lssheriff4</modelName>
 <txdName>lssheriff4</txdName>
@@ -2166,11 +2166,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-35.000000	
-70.000000	
-140.000000	
-500.000000	
+15.000000
+35.000000
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.892" />
@@ -2273,7 +2273,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -2531,7 +2531,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -2621,7 +2621,7 @@
 <Item>STD_POLICE2_REAR_LEFT</Item>
 <Item>STD_POLICE2_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>  
+</Item>
 <Item>
 <modelName>sheriffinsurgent2</modelName>
 <txdName>sheriffinsurgent2</txdName>
@@ -2682,12 +2682,12 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-20.000000	
-90.000000	
-130.000000	
-260.000000	
-750.000000	
-750.000000	
+20.000000
+90.000000
+130.000000
+260.000000
+750.000000
+750.000000
 </lodDistances>
 <identicalModelSpawnDistance value="20" />
 <maxNumOfSameColor value="10" />
@@ -2743,7 +2743,7 @@
 <Item>HANGING_INSURGENT_LEFT</Item>
 <Item>HANGING_INSURGENT_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>	  
+</Item>
 <Item>
 <modelName>sheriffriot2</modelName>
 <txdName>sheriffriot2</txdName>
@@ -3166,7 +3166,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -3195,9 +3195,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -3252,7 +3252,7 @@
 <Item>STD_POLICE_REAR_LEFT</Item>
 <Item>STD_POLICE_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>            
+</Item>
 <Item>
 <modelName>hwaycar6</modelName>
 <txdName>hwaycar6</txdName>
@@ -3296,7 +3296,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -3325,9 +3325,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -3382,7 +3382,7 @@
 <Item>STD_POLICE_REAR_LEFT</Item>
 <Item>STD_POLICE_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>          
+</Item>
 <Item>
 <modelName>hwaycar5</modelName>
 <txdName>hwaycar5</txdName>
@@ -3426,7 +3426,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -3455,9 +3455,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -3512,7 +3512,7 @@
 <Item>STD_POLICE_REAR_LEFT</Item>
 <Item>STD_POLICE_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>          
+</Item>
 <Item>
 <modelName>hwaycar4</modelName>
 <txdName>hwaycar4</txdName>
@@ -3556,7 +3556,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -3585,9 +3585,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -3642,7 +3642,7 @@
 <Item>STD_POLICE_REAR_LEFT</Item>
 <Item>STD_POLICE_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>          
+</Item>
 <Item>
 <modelName>hwaycar3</modelName>
 <txdName>hwaycar3</txdName>
@@ -3686,7 +3686,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -3715,9 +3715,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -3772,7 +3772,7 @@
 <Item>STD_POLICE_REAR_LEFT</Item>
 <Item>STD_POLICE_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>          
+</Item>
 <Item>
 <modelName>hwaycar2</modelName>
 <txdName>hwaycar2</txdName>
@@ -3816,7 +3816,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -3845,9 +3845,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -3902,7 +3902,7 @@
 <Item>STD_POLICE_REAR_LEFT</Item>
 <Item>STD_POLICE_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>            
+</Item>
 <Item>
 <modelName>hwaycar</modelName>
 <txdName>hwaycar</txdName>
@@ -3946,7 +3946,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -3975,9 +3975,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -4076,7 +4076,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -4206,7 +4206,7 @@
 <Offset x="0.136000" y="0.176000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.125000" z="0.665000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -4235,9 +4235,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.856" />
@@ -4336,7 +4336,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -4466,7 +4466,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -4596,7 +4596,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -4726,7 +4726,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -4874,11 +4874,11 @@
 <steerWheelMult value="0.700000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <identicalModelSpawnDistance value="80" />
@@ -4994,11 +4994,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -5097,7 +5097,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -5123,7 +5123,7 @@
 <diffuseTint value="0x00FFFFFF" />
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
-<lodDistances content="float_array"> 
+<lodDistances content="float_array">
 15.000000
 30.000000
 70.000000
@@ -5227,7 +5227,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -5253,7 +5253,7 @@
 <diffuseTint value="0x00FFFFFF" />
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
-<lodDistances content="float_array"> 
+<lodDistances content="float_array">
 15.000000
 30.000000
 70.000000
@@ -5492,9 +5492,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -5591,7 +5591,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.150000" z="0.665000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -5721,7 +5721,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.150000" z="0.665000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -5851,7 +5851,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -5877,7 +5877,7 @@
 <diffuseTint value="0x00FFFFFF" />
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
-<lodDistances content="float_array"> 
+<lodDistances content="float_array">
 15.000000
 30.000000
 70.000000
@@ -5981,7 +5981,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -6007,7 +6007,7 @@
 <diffuseTint value="0x00FFFFFF" />
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
-<lodDistances content="float_array"> 
+<lodDistances content="float_array">
 15.000000
 30.000000
 70.000000
@@ -6067,7 +6067,7 @@
 <Item>STD_POLICE2_REAR_LEFT</Item>
 <Item>STD_POLICE2_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>	
+</Item>
 <Item>
 <modelName>jester2</modelName>
 <txdName>jester2</txdName>
@@ -6128,11 +6128,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.771" />
@@ -6237,11 +6237,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.79" />
@@ -6803,11 +6803,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -6910,7 +6910,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -7054,11 +7054,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-125.000000	
-125.000000	
 125.000000
-500.000000	
-500.000000	
+125.000000
+125.000000
+500.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.79" />
@@ -7173,11 +7173,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -7297,12 +7297,12 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-20.000000	
-90.000000	
-130.000000	
-260.000000	
-750.000000	
-750.000000	
+20.000000
+90.000000
+130.000000
+260.000000
+750.000000
+750.000000
 </lodDistances>
 <identicalModelSpawnDistance value="20" />
 <maxNumOfSameColor value="10" />
@@ -7551,11 +7551,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -7688,11 +7688,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -7798,7 +7798,7 @@
 <Offset x="0.136000" y="0.136000" z="0.455000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.135000" z="0.585000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.070000" />
@@ -7827,9 +7827,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.873" />
@@ -7881,7 +7881,7 @@
 <modelName>cap94</modelName>
 <txdName>cap94</txdName>
 <handlingId>SHERIFF</handlingId>
-<gameName>CAP94</gameName>	  
+<gameName>CAP94</gameName>
 <vehicleMakeName />
 <expressionDictName>null</expressionDictName>
 <expressionName>null</expressionName>
@@ -7920,7 +7920,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -8012,7 +8012,7 @@
 <modelName>adcap94ad</modelName>
 <txdName>adcap94ad</txdName>
 <handlingId>SHERIFF</handlingId>
-<gameName>ADCAP94</gameName>	  
+<gameName>ADCAP94</gameName>
 <vehicleMakeName />
 <expressionDictName>null</expressionDictName>
 <expressionName>null</expressionName>
@@ -8051,7 +8051,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -8209,11 +8209,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-80.000000	
-160.000000	
-500.000000	
+15.000000
+40.000000
+80.000000
+160.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="1.048" />
@@ -8337,11 +8337,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-80.000000	
-160.000000	
-500.000000	
+15.000000
+40.000000
+80.000000
+160.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="1.048" />
@@ -8393,7 +8393,7 @@
 <Item>VAN_BOXVILLE_REAR_LEFT</Item>
 <Item>VAN_BOXVILLE_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>  
+</Item>
 <!-- BOXVILLE -->
 <Item>
 <modelName>boxville</modelName>
@@ -8473,11 +8473,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-20.000000	
-90.000000	
-130.000000	
-260.000000	
-750.000000	
+20.000000
+90.000000
+130.000000
+260.000000
+750.000000
 750.000000
 </lodDistances>
 <minSeatHeight value="1.559" />
@@ -8534,7 +8534,7 @@
 <modelName>cap89</modelName>
 <txdName>cap89</txdName>
 <handlingId>SHERIFF</handlingId>
-<gameName>CAP89</gameName>	  
+<gameName>CAP89</gameName>
 <vehicleMakeName />
 <expressionDictName>null</expressionDictName>
 <expressionName>null</expressionName>
@@ -8573,7 +8573,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -8665,7 +8665,7 @@
 <modelName>cap892</modelName>
 <txdName>cap892</txdName>
 <handlingId>SHERIFF</handlingId>
-<gameName>CAP892</gameName>	  
+<gameName>CAP892</gameName>
 <vehicleMakeName />
 <expressionDictName>null</expressionDictName>
 <expressionName>null</expressionName>
@@ -8704,7 +8704,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -8835,7 +8835,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -8993,11 +8993,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-35.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+35.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -9124,11 +9124,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -9259,11 +9259,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -9394,11 +9394,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -9529,11 +9529,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -9663,11 +9663,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -9797,11 +9797,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -9931,11 +9931,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -10038,7 +10038,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -10067,9 +10067,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -10169,7 +10169,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -10198,9 +10198,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -10327,11 +10327,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -10834,11 +10834,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-20.000000	
-90.000000	
-130.000000	
-260.000000	
-750.000000	
+20.000000
+90.000000
+130.000000
+260.000000
+750.000000
 750.000000
 </lodDistances>
 <minSeatHeight value="0.984" />
@@ -10948,7 +10948,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -10974,13 +10974,13 @@
 <diffuseTint value="0x00FFFFFF" />
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
-<lodDistances content="float_array"> 
-350.000000    
-460.000000    
-470.000000    
-480.000000    
-500.000000    
-500.000000    
+<lodDistances content="float_array">
+350.000000
+460.000000
+470.000000
+480.000000
+500.000000
+500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
 <identicalModelSpawnDistance value="20" />
@@ -11079,7 +11079,7 @@
 <Offset x="0.136000" y="0.116000" z="0.455000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.200000" z="0.680000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -11105,13 +11105,13 @@
 <diffuseTint value="0x00FFFFFF" />
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
-<lodDistances content="float_array"> 
-350.000000    
-460.000000    
-470.000000    
-480.000000    
-500.000000    
-500.000000    
+<lodDistances content="float_array">
+350.000000
+460.000000
+470.000000
+480.000000
+500.000000
+500.000000
 </lodDistances>
 <minSeatHeight value="0.928" />
 <identicalModelSpawnDistance value="20" />
@@ -11210,7 +11210,7 @@
 <Offset x="0.136000" y="0.116000" z="0.455000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.200000" z="0.680000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -11236,13 +11236,13 @@
 <diffuseTint value="0x00FFFFFF" />
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
-<lodDistances content="float_array"> 
-350.000000    
-460.000000    
-470.000000    
-480.000000    
-500.000000    
-500.000000    
+<lodDistances content="float_array">
+350.000000
+460.000000
+470.000000
+480.000000
+500.000000
+500.000000
 </lodDistances>
 <minSeatHeight value="0.928" />
 <identicalModelSpawnDistance value="20" />
@@ -11446,7 +11446,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -11577,7 +11577,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -11735,11 +11735,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-40.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+40.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -11870,11 +11870,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-35.000000	
-90.000000	
-180.000000	
-500.000000	
+15.000000
+35.000000
+90.000000
+180.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -12128,11 +12128,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-25.000000	
-90.000000	
-130.000000	
-260.000000	
-750.000000	
+25.000000
+90.000000
+130.000000
+260.000000
+750.000000
 750.000000
 </lodDistances>
 <minSeatHeight value="1.473" />
@@ -12234,7 +12234,7 @@
 <Offset x="0.136000" y="0.176000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.125000" z="0.665000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -12263,9 +12263,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.856" />
@@ -12365,7 +12365,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -12500,7 +12500,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -12756,7 +12756,7 @@
 <Offset x="0.136000" y="0.116000" z="0.455000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.200000" z="0.680000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -12783,11 +12783,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
+15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.928" />
@@ -12887,7 +12887,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -13169,11 +13169,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
+15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.976" />
@@ -13277,7 +13277,7 @@
 <Offset x="0.136000" y="0.176000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.150000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="-0.020000" />
@@ -13435,11 +13435,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-35.000000	
-80.000000	
-160.000000	
-500.000000	
+15.000000
+35.000000
+80.000000
+160.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.966" />
@@ -13492,7 +13492,7 @@
 <modelName>policeold1</modelName>
 <txdName>policeold1</txdName>
 <handlingId>SHERIFF</handlingId>
-<gameName>POLICEO1</gameName>	  
+<gameName>POLICEO1</gameName>
 <vehicleMakeName />
 <expressionDictName>null</expressionDictName>
 <expressionName>null</expressionName>
@@ -13531,7 +13531,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -13623,7 +13623,7 @@
 <modelName>policeold2</modelName>
 <txdName>policeold2</txdName>
 <handlingId>SHERIFF</handlingId>
-<gameName>POLICEO2</gameName>	  
+<gameName>POLICEO2</gameName>
 <vehicleMakeName />
 <expressionDictName>null</expressionDictName>
 <expressionName>null</expressionName>
@@ -13662,7 +13662,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -14054,7 +14054,7 @@
 <Offset x="0.136000" y="0.146000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -14083,9 +14083,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.839" />
@@ -14185,7 +14185,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.140000" z="0.650000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -14437,7 +14437,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -14926,7 +14926,7 @@
 <Offset x="0.136000" y="0.156000" z="0.425000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -15060,7 +15060,7 @@
 <Offset x="0.136000" y="0.066000" z="0.415000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.250000" z="0.630000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -15191,7 +15191,7 @@
 <Offset x="0.136000" y="0.156000" z="0.445000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.675000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -15281,7 +15281,7 @@
 <Item>STD_POLICE2_REAR_LEFT</Item>
 <Item>STD_POLICE2_REAR_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>	
+</Item>
 <Item>
 <modelName>bulker</modelName>
 <txdName>bulker</txdName>
@@ -15728,9 +15728,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.814" />
@@ -15835,11 +15835,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-25.000000	
-70.000000	
-140.000000	
-350.000000	
+15.000000
+25.000000
+70.000000
+140.000000
+350.000000
 350.000000
 </lodDistances>
 <identicalModelSpawnDistance value="20" />
@@ -15917,7 +15917,7 @@
 <FirstPersonDriveByRightPassengerUnarmedIKOffset x="0.000000" y="-0.080000" z="0.000000" />
 <FirstPersonMobilePhoneOffset x="0.160000" y="0.150000" z="0.541000" />
 <FirstPersonPassengerMobilePhoneOffset x="0.185000" y="0.125000" z="0.433000" />
-<FirstPersonMobilePhoneSeatIKOffset /> 
+<FirstPersonMobilePhoneSeatIKOffset />
 <PovCameraOffset x="0.000000" y="-0.200000" z="0.635000" />
 <PovCameraVerticalAdjustmentForRollCage value="-0.045000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -15946,9 +15946,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.832" />
@@ -16055,9 +16055,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <identicalModelSpawnDistance value="20" />
@@ -16146,7 +16146,7 @@
 <Offset x="0.136000" y="0.156000" z="0.435000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.130000" z="0.640000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -16286,11 +16286,11 @@
 <steerWheelMult value="0.650000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
+15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.824" />
@@ -16448,110 +16448,6 @@
 </firstPersonDrivebyData>
 </Item>
 <Item>
-<modelName>slrublu</modelName>
-<txdName>slrublu</txdName>
-<handlingId>slrublu</handlingId>
-<gameName>slrublu</gameName>
-<vehicleMakeName>LAMPADA</vehicleMakeName>
-<expressionDictName>null</expressionDictName>
-<expressionName>null</expressionName>
-<animConvRoofDictName>null</animConvRoofDictName>
-<animConvRoofName>null</animConvRoofName>
-<animConvRoofWindowsAffected />
-<ptfxAssetName>null</ptfxAssetName>
-<audioNameHash>TURISMOR</audioNameHash>
-<layout>LAYOUT_LOW_FURORE</layout>
-<coverBoundOffsets>FUROREGT_COVER_OFFSET_INFO</coverBoundOffsets>
-<explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
-<scenarioLayout />
-<cameraName>DEFAULT_FOLLOW_VEHICLE_CAMERA</cameraName>
-<aimCameraName>DEFAULT_THIRD_PERSON_VEHICLE_AIM_CAMERA</aimCameraName>
-<bonnetCameraName>VEHICLE_BONNET_CAMERA_MID</bonnetCameraName>
-<povCameraName>DEFAULT_POV_CAMERA</povCameraName>
-<FirstPersonDriveByIKOffset x="0.000000" y="-0.060000" z="-0.040000" />
-<FirstPersonDriveByUnarmedIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonProjectileDriveByIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonProjectileDriveByPassengerIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonDriveByLeftPassengerIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonDriveByRightPassengerIKOffset x="0.000000" y="-0.060000" z="-0.040000" />
-<FirstPersonDriveByLeftPassengerUnarmedIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonDriveByRightPassengerUnarmedIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonPassengerMobilePhoneOffset x="0.153000" y="0.161000" z="0.473000" />
-<FirstPersonMobilePhoneOffset x="0.135000" y="0.175000" z="0.575000" />
-<PovCameraOffset x="0.000000" y="-0.250000" z="0.700000" />
-<PovCameraVerticalAdjustmentForRollCage value="0.000000" />
-<PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
-<vfxInfoName>VFXVEHICLEINFO_CAR_GENERIC</vfxInfoName>
-<shouldUseCinematicViewMode value="true" />
-<shouldCameraTransitionOnClimbUpDown value="false" />
-<shouldCameraIgnoreExiting value="false" />
-<AllowPretendOccupants value="true" />
-<AllowJoyriding value="true" />
-<AllowSundayDriving value="true" />
-<AllowBodyColorMapping value="true" />
-<wheelScale value="0.306000" />
-<wheelScaleRear value="0.306000" />
-<dirtLevelMin value="0.000000" />
-<dirtLevelMax value="0.800000" />
-<envEffScaleMin value="0.000000" />
-<envEffScaleMax value="1.000000" />
-<envEffScaleMin2 value="0.000000" />
-<envEffScaleMax2 value="1.000000" />
-<damageMapScale value="0.500000" />
-<damageOffsetScale value="0.500000" />
-<diffuseTint value="0x00FFFFFF" />
-<steerWheelMult value="1.000000" />
-<HDTextureDist value="5.000000" />
-<lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
-500.000000
-</lodDistances>
-<identicalModelSpawnDistance value="20" />
-<maxNumOfSameColor value="10" />
-<defaultBodyHealth value="1000.000000" />
-<pretendOccupantsScale value="1.000000" />
-<visibleSpawnDistScale value="1.000000" />
-<trackerPathWidth value="2.000000" />
-<weaponForceMult value="1.000000" />
-<frequency value="50" />
-<swankness>SWANKNESS_5</swankness>
-<maxNum value="5" />
-<flags>FLAG_SPORTS FLAG_SPAWN_ON_TRAILER FLAG_RICH_CAR FLAG_NO_BROKEN_DOWN_SCENARIO FLAG_RECESSED_TAILLIGHT_CORONAS</flags>
-<type>VEHICLE_TYPE_CAR</type>
-<plateType>VPT_BACK_PLATES</plateType>
-<dashboardType>VDT_BANSHEE</dashboardType>
-<vehicleClass>VC_SPORT</vehicleClass>
-<wheelType>VWT_HIEND</wheelType>
-<trailers />
-<additionalTrailers />
-<drivers />
-<extraIncludes />
-<doorsWithCollisionWhenClosed />
-<driveableDoors />
-<bumpersNeedToCollideWithMap value="false" />
-<needsRopeTexture value="false" />
-<requiredExtras />
-<rewards />
-<cinematicPartCamera>
-<Item>WHEEL_FRONT_RIGHT_CAMERA</Item>
-<Item>WHEEL_FRONT_LEFT_CAMERA</Item>
-<Item>WHEEL_REAR_RIGHT_CAMERA</Item>
-<Item>WHEEL_REAR_LEFT_CAMERA</Item>
-</cinematicPartCamera>
-<NmBraceOverrideSet />
-<buoyancySphereOffset x="0.000000" y="0.000000" z="0.000000" />
-<buoyancySphereSizeScale value="1.000000" />
-<pOverrideRagdollThreshold type="NULL" />
-<firstPersonDrivebyData>
-<Item>LOW_ADDER_FRONT_LEFT</Item>
-<Item>LOW_ADDER_FRONT_RIGHT</Item>
-</firstPersonDrivebyData>
-</Item>
-<Item>
 <modelName>rczublu</modelName>
 <txdName>rczublu</txdName>
 <handlingId>rczublu</handlingId>
@@ -16613,9 +16509,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-65.000000	
-130.000000	
-500.000000	
+65.000000
+130.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.881" />
@@ -16716,11 +16612,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-25.000000	
-70.000000	
-140.000000	
-350.000000	
+15.000000
+25.000000
+70.000000
+140.000000
+350.000000
 350.000000
 </lodDistances>
 <minSeatHeight value="0.784" />
@@ -16827,9 +16723,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.814" />
@@ -16930,11 +16826,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.79" />
@@ -17041,9 +16937,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.881" />
@@ -17373,9 +17269,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-70.000000	
-140.000000	
-300.000000	
+70.000000
+140.000000
+300.000000
 300.000000
 </lodDistances>
 <minSeatHeight value="0.871" />
@@ -17487,9 +17383,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.858" />
@@ -17577,7 +17473,7 @@
 <Offset x="0.136000" y="0.156000" z="0.455000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.145000" z="0.680000" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.015000" z="0.000000" />
@@ -17606,9 +17502,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <identicalModelSpawnDistance value="20" />
@@ -17712,11 +17608,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.797" />
@@ -17817,11 +17713,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.884" />
@@ -17928,9 +17824,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-60.000000	
-120.000000	
-500.000000	
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.791" />
@@ -18033,11 +17929,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-15.000000	
-25.000000	
-70.000000	
-140.000000	
-350.000000	
+15.000000
+25.000000
+70.000000
+140.000000
+350.000000
 350.000000
 </lodDistances>
 <minSeatHeight value="0.784" />
@@ -18081,7 +17977,7 @@
 <Item>LOW_811_FRONT_LEFT</Item>
 <Item>LOW_811_FRONT_RIGHT</Item>
 </firstPersonDrivebyData>
-</Item>   
+</Item>
 <Item>
 <modelName>p107</modelName>
 <txdName>p107</txdName>
@@ -18144,9 +18040,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-70.000000	
-140.000000	
-500.000000	
+70.000000
+140.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.814" />
@@ -18247,11 +18143,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.858" />
@@ -18360,11 +18256,11 @@
 <steerWheelMult value="0.700000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.816" />
@@ -18889,11 +18785,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.799" />
@@ -19162,248 +19058,6 @@
 </firstPersonDrivebyData>
 </Item>
 <Item>
-<modelName>sti05</modelName>
-<txdName>sti05</txdName>
-<handlingId>sti05</handlingId>
-<gameName>sti05</gameName>
-<vehicleMakeName>OCELOT</vehicleMakeName>
-<expressionDictName>null</expressionDictName>
-<expressionName>null</expressionName>
-<animConvRoofDictName>null</animConvRoofDictName>
-<animConvRoofName>null</animConvRoofName>
-<animConvRoofWindowsAffected />
-<ptfxAssetName>null</ptfxAssetName>
-<audioNameHash>SULTANRS</audioNameHash>
-<layout>LAYOUT_STD_LOWROOF</layout>
-<coverBoundOffsets>JACKAL_COVER_OFFSET_INFO</coverBoundOffsets>
-<explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
-<scenarioLayout />
-<cameraName>DEFAULT_FOLLOW_VEHICLE_CAMERA</cameraName>
-<aimCameraName>DEFAULT_THIRD_PERSON_VEHICLE_AIM_CAMERA</aimCameraName>
-<bonnetCameraName>VEHICLE_BONNET_CAMERA_MID</bonnetCameraName>
-<povCameraName>DEFAULT_POV_CAMERA</povCameraName>
-<FirstPersonDriveByIKOffset x="0.000000" y="-0.055000" z="-0.030000" />
-<FirstPersonDriveByUnarmedIKOffset x="0.000000" y="-0.010000" z="-0.020000" />
-<FirstPersonProjectileDriveByIKOffset x="0.000000" y="-0.100000" z="-0.060000" />
-<FirstPersonProjectileDriveByPassengerIKOffset x="-0.080000" y="-0.100000" z="-0.060000" />
-<FirstPersonProjectileDriveByRearLeftIKOffset x="0.000000" y="0.020000" z="0.000000" />
-<FirstPersonProjectileDriveByRearRightIKOffset x="0.000000" y="0.020000" z="0.000000" />
-<FirstPersonDriveByLeftPassengerIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonDriveByRightPassengerIKOffset x="0.000000" y="-0.055000" z="-0.030000" />
-<FirstPersonDriveByRightRearPassengerIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonDriveByLeftPassengerUnarmedIKOffset x="0.030000" y="-0.020000" z="0.020000" />
-<FirstPersonDriveByRightPassengerUnarmedIKOffset x="0.000000" y="-0.020000" z="0.020000" />
-<FirstPersonMobilePhoneOffset x="0.125000" y="0.253000" z="0.505000" />
-<FirstPersonPassengerMobilePhoneOffset x="0.136000" y="0.223000" z="0.385000" />
-<FirstPersonMobilePhoneSeatIKOffset>
-<Item>
-<Offset x="0.136000" y="0.106000" z="0.425000" />
-<SeatIndex value="2" />
-</Item>
-<Item>
-<Offset x="0.136000" y="0.106000" z="0.425000" />
-<SeatIndex value="3" />
-</Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
-<PovCameraOffset x="0.000000" y="-0.200000" z="0.640000" />
-<PovCameraVerticalAdjustmentForRollCage value="0.000000" />
-<PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
-<PovRearPassengerCameraOffset x="0.000000" y="-0.050000" z="0.025000" />
-<vfxInfoName>VFXVEHICLEINFO_CAR_GENERIC</vfxInfoName>
-<shouldUseCinematicViewMode value="true" />
-<shouldCameraTransitionOnClimbUpDown value="false" />
-<shouldCameraIgnoreExiting value="false" />
-<AllowPretendOccupants value="true" />
-<AllowJoyriding value="true" />
-<AllowSundayDriving value="true" />
-<AllowBodyColorMapping value="true" />
-<wheelScale value="0.274000" />
-<wheelScaleRear value="0.274000" />
-<dirtLevelMin value="0.000000" />
-<dirtLevelMax value="0.550000" />
-<envEffScaleMin value="0.000000" />
-<envEffScaleMax value="1.000000" />
-<envEffScaleMin2 value="0.000000" />
-<envEffScaleMax2 value="1.000000" />
-<damageMapScale value="0.300000" />
-<damageOffsetScale value="1.000000" />
-<diffuseTint value="0x00FFFFFF" />
-<steerWheelMult value="1.000000" />
-<HDTextureDist value="5.000000" />
-<lodDistances content="float_array">
-15.000000
-30.000000
-60.000000	
-120.000000	
-500.000000	
-500.000000
-</lodDistances>
-<minSeatHeight value="0.814" />
-<identicalModelSpawnDistance value="20" />
-<maxNumOfSameColor value="10" />
-<defaultBodyHealth value="1000.000000" />
-<pretendOccupantsScale value="1.000000" />
-<visibleSpawnDistScale value="1.000000" />
-<trackerPathWidth value="2.000000" />
-<weaponForceMult value="1.000000" />
-<frequency value="100" />
-<swankness>SWANKNESS_3</swankness>
-<maxNum value="999" />
-<flags>FLAG_SPORTS FLAG_SPAWN_ON_TRAILER FLAG_RICH_CAR FLAG_AVERAGE_CAR FLAG_HAS_INTERIOR_EXTRAS</flags>
-<type>VEHICLE_TYPE_CAR</type>
-<plateType>VPT_BACK_PLATES</plateType>
-<dashboardType>VDT_TAILGATER</dashboardType>
-<vehicleClass>VC_COUPE</vehicleClass>
-<wheelType>VWT_SPORT</wheelType>
-<trailers />
-<additionalTrailers />
-<drivers />
-<extraIncludes />
-<doorsWithCollisionWhenClosed />
-<driveableDoors />
-<bumpersNeedToCollideWithMap value="false" />
-<needsRopeTexture value="false" />
-<requiredExtras />
-<rewards />
-<cinematicPartCamera>
-<Item>WHEEL_FRONT_RIGHT_CAMERA</Item>
-<Item>WHEEL_FRONT_LEFT_CAMERA</Item>
-<Item>WHEEL_REAR_RIGHT_CAMERA</Item>
-<Item>WHEEL_REAR_LEFT_CAMERA</Item>
-</cinematicPartCamera>
-<NmBraceOverrideSet />
-<buoyancySphereOffset x="0.000000" y="0.000000" z="0.000000" />
-<buoyancySphereSizeScale value="1.000000" />
-<pOverrideRagdollThreshold type="NULL" />
-<firstPersonDrivebyData>
-<Item>STD_PRIMO_FRONT_LEFT</Item>
-<Item>STD_PRIMO_FRONT_RIGHT</Item>
-<Item>STD_FELON_REAR_LEFT</Item>
-<Item>STD_FELON_REAR_RIGHT</Item>
-</firstPersonDrivebyData>
-</Item>
-<Item>
-<modelName>panamera</modelName>
-<txdName>panamera</txdName>
-<handlingId>panamera</handlingId>
-<gameName>panamera</gameName>
-<vehicleMakeName>UBERMACH</vehicleMakeName>
-<expressionDictName>null</expressionDictName>
-<expressionName>null</expressionName>
-<animConvRoofDictName>null</animConvRoofDictName>
-<animConvRoofName>null</animConvRoofName>
-<animConvRoofWindowsAffected />
-<ptfxAssetName>null</ptfxAssetName>
-<audioNameHash>ORACLE2</audioNameHash>
-<layout>LAYOUT_STANDARD</layout>
-<coverBoundOffsets>ORACLE_COVER_OFFSET_INFO</coverBoundOffsets>
-<explosionInfo>EXPLOSION_INFO_DEFAULT</explosionInfo>
-<scenarioLayout />
-<cameraName>DEFAULT_FOLLOW_VEHICLE_CAMERA</cameraName>
-<aimCameraName>MID_BOX_VEHICLE_AIM_CAMERA</aimCameraName>
-<bonnetCameraName>VEHICLE_BONNET_CAMERA_MID</bonnetCameraName>
-<povCameraName>DEFAULT_POV_CAMERA</povCameraName>
-<FirstPersonDriveByIKOffset x="0.000000" y="-0.060000" z="-0.050000" />
-<FirstPersonDriveByUnarmedIKOffset x="0.000000" y="-0.010000" z="-0.020000" />
-<FirstPersonProjectileDriveByIKOffset x="0.115000" y="-0.040000" z="-0.050000" />
-<FirstPersonProjectileDriveByPassengerIKOffset x="-0.115000" y="-0.040000" z="-0.050000" />
-<FirstPersonProjectileDriveByRearLeftIKOffset x="0.000000" y="0.020000" z="0.000000" />
-<FirstPersonProjectileDriveByRearRightIKOffset x="0.000000" y="0.020000" z="0.000000" />
-<FirstPersonDriveByLeftPassengerIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonDriveByRightPassengerIKOffset x="0.000000" y="-0.060000" z="-0.030000" />
-<FirstPersonDriveByRightRearPassengerIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonDriveByLeftPassengerUnarmedIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonDriveByRightPassengerUnarmedIKOffset x="0.000000" y="0.000000" z="0.000000" />
-<FirstPersonMobilePhoneOffset x="0.166000" y="0.261000" z="0.498000" />
-<FirstPersonPassengerMobilePhoneOffset x="0.136000" y="0.223000" z="0.385000" />
-<FirstPersonMobilePhoneSeatIKOffset>
-<Item>
-<Offset x="0.136000" y="0.116000" z="0.435000" />
-<SeatIndex value="2" />
-</Item>
-<Item>
-<Offset x="0.136000" y="0.116000" z="0.435000" />
-<SeatIndex value="3" />
-</Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
-<PovCameraOffset x="0.000000" y="-0.175000" z="0.640000" />
-<PovCameraVerticalAdjustmentForRollCage value="0.000000" />
-<PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
-<PovRearPassengerCameraOffset x="0.000000" y="-0.025000" z="0.000000" />
-<vfxInfoName>VFXVEHICLEINFO_CAR_GENERIC</vfxInfoName>
-<shouldUseCinematicViewMode value="true" />
-<shouldCameraTransitionOnClimbUpDown value="false" />
-<shouldCameraIgnoreExiting value="false" />
-<AllowPretendOccupants value="true" />
-<AllowJoyriding value="true" />
-<AllowSundayDriving value="true" />
-<AllowBodyColorMapping value="true" />
-<wheelScale value="0.298100" />
-<wheelScaleRear value="0.298100" />
-<dirtLevelMin value="0.000000" />
-<dirtLevelMax value="0.550000" />
-<envEffScaleMin value="0.000000" />
-<envEffScaleMax value="1.000000" />
-<envEffScaleMin2 value="0.000000" />
-<envEffScaleMax2 value="1.000000" />
-<damageMapScale value="0.750000" />
-<damageOffsetScale value="0.700000" />
-<diffuseTint value="0x00FFFFFF" />
-<steerWheelMult value="1.000000" />
-<HDTextureDist value="5.000000" />
-<lodDistances content="float_array">
-15.000000
-30.000000
-70.000000	
-140.000000	
-500.000000	
-500.000000
-</lodDistances>
-<minSeatHeight value="0.862" />
-<identicalModelSpawnDistance value="20" />
-<maxNumOfSameColor value="10" />
-<defaultBodyHealth value="1000.000000" />
-<pretendOccupantsScale value="1.000000" />
-<visibleSpawnDistScale value="1.000000" />
-<trackerPathWidth value="2.000000" />
-<weaponForceMult value="1.000000" />
-<frequency value="100" />
-<swankness>SWANKNESS_3</swankness>
-<maxNum value="999" />
-<flags>FLAG_PARKING_SENSORS FLAG_AVERAGE_CAR FLAG_RECESSED_HEADLIGHT_CORONAS FLAG_HAS_INTERIOR_EXTRAS</flags>
-<type>VEHICLE_TYPE_CAR</type>
-<plateType>VPT_FRONT_AND_BACK_PLATES</plateType>
-<dashboardType>VDT_TAILGATER</dashboardType>
-<vehicleClass>VC_COUPE</vehicleClass>
-<wheelType>VWT_SPORT</wheelType>
-<trailers />
-<additionalTrailers />
-<drivers />
-<extraIncludes />
-<doorsWithCollisionWhenClosed />
-<driveableDoors />
-<bumpersNeedToCollideWithMap value="false" />
-<needsRopeTexture value="false" />
-<requiredExtras />
-<rewards />
-<cinematicPartCamera>
-<Item>WHEEL_FRONT_RIGHT_CAMERA</Item>
-<Item>WHEEL_FRONT_LEFT_CAMERA</Item>
-<Item>WHEEL_REAR_RIGHT_CAMERA</Item>
-<Item>WHEEL_REAR_LEFT_CAMERA</Item>
-</cinematicPartCamera>
-<NmBraceOverrideSet />
-<buoyancySphereOffset x="0.000000" y="0.000000" z="0.000000" />
-<buoyancySphereSizeScale value="1.000000" />
-<pOverrideRagdollThreshold type="NULL" />
-<firstPersonDrivebyData>
-<Item>STD_ORACLE_FRONT_LEFT</Item>
-<Item>STD_ORACLE_FRONT_RIGHT</Item>
-<Item>STD_ORACLE_REAR_LEFT</Item>
-<Item>STD_ORACLE_REAR_RIGHT</Item>
-</firstPersonDrivebyData>
-</Item>
-<Item>
 <modelName>vip99</modelName>
 <txdName>vip99</txdName>
 <handlingId>vip99</handlingId>
@@ -19568,11 +19222,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.894" />
@@ -19663,7 +19317,7 @@
 <Offset x="0.136000" y="0.126000" z="0.455000" />
 <SeatIndex value="3" />
 </Item>
-</FirstPersonMobilePhoneSeatIKOffset> 
+</FirstPersonMobilePhoneSeatIKOffset>
 <PovCameraOffset x="0.000000" y="-0.175000" z="0.662500" />
 <PovCameraVerticalAdjustmentForRollCage value="0.000000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="-0.015000" />
@@ -20024,9 +19678,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-50.000000	
-100.000000	
-500.000000	
+50.000000
+100.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.834" />
@@ -20351,9 +20005,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-55.000000	
-110.000000	
-500.000000	
+55.000000
+110.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.815" />
@@ -20454,11 +20108,11 @@
 <steerWheelMult value="1.000000" />
 <HDTextureDist value="5.000000" />
 <lodDistances content="float_array">
-10.000000	
-25.000000	
-60.000000	
-120.000000	
-500.000000	
+10.000000
+25.000000
+60.000000
+120.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.805" />
@@ -20537,7 +20191,7 @@
 <FirstPersonDriveByRightPassengerUnarmedIKOffset x="0.000000" y="-0.080000" z="0.000000" />
 <FirstPersonMobilePhoneOffset x="0.110000" y="0.215000" z="0.518000" />
 <FirstPersonPassengerMobilePhoneOffset x="0.185000" y="0.125000" z="0.433000" />
-<FirstPersonMobilePhoneSeatIKOffset /> 
+<FirstPersonMobilePhoneSeatIKOffset />
 <PovCameraOffset x="0.000000" y="-0.210000" z="0.645000" />
 <PovCameraVerticalAdjustmentForRollCage value="-0.045000" />
 <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -20784,9 +20438,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-50.000000	
-100.000000	
-500.000000	
+50.000000
+100.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.847" />
@@ -20893,9 +20547,9 @@
 <lodDistances content="float_array">
 15.000000
 30.000000
-50.000000	
-100.000000	
-500.000000	
+50.000000
+100.000000
+500.000000
 500.000000
 </lodDistances>
 <minSeatHeight value="0.847" />
@@ -21271,7 +20925,7 @@
 <txdRelationships>
 <Item>
 <parent>vehicles_banshee_interior</parent>
-<child>m6f13</child>	  
+<child>m6f13</child>
 </Item>
 <Item>
 <parent>vehicles_banshee_interior</parent>
@@ -21316,7 +20970,7 @@
 <Item>
 <parent>vehicles_flyer_interior</parent>
 <child>sheriffmav2</child>
-</Item>  
+</Item>
 <Item>
 <parent>vehicles_cav_interior</parent>
 <child>lssheriff4</child>
@@ -21324,7 +20978,7 @@
 <Item>
 <parent>vehshare_worn</parent>
 <child>sheriffinsurgent2</child>
-</Item>	 
+</Item>
 <Item>
 <parent>vehshare_truck</parent>
 <child>sheriffriot2</child>
@@ -21332,7 +20986,7 @@
 <Item>
 <parent>vehicles_flyer_interior</parent>
 <child>sheriffmav</child>
-</Item>  
+</Item>
 <Item>
 <parent>vehicles_cav_interior</parent>
 <child>sheriff4</child>
@@ -21613,7 +21267,7 @@
 <Item>
 <parent>vehicles_poltax_interior</parent>
 <child>pfugitive</child>
-</Item>	
+</Item>
 <Item>
 <parent>vehicles_cav_interior</parent>
 <child>pgranger</child>
@@ -21625,7 +21279,7 @@
 <Item>
 <parent>vehicles_poltax_interior</parent>
 <child>pstanier</child>
-</Item>	
+</Item>
 <Item>
 <parent>vehicles_poltax_interior</parent>
 <child>ppremier</child>
@@ -21863,10 +21517,6 @@
 <child>tesla11</child>
 </Item>
 <Item>
-<parent>vehicles_schaf_interior</parent>
-<child>panamera</child>
-</Item>
-<Item>
 <parent>vehicles_dom_interior</parent>
 <child>p944</child>
 </Item>
@@ -21875,17 +21525,13 @@
 <child>vip99</child>
 </Item>
 <Item>
-<parent>vehicles_schaf_interior</parent>
-<child>sti05</child>
-</Item>
-<Item>
 <parent>vehicles_sultan_interior</parent>
 <child>celicassi</child>
 </Item>
 <Item>
 <parent>vehicles_sultan_interior</parent>
 <child>celicassi2</child>
-</Item>	
+</Item>
 <Item>
 <parent>vehicles_supergt_interior</parent>
 <child>amv12</child>
@@ -21921,7 +21567,7 @@
 <Item>
 <parent>vehicles_comet_interior</parent>
 <child>lh610</child>
-</Item>  
+</Item>
 <Item>
 <parent>vehicles_futo_interior</parent>
 <child>lev8</child>
@@ -21961,7 +21607,7 @@
 <Item>
 <parent>vehicles_comet_interior</parent>
 <child>caymanub</child>
-</Item>	
+</Item>
 <Item>
 <parent>vehicles_banshee_interior</parent>
 <child>laferublu</child>
@@ -21973,7 +21619,7 @@
 <Item>
 <parent>vehicles_supergt_interior</parent>
 <child>mcublu</child>
-</Item> 
+</Item>
 <Item>
 <parent>vehicles_schaf_interior</parent>
 <child>rczublu</child>

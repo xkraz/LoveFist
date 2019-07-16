@@ -24,4 +24,4 @@ data_file 'VEHICLE_VARIATION_FILE' 'carvariations.meta'
 --data_file 'VEHICLE_SHOP_DLC_FILE' 'data/shop_vehicle.meta'
 
 
---client_script { 'client/vehicle_name.lua' }
+--client_script 'vehicle_name.lua'

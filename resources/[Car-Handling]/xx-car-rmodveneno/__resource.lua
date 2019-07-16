@@ -14,4 +14,4 @@ files {
   'meta/dlctext.meta'
 }
 
-client_script 'vehicle_names.lua'
+client_script 'vehicle_name.lua'

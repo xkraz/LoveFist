@@ -85,8 +85,8 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_BACK_PLATES</plateType>
       <dashboardType>VDT_BANSHEE</dashboardType>
-      <vehicleClass>VC_SPORT</vehicleClass>
-      <wheelType>VWT_SPORT</wheelType>
+      <vehicleClass>VC_SUPER</vehicleClass>
+      <wheelType>VWT_SUPER</wheelType>
       <trailers />
       <additionalTrailers />
       <drivers />

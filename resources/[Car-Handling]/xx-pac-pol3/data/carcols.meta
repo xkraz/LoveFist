@@ -1,10 +1,10 @@
-<CVehicleModelInfoVarGlobal>    
+<CVehicleModelInfoVarGlobal>
 <Kits>
 <Item>
 <kitName>1004_gmt900escalade_modkit</kitName>
-<id value="1004" />	 	  
+<id value="1004" />
 <kitType>MKT_SPECIAL</kitType>
-<visibleMods> 
+<visibleMods>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -420,7 +420,7 @@
 </Item>
 <Item>
 <kitName>1005_500gtrlam_modkit</kitName>
-<id value="1005" />	 	  
+<id value="1005" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -2073,9 +2073,9 @@
 <!--EMS -->
 <Item>
 <kitName>650_empty_modkit</kitName>
-<id value="650" />	 	  
+<id value="650" />
 <kitType>MKT_STANDARD</kitType>
-<visibleMods />  
+<visibleMods />
 <linkMods />
 <statMods>
 <Item>
@@ -2554,7 +2554,7 @@
 <audioApply value="1.000000" />
 <weight value="0" />
 <type>VMT_HORN</type>
-</Item>	
+</Item>
 <Item>
 <identifier>XM15_HORN_02</identifier>
 <modifier value="400002352" />
@@ -2596,7 +2596,7 @@
 </Item>
 <Item>
 <kitName>651_luxrumpo_modkit</kitName>
-<id value="651" />	 	  
+<id value="651" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -3254,7 +3254,7 @@
 <audioApply value="1.000000" />
 <weight value="0" />
 <type>VMT_HORN</type>
-</Item>	
+</Item>
 <Item>
 <identifier>XM15_HORN_02</identifier>
 <modifier value="400002352" />
@@ -3297,9 +3297,9 @@
 <!-- CHP -->
 <Item>
 <kitName>156_jester2_modkit</kitName>
-<id value="156" />	 	  
+<id value="156" />
 <kitType>MKT_SPECIAL</kitType>
-<visibleMods> 
+<visibleMods>
 <Item>
 <modelName>jester2_cage</modelName>
 <modShopLabel>MNU_CAGE</modShopLabel>
@@ -3318,9 +3318,9 @@
 <Item>
 <modelName>jester2_cage2</modelName>
 <modShopLabel>MNU_CAGE3</modShopLabel>
-<linkedModels />     
+<linkedModels />
 <turnOffBones>
-<Item>misc_b</Item> 
+<Item>misc_b</Item>
 </turnOffBones>
 <type>VMT_CHASSIS</type>
 <bone>chassis</bone>
@@ -3335,9 +3335,9 @@
 <Item>
 <modelName>jester2_hatch</modelName>
 <modShopLabel>MNU_LOU</modShopLabel>
-<linkedModels />     
+<linkedModels />
 <turnOffBones>
-<Item>windscreen_r</Item> 
+<Item>windscreen_r</Item>
 </turnOffBones>
 <type>VMT_ROOF</type>
 <bone>boot</bone>
@@ -3487,9 +3487,9 @@
 <Item>
 <modelName>jester2_exh1</modelName>
 <modShopLabel>MNU_EXH12</modShopLabel>
-<linkedModels />     
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -3504,9 +3504,9 @@
 <Item>
 <modelName>jester2_exh3</modelName>
 <modShopLabel>MNU_EXH1</modShopLabel>
-<linkedModels />     
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -3521,9 +3521,9 @@
 <Item>
 <modelName>jester2_exh2</modelName>
 <modShopLabel>MNU_EXH6</modShopLabel>
-<linkedModels />     
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -3951,7 +3951,7 @@
 </Item>
 <Item>
 <kitName>157_massacaro2_modkit</kitName>
-<id value="157" />	 	  
+<id value="157" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -4079,7 +4079,7 @@
 <modShopLabel>mass2_BNT1</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -4096,7 +4096,7 @@
 <modShopLabel>mass2_BNT2</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -4113,7 +4113,7 @@
 <modShopLabel>mass2_BNT3</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -4244,13 +4244,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>        
+</Item>
 <Item>
 <modelName>mass2_ext1</modelName>
 <modShopLabel>mass2_EXT1</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -4261,7 +4261,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                  
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -4605,7 +4605,7 @@
 </Item>
 <Item>
 <kitName>158_ratloader2_modkit</kitName>
-<id value="158" />	 	  
+<id value="158" />
 <kitType>MKT_SUV</kitType>
 <visibleMods>
 <Item>
@@ -5276,7 +5276,7 @@
 </Item>
 <Item>
 <kitName>159_slamvan_modkit</kitName>
-<id value="159" />	 	  
+<id value="159" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods />
 <linkMods />
@@ -5647,7 +5647,7 @@
 <!-- xxx_cvpi_modkit -->
 <Item>
 <kitName>200_cvpi_modkit</kitName>
-<id value="200" />	 	  
+<id value="200" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -6353,7 +6353,7 @@
 <audioApply value="1.000000" />
 <weight value="0" />
 <type>VMT_HORN</type>
-</Item>	
+</Item>
 <Item>
 <identifier>XM15_HORN_02</identifier>
 <modifier value="400002352" />
@@ -6396,7 +6396,7 @@
 <!-- xxx_impa_modkit -->
 <Item>
 <kitName>204_impa_modkit</kitName>
-<id value="204" />	 	  
+<id value="204" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -6961,7 +6961,7 @@
 <audioApply value="1.000000" />
 <weight value="0" />
 <type>VMT_HORN</type>
-</Item>	
+</Item>
 <Item>
 <identifier>XM15_HORN_02</identifier>
 <modifier value="400002352" />
@@ -7004,7 +7004,7 @@
 <!-- 2006 TAHOE MODKIT BXBUGS123 -->
 <Item>
 <kitName>206_taho_modkit</kitName>
-<id value="206" />	 	  
+<id value="206" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -7755,7 +7755,7 @@
 <audioApply value="1.000000" />
 <weight value="0" />
 <type>VMT_HORN</type>
-</Item>	
+</Item>
 <Item>
 <identifier>XM15_HORN_02</identifier>
 <modifier value="400002352" />
@@ -7798,7 +7798,7 @@
 <!-- xxx_evan_modkit -->
 <Item>
 <kitName>202_evan_modkit</kitName>
-<id value="202" />	 	  
+<id value="202" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -8369,7 +8369,7 @@
 <audioApply value="1.000000" />
 <weight value="0" />
 <type>VMT_HORN</type>
-</Item>	
+</Item>
 <Item>
 <identifier>XM15_HORN_02</identifier>
 <modifier value="400002352" />
@@ -8411,7 +8411,7 @@
 </Item>
 <Item>
 <kitName>1006_rx7tunable_modkit</kitName>
-<id value="1006" />	 	  
+<id value="1006" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -9112,7 +9112,7 @@
 <modShopLabel>RX7TUNABLE_EXH_5</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>misc_a</Item>			
+<Item>misc_a</Item>
 <Item>exhaust</Item>
 <Item>exhaust_2</Item>
 </turnOffBones>
@@ -9131,7 +9131,7 @@
 <modShopLabel>RX7TUNABLE_EXH_6</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>misc_a</Item>			
+<Item>misc_a</Item>
 <Item>exhaust</Item>
 <Item>exhaust_2</Item>
 </turnOffBones>
@@ -9634,7 +9634,7 @@
 </Item>
 <Item>
 <kitName>1007_rmodskyline_modkit</kitName>
-<id value="1007" />	 	  
+<id value="1007" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -9795,7 +9795,7 @@
 <modShopLabel>gtr35_hood</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 <Item>misc_c</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
@@ -9811,11 +9811,11 @@
 <Item>
 <modelName>gtr35_exh1</modelName>
 <modShopLabel>MNU_EXH1</modShopLabel>
-<linkedModels />     
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
-<Item>exhaust</Item>  
-<Item>exhaust_2</Item>  
+<Item>misc_a</Item>
+<Item>exhaust</Item>
+<Item>exhaust_2</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -11348,7 +11348,7 @@
 </Item>
 <Item>
 <kitName>2029_furaiub_modkit</kitName>
-<id value="135" />	 	  
+<id value="135" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -11974,9 +11974,9 @@
 </Item>
 <Item>
 <kitName>2028_focusublu_modkit</kitName>
-<id value="2028" />	 	  
+<id value="2028" />
 <kitType>MKT_SPECIAL</kitType>
-<visibleMods>     
+<visibleMods>
 <Item>
 <modelName>omnis_livery1</modelName>
 <modShopLabel>OMNIS_LIV_1</modShopLabel>
@@ -11991,7 +11991,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>omnis_livery2</modelName>
 <modShopLabel>OMNIS_LIV_2</modShopLabel>
@@ -12006,13 +12006,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>focusublu_nospoiler</modelName>
 <modShopLabel>OMNIS_NOSPOIL</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>extra_1</Item>           
+<Item>extra_1</Item>
 </turnOffBones>
 <type>VMT_SPOILER</type>
 <bone>chassis</bone>
@@ -12023,7 +12023,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>  
+</Item>
 <Item>
 <modelName>focusublu_spoiler_2</modelName>
 <modShopLabel>OMNIS_SPOIL</modShopLabel>
@@ -12040,14 +12040,14 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>  
+</Item>
 <Item>
 <modelName>focusublu_exhaust</modelName>
 <modShopLabel>MNU_EXH5</modShopLabel>
 <linkedModels />
 <turnOffBones>
 <Item>misc_b</Item>
-<Item>exhaust</Item>            
+<Item>exhaust</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -12058,7 +12058,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>         
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -12187,7 +12187,7 @@
 <audioApply value="1.000000" />
 <weight value="0" />
 <type>VMT_SUSPENSION</type>
-</Item>         
+</Item>
 <Item>
 <identifier>HORN_TRUCK</identifier>
 <modifier value="1766676233" />
@@ -12523,9 +12523,9 @@
 </Item>
 <Item>
 <kitName>2027_22bbublu_modkit</kitName>
-<id value="2027" />	 	  
+<id value="2027" />
 <kitType>MKT_SPECIAL</kitType>
-<visibleMods>     
+<visibleMods>
 <Item>
 <modelName>tropos_livery1</modelName>
 <modShopLabel>TROPOS_LIV_1</modShopLabel>
@@ -12540,7 +12540,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>tropos_livery2</modelName>
 <modShopLabel>TROPOS_LIV_2</modShopLabel>
@@ -12555,7 +12555,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>22bbublu_null</modelName>
 <modShopLabel>TROPOS_N2</modShopLabel>
@@ -12780,7 +12780,7 @@
 <audioApply value="1.000000" />
 <weight value="40" />
 <type>VMT_ARMOUR</type>
-</Item>         
+</Item>
 <Item>
 <identifier>HORN_TRUCK</identifier>
 <modifier value="1766676233" />
@@ -14982,514 +14982,6 @@
 <liveryNames/>
 </Item>
 <Item>
-<kitName>2023_slrublu_modkit</kitName>
-<id value="2023"/>
-<kitType>MKT_STANDARD</kitType>
-<visibleMods />
-<linkMods />
-<statMods>
-<Item>
-<identifier/>
-<modifier value="25"/>
-<audioApply value="1.00000000"/>
-<weight value="20"/>
-<type>VMT_ENGINE</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="50"/>
-<audioApply value="1.00000000"/>
-<weight value="20"/>
-<type>VMT_ENGINE</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="75"/>
-<audioApply value="1.00000000"/>
-<weight value="20"/>
-<type>VMT_ENGINE</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="100"/>
-<audioApply value="1.00000000"/>
-<weight value="20"/>
-<type>VMT_ENGINE</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="25"/>
-<audioApply value="1.00000000"/>
-<weight value="5"/>
-<type>VMT_BRAKES</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="50"/>
-<audioApply value="1.00000000"/>
-<weight value="5"/>
-<type>VMT_BRAKES</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="100"/>
-<audioApply value="1.00000000"/>
-<weight value="5"/>
-<type>VMT_BRAKES</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="25"/>
-<audioApply value="1.00000000"/>
-<weight value="5"/>
-<type>VMT_GEARBOX</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="50"/>
-<audioApply value="1.00000000"/>
-<weight value="5"/>
-<type>VMT_GEARBOX</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="100"/>
-<audioApply value="1.00000000"/>
-<weight value="5"/>
-<type>VMT_GEARBOX</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="20"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_ARMOUR</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="40"/>
-<audioApply value="1.00000000"/>
-<weight value="10"/>
-<type>VMT_ARMOUR</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="60"/>
-<audioApply value="1.00000000"/>
-<weight value="20"/>
-<type>VMT_ARMOUR</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="80"/>
-<audioApply value="1.00000000"/>
-<weight value="30"/>
-<type>VMT_ARMOUR</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="100"/>
-<audioApply value="1.00000000"/>
-<weight value="40"/>
-<type>VMT_ARMOUR</type>
-</Item>
-<Item>
-<identifier>HORN_TRUCK</identifier>
-<modifier value="1766676233"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HORN_COP</identifier>
-<modifier value="2904189469"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HORN_CLOWN</identifier>
-<modifier value="2543206147"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HORN_MUSICAL_1</identifier>
-<modifier value="1732399718"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HORN_MUSICAL_2</identifier>
-<modifier value="2046162893"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HORN_MUSICAL_3</identifier>
-<modifier value="2194999691"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HORN_MUSICAL_4</identifier>
-<modifier value="2508304100"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HORN_MUSICAL_5</identifier>
-<modifier value="3707223535"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HORN_SAD_TROMBONE</identifier>
-<modifier value="632950117"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="5"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_SUSPENSION</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="10"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_SUSPENSION</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="15"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_SUSPENSION</type>
-</Item>
-<Item>
-<identifier/>
-<modifier value="20"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_SUSPENSION</type>
-</Item>
-<Item>
-<identifier>MUSICAL_HORN_BUSINESS_1</identifier>
-<modifier value="3628534289"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>MUSICAL_HORN_BUSINESS_2</identifier>
-<modifier value="3892554122"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>MUSICAL_HORN_BUSINESS_3</identifier>
-<modifier value="4112892878"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>MUSICAL_HORN_BUSINESS_4</identifier>
-<modifier value="116877169"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>MUSICAL_HORN_BUSINESS_5</identifier>
-<modifier value="2684983719"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>MUSICAL_HORN_BUSINESS_6</identifier>
-<modifier value="2982690084"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>MUSICAL_HORN_BUSINESS_7</identifier>
-<modifier value="3203290992"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>DLC_BUSI2_C_MAJOR_NOTES_C0</identifier>
-<modifier value="771284519"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>DLC_BUSI2_C_MAJOR_NOTES_D0</identifier>
-<modifier value="2586621229"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>DLC_BUSI2_C_MAJOR_NOTES_E0</identifier>
-<modifier value="283386134"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>DLC_BUSI2_C_MAJOR_NOTES_F0</identifier>
-<modifier value="3884502400"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>DLC_BUSI2_C_MAJOR_NOTES_G0</identifier>
-<modifier value="265723083"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>DLC_BUSI2_C_MAJOR_NOTES_A0</identifier>
-<modifier value="1746883687"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>DLC_BUSI2_C_MAJOR_NOTES_B0</identifier>
-<modifier value="1919870950"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>DLC_BUSI2_C_MAJOR_NOTES_C1</identifier>
-<modifier value="1085277077"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HIPSTER_HORN_1</identifier>
-<modifier value="444549672"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HIPSTER_HORN_2</identifier>
-<modifier value="1603064898"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HIPSTER_HORN_3</identifier>
-<modifier value="240366033"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>HIPSTER_HORN_4</identifier>
-<modifier value="960137118"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>INDEP_HORN_1</identifier>
-<modifier value="3572144790"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>INDEP_HORN_2</identifier>
-<modifier value="3801396714"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>INDEP_HORN_3</identifier>
-<modifier value="2843657151"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>INDEP_HORN_4</identifier>
-<modifier value="3341811489"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LUXE_HORN_1</identifier>
-<modifier value="3199657341"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LUXE_HORN_2</identifier>
-<modifier value="2900378064"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LUXE_HORN_3</identifier>
-<modifier value="3956195248"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LUXORY_HORN_1</identifier>
-<modifier value="676333254"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LUXURY_HORN_2</identifier>
-<modifier value="2099578296"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LUXURY_HORN_3</identifier>
-<modifier value="1373384483"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>ORGAN_HORN_LOOP_01</identifier>
-<modifier value="2916775806"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>ORGAN_HORN_LOOP_01_PREVIEW</identifier>
-<modifier value="3714706952"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>ORGAN_HORN_LOOP_02</identifier>
-<modifier value="2611860261"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>ORGAN_HORN_LOOP_02_PREVIEW</identifier>
-<modifier value="3206770359"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LOWRIDER_HORN_1</identifier>
-<modifier value="310529291"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LOWRIDER_HORN_1_PREVIEW</identifier>
-<modifier value="2965568987"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LOWRIDER_HORN_2</identifier>
-<modifier value="55291550"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>LOWRIDER_HORN_2_PREVIEW</identifier>
-<modifier value="965054819"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>XM15_HORN_01</identifier>
-<modifier value="55862314"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>XM15_HORN_01_PREVIEW</identifier>
-<modifier value="2156743178"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>XM15_HORN_02</identifier>
-<modifier value="400002352"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>XM15_HORN_02_PREVIEW</identifier>
-<modifier value="897484282"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>XM15_HORN_03</identifier>
-<modifier value="560832604"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-<Item>
-<identifier>XM15_HORN_03_PREVIEW</identifier>
-<modifier value="314232747"/>
-<audioApply value="1.00000000"/>
-<weight value="0"/>
-<type>VMT_HORN</type>
-</Item>
-</statMods>
-<slotNames/>
-<liveryNames/>
-</Item>
-<Item>
 <kitName>2022_rczublu_modkit</kitName>
 <id value="2022"/>
 <kitType>MKT_STANDARD</kitType>
@@ -16079,7 +15571,7 @@
 </Item>
 <Item>
 <kitName>2021_mcublu_modkit</kitName>
-<id value="2021" />	 	  
+<id value="2021" />
 <kitType>MKT_SPORT</kitType>
 <visibleMods>
 <Item>
@@ -16751,9 +16243,9 @@
 </Item>
 <Item>
 <kitName>2012_911ublu_modkit</kitName>
-<id value="2012" />	 	  
+<id value="2012" />
 <kitType>MKT_SPECIAL</kitType>
-<visibleMods>     
+<visibleMods>
 <Item>
 <modelName>911ublu_livery1</modelName>
 <modShopLabel>TYRUS_LIV_1</modShopLabel>
@@ -16768,7 +16260,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>911ublu_livery2</modelName>
 <modShopLabel>TYRUS_LIV_2</modShopLabel>
@@ -16783,7 +16275,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>911ublu_spoiler_2</modelName>
 <modShopLabel>911_WING14</modShopLabel>
@@ -16800,7 +16292,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>  
+</Item>
 <Item>
 <modelName>911ublu_spoiler_3</modelName>
 <modShopLabel>PROTO_WING2</modShopLabel>
@@ -16817,17 +16309,17 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>          
+</Item>
 <Item>
 <modelName>911ublu_1exh</modelName>
 <modShopLabel>MNU_EXH12</modShopLabel>
 <linkedModels />
 <turnOffBones>
 <Item>misc_b</Item>
-<Item>exhaust</Item>        
-<Item>exhaust_2</Item> 
-<Item>exhaust_3</Item> 
-<Item>exhaust_4</Item>               
+<Item>exhaust</Item>
+<Item>exhaust_2</Item>
+<Item>exhaust_3</Item>
+<Item>exhaust_4</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -16838,17 +16330,17 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>911ublu_2exh</modelName>
 <modShopLabel>MNU_EXH6</modShopLabel>
 <linkedModels />
 <turnOffBones>
 <Item>misc_b</Item>
-<Item>exhaust</Item> 
-<Item>exhaust_2</Item> 
-<Item>exhaust_3</Item> 
-<Item>exhaust_4</Item>              
+<Item>exhaust</Item>
+<Item>exhaust_2</Item>
+<Item>exhaust_3</Item>
+<Item>exhaust_4</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -16866,10 +16358,10 @@
 <linkedModels />
 <turnOffBones>
 <Item>misc_b</Item>
-<Item>exhaust</Item>   
-<Item>exhaust_2</Item> 
-<Item>exhaust_3</Item> 
-<Item>exhaust_4</Item>              
+<Item>exhaust</Item>
+<Item>exhaust_2</Item>
+<Item>exhaust_3</Item>
+<Item>exhaust_4</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -16880,7 +16372,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>        
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -17009,7 +16501,7 @@
 <audioApply value="1.000000" />
 <weight value="0" />
 <type>VMT_SUSPENSION</type>
-</Item>         
+</Item>
 <Item>
 <identifier>HORN_TRUCK</identifier>
 <modifier value="1766676233" />
@@ -17345,9 +16837,9 @@
 </Item>
 <Item>
 <kitName>2011_laferublu_modkit</kitName>
-<id value="2011" />	 	  
+<id value="2011" />
 <kitType>MKT_SPECIAL</kitType>
-<visibleMods>  
+<visibleMods>
 <Item>
 <modelName>laferublu_wing2</modelName>
 <modShopLabel>MNU_WING8</modShopLabel>
@@ -17381,9 +16873,9 @@
 <Item>
 <modelName>laferublu_exh1</modelName>
 <modShopLabel>MNU_EXH12</modShopLabel>
-<linkedModels />     
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -17398,9 +16890,9 @@
 <Item>
 <modelName>laferublu_exh3</modelName>
 <modShopLabel>MNU_EXH1</modShopLabel>
-<linkedModels />     
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -17415,9 +16907,9 @@
 <Item>
 <modelName>laferublu_exh2</modelName>
 <modShopLabel>MNU_EXH6</modShopLabel>
-<linkedModels />     
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -17436,8 +16928,8 @@
 <Item>laferublu_roof2</Item>
 </linkedModels>
 <turnOffBones>
-<Item>misc_b</Item> 
-<Item>misc_c</Item> 
+<Item>misc_b</Item>
+<Item>misc_c</Item>
 </turnOffBones>
 <type>VMT_ROOF</type>
 <bone>chassis</bone>
@@ -21292,7 +20784,7 @@
 </Item>
 <Item>
 <kitName>2005_cadicts_modkit</kitName>
-<id value="2005" />	 	  
+<id value="2005" />
 <kitType>MKT_SPORT</kitType>
 <visibleMods>
 <Item>
@@ -22289,7 +21781,7 @@
 <audioApply value="1.000000" />
 <weight value="0" />
 <type>VMT_HORN</type>
-</Item>	
+</Item>
 <Item>
 <identifier>XM15_HORN_02</identifier>
 <modifier value="400002352" />
@@ -22331,7 +21823,7 @@
 </Item>
 <Item>
 <kitName>2001_lamven_modkit</kitName>
-<id value="2001" />	 	  
+<id value="2001" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -22468,7 +21960,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>        
+</Item>
 <Item>
 <modelName>lamven_skirt_carb</modelName>
 <modShopLabel>ZENT_SKIRT_CARB</modShopLabel>
@@ -22483,15 +21975,15 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>lamven_ext2</modelName>
 <modShopLabel>ZENT_EXT2</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_b</Item> 
-<Item>exhaust</Item>  
-<Item>exhaust_2</Item>  
+<Item>misc_b</Item>
+<Item>exhaust</Item>
+<Item>exhaust_2</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -22502,15 +21994,15 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                  
+</Item>
 <Item>
 <modelName>lamven_ext3</modelName>
 <modShopLabel>ZENT_EXT3</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_b</Item> 
-<Item>exhaust</Item>  
-<Item>exhaust_2</Item>  
+<Item>misc_b</Item>
+<Item>exhaust</Item>
+<Item>exhaust_2</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -22521,15 +22013,15 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>               
+</Item>
 <Item>
 <modelName>lamven_ext4</modelName>
 <modShopLabel>ZENT_EXT4</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_b</Item> 
-<Item>exhaust</Item>  
-<Item>exhaust_2</Item>  
+<Item>misc_b</Item>
+<Item>exhaust</Item>
+<Item>exhaust_2</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -22540,15 +22032,15 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>    
+</Item>
 <Item>
 <modelName>lamven_ext5</modelName>
 <modShopLabel>ZENT_EXT5</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_b</Item> 
-<Item>exhaust</Item>  
-<Item>exhaust_2</Item>  
+<Item>misc_b</Item>
+<Item>exhaust</Item>
+<Item>exhaust_2</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -22559,13 +22051,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>  
+</Item>
 <Item>
 <modelName>lamven_b2_mod</modelName>
 <modShopLabel>ZENT_B2_MOD</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_d</Item> 
+<Item>misc_d</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>chassis</bone>
@@ -22576,13 +22068,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>lamven_b3_mod</modelName>
 <modShopLabel>ZENT_B3_MOD</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_d</Item> 
+<Item>misc_d</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>chassis</bone>
@@ -22593,13 +22085,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>  
+</Item>
 <Item>
 <modelName>lamven_panel_bc1</modelName>
 <modShopLabel>ZENT_PANEL_BC1</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_c</Item> 
+<Item>misc_c</Item>
 </turnOffBones>
 <type>VMT_CHASSIS</type>
 <bone>chassis</bone>
@@ -22610,13 +22102,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>    
+</Item>
 <Item>
 <modelName>lamven_panel_bc2</modelName>
 <modShopLabel>ZENT_PANEL_BC2</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_c</Item> 
+<Item>misc_c</Item>
 </turnOffBones>
 <type>VMT_CHASSIS</type>
 <bone>chassis</bone>
@@ -22627,7 +22119,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>   
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -22966,7 +22458,7 @@
 </Item>
 <Item>
 <kitName>1989_cygnet11_modkit</kitName>
-<id value="1989" />	 	  
+<id value="1989" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -24732,7 +24224,7 @@
 </Item>
 <Item>
 <kitName>1987_lh610_modkit</kitName>
-<id value="1987" />	 	  
+<id value="1987" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -25423,9 +24915,9 @@
 </Item>
 <Item>
 <kitName>1986_p107_modkit</kitName>
-<id value="1986" />	 	  
+<id value="1986" />
 <kitType>MKT_SPECIAL</kitType>
-<visibleMods>   
+<visibleMods>
 <Item>
 <modelName>p107_livery1</modelName>
 <modShopLabel>BRIO_LIV_1</modShopLabel>
@@ -25440,7 +24932,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>    
+</Item>
 <Item>
 <modelName>p107_livery2</modelName>
 <modShopLabel>BRIO_LIV_2</modShopLabel>
@@ -25455,14 +24947,14 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>p107_misc_e</modelName>
 <modShopLabel>MNU_WING3</modShopLabel>
 <linkedModels />
 <turnOffBones>
 <Item>misc_a</Item>
-<Item>spoiler_coll</Item>            
+<Item>spoiler_coll</Item>
 </turnOffBones>
 <type>VMT_SPOILER</type>
 <bone>boot</bone>
@@ -25473,14 +24965,14 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>     
+</Item>
 <Item>
 <modelName>p107_misc_f</modelName>
 <modShopLabel>MNU_WING9</modShopLabel>
 <linkedModels />
 <turnOffBones>
 <Item>misc_a</Item>
-<Item>spoiler_coll</Item>            
+<Item>spoiler_coll</Item>
 </turnOffBones>
 <type>VMT_SPOILER</type>
 <bone>boot</bone>
@@ -25508,7 +25000,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>  
+</Item>
 <Item>
 <modelName>p107_bumper_f_b</modelName>
 <modShopLabel>SULTAN_BUMF7</modShopLabel>
@@ -25525,7 +25017,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>p107_bumper_f_C</modelName>
 <modShopLabel>futo_bumr1</modShopLabel>
@@ -26114,7 +25606,7 @@
 </Item>
 <Item>
 <kitName>1985_renmeg_modkit</kitName>
-<id value="1985" />	 	  
+<id value="1985" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -26122,7 +25614,7 @@
 <modShopLabel>RENMEG_BNT_STRIPE</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -26133,7 +25625,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>    
+</Item>
 <Item>
 <modelName>renmeg_blow_1</modelName>
 <modShopLabel>MNU_BONB2</modShopLabel>
@@ -26141,7 +25633,7 @@
 <Item>renmeg_bon</Item>
 </linkedModels>
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>chassis</bone>
@@ -26160,7 +25652,7 @@
 <Item>renmeg_bon</Item>
 </linkedModels>
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>chassis</bone>
@@ -26189,7 +25681,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>  
+</Item>
 <Item>
 <modelName>renmeg_flame_lf</modelName>
 <modShopLabel>RHAP_FLAME_LF</modShopLabel>
@@ -26206,7 +25698,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>  
+</Item>
 <Item>
 <modelName>renmeg_wing2_lf</modelName>
 <modShopLabel>RHAP_WING2_LF</modShopLabel>
@@ -26224,7 +25716,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>renmeg_splitter</modelName>
 <modShopLabel>MNU_BUMF1</modShopLabel>
@@ -26259,8 +25751,8 @@
 <modelName>renmeg_ext2</modelName>
 <modShopLabel>MNU_EXH3</modShopLabel>
 <turnOffBones>
-<Item>misc_a</Item> 
-<Item>exhaust</Item> 
+<Item>misc_a</Item>
+<Item>exhaust</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -26277,8 +25769,8 @@
 <modShopLabel>MAN_EXT1</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
-<Item>exhaust</Item> 
+<Item>misc_a</Item>
+<Item>exhaust</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -26295,8 +25787,8 @@
 <modShopLabel>MNU_EXHB6</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
-<Item>exhaust</Item> 
+<Item>misc_a</Item>
+<Item>exhaust</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -27163,7 +26655,7 @@
 </Item>
 <Item>
 <kitName>1983_musty5_modkit</kitName>
-<id value="1983" />	 	  
+<id value="1983" />
 <kitType>MKT_SPORT</kitType>
 <visibleMods>
 <Item>
@@ -27756,7 +27248,7 @@
 </Item>
 <Item>
 <kitName>1982_mx5a_modkit</kitName>
-<id value="1982" />	 	  
+<id value="1982" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -28327,7 +27819,7 @@
 </Item>
 <Item>
 <kitName>1981_mx5_modkit</kitName>
-<id value="1981" />	 	  
+<id value="1981" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -28898,7 +28390,7 @@
 </Item>
 <Item>
 <kitName>1980_f360_modkit</kitName>
-<id value="1980" />	 	  
+<id value="1980" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -31080,7 +30572,7 @@
 </Item>
 <Item>
 <kitName>1979_amv12_modkit</kitName>
-<id value="1979" />	 	  
+<id value="1979" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -31161,7 +30653,7 @@
 <Item>
 <modelName>amv12_skirt</modelName>
 <modShopLabel>VANQ_SKRT</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones />
 <type>VMT_SKIRT</type>
 <bone>chassis</bone>
@@ -31626,7 +31118,7 @@
 </Item>
 <Item>
 <kitName>1978_celicassi2_modkit</kitName>
-<id value="1978" />	 	  
+<id value="1978" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -32176,7 +31668,7 @@
 </Item>
 <Item>
 <kitName>1977_celicassi_modkit</kitName>
-<id value="1977" />	 	  
+<id value="1977" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -32722,7 +32214,7 @@
 </Item>
 <Item>
 <kitName>1976_sti05_modkit</kitName>
-<id value="1976" />	 	  
+<id value="1976" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -32773,7 +32265,7 @@
 <Item>
 <modelName>sti05_skirt_mod</modelName>
 <modShopLabel>STI_SKRT</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones />
 <type>VMT_SKIRT</type>
 <bone>chassis</bone>
@@ -33233,8 +32725,8 @@
 <liveryNames />
 </Item>
 <Item>
-<kitName>1975_panamera_modkit</kitName>
-<id value="1975" />	 	  
+<kitName>1976_panamera_modkit</kitName>
+<id value="1975" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 </visibleMods>
@@ -33625,7 +33117,7 @@
 </Item>
 <Item>
 <kitName>1974_vip99_modkit</kitName>
-<id value="1974" />	 	  
+<id value="1974" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -34485,7 +33977,7 @@
 </Item>
 <Item>
 <kitName>1973_p944_modkit</kitName>
-<id value="1973" />	 	  
+<id value="1973" />
 <kitType>MKT_SPORT</kitType>
 <visibleMods>
 <Item>
@@ -35064,7 +34556,7 @@
 </Item>
 <Item>
 <kitName>1972_rx8_modkit</kitName>
-<id value="1972" />	 	  
+<id value="1972" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -35162,7 +34654,7 @@
 <modShopLabel>MNU_BUMF2</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>bumper_f</Item> 
+<Item>bumper_f</Item>
 </turnOffBones>
 <type>VMT_BUMPER_F</type>
 <bone>bumper_f</bone>
@@ -35179,7 +34671,7 @@
 <modShopLabel>MNU_BUMF3</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>bumper_f</Item> 
+<Item>bumper_f</Item>
 </turnOffBones>
 <type>VMT_BUMPER_F</type>
 <bone>bumper_f</bone>
@@ -35196,7 +34688,7 @@
 <modShopLabel>MNU_BUMF3</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>bumper_f</Item> 
+<Item>bumper_f</Item>
 </turnOffBones>
 <type>VMT_BUMPER_F</type>
 <bone>bumper_f</bone>
@@ -35211,7 +34703,7 @@
 <Item>
 <modelName>rx8_skirt_1</modelName>
 <modShopLabel>RX8_SKRT</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones />
 <type>VMT_SKIRT</type>
 <bone>chassis</bone>
@@ -35222,11 +34714,11 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>rx8_skirt_2</modelName>
 <modShopLabel>RX8_SKRT</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones />
 <type>VMT_SKIRT</type>
 <bone>chassis</bone>
@@ -35237,11 +34729,11 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>      
+</Item>
 <Item>
 <modelName>rx8_skirt_3</modelName>
 <modShopLabel>RX8_SKRT</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones />
 <type>VMT_SKIRT</type>
 <bone>chassis</bone>
@@ -35256,7 +34748,7 @@
 <Item>
 <modelName>rx8_skirt_4</modelName>
 <modShopLabel>RX8_SKRT</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones />
 <type>VMT_SKIRT</type>
 <bone>chassis</bone>
@@ -35267,7 +34759,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>            
+</Item>
 <Item>
 <modelName>rx8_bumr_1</modelName>
 <modShopLabel>RX8_BUMR1</modShopLabel>
@@ -35333,7 +34825,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>       
+</Item>
 <Item>
 <modelName>rx8_bonnet_1</modelName>
 <modShopLabel>MNU_BONR</modShopLabel>
@@ -36025,7 +35517,7 @@
 </Item>
 <Item>
 <kitName>1971_p959_modkit</kitName>
-<id value="1971" />	 	  
+<id value="1971" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -36626,7 +36118,7 @@
 </Item>
 <Item>
 <kitName>1970_tesla11_modkit</kitName>
-<id value="1970" />	 	  
+<id value="1970" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -36664,7 +36156,7 @@
 <modShopLabel>MNU_BUMF1</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>bumper_f</Item> 
+<Item>bumper_f</Item>
 </turnOffBones>
 <type>VMT_BUMPER_F</type>
 <bone>bumper_f</bone>
@@ -36679,7 +36171,7 @@
 <Item>
 <modelName>tesla11_skirts</modelName>
 <modShopLabel>TSL_SKRT</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones />
 <type>VMT_SKIRT</type>
 <bone>chassis</bone>
@@ -36690,7 +36182,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>          
+</Item>
 <Item>
 <modelName>tesla11_bonnet</modelName>
 <modShopLabel>vc7_HOOD</modShopLabel>
@@ -36741,7 +36233,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                        
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -37125,7 +36617,7 @@
 </Item>
 <Item>
 <kitName>1969_gtbf_modkit</kitName>
-<id value="1969" />	 	  
+<id value="1969" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -37178,9 +36670,9 @@
 <Item>
 <modelName>gtbf_ext_1</modelName>
 <modShopLabel>MNU_EXH12</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -37191,7 +36683,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                                  
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -38401,7 +37893,7 @@
 </Item>
 <Item>
 <kitName>1966_vc7_modkit</kitName>
-<id value="1966" />	 	  
+<id value="1966" />
 <kitType>MKT_STANDARD</kitType>
 <visibleMods>
 <Item>
@@ -38518,9 +38010,9 @@
 <Item>
 <modelName>vc7_exh1</modelName>
 <modShopLabel>MNU_EXH12</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -38531,13 +38023,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                  
+</Item>
 <Item>
 <modelName>vc7_exh2</modelName>
 <modShopLabel>MNU_EXH12</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -38548,13 +38040,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                  
+</Item>
 <Item>
 <modelName>vc7_exh3</modelName>
 <modShopLabel>MNU_EXH12</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -38565,7 +38057,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                  
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -38949,7 +38441,7 @@
 </Item>
 <Item>
 <kitName>1965_zr1c3_modkit</kitName>
-<id value="1965" />	 	  
+<id value="1965" />
 <kitType>MKT_SPORT</kitType>
 <visibleMods>
 <Item>
@@ -39647,7 +39139,7 @@
 </Item>
 <Item>
 <kitName>1964_brz13_modkit</kitName>
-<id value="1964" />	 	  
+<id value="1964" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -43889,7 +43381,7 @@
 </Item>
 <Item>
 <kitName>1959_gallardo_modkit</kitName>
-<id value="1959" />	 	  
+<id value="1959" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -43927,7 +43419,7 @@
 <modShopLabel>gallardo_cage</modShopLabel>
 <linkedModels />
 <turnOffBones>
-<Item>misc_d</Item> 
+<Item>misc_d</Item>
 </turnOffBones>
 <type>VMT_CHASSIS</type>
 <bone>chassis</bone>
@@ -43938,13 +43430,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>        
+</Item>
 <Item>
 <modelName>gallardo_ext_1</modelName>
 <modShopLabel>gallardo_EXT2</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -43959,9 +43451,9 @@
 <Item>
 <modelName>gallardo_bon</modelName>
 <modShopLabel>gallardo_bonnet</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -43972,7 +43464,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                  
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -44384,15 +43876,15 @@
 </Item>
 <Item>
 <kitName>1960_cobra_modkit</kitName>
-<id value="1960" />	 	  
+<id value="1960" />
 <kitType>MKT_SPECIAL</kitType>
-<visibleMods>     
+<visibleMods>
 <Item>
 <modelName>cobra_hood_1</modelName>
 <modShopLabel>cobra_bonnet</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -44403,13 +43895,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>  
+</Item>
 <Item>
 <modelName>cobra_hood_2</modelName>
 <modShopLabel>cobra_bonnet</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -44420,13 +43912,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>               
+</Item>
 <Item>
 <modelName>cobra_hood_3</modelName>
 <modShopLabel>cobra_bonnet</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -44437,13 +43929,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>               
+</Item>
 <Item>
 <modelName>cobra_hood_4</modelName>
 <modShopLabel>cobra_bonnet</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -44454,13 +43946,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>               
+</Item>
 <Item>
 <modelName>cobra_hood_5</modelName>
 <modShopLabel>cobra_bonnet</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -44471,11 +43963,11 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>               
+</Item>
 <Item>
 <modelName>cobra_exh_1</modelName>
 <modShopLabel>cobra_EXT1</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
 <Item>misc_d</Item>
 </turnOffBones>
@@ -44488,7 +43980,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -44900,7 +44392,7 @@
 </Item>
 <Item>
 <kitName>1961_z4i_modkit</kitName>
-<id value="1961" />	 	  
+<id value="1961" />
 <kitType>MKT_SPECIAL</kitType>
 <visibleMods>
 <Item>
@@ -44974,9 +44466,9 @@
 <Item>
 <modelName>z4i_exh_1</modelName>
 <modShopLabel>z4i_EXT1</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -44991,7 +44483,7 @@
 <Item>
 <modelName>z4i_exh_2</modelName>
 <modShopLabel>z4i_EXT2</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones />
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -45006,7 +44498,7 @@
 <Item>
 <modelName>z4i_exh_3</modelName>
 <modShopLabel>z4i_EXT3</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones />
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -45021,9 +44513,9 @@
 <Item>
 <modelName>z4i_hood_1</modelName>
 <modShopLabel>z4i_bonnet</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -45034,13 +44526,13 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item> 
+</Item>
 <Item>
 <modelName>z4i_hood_2</modelName>
 <modShopLabel>z4i_bonnet</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -45051,7 +44543,7 @@
 <turnOffExtra value="false" />
 <disableBonnetCamera value="false" />
 <allowBonnetSlide value="true" />
-</Item>                              
+</Item>
 </visibleMods>
 <linkMods />
 <statMods>
@@ -45469,9 +44961,9 @@
 <Item>
 <modelName>300gsl_exh1</modelName>
 <modShopLabel>MNU_EXH4</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -45486,9 +44978,9 @@
 <Item>
 <modelName>300gsl_exh2</modelName>
 <modShopLabel>MNU_EXH6</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>misc_a</Item> 
+<Item>misc_a</Item>
 </turnOffBones>
 <type>VMT_EXHAUST</type>
 <bone>chassis</bone>
@@ -45503,9 +44995,9 @@
 <Item>
 <modelName>300gsl_tow</modelName>
 <modShopLabel>FELTZ3_TOW</modShopLabel>
-<linkedModels />        
+<linkedModels />
 <turnOffBones>
-<Item>bumper_r</Item> 
+<Item>bumper_r</Item>
 </turnOffBones>
 <type>VMT_BUMPER_R</type>
 <bone>chassis</bone>
@@ -45538,7 +45030,7 @@
 <linkedModels>
 <Item>300gsl_hlightl</Item>
 <Item>300gsl_hlightr</Item>
-</linkedModels>        
+</linkedModels>
 <turnOffBones />
 <type>VMT_CHASSIS</type>
 <bone>chassis</bone>
@@ -45553,9 +45045,9 @@
 <Item>
 <modelName>300gsl_hood</modelName>
 <modShopLabel>MNU_BONC</modShopLabel>
-<linkedModels />  
+<linkedModels />
 <turnOffBones>
-<Item>bonnet</Item> 
+<Item>bonnet</Item>
 </turnOffBones>
 <type>VMT_BONNET</type>
 <bone>bonnet</bone>
@@ -45570,8 +45062,8 @@
 <Item>
 <modelName>300gsl_spare</modelName>
 <modShopLabel>MNU_SPARE</modShopLabel>
-<linkedModels />        
-<turnOffBones /> 
+<linkedModels />
+<turnOffBones />
 <type>VMT_SPOILER</type>
 <bone>boot</bone>
 <collisionBone>mod_col_1</collisionBone>
@@ -45585,8 +45077,8 @@
 <Item>
 <modelName>300gsl_spots</modelName>
 <modShopLabel>FELTZ3_SPT1</modShopLabel>
-<linkedModels />        
-<turnOffBones /> 
+<linkedModels />
+<turnOffBones />
 <type>VMT_GRILL</type>
 <bone>chassis</bone>
 <collisionBone>chassis</collisionBone>
@@ -45600,8 +45092,8 @@
 <Item>
 <modelName>300gsl_spots2</modelName>
 <modShopLabel>FELTZ3_SPT2</modShopLabel>
-<linkedModels />        
-<turnOffBones /> 
+<linkedModels />
+<turnOffBones />
 <type>VMT_GRILL</type>
 <bone>chassis</bone>
 <collisionBone>chassis</collisionBone>
@@ -46012,7 +45504,7 @@
 </Kits>
 <Lights>
 <Item>
-<id value="916" />	
+<id value="916" />
 <indicator>
 <intensity value="0.37500000"/>
 <falloffMax value="2.50000000"/>
@@ -46212,7 +45704,7 @@
 </extraLight>
 </Item>
 <Item>
-<id value="700" />	
+<id value="700" />
 <indicator>
 <intensity value="0.37500000"/>
 <falloffMax value="2.50000000"/>
@@ -46350,7 +45842,7 @@
 <name>rx7tunable</name>
 </Item>
 <Item>
-<id value="701" />	
+<id value="701" />
 <indicator>
 <intensity value="0.37500000"/>
 <falloffMax value="2.50000000"/>
@@ -47314,7 +46806,7 @@
 <name>bxbugs123</name>
 </Item>
 <Item>
-<id value="1958" />	
+<id value="1958" />
 <indicator>
 <intensity value="0.375000" />
 <falloffMax value="2.500000" />
@@ -49722,7 +49214,7 @@
 <castShadows value="false"/>
 </Item>
 </sirens>
-</Item> 
+</Item>
 <!-- (16) CUSTOM RB -->
 <Item>
 <id value="16"/>
@@ -58969,6 +58461,775 @@
 </sirens>
 </Item>
 <!-- (31) SAHP Lore -->
+<Item>
+<id value="31123"/>
+<name>SAHP</name>
+<timeMultiplier value="1.12500000"/>
+<lightFalloffMax value="10.00000000"/>
+<lightFalloffExponent value="10.00000000"/>
+<lightInnerConeAngle value="2.29061000"/>
+<lightOuterConeAngle value="70.00000000"/>
+<lightOffset value="0.00000000"/>
+<textureName>VehicleLight_sirenlight</textureName>
+<sequencerBpm value="220"/>
+<leftHeadLight>
+<sequencer value="0"/>
+</leftHeadLight>
+<rightHeadLight>
+<sequencer value="0"/>
+</rightHeadLight>
+<leftTailLight>
+<sequencer value="0"/>
+</leftTailLight>
+<rightTailLight>
+<sequencer value="0"/>
+</rightTailLight>
+<leftHeadLightMultiples value="1"/>
+<rightHeadLightMultiples value="1"/>
+<leftTailLightMultiples value="1"/>
+<rightTailLightMultiples value="1"/>
+<useRealLights value="true"/>
+<sirens>
+<Item>
+<!--1-->
+<rotation>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="1.57079600"/>
+<start value="4.71238900"/>
+<speed value="1.00000000"/>
+<sequencer value="1431655765"/>
+<multiples value="2"/>
+<direction value="true"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.20000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="0.50000000"/>
+<lightGroup value="0"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="true"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<!--2-->
+<rotation>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="1431655765"/>
+<!--
+<multiples value="6"/>
+-->
+<multiples value="0"/>
+<direction value="true"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.20000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="0.50000000"/>
+<lightGroup value="0"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<!--3-->
+<rotation>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="3.14159300"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="1431655723"/>
+<multiples value="2"/>
+<direction value="true"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.20000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="0.50000000"/>
+<lightGroup value="0"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<!--4-->
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="3.14159300"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="2863311541"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFF000AFF"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<!--5-->
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="2863311541"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFF000AFF"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<!--6-->
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="4.71238900"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="2863311530"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFF000AFF"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="true"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<rotation>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="1431655765"/>
+<multiples value="3"/>
+<direction value="true"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="0.50000000"/>
+<lightGroup value="0"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="2863311530"/>
+<multiples value="3"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<rotation>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="2863311530"/>
+<multiples value="2"/>
+<direction value="true"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="0.50000000"/>
+<lightGroup value="0"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="1431655765"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<!--11|END MAIN-->
+<Item>
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="3.14159300"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="1431655765"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF4800"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<!--DNT-->
+<Item>
+<!--12-->
+<rotation>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="3.14159300"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="2863311530"/>
+<multiples value="2"/>
+<direction value="true"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="0.50000000"/>
+<lightGroup value="0"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<!--13-->
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="3.09400900"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="2863311530"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFF000AFF"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<!--^DNT^-->
+<Item>
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="3.14159300"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="1431655765"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF4800"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<rotation>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="3.14159300"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="1431655765"/>
+<multiples value="2"/>
+<direction value="true"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.20000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF4800"/>
+<intensity value="0.50000000"/>
+<lightGroup value="0"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="3.14159300"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="1431655765"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF4800"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<!--WHITE-->
+<Item>
+<rotation>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="4.71238900"/>
+<speed value="1.00000000"/>
+<sequencer value="1431655765"/>
+<multiples value="2"/>
+<direction value="true"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.20000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="0.50000000"/>
+<lightGroup value="0"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="2863311530"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFF0300"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="false"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<!--WHITE-->
+<Item>
+<!-- 19 -->
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="1431655765"/>
+<multiples value="2"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFFFFFF"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="true"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+<Item>
+<!-- 20 -->
+<rotation>
+<delta value="-0.01000000"/>
+<start value="0.00000000"/>
+<speed value="3.00000000"/>
+<sequencer value="4294967295"/>
+<multiples value="1"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</rotation>
+<flashiness>
+<delta value="0.00000000"/>
+<start value="0.00000000"/>
+<speed value="0.00000000"/>
+<sequencer value="2863311530"/>
+<multiples value="3"/>
+<direction value="false"/>
+<syncToBpm value="true"/>
+</flashiness>
+<corona>
+<intensity value="50.00000000"/>
+<size value="1.10000000"/>
+<pull value="0.15000000"/>
+<faceCamera value="false"/>
+</corona>
+<color value="0xFFFFFFFF"/>
+<intensity value="1.00000000"/>
+<lightGroup value="1"/>
+<rotate value="false"/>
+<scale value="true"/>
+<scaleFactor value="2"/>
+<flash value="true"/>
+<light value="true"/>
+<spotLight value="true"/>
+<castShadows value="false"/>
+</Item>
+</sirens>
+</Item>
 <!-- (32) Unmarked Premier -->
 <Item>
 <id value="32"/>
@@ -59729,7 +59990,7 @@
 <castShadows value="false"/>
 </Item>
 </sirens>
-</Item>	
+</Item>
 <!-- (33) Unmarked Lores -->
 <Item>
 <id value="33"/>
@@ -64360,7 +64621,7 @@
 </Item>
 </sirens>
 </Item>
-<!-- 06 TAHOE EDGE -->  
+<!-- 06 TAHOE EDGE -->
 <Item>
 <id value="3900"/>
 <name>tahoe whelen edge</name>

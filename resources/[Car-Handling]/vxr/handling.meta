@@ -6,7 +6,7 @@
 <Item type="CHandlingData">
       <handlingName>VXR</handlingName>
       <fMass value="2400.000000" />
-      <fInitialDragCoeff value="3.200000" />
+      <fInitialDragCoeff value="9.200000" />
       <fPercentSubmerged value="85.000000" />
       <vecCentreOfMassOffset x="0.000000" y="0.100000" z="0.000000" />
       <vecInertiaMultiplier x="1.200000" y="1.200000" z="1.300000" />
@@ -16,7 +16,7 @@
       <fDriveInertia value="1.000000" />
       <fClutchChangeRateScaleUpShift value="1.800000" />
       <fClutchChangeRateScaleDownShift value="1.800000" />
-      <fInitialDriveMaxFlatVel value="139.000000" />
+      <fInitialDriveMaxFlatVel value="127.000000"/>
       <fBrakeForce value="0.250000" />
       <fBrakeBiasFront value="0.650000" />
       <fHandBrakeForce value="0.450000" />

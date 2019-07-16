@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <CHandlingDataMgr>
   <HandlingData>
     <Item type="CHandlingData">
       <handlingName>malibu</handlingName>
 			<fMass value="1600.0" />
-			<fInitialDragCoeff value="0.850000" />
+			<fInitialDragCoeff value="9.850000" />
 			<fPercentSubmerged value="85.0" />
       <vecCentreOfMassOffset x="0" y="0.0" z="0.00" />
       <vecInertiaMultiplier x="1.2" y="1.2" z="1.85" />

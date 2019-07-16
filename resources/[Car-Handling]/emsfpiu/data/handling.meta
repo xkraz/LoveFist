@@ -4,7 +4,7 @@
 <HandlingData>
   	<Item type="CHandlingData">
       <handlingName>qrv</handlingName>
-      <fMass value="6500.000000" />
+      <fMass value="4500.000000" />
       <fInitialDragCoeff value="3.7000" />
       <fPercentSubmerged value="75.000000" />
       <vecCentreOfMassOffset x="0.000000" y="0.000000" z="0.000000" />
