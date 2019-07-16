@@ -59,11 +59,12 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = 1461.11, ['y'] = 1086.46, ['z'] = 114.33, nom = "Enter bunker"},
 		positionTo = { ['x'] = 1477.24, ['y'] = 1060.82, ['z'] = 27.71, nom = "Exit bunker"},
 	},
+	--[[
 	["siquan gunz penthouse"] = {
 		--positionFrom = { ['x'] = -39.43, ['y'] = -614.24, ['z'] = 35.27, nom = "Enter penthouse"},
 		--positionTo = { ['x'] = -6.44, ['y'] = -685.85, ['z'] = 218.80, nom = "Exit penthouse"},
 	},
-
+]]
 
 
 
