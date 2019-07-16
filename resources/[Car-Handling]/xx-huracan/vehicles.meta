@@ -66,9 +66,9 @@
       <lodDistances content="float_array">
         15.000000
         30.000000
-        60.000000	
-        120.000000	
-        500.000000	
+        60.000000
+        120.000000
+        500.000000
         500.000000
       </lodDistances>
       <minSeatHeight value="0.79" />
@@ -86,7 +86,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_BACK_PLATES</plateType>
 	  <dashboardType>VDT_SUPERGT</dashboardType>
-      <vehicleClass>VC_SPORT</vehicleClass>
+      <vehicleClass>VC_SUPER</vehicleClass>
       <wheelType>VWT_HIEND</wheelType>
       <trailers />
       <additionalTrailers />
@@ -277,11 +277,11 @@
       <steerWheelMult value="1.000000" />
       <HDTextureDist value="5.000000" />
       <lodDistances content="float_array">
-        10.000000	
-        25.000000	
-        60.000000	
-        120.000000	
-        500.000000	
+        10.000000
+        25.000000
+        60.000000
+        120.000000
+        500.000000
         500.000000
       </lodDistances>
       <minSeatHeight value="0.799" />
@@ -340,7 +340,7 @@
     <Item>
       <parent>vehicles_banshee_interior</parent>
       <child>huracan</child>
-    </Item>	
+    </Item>
   </txdRelationships>
 
 </CVehicleModelInfo__InitDataList>
