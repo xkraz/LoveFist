@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<CVehicleModelInfoVarGlobal>    
+<CVehicleModelInfoVarGlobal>
   <Kits>
     <Item>
       <kitName>940_lwgtr_modkit</kitName>
-      <id value="940" />   
-      <kitType>MKT_SPECIAL</kitType> 
+      <id value="940" />
+      <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
         <Item>
           <modelName>lwgtr_bumf_1</modelName>

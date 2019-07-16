@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CVehicleModelInfoVarGlobal>    
+<CVehicleModelInfoVarGlobal>
+<Kits>   
    <Lights>
      <Item>
       <id value="902" />
@@ -134,4 +135,5 @@
       <name>qashqai16</name>
     </Item>
    </Lights>
+</Kits>
 </CVehicleModelInfoVarGlobal>

@@ -958,7 +958,7 @@
         <innerConeAngle value="0.00000000"/>
         <outerConeAngle value="60.00000000"/>
         <emmissiveBoost value="false"/>
-        <color value="0xFFFFD859"/>
+        <color value="0xFFFFFFCC"/>
         <textureName>VehicleLight_car_standardmodern</textureName>
         <mirrorTexture value="false"/>
       </headLight>
@@ -967,7 +967,7 @@
         <size_far value="10.00000000"/>
         <intensity value="4.00000000"/>
         <intensity_far value="1.00000000"/>
-        <color value="0xFFFCBB42"/>
+        <color value="0xFFFFFFFF"/>
         <numCoronas value="1"/>
         <distBetweenCoronas value="37"/>
         <distBetweenCoronas_far value="122"/>

@@ -37,7 +37,7 @@
 	  <FirstPersonDriveByRightPassengerUnarmedIKOffset x="0.000000" y="-0.080000" z="0.000000" />
 	  <FirstPersonMobilePhoneOffset x="0.110000" y="0.215000" z="0.518000" />
       <FirstPersonPassengerMobilePhoneOffset x="0.185000" y="0.125000" z="0.433000" />
-	  <FirstPersonMobilePhoneSeatIKOffset /> 
+	  <FirstPersonMobilePhoneSeatIKOffset />
       <PovCameraOffset x="0.000000" y="-0.210000" z="0.645000" />
       <PovCameraVerticalAdjustmentForRollCage value="-0.045000" />
       <PovPassengerCameraOffset x="0.000000" y="0.000000" z="0.000000" />
@@ -86,7 +86,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_BACK_PLATES</plateType>
       <dashboardType>VDT_DUKES</dashboardType>
-      <vehicleClass>VC_SUPER</vehicleClass>
+      <vehicleClass>VC_COMPACT</vehicleClass>
       <wheelType>VWT_SPORT</wheelType>
       <trailers />
       <additionalTrailers />

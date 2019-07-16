@@ -5,17 +5,17 @@
     <Item type="CHandlingData">
       <handlingName>RT70</handlingName>
       <fMass value="1600.0" />
-      <fInitialDragCoeff value="2" />
+      <fInitialDragCoeff value="9" />
       <fPercentSubmerged value="85" />
       <vecCentreOfMassOffset x="0.0" y="-0.05" z="0.0" />
       <vecInertiaMultiplier x="1.0" y="1.2" z="1" />
       <fDriveBiasFront value="0.0" />
       <nInitialDriveGears value="6" />
-      <fInitialDriveForce value="0.36" />
+      <fInitialDriveForce value="0.20" />
       <fDriveInertia value="1.0" />
       <fClutchChangeRateScaleUpShift value="1.9" />
       <fClutchChangeRateScaleDownShift value="1.9" />
-      <fInitialDriveMaxFlatVel value="185" />
+      <fInitialDriveMaxFlatVel value="123" />
       <fBrakeForce value="0.9" />
       <fBrakeBiasFront value="0.65" />
       <fHandBrakeForce value="0.8" />

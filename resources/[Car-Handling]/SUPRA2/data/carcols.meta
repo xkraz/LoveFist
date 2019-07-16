@@ -176,7 +176,7 @@
           <disableBonnetCamera value="false" />
           <allowBonnetSlide value="true" />
         </Item>
-	<Item>
+	<Item> 
           <modelName>supra_bnt3</modelName>
           <modShopLabel>MASS_BNT3</modShopLabel>
           <linkedModels />

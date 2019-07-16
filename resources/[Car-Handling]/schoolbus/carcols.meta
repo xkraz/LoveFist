@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>  
-<CVehicleModelInfoVarGlobal>   
+<CVehicleModelInfoVarGlobal> 
+<Kits>
   <Sirens>
     <Item>
       <id value="810"/>
@@ -753,4 +754,5 @@
       </sirens>
     </Item>
     </Sirens>
+</Kits>
 </CVehicleModelInfoVarGlobal>

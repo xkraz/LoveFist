@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <CHandlingDataMgr>
   <HandlingData>
     <Item type="CHandlingData">
-      <handlingName>SKYLINE</handlingName>
+      <handlingName>Skyline</handlingName>
       <fMass value="1700.000000" />
       <fInitialDragCoeff value="9.500000" />
       <fPercentSubmerged value="85.000000" />
