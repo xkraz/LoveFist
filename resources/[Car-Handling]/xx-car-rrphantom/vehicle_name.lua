@@ -10,8 +10,6 @@ Citizen.CreateThread(function()
 
 	AddTextEntry('nissantitan17', 'Nissan Titan')
 
-	AddTextEntry('skyline', 'Skyline')
-
 	AddTextEntry('rmodveneno', 'Veneno')
 
 	AddTextEntry('raptor12', 'Raptor 12')
@@ -42,11 +40,12 @@ Citizen.CreateThread(function()
 
 	AddTextEntry('16challenger', '16 Challenger')
 
-	AddTextEntry('zl12017', 'Ford ZL')
+	AddTextEntry('zl12017', 'Camaro ZL1')
 
 	AddTextEntry('300srt8', '300 SRT8')
 
 	AddTextEntry('r6', 'R6 Bike')
 
 	AddTextEntry('a8fsi', 'Audi Fsi')
+
 end)

@@ -3,14 +3,14 @@
 <CVehicleModelInfoVariation>
   <variationData>
      <Item>
-      <modelName>skyline</modelName>
+      <modelName>Skyline</modelName>
       <colors>
         <Item>
           <indices content="char_array">
-            0 
-            0 
-            6 
-            156 
+            0
+            0
+            6
+            156
           </indices>
           <liveries>
             <Item value="false" />
@@ -25,10 +25,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            2 
-            2 
-            134 
-            156 
+            2
+            2
+            134
+            156
           </indices>
           <liveries>
             <Item value="false" />
@@ -43,10 +43,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            8 
-            8 
-            134 
-            156 
+            8
+            8
+            134
+            156
           </indices>
           <liveries>
             <Item value="false" />
@@ -61,10 +61,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            19 
-            19 
-            134 
-            156 
+            19
+            19
+            134
+            156
           </indices>
           <liveries>
             <Item value="false" />
@@ -79,28 +79,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            31 
-            31 
-            28 
-            156 
-          </indices>
-          <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-          </liveries>
-        </Item>
-        <Item>
-          <indices content="char_array">
-            34 
-            34 
+            31
+            31
             28
-            156 
+            156
           </indices>
           <liveries>
             <Item value="false" />
@@ -115,10 +97,28 @@
         </Item>
         <Item>
           <indices content="char_array">
-            64 
-            64 
+            34
+            34
+            28
+            156
+          </indices>
+          <liveries>
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+            <Item value="false" />
+          </liveries>
+        </Item>
+        <Item>
+          <indices content="char_array">
+            64
+            64
             53
-            156 
+            156
           </indices>
           <liveries>
             <Item value="false" />
@@ -133,10 +133,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            73 
-            73 
-            60 
-            156 
+            73
+            73
+            60
+            156
           </indices>
           <liveries>
             <Item value="false" />
@@ -151,10 +151,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            75 
-            75 
-            60 
-            156 
+            75
+            75
+            60
+            156
           </indices>
           <liveries>
             <Item value="false" />
@@ -169,10 +169,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            89 
-            89 
-            89 
-            156 
+            89
+            89
+            89
+            156
           </indices>
           <liveries>
             <Item value="false" />
@@ -187,10 +187,10 @@
         </Item>
         <Item>
           <indices content="char_array">
-            107 
-            107 
-            110 
-            156 
+            107
+            107
+            110
+            156
           </indices>
           <liveries>
             <Item value="false" />

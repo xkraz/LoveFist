@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CHandlingDataMgr>
   <HandlingData>
-    <Item type="CHandlingData">
+    <Item type="CHandlingData"> 
       <handlingName>BUSCLASSIC</handlingName>
       <fMass value="10000.000000" />
       <fInitialDragCoeff value="8.6000000" />

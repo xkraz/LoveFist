@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CHandlingDataMgr>
-  <HandlingData>
+  <HandlingData> 
   <Item type="CHandlingData">
       <handlingName>STREITER2</handlingName>
       <fMass value="2010.000000" />
-      <fInitialDragCoeff value="3.300000" />
+      <fInitialDragCoeff value="6.300000" />
       <fPercentSubmerged value="85.000000" />
       <vecCentreOfMassOffset x="0.000000" y="-0.070000" z="0.000000" />
       <vecInertiaMultiplier x="1.400000" y="1.300000" z="1.400000" />
       <fDriveBiasFront value="0.500000" />
       <nInitialDriveGears value="6" />
-      <fInitialDriveForce value="0.21250" />
+      <fInitialDriveForce value="0.250" />
       <fDriveInertia value="1.000000" />
       <fClutchChangeRateScaleUpShift value="3.200000" />
       <fClutchChangeRateScaleDownShift value="3.200000" />

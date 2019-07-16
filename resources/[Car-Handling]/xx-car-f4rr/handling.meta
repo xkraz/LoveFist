@@ -5,14 +5,14 @@
 	<Item type="CHandlingData">
       <handlingName>f4rr</handlingName>
       <fMass value="330.000000" />
-      <fInitialDragCoeff value="2.450000" />
+      <fInitialDragCoeff value="8.450000" />
       <fPercentSubmerged value="95.000000" />
       <vecCentreOfMassOffset x="0.000000" y="0.020000" z="0.000000" />
       <vecInertiaMultiplier x="1.000000" y="1.000000" z="0.800000" />
       <fDriveBiasFront value="0.000000" />
       <nInitialDriveGears value="6" />
-      <fInitialDriveForce value="0.591000" />
-      <fDriveInertia value="1.300000" />
+      <fInitialDriveForce value="0.42000" />
+      <fDriveInertia value="1.000000" />
       <fClutchChangeRateScaleUpShift value="5.000000" />
       <fClutchChangeRateScaleDownShift value="4.900000" />
       <fInitialDriveMaxFlatVel value="138.000000" />
@@ -31,8 +31,8 @@
       <fSuspensionForce value="6.500000" />
       <fSuspensionCompDamp value="2.000000" />
       <fSuspensionReboundDamp value="0.850000" />
-      <fSuspensionUpperLimit value="0.140000" />
-      <fSuspensionLowerLimit value="-0.070000" />
+      <fSuspensionUpperLimit value="0.050000" />
+      <fSuspensionLowerLimit value="-0.050000" />
       <fSuspensionRaise value="0.000000" />
       <fSuspensionBiasFront value="0.530000" />
       <fAntiRollBarForce value="0.000000" />

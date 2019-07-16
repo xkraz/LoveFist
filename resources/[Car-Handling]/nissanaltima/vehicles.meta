@@ -95,7 +95,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_BACK_PLATES</plateType>
       <dashboardType>VDT_TRUCKDIG</dashboardType>
-      <vehicleClass>VC_SPORT</vehicleClass>
+      <vehicleClass>VC_SEDAN</vehicleClass>
       <wheelType>VWT_SPORT</wheelType>
       <trailers />
       <additionalTrailers />
@@ -141,6 +141,6 @@
 
 
 
-	
+
   </txdRelationships>
 </CVehicleModelInfo__InitDataList>

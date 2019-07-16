@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CVehicleModelInfoVarGlobal>    
+<CVehicleModelInfoVarGlobal>
   <Kits>
     <Item>
       <kitName>998_skyline_modkit</kitName>
-      <id value="998" />	 	  
+      <id value="998" />
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
         <Item>
@@ -11,7 +11,7 @@
           <modShopLabel>Top Secret</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_c</Item> 
+            <Item>misc_c</Item>
           </turnOffBones>
           <type>VMT_SPOILER</type>
           <bone>boot</bone>
@@ -28,7 +28,7 @@
           <modShopLabel>skyline_SKIRT1</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_b</Item> 
+            <Item>misc_b</Item>
           </turnOffBones>
           <type>VMT_SKIRT</type>
           <bone>chassis</bone>
@@ -45,7 +45,7 @@
           <modShopLabel>skyline_SKIRT2</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_b</Item> 
+            <Item>misc_b</Item>
           </turnOffBones>
           <type>VMT_SKIRT</type>
           <bone>chassis</bone>
@@ -62,7 +62,7 @@
           <modShopLabel>skyline_BNT1</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>bonnet</Item> 
+            <Item>bonnet</Item>
           </turnOffBones>
           <type>VMT_BONNET</type>
           <bone>bonnet</bone>
@@ -79,7 +79,7 @@
           <modShopLabel>skyline_SPLIT1</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_d</Item> 
+            <Item>misc_d</Item>
           </turnOffBones>
           <type>VMT_BUMPER_F</type>
           <bone>bumper_f</bone>
@@ -96,7 +96,7 @@
           <modShopLabel>skyline_SPLIT2</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_d</Item> 
+            <Item>misc_d</Item>
           </turnOffBones>
           <type>VMT_BUMPER_F</type>
           <bone>bumper_f</bone>
@@ -113,7 +113,7 @@
           <modShopLabel>skyline_BUMR1</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_e</Item> 
+            <Item>misc_e</Item>
           </turnOffBones>
           <type>VMT_BUMPER_R</type>
           <bone>bumper_r</bone>
@@ -130,7 +130,7 @@
           <modShopLabel>skyline_BUMR2</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_e</Item> 
+            <Item>misc_e</Item>
           </turnOffBones>
           <type>VMT_BUMPER_R</type>
           <bone>bumper_r</bone>
@@ -147,7 +147,7 @@
           <modShopLabel>skyline_exh1</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_a</Item> 
+            <Item>misc_a</Item>
           </turnOffBones>
           <type>VMT_EXHAUST</type>
           <bone>chassis</bone>
@@ -575,7 +575,7 @@
   </Kits>
     <Lights>
     <Item>
-      <id value="998" />	
+      <id value="998" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
@@ -704,7 +704,7 @@
         <zBias value="0.250000" />
         <pullCoronaIn value="false" />
       </reversingLightCorona>
-      <name>skyline</name>
+      <name>Skyline</name>
     </Item>
     </Lights>
 </CVehicleModelInfoVarGlobal>
