@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<CVehicleModelInfoVarGlobal>    
+<CVehicleModelInfoVarGlobal>
   <Kits>
     <Item>
       <kitName>979_subwrx_modkit</kitName>
-      <id value="979" />	 	  
+      <id value="979" />
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
         <Item>
@@ -45,7 +45,7 @@
           <modShopLabel>MNU_CWS</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>misc_d</Item> 
+            <Item>misc_d</Item>
           </turnOffBones>
           <type>VMT_SKIRT</type>
           <bone>chassis</bone>
@@ -62,7 +62,7 @@
           <modShopLabel>MNU_CWK</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>bonnet</Item> 
+            <Item>bonnet</Item>
           </turnOffBones>
           <type>VMT_BONNET</type>
           <bone>bonnet</bone>
@@ -79,7 +79,7 @@
           <modShopLabel>MNU_CWR</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>bumper_r</Item> 
+            <Item>bumper_r</Item>
           </turnOffBones>
           <type>VMT_BUMPER_R</type>
           <bone>bumper_r</bone>
@@ -96,7 +96,7 @@
           <modShopLabel>MNU_CWF</modShopLabel>
           <linkedModels />
           <turnOffBones>
-            <Item>bumper_f</Item> 
+            <Item>bumper_f</Item>
           </turnOffBones>
           <type>VMT_BUMPER_F</type>
           <bone>bumper_f</bone>
@@ -540,7 +540,7 @@
   </Kits>
     <Lights>
     <Item>
-      <id value="979" />	
+      <id value="979" />
       <indicator>
         <intensity value="0.375000" />
         <falloffMax value="2.500000" />
@@ -669,7 +669,7 @@
         <zBias value="0.250000" />
         <pullCoronaIn value="false" />
       </reversingLightCorona>
-      <name>subwrx</name>
+      <name>sti05</name>
     </Item>
     </Lights>
 </CVehicleModelInfoVarGlobal>
