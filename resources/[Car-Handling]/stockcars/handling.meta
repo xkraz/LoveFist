@@ -33787,11 +33787,11 @@ fWeaponDamageScaledToVehHealthMult
 			<vecInertiaMultiplier x="1.000000" y="1.400000" z="1.800000" />
 			<fDriveBiasFront value="0.000000" />
 			<nInitialDriveGears value="5" />
-			<fInitialDriveForce value="0.60000" />
+			<fInitialDriveForce value="0.50000" />
 			<fDriveInertia value="1.000000" />
 			<fClutchChangeRateScaleUpShift value="2.100000" />
 			<fClutchChangeRateScaleDownShift value="2.100000" />
-			<fInitialDriveMaxFlatVel value="175.000000" />
+			<fInitialDriveMaxFlatVel value="167.000000" />
 			<fBrakeForce value="1.300000" />
 			<fBrakeBiasFront value="0.525000" />
 			<fHandBrakeForce value="0.600000" />
