@@ -980,7 +980,10 @@ function OpenPharmacyMenu()
 		align    = 'top',
 		elements = {
 			{label = _U('pharmacy_take', _U('medikit')), value = 'medikit'},
-			{label = _U('pharmacy_take', _U('bandage')), value = 'bandage'},
+			{label = _U('pharmacy_take', _U('firstaid')), value = 'firstaid'},
+			{label = _U('pharmacy_take', _U('vicodin')), value = 'vicodin'},
+			{label = _U('pharmacy_take', _U('hydrocodone')), value = 'hydrocodone'},
+			{label = _U('pharmacy_take', _U('morphine')), value = 'morphine'},
 			{label = _U('pharmacy_take', _U('repairkit')), value = 'repairkit'}
 
 		}
