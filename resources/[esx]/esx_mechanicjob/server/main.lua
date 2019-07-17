@@ -236,7 +236,7 @@ ESX.RegisterUsableItem('blowtorch', function(source)
 	TriggerClientEvent('esx:showNotification', _source, _U('you_used_blowtorch'))
 end)
 
-ESX.RegisterUsableItem('fixkit', function(source)
+ESX.RegisterUsableItem('fixkit2', function(source)
 	local _source = source
 	local xPlayer  = ESX.GetPlayerFromId(source)
 
@@ -246,7 +246,7 @@ ESX.RegisterUsableItem('fixkit', function(source)
 	TriggerClientEvent('esx:showNotification', _source, _U('you_used_repair_kit'))
 end)
 
-ESX.RegisterUsableItem('carokit', function(source)
+ESX.RegisterUsableItem('carokit2', function(source)
 	local _source = source
 	local xPlayer  = ESX.GetPlayerFromId(source)
 
