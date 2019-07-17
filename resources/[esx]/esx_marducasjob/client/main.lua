@@ -852,6 +852,8 @@ AddEventHandler('esx_marducasjob:onFixkit', function()
 
 					if (GetVehiclePetrolTankHealth(vehicle) <= 750.0) then
           	SetVehiclePetrolTankHealth(vehicle, 750.0)
+					else
+						SetVehiclePetrolTankHealth(vehicle, 1000.0)
 					end
 
 					SetVehicleEngineOn(vehicle, true, true)
