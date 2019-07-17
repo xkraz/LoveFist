@@ -173,25 +173,25 @@ Config.AuthorizedHelicopters = {
 	jrdoctor = {},
 
 	doctor = {
-		{ model = 'sheriffmav2', label = 'EMS Chopper', price = 0 },
+		{ model = 'supervolito', label = 'EMS Chopper', price = 0 },
 		{ model = 'seasparrow', label = 'Sea Sparrow', price = 0 },
 		{ model = 'maverick' , label = 'maverick' , price = 1}
 	},
 	
 	surgeon = {
-		{ model = 'sheriffmav2', label = 'EMS Chopper', price = 0 },
+		{ model = 'supervolito', label = 'EMS Chopper', price = 0 },
 		{ model = 'seasparrow', label = 'Sea Sparrow', price = 0 },
 		{ model = 'maverick' , label = 'maverick' , price = 1}
 	},
 
 	chief_doctor = {
-		{ model = 'sheriffmav2', label = 'EMS Chopper', price = 0 },
+		{ model = 'supervolito', label = 'EMS Chopper', price = 0 },
 		{ model = 'seasparrow', label = 'Sea Sparrow', price = 0 },
 		{ model = 'maverick' , label = 'maverick' , price = 1}
 	},
 
 	boss = {
-		{ model = 'sheriffmav2', label = 'EMS Chopper', price = 0 },
+		{ model = 'supervolito', label = 'EMS Chopper', price = 0 },
 		{ model = 'seasparrow', label = 'Sea Sparrow', price = 0 },
 		{ model = 'maverick' , label = 'maverick' , price = 1}
 	}
