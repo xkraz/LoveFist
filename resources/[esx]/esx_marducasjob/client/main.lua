@@ -15,7 +15,6 @@ local CurrentAction, CurrentActionMsg, CurrentActionData = nil, '', {}
 local CurrentlyTowedVehicle, Blips, NPCOnJob, NPCTargetTowable, NPCTargetTowableZone = nil, {}, false, nil, nil
 local NPCHasSpawnedTowable, NPCLastCancel, NPCHasBeenNextToTowable, NPCTargetDeleterZone = false, GetGameTimer() - 5 * 60000, false, false
 local isDead, isBusy = false, false
-
 ESX = nil
 
 Citizen.CreateThread(function()
@@ -778,14 +777,20 @@ AddEventHandler('esx_marducasjob:onCarokit', function()
 			TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_HAMMERING', 0, true)
 			Citizen.CreateThread(function()
 				Citizen.Wait(10000)
-				SetVehicleFixed(vehicle)
 				SetVehicleDeformationFixed(vehicle)
+				SetVehicleBodyHealth(vehicle, 1000.0)
 				ClearPedTasksImmediately(playerPed)
 				ESX.ShowNotification(_U('body_repaired'))
 			end)
 		end
 	end
 end)
+
+function mathClamp(val, lower, upper)
+    assert(val and lower and upper, "not very useful error message here")
+    if lower > upper then lower, upper = upper, lower end -- swap if boundaries supplied the wrong way
+    return math.max(lower, math.min(upper, val))
+end
 
 RegisterNetEvent('esx_marducasjob:onFixkit')
 AddEventHandler('esx_marducasjob:onFixkit', function()
@@ -804,12 +809,56 @@ AddEventHandler('esx_marducasjob:onFixkit', function()
 		if DoesEntityExist(vehicle) then
 			TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
 			Citizen.CreateThread(function()
-				Citizen.Wait(20000)
-				SetVehicleFixed(vehicle)
-				SetVehicleDeformationFixed(vehicle)
-				SetVehicleUndriveable(vehicle, false)
-				ClearPedTasksImmediately(playerPed)
-				ESX.ShowNotification(_U('veh_repaired'))
+
+				if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) or (Config.IsMechanicJobOnly == false) then
+
+					Citizen.Wait(10000)
+
+					SetVehicleFixed(vehicle)
+					SetVehicleDeformationFixed(vehicle)
+					SetVehicleUndriveable(vehicle, false)
+					SetVehicleEngineOn(vehicle, true, true)
+					ClearPedTasksImmediately(playerPed)
+			  	ESX.ShowNotification(_U('veh_repaired'))
+
+				else
+
+					Citizen.Wait(15000)
+					ESX.ShowNotification(_U('half_way'))
+					Citizen.Wait(5000)
+
+					SetVehicleUndriveable(vehicle,false)
+
+					local vHealth = GetVehicleEngineHealth(vehicle)
+
+					if (vHealth >= Config.MaxRepair) then
+
+						SetVehicleFixed(vehicle)
+						ESX.ShowNotification(_U('veh_repaired'))
+
+					elseif (vHealth <= Config.MidA) and (vHealth >= Config.MidB) then
+
+						local tmpR = math.random(mathClamp(math.floor(vHealth), Config.MidMin, Config.MidMax),Config.MidMax) + (math.random(10,99)/100)
+						SetVehicleEngineHealth(vehicle, tmpR)
+						ESX.ShowNotification(_U('med_repaired'))
+
+					elseif (vHealth <= Config.BottomEnd) then
+
+						local tmpR = math.random(mathClamp(math.floor(vHealth), Config.RepairMin, Config.RepairMax),Config.RepairMax) + (math.random(10,99)/100)
+						SetVehicleEngineHealth(vehicle, tmpR)
+						ESX.ShowNotification(_U('bad_repaired'))
+
+					end
+
+					if (GetVehiclePetrolTankHealth(vehicle) <= 750.0) then
+          	SetVehiclePetrolTankHealth(vehicle, 750.0)
+					else
+						SetVehiclePetrolTankHealth(vehicle, 1000.0)
+					end
+
+					SetVehicleEngineOn(vehicle, true, true)
+					ClearPedTasksImmediately(playerPed)
+				end
 			end)
 		end
 	end

@@ -27,7 +27,7 @@ cfg = {
 	degradingHealthSpeedFactor = 1.0,			-- Speed of slowly degrading health, but not failure. Value of 10 means that it will take about 0.25 second per health point, so degradation from 800 to 305 will take about 2 minutes of clean driving. Higher values means faster degradation
 	cascadingFailureSpeedFactor = 6.0,			-- Sane values are 1 to 100. When vehicle health drops below a certain point, cascading failure sets in, and the health drops rapidly until the vehicle dies. Higher values means faster failure. A good starting point is 8
 
-	degradingFailureThreshold = 667.0,			-- Below this value, slow health degradation will set in
+	degradingFailureThreshold = 540.0,			-- Below this value, slow health degradation will set in
 	cascadingFailureThreshold = 400.0,			-- Below this value, health cascading failure will set in
 	engineSafeGuard = 100.0,					-- Final failure value. Set it too high, and the vehicle won't smoke when disabled. Set too low, and the car will catch fire from a single bullet to the engine. At health 100 a typical car can take 3-4 bullets to the engine before catching fire.
 

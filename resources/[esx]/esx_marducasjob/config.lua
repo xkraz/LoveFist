@@ -9,6 +9,21 @@ Config.EnableSocietyOwnedVehicles = false
 Config.NPCSpawnDistance           = 500.0
 Config.NPCNextToDistance          = 25.0
 Config.NPCJobEarnings             = { min = 15, max = 40 }
+Config.RepairChance							  = 100
+Config.IsMechanicJobOnly					= true
+
+Config.RepairMin									= 550
+Config.RepairMax									= 750
+
+Config.MaxRepair									= 850.0
+
+Config.MidA												= 849.0
+Config.MidMin											= 750
+Config.MidMax											= 950
+Config.MidB												= 700.0
+
+Config.BottomEnd									= 699.9
+
 
 Config.Vehicles = {
 	'adder',
@@ -55,7 +70,7 @@ Config.Zones = {
 	},
 
 	VehicleDelivery = {
-		Pos   = { x = -1285.43, y = -3378.89, z = 13.00 }, 
+		Pos   = { x = -1285.43, y = -3378.89, z = 13.00 },
 		Size  = { x = 20.0, y = 20.0, z = 3.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = -1,
