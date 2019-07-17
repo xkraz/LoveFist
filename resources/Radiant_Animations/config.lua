@@ -48,7 +48,22 @@ Config.Anims = {
     {name = 'djidle', data = {type = 'anim', ad = "anim@amb@nightclub@djs@dixon@", anim = "dixn_idle_cntr_b_dix", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'djidle2', data = {type = 'anim', ad = "anim@amb@nightclub@djs@dixon@", anim = "dixn_idle_cntr_e_dix", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'sitchair', data = {type = 'sitchair', ad = "", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'squat', data = {type = 'anim', ad = "amb@lo_res_idles@", anim = "squat_lo_res_base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'sightm', data = {type = 'anim', ad = "amb@lo_res_idles@", anim = "world_human_picnic_male_lo_res_base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'sightf', data = {type = 'anim', ad = "amb@lo_res_idles@", anim = "world_human_picnic_female_lo_res_base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	
+	
+	
+	
+	
+	
+	
 	-------------------------------------- DANCES STYLES ----------------------------------------------
+	
+	
+	
+	
+	
 	
 	{name = 'fdance1', data = {type = 'anim', ad = "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", anim = "high_center", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'fdance2', data = {type = 'anim', ad = "anim@amb@nightclub@mini@dance@dance_solo@female@var_a@", anim = "high_center_down", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
@@ -57,7 +72,7 @@ Config.Anims = {
     {name = 'sitdance1', data = {type = 'anim', ad = "misschinese1crazydance", anim = "crazy_dance_1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'sitdance2', data = {type = 'anim', ad = "misschinese1crazydance", anim = "crazy_dance_2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'sitdance3', data = {type = 'anim', ad = "misschinese1crazydance", anim = "crazy_dance_3", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-	{name = 'taodance', data = {type = 'anim', ad = "misschinese2_crystalmazemcs1_cs", anim = "dance_loop_tao", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night7', data = {type = 'anim', ad = "misschinese2_crystalmazemcs1_cs", anim = "dance_loop_tao", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'strip1', data = {type = 'anim', ad = "mini@strip_club@lap_dance@ld_girl_a_song_a_p1", anim = "ld_girl_a_song_a_p1_f", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'strip2', data = {type = 'anim', ad = "mini@strip_club@private_dance@part2", anim = "priv_dance_p2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'strip3', data = {type = 'anim', ad = "mini@strip_club@private_dance@part3", anim = "priv_dance_p3", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
@@ -65,9 +80,64 @@ Config.Anims = {
 	{name = 'night2', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@black_madonna_entourage@", anim = "li_dance_facedj_11_v1_male^1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'night3', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@black_madonna_entourage@", anim = "li_dance_facedj_15_v2_male^2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'night4', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_facedj_transitions@from_med_intensity", anim = "trans_dance_facedj_mi_to_hi_08_v1_male^2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-    {name = 'angel', data = {type = 'anim', ad = "special_ped@mountain_dancer@monologue_2@monologue_2a", anim = "mnt_dnc_angel", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'fdance3', data = {type = 'anim', ad = "special_ped@mountain_dancer@monologue_2@monologue_2a", anim = "mnt_dnc_angel", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'night5', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_facedj@", anim = "hi_dance_facedj_15_v2_female^1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},	
+    {name = 'lap1', data = {type = 'anim', ad = "switch@trevor@mocks_lapdance", anim = "001443_01_trvs_28_exit_stripper", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},  
+	{name = 'tacorub', data = {type = 'anim', ad = "switch@trevor@mocks_lapdance", anim = "001443_01_trvs_28_idle_stripper", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance4', data = {type = 'anim', ad = "missfbi3_sniping", anim = "dance_m_default", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'strip4', data = {type = 'anim', ad = "mp_am_stripper", anim = "lap_dance_girl", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance3', data = {type = 'anim', ad = "special_ped@mountain_dancer@monologue_1@monologue_1a", anim = "mtn_dnc_if_you_want_to_get_to_heaven", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night6', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_facedj@", anim = "hi_dance_facedj_17_v1_female^1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance4', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_09_v1_male^1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance5', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_09_v1_male^2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance6', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_09_v1_male^3", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance7', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_09_v1_male^4", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance8', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_09_v1_male^5", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance9', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_09_v1_male^6", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance10', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_09_v2_male^1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance5', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_15_v2_male^4", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance6', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_15_v2_male^1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance7', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_15_v2_male^2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance8', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_15_v2_male^3", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance8', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_15_v1_male^4", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance9', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_15_v1_male^5", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance10', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_15_v1_male^6", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance11', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_17_v1_male^1", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night8', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_17_v1_male^2", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night9', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_17_v1_male^3", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'fdance12', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_17_v1_male^4", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance11', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_17_v1_male^5", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night10', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@crowddance_groups@", anim = "hi_dance_crowd_17_v1_male^6", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night11', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_dancefloor@", anim = "crowddance_hi_17_spinaround_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night12', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_dancefloor@", anim = "crowddance_mi_11_spankthat_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night13', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_dancefloor@", anim = "dancecrowd_hi_05_dlg_ridegurl_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance12', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_hi_11_buttwiggle_b_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance13', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_hi_17_smackthat_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance14', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_hi_17_spiderman_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance15', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_li_07_fakedrop_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance16', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_li_13_hipswivel_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'mdance17', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_li_13_turnaround_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night14', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_15_robot_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night15', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_15_shimmy_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night16', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_17_teapotthrust_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night17', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_13_enticing_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night18', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_li_15_flyingv_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night19', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_11_takebreath_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night20', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_17_crotchgrab_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night21', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_11_simplepoint_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night22', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_11_hippain_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night23', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_li_17_watupcrowd_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'night24', data = {type = 'anim', ad = "anim@amb@nightclub@dancers@solomun_entourage@", anim = "li_dance_prop_15_v1_male^5", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	--{name = 'night22', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_11_hippain_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	--{name = 'night22', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_11_hippain_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	--{name = 'night22', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_11_hippain_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	
-	-------------------------------------- WALK STYLES ----------------------------------------------
+	
+	
+	
+	
+	-------------------------------------- Walk Styles ----------------------------------------------------------
+	
 	
 	{name = 'walk1', data = {type = 'walkstyle', ad = "ANIM_GROUP_MOVE_BALLISTIC", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
     {name = 'walk2', data = {type = 'walkstyle', ad = "ANIM_GROUP_MOVE_LEMAR_ALLEY", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},

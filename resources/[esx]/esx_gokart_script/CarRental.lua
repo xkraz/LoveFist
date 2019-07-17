@@ -19,12 +19,12 @@ Citizen.CreateThread(function()
 	local checkBox = true
 	
 	pickupStation = { --Set the car rental locaitons here
-		{x = 1219.64, y = 355.64, z = 81.01999} --GoKart
+		{x = 1178.63, y = -3236.97, z = 4.88} --GoKart
 
 	}
 	
 	dropoffStation = { --Set the car dropoff locations here
-		{x = 1214.8, y = 353.64, z = 81.0199}, --GoKart
+		{x = 1178.28, y = -3267.08, z = 4.63}, --GoKart
 		
 		
 	}	
@@ -89,32 +89,32 @@ Citizen.CreateThread(function()
 		
 		
 		elseif WarMenu.IsMenuOpened('carPicker') then
-			if WarMenu.Button('Kart1 | Upfront: $100 | Daily: $25') then
+			if WarMenu.Button('Kart1 | Upfront: $25 | Daily: $5') then
 				SpawnVehicle("kart")
-				TriggerServerEvent("chargePlayer", 100)
+				TriggerServerEvent("chargePlayer", 25)
 				ESX.ShowNotification("You've been charged $100 for your rental.")
-				autoChargeAmount = 25
+				autoChargeAmount = 5
 				isBeingCharged = true
 				WarMenu.CloseMenu()
-			elseif WarMenu.Button('Kart2| Upfront: $150 | Daily: $25') then
+			elseif WarMenu.Button('Kart2| Upfront: $50 | Daily: $5') then
 				SpawnVehicle("kart3")
-				TriggerServerEvent("chargePlayer", 150)
+				TriggerServerEvent("chargePlayer", 50)
 				ESX.ShowNotification("You've been charged $150 for your rental.")
-				autoChargeAmount = 25
+				autoChargeAmount = 5
 				isBeingCharged = true
 				WarMenu.CloseMenu()
-			elseif WarMenu.Button('Kart3 | Upfront: $200 | Daily: $25') then
+			elseif WarMenu.Button('Kart3 | Upfront: $75 | Daily: $5') then
 				SpawnVehicle("kart20")
-				TriggerServerEvent("chargePlayer", 200)
+				TriggerServerEvent("chargePlayer", 75)
 				ESX.ShowNotification("You've been charged $200 for your rental.")
-				autoChargeAmount = 25
+				autoChargeAmount = 5
 				isBeingCharged = true
 				WarMenu.CloseMenu()
-			elseif WarMenu.Button('Kart4 | Upfront: $250 | Daily: $25') then
+			elseif WarMenu.Button('Kart4 | Upfront: $100 | Daily: $10') then
 				SpawnVehicle("shifter_kart")
-				TriggerServerEvent("chargePlayer", 250)
+				TriggerServerEvent("chargePlayer", 100)
 				ESX.ShowNotification("You've been charged $250 for your rental.")
-				autoChargeAmount = 25
+				autoChargeAmount = 10
 				isBeingCharged = true
 				WarMenu.CloseMenu()
 			elseif WarMenu.MenuButton('Back', 'carRental') then
@@ -135,8 +135,8 @@ Citizen.CreateThread(function()
 
 		--Car insurance menu
 		elseif WarMenu.IsMenuOpened('carInsurance') then
-			if WarMenu.Button('Yes | $200') then
-				TriggerServerEvent("chargePlayer", 200)
+			if WarMenu.Button('Yes | $25') then
+				TriggerServerEvent("chargePlayer", 25)
 				damageInsurance = true
 				ESX.ShowNotification("Thank you for purchasing damage insurance")
 				WarMenu.CloseMenu()
@@ -275,8 +275,8 @@ Citizen.CreateThread(function()
 		if plate == " RENTAL " then
 			if (IsVehicleDamaged(currentVehicle) and damageInsurance == false and damageCharge == false and canBeCharged == true) then
 				damageCharge = true
-				TriggerServerEvent("chargePlayer", 500)
-				ESX.ShowNotification("You've been charged $500 for damaging the car. Buying insurance will keep you from being charged.")
+				TriggerServerEvent("chargePlayer", 50)
+				ESX.ShowNotification("You've been charged $50 for damaging the car. Buying insurance will keep you from being charged.")
 			elseif (damageInsurance == true and IsVehicleDamaged(currentVehicle) and damageCharge == false) then
 				ESX.ShowNotification("You've damaged your vehicle but due to the insurance you won't be charged.")
 				damageCharge = true
@@ -289,7 +289,7 @@ end)
 --Auto charge player every 5 minutes
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(rentalTimer*60*1000)
+		Citizen.Wait(rentalTimer*60*2000)
 		if isBeingCharged == true then
 			TriggerServerEvent("chargePlayer", autoChargeAmount)
 			ESX.ShowNotification("You've been charged $" .. autoChargeAmount .. " on another day of your rental. Return the vehicle to stop the fees.")
