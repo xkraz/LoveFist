@@ -831,18 +831,18 @@ AddEventHandler('esx_marducasjob:onFixkit', function()
 
 					local vHealth = GetVehicleEngineHealth(vehicle)
 
-					if (vHealth >= 850.0) then
+					if (vHealth >= Config.MaxRepair) then
 
 						SetVehicleFixed(vehicle)
 						ESX.ShowNotification(_U('veh_repaired'))
 
-					elseif (vHealth <= 849.9) and (vHealth >= 700.0) then
+					elseif (vHealth <= Config.MidA) and (vHealth >= Config.MidB) then
 
-						local tmpR = math.random(mathClamp(math.floor(vHealth), 750, 850),950) + (math.random(10,99)/100)
+						local tmpR = math.random(mathClamp(math.floor(vHealth), Config.MidMin, Config.MidMax),Config.MidMax) + (math.random(10,99)/100)
 						SetVehicleEngineHealth(vehicle, tmpR)
 						ESX.ShowNotification(_U('med_repaired'))
 
-					elseif (vHealth <= 699.0) then
+					elseif (vHealth <= Config.BottomEnd) then
 
 						local tmpR = math.random(mathClamp(math.floor(vHealth), Config.RepairMin, Config.RepairMax),Config.RepairMax) + (math.random(10,99)/100)
 						SetVehicleEngineHealth(vehicle, tmpR)

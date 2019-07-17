@@ -12,8 +12,18 @@ Config.NPCJobEarnings             = { min = 15, max = 40 }
 Config.RepairChance							  = 100
 Config.IsMechanicJobOnly					= true
 
-Config.RepairMin									= 680
+Config.RepairMin									= 550
 Config.RepairMax									= 750
+
+Config.MaxRepair									= 850.0
+
+Config.MidA												= 849.0
+Config.MidMin											= 750
+Config.MidMax											= 950
+Config.MidB												= 700.0
+
+Config.BottomEnd									= 699.9
+
 
 Config.Vehicles = {
 	'adder',
