@@ -39,12 +39,11 @@ AddEventHandler('onClientMapStart', function()
 	end
 end)
 
-
 Citizen.CreateThread(function()
 	while true do
 		Citizen.Wait(1)
 
-		if IsControlJustPressed(1, Keys['H']) and IsControlPressed(1, Keys['H']) then
+		if IsControlJustPressed(1, Keys['H']) and IsControlPressed(1, Keys['LEFTSHIFT']) then
 			voice.current = (voice.current + 1) % 4
 			if voice.current == 0 then
 				NetworkSetTalkerProximity(voice.default)
