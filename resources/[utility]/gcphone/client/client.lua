@@ -500,66 +500,6 @@ AddEventHandler('gcphone:autoAcceptCall', function(infoCall)
   SendNUIMessage({ event = "autoAcceptCall", infoCall = infoCall})
 end)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 --====================================================================================
 --  Gestion des evenements NUI
 --==================================================================================== 
@@ -716,9 +656,27 @@ RegisterNUICallback('setIgnoreFocus', function (data, cb)
 end)
 
 
+-------------------------------------------------
+---------- MAKE PERSON WHO DID 911 USE PHONE ----
+-------------------------------------------------
+RegisterNetEvent('gcphone:911')
+AddEventHandler('gcphone:911', function(ped)
+  if (ped == GetPlayerName(PlayerId())) then
+		Citizen.CreateThread(function()
 
+      PhonePlayText()
 
+      Citizen.Wait(2000)
 
+      if menuIsOpen == true then
+        TooglePhone()
+      else
+        PhonePlayOut()
+      end
+
+		end)
+	end
+end)
 
 
 
