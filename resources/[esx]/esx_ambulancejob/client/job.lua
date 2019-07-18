@@ -126,6 +126,8 @@ function OpenMobileAmbulanceActionsMenu()
 									TriggerServerEvent('esx_ambulancejob:removeItem', 'bandage')
 									TriggerServerEvent('esx_ambulancejob:heal', GetPlayerServerId(closestPlayer), 'small')
 									ESX.ShowNotification(_U('heal_complete', GetPlayerName(closestPlayer)))
+									TriggerClientEvent('bonefive:client:RemoveBleed',closestPlayer)
+    							TriggerClientEvent('bonefive:client:ResetLimbs',closestPlayer)
 									IsBusy = false
 								else
 									ESX.ShowNotification(_U('player_not_conscious'))

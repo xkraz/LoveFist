@@ -46,6 +46,8 @@ AddEventHandler('911', function(location, msg, x, y, z, name, ped)
 		end
 		sendDiscord('911 Communications', '**911 | Caller ID: **' .. playername .. '** | Location: **' .. location .. '** | Report: **' .. msg)
 
+		TriggerClientEvent('gcphone:911', -1, name)
+
 		Wait(displayTime * 1000)
 		TriggerClientEvent('911:killBlip', -1)
 	end
