@@ -2,7 +2,6 @@ RegisterNetEvent('MF_DopePlant:SyncPlant')
 RegisterNetEvent('MF_DopePlant:RemovePlant')
 
 local MFD = MF_DopePlant
-
 function MFD:Awake(...)
   while not ESX do Citizen.Wait(0); end
   local res = GetCurrentResourceName()

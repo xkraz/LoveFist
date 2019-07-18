@@ -6,11 +6,11 @@
 #heal {
     position: absolute;
     left: 1.40%;
-    bottom: 1.8%;
+    bottom: 1.4%;
     width: 13.95%;
     height: 1.30%;
     padding: 0;
-    border: 3px solid black;
+    border: 2px solid black;
     float:left;
     background:#545454;
 }
@@ -18,11 +18,11 @@
 #armor {
     position: absolute;
     left: 8.53%;
-    bottom: 1.8%;
+    bottom: 1.4%;
     width: 6.85%;
     height: 1.30%;
     padding: 0;
-    border: 3px solid black;
+    border: 2px solid black;
     float:left;
     background:#545454;
 }
@@ -43,7 +43,7 @@
 #hunger {
     position: absolute;
     left: 1.381%;
-    bottom: 0.35%;
+    bottom: 0.30%;
     width: 4.540%;
     height: 1.10%;
     padding: 0;
@@ -54,7 +54,7 @@
 #thirst {
     position: absolute;
     left: 6.10%;
-    bottom: 0.35%;
+    bottom: 0.30%;
     width: 4.540%;
     height: 1.10%;
     padding: 0;
@@ -66,7 +66,7 @@
 #stamina {
     position: absolute;
     left: 10.8%;
-    bottom: 0.35%;
+    bottom: 0.30%;
     width: 4.540%;
     height: 1.10%;
     padding: 0;

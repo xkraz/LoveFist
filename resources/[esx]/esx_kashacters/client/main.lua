@@ -74,7 +74,6 @@ AddEventHandler('kashactersC:SpawnCharacter', function(spawn, isnew)
     exports.spawnmanager:setAutoSpawn(false)
 	TriggerEvent('turnuion', source)
     TriggerEvent('esx_ambulancejob:multicharacter', source)
-	
  if isnew then
 	TriggerEvent('esx_identity:showRegisterIdentity')
  end
