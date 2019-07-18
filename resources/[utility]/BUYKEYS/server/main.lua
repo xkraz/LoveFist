@@ -6,7 +6,6 @@ RegisterServerEvent('buykeys')
 AddEventHandler('buykeys', function()
     local xPlayer = ESX.GetPlayerFromId(source)
     local KeyAmount = 1
-	local org1 = xPlayer.getInventoryItem('org1key').count
 	local org2 = xPlayer.getInventoryItem('org2key').count
 	local org3 = xPlayer.getInventoryItem('org3key').count
 	local warrant = xPlayer.getInventoryItem('warrantkey').count

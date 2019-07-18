@@ -10,4 +10,5 @@ files {
 client_script {
     'client/client.lua',
     'config.lua',
+	'MINIANCHOR.lua',
 }

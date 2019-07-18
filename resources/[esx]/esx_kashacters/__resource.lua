@@ -20,4 +20,6 @@ files {
 
 exports {
     'mythic_ui',
+	'esx_voice',
+	'esx_voice2',
 }

@@ -5,7 +5,7 @@ Citizen.CreateThread(function()
         
         SendNUIMessage({
             show = IsPauseMenuActive(),
-            health = GetEntityHealth(GetPlayerPed(-1)) - 100,
+            health = GetEntityHealth(GetPlayerPed(-1))/2,
             armor = GetPedArmour(GetPlayerPed(-1)),
             stamina = 100 - GetPlayerSprintStaminaRemaining(PlayerId()),
             st = status,
