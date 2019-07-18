@@ -259,7 +259,7 @@ AddEventHandler('esx_ambulancejob:giveItem', function(itemName)
 	if xPlayer.job.name ~= 'ambulance' then
 		print(('esx_ambulancejob: %s attempted to spawn in an item!'):format(xPlayer.identifier))
 		return
-	elseif (itemName ~= 'medikit' and itemName ~= 'bandage' and itemName ~= 'repairkit') then
+	elseif (itemName ~= 'medikit' and itemName ~= 'bandage' and itemName ~= 'morphine' and itemName ~= 'hydrocodone' and itemName ~= 'vicodin'and itemName ~= 'firstaid' and itemName ~= 'repairkit' and itemName ~= 'gauze') then
 		print(('esx_ambulancejob: %s attempted to spawn in an item!'):format(xPlayer.identifier))
 		return
 	end

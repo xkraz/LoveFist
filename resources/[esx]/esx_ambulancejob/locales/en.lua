@@ -5,6 +5,11 @@ Locales['en'] = {
   ['ems_clothes_civil'] = 'civilian Clothes',
   ['ems_clothes_ems'] = 'EMS Clothes',
   ['loaded_outfit'] = 'Outfit Changed',
+   ['firstaid'] = 'First Aid Kit',
+  ['vicodin'] = 'Vicodin',
+  ['hydrocodone'] = 'Hydrocodone',
+  ['morphine'] = 'Morphine',
+  ['gauze'] = 'Gauze',
   -- Vehicles
   ['ambulance'] = 'ambulance',
   ['helicopter_prompt'] = 'press ~INPUT_CONTEXT~ to access the ~y~Helicopter Actions~s~.',
