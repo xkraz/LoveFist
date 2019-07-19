@@ -139,7 +139,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
 	},
 
 	officer = {
@@ -148,7 +148,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
 	},
 	officertwo = {
 		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 0, 0, nil }, price = 0 },
@@ -157,7 +157,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
 	},
 	
 	airunit = {
@@ -167,7 +167,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
 	},
 	
 	recruiter = {
@@ -186,7 +186,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
 	},
 	sergeant = {
 		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 0, 0, nil }, price = 0 },
@@ -225,8 +225,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
-		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
 	
 	captain = {
@@ -236,8 +235,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
-		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
 	
 	bossthree = {
@@ -247,8 +245,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
-		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
 
 	bosstwo = {
@@ -258,8 +255,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_NIGHTSTICK', price = 0 },
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
-		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
-		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
+		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
 
 	boss = {
