@@ -122,7 +122,7 @@ AddEventHandler('esx_ambulancejob:useItem', function(itemName)
 				Citizen.Wait(0)
 				DisableAllControlActions(0)
 			end
-	
+
 			TriggerEvent('esx_ambulancejob:heal', 'big', true)
 			ESX.ShowNotification(_U('used_medikit'))
 		end)
@@ -185,7 +185,7 @@ end
 function SendDistressSignal()
 	local playerPed = PlayerPedId()
 	PedPosition		= GetEntityCoords(playerPed)
-	
+
 	local PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z }
 
 	ESX.ShowNotification(_U('distress_sent'))
@@ -303,7 +303,7 @@ function StartDeathTimer()
 			AddTextComponentString(text)
 			DrawText(0.5, 0.8)
 		end
-			
+
 		if bleedoutTimer < 1 and IsDead then
 			RemoveItemsAfterRPDeath()
 		end
@@ -389,7 +389,8 @@ AddEventHandler('esx_ambulancejob:revive', function()
 		TriggerServerEvent('esx:updateLastPosition', formattedCoords)
 
 		RespawnPed(playerPed, formattedCoords, 0.0)
-
+		TriggerClientEvent('bonefive:client:RemoveBleed',playerPed)
+		TriggerClientEvent('bonefive:client:ResetLimbs',playerPed)
 		StopScreenEffect('DeathFailOut')
 		DoScreenFadeIn(800)
 	end)
@@ -408,7 +409,3 @@ function getJob()
 	return PlayerData.job.name
   end
 end
-
-
-
-

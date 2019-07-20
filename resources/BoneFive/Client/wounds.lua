@@ -16,6 +16,9 @@ local headCount = 0
 local playerHealth = nil
 local playerArmour = nil
 
+local _lib = 'move_m@confident'
+local _walkStyle = 'move_m@confident'
+
 local WeaponClasses = {
     ['SMALL_CALIBER'] = 1,
     ['MEDIUM_CALIBER'] = 2,
@@ -192,7 +195,7 @@ local weapons = {
     [`WEAPON_ANIMAL`] = WeaponClasses['WILDLIFE'], -- Animal
     [`WEAPON_COUGAR`] = WeaponClasses['WILDLIFE'], -- Cougar
     [`WEAPON_BARBED_WIRE`] = WeaponClasses['WILDLIFE'], -- Barbed Wire
-    
+
     --[[ Cutting Weapons ]]--
     [`WEAPON_BATTLEAXE`] = WeaponClasses['CUTTING'],
     [`WEAPON_BOTTLE`] = WeaponClasses['CUTTING'],
@@ -214,7 +217,7 @@ local weapons = {
     [`WEAPON_UNARMED`] = WeaponClasses['LIGHT_IMPACT'],
     [`WEAPON_PARACHUTE`] = WeaponClasses['LIGHT_IMPACT'],
     [`WEAPON_NIGHTVISION`] = WeaponClasses['LIGHT_IMPACT'],
-    
+
     --[[ Heavy Impact ]]--
     [`WEAPON_BAT`] = WeaponClasses['HEAVY_IMPACT'],
     [`WEAPON_CROWBAR`] = WeaponClasses['HEAVY_IMPACT'],
@@ -225,7 +228,7 @@ local weapons = {
     [`WEAPON_PETROLCAN`] = WeaponClasses['HEAVY_IMPACT'],
     [`WEAPON_POOLCUE`] = WeaponClasses['HEAVY_IMPACT'],
     [`WEAPON_WRENCH`] = WeaponClasses['HEAVY_IMPACT'],
-    
+
     --[[ Explosives ]]--
     [`WEAPON_EXPLOSION`] = WeaponClasses['EXPLOSIVE'], -- Explosion
     [`WEAPON_GRENADE`] = WeaponClasses['EXPLOSIVE'],
@@ -235,7 +238,7 @@ local weapons = {
     [`WEAPON_PROXMINE`] = WeaponClasses['EXPLOSIVE'],
     [`WEAPON_RPG`] = WeaponClasses['EXPLOSIVE'],
     [`WEAPON_STICKYBOMB`] = WeaponClasses['EXPLOSIVE'],
-    
+
     --[[ Other ]]--
     [`WEAPON_FALL`] = WeaponClasses['OTHER'], -- Fall
     [`WEAPON_HIT_BY_WATER_CANNON`] = WeaponClasses['OTHER'], -- Water Cannon
@@ -243,9 +246,9 @@ local weapons = {
     [`WEAPON_RUN_OVER_BY_CAR`] = WeaponClasses['OTHER'], -- Ran Over
     [`WEAPON_HELI_CRASH`] = WeaponClasses['OTHER'], -- Heli Crash
     [`WEAPON_STUNGUN`] = WeaponClasses['OTHER'],
-    
+
     --[[ Fire ]]--
-    [`WEAPON_ELECTRIC_FENCE`] = WeaponClasses['FIRE'], -- Electric Fence 
+    [`WEAPON_ELECTRIC_FENCE`] = WeaponClasses['FIRE'], -- Electric Fence
     [`WEAPON_FIRE`] = WeaponClasses['FIRE'], -- Fire
     [`WEAPON_MOLOTOV`] = WeaponClasses['FIRE'],
     [`WEAPON_FLARE`] = WeaponClasses['FIRE'],
@@ -263,7 +266,7 @@ local injured = {}
 
 function IsInjuryCausingLimp()
     for k, v in pairs(BodyParts) do
-        if v.causeLimp and v.isDamaged then
+        if v.causeLimp and (v.severity > 1) then
             return true
         end
     end
@@ -321,7 +324,10 @@ function ProcessRunStuff(ped)
         end
     else
         SetPedMoveRateOverride(ped, 1.0)
-        ResetPedMovementClipset(ped, 0)
+        ESX.Streaming.RequestAnimSet(_lib, function()
+      		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
+      	end)
+
         if DecorGetInt(ped, 'player_thirst') > 25 or onPainKiller > 0 then
             SetPlayerSprint(PlayerId(), true)
         end
@@ -337,7 +343,7 @@ end
 function ProcessDamage(ped)
     if not IsEntityDead(ped) or not (onDrugs > 0) then
         for k, v in pairs(injured) do
-            if (v.part == 'LLEG' and v.severity > 1) or (v.part == 'RLEG' and v.severity > 1) or (v.part == 'LFOOT' and v.severity > 2) or (v.part == 'RFOOT' and v.severity > 2) then
+            if (v.part == 'LLEG' and v.severity >= 2) or (v.part == 'RLEG' and v.severity >= 2) or (v.part == 'LFOOT' and v.severity >= 3) or (v.part == 'RFOOT' and v.severity >= 3) then
                 if legCount >= 15 then
                     if not IsPedRagdoll(ped) and IsPedOnFoot(ped) then
                         local chance = math.random(100)
@@ -374,7 +380,7 @@ function ProcessDamage(ped)
                     if chance <= 15 then
                         exports['mythic_notify']:DoCustomHudText('inform', 'You Suddenly Black Out', 5000)
                         SetFlash(0, 0, 100, 10000, 100)
-                        
+
                         DoScreenFadeOut(100)
                         while not IsScreenFadedOut() do
                             Citizen.Wait(0)
@@ -476,6 +482,15 @@ function CheckDamage(ped, bone, weapon)
     end
 end
 
+
+RegisterNetEvent('bonefive:client:WalkChange')
+AddEventHandler('bonefive:client:WalkChange', function(lib,walkStyle)
+  _lib = lib
+  _walkStyle = walkStyle
+  TriggerEvent('chatMessage', '^5BoneFive', {255,255,255}, 'Saved walk style.')
+end)
+
+
 RegisterNetEvent('bonefive:client:SyncBleed')
 AddEventHandler('bonefive:client:SyncBleed', function(bleedStatus)
     isBleeding = tonumber(bleedStatus)
@@ -501,6 +516,10 @@ AddEventHandler('bonefive:client:ResetLimbs', function()
         v.isDamaged = false
         v.severity = 0
     end
+
+    ESX.Streaming.RequestAnimSet(_lib, function()
+  		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
+  	end)
 
     injured = {}
 end)
@@ -540,8 +559,8 @@ AddEventHandler('bonefive:client:UseAdrenaline', function(tier)
     end
 
     exports['mythic_notify']:DoCustomHudText('inform', 'You\'re Able To Ignore Your Body Failing', 5000)
-end)  
-    
+end)
+
 Citizen.CreateThread(function()
     local player = PlayerPedId()
 	while true do
@@ -560,7 +579,7 @@ Citizen.CreateThread(function()
 				else
 					str = 'Your ' .. injured[1].label .. ' feels ' .. WoundStates[injured[1].severity]
 				end
-		
+
 				exports['mythic_notify']:DoCustomHudText('inform', str, 15000)
 			end
 
@@ -568,22 +587,22 @@ Citizen.CreateThread(function()
 				if blackoutTimer >= 10 then
 					exports['mythic_notify']:DoCustomHudText('inform', 'You Suddenly Black Out', 5000)
 					SetFlash(0, 0, 100, 7000, 100)
-						
+
 					DoScreenFadeOut(500)
 					while not IsScreenFadedOut() do
 						Citizen.Wait(0)
 					end
-			
+
 					if not IsPedRagdoll(player) and IsPedOnFoot(player) and not IsPedSwimming(player) then
 						ShakeGameplayCam('SMALL_EXPLOSION_SHAKE', 0.08) -- change this float to increase/decrease camera shake
 						SetPedToRagdollWithFall(PlayerPedId(), 10000, 12000, 1, GetEntityForwardVector(player), 1.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0)
 					end
-			
+
 					Citizen.Wait(5000)
 					DoScreenFadeIn(500)
 					blackoutTimer = 0
 				end
-			
+
 				if isBleeding == 1 then
 					SetFlash(0, 0, 100, 100, 100)
 				elseif isBleeding == 2 then
@@ -601,7 +620,7 @@ Citizen.CreateThread(function()
                 playerHealth = playerHealth - bleedDamage
 				blackoutTimer = blackoutTimer + 1
 				advanceBleedTimer = advanceBleedTimer + 1
-			
+
 				if advanceBleedTimer >= 10 then
 					if isBleeding < 4 then
 						isBleeding = tonumber(isBleeding) + 1
@@ -617,7 +636,7 @@ end)
 
 Citizen.CreateThread(function()
     local player = PlayerPedId()
-    
+
     while true do
         local ped = PlayerPedId()
         local health = GetEntityHealth(ped)
@@ -639,7 +658,7 @@ Citizen.CreateThread(function()
 
         local armourDamaged = (playerArmour ~= armour and armour < playerArmour and armour > 0) -- Players armour was damaged
         local healthDamaged = (playerHealth ~= health and health < playerHealth) -- Players health was damaged
-        
+
         if armourDamaged or healthDamaged then
             local hit, bone = GetPedLastDamageBone(player)
             local bodypart = parts[bone]
@@ -669,4 +688,27 @@ Citizen.CreateThread(function()
 		ProcessDamage(player)
 		Citizen.Wait(333)
 	end
+end)
+
+local allowedToUse = false
+Citizen.CreateThread(function()
+    TriggerServerEvent("bones.getIsAllowed")
+end)
+
+RegisterNetEvent("bones.returnIsAllowed")
+AddEventHandler("bones.returnIsAllowed", function(isAllowed)
+    allowedToUse = isAllowed
+end)
+
+-- In your resource, check "allowedToUse" whenever you want to "do" something that needs permissions, for example
+
+
+RegisterCommand('limbs', function()
+  if allowedToUse then
+    TriggerEvent('bonefive:client:ResetLimbs')
+    TriggerEvent('bonefive:client:RemoveBleed')
+    TriggerEvent('chatMessage', '^5BoneFive', {255,255,255}, ' Limp and Bleeding removed.')
+  else
+    TriggerEvent('chatMessage', '^5BoneFive', {255,255,255}, ' umm.')
+  end
 end)
