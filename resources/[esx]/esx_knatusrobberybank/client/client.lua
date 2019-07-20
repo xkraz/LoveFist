@@ -76,26 +76,6 @@ AddEventHandler('esx_holdupbank:plantingbomb', function(robb, thisbank)
 	secondsRemaining = 20
 end)
 
-RegisterNetEvent('esx_holdupbank:newsbroadcast')
-AddEventHandler('esx_holdupbank:newsbroadcast', function(bankk, robb, _c4)
-
-	if (ESX.PlayerData.job.name == 'police') or (ESX.PlayerData.job.name == 'fib') then
-			TriggerEvent('chatMessage', 'NEWS',{ 255, 0, 0}, " Robbery in progress at ^2" .. bankk)
-			TriggerEvent('esx:showNotification', _U('rob_in_prog') .. bankk)
-
-			if (_c4 == false) then
-				TriggerEvent('esx_holdupbank:setblip',Banks[robb].position)
-			end
-	end
-
-	if (ESX.PlayerData.job.name == 'reporter') then
-		Citizen.CreateThread(function()
-			Citizen.Wait(1000*Config.NewsDelay)
-			TriggerEvent('chatMessage', 'NEWS',{ 255, 0, 0}, " Robbery in progress at ^2" .. bankk)
-		end)
-	end
-end)
-
 
 
 function opendoors(success, timeremaining)

@@ -53,12 +53,12 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 	local source = source
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local xPlayers = ESX.GetPlayers()
-
+	
 	if Banks[robb] then
 
 		local bank = Banks[robb]
 
-		if (os.time() - bank.lastrobbed) < 600 and bank.lastrobbed ~= 0 then
+		if (os.time() - bank.lastrobbed) < 1800000 and bank.lastrobbed ~= 0 then
 
 			TriggerClientEvent('esx:showNotification', source, _U('already_robbed') .. (1800000 - (os.time() - bank.lastrobbed)) .. _U('seconds'))
 			return
@@ -75,11 +75,21 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 
 
 		if rob == false then
-
+		
 			 if xPlayer.getInventoryItem('blowtorch').count >= 1 then
 				if(cops >= Config.NumberOfCopsRequired)then
-					TriggerClientEvent('esx_holdupbank:newsbroadcast', -1 ,bank.nameofbank,robb, false)
-					xPlayer.removeInventoryItem('blowtorch', 1)
+					
+					rob = true
+					for i=1, #xPlayers, 1 do
+						local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+						if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' then
+								xPlayer.removeInventoryItem('blowtorch', 1)
+								TriggerClientEvent('chatMessage', -1, 'NEWS', {255, 0, 0}, "Robbery in progress at ^2" .. bank.nameofbank)
+								TriggerClientEvent('esx:showNotification', xPlayers[i], _U('rob_in_prog') .. bank.nameofbank)							
+								TriggerClientEvent('esx_holdupbank:setblip', xPlayers[i], Banks[robb].position)
+						end
+					end
+
 					TriggerClientEvent('esx:showNotification', source, _U('started_to_rob') .. bank.nameofbank .. _U('do_not_move'))
 					TriggerClientEvent('esx:showNotification', source, _U('alarm_triggered'))
 					TriggerClientEvent('esx:showNotification', source, _U('hold_pos'))
@@ -100,7 +110,7 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 								local xPlayers = ESX.GetPlayers()
 								for i=1, #xPlayers, 1 do
 									local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
-									if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' or xPlayer.job.name == 'reporter' then
+									if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' then
 											TriggerClientEvent('esx:showNotification', xPlayers[i], _U('robbery_complete_at') .. bank.nameofbank)
 											TriggerClientEvent('esx_holdupbank:killblip', xPlayers[i])
 									end
@@ -127,12 +137,12 @@ AddEventHandler('esx_holdupbank:hack', function(robb)
 	local source = source
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local xPlayers = ESX.GetPlayers()
-
+	
 	if Banks[robb] then
 
 		local bank = Banks[robb]
 
-		if (os.time() - bank.lastrobbed) < 600 and bank.lastrobbed ~= 0 then
+		if (os.time() - bank.lastrobbed) < 1800000 and bank.lastrobbed ~= 0 then
 
 			TriggerClientEvent('esx:showNotification', source, _U('already_robbed') .. (1800000 - (os.time() - bank.lastrobbed)) .. _U('seconds'))
 			return
@@ -182,7 +192,7 @@ AddEventHandler('esx_holdupbank:plantbomb', function(robb)
 
         local bank = Banks[robb]
 
-        if (os.time() - bank.lastrobbed) < 600 and bank.lastrobbed ~= 0 then
+        if (os.time() - bank.lastrobbed) < 1800000 and bank.lastrobbed ~= 0 then
 
             TriggerClientEvent('esx:showNotification', source, _U('already_robbed') .. (1800000 - (os.time() - bank.lastrobbed)) .. _U('seconds'))
             return
@@ -202,8 +212,14 @@ AddEventHandler('esx_holdupbank:plantbomb', function(robb)
 
 			if xPlayer.getInventoryItem('c4_bank').count >= 1 then
 				xPlayer.removeInventoryItem('c4_bank', 1)
-
-				TriggerClientEvent('esx_holdupbank:newsbroadcast', -1 ,bank.nameofbank,robb,true)
+				for i=1, #xPlayers, 1 do
+				local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+					if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' then
+						TriggerClientEvent('chatMessage', -1, 'NEWS', {255, 0, 0}, "Robbery in progress at ^2" .. bank.nameofbank)
+						TriggerClientEvent('esx:showNotification', xPlayers[i], _U('rob_in_prog') .. bank.nameofbank)
+						--TriggerClientEvent('esx_holdupbank:setblip', xPlayers[i], Banks[robb].position)
+					end
+				end
 
 				TriggerClientEvent('esx:showNotification', source, _U('started_to_plantbomb') .. bank.nameofbank .. _U('do_not_move'))
 

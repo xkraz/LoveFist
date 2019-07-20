@@ -1,7 +1,6 @@
 Config = {}
 Config.Locale = 'en'
-Config.NumberOfCopsRequired = 4
-Config.NewsDelay = 60  -- Time delay in seconds for reporters to get robbery notification
+Config.NumberOfCopsRequired = 6
 
 Banks = {
 	["Fleeca PD"] = {
@@ -33,7 +32,7 @@ Banks = {
 		nameofbank = "Blaine County Savings",
 		lastrobbed = 0
 	},
-
+	
 	["PrincipalBank"] = {
 		position = { ['x'] = 264.99899291992, ['y'] = 213.50576782227, ['z'] = 101.68346405029 },
 		hackposition = { ['x'] = 261.41, ['y'] = 223.3126, ['z'] = 234106.2833 },
@@ -46,3 +45,4 @@ Banks = {
     },
 
 }
+
