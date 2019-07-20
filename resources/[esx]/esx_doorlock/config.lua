@@ -1908,6 +1908,56 @@ Config.DoorList = {
 		locked = true,
 		distance = 3,
 	}, 
+	---  pdm
+	
+	{ -- stairs l  
+		objName = 'apa_prop_ss1_mpint_door_r',
+		objCoords  = {x = 807.816284, y = -245.587402, z = 73.9634857},
+		textCoords = {x = 807.816284, y = -245.587402, z = 73.9634857},
+		authorizedJobs = {'pdmownerkey','pdmkey','adminkey',}, 
+		locked = true,
+		distance = 3,
+	}, 
+	{ -- stairs r 
+		objName = 'apa_prop_ss1_mpint_door_r',
+		objCoords  = {x = 805.920837, y = -244.550735, z = 73.956398},
+		textCoords = {x = 805.920837, y = -244.550735, z = 73.956398},
+		authorizedJobs = { 'pdmownerkey','pdmkey','adminkey', },
+		locked = true,
+		distance = 3,
+	}, 
+	{ -- office 1
+		objName = 'apa_p_mp_yacht_door_01',
+		objCoords  = {x = 756.255127, y = -243.222763, z = 73.6240463},
+		textCoords = {x = 756.255127, y = -243.222763, z = 73.6240463},
+		authorizedJobs = { 'pdmownerkey','pdmkey','adminkey', },
+		locked = true,
+		distance = 3,
+	}, 
+	{ -- office 2
+		objName = 'apa_p_mp_yacht_door_01',
+		objCoords  = {x = 751.852844, y = -224.638428, z = 73.6124039},
+		textCoords = {x = 751.852844, y = -224.638428, z = 73.6124039},
+		authorizedJobs = { 'pdmownerkey','pdmkey','adminkey', },
+		locked = true,
+		distance = 3,
+	}, 
+	{ -- office L upstairs
+		objName = 'xm_prop_x17_l_door_frame_01',
+		objCoords  = {x = 773.180237, y = -246.895081, z = 78.6479492},
+		textCoords = {x = 773.180237, y = -246.895081, z = 78.6479492},
+		authorizedJobs = { 'pdmownerkey','adminkey', },
+		locked = true,
+		distance = 3,
+	}, 
+	{ -- office R upstairs
+		objName = 'xm_prop_x17_l_door_frame_01',
+		objCoords  = {x = 770.957214, y = -245.549759, z = 78.6575317},
+		textCoords = {x = 770.957214, y = -245.549759, z = 78.6575317},
+		authorizedJobs = { 'pdmownerkey','adminkey', },
+		locked = true,
+		distance = 3,
+	}, 
 
 	
 }

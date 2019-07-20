@@ -247,6 +247,8 @@ files {
 	'html/img/items/jus_raisin.png',
 	'html/img/items/bulletsample.png',
 	'html/img/items/weed.png',
+	'html/img/items/pdmkey.png',
+	'html/img/items/pdmownerkey.png',
 	'html/img/items/dopebag.png'
 
 }
