@@ -18,6 +18,7 @@ local playerArmour = nil
 
 local _lib = 'move_m@confident'
 local _walkStyle = 'move_m@confident'
+local _crouched = false;
 
 local WeaponClasses = {
     ['SMALL_CALIBER'] = 1,
@@ -301,13 +302,14 @@ end
 
 function ProcessRunStuff(ped)
     if IsInjuryCausingLimp() and not (onPainKiller > 0)  then
-        RequestAnimSet("move_m@injured")
-        while not HasAnimSetLoaded("move_m@injured") do
-            Citizen.Wait(0)
+        if not _crouched then
+          RequestAnimSet("move_m@injured")
+          while not HasAnimSetLoaded("move_m@injured") do
+              Citizen.Wait(0)
+          end
+          SetPedMovementClipset(ped, "move_m@injured", 1 )
+          SetPlayerSprint(PlayerId(), false)
         end
-        SetPedMovementClipset(ped, "move_m@injured", 1 )
-        SetPlayerSprint(PlayerId(), false)
-
         local level = 0
         for k, v in pairs(injured) do
             if v.severity > level then
@@ -324,10 +326,12 @@ function ProcessRunStuff(ped)
         end
     else
         SetPedMoveRateOverride(ped, 1.0)
-        ESX.Streaming.RequestAnimSet(_lib, function()
-      		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
-      	end)
+        if not _crouched then
 
+          ESX.Streaming.RequestAnimSet(_lib, function()
+        		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
+        	end)
+        end
         if DecorGetInt(ped, 'player_thirst') > 25 or onPainKiller > 0 then
             SetPlayerSprint(PlayerId(), true)
         end
@@ -482,6 +486,11 @@ function CheckDamage(ped, bone, weapon)
     end
 end
 
+
+RegisterNetEvent('bonefive:client:crouched')
+AddEventHandler('bonefive:client:crouched', function(_bool)
+  _crouched = _bool
+end)
 
 RegisterNetEvent('bonefive:client:WalkChange')
 AddEventHandler('bonefive:client:WalkChange', function(lib,walkStyle)
@@ -708,7 +717,5 @@ RegisterCommand('limbs', function()
     TriggerEvent('bonefive:client:ResetLimbs')
     TriggerEvent('bonefive:client:RemoveBleed')
     TriggerEvent('chatMessage', '^5BoneFive', {255,255,255}, ' Limp and Bleeding removed.')
-  else
-    TriggerEvent('chatMessage', '^5BoneFive', {255,255,255}, ' umm.')
   end
 end)
