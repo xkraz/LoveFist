@@ -39,7 +39,7 @@ files {
   "html/locales/fr.js",
   -- IMAGES
   "html/img/bullet.png",
-   -- ICONS
+   -- ICONS 
 	'html/img/items/org1key.png',
 	'html/img/items/org2key.png',
 	'html/img/items/org3key.png',
@@ -246,7 +246,8 @@ files {
 	'html/img/items/wool.png',
 	'html/img/items/wood.png',
 	'html/img/items/wateringcan.png',
-	'html/img/items/ziplockbag.png'
+	'html/img/items/jus_raisin.png',
+	'html/img/items/dopebag.png'
 
 
 
