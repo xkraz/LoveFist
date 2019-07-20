@@ -1,4 +1,4 @@
--- Simple 911 Command (With Location & Blip) -- 
+-- Simple 911 Command (With Location & Blip) --
 		-- Made By Chezza --
 
 -- Code --
@@ -27,7 +27,7 @@ AddEventHandler('911:killBlip', function()
     RemoveBlip(blip)
 end)
 
--- Command -- 
+-- Command --
 
 RegisterCommand('911', function(source, args)
     local name = GetPlayerName(PlayerId())
@@ -40,6 +40,6 @@ RegisterCommand('911', function(source, args)
         TriggerEvent('chatMessage', '^5911', {255,255,255}, ' ^7Please enter your ^1report/issue.')
     else
         TriggerServerEvent('911', location, msg, x, y, z, name)
+        TriggerEvent('chatMessage', '^5911', {255,255,255}, ' ^7Message received.')
     end
 end)
-
