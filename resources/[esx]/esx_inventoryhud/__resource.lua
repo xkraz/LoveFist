@@ -204,8 +204,7 @@ files {
 	'html/img/items/lowgradefemaleseed.png',
 	'html/img/items/lowgrademaleseed.png',
 	'html/img/items/lowgradefert.png',
-	'html/img/items/marijuana.png',
-	'html/img/items/mintleaf.png.png',
+	'html/img/items/mintleaf.png',
 	'html/img/items/metal_fragments.png',
 	'html/img/items/meth_ingredients.png',
 	'html/img/items/milk.png',
@@ -229,11 +228,10 @@ files {
 	'html/img/items/rose.png',
 	'html/img/items/samsungS10.png',
 	'html/img/items/rubberband.png',
-	'html/img/items/shark.png.png',
+	'html/img/items/shark.png',
 	'html/img/items/simmonskey.png',
 	'html/img/items/slaughtered_chicken.png',
-	'html/img/items/soap.png.png',
-	'html/img/items/soda.png.png',
+	'html/img/items/soda.png',
 	'html/img/items/solvent.png',
 	'html/img/items/stone.png',
 	'html/img/items/strokerkey.png',
@@ -247,8 +245,8 @@ files {
 	'html/img/items/wood.png',
 	'html/img/items/wateringcan.png',
 	'html/img/items/jus_raisin.png',
+	'html/img/items/bulletsample.png',
+	'html/img/items/weed.png',
 	'html/img/items/dopebag.png'
-
-
 
 }
