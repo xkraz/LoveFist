@@ -141,6 +141,7 @@ files {
     'html/img/items/WEAPON_DBSHOTGUN.png',
     'html/img/items/WEAPON_SWITCHBLADE.png',
     'html/img/items/WEAPON_POOLCUE.png',
+	'html/img/items/WEAPON_FLAREGUN.png',
 	'html/img/items/absinthe.png', 
 	'html/img/items/adminkey.png',
 	'html/img/items/airbag.png',
@@ -183,7 +184,7 @@ files {
 	'html/img/items/empty_propane_tank.png',
 	'html/img/items/explosive_material.png',
 	'html/img/items/fabric.png', 
-	'html/img/items/firstaidkit.png',
+	'html/img/items/firstaid.png',
 	'html/img/items/fish_oil.png',
 	'html/img/items/fixtool.png',
 	'html/img/items/gazbottle.png',
@@ -197,7 +198,7 @@ files {
 	'html/img/items/ice.png',
 	'html/img/items/jager.png',
 	'html/img/items/jagerbomb.png',
-	'html/img/items/junk.png.png',
+	'html/img/items/junk.png',
 	'html/img/items/jusfruit.png',
 	'html/img/items/leather.png',
 	'html/img/items/lily.png',
@@ -249,6 +250,7 @@ files {
 	'html/img/items/weed.png',
 	'html/img/items/pdmkey.png',
 	'html/img/items/pdmownerkey.png',
+	'html/img/items/fish.png',
 	'html/img/items/dopebag.png'
 
 }
