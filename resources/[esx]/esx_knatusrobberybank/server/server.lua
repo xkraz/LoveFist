@@ -167,7 +167,7 @@ AddEventHandler('esx_holdupbank:hack', function(robb)
 					TriggerClientEvent('esx:showNotification', source, _U('rasperry_needed'))
 				end
 			else
-				TriggerClientEvent('esx:showNotification', source, _U('min_two_police'))
+				TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..Config.NumberOfCopsRequired)
 			end
 	end
 end)
@@ -240,7 +240,7 @@ AddEventHandler('esx_holdupbank:plantbomb', function(robb)
 				TriggerClientEvent('esx:showNotification', source, _U('c4_needed'))
 			end
         else
-            TriggerClientEvent('esx:showNotification', source, _U('min_two_police'))
+            TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..Config.NumberOfCopsRequired)
         end
 
     end
