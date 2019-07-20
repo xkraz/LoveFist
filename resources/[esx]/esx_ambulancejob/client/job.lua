@@ -1033,8 +1033,8 @@ AddEventHandler('esx_ambulancejob:heal', function(healType, quiet)
 		SetEntityHealth(playerPed, new2Health)
 	end
 
-	TriggerClientEvent('bonefive:client:RemoveBleed',playerPed)
-	TriggerClientEvent('bonefive:client:ResetLimbs',playerPed)
+	TriggerEvent('bonefive:client:RemoveBleed')
+	TriggerEvent('bonefive:client:ResetLimbs')
 
 	if not quiet then
 		ESX.ShowNotification(_U('healed'))
