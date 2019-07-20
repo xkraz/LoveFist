@@ -9,7 +9,6 @@ JVS.VehRetDist = 5.0
 
 JVS.CarDealerJobLabel = "cardealer"
 JVS.DealerMarkerPos = vector3(-33.79, -1101.7, 25.30)
-
 -- Why vector4's, you ask?
 -- X, Y, Z, Heading.
 
@@ -29,6 +28,8 @@ JVS.DisplayPositions = {
 	[4] = vector4(-40.04, -1094.94, 25.95, 187.00),
 	[5] = vector4(-44.65, -1103.22, 25.93, 346.12),
 	[6] = vector4(-42.27, -1103.48, 25.93, 295.83),
+	[7] = vector4(-42.27, -1103.48, 25.93, 295.83),
+	[8] = vector4(-42.27, -1103.48, 25.93, 295.83),
 }
 
 JVS.Blips = {
