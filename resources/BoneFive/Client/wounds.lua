@@ -698,24 +698,3 @@ Citizen.CreateThread(function()
 		Citizen.Wait(333)
 	end
 end)
-
-local allowedToUse = false
-Citizen.CreateThread(function()
-    TriggerServerEvent("bones.getIsAllowed")
-end)
-
-RegisterNetEvent("bones.returnIsAllowed")
-AddEventHandler("bones.returnIsAllowed", function(isAllowed)
-    allowedToUse = isAllowed
-end)
-
--- In your resource, check "allowedToUse" whenever you want to "do" something that needs permissions, for example
-
-
-RegisterCommand('limbs', function()
-  if allowedToUse then
-    TriggerEvent('bonefive:client:ResetLimbs')
-    TriggerEvent('bonefive:client:RemoveBleed')
-    TriggerEvent('chatMessage', '^5BoneFive', {255,255,255}, ' Limp and Bleeding removed.')
-  end
-end)
