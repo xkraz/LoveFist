@@ -142,6 +142,7 @@ files {
     'html/img/items/WEAPON_SWITCHBLADE.png',
     'html/img/items/WEAPON_POOLCUE.png',
 	'html/img/items/WEAPON_FLAREGUN.png',
+	'html/img/items/WEAPON_PARACHUTE.png',
 	'html/img/items/absinthe.png', 
 	'html/img/items/adminkey.png',
 	'html/img/items/airbag.png',

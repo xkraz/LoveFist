@@ -593,7 +593,7 @@ function JVS:OpenRearrangeMenu()
 	local elements = {}
 	for k,v in pairs(self.DisplayVehicles) do
 		local prefix = ''
-		if k == 1 or k == 2 or k == 3 or k == 7 then prefix = "[Car] " else prefix = "[Bike] "; end 
+		if k == 1 or k == 2 or k == 3 then prefix = "[Car] " else prefix = "[Bike] "; end 
 		table.insert(elements, {label = prefix..self.ShopData.Displays[k].name, key = k})
 	end
 
@@ -612,11 +612,11 @@ end
 function JVS:OpenSwapMenu(key)
 	local elements = {}
 	for k,v in pairs(self.ShopData.Imports) do
-		if key == 1 or key == 2 or key == 3 or key == 7 then
+		if key == 1 or key == 2 or key == 3 then
 			if v.category == "importcars" then
 				table.insert(elements, {label = v.name, model = v.model, price = v.price})
 			end
-		elseif key == 4 or key == 5 or key == 6 or key == 8 then
+		elseif key == 4 or key == 5 or key == 6 then
 			if v.category == "importbikes" then
 			table.insert(elements, {label = v.name, model = v.model, price = v.price})
 			end
