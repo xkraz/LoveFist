@@ -878,7 +878,7 @@ end)
 AddEventHandler('esx_org3job:hasEnteredEntityZone', function(entity)
 	local playerPed = PlayerPedId()
 
-	if PlayerData.job ~= nil and PlayerData.job.name == 'org3' and IsPedOnFoot(playerPed) then
+	if PlayerData.job ~= nil and PlayerData.job.name == 'org3' or PlayerData.job.name == 'police' and IsPedOnFoot(playerPed) then
 		CurrentAction     = 'remove_entity'
 		CurrentActionMsg  = _U('remove_prop')
 		CurrentActionData = {entity = entity}
@@ -1123,7 +1123,7 @@ Citizen.CreateThread(function()
 
 		Citizen.Wait(0)
 
-		if PlayerData.job ~= nil and PlayerData.job.name == 'org3' then
+		if PlayerData.job ~= nil and PlayerData.job.name == 'org3' or PlayerData.job.name == 'police' then
 
 			local playerPed = PlayerPedId()
 			local coords    = GetEntityCoords(playerPed)
@@ -1265,7 +1265,7 @@ Citizen.CreateThread(function()
 		if CurrentAction ~= nil then
 			ESX.ShowHelpNotification(CurrentActionMsg)
 
-			if IsControlJustReleased(0, Keys['E']) and PlayerData.job ~= nil and PlayerData.job.name == 'org3' then
+			if IsControlJustReleased(0, Keys['E']) and PlayerData.job ~= nil and PlayerData.job.name == 'org3' or PlayerData.job.name == 'police' then
 
 				if CurrentAction == 'menu_cloakroom' then
 					OpenCloakroomMenu()
@@ -1312,7 +1312,7 @@ Citizen.CreateThread(function()
 			end
 		end -- CurrentAction end
 		
---		if IsControlJustReleased(0, Keys['18234123']) and not isDead and PlayerData.job ~= nil and PlayerData.job.name == 'org3' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'org3_actions') then
+--		if IsControlJustReleased(0, Keys['18234123']) and not isDead and PlayerData.job ~= nil and PlayerData.job.name == 'org3' or PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'org3_actions') then
 --			if Config.MaxInService == -1 then
 --				OpenOrg3ActionsMenu()
 --			elseif playerInService then
@@ -1322,7 +1322,7 @@ Citizen.CreateThread(function()
 --			end	
 --		end
 --
---		if IsControlJustReleased(0, Keys[',']) and not isDead and PlayerData.job ~= nil and PlayerData.job.name == 'org3' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'org3_actions2') then
+--		if IsControlJustReleased(0, Keys[',']) and not isDead and PlayerData.job ~= nil and PlayerData.job.name == 'org3' or PlayerData.job.name == 'police' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'org3_actions2') then
 --			if Config.MaxInService == -1 then
 --				OpenHandCuffMenu()
 --			elseif playerInService then

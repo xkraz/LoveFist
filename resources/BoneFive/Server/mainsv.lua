@@ -14,7 +14,7 @@ local beds = {
 }
 
 local bedsTaken = {}
-local injuryBasePrice = 100
+local injuryBasePrice = 20
 ESX             = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
