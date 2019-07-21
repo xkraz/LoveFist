@@ -438,7 +438,7 @@ JAG.Config = {
 			Heading = 327.63,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 738.9, y = -225.67, z = 73.52 },
+			Pos = { x = 738.9, y = -225.67, z = 72.52 },
 		},
 		CityImpound = {
 			Zone = "Impound",
@@ -520,6 +520,15 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -2689.04, y = -81.34, z = 16.64 },
+			
+		},
+		gamersguild = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 336.12,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -863.39, y = 699.25, z = 148.06 },
 		},
 	},
 }
