@@ -1,11 +1,11 @@
 ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj)
-	ESX = obj
+	ESX = obj 
 end)
 
 ESX.RegisterServerCallback('revenge-drugs:getProgress', function(source, callback, plantId)
-	local result = MySQL.Sync.fetchAll('SELECT * FROM drug_farms')
+	local result = MySQL.Sync.fetchAll('SELECT * FROM drug_farms') 
 	local found = false
 
 	for i=1, #result, 1 do
@@ -104,7 +104,7 @@ end)
 
 
 ESX.RegisterServerCallback('revenge-drugs:isPedAccepting', function(source, callback)
-	local accepting = math.random(100) <= Config.BuyChance
+	local accepting = math.random(0, 2) == 0
 
 	callback(not accepting)
 end)
@@ -124,7 +124,7 @@ ESX.RegisterServerCallback('revenge-drugs:sellDrugs', function(source, callback)
 		if xPlayer.getInventoryItem('coke_pooch').count > 0 then
 			table.insert(items, {item = 'coke_pooch', price = math.random(90,110)})
 		end
-
+		
 		if xPlayer.getInventoryItem('meth_pooch').count > 0 then
 			table.insert(items, {item = 'meth_pooch', price = math.random(90,110)})
 		end
@@ -140,14 +140,14 @@ ESX.RegisterServerCallback('revenge-drugs:sellDrugs', function(source, callback)
 		end
 
 		if #items > 0 then
-			if copCount >= Config.SellCopAmount then
+			if copCount >= 0 then
                 if copCount > 7 then
                    copCount = 7
                 end
 
 				local item = items[math.random(#items)]
 				local money = item.price
-
+                                 
 				xPlayer.removeInventoryItem(item.item, 1)
 				xPlayer.addAccountMoney('black_money', money)
 
@@ -189,7 +189,7 @@ AddEventHandler('revenge-drugs:setProgress', function(progress)
 
 	for i=1, #result, 1 do
 		local row = result[i]
-
+		
 		if row ~= nil and row.id ~= nil then
 			if row.id == progress.id then
 				found = true
@@ -198,7 +198,7 @@ AddEventHandler('revenge-drugs:setProgress', function(progress)
 	end
 
 	if found == false then
-		MySQL.Sync.execute('INSERT INTO drug_farms (id, type, task, tasksLeft, delay) VALUES (@id, @type, @task, @tasksLeft, @delay)',
+		MySQL.Sync.execute('INSERT INTO drug_farms (id, type, task, tasksLeft, delay) VALUES (@id, @type, @task, @tasksLeft, @delay)', 
 			{
 				["@id"] = progress.id,
 				["@type"] = progress.type,
@@ -208,7 +208,7 @@ AddEventHandler('revenge-drugs:setProgress', function(progress)
 			}
 		)
 	else
-		MySQL.Sync.execute('UPDATE drug_farms SET type = @type, task = @task, tasksLeft = @tasksLeft, delay = @delay WHERE id = @id',
+		MySQL.Sync.execute('UPDATE drug_farms SET type = @type, task = @task, tasksLeft = @tasksLeft, delay = @delay WHERE id = @id', 
 			{
 				["@id"] = progress.id,
 				["@type"] = progress.type,
@@ -233,3 +233,4 @@ function table.contains(table, object)
 
     return false
 end
+

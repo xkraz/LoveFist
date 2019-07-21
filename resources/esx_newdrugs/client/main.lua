@@ -31,29 +31,29 @@ Citizen.CreateThread(function()
 
 			Marker.AddMarker('weed_farm_' .. i, farm, 'Press ~INPUT_CONTEXT~ to interact with Weed', nil, 0, function()
 				OpenWeedPlantMenu('weed_' .. i)
-			end,
+			end, 
 			function()
 				ESX.UI.Menu.CloseAll()
 			end)
 		end
 
-		for i=1, #Config.CocaineFarms, 1 do
+		for i=1, #Config.CocaineFarms, 1 do 
 			local farm = Config.CocaineFarms[i]
 
 			Marker.AddMarker('cocaine_farm_' .. i, farm, 'Press ~INPUT_CONTEXT~ to interact with Cocaine', nil, 0, function()
 				OpenCocaineFarmMenu('cocaine_' .. i)
-			end,
+			end, 
 			function()
 				ESX.UI.Menu.CloseAll()
 			end)
 		end
 
-		for i=1, #Config.MethFarms, 1 do
+		for i=1, #Config.MethFarms, 1 do 
 			local farm = Config.MethFarms[i]
 
 			Marker.AddMarker('meth_farm_' .. i, farm, 'Press ~INPUT_CONTEXT~ to interact with Meth', nil, 0, function()
 				OpenMethFarmMenu('meth_' .. i)
-			end,
+			end, 
 			function()
 				ESX.UI.Menu.CloseAll()
 			end)
@@ -75,7 +75,7 @@ end)
 
 function OpenWeedPlantMenu(plantId)
 	ESX.UI.Menu.CloseAll()
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'weed_plant',
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'weed_plant', 
 		{
 			title = 'Weed Plant',
 			align = 'top-left',
@@ -88,7 +88,7 @@ function OpenWeedPlantMenu(plantId)
 					label = 'Water',
 					value = 'water_plant'
 				},
-				{
+				{	
 					label = 'Harvest',
 					value = 'harvest_plant'
 				}
@@ -143,7 +143,7 @@ function OpenWeedPlantMenu(plantId)
 
 										ESX.UI.Menu.CloseAll()
 									else
-										TriggerEvent('esx:showNotification', 'Wait  ' .. ((progress.delay + DelayBetween) - time) ..' second(s) until she is thirsty.')
+										TriggerEvent('esx:showNotification', 'Wait until she is thirsty.')
 									end
 								end)
 							else
@@ -176,7 +176,7 @@ function OpenWeedPlantMenu(plantId)
 
 										ESX.UI.Menu.CloseAll()
 									else
-										TriggerEvent('esx:showNotification', 'Wait  ' .. ((progress.delay + DelayBetween) - time) ..' second(s) to harvest the plant.')
+										TriggerEvent('esx:showNotification', 'The plant is still not ready.')		
 									end
 								end)
 							else
@@ -201,7 +201,7 @@ end
 
 function OpenCocaineFarmMenu(plantId)
 	ESX.UI.Menu.CloseAll()
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cocaine_farm',
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cocaine_farm', 
 		{
 			title = 'Cocaine Farm',
 			align = 'top-left',
@@ -214,7 +214,7 @@ function OpenCocaineFarmMenu(plantId)
 					label = 'Mix',
 					value = 'sample'
 				},
-				{
+				{	
 					label = 'Package',
 					value = 'package'
 				}
@@ -222,14 +222,14 @@ function OpenCocaineFarmMenu(plantId)
 		},
 		function(data, menu)
                         ESX.UI.Menu.CloseAll()
+			ESX.TriggerServerCallback('revenge-drugs:getPolice', function(count)
+				if count >= RequiredPolice then
 					ESX.TriggerServerCallback('revenge-drugs:getProgress', function(progress, time)
-						if data.current.value == 'ingredients' then --2
-							if progress.task == 'ingredients' then --3
-							ESX.TriggerServerCallback('revenge-drugs:getPolice', function(count)
-								if count >= Config.MakeCopAmount then --1
+						if data.current.value == 'ingredients' then
+							if progress.task == 'ingredients' then
 								Citizen.CreateThread(function()
 									ESX.TriggerServerCallback('revenge-drugs:useIngredients', function(state)
-										if state == true then --4
+										if state == true then
 											progress.task = 'sample'
 											progress.tasksLeft = 3
 
@@ -243,16 +243,12 @@ function OpenCocaineFarmMenu(plantId)
 											ESX.UI.Menu.CloseAll()
 										else
 											TriggerEvent('esx:showNotification', 'You must have the cooking ingredients first!')
-										end --4
+										end
 									end, progress)
 								end)
 							else
-								TriggerEvent('esx:showNotification', 'Must be ~b~' .. Config.MakeCopAmount .. ' ~w~cop(s) online to farm drugs.')
-							end
-						end)
-							else
 								TriggerEvent('esx:showNotification', 'You already mixed the ingredients.')
-							end --3
+							end
 						elseif data.current.value == 'sample' then
 							if progress.task == 'sample' then
 								Citizen.CreateThread(function()
@@ -275,7 +271,7 @@ function OpenCocaineFarmMenu(plantId)
 
 										ESX.UI.Menu.CloseAll()
 									else
-										TriggerEvent('esx:showNotification', 'Wait ' .. ((progress.delay + DelayBetween) - time) ..' second(s) until mixing again.')
+										TriggerEvent('esx:showNotification', 'Wait until mixing cocaine again.')
 									end
 								end)
 							else
@@ -299,7 +295,7 @@ function OpenCocaineFarmMenu(plantId)
 
 										Citizen.Wait(10000)
 										ClearPedTasks(GetPlayerPed(-1))
-
+										
 										ESX.TriggerServerCallback('revenge-drugs:giveRewards', function()
 											TriggerEvent('esx:showNotification', 'You made cocaine.')
 
@@ -308,7 +304,7 @@ function OpenCocaineFarmMenu(plantId)
 
 										ESX.UI.Menu.CloseAll()
 									else
-										TriggerEvent('esx:showNotification', 'Wait ' .. ((progress.delay + DelayBetween) - time) ..' second(s) to harvest coke.')
+										TriggerEvent('esx:showNotification', 'Wait for coke to stop.')		
 									end
 								end)
 							else
@@ -320,6 +316,10 @@ function OpenCocaineFarmMenu(plantId)
 							end
 						end
 					end, plantId)
+				else
+					TriggerEvent('esx:showNotification', 'Must be~b~' .. RequiredPolice .. ' ~w~cops online to farm drugs.')
+				end
+			end)
 		end,
 		function(data, menu)
 			menu.close()
@@ -329,7 +329,7 @@ end
 
 function OpenMethFarmMenu(plantId)
 	ESX.UI.Menu.CloseAll()
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'meth_farm',
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'meth_farm', 
 		{
 			title = 'Meth Farm',
 			align = 'top-left',
@@ -342,7 +342,7 @@ function OpenMethFarmMenu(plantId)
 					label = 'Cook',
 					value = 'cook'
 				},
-				{
+				{	
 					label = 'Package',
 					value = 'package'
 				}
@@ -350,16 +350,16 @@ function OpenMethFarmMenu(plantId)
 		},
 		function(data, menu)
             ESX.UI.Menu.CloseAll()
+			ESX.TriggerServerCallback('revenge-drugs:getPolice', function(count)
+				if count >= RequiredPolice then
 					ESX.TriggerServerCallback('revenge-drugs:getProgress', function(progress, time)
 						if data.current.value == 'ingredients' then
 							if progress.task == 'ingredients' then
-								ESX.TriggerServerCallback('revenge-drugs:getPolice', function(count)
-									if count >= Config.MakeCopAmount then
 								Citizen.CreateThread(function()
 									ESX.TriggerServerCallback('revenge-drugs:useIngredients', function(state)
 										if state == true then
 											playAnimation('mini@repair', 'fixing_a_ped')
-
+											
 											progress.task = 'cook'
 											progress.tasksLeft = 3
 
@@ -374,10 +374,6 @@ function OpenMethFarmMenu(plantId)
 										end
 									end, progress)
 								end)
-								else
-									TriggerEvent('esx:showNotification', 'Must have ~b~' .. RequiredPolice .. ' ~w~cops to farm drugs.')
-								end
-							end)
 							else
 								TriggerEvent('esx:showNotification', 'You already mixed the ingredients.')
 							end
@@ -386,7 +382,7 @@ function OpenMethFarmMenu(plantId)
 								Citizen.CreateThread(function()
 									if progress.delay + DelayBetween < time then
 										playAnimation('mini@repair', 'fixing_a_ped')
-
+										
 										if progress.tasksLeft > 1 then
 											progress.tasksLeft = progress.tasksLeft - 1
 											progress.delay = time
@@ -403,7 +399,7 @@ function OpenMethFarmMenu(plantId)
 
 										ESX.UI.Menu.CloseAll()
 									else
-										TriggerEvent('esx:showNotification', 'Wait  ' .. ((progress.delay + DelayBetween) - time) ..' second(s) to cook the meth.')
+										TriggerEvent('esx:showNotification', 'You have already cooked the meth.')
 									end
 								end)
 							else
@@ -427,7 +423,7 @@ function OpenMethFarmMenu(plantId)
 
 										Citizen.Wait(10000)
 										ClearPedTasks(GetPlayerPed(-1))
-
+										
 										ESX.TriggerServerCallback('revenge-drugs:giveRewards', function()
 											TriggerEvent('esx:showNotification', 'Packaged Meth.')
 
@@ -436,7 +432,7 @@ function OpenMethFarmMenu(plantId)
 
 										ESX.UI.Menu.CloseAll()
 									else
-										TriggerEvent('esx:showNotification', 'Wait  ' .. ((progress.delay + DelayBetween) - time) ..' second(s) for meth to finish cooking.')
+										TriggerEvent('esx:showNotification', 'Wait for meth to finish cooking.')		
 									end
 								end)
 							else
@@ -448,6 +444,10 @@ function OpenMethFarmMenu(plantId)
 							end
 						end
 					end, plantId)
+				else
+					TriggerEvent('esx:showNotification', 'Must have ~b~' .. RequiredPolice .. ' ~w~cops to farm drugs.')
+				end
+			end)
 		end,
 		function(data, menu)
 			menu.close()
@@ -462,11 +462,10 @@ local hasDrugs = false
 Citizen.CreateThread(function()
 	while true do
   		Citizen.Wait(0)
-
+  		
   		local player = GetPlayerPed(-1)
   		local playerloc = GetEntityCoords(player, 0)
   		local handle, ped = FindFirstPed()
-			local _no = {'Generic_Fuck_You','Generic_Frightened_High','Generic_Insult_High'} --_no[math.random(#_no)]
 
   		repeat
    			local success, ped = FindNextPed(handle)
@@ -478,69 +477,64 @@ Citizen.CreateThread(function()
         			if IsPedDeadOrDying(ped) == false then
           				if IsPedInAnyVehicle(ped) == false then
             				local pedType = GetPedType(ped)
-
+            				
             				if pedType ~= 28 and IsPedAPlayer(ped) == false then
               					currentPed = pos
-
+              					
               					if distance <= 2 and ped  ~= GetPlayerPed(-1) and ped ~= oldPed then
-              						if hasDrugs == true then
+              						if hasDrugs == true then 			
 	              						drawTxt(0.90, 1.40, 1.0,1.0,0.4, "Press ~g~Z ~w~to sell drugs.", 255, 255, 255, 255)
-
+	              						
 	              						if IsControlJustPressed(1, 20) then
 	              							FreezeEntityPosition(player, true)
 
 	                 						oldPed = ped
-
+	                  						
 	                  						SetEntityAsMissionEntity(ped)
 	                 						TaskStandStill(ped, 9.0)
-
+	            
 	                 						Citizen.Wait(7000)
 
 	                 						SetPedAsNoLongerNeeded(oldPed)
 
 	                 						ESX.TriggerServerCallback('revenge-drugs:isPedAccepting', function(state)
-
-																if state == false then
-
+	                 							if state == true then
 	                 								if GetPedType(ped) == 4 then
-		                 								PlayAmbientSpeechWithVoice(ped, _no[math.random(#_no)], 'S_M_Y_HWAYCOP_01_BLACK_FULL_02', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
+		                 								PlayAmbientSpeechWithVoice(ped, 'GENERIC_THANKS', 'S_M_Y_HWAYCOP_01_BLACK_FULL_02', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
 		                 							else
-		                 								PlayAmbientSpeechWithVoice(ped, _no[math.random(#_no)], 'A_F_M_DOWNTOWN_01_BLACK_FULL_01', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
+		                 								PlayAmbientSpeechWithVoice(ped, 'GENERIC_THANKS', 'A_F_M_DOWNTOWN_01_BLACK_FULL_01', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
 		                 							end
 
-																	TriggerEvent('esx:showNotification', "~r~They didn't want to buy your drugs.")
-
-																	if (math.random(100) < Config.CopAlertChance) then
-																		local coords = GetEntityCoords(GetPlayerPed(-1))
-																		TriggerServerEvent('esx_phone:send', 'police', 'There is a potential drug sale in the area!', true, {x = coords.x, y = coords.y, z = coords.z})
-																	end
-
+		                 							ESX.TriggerServerCallback('revenge-drugs:sellDrugs', function(money)
+		                 								if money == -1 then
+		                 									TriggerEvent('esx:showNotification', "~r~There must be 2 officers on duty to sell drugs.")
+		                 								elseif money > 0 then
+	                 										TriggerEvent('esx:showNotification', 'You sold some drugs for ~g~$' .. money)
+		                 								end
+		                 							end)
 	                 							else
+	                 								if GetPedType(ped) == 4 then
+		                 								PlayAmbientSpeechWithVoice(ped, 'GENERIC_THANKS', 'S_M_Y_HWAYCOP_01_BLACK_FULL_02', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
+		                 							else
+		                 								PlayAmbientSpeechWithVoice(ped, 'GENERIC_THANKS', 'A_F_M_DOWNTOWN_01_BLACK_FULL_01', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
+		                 							end
 
 		                 							ESX.TriggerServerCallback('revenge-drugs:sellDrugs', function(money)
-
-																		if money == -1 then
-
-																			TriggerEvent('esx:showNotification', "~r~There must be " .. Config.SellCopAmount .. " officers on duty to sell drugs.")
-
-																		elseif money > 0 then
-
-			                 								if GetPedType(ped) == 4 then
-				                 								PlayAmbientSpeechWithVoice(ped, 'GENERIC_THANKS', 'S_M_Y_HWAYCOP_01_BLACK_FULL_02', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
-				                 							else
-				                 								PlayAmbientSpeechWithVoice(ped, 'GENERIC_THANKS', 'A_F_M_DOWNTOWN_01_BLACK_FULL_01', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
-				                 							end
-																			TriggerEvent('esx:showNotification', 'You sold drugs for ~g~$' .. money)
-
+		                 								if money == -1 then
+		                 									TriggerEvent('esx:showNotification', "~r~There must be 2 officers on duty to sell drugs.")
+		                 								elseif money > 0 then
+		                 									local coords = GetEntityCoords(GetPlayerPed(-1))
+	                 										
+	                 										TriggerEvent('esx:showNotification', 'You sold drugs for ~g~$' .. money)
+	                 										TriggerServerEvent('esx_phone:send', 'police', 'There is a potential drug trade in the area!', true, {x = coords.x, y = coords.y, z = coords.z})
 		                 								end
-
-		                 							end)
+		                 							end)	
 	                 							end
 	                 						end)
+	              							
 	              							FreezeEntityPosition(player, false)
 	             						end
 	             					end
-
               					end
             				end
          				end
@@ -570,7 +564,7 @@ function drawTxt(x, y, width, height, scale, text, r, g, b, a, outline)
     SetTextDropShadow(0, 0, 0, 0,255)
     SetTextEdge(1, 0, 0, 0, 255)
     SetTextDropShadow()
-
+    
     if outline == true then
       SetTextOutline()
     end
@@ -611,3 +605,5 @@ function playPedAnimation(ped, group, animation)
 		TaskStartScenarioInPlace(ped, animation, 0, true)
 	end
 end
+
+

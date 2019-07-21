@@ -24,7 +24,7 @@ JAG.Config = {
 			Scale = 0.8,
 			Display = 4,
 			Color = 68,
-			Pos = { x = 738.9, y = -225.67, z = 73.52 },
+			Pos = { x = -66.54, y = -1165.96, z = 25.00 },
 		},
 		CityImpound = {
 			Zone = "Impound",
@@ -435,10 +435,10 @@ JAG.Config = {
 		VehicleStoreGarage = {
 			Zone = "Garage",
 			Type = 1,
-			Heading = 327.63,
+			Heading = 90.00,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 738.9, y = -225.67, z = 73.52 },
+			Pos = { x = -66.54, y = -1165.96, z = 25.00 },
 		},
 		CityImpound = {
 			Zone = "Impound",
