@@ -1957,7 +1957,74 @@ Config.DoorList = {
 		authorizedJobs = { 'pdmownerkey','adminkey', },
 		locked = true,
 		distance = 3,
-	}, 
+	},
+		
+		---
+		--- marducas
+	
 
+	  -- door 1
+	
+	
+	-- door 2
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1280.65723, y = -3352.1377, z = 14.8663607},
+		textCoords = {x = -1280.65723, y = -3352.1377, z = 14.8663607},
+		authorizedJobs = { 'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 15,
+	},
+
+	-- door 3
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1272.12915, y = -3357.073, z = 14.8640938},
+		textCoords = {x = -1272.12915, y = -3357.073, z = 14.8640938},
+		authorizedJobs = {'marducaskey' , 'adminkey', },
+		locked = true,
+		distance = 15,
+	},
+
+	-- door 4
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1246.80554, y = -3371.67676, z = 14.8665056},
+		textCoords = {x = -1246.80554, y = -3371.67676, z = 14.8665056},
+		authorizedJobs = {'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 15,
+	},
+	-- door 5
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1238.2771, y = -3376.61133, z = 14.8680754},
+		textCoords = {x = -1238.2771, y = -3376.61133, z = 14.8680754},
+		authorizedJobs = { 'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 15,
+	},
+
+	-- door 6
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1263.76147, y = -3361.99756, z = 14.8656559},
+		textCoords = {x = -1263.76147, y = -3361.99756, z = 14.8656559},
+		authorizedJobs = { 'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 15,
+	},
+
+	-- door 7
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1255.233, y = -3366.93213, z = 14.8663435},
+		textCoords = {x = -1255.233, y = -3366.93213, z = 14.8663435},
+		authorizedJobs = { 'marducaskey','adminkey', },
+		locked = true,
+		distance = 15,
+	},
+
+	
 	
 }
