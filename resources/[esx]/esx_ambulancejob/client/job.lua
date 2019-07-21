@@ -81,7 +81,7 @@ function OpenMobileAmbulanceActionsMenu()
 
 									for i=1, 15, 1 do
 										Citizen.Wait(900)
-								
+
 										ESX.Streaming.RequestAnimDict(lib, function()
 											TaskPlayAnim(PlayerPedId(), lib, anim, 8.0, -8.0, -1, 0, 0, false, false, false)
 										end)
@@ -126,8 +126,6 @@ function OpenMobileAmbulanceActionsMenu()
 									TriggerServerEvent('esx_ambulancejob:removeItem', 'bandage')
 									TriggerServerEvent('esx_ambulancejob:heal', GetPlayerServerId(closestPlayer), 'small')
 									ESX.ShowNotification(_U('heal_complete', GetPlayerName(closestPlayer)))
-									TriggerClientEvent('bonefive:client:RemoveBleed',closestPlayer)
-    							TriggerClientEvent('bonefive:client:ResetLimbs',closestPlayer)
 									IsBusy = false
 								else
 									ESX.ShowNotification(_U('player_not_conscious'))
@@ -868,11 +866,11 @@ function OpenShopMenu(elements, restoreCoords, shopCoords)
 
 						isInShopMenu = false
 						ESX.UI.Menu.CloseAll()
-				
+
 						DeleteSpawnedVehicles()
 						FreezeEntityPosition(playerPed, false)
 						SetEntityVisible(playerPed, true)
-				
+
 						ESX.Game.Teleport(playerPed, restoreCoords)
 					else
 						ESX.ShowNotification(_U('vehicleshop_money'))
@@ -1034,6 +1032,9 @@ AddEventHandler('esx_ambulancejob:heal', function(healType, quiet)
 		local newHealth2 = math.min(maxHealth, math.floor(health + maxHealth / 2))
 		SetEntityHealth(playerPed, new2Health)
 	end
+
+	TriggerEvent('bonefive:client:RemoveBleed')
+	TriggerEvent('bonefive:client:ResetLimbs')
 
 	if not quiet then
 		ESX.ShowNotification(_U('healed'))
