@@ -1123,7 +1123,7 @@ Citizen.CreateThread(function()
 
 		Citizen.Wait(0)
 
-		if PlayerData.job ~= nil and PlayerData.job.name == 'org1' or PlayerData.job.name == 'police' then
+		if PlayerData.job ~= nil and PlayerData.job.name == 'org1' or PlayerData.job.name == 'police'  then
 
 			local playerPed = PlayerPedId()
 			local coords    = GetEntityCoords(playerPed)
