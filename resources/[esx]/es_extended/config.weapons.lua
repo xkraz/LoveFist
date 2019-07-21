@@ -212,6 +212,14 @@ Config.Weapons = {
 			{ name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey('COMPONENT_SAWNOFFSHOTGUN_VARMOD_LUXE') }
 		}
 	},
+	
+	{
+		name = 'WEAPON_SPECIALCARBINE_MK2',
+		label = _U('WEAPON_SPECIALCARBINE_MK2'),
+		components = {
+			--{ name = 'luxary_finish', label = _U('component_luxary_finish'), hash = GetHashKey('COMPONENT_SAWNOFFSHOTGUN_VARMOD_LUXE') }
+		}
+	},
 
 	{
 		name = 'WEAPON_ASSAULTSHOTGUN',

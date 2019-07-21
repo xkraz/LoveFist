@@ -165,6 +165,7 @@ Locales['en'] = {
   ['gadget_parachute'] = 'parachute',
   ['weapon_flare'] = 'flare gun',
   ['weapon_doubleaction'] = 'double-Action Revolver',
+  ['WEAPON_SPECIALCARBINE_MK2'] = 'Police Carbine Steal = Ban',
 
   -- Weapon Components
   ['component_clip_default'] = 'default Grip',
