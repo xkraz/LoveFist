@@ -2024,6 +2024,34 @@ Config.DoorList = {
 		locked = true,
 		distance = 15,
 	},
+	--- villa del grapes
+	
+	{--right front gate
+		objName = 'prop_lrggate_01c_r',
+		objCoords  = {x = -1801.691, y = 475.4424, z = 133.9669},
+		textCoords = {x = -1801.691, y = 475.4424, z = 133.9669},
+		authorizedJobs = { 'villakey', 'adminkey', },
+		locked = true,
+		distance = 6.0
+	},
+	
+	{-- left front gate 
+		objName = 'prop_lrggate_01c_l',
+		objCoords  = {x = -1799.039, y = 470.6359, z = 133.9505},
+		textCoords = {x = -1799.039, y = 470.6359, z = 133.9505},
+		authorizedJobs = { 'villakey', 'adminkey', },
+		locked = true,
+		distance = 6.0
+	},
+
+	{-- side gate door
+		objName = 'prop_lrggate_03b_ld',
+		objCoords  = {x = -1798.231, y = 468.8248, z = 133.7756},
+		textCoords = {x = -1798.231, y = 468.8248, z = 133.7756},
+		authorizedJobs = { 'villakey', 'adminkey', },
+		locked = true,
+		distance = 3.0
+	},
 
 	
 	

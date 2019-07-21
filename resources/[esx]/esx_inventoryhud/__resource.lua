@@ -252,6 +252,7 @@ files {
 	'html/img/items/pdmkey.png',
 	'html/img/items/pdmownerkey.png',
 	'html/img/items/fish.png',
-	'html/img/items/dopebag.png'
+	'html/img/items/dopebag.png',
+	'html/img/items/villakey.png'
 
 }
