@@ -2052,6 +2052,34 @@ Config.DoorList = {
 		locked = true,
 		distance = 3.0
 	},
+	--- church of the baphomet
+	
+	{--right front door
+		objName = 'apa_p_mp_yacht_door_02',
+		objCoords  = {x = -915.120789, y = 4828.72119, z = 312.679474},
+		textCoords = {x = -915.120789, y = 4828.72119, z = 312.679474},
+		authorizedJobs = { 'baphometkey', 'adminkey', },
+		locked = true,
+		distance = 6.0
+	},
+	
+	{-- left front door 
+		objName = 'apa_p_mp_yacht_door_02',
+		objCoords  = {x = -915.87146, y = 4826.2627, z = 312.679474},
+		textCoords = {x = -915.87146, y = 4826.2627, z = 312.679474},
+		authorizedJobs = { 'baphometkey', 'adminkey', },
+		locked = true,
+		distance = 6.0
+	},
+
+	{-- cleansing room
+		objName = 'apa_prop_apa_bankdoor_new',
+		objCoords  = {x = -934.070618, y = 4838.65967, z = 312.618896},
+		textCoords = {x = -934.070618, y = 4838.65967, z = 312.618896},
+		authorizedJobs = { 'baphometkey', 'adminkey', },
+		locked = true,
+		distance = 3.0
+	},
 
 	
 	

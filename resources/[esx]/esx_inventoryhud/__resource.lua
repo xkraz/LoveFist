@@ -253,6 +253,7 @@ files {
 	'html/img/items/pdmownerkey.png',
 	'html/img/items/fish.png',
 	'html/img/items/dopebag.png',
-	'html/img/items/villakey.png'
+	'html/img/items/villakey.png',
+	'html/img/items/baphometkey.png'
 
 }
