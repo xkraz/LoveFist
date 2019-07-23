@@ -91,15 +91,16 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 					Banks[robb].lastrobbed = os.time()
 					robbers[source] = robb
 					local savedSource = source
-					SetTimeout(300000, function()
+					SetTimeout(2000, function()
 
 						if(robbers[savedSource])then
 
 							rob = false
-							TriggerClientEvent('esx_holdupbank:robberycomplete', savedSource, job)
+							local tmpAmnt = bank.reward
+							TriggerClientEvent('esx_holdupbank:robberycomplete', savedSource, tmpAmnt)
 							if(xPlayer)then
 
-								xPlayer.addAccountMoney('black_money', bank.reward)
+								xPlayer.addAccountMoney('black_money', tmpAmnt)
 								local xPlayers = ESX.GetPlayers()
 								for i=1, #xPlayers, 1 do
 									local xPlayer = ESX.GetPlayerFromId(xPlayers[i])

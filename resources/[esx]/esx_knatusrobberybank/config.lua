@@ -28,7 +28,7 @@ Banks = {
 	},
 	["blainecounty"] = {
 		position = { ['x'] = -107.06505584717, ['y'] = 6474.8012695313, ['z'] = 31.62670135498 },
-		hackposition = { ['x'] = -107.06505584717, ['y'] = 6474.8012695313, ['z'] = -31.62670135498 },
+		hackposition = { ['x'] = -107.06505584717, ['y'] = 6700.8012695313, ['z'] = -31.62670135498 },
 		reward = math.random(15000,30000),
 		nameofbank = "Blaine County Savings",
 		lastrobbed = 0

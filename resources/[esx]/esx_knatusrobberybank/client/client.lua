@@ -147,13 +147,13 @@ AddEventHandler('esx_holdupbank:closedoor', function()
 end)
 
 RegisterNetEvent('esx_holdupbank:robberycomplete')
-AddEventHandler('esx_holdupbank:robberycomplete', function(robb)
+AddEventHandler('esx_holdupbank:robberycomplete', function(_amount)
 	holdingup = false
-	ESX.ShowNotification(_U('robbery_complete') .. Banks[bank].reward)
+	ESX.ShowNotification(_U('robbery_complete') .. _amount.. ' Now run!')
 	bank = ""
-	TriggerClientEvent('esx_blowtorch:finishclear')
+	TriggerEvent('esx_blowtorch:finishclear')
 	TriggerServerEvent('esx_holdupbank:closedoor')
-	TriggerClientEvent('esx_blowtorch:stopblowtorching')
+	TriggerEvent('esx_blowtorch:stopblowtorching')
 	secondsRemaining = 0
 	dooropen = false
 	incircle = false
