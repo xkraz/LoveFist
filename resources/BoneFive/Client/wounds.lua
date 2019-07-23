@@ -16,8 +16,8 @@ local headCount = 0
 local playerHealth = nil
 local playerArmour = nil
 
-local _lib = 'move_m@confident'
-local _walkStyle = 'move_m@confident'
+local _lib = 'move_m@business@a'
+local _walkStyle = 'move_m@business@a'
 local _crouched = false;
 
 local WeaponClasses = {
