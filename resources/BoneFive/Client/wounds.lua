@@ -16,9 +16,13 @@ local headCount = 0
 local playerHealth = nil
 local playerArmour = nil
 
-local _lib = 'move_m@business@a'
-local _walkStyle = 'move_m@business@a'
+local _lib = 'move_m@confident'
+local _lib2 = 'move_f@heels@c'
+local _walkStyle = 'move_m@confident'
+local _walkStyle2 = 'move_f@heels@c'
 local _crouched = false;
+
+local pedType = GetPedType(ped)
 
 local WeaponClasses = {
     ['SMALL_CALIBER'] = 1,
@@ -526,8 +530,13 @@ AddEventHandler('bonefive:client:ResetLimbs', function()
         v.severity = 0
     end
 
-    ESX.Streaming.RequestAnimSet(_lib, function()
-  		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
+    
+	if pedType = 5 then 
+	ESX.Streaming.RequestAnimSet(_lib2, function()
+  		SetPedMovementClipset(PlayerPedId(), _walkStyle2, true)
+	else
+	ESX.Streaming.RequestAnimSet(_lib, function()
+		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
   	end)
 
     injured = {}

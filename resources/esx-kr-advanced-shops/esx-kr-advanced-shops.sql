@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `shipments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE IF NOT EXISTS `shops` (
+CREATE TABLE IF NOT EXISTS `player_shops` (
   `ShopNumber` int(11) NOT NULL DEFAULT '0',
   `src` varchar(50) NOT NULL,
   `count` int(11) NOT NULL,
