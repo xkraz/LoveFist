@@ -371,7 +371,7 @@ Config.Uniforms = {
 	
 	bullet_wear = {
 		male = {
-			['bproof_1'] = 11,  ['bproof_2'] = 1
+			['bproof_1'] = 11,  ['bproof_2'] = 2
 		},
 		female = {
 			['bproof_1'] = 13,  ['bproof_2'] = 1

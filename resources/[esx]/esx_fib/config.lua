@@ -40,23 +40,7 @@ Config.fibStations = {
 		},
 
 		Vehicles = {
-			{
-				Spawner = vector3(155.0, -700.4, 33.4),
-				InsideShop = vector3(228.5, -993.5, -99.5),
-				SpawnPoints = {
-					{ coords = vector3(153.09, -713.75, 33.13), heading = 252.0, radius = 6.0 },
-					{ coords = vector3(153.09, -713.75, 33.13), heading = 90.0, radius = 6.0 },
-				}
-			},
-
-			{
-				Spawner = vector3(473.3, -1018.8, 28.0),
-				InsideShop = vector3(228.5, -993.5, -99.0),
-				SpawnPoints = {
-					{ coords = vector3(475.9, -1021.6, 28.0), heading = 276.1, radius = 6.0 },
-					{ coords = vector3(484.1, -1023.1, 27.5), heading = 302.5, radius = 6.0 }
-				}
-			}
+			
 		},
 
 		Helicopters = {
@@ -599,8 +583,8 @@ Config.AuthorizedHelicopters = {
 		{ model = 'frogger', label = 'FIB FROGGER', livery = 0, price = 0 }
 	},
 	airunit = {
-		{ model = 'maverick', label = 'FIB Maverick', livery = 0, price = 0 },
-		{ model = 'frogger', label = 'FIB FROGGER', livery = 0, price = 0 }
+		{ model = 'frogger', label = 'FIB FROGGER', livery = 0, price = 0 } ,
+	    { model = 'polmav', label = 'FIB Maverick', livery = 0, price = 0 }
 	},
 	
 	recruiter = {
@@ -822,7 +806,7 @@ Config.Uniforms = {
 	},
 	bullet_wear = {
 		male = {
-			['bproof_1'] = 11,  ['bproof_2'] = 1
+			['bproof_1'] = 7,  ['bproof_2'] = 2
 		},
 		female = {
 			['bproof_1'] = 13,  ['bproof_2'] = 1
