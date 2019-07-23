@@ -2136,6 +2136,16 @@ Config.DoorList = {
 		locked = true,
 		distance = 20
 	},
+	--- munsons shit pit
+	
+	{--door 1
+		objName = 'v_ilev_trevtraildr',
+		objCoords  = {x = 1972.769, y = 3815.366, z = 33.66326},
+		textCoords = {x = 1972.769, y = 3815.366, z = 33.66326},
+		authorizedJobs = { 'shitpitkey','adminkey' },
+		locked = true,
+		distance = 3
+	},
 
 	
 	
