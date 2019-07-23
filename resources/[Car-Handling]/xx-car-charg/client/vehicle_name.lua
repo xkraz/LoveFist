@@ -4,5 +4,5 @@
 
 Citizen.CreateThread(function()
 	-- Exemple_nom
-	AddTextEntry('rrphantom', 'Rolls-Royce Phantom')
+	AddTextEntry('16charger', 'Dodge Charger SRT')
 end)
