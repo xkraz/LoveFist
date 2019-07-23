@@ -2086,7 +2086,7 @@ Config.DoorList = {
 		objName = 'prop_gate_prison_01',
 		objCoords  = {x = 1844.998, y = 2604.813, z = 44.63978},
 		textCoords = {x = 1844.998, y = 2604.813, z = 44.63978},
-		authorizedJobs = { 'police','fib', 'adminkey','warrant' },
+		authorizedJobs = { 'police','fib', 'adminkey' },
 		locked = true,
 		distance = 12
 	},
@@ -2095,7 +2095,7 @@ Config.DoorList = {
 		objName = 'prop_gate_prison_01',
 		objCoords  = {x = 1799.608, y = 2616.975, z = 44.60325},
 		textCoords = {x = 1799.608, y = 2616.975, z = 44.60325},
-		authorizedJobs = { 'police','fib', 'adminkey','warrant' },
+		authorizedJobs = { 'police','fib','adminkey' },
 		locked = true,
 		distance = 12
 	},
@@ -2104,7 +2104,7 @@ Config.DoorList = {
 		objName = 'prop_fnclink_09gate1',
 		objCoords  = {x = 1627.49426, y = 2530.12646, z = 45.9207153},
 		textCoords = {x = 1627.49426, y = 2530.12646, z = 45.9207153},
-		authorizedJobs = { 'police','fib', 'adminkey','warrant' },
+		authorizedJobs = { 'police','fib','adminkey' },
 		locked = true,
 		distance = 5.0
 	},
