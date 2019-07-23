@@ -1,8 +1,8 @@
 Config = {}
-Config.CopAlertChance = 40 --% chance of failed purchasee calling police
-Config.BuyChance = 60    --% chance on locals buying drugs
+Config.CopAlertChance = 30 --% chance of failed purchasee calling police
+Config.BuyChance = 70    --% chance on locals buying drugs
 Config.SellCopAmount = 1 --How many cops are req to be able to sell drugs to locals.
-Config.MakeCopAmount = 2 --How many cops are req to start processing, 0 cops needed to finish.
+Config.MakeCopAmount = 0 --How many cops are req to start processing, 0 cops needed to finish.
 
 Config.ProgressTypes = {
 	Weed = {
