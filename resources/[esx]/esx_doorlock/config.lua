@@ -2108,6 +2108,34 @@ Config.DoorList = {
 		locked = true,
 		distance = 5.0
 	},
+	--- fib garages
+	
+	{--door 1
+		objName = 'prop_ss1_mpint_garage',
+		objCoords  = {x = 181.389603, y = -727.474243, z = 34.8785057},
+		textCoords = {x = 181.389603, y = -727.474243, z = 34.8785057},
+		authorizedJobs = { 'police','fib', 'adminkey' },
+		locked = true,
+		distance = 20
+	},
+	
+	{-- door 2
+		objName = 'prop_ss1_mpint_garage',
+		objCoords  = {x = 184.339417, y = -719.535339, z = 35.0694389},
+		textCoords = {x = 184.339417, y = -719.535339, z = 35.0694389},
+		authorizedJobs = { 'police','fib','adminkey' },
+		locked = true,
+		distance = 20
+	},
+
+	{-- door 3
+		objName = 'prop_ss1_mpint_garage',
+		objCoords  = {x = 84.0112228, y = -693.506714, z = 32.7078743},
+		textCoords = {x = 84.0112228, y = -693.506714, z = 32.7078743},
+		authorizedJobs = { 'police','fib','adminkey' },
+		locked = true,
+		distance = 20
+	},
 
 	
 	
