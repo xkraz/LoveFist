@@ -74,7 +74,7 @@ RegisterNUICallback('playerpays', function(bet, cb)
 end)
 
 local moneymachine_slot = {
-	{ ['x'] = 929.61, ['y'] = -947.12, ['z'] = 44.66 },
+	{ ['x'] = 1105.76, ['y'] = 226.99, ['z'] = -50.25 },
 	{ ['x'] = 929.61, ['y'] = -948.52, ['z'] = 44.66 },
 	{ ['x'] = 929.61, ['y'] = -950.32, ['z'] = 44.66 },
 	{ ['x'] = 929.61, ['y'] = -952.02, ['z'] = 44.66 },
@@ -111,7 +111,8 @@ Citizen.CreateThread(function()
 		local pos = GetEntityCoords(GetPlayerPed(-1), false)
 		for k,v in ipairs(moneymachine_slot) do
 			if(Vdist(v.x, v.y, v.z, pos.x, pos.y, pos.z) < 20.0)then
-				DrawMarker(29, v.x, v.y, v.z + 0.2, 0, 0, 0, 0, 0, 0, 0.6001, 1.0001, 0.6, 0, 255, 5, 90, 1,0, 0,1)
+				DrawMarker(29, v.x, v.y, v.z + 1.2, 0, 0, 0, 0, 0, 0, 1.5, 1.5, 1.5, 0, 255, 5, 190, 0,0, 0,1)
+			--	DrawMarker(21, v.Armories[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
 				if(Vdist(v.x, v.y, v.z, pos.x, pos.y, pos.z) < 1.0)then
 						DisplayHelpText("Press ~INPUT_CONTEXT~   ~y~to play Slots.")
 					if IsControlJustPressed(1,input["E"]) then
@@ -120,6 +121,7 @@ Citizen.CreateThread(function()
 						})
 						SetNuiFocus(true,true)
 						PlaySound(GetPlayerServerId(GetPlayerPed(-1)), "Apt_Style_Purchase", "DLC_APT_Apartment_SoundSet", 0, 0, 1)
+
 					end
 				end
 			end
