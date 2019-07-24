@@ -25,4 +25,10 @@ Config.Zones = {
     Color = { r = 0, g = 255, b = 0 },
     Type = 23,
   },
+  FibDuty = {
+    Pos = { x = 124.45, y = -767.21, z = 242.15 },
+    Size = { x = 1.5, y = 1.5, z = 1.5 },
+    Color = { r = 0, g = 255, b = 0 },
+    Type = 23,
+  },
 }
