@@ -92,7 +92,7 @@ local moneymachine_slot = {
 	{ ['x'] = 934.91, ['y'] = -956.92, ['z'] = 44.66 },
 	{ ['x'] = 934.91, ['y'] = -958.62, ['z'] = 44.66 },
 
-	{ ['x'] = 938.91, ['y'] = -947.22, ['z'] = 44.66 },
+	{ ['x'] = 1105.83, ['y'] = 228.94, ['z'] = -49.84 },
 	{ ['x'] = 938.91, ['y'] = -948.52, ['z'] = 44.66 },
 	{ ['x'] = 938.91, ['y'] = -950.22, ['z'] = 44.66 },
 	{ ['x'] = 938.91, ['y'] = -951.52, ['z'] = 44.66 },
@@ -113,7 +113,9 @@ Citizen.CreateThread(function()
 			if(Vdist(v.x, v.y, v.z, pos.x, pos.y, pos.z) < 20.0)then
 				DrawMarker(29, v.x, v.y, v.z + 0.2, 0, 0, 0, 0, 0, 0, 0.6001, 1.0001, 0.6, 0, 255, 5, 90, 1,0, 0,1)
 				if(Vdist(v.x, v.y, v.z, pos.x, pos.y, pos.z) < 1.0)then
+				
 						DisplayHelpText("Press ~INPUT_CONTEXT~   ~y~to play Slots.")
+						StopSound()
 					if IsControlJustPressed(1,input["E"]) then
 						SendNUIMessage({
 							show = true
