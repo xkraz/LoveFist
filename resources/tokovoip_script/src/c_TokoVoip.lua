@@ -9,10 +9,11 @@
 ---- File: c_TokoVoip.lua                               ----\
 ------------------------------------------------------------
 ------------------------------------------------------------
-
+local group = 0
 --------------------------------------------------------------------------------
 --	Client: TokoVoip functions
 --------------------------------------------------------------------------------
+
 
 TokoVoip = {};
 TokoVoip.__index = TokoVoip;
@@ -53,6 +54,12 @@ function TokoVoip.sendDataToTS3(self) -- Send usersdata to the Javascript Websoc
 	self:updatePlugin("updateTokoVoip", processedData);
 end
 
+RegisterNetEvent('setgroup')
+AddEventHandler('setgroup', function()
+	group = true
+end)
+
+
 function TokoVoip.updateTokoVoipInfo(self) -- Update the top-left info
 	local info = "";
 	if (self.mode == 1) then
@@ -61,6 +68,8 @@ function TokoVoip.updateTokoVoipInfo(self) -- Update the top-left info
 		info = "Whispering";
 	elseif (self.mode == 3) then
 		info = "Shouting";
+	elseif (self.mode == 4) then
+		info = "Broadcasting";
 	end
 
 	if (self.plugin_data.radioTalking) then
@@ -130,9 +139,18 @@ function TokoVoip.initialize(self)
 				if (self.mode > 3) then
 					self.mode = 1;
 				end
+			elseif (IsControlJustPressed(0, self.keyProximitybroadcast)) and (IsControlJustPressed(0, self.keyProximitybroadcast2)) then -- Switch proximity modes (normal / whisper / shout)
+				if (not self.mode) then
+					self.mode = 1;
+				end
+				self.mode = self.mode + 1;
+				if (self.mode > 4) then
+					self.mode = 1;
+				end
 				setPlayerData(self.serverId, "voip:mode", self.mode, true);
 				self:updateTokoVoipInfo();
 			end
+
 
 
 			if (IsControlPressed(0, self.radioKey) and self.plugin_data.radioChannel ~= -1) then -- Talk on radio

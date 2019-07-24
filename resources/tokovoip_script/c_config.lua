@@ -8,12 +8,16 @@ TokoVoipConfig = {
 		15, -- Normal speech distance in gta distance units
 		5, -- Whisper speech distance in gta distance units
 		40, -- Shout speech distance in gta distance units
+		99999999999, -- Shout speech distance in gta distance units
 	},
 	headingType = 1, -- headingType 0 uses GetGameplayCamRot, basing heading on the camera's heading, to match how other GTA sounds work. headingType 1 uses GetEntityHeading which is based on the character's direction
 	radioKey = Keys["CAPS"], -- Keybind used to talk on the radio
 	keySwitchChannels = Keys["H"], -- Keybind used to switch the radio channels
 	keySwitchChannelsSecondary = Keys["LEFTSHIFT"], -- If set, both the keySwitchChannels and keySwitchChannelsSecondary keybinds must be pressed to switch the radio channels
 	keyProximity = Keys["H"], -- Keybind used to switch the proximity mode
+	keyProximitybroadcast = Keys["N9"], -- Keybind used to switch the proximity mode
+	keyProximitybroadcast2 = Keys["N7"],
+
 
 	plugin_data = {
 		-- TeamSpeak channel name used by the voip
