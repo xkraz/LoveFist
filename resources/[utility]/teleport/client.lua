@@ -19,10 +19,6 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = 3594.00, ['y'] = 3673.77, ['z'] = 33.57, nom = "Go to - Lab"},
 		positionTo = { ['x'] = 3540.72, ['y'] = 3676.00, ['z'] = 27.75, nom = "Go to - Surface"},
 	},
-	["CASINO"] = {
-		positionFrom = { ['x'] = 930.11, ['y'] = 41.6, ['z'] = 81.1, nom = "Enter Casino"},
-		positionTo = { ['x'] = 1090.26, ['y'] = 206.08, ['z'] = -49.00, nom = "Leave Casino"},
-	},
 	["SANDYSHORESPD"] = {
 		positionFrom = { ['x'] = 1851.04, ['y'] = 3683.22, ['z'] = 34.27, nom = "Offices & Jail"},
 		positionTo = { ['x'] = 1854.37, ['y'] = 3716.53, ['z'] = 1.08, nom = "Back to Lobby"},
