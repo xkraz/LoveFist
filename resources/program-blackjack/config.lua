@@ -10,19 +10,19 @@ Config.MarkerColor                = { r = 50, g = 50, b = 204 }
 Config.BlackjackSites = {
 
 	Croupier = {
-		Pos   = { x = 921.04, y = -949.16, z = 43.8 },
+		Pos   = { x = 1134.29, y = 267.34, z = -51.04 },
 		Size  = { x = 1.0, y = 1.0, z = 1.0 },
 		Color = { r = 4, g = 240, b = 0 },
 		Type  = 26,
 	},
 	Player1 = {
-		Pos   = { x = 919.89, y = -951.08, z = 43.8 },
+		Pos   = { x = 1134.08, y = 265.53, z = -51.04 },
 		Size  = { x = 1.0, y = 1.0, z = 1.0 },
 		Color = { r = 4, g = 240, b = 0 },
 		Type  = 26,
 	},
 	Player2 = {
-		Pos   = { x = 919.81, y = -947.28, z =43.8 },
+		Pos   = { x = 1132.45, y = 267.05, z =-51.04 },
 		Size  = { x = 1.0, y = 1.0, z = 1.0 },
 		Color = { r = 4, g = 240, b = 0 },
 		Type  = 26,
