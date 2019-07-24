@@ -755,7 +755,7 @@ var render = function () {
   ctx.textAlign = "right";
   ctx.textBaseline = "top";
  // ctx.fillText(game_state.win, 265, 358);
-  ctx.fillText("Wygrana " + game_state.paid+"$", 385, 367);
+  ctx.fillText("Win " + game_state.paid+"$", 385, 367);
 
   ctx.fillText("Bet " +playerbet+"$", 595, 367);
 
@@ -766,8 +766,8 @@ var render = function () {
 	ctx.font = "21px 'Titan One', cursive";
 	ctx.textAlign = "right";
 	ctx.textBaseline = "top";
-	  ctx.fillText("Darmowa Kolejka " +freespins, 395, 367);
-  ctx.fillText("Wygrana " + game_state.paid+"$", 625, 367);
+	  ctx.fillText("Free Spin " +freespins, 395, 367);
+  ctx.fillText("Win " + game_state.paid+"$", 625, 367);
   }
 
 

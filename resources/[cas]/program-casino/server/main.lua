@@ -61,7 +61,7 @@ AddEventHandler('program-casino:craftingCoktails', function(itemValue)
 
     local _source = source
     local _itemValue = itemValue
-    TriggerClientEvent('esx:showNotification', _source, 'Mieszanie różnych składników w toku!')
+    TriggerClientEvent('esx:showNotification', _source, 'Mixing different ingredients in progress!')
 
     if _itemValue == 'jagerbomb' then
         SetTimeout(10000, function()        
@@ -72,17 +72,17 @@ AddEventHandler('program-casino:craftingCoktails', function(itemValue)
             local bethQuantity      = xPlayer.getInventoryItem('jager').count
 
             if alephQuantity < 2 then
-                TriggerClientEvent('esx:showNotification', _source, "Nie wystarczająco " .."energy drinka " .. '~w~')
+                TriggerClientEvent('esx:showNotification', _source, "Not enough " .."energy drinks " .. '~w~')
             elseif bethQuantity < 2 then
-                TriggerClientEvent('esx:showNotification', _source, "Nie wystarczająco " .."jagera " .. '~w~')
+                TriggerClientEvent('esx:showNotification', _source, "Not enough " .."jager " .. '~w~')
             else
                 local chanceToMiss = math.random(100)
                 if chanceToMiss <= Config.MissCraft then
-                    TriggerClientEvent('esx:showNotification', _source,'Srednio wyszla ta mieszanka ...')
+                    TriggerClientEvent('esx:showNotification', _source,'You mixed an average drink ...')
                     xPlayer.removeInventoryItem('energy', 2)
                     xPlayer.removeInventoryItem('jager', 2)
                 else
-                    TriggerClientEvent('esx:showNotification', _source, "Całkowite wymieszanie " .. 'jagerbomba' .. ' ~w~!')
+                    TriggerClientEvent('esx:showNotification', _source, "Complete Mixing " .. 'jagerbomb' .. ' ~w~!')
                     xPlayer.removeInventoryItem('energy', 2)
                     xPlayer.removeInventoryItem('jager', 2)
                     xPlayer.addInventoryItem('jagerbomb', 1)
@@ -102,11 +102,11 @@ AddEventHandler('program-casino:craftingCoktails', function(itemValue)
             local gimelQuantity     = xPlayer.getInventoryItem('ice').count
 
             if alephQuantity < 2 then
-                TriggerClientEvent('esx:showNotification', _source, "Nie wystarczająco " .. 'lemoniada' .. '~w~')
+                TriggerClientEvent('esx:showNotification', _source, "Not enough " .. 'lemonade' .. '~w~')
             elseif bethQuantity < 2 then
-                TriggerClientEvent('esx:showNotification', _source, "Nie wystarczająco " .. "voodki" .. '~w~')
+                TriggerClientEvent('esx:showNotification', _source, "Not enough " .. "vodka" .. '~w~')
             elseif gimelQuantity < 1 then
-                TriggerClientEvent('esx:showNotification', _source, "Nie wystarczająco " .. 'lód' .. '~w~')
+                TriggerClientEvent('esx:showNotification', _source, "Not enough " .. 'ice' .. '~w~')
             else
                 local chanceToMiss = math.random(100)
                 if chanceToMiss <= Config.MissCraft then
