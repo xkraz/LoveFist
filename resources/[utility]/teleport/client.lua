@@ -71,6 +71,10 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -151.54, ['y'] = 910.27, ['z'] = 159.81, nom = "GO TO POOL"},
 		positionTo = { ['x'] = -132.01, ['y'] = 868.22, ['z'] = 232.69, nom = "GO DRY OFF"},
 	},
+	["jail yard "] = {
+		positionFrom = { ['x'] = 1800.27, ['y'] = 2486.19, ['z'] = -122.70, nom = "GO TO YARD"},
+		positionTo = { ['x'] = 1663.77, ['y'] = 2529.46, ['z'] = 45.56, nom = "GO INSIDE"},
+	},
 	
 
 
