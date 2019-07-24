@@ -44,7 +44,7 @@ local AnimalPositions = {
 local AnimalsInSession = {}
 
 local Positions = {
-	['Sell'] = { ['hint'] = '[E] Sell Your Chips', ['x'] = 968.6975732422, ['y'] = 41.093203125, ['z'] = 3.475671768188 },
+	['Sell'] = { ['hint'] = '[E] Sell Your Chips', ['x'] = 1115.75, ['y'] = 219.91, ['z'] = -49.43 },
 }
 
 local OnGoingHuntSession = false
