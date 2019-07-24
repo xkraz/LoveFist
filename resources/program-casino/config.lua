@@ -39,7 +39,7 @@ Config.CasinoSites = {
 
 }
 Config.JobBlip = {
-	coord = vector3(930.17, 41.57, 30.7),
+	coord = vector3(923.97, 47.13, 81.11),
 	sprite = 500,
 	display = 4,
 	scale = 1.2,
