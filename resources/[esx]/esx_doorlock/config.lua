@@ -1896,7 +1896,7 @@ Config.DoorList = {
 		objName = 'v_ilev_housedoor1',
 		objCoords  = {x = -2698.09, y = -80.15, z = 17.47},
 		textCoords = {x = -2698.09, y = -80.15, z = 17.47},
-		authorizedJobs = {}, 
+		authorizedJobs = {'redskey','adminkey', }, 
 		locked = true,
 		distance = 3,
 	}, 
@@ -2143,6 +2143,41 @@ Config.DoorList = {
 		objCoords  = {x = 1972.769, y = 3815.366, z = 33.66326},
 		textCoords = {x = 1972.769, y = 3815.366, z = 33.66326},
 		authorizedJobs = { 'shitpitkey','adminkey' },
+		locked = true,
+		distance = 3
+	},
+	--- casino management
+	
+	{--door 1
+		objName = 'vw_prop_vw_casino_door_01a',
+		objCoords  = {x = 1122.351, y = 265.5158, z = -50.89093},
+		textCoords = {x = 1122.351, y = 265.5158, z = -50.89093},
+		authorizedJobs = { 'casinokey', 'adminkey' },
+		locked = true,
+		distance = 3
+	},
+	
+	{-- door 2
+		objName = 'vw_prop_vw_casino_door_01a',
+		objCoords  = {x = 1122.351, y = 263.5161, z = -50.89093},
+		textCoords = {x = 1122.351, y = 263.5161, z = -50.89093},
+		authorizedJobs = { 'casinokey','adminkey' },
+		locked = true,
+		distance = 3
+	},
+	{-- managemnet
+		objName = 'vw_prop_vw_casino_door_01d',
+		objCoords  = {x = 1110.052, y = 251.0432, z = -45.69093},
+		textCoords = {x = 1110.052, y = 251.0432, z = -45.69093},
+		authorizedJobs = { 'casinokey','adminkey' },
+		locked = true,
+		distance = 3
+	},
+	{-- managemnet
+		objName = 'vw_prop_vw_casino_door_01d',
+		objCoords  = {x = 1112.052, y = 251.0432, z = -45.69093},
+		textCoords = {x = 1112.052, y = 251.0432, z = -45.69093},
+		authorizedJobs = { 'casinokey','adminkey' },
 		locked = true,
 		distance = 3
 	},

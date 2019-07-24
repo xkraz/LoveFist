@@ -223,7 +223,7 @@ files {
 	'html/img/items/radio.png',
 	'html/img/items/raisin.png',
 	'html/img/items/rasperry.png', 
-	'html/img/items/redhousekey.png',
+	'html/img/items/redskey.png',
 	'html/img/items/ring.png',
 	'html/img/items/rolex.png',
 	'html/img/items/rope.png',
