@@ -5,7 +5,8 @@ function OpenCasinoCloak()
 	PlayerData = ESX.GetPlayerData()
 	local elements = {
 		{label = "Work Clothes",  value = 'cloakroom'},
-		{label = "Civil Clothes", value = "cloakroom2"}
+		{label = "Civil Clothes", value = "cloakroom2"},
+		
 	}
 
 	ESX.UI.Menu.CloseAll()
@@ -15,7 +16,7 @@ function OpenCasinoCloak()
 		align    = 'top',
 		elements = elements
 	}, function(data, menu)
-		if data.current.value == 'cloakroom' then
+	if data.current.value == 'cloakroom' then
 
 			menu.close()
 			ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
@@ -33,12 +34,14 @@ function OpenCasinoCloak()
 				TriggerEvent('skinchanger:loadSkin', skin)
 			end)
 		end
+		
+
 
 	end, function(data, menu)
 		menu.close()
 
 		CurrentAction     = 'CasinoCloak'
-		CurrentActionMsg  = "~r~[E]~p~ Changing the Casino"
+		CurrentActionMsg  = "~r~[E]~p~ Change your Clothes"
 		CurrentActionData = {}
 	end)
 
