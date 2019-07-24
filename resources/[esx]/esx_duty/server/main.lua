@@ -19,7 +19,7 @@ AddEventHandler('duty:onoff', function(job)
     elseif job == 'offambulance' then
         xPlayer.setJob('ambulance', grade)
         TriggerClientEvent('esx:showNotification', _source, _U('onduty'))
- elseif job == 'offffib' then
+ elseif job == 'offfib' then
         xPlayer.setJob('fib', grade)
         TriggerClientEvent('esx:showNotification', _source, _U('onduty'))
  end
