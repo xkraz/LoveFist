@@ -26,7 +26,7 @@ local platiniumTicket = false
 local goldTicket = false
 local classicTicket = false
 local blips = {
-	{title="State Casino", colour=81, id=490, x = 930.17, y = 41.8, z = 37.3}
+	{title="Diamond Casino", colour=81, id=490, x = 930.17, y = 41.8, z = 37.3}
 }
 
 
@@ -181,7 +181,7 @@ Citizen.CreateThread(function ()
 			DrawMarker(29, loc2.x, loc2.y, loc2.z+0.5, 0, 0, 0, 0, 0, 0, 1.501, 1.5001, 1.5001, 0, 0, 255, 200, 1, 1, 0, 0)
 
 			if CheckPos(playerLoc.x, playerLoc.y, playerLoc.z, loc1.x, loc1.y, loc1.z, 2) then
-				alert("Wejdź do centrum kasyna")
+				alert("Go to the Casino Center")
 
 				if IsControlJustReleased(1, 38) then
 					if IsPedInAnyVehicle(player, true) then
@@ -190,13 +190,13 @@ Citizen.CreateThread(function ()
 							{label = "ClassicTicket",  value = 'classicTicket'},
 							{label = "GoldTicket",  value = 'goldTicket'},
 							{label = "PlatiniumTicket", value = "platiniumTicket"},
-							{label = "Bramka Pracownicza", value = "worker"}
+							{label = "Work Gate", value = "worker"}
 						}
 
 						ESX.UI.Menu.CloseAll()
 
 						ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'CasinoCloak', {
-							title    = "Casino Bramka",
+							title    = "Casino Gateway",
 							align    = 'center',
 							elements = elements
 						}, function(data, menu)
@@ -222,7 +222,7 @@ Citizen.CreateThread(function ()
 									SetEntityHeading(player, loc2.heading)
 								else
 									menu.close()
-									ESX.ShowNotification('~r~Nie jesteś pracownikiem Kasyna')
+									ESX.ShowNotification('~r~You are not an employee of the Casino')
 								end
 							end
 
@@ -239,13 +239,13 @@ Citizen.CreateThread(function ()
 							{label = "Classic Ticket ["..Config.classicPrice.."$]",  value = 'classicTicket'},
 							{label = "Gold Ticket ["..Config.goldenPrice.."$]",  value = 'goldTicket'},
 							{label = "Platinium Ticket ["..Config.platiniumPrice.."$]", value = "platiniumTicket"},
-							{label = "Bramka Pracownicza", value = "worker"}
+							{label = "Work Gate", value = "worker"}
 						}
 
 						ESX.UI.Menu.CloseAll()
 
 						ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'CasinoCloak', {
-							title    = "Casino Bramka",
+							title    = "Casino Gateway",
 							align    = 'center',
 							elements = elements
 						}, function(data, menu)
@@ -257,7 +257,7 @@ Citizen.CreateThread(function ()
 										classicTicket = true
 										TriggerServerEvent('program-casino:removeMoney',Config.classicPrice)
 									else
-										ESX.ShowNotification('~r~Nie masz wysarczająco pieniędzy')
+										ESX.ShowNotification('~r~You do not have enough money')
 									end
 								end)
 								menu.close()
@@ -271,7 +271,7 @@ Citizen.CreateThread(function ()
 										goldTicket = true
 										TriggerServerEvent('program-casino:removeMoney',Config.goldenPrice)
 									else
-										ESX.ShowNotification('~r~Nie masz wysarczająco pieniędzy')
+										ESX.ShowNotification('~r~You do not have enough money')
 									end
 								end)
 								wyzeruj()
@@ -285,7 +285,7 @@ Citizen.CreateThread(function ()
 										TriggerServerEvent('program-casino:removeMoney',Config.platiniumPrice)
 										TriggerServerEvent('program-casino:sendPlatinium')
 									else
-										ESX.ShowNotification('~r~Nie masz wysarczająco pieniędzy')
+										ESX.ShowNotification('~r~You do not have enough money')
 									end
 								end)
 								wyzeruj()
@@ -296,7 +296,7 @@ Citizen.CreateThread(function ()
 									SetEntityHeading(player, loc2.heading)
 								else
 									menu.close()
-									ESX.ShowNotification('~r~Nie jesteś pracownikiem Kasyna')
+									ESX.ShowNotification('~r~You are not an employee of the Casino')
 								end
 								wyzeruj()
 							end
@@ -312,7 +312,7 @@ Citizen.CreateThread(function ()
 				end
 
 			elseif CheckPos(playerLoc.x, playerLoc.y, playerLoc.z, loc2.x, loc2.y, loc2.z, 2) then
-				alert("Wyjdź z centrum kasyna")
+				alert("Exit the Casino Center")
 
 				if IsControlJustReleased(1, 38) then
 					if IsPedInAnyVehicle(player, true) then
@@ -347,15 +347,15 @@ end
 AddEventHandler('program-casino:hasEnteredMarker', function(zone)
 	if zone =='CasinoActions' then
 		CurrentAction     = 'casino_mgmt'
-		CurrentActionMsg  = "~r~[E] ~b~Otworz menu zarządzania kasynem"
+		CurrentActionMsg  = "~r~[E] ~b~Open the Casino Management Menu"
 		CurrentActionData = {}
 	elseif zone == "CasinoCloak" then
 		CurrentAction     = 'CasinoCloak'
-		CurrentActionMsg  = "~r~[E] ~p~Przebieralnia Kasyna"
+		CurrentActionMsg  = "~r~[E] ~p~Changing the Casino"
 		CurrentActionData = {}
 	elseif zone == "CasinoFridge" then
 		CurrentAction     = 'CasinoFridge'
-		CurrentActionMsg  = "~r~[E] ~p~Lodówka"
+		CurrentActionMsg  = "~r~[E] ~p~Fridge"
 		CurrentActionData = {}
 	elseif zone == "CasinoBar" then
 		CurrentAction     = 'CasinoBar'
@@ -404,30 +404,30 @@ AddEventHandler('program-casino:openTicketMenuClient', function(worker)
 		{label = "Nie pokazuj",  value = 'notShow'}
 	}
 	if goldTicket then
-		table.insert(elements, {label = "Pokaż złoty bilet", value = 'showGolden'})
+		table.insert(elements, {label = "Show the golden ticket", value = 'showGolden'})
 	end
 	if platiniumTicket then
-		table.insert(elements, {label = "Pokaż Platynowy bilet", value = 'showPlatinium'})
+		table.insert(elements, {label = "Show Platinum ticket", value = 'showPlatinium'})
 	end
 	if classicTicket then
-		table.insert(elements, {label = "Pokaż bilet", value = 'showClassic'})
+		table.insert(elements, {label = "Show the ticket", value = 'showClassic'})
 	end
 
 	ESX.UI.Menu.CloseAll()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'pokazTicket', {
 		title    = "Casino",
-		align    = 'top-left',
+		align    = 'top',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'notShow' then
 
 		elseif data.current.value == 'showGolden' then
-			TriggerServerEvent('program-casino:sendTicket', "Klient posiada złoty bilet", worker)
+			TriggerServerEvent('program-casino:sendTicket', "The customer has a golden ticket", worker)
 		elseif data.current.value == 'showPlatinium' then
-			TriggerServerEvent('program-casino:sendTicket', "Klient posiada platynowy bilet", worker)
+			TriggerServerEvent('program-casino:sendTicket', "he customer has a platinum ticket", worker)
 		elseif data.current.value == 'showClassic' then
-			TriggerServerEvent('program-casino:sendTicket', "Klient posiada klasyczny bilet", worker)
+			TriggerServerEvent('program-casino:sendTicket', "The customer has a classic ticket", worker)
 		end
 
 	end, function(data, menu)
@@ -443,17 +443,17 @@ end)
 function OpenCasinoActionsMenu()
 	PlayerData = ESX.GetPlayerData()
 	local elements = {
-		{label = "Popros o bilet",  value = 'ticket'}
+		{label = "Ask for a ticket",  value = 'ticket'}
 	}
 	if PlayerData.job.grade_name == 'boss' then
-	 	table.insert(elements, {label = "Akcje szefa", value = 'boss_actions'})
+	 	table.insert(elements, {label = "Actions of the boss", value = 'boss_actions'})
 	end
 
 	ESX.UI.Menu.CloseAll()
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'casino_mgmt', {
 		title    = "Casino",
-		align    = 'top-left',
+		align    = 'top',
 		elements = elements
 	}, function(data, menu)
 		if data.current.value == 'ticket' then
@@ -462,7 +462,7 @@ function OpenCasinoActionsMenu()
 			if closestPlayer ~= -1 and closestDistance <= 3.0 then
 				TriggerServerEvent('program-casino:openTicketMenu', GetPlayerServerId(closestPlayer), GetPlayerServerId(playerPed))
 			else
-				ESX.ShowNotification('~r~Nie ma nikogo w pobliżu')
+				ESX.ShowNotification('~r~There is no one around')
 			end
 		elseif data.current.value == 'boss_actions' then
 			TriggerEvent('esx_society:openBossMenu', 'casino', function (data, menu)
@@ -529,7 +529,7 @@ function OpenGetFridgeStocksMenu()
 	  ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'fridge_menu',
 		{
-		  title    = "Lodówka",
+		  title    = "Fridge",
 		  elements = elements
 		},
 		function(data, menu)
@@ -539,14 +539,14 @@ function OpenGetFridgeStocksMenu()
 		  ESX.UI.Menu.Open(
 			'dialog', GetCurrentResourceName(), 'fridge_menu_get_item_count',
 			{
-			  title = "Ilość"
+			  title = "Quantity"
 			},
 			function(data2, menu2)
   
 			  local count = tonumber(data2.value)
   
 			  if count == nil then
-				ESX.ShowNotification("Zła ilość")
+				ESX.ShowNotification("Bad amount")
 			  else
 				menu2.close()
 				menu.close()
@@ -693,7 +693,7 @@ function OpenGetStocksMenu()
 	  ESX.UI.Menu.Open(
 		'default', GetCurrentResourceName(), 'stocks_menu',
 		{
-		  title    = "Szafka",
+		  title    = "Cupboard",
 		  elements = elements
 		},
 		function(data, menu)
@@ -703,14 +703,14 @@ function OpenGetStocksMenu()
 		  ESX.UI.Menu.Open(
 			'dialog', GetCurrentResourceName(), 'stocks_menu_get_item_count',
 			{
-			  title = "Ilosc"
+			  title = "Quantity"
 			},
 			function(data2, menu2)
   
 			  local count = tonumber(data2.value)
   
 			  if count == nil then
-				ESX.ShowNotification("Zla ilosc")
+				ESX.ShowNotification("Bad amount")
 			  else
 				menu2.close()
 				menu.close()
