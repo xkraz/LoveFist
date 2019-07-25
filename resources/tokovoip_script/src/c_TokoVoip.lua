@@ -9,11 +9,10 @@
 ---- File: c_TokoVoip.lua                               ----\
 ------------------------------------------------------------
 ------------------------------------------------------------
-local group = 0
+
 --------------------------------------------------------------------------------
 --	Client: TokoVoip functions
 --------------------------------------------------------------------------------
-
 
 TokoVoip = {};
 TokoVoip.__index = TokoVoip;
@@ -23,7 +22,7 @@ function TokoVoip.init(self, config)
 	local self = setmetatable(config, TokoVoip);
 	self.config = json.decode(json.encode(config));
 	self.lastNetworkUpdate = 0;
-	self.lastPlayerListUpdate = 0;
+	self.lastPlayerListUpdate = self.playerListRefreshRate;
 	self.playerList = {};
 	return (self);
 end
@@ -42,7 +41,7 @@ function TokoVoip.loop(self)
 				self:updateTokoVoipInfo();
 			end
 			if (self.lastPlayerListUpdate >= self.playerListRefreshRate) then
-				self.playerList = getPlayers();
+				self.playerList = GetActivePlayers();
 				self.lastPlayerListUpdate = 0;
 			end
 		end
@@ -50,17 +49,10 @@ function TokoVoip.loop(self)
 end
 
 function TokoVoip.sendDataToTS3(self) -- Send usersdata to the Javascript Websocket
-	processedData = json.encode(self.plugin_data);
-	self:updatePlugin("updateTokoVoip", processedData);
+	self:updatePlugin("updateTokoVoip", self.plugin_data);
 end
 
-RegisterNetEvent('setgroup')
-AddEventHandler('setgroup', function()
-	group = true
-end)
-
-
-function TokoVoip.updateTokoVoipInfo(self) -- Update the top-left info
+function TokoVoip.updateTokoVoipInfo(self, forceUpdate) -- Update the top-left info
 	local info = "";
 	if (self.mode == 1) then
 		info = "Normal";
@@ -85,25 +77,26 @@ function TokoVoip.updateTokoVoipInfo(self) -- Update the top-left info
 			info = info  .. "<br> [Radio] " .. self.myChannels[self.plugin_data.radioChannel].name;
 		end
 	end
+	if (info == self.screenInfo and not forceUpdate) then return end
+	self.screenInfo = info;
 	self:updatePlugin("updateTokovoipInfo", "" .. info);
 end
 
 function TokoVoip.updatePlugin(self, event, payload)
+	exports.tokovoip_script:doSendNuiMessage(event, payload);
+end
+
+function TokoVoip.updateConfig(self)
 	local data = self.config;
 	data.plugin_data = self.plugin_data;
 	data.pluginVersion = self.pluginVersion;
 	data.pluginStatus = self.pluginStatus;
 	data.pluginUUID = self.pluginUUID;
-	SendNUIMessage(
-		{	
-			type = event,
-			voipData = data,
-			data = payload or ""
-		}
-	);
+	self:updatePlugin("updateConfig", data);
 end
 
 function TokoVoip.initialize(self)
+	self:updateConfig();
 	self:updatePlugin("initializeSocket", nil);
 	Citizen.CreateThread(function()
 		while (true) do
@@ -150,7 +143,6 @@ function TokoVoip.initialize(self)
 				setPlayerData(self.serverId, "voip:mode", self.mode, true);
 				self:updateTokoVoipInfo();
 			end
-
 
 
 			if (IsControlPressed(0, self.radioKey) and self.plugin_data.radioChannel ~= -1) then -- Talk on radio
