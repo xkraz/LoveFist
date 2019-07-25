@@ -4,9 +4,9 @@ Config.DrawDistance               = 15.0
 Config.MarkerType                 = 1
 Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 0.5 }
 Config.MarkerColor                = { r = 50, g = 50, b = 204 }
-Config.classicPrice				  = 50
-Config.goldenPrice				  = 500
-Config.platiniumPrice			  = 2000
+Config.classicPrice				  = 1
+Config.goldenPrice				  = 100
+Config.platiniumPrice			  = 500
 Config.MissCraft                  = 10 -- %
 
 
