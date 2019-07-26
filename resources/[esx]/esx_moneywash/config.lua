@@ -8,7 +8,7 @@ Config.BlipSprite   = 2
 Config.Locale = 'en'
 
 Config.WASH = {
-    { ['x'] =  978.65,  ['y'] = 31.85,  ['z'] = 7.52}, -- Casino
+    { ['x'] =  1114.80,  ['y'] = 243.95,  ['z'] = -45.84}, -- Casino
 	{ ['x'] =  93.52,  ['y'] = -1292.54,  ['z'] = 29.27}, -- Unicorn
 	
 }

@@ -487,7 +487,7 @@ function OpenBarMenu()
 			title = "Drinki",
 			align = 'center',
 			elements = {
-				{label = 'JagerBomba',     value = 'jagerbomb'},
+				{label = 'JagerBomb',     value = 'jagerbomb'},
 				{label = 'Golem',         value = 'golem'},
 				{label = 'Whiskycoca',    value = 'whiskycoca'},
 				{label = 'Vodkaenergy',   value = 'vodkaenergy'},
@@ -498,7 +498,7 @@ function OpenBarMenu()
 				{label = 'Mojito',        value = 'mojito'},
 				{label = 'Mixapero',      value = 'mixapero'},
 				{label = 'Metreshooter',  value = 'metreshooter'},
-				{label = 'Jagercerbere',  value = 'jagercerbere'},
+				{label = 'Casino Special',  value = 'jagercerbere'},
 			}
 		},
 		function(data2, menu2)
