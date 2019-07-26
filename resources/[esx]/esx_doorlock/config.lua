@@ -1708,7 +1708,16 @@ Config.DoorList = {
 		textCoords = {x = 420.160339, y = -1024.76715, z = 30.0157566},
 		authorizedJobs = {  'policekey','adminkey','police',  },
 		locked = true,
-		distance = 10.00,
+		distance = 20.00,
+	},
+	{ -- pd gate sandy
+	
+		objName = 'prop_gate_airport_01',
+		objCoords  = {x = 1877.52283, y = 3688.69336, z = 32.4202614},
+		textCoords = {x = 1877.52283, y = 3688.69336, z = 34.4202614},
+		authorizedJobs = {  'policekey','adminkey','police',  },
+		locked = true,
+		distance = 20.00,
 	},
 
 	{ -- pd side gate  
