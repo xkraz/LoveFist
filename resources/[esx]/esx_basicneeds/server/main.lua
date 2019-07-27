@@ -12,6 +12,26 @@ ESX.RegisterUsableItem('bread', function(source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_bread'))
 end)
 
+ESX.RegisterUsableItem('taco', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('taco', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'hunger', 1000000)
+	TriggerClientEvent('esx_basicneeds:onEat', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_taco'))
+end)
+
+ESX.RegisterUsableItem('burrito', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('burrito', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'hunger', 1000000)
+	TriggerClientEvent('esx_basicneeds:onEat', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_burrito'))
+end)
+
 ESX.RegisterUsableItem('chocolate', function(source)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -167,7 +187,7 @@ ESX.RegisterUsableItem('milk', function(source)
 
 	xPlayer.removeInventoryItem('milk', 1)
 
-	TriggerClientEvent('esx_status:add', source, 'drunk', -100000)
+	TriggerClientEvent('esx_status:add', source, 'thirst', 200000)
 	TriggerClientEvent('esx_basicneeds:onDrinkMilk', source)
 	TriggerClientEvent('esx:showNotification', source, _U('used_milk'))
 end)
