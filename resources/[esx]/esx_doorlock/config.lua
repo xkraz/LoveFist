@@ -2147,4 +2147,149 @@ Config.DoorList = {
 		distance = 3
 	},
 
+		--- Hospital
+
+	{--Front Wood Door Right L
+		objName = 'v_ilev_cor_firedoor',
+		objCoords  = {x = 341.3920, y = -572.5071, z = 28.8190},
+		textCoords = {x = 341.3920, y = -572.5071, z = 28.8190},
+		authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+		locked = true,
+		distance = 3
+	},
+
+	{--Front Wood Door Right R
+		objName = 'v_ilev_cor_firedoor',
+		objCoords  = {x = 342.1784, y = -570.3473, z = 28.8190},
+		textCoords = {x = 342.1784, y = -570.3473, z = 28.8190},
+		authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+		locked = true,
+		distance = 3
+	},
+
+	{--Right Side Room 1 L
+		objName = 'v_ilev_cor_doorglassb',
+		objCoords  = {x = 337.9913, y = -572.2084, z = 28.8190},
+		textCoords = {x = 337.9913, y = -572.2084, z = 28.8190},
+		authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+		locked = true,
+		distance = 3
+	},
+
+	{--Right Side Room 1 R
+		objName = 'v_ilev_cor_doorglassa',
+		objCoords  = {x = 335.5688, y = -571.3312, z = 28.8190},
+		textCoords = {x = 335.5688, y = -571.3312, z = 28.8190},
+		authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+		locked = true,
+		distance = 3
+	},
+
+	{--Right Side Room 2 L
+		objName = 'v_ilev_cor_doorglassb',
+		objCoords  = {x = 331.3826, y = -569.8082, z = 28.8190},
+		textCoords = {x = 331.3826, y = -569.8082, z = 28.8190},
+		authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+		locked = true,
+		distance = 3
+	},
+
+	{--Right Side Room 2 R
+		objName = 'v_ilev_cor_doorglassa',
+		objCoords  = {x = 328.9572, y = -568.9245, z = 28.8190},
+		textCoords = {x = 328.9572, y = -568.9245, z = 28.8190},
+		authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+		locked = true,
+		distance = 3
+	},
+
+	{--Autopsy Room
+	objName = 'v_ilev_cor_doorglassa',
+	objCoords  = {x = 318.7681, y = -574.0229, z = 28.9373},
+	textCoords = {x = 318.7681, y = -574.0229, z = 28.9373},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},
+
+	{--Autopsy Room
+	objName = 'v_ilev_cor_doorglassb',
+	objCoords  = {x = 317.8878, y = -576.4421, z = 28.9373},
+	textCoords = {x = 317.8878, y = -576.4421, z = 28.9373},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},
+
+	{--Left Front Wood Door L
+	objName = 'v_ilev_cor_firedoor',
+	objCoords  = {x = 333.7885, y = -593.4055, z = 28.2028},
+	textCoords = {x = 333.7885, y = -593.4055, z = 28.2028},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},
+
+	{--Left Front Wood Door R
+	objName = 'v_ilev_cor_firedoor',
+	objCoords  = {x = 334.5754, y = -591.2445, z = 28.2028},
+	textCoords = {x = 334.5754, y = -591.2445, z = 28.2028},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},
+
+	{--Morgue L
+	objName = 'v_ilev_cor_doorglassb',
+	objCoords  = {x = 313.5017, y = -574.8491, z = 28.9353},
+	textCoords = {x = 313.5017, y = -574.8491, z = 28.9353},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},
+
+	{--Morgue R
+	objName = 'v_ilev_cor_doorglassa',
+	objCoords  = {x = 314.3824, y = -572.4284, z = 28.9353},
+	textCoords = {x = 314.3824, y = -572.4284, z = 28.9353},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},
+
+	{--Infirmary L
+	objName = 'v_ilev_cor_firedoor',
+	objCoords  = {x = 345.0586, y = -567.9648, z = 28.8205},
+	textCoords = {x = 345.0586, y = -567.9648, z = 28.8205},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},
+
+	{--Infirmary R
+	objName = 'v_ilev_cor_firedoor',
+	objCoords  = {x = 347.2267, y = -568.7333, z = 28.8205},
+	textCoords = {x = 347.2267, y = -568.7333, z = 28.8205},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},
+
+	{--First Patient Room L
+	objName = 'v_ilev_cor_firedoor',
+	objCoords  = {x = 346.8181, y = -572.0256, z = 28.7973},
+	textCoords = {x = 346.8181, y = -572.0256, z = 28.7973},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},
+	
+	{--First Patient Room R
+	objName = 'v_ilev_cor_firedoor',
+	objCoords  = {x = 346.0310, y = -574.1888, z = 28.7973},
+	textCoords = {x = 346.0310, y = -574.1888, z = 28.7973},
+	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
+	locked = true,
+	distance = 3
+	},	
 }
