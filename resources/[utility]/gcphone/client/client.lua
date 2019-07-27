@@ -380,8 +380,10 @@ RegisterNetEvent("gcPhone:acceptCall")
 AddEventHandler("gcPhone:acceptCall", function(infoCall, initiator)
   if inCall == false and USE_RTC == false then
     inCall = true
-    NetworkSetVoiceChannel(infoCall.id + 1)
-    NetworkSetTalkerProximity(0.0)
+--NetworkSetVoiceChannel(infoCall.id + 1)
+--NetworkSetTalkerProximity(0.0)
+exports.tokovoip_script:addPlayerToRadio(infoCall.id + 1000)
+TokoVoipID = infoCall.id + 1000
   end
   if menuIsOpen == false then 
     TooglePhone()
@@ -395,7 +397,9 @@ AddEventHandler("gcPhone:rejectCall", function(infoCall)
   if inCall == true then
     inCall = false
     Citizen.InvokeNative(0xE036A705F989E049)
-    NetworkSetTalkerProximity(2.5)
+    --NetworkSetTalkerProximity(2.5)
+exports.tokovoip_script:removePlayerFromRadio(TokoVoipID)
+TokoVoipID = nil
   end
   PhonePlayText()
   SendNUIMessage({event = 'rejectCall', infoCall = infoCall})

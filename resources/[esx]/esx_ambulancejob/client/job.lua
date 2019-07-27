@@ -53,7 +53,8 @@ function OpenMobileAmbulanceActionsMenu()
 					{label = _U('ems_menu_small'), value = 'small'},
 					{label = _U('ems_menu_big'), value = 'big'},
 					{label = _U('ems_menu_putincar'), value = 'put_in_vehicle'},
-					{label = _U('out_the_vehicle'),	value = 'out_the_vehicle'}
+					{label = _U('out_the_vehicle'),	value = 'out_the_vehicle'},
+					{label = _U('ems_fine'),	value = 'ems_fine'}
 				}
 			}, function(data, menu)
 				if IsBusy then return end
@@ -169,6 +170,8 @@ function OpenMobileAmbulanceActionsMenu()
 						TriggerServerEvent('esx_ambulancejob:OutVehicle', GetPlayerServerId(closestPlayer))
 					elseif data.current.value == 'put_in_vehicle' then
 						TriggerServerEvent('esx_ambulancejob:putInVehicle', GetPlayerServerId(closestPlayer))
+					elseif action == 'fine' then
+						OpenFineMenu(closestPlayer)
 					end
 				end
 			end, function(data, menu)
@@ -1040,3 +1043,50 @@ AddEventHandler('esx_ambulancejob:heal', function(healType, quiet)
 		ESX.ShowNotification(_U('healed'))
 	end
 end)
+
+function OpenFineMenu(player)
+	-- JINKS don't pick fines from a menu anymore just enter the number.
+	
+			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'fine', {
+				title = _U('invoice_amount')
+			}, function(data, menu)
+				local amount = tonumber(data.value)
+
+				if amount == nil or amount < 0 or amount > 200000 then
+					ESX.ShowNotification(_U('amount_invalid'))
+				else
+					local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+					if closestPlayer == -1 or closestDistance > 3.0 then
+						ESX.ShowNotification(_U('no_players_nearby'))
+					else
+						menu.close()
+						TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_ambulance', _U('fine'), amount)
+					end
+				end
+			end, function(data, menu)
+				menu.close()
+			
+			end)
+
+
+	--ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'fine',
+	--{
+	--	title    = _U('fine'),
+	--	align    = 'top',
+	--	elements = {
+	--		{label = _U('traffic_offense'), value = 0},
+			--	{label = _U('traffic_offenses'), value = 0},
+	--		{label = _U('minor_offense'),   value = 1},
+			--	{label = _U('minor_infractions'),   value = 1},
+	--		{label = _U('average_offense'), value = 2},
+			--	{label = _U('misdemeanors'),   value = 2},
+	--		{label = _U('major_offense'),   value = 3}
+			--	{label = _U('felonys'),   value = 3},
+	--	}
+	--}, function(data, menu)
+	--	OpenFineCategoryMenu(player, data.current.value)
+	--end, function(data, menu)
+	--	menu.close()
+	--end)
+
+end
