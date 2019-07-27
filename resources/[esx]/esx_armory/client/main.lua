@@ -66,7 +66,7 @@ function OpenArmoryMenu(station)
 		table.insert(elements, {label = _U('put_weapon'),     value = 'put_weapon'})
 		table.insert(elements, {label = _U('remove_object'),  value = 'get_stock'})
 		table.insert(elements, {label = _U('deposit_object'), value = 'put_stock'})
-		table.insert(elements, {label = _U('deposit_society_money'), value = 'deposit_money'})
+		--table.insert(elements, {label = _U('deposit_society_money'), value = 'deposit_money'})
 	end
 
 
@@ -74,7 +74,7 @@ function OpenArmoryMenu(station)
 
 	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'armory',
 	{
-		title    = _U('armory'),
+		title    = _U('armory2'),
 		align    = 'top',
 		elements = elements
 
@@ -396,7 +396,7 @@ Citizen.CreateThread(function()
 					local distance = GetDistanceBetweenCoords(coords, v.Armories[i], true)
 
 					if distance < Config.DrawDistance then
-						DrawMarker(21, v.Armories[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
+						DrawMarker(9, v.Armories[i], 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.5, 0.5, 0.5, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, true, false, false, false)
 						letSleep = false
 					end
 

@@ -811,24 +811,8 @@ Config.DoorList = {
 		distance = 2.5
 	},
 
-	{
-		objName = 'Prop_Gate_airport_01',
-		objCoords  = {x = -1015.28, y = -3471.71, z = 14.00},
-		textCoords = {x = -1012.34, y = -3472.91, z = 16.00},
-		authorizedJobs = { 'police', 'fib', 'dea', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 14,
-		size = 2
-	},
-	{
-		objName = 'Prop_Gate_airport_01',
-		objCoords  = {x = -1049.15, y = -3452.18, z = 14.00},
-		textCoords = {x = -1051.84, y = -3450.69, z = 16.00},
-		authorizedJobs = { 'police', 'fib', 'dea', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 14,
-		size = 2
-	},
+	
+	
 
 	{
 		objName = 'prop_fnclink_09gate1',
@@ -1068,35 +1052,11 @@ Config.DoorList = {
 },
 --]]
 -- PD Back Gate
-{
-	objName = 'prop_gate_military_01',
-	objCoords  = {x = 1858.11, y = 3719.22, z = 32.03},
-	textCoords = {x = 1858.11, y = 3719.22, z = 34.03},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'dea', 'policekey','adminkey',},
-	locked = true,
-	distance = 14,
-	size = 2
-},
+
 -- FR Back Gate (Exit)
-{
-	objName = 'prop_gate_military_01',
-	objCoords  = {x = 1845.07, y = 3712.2, z = 32.17},
-	textCoords = {x = 1845.07, y = 3712.2, z = 34.17},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'dea', 'policekey','adminkey',},
-	locked = true,
-	distance = 14,
-	size = 2
-},
+
 -- FR Front Gate (Entrance)
-{
-	objName = 'prop_gate_military_01',
-	objCoords  = {x = 1804.49, y = 3675.7, z = 33.21},
-	textCoords = {x = 1804.49, y = 3675.7, z = 35.21},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'dea', 'policekey','adminkey',},
-	locked = true,
-	distance = 14,
-	size = 2
-},
+
 -- Los Santos | FBI Building
 -- Entrance Double Doors
 {
@@ -1708,7 +1668,16 @@ Config.DoorList = {
 		textCoords = {x = 420.160339, y = -1024.76715, z = 30.0157566},
 		authorizedJobs = {  'policekey','adminkey','police',  },
 		locked = true,
-		distance = 10.00,
+		distance = 20.00,
+	},
+	{ -- pd gate sandy
+	
+		objName = 'prop_gate_airport_01',
+		objCoords  = {x = 1877.52283, y = 3688.69336, z = 32.4202614},
+		textCoords = {x = 1877.52283, y = 3688.69336, z = 34.4202614},
+		authorizedJobs = {  'policekey','adminkey','police',  },
+		locked = true,
+		distance = 20.00,
 	},
 
 	{ -- pd side gate  
@@ -1870,7 +1839,7 @@ Config.DoorList = {
 		objName = 'xm_prop_lab_door01_star_r',
 		objCoords  = {x = 393.798004, y = -1612.84546, z = 29.4582901},
 		textCoords = {x = 393.798004, y = -1612.84546, z = 29.4582901},
-		authorizedJobs = { 'police','fib','marducas','mechanic','warrant','adminkey', },
+		authorizedJobs = { 'police','fib','marducas','mechanic','ambulance','warrant','adminkey', },
 		locked = true,
 		distance = 3,
 	}, 
@@ -1878,7 +1847,7 @@ Config.DoorList = {
 		objName = 'xm_prop_lab_door01_star_l',
 		objCoords  = {x = 395.045532, y = -1611.18652, z = 29.44944},
 		textCoords = {x = 395.045532, y = -1611.18652, z = 29.44944},
-		authorizedJobs = { 'police','fib','marducas','mechanic','warrant','adminkey', },
+		authorizedJobs = { 'police','fib','marducas','mechanic','ambulance','warrant','adminkey', },
 		locked = true,
 		distance = 3,
 	}, 
@@ -1886,7 +1855,7 @@ Config.DoorList = {
 		objName = 'prop_ss1_14_garage_door',
 		objCoords  = {x = 385.358215, y = -1623.62634, z = 30.1002388},
 		textCoords = {x = 385.358215, y = -1623.62634, z = 30.1002388},
-		authorizedJobs = { 'police','fib','marducas','mechanic','warrant','adminkey', },
+		authorizedJobs = { 'police','fib','marducas','mechanic','ambulance','warrant','adminkey', },
 		locked = true,
 		distance = 15,
 	},
@@ -1896,7 +1865,7 @@ Config.DoorList = {
 		objName = 'v_ilev_housedoor1',
 		objCoords  = {x = -2698.09, y = -80.15, z = 17.47},
 		textCoords = {x = -2698.09, y = -80.15, z = 17.47},
-		authorizedJobs = {}, 
+		authorizedJobs = {'redskey','adminkey', }, 
 		locked = true,
 		distance = 3,
 	}, 
@@ -2143,6 +2112,41 @@ Config.DoorList = {
 		objCoords  = {x = 1972.769, y = 3815.366, z = 33.66326},
 		textCoords = {x = 1972.769, y = 3815.366, z = 33.66326},
 		authorizedJobs = { 'shitpitkey','adminkey' },
+		locked = true,
+		distance = 3
+	},
+	--- casino management
+	
+	{--door 1
+		objName = 'vw_prop_vw_casino_door_01a',
+		objCoords  = {x = 1122.351, y = 265.5158, z = -50.89093},
+		textCoords = {x = 1122.351, y = 265.5158, z = -50.89093},
+		authorizedJobs = { 'casinokey', 'adminkey' },
+		locked = true,
+		distance = 3
+	},
+	
+	{-- door 2
+		objName = 'vw_prop_vw_casino_door_01a',
+		objCoords  = {x = 1122.351, y = 263.5161, z = -50.89093},
+		textCoords = {x = 1122.351, y = 263.5161, z = -50.89093},
+		authorizedJobs = { 'casinokey','adminkey' },
+		locked = true,
+		distance = 3
+	},
+	{-- managemnet
+		objName = 'vw_prop_vw_casino_door_01d',
+		objCoords  = {x = 1110.052, y = 251.0432, z = -45.69093},
+		textCoords = {x = 1110.052, y = 251.0432, z = -45.69093},
+		authorizedJobs = { 'casinokey','adminkey' },
+		locked = true,
+		distance = 3
+	},
+	{-- managemnet
+		objName = 'vw_prop_vw_casino_door_01d',
+		objCoords  = {x = 1112.052, y = 251.0432, z = -45.69093},
+		textCoords = {x = 1112.052, y = 251.0432, z = -45.69093},
+		authorizedJobs = { 'casinokey','adminkey' },
 		locked = true,
 		distance = 3
 	},

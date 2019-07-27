@@ -78,7 +78,7 @@ end, false)
     local name = getIdentity(source)
     fal = name.firstname .. " " .. name.lastname
     TriggerClientEvent('chat:addMessage', -1, {
-        template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(214, 168, 0, 1); border-radius: 3px;"><i class="fas fa-ad"style="font-size:20px;color:black"></i> <b><font color="red">Advertisement:</font></b> <b><i><font color="white">{1}</font></i></b></div>',
+        template = '<div style="padding: 0.5vw; margin: 0.5vw; background-color: rgba(214, 168, 0, 1); border-radius: 3px;"><i class="fas fa-ad"style="font-size:20px;color:black"></i> <b><font color="red">{0}:</font></b> <b><i><font color="white">{1}</font></i></b></div>',
         args = { fal, msg }
     })
 end, false)

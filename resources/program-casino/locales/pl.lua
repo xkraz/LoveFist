@@ -6,6 +6,7 @@ Locales['pl'] = {
   ['open_fridge']              = 'Press ~INPUT_CONTEXT~ to access the fridge',
   ['unicorn_fridge_stock']     = 'Fridge of the Diamond Casino',
   ['fridge_inventory']         = 'Content of the fridge',
+  ['player_clothes']		= 'Saved Outfits',
 
   --Drinki
   ['crafting']                 = 'Mixology',

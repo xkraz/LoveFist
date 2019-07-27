@@ -1,29 +1,49 @@
-#Add lock to PD front gate
-#Add charge for Stole Property for PD (house robberies)
-#Society Bank
-#- add functionality
-#- create rank/role to deposit only.
-#Old FIB locks are still present near the hospital. 
+HIGH 
+-Add Invoicing to Hospital
+-EMS Menu needs updated with new treatment options
+-ADD to where EMS can access the car shop like the PD can
+-Locks on EMS Doors (All of them)
 
-#Add markers for real estate office
-#Check into drug growing across servers
-#-Seems the inventory at apartments might be eaten items again I've gotten enough tickets about it in the last 48 hours to put in here - let me know if you want a format change - or if you'd rather me message you guys and you can put it in here - let me know thanks - also willing to help test as well
-#move meth ingred to armory
-#^ and coke
+MED
+- Make it where gas burns a lot longer for RP it's not good that it last like 3 secs we just test it to get a good number shouldn't be to hard
+-Public Helicopter Gas Stations
+-Show Ambulance Player Blips and Also Police? on the Map
+-911 Calls  - Marker that lasts longer
+-cars still spawning on top of garage at Marducas Motors (can't seem to replicate this bug)
+-Add Gym to Prison Yard
+-Adding Cafeteria/snacks to the hospital for Staff and Patients
+-Add F6? command to EMS to be able to "Check Player's First and Last Name".  Also add a way to 'check current injuries' to know WHICH treatment the doctor has to give them. Gauze, Bandges, etc, etc.
+-Move the Self Check In Downstairs, and beds for treatment
+-Add to where FIB can put suspects in their cars atm they can't
+-Adding New Garage to North PD we need to re-do the gates for where they park their cars
+LOW
+-Add Refillable Ammo at the Gun Range for the police!
+-Easier way to switch radio channels (Either threw specific hotkey or /radio "number" (For heat of the moment situations for EMS to Call PD)
+-Distress Call for EMS to signal PD  (Or some way to signal PD when EMS feels threatened and in danger
+-Add a police specific bar for morale and letting loose.. Maybe make it EMS as well.
+-Add Refillable Ammo at the Gun Range for the police!
+- hospital in sandy you can enter and be healed or self heal
+-Add EMS wants scubba gear and so does PDfor that matter
+COMPLETED 
+- If possible which it should be we need to ADD more channels to the radio 95 channels is way to easy to scan and meta i propose going from (1-100) to (1-1000)
+- Also added phone calls to toko 
+-Make server restarts every 6-8 hours instead of 12
+-Remove anonymity from /ad or make it cost money... should still display a first name 
+- Add food/water effects to all consumables
 
-#1. Cars (Should be fixed this Tuesday)
-#3. Taser timing downed when hit, sometimes a few seconds, sometimes a lot
-#-push holster update
-#-add personal towtrucks and /tow
+
+NOT COMPLETED 
+(Add traces of it as "advertisements" in the twitter feed?)
 
 
-??2. Spikestrips still disappearing (cant replicate need more information)
-????Fix The Rules and Keybinds in our /help and Tablet
-- dirty money society
-- new jam hospital
-- 4x health 
-- Add function to 'escape' carry and/or time period to 'avoid' being carried.... the instant carry yoinks need to be addressed...
-- optimize kburg
-- /box command
-- Boat Rental return in sandy (probably all of them
-- lower range of police cuffing.
+
+
+
+
+
+QUESTION
+- review instances where payment of vehicle is double the required 10% (they ar e being forced to pay 20%)
+- review timers for store robberies (slow cop cars means slower response times)
+- would it be possible to have different storage size by per apartment type?
+-Add crafting for criminals to make Vests but make it very expensive
+- TEST THIS BEFORE DENIAL https://www.gta5-mods.com/maps/mission-row-police-station-extended

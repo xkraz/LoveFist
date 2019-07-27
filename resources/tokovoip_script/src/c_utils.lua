@@ -48,7 +48,6 @@ function doRefreshAllPlayerData(serverData)
 			playersData[playerServerId][key] = {data = data, shared = true};
 		end
 	end
-
 	for playerServerId, playerData in pairs(playersData) do
 		for key, data in pairs(playerData) do
 			if (not serverData[playerServerId]) then
@@ -181,40 +180,6 @@ end
 
 function escape(str)
 	return str:gsub( "%W", "");
-end
-
-function getPlayers()
-	local players = {};
-
-	for i = 0, 256 do
-		if (NetworkIsPlayerActive(i)) then
-			players[#players + 1] = i;
-		end
-	end
-
-	return (players);
-end
-
-function setPlayerTalking(data)
-	voip.talking = tonumber(data.state);
-
-	if (voip.talking == 1) then
-		setPlayerData(GetPlayerName(PlayerId()), "voip:talking", 1, true);
-		RequestAnimDict("mp_facial");
-		while not HasAnimDictLoaded("mp_facial") do
-			Wait(5);
-		end
-		local localPos = GetEntityCoords(GetPlayerPed(-1));
-		local localHeading = GetEntityHeading(GetPlayerPed(-1));
-		PlayFacialAnim(GetPlayerPed(PlayerId()), "mic_chatter", "mp_facial");
-	else
-		setPlayerData(GetPlayerName(PlayerId()), "voip:talking", 0, true);
-		RequestAnimDict("facials@gen_male@base");
-		while not HasAnimDictLoaded("facials@gen_male@base") do
-			Wait(5);
-		end
-		PlayFacialAnim(PlayerPedId(), "mood_normal_1", "facials@gen_male@base");
-	end
 end
 
 Keys = {

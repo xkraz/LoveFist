@@ -2,8 +2,8 @@ Config                            = {}
 
 Config.DrawDistance               = 100.0
 Config.MarkerType                 = 1
-Config.MarkerSize                 = { x = 1.5, y = 1.5, z = 0.5 }
-Config.MarkerColor                = { r = 50, g = 50, b = 204 }
+Config.MarkerSize                 = { x = 1.0, y = 1.0, z = 0.0 }
+Config.MarkerColor                = { r = 255, g = 0, b = 0 }
 
 Config.EnablePlayerManagement     = true
 Config.EnableArmoryManagement     = true
@@ -24,7 +24,7 @@ Config.ArmoryStations = {
 	ARMORY1 = {
 
 		Armories = {
-			vector3(451.7, -980.1, 30.6)
+			vector3(1969.45, 3814.93, 33.00)
 		},
 
 	},

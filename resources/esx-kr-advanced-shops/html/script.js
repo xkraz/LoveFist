@@ -51,7 +51,7 @@ $(function() {
 			$('.image').on('click', function () {
 				$("#cart").load(location.href + " #cart");
 
-				$('.carticon').show("fast");
+				$('.carticon').hide("fast");
 
 				CartCount = CartCount + 1;
 				var item = $(this).attr('id');
@@ -63,7 +63,8 @@ $(function() {
 				
 
 				$.post('http://esx-kr-advanced-shops/putcart', JSON.stringify({item: item, price : price, label : label, count : count, id : id}), function( cb ) {
-
+					$('#cart').show("fast");
+					$('#wrapper').hide("fast");
 					$('#cart').html('');
 
 				var i;
@@ -104,9 +105,12 @@ $(function() {
 			});
 
 			$("body").on("click", "#back", function() {
-				$('#cart').hide("fast");
-				$('#wrapper').show("fast");
-				$('.carticon').show("fast");
+				$.post('http://esx-kr-advanced-shops/escape', JSON.stringify({}));
+			location.reload(true);
+			$.post('http://esx-kr-advanced-shops/emptycart', JSON.stringify({}));
+			$('#wrapper').hide("fast");
+			$('#payment').hide("fast");
+			$('#cart').hide("fast");
 			});
 
 			$("body").on("click", "#buybutton", function() {
