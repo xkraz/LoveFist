@@ -13,7 +13,7 @@ Config.Zones = {
   },
 
   PoliceDutyBlaine = {
-    Pos   = { x = 1852.11, y = 3690.61, z = 34.27 },
+    Pos   = { x = 1852.11, y = 3690.61, z = 33.27 },
     Size  = { x = 2.5, y = 2.5, z = 1.5 },
     Color = { r = 0, g = 255, b = 0 },  
     Type  = 27,
@@ -26,7 +26,7 @@ Config.Zones = {
     Type = 23,
   },
   FibDuty = {
-    Pos = { x = 124.45, y = -767.21, z = 242.15 },
+    Pos = { x = 124.45, y = -767.21, z = 241.15 },
     Size = { x = 1.5, y = 1.5, z = 1.5 },
     Color = { r = 0, g = 255, b = 0 },
     Type = 23,

@@ -811,24 +811,8 @@ Config.DoorList = {
 		distance = 2.5
 	},
 
-	{
-		objName = 'Prop_Gate_airport_01',
-		objCoords  = {x = -1015.28, y = -3471.71, z = 14.00},
-		textCoords = {x = -1012.34, y = -3472.91, z = 16.00},
-		authorizedJobs = { 'police', 'fib', 'dea', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 14,
-		size = 2
-	},
-	{
-		objName = 'Prop_Gate_airport_01',
-		objCoords  = {x = -1049.15, y = -3452.18, z = 14.00},
-		textCoords = {x = -1051.84, y = -3450.69, z = 16.00},
-		authorizedJobs = { 'police', 'fib', 'dea', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 14,
-		size = 2
-	},
+	
+	
 
 	{
 		objName = 'prop_fnclink_09gate1',
@@ -1068,35 +1052,11 @@ Config.DoorList = {
 },
 --]]
 -- PD Back Gate
-{
-	objName = 'prop_gate_military_01',
-	objCoords  = {x = 1858.11, y = 3719.22, z = 32.03},
-	textCoords = {x = 1858.11, y = 3719.22, z = 34.03},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'dea', 'policekey','adminkey',},
-	locked = true,
-	distance = 14,
-	size = 2
-},
+
 -- FR Back Gate (Exit)
-{
-	objName = 'prop_gate_military_01',
-	objCoords  = {x = 1845.07, y = 3712.2, z = 32.17},
-	textCoords = {x = 1845.07, y = 3712.2, z = 34.17},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'dea', 'policekey','adminkey',},
-	locked = true,
-	distance = 14,
-	size = 2
-},
+
 -- FR Front Gate (Entrance)
-{
-	objName = 'prop_gate_military_01',
-	objCoords  = {x = 1804.49, y = 3675.7, z = 33.21},
-	textCoords = {x = 1804.49, y = 3675.7, z = 35.21},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'dea', 'policekey','adminkey',},
-	locked = true,
-	distance = 14,
-	size = 2
-},
+
 -- Los Santos | FBI Building
 -- Entrance Double Doors
 {
