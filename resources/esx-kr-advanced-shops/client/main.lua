@@ -846,7 +846,7 @@ function Robbery(id)
                     local coords = {
                         x = coords1[id].x,
                         y = coords1[id].y,
-                        z = coords1[id].z - 1,
+                        z = coords1[id].z - 0.2,
 					}
 						TriggerServerEvent('esx_phone:send', "police", "Shop robbery at the " .. result.name .. '\'s shop', true, coords)
 						TriggerServerEvent('esx_kr_shops-robbery:NotifyOwner', "~r~Your store ~b~(" .. result.name .. ')~r~ is under robbery', id)
@@ -855,7 +855,7 @@ function Robbery(id)
 						SetEntityHeading(safe, coords1[id].heading)
 						FreezeEntityPosition(safe, true)
 
-                        SetEntityHealth(safe, 10000)
+                        SetEntityHealth(safe, 5000)
                         OnRobbery = true
 						Var = safe
 						Id = id
