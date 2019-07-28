@@ -19,6 +19,10 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = 3594.00, ['y'] = 3673.77, ['z'] = 33.57, nom = "Go to - Lab"},
 		positionTo = { ['x'] = 3540.72, ['y'] = 3676.00, ['z'] = 27.75, nom = "Go to - Surface"},
 	},
+	["CASINO"] = {
+		positionFrom = { ['x'] = 930.11, ['y'] = 41.6, ['z'] = 81.1, nom = "Enter Casino"},
+		positionTo = { ['x'] = 984.02, ['y'] = 20.48, ['z'] = 3.47, nom = "Leave Casino"},
+	},
 	["SANDYSHORESPD"] = {
 		positionFrom = { ['x'] = 1851.04, ['y'] = 3683.22, ['z'] = 34.27, nom = "Offices & Jail"},
 		positionTo = { ['x'] = 1854.37, ['y'] = 3716.53, ['z'] = 1.08, nom = "Back to Lobby"},
@@ -56,7 +60,7 @@ local TeleportFromTo = {
 		positionTo = { ['x'] = 1477.24, ['y'] = 1060.82, ['z'] = 27.71, nom = "Exit bunker"},
 	},
 	["mitchell & dawns"] = {
-		positionFrom = { ['x'] = -1836.14, ['y'] = 447.60, ['z'] = 126.51, nom = "Enter house"},
+		positionFrom = { ['x'] = -1838.86, ['y'] = 436.82, ['z'] = 126.11, nom = "Enter house"},
 		positionTo = { ['x'] = -724.49, ['y'] = 200.73, ['z'] = 124.82, nom = "Exit house"},
 	},
 	["sanctuary"] = {
@@ -67,13 +71,13 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -151.54, ['y'] = 910.27, ['z'] = 159.81, nom = "GO TO POOL"},
 		positionTo = { ['x'] = -132.01, ['y'] = 868.22, ['z'] = 232.69, nom = "GO DRY OFF"},
 	},
-	["jail yard "] = {
-		positionFrom = { ['x'] = 1800.27, ['y'] = 2486.19, ['z'] = -122.70, nom = "GO TO YARD"},
-		positionTo = { ['x'] = 1663.77, ['y'] = 2529.46, ['z'] = 45.56, nom = "GO INSIDE"},
+	["ManCave"] = {
+		positionFrom = { ['x'] = -716.16, ['y'] = 208.91, ['z'] = 124.78, nom = "ManCave"},
+		positionTo = { ['x'] = -730.61, ['y'] = 200.16, ['z'] = 100.81, nom = "Later Bitch"},
 	},
-	["penthouse tp "] = {
-		positionFrom = { ['x'] = 969.33, ['y'] = 63.32, ['z'] = 112.55, nom = "GO TO TERRACE"},
-		positionTo = { ['x'] = 967.89, ['y'] = 63.67, ['z'] = 112.55, nom = "GO TO PENTHOUSE"},
+	["MitchPatio"] = {
+		positionFrom = { ['x'] = -697.93, ['y'] = 199.70, ['z'] = 124.78, nom = "Patio"},
+		positionTo = { ['x'] = -1847.52, ['y'] = 439.08, ['z'] = 129.71, nom = "Master"},
 	},
 	
 
