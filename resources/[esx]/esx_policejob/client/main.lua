@@ -2401,10 +2401,22 @@ AddEventHandler('esx_policejob:updateBlip', function()
 	end
 	
 	-- Is the player a cop? In that case show all the blips for other cops
-	if ESX.PlayerData.job ~= nil and ESX.PlayerData.job.name == 'police' or ESX.PlayerData.job.name == 'ambulance' then
+	if ESX.PlayerData.job ~= nil and ESX.PlayerData.job.name == 'police' then
 		ESX.TriggerServerCallback('esx_society:getOnlinePlayers', function(players)
 			for i=1, #players, 1 do
-				if players[i].job.name == 'police' or  players[i].job.name == 'ambulance' then
+				if players[i].job.name == 'police' then
+					local id = GetPlayerFromServerId(players[i].source)
+					if NetworkIsPlayerActive(id) and GetPlayerPed(id) ~= PlayerPedId() then
+						createBlip(id)
+					end
+				end
+			end
+		end)
+	end
+		if ESX.PlayerData.job ~= nil and ESX.PlayerData.job.name == 'ambulance' then
+		ESX.TriggerServerCallback('esx_society:getOnlinePlayers', function(players)
+			for i=1, #players, 1 do
+				if players[i].job.name == 'ambulance' then
 					local id = GetPlayerFromServerId(players[i].source)
 					if NetworkIsPlayerActive(id) and GetPlayerPed(id) ~= PlayerPedId() then
 						createBlip(id)
