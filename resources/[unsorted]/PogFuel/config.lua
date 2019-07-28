@@ -4,7 +4,7 @@ Config = {}
 Config.UseESX = true
 
 -- What should the price of jerry cans be?
-Config.JerryCanCost = 20
+Config.JerryCanCost = 40
 Config.RefillCost = 40 -- If it is missing half of it capacity, this amount will be divided in half, and so on.
 
 -- Fuel decor - No need to change this, just leave it.
@@ -87,14 +87,14 @@ Config.Classes = {
 
 -- The left part is at percentage RPM, and the right is how much fuel (divided by 10) you want to remove from the tank every second
 Config.FuelUsage = {
-	[1.0] = 1.0,
-	[0.9] = 1.0,
-	[0.8] = 1.0,
-	[0.7] = 0.95,
-	[0.6] = 0.85,
-	[0.5] = 0.75,
-	[0.4] = 0.65,
-	[0.3] = 0.45,
+	[1.0] = 0.5,
+	[0.9] = 0.5,
+	[0.8] = 0.5,
+	[0.7] = 0.425,
+	[0.6] = 0.40,
+	[0.5] = 0.3725,
+	[0.4] = 0.325,
+	[0.3] = 0.225,
 	[0.2] = 0.10,
 	[0.1] = 0.10,
 	[0.0] = 0.10,

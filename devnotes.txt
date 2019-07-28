@@ -1,14 +1,11 @@
 HIGH 
--Add Invoicing to Hospital
--EMS Menu needs updated with new treatment options
--ADD to where EMS can access the car shop like the PD can
--Locks on EMS Doors (All of them)
+
+
 
 MED
-- Make it where gas burns a lot longer for RP it's not good that it last like 3 secs we just test it to get a good number shouldn't be to hard
+
 -Public Helicopter Gas Stations
 -Show Ambulance Player Blips and Also Police? on the Map
--911 Calls  - Marker that lasts longer
 -cars still spawning on top of garage at Marducas Motors (can't seem to replicate this bug)
 -Add Gym to Prison Yard
 -Adding Cafeteria/snacks to the hospital for Staff and Patients
@@ -25,13 +22,18 @@ LOW
 - hospital in sandy you can enter and be healed or self heal
 -Add EMS wants scubba gear and so does PDfor that matter
 COMPLETED 
+
+
 - If possible which it should be we need to ADD more channels to the radio 95 channels is way to easy to scan and meta i propose going from (1-100) to (1-1000)
 - Also added phone calls to toko 
 -Make server restarts every 6-8 hours instead of 12
 -Remove anonymity from /ad or make it cost money... should still display a first name 
 - Add food/water effects to all consumables
+-ADD to where EMS can access the car shop like the PD can
+-Add Invoicing to Hospital
+-911 Calls  - Marker that lasts longer
 
-
+-Locks on EMS Doors (All of them) - Salvo
 NOT COMPLETED 
 (Add traces of it as "advertisements" in the twitter feed?)
 
@@ -47,3 +49,5 @@ QUESTION
 - would it be possible to have different storage size by per apartment type?
 -Add crafting for criminals to make Vests but make it very expensive
 - TEST THIS BEFORE DENIAL https://www.gta5-mods.com/maps/mission-row-police-station-extended
+- Make it where gas burns a lot longer for RP it's not good that it last like 3 secs we just test it to get a good number shouldn't be to hard
+-EMS Menu needs updated with new treatment options
