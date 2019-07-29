@@ -11,7 +11,7 @@ Config.Map = {
   --{name="Stripclub",color=27, id=121,x =132.17, y =-1304.42, z =100.319},--
   {name="Yellow Jack",color=27, id=93,x =1992.69, y =3058.57, z =100.319},
   {name="Galaxy",color=27, id=93,x =5.00, y =220.24, z =107.72}, -- Wainting for the nightclub id blip
-  --{name="Shop",color=2, id=52,x =373.875, y =325.896, z =100.319},
+  {name="Shop",color=2, id=52,x =373.875, y =325.896, z =100.319},
   {name="Shop",color=2, id=52,x =2557.458, y =382.282, z =100.319},
   {name="Shop",color=2, id=52,x =-3038.939, y =585.954, z =6.908},
   {name="Shop",color=2, id=52,x =-3241.927, y =1001.462, z =11.830},
@@ -26,8 +26,8 @@ Config.Map = {
   {name="Shop",color=2, id=52,x =1166.024, y =2708.930, z =37.157},
   {name="Shop",color=2, id=52,x =1392.562, y =3604.648, z =33.980},
   {name="Shop",color=2, id=52,x =-48.519, y =-1757.514, z =28.421},
-  --{name="Shop",color=2, id=52,x =1163.373, y =-323.801, z =68.205},
- -- {name="Shop",color=2, id=52,x =-707.501, y =-914.260, z =18.215},
+  {name="Shop",color=2, id=52,x =1163.373, y =-323.801, z =68.205},
+  {name="Shop",color=2, id=52,x =-707.501, y =-914.260, z =18.215},
   {name="Shop",color=2, id=52,x =-1820.523, y =792.518, z =137.118},
   {name="Shop",color=2, id=52,x =1698.388, y =4924.404, z =41.063}
 }
