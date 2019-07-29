@@ -442,7 +442,7 @@ AddEventHandler('program-casino:craftingCoktails', function(itemValue)
             local gimelQuantity     = xPlayer.getInventoryItem('tequila').count
 
             if alephQuantity < 1 then
-                TriggerClientEvent('esx:showNotification', _source, "Not Enough " .. 'jagerbomb' .. '~w~')
+                TriggerClientEvent('esx:showNotification', _source, "Not Enough " .. 'jagerbomba' .. '~w~')
             elseif bethQuantity < 2 then
                 TriggerClientEvent('esx:showNotification', _source, "Not Enough " .. "vodka" .. '~w~')
             elseif gimelQuantity < 2 then
@@ -482,10 +482,10 @@ AddEventHandler('program-casino:getFridgeStockItem', function(itemName, count)
       inventory.removeItem(itemName, count)
       xPlayer.addInventoryItem(itemName, count)
     else
-      TriggerClientEvent('esx:showNotification', xPlayer.source, "Bad amount")
+      TriggerClientEvent('esx:showNotification', xPlayer.source, "Zła ilość")
     end
 
-    TriggerClientEvent('esx:showNotification', xPlayer.source, "Withdrew " .. count .. ' ' .. item.label.."from the fridge.")
+    TriggerClientEvent('esx:showNotification', xPlayer.source, "Pobrałeś " .. count .. ' ' .. item.label.." z lodówki")
 
   end)
 
