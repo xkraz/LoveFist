@@ -295,7 +295,7 @@ function Croupier()
 		ESX.UI.Menu.Open(
 			'dialog', GetCurrentResourceName(), 'get_item_count',
 			{
-			title = "Amount",
+			title = "Stawka stołu",
 			},
 			function(data2, menu)
 
