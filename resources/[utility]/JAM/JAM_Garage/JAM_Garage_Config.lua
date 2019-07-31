@@ -578,5 +578,13 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -1302.24, y = -3328.71, z = 12.95 },
 		},
+		MunsonTrailer = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 295.2,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = 1968.13, y = 3821.59, z = 31.40 },
+		},
 	},
 }
