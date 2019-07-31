@@ -431,7 +431,7 @@ Config.DoorList = {
 		objName = 'v_ilev_shrf2door',
 		objCoords  = {x = -443.14, y = 6015.685, z = 31.716},
 		textCoords = {x = -443.14, y = 6015.685, z = 32.00},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
+		authorizedJobs = {'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
 		distance = 2.5
 	},
@@ -818,7 +818,7 @@ Config.DoorList = {
 		objName = 'prop_fnclink_09gate1',
 		objCoords  = {x = -1039.15, y = -3473.50, z = 14.40},
 		textCoords = {x = -1039.15, y = -3473.50, z = 15.40},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
+		authorizedJobs = {'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
 		distance = 2.5,
 
@@ -985,7 +985,7 @@ Config.DoorList = {
 	objName = 'prop_gate_airport_01',
 	objCoords  = {x = -1587.23, y = 2805.08, z = 15.82},
 	textCoords = {x = -1587.23, y = 2805.08, z = 19.82},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'policekey','adminkey',},
+	authorizedJobs = { 'ambulance', 'offambulance', 'police' , 'fib', 'policekey','adminkey',},
 	locked = true,
 	distance = 12,
 	size = 2
@@ -994,7 +994,7 @@ Config.DoorList = {
 	objName = 'prop_gate_airport_01',
 	objCoords  = {x = -1600.29, y = 2793.74, z = 15.74},
 	textCoords = {x = -1600.29, y = 2793.74, z = 19.74},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'policekey','adminkey',},
+	authorizedJobs = { 'ambulance', 'offambulance', 'police' , 'fib', 'policekey','adminkey',},
 	locked = true,
 	distance = 12,
 	size = 2
@@ -1004,7 +1004,7 @@ Config.DoorList = {
 	objName = 'prop_gate_airport_01',
 	objCoords  = {x = -2296.17, y = 3393.1, z = 30.07},
 	textCoords = {x = -2296.17, y = 3393.1, z = 34.07},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'policekey','adminkey',},
+	authorizedJobs = {'ambulance', 'offambulance', 'police' , 'fib', 'policekey','adminkey',},
 	locked = true,
 	distance = 12,
 	size = 2
@@ -1013,7 +1013,7 @@ Config.DoorList = {
 	objName = 'prop_gate_airport_01',
 	objCoords  = {x = -2306.13, y = 3379.3, z = 30.2},
 	textCoords = {x = -2306.13, y = 3379.3, z = 34.2},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'policekey','adminkey',},
+	authorizedJobs = {'ambulance', 'offambulance', 'police' , 'fib', 'policekey','adminkey',},
 	locked = true,
 	distance = 12,
 	size = 2
@@ -1023,7 +1023,7 @@ Config.DoorList = {
 	objName = 'prop_gate_airport_01',
 	objCoords  = {x = -451.04, y = 6025.31, z = 30.12},
 	textCoords = {x = -453.6, y = 6027.87, z = 32.12},
-	authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
+	authorizedJobs = {'police', 'offambulance', 'fib', 'policekey', 'adminkey', },
 	locked = true,
 	distance = 14,
 	size = 2
@@ -1033,7 +1033,7 @@ Config.DoorList = {
 	objName = 'prop_gate_airport_01',
 	objCoords  = {x = 415.85, y = -1025.08, z = 28.15},
 	textCoords = {x = 415.85, y = -1021.49, z = 30.15},
-	authorizedJobs = { 'police', 'fib', 'policekey','adminkey',},
+	authorizedJobs = { 'police' 'fib'  'policekey','adminkey',},
 	locked = true,
 	distance = 14,
 	size = 2
@@ -1045,7 +1045,7 @@ Config.DoorList = {
 	objName = 'prop_gate_military_01',
 	objCoords  = {x = 1871.62, y = 3681.23, z = 32.35},
 	textCoords = {x = 1871.62, y = 3681.23, z = 34.35},
-	authorizedJobs = { 'ambulance', 'police' , 'fib', 'policekey','adminkey',},
+	authorizedJobs = { 'ambulance', 'police' 'fib', 'policekey','adminkey',},
 	locked = true,
 	distance = 14,
 	size = 2
@@ -1117,7 +1117,7 @@ Config.DoorList = {
 		objCoords  = {x = 3589.531, y = 3671.415, z = 34.97015},
 		textCoords = {x = 3589.531, y = 3671.415, z = 34.97015},
 		authorizedJobs = { 'adminkey',  },
-		locked = true,
+		locked = false,
 		distance = 8,
 },
 	{
@@ -1125,7 +1125,7 @@ Config.DoorList = {
 		objCoords  = {x = 3588.078, y = 3663.185, z = 34.97015},
 		textCoords = {x = 3588.078, y = 3663.185, z = 34.97015},
 		authorizedJobs = { 'adminkey',  },
-		locked = true,
+		locked = false,
 		distance = 8,
 },
 	{
@@ -1133,7 +1133,7 @@ Config.DoorList = {
 		objCoords  = {x = 3627.713, y = 3746.716, z = 27.69009},
 		textCoords = {x = 3627.713, y = 3746.716, z = 29.69009},
 		authorizedJobs = { 'adminkey',  },
-		locked = true,
+		locked = false,
 		distance = 5,
 },
 	{
@@ -1141,7 +1141,7 @@ Config.DoorList = {
 		objCoords  = {x = 3620.843, y = 3751.527, z = 27.69009},
 		textCoords = {x = 3620.843, y = 3751.527, z = 29.69009},
 		authorizedJobs = { 'adminkey',  },
-		locked = true,
+		locked = false,
 		distance = 5,
 },
 	{
@@ -1149,7 +1149,7 @@ Config.DoorList = {
 		objCoords  = {x = 3539.00, y = 3673.659, z = 27.12146},
 		textCoords = {x = 3539.00, y = 3673.659, z = 27.12146},
 		authorizedJobs = { 'adminkey',  },
-		locked = true,
+		locked = false,
 		distance = 3,
 },
 	{
@@ -1157,7 +1157,7 @@ Config.DoorList = {
 		objCoords  = {x = 3541.56, y = 3673.208, z = 27.12146},
 		textCoords = {x = 3541.56, y = 3673.208, z = 27.12146},
 		authorizedJobs = { 'adminkey',  },
-		locked = true,
+		locked = false,
 		distance = 3,
 },
 
@@ -2285,5 +2285,5 @@ Config.DoorList = {
 	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
 	locked = true,
 	distance = 3
-	},	
+	},
 }
