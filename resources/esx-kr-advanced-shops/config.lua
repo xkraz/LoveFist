@@ -4,7 +4,7 @@ Config.Locale = 'en'
 Config.DeliveryTime = 18000 -- IN SECOUNDS DEFAULT (18000) IS 5 HOURS / 300 MINUTES
 Config.TimeBetweenRobberies = 43200
 Config.CutOnRobbery = 10 -- IN PERCENTAGE FROM THE TARGET SHOP
-Config.RequiredPolices = 1 -- For the robbery
+Config.RequiredPolices = 3 -- For the robbery
 Config.SellValue = 2 -- This is the shops value divided by 2
 Config.ChangeNamePrice = 500 -- In $ - how much you can change the shops name for
 
@@ -33,6 +33,7 @@ Config.Items = {
 	[21] = {label = "Turtle Bait",      item = "turtlebait",       price = 15},
 	[22] = {label = "Binoculars",      item = "binoculars",       price = 200},
 	[23] = {label = "Phone",      item = "phone",       price = 250},
+	[23] = {label = "Contract",      item = "contract",       price = 1500},
 }
 
 Config.Images = {
@@ -59,6 +60,7 @@ Config.Images = {
   [21] = {item = "turtlebait",   src = "img/turtlebait.png"},
   [22] = {item = "binoculars",   src = "img/binoculars.png"},
   [23] = {item = "phone",   src = "img/phone.png"},
+  [24] = {item = "contract",   src = "img/contract.png"},
  
 }
 
