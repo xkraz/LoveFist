@@ -2286,4 +2286,5 @@ Config.DoorList = {
 	locked = true,
 	distance = 3
 	},
+
 }
