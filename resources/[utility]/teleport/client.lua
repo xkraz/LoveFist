@@ -61,7 +61,7 @@ local TeleportFromTo = {
 	},
 	["mitchell & dawns"] = {
 		positionFrom = { ['x'] = -1838.86, ['y'] = 436.82, ['z'] = 126.11, nom = "Enter house"},
-		positionTo = { ['x'] = -724.49, ['y'] = 200.73, ['z'] = 124.82, nom = "Exit house"},
+		positionTo = { ['x'] = -726.71, ['y'] = 199.72, ['z'] = 124.28, nom = "Exit house"},
 	},
 	["sanctuary"] = {
 		positionFrom = { ['x'] = -933.04, ['y'] = 4839.83, ['z'] = 312.51, nom = "BE CLEANSED"},
