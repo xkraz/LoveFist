@@ -2413,18 +2413,7 @@ AddEventHandler('esx_policejob:updateBlip', function()
 			end
 		end)
 	end
-		if ESX.PlayerData.job ~= nil and ESX.PlayerData.job.name == 'ambulance' then
-		ESX.TriggerServerCallback('esx_society:getOnlinePlayers', function(players)
-			for i=1, #players, 1 do
-				if players[i].job.name == 'ambulance' then
-					local id = GetPlayerFromServerId(players[i].source)
-					if NetworkIsPlayerActive(id) and GetPlayerPed(id) ~= PlayerPedId() then
-						createBlip(id)
-					end
-				end
-			end
-		end)
-	end
+
 
 end)
 

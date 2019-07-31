@@ -140,7 +140,7 @@ Config.Zones = {
     Pos   = {x = -1480.09, y = -373.35, z = 38.16, number = 104, red = true},
   },
   Robbery5 = {
-    Pos   = {x = 1396.21, y = 3611.28, z = 33.98, number = 105, red = true},
+    Pos   = {x = 1391.45, y = 3608.82, z = 34.98, number = 105, red = true},
   },
   Robbery6 = {
     Pos   = {x = -2959.15, y = 388.54, z = 13.04, number = 106, red = true},
