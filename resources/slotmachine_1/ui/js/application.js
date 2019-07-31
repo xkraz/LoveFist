@@ -506,7 +506,7 @@ var down_bet_amount = function(bet_amount) {
 
   } else {
 
-	 playerbet -=100;
+	 playerbet -=10;
   }
 
 
@@ -527,7 +527,7 @@ var change_bet_amount = function(bet_amount) {
 
   } else {
 
-	 playerbet +=100;
+	 playerbet +=10;
   }
 
 
