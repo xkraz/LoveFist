@@ -52,11 +52,11 @@ function Cutscene()
 	TriggerEvent('skinchanger:getSkin', function(skin)
 		if GetHashKey(GetEntityModel(PlayerPedId())) == Male then
 			local clothesSkin = {
-				['tshirt_1'] = 16, ['tshirt_2'] = 0,
-				['torso_1'] = 66, ['torso_2'] = 0,
-				['arms'] = 0,
-				['pants_1'] = 39, ['pants_2'] = 0,
-				['shoes_1'] = 34, ['shoes_2'] = 0,
+				['tshirt_1'] = 15, ['tshirt_2'] = 0,
+				['torso_1'] = 65, ['torso_2'] = 0,
+				['arms'] = 1,
+				['pants_1'] = 38, ['pants_2'] = 0,
+				['shoes_1'] = 7, ['shoes_2'] = 0,
 			}
 			TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
 
