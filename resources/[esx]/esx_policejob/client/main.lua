@@ -931,7 +931,8 @@ function OpenPoliceActionsMenu()
 				{label = _U('put_in_vehicle'),	value = 'put_in_vehicle'},
 				{label = _U('out_the_vehicle'),	value = 'out_the_vehicle'},
 				{label = _U('fine'),			value = 'fine'},
-				{label = _U('unpaid_bills'),	value = 'unpaid_bills'}
+				{label = _U('unpaid_bills'),	value = 'unpaid_bills'},
+				{label = "GSR Test",			value = 'gsr_test'}
 			}
 		
 			if Config.EnableLicenses then
@@ -968,6 +969,8 @@ function OpenPoliceActionsMenu()
 						ShowPlayerLicense(closestPlayer)
 					elseif action == 'unpaid_bills' then
 						OpenUnpaidBillsMenu(closestPlayer)
+					elseif action == 'gsr_test' then
+						TriggerServerEvent('GSR:Status2', GetPlayerServerId(closestPlayer))
 					end
 
 				else
@@ -2382,12 +2385,12 @@ end
 
 RegisterNetEvent('esx_policejob:updateBlip')
 AddEventHandler('esx_policejob:updateBlip', function()
-	
+
 	-- Refresh all blips
 	for k, existingBlip in pairs(blipsCops) do
 		RemoveBlip(existingBlip)
 	end
-	
+
 	-- Clean the blip table
 	blipsCops = {}
 
@@ -2399,9 +2402,9 @@ AddEventHandler('esx_policejob:updateBlip', function()
 	if not Config.EnableJobBlip then
 		return
 	end
-	
+
 	-- Is the player a cop? In that case show all the blips for other cops
-	if ESX.PlayerData.job ~= nil and ESX.PlayerData.job.name == 'police' then
+	if PlayerData.job and PlayerData.job.name == 'police' then
 		ESX.TriggerServerCallback('esx_society:getOnlinePlayers', function(players)
 			for i=1, #players, 1 do
 				if players[i].job.name == 'police' then
@@ -2413,7 +2416,6 @@ AddEventHandler('esx_policejob:updateBlip', function()
 			end
 		end)
 	end
-
 
 end)
 
