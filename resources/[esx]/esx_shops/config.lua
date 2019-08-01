@@ -37,7 +37,6 @@ Config.Zones = {
     TwentyFourSeven = {
         Items = {bread, chocolate, sandwich, hamburge, cupcake,chips, water, cocacola, icetea, coffe, milk, cigarett, lighter},
         Pos = {
-            {x = 373.875,   y = 325.896,  z = 102.566},
             {x = 2557.458,  y = 382.282,  z = 107.622},
             {x = -3038.939, y = 585.954,  z = 6.908},
             {x = -3241.927, y = 1001.462, z = 11.830},

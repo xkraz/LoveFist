@@ -70,7 +70,7 @@ Config.Zones = {
     Pos   = {x = 6.09,   y = -708.89,  z = 44.97, number = 'center'},
   },
   Shop1 = {
-    Pos   = {x = 374.875,   y = 326.896,  z = 102.566, number = 1},
+    Pos   = {x = 374.11,   y = 325.58,  z = 102.57, number = 1},
   },
   Shop2 = {
     Pos = {x = 2558.458,  y = 383.282,  z = 107.622, number = 2},
