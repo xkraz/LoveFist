@@ -2293,7 +2293,7 @@ Config.DoorList = {
 		objName = 'apa_p_mp_door_apart_door_black',
 		objCoords  = {x = -714.8116, y = 203.9079, z = 124.9280},
 		textCoords = {x = -716.0000, y = 203.2079, z = 124.9280},
-		authorizedJobs = { 'villakey' },
+		authorizedJobs = { 'villakey', 'adminkey' },
 		locked = true,
 		distance = 3
 		},
@@ -2302,7 +2302,7 @@ Config.DoorList = {
 		objName = 'apa_p_mp_door_apart_door_black',
 		objCoords  = {x = -734.0055, y = 194.4428, z = 124.8781},
 		textCoords = {x = -734.0055, y = 194.4428, z = 124.8781},
-		authorizedJobs = { 'villakey' },
+		authorizedJobs = { 'villakey', 'adminkey' },
 		locked = true,
 		distance = 3
 		},
@@ -2311,7 +2311,7 @@ Config.DoorList = {
 		objName = 'apa_p_mp_door_apart_door_black',
 		objCoords  = {x = -731.6414, y = 195.5259, z = 124.8781},
 		textCoords = {x = -731.6414, y = 195.5259, z = 124.8781},
-		authorizedJobs = { 'villakey' },
+		authorizedJobs = { 'villakey', 'adminkey' },
 		locked = true,
 		distance = 3
 		},
