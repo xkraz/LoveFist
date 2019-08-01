@@ -80,8 +80,8 @@ local TeleportFromTo = {
 		positionTo = { ['x'] = -1847.52, ['y'] = 439.08, ['z'] = 129.71, nom = "Master"},
 	},
 	["TempJail"] = {
-		positionFrom = { ['x'] = 1800.94, ['y'] = 2480.59, ['z'] = -121.70, nom = "Yard"},
-		positionTo = { ['x'] = 1685.78, ['y'] = 2534.37, ['z'] = 44.56, nom = "The Pin"},
+		positionFrom = { ['x'] = 1800.94, ['y'] = 2480.59, ['z'] = -122.70, nom = "Yard"},
+		positionTo = { ['x'] = 1685.78, ['y'] = 2534.37, ['z'] = 45.56, nom = "The Pin"},
 	},
 	
 
