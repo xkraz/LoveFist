@@ -160,10 +160,9 @@ function OpenVigneActionsMenu()
 		{label = _U('deposit_stock'), value = 'put_stock'}
 	}
 
-	if Config.EnablePlayerManagement and PlayerData.job ~= nil and (PlayerData.job.grade_name ~= 'recrue' and PlayerData.job.grade_name ~= 'novice')then -- Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.grade_name == 'boss'
+	if Config.EnablePlayerManagement and PlayerData.job ~= nil and  PlayerData.job.grade_name ~= 'recrue' then 
 		table.insert(elements, {label = _U('take_stock'), value = 'get_stock'})
 	end
-  
 	if Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.grade_name == 'boss' then -- Config.EnablePlayerManagement and PlayerData.job ~= nil and PlayerData.job.grade_name == 'boss'
 		table.insert(elements, {label = _U('boss_actions'), value = 'boss_actions'})
 	end

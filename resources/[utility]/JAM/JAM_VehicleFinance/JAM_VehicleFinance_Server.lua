@@ -137,7 +137,7 @@ ESX.RegisterServerCallback('JAM_VehicleFinance:RepayLoan', function(source, cb, 
 	local data = MySQL.Sync.fetchAll("SELECT * FROM addon_account_data WHERE account_name=@account_name",{['@account_name'] = 'society_cardealer'})	
 	if not data then return; end	
 	local datMon = data[1].money
-	MySQL.Sync.execute('UPDATE addon_account_data SET money=@money WHERE account_name=@account_name',{['@money'] = datMon + price/10,['@account_name'] = 'society_cardealer'})
+	MySQL.Sync.execute('UPDATE addon_account_data SET money=@money WHERE account_name=@account_name',{['@money'] = datMon + price/50,['@account_name'] = 'society_cardealer'})
 	cb(cbData)
 end)
 
