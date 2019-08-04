@@ -380,9 +380,9 @@ Citizen.CreateThread(function()
 					end
 
 					-- Prevent Explosions
-					if cfg.compatibilityMode == false and healthPetrolTankCurrent < 750 then
-						healthPetrolTankNew = 750.0
-					end
+					--if cfg.compatibilityMode == false and healthPetrolTankCurrent < 750 then
+					--	healthPetrolTankNew = 750.0
+					--end
 
 					-- Prevent negative body damage.
 					if healthBodyNew < 0  then
