@@ -43,22 +43,22 @@ Config.Org1Stations = {
 
 Config.AuthorizedWeapons = {
 	recruit = {
-      { weapon = 'WEAPON_MICROSMG', components = { 250, 400, 1000, 1200, 1200,  nil }, price = 6000 },
+      { weapon = 'WEAPON_COMPACTRIFLE',  price = 6000 },
       { weapon = 'WEAPON_KNUCKLE', price = 700 },
 	},
 	
 	bossthree = {
-      { weapon = 'WEAPON_MICROSMG', components = { 250, 400, 1000, 1200, 1200,  nil }, price = 6000 },
+      { weapon = 'WEAPON_COMPACTRIFLE',  price = 6000 },
       { weapon = 'WEAPON_KNUCKLE', price = 700 },
 	},
 
 	bosstwo = {
-      { weapon = 'WEAPON_MICROSMG', components = { 250, 400, 1000, 1200, 1200,  nil }, price = 6000 },
+      { weapon = 'WEAPON_COMPACTRIFLE',  price = 6000 },
       { weapon = 'WEAPON_KNUCKLE', price = 700 },
 	},
 
 	boss = {
-      { weapon = 'WEAPON_MICROSMG', components = { 250, 400, 1000, 1200, 1200,  nil }, price = 6000 },
+      { weapon = 'WEAPON_COMPACTRIFLE', price = 6000 },
       { weapon = 'WEAPON_KNUCKLE', price = 700 },
  
 	} 
