@@ -83,6 +83,10 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = 1800.94, ['y'] = 2480.59, ['z'] = -122.70, nom = "Yard"},
 		positionTo = { ['x'] = 1685.78, ['y'] = 2534.37, ['z'] = 45.56, nom = "The Pin"},
 	},
+	["rockford hills church"] = {
+		positionFrom = { ['x'] = -766.56, ['y'] = -24.00, ['z'] = 41.08, nom = "enter church"},
+		positionTo = { ['x'] = -1945.68, ['y'] = -13.42, ['z'] = 91.67, nom = "leave church"},
+	},
 	
 
 
