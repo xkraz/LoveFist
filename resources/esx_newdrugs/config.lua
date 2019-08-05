@@ -1,100 +1,103 @@
 Config = {}
-Config.CopAlertChance = 30 --% chance of failed purchasee calling police
-Config.BuyChance = 30    --% chance on locals buying drugs
-Config.SellCopAmount = 1 --How many cops are req to be able to sell drugs to locals.
-Config.MakeCopAmount = 0 --How many cops are req to start processing, 0 cops needed to finish.
 
-Config.ProgressTypes = {
-	Weed = {
-		[1] = 'plant',
-		[2] = 'water',
-		[3] = 'harvest'
-	},
-	Cocaine = {
-		[1] = 'ingredients',
-		[2] = 'sample',
-		[3] = 'package'
-	},
-	Meth = {
-		[1] = 'ingredients',
-		[2] = 'cook',
-		[3] = 'package'
-	}
+--Client Stuff--
+Config.MarkerType   = 1
+Config.DrawDistance = 100.0
+Config.ZoneSize     = {x = 1.0, y = 1.0, z = -1.0}
+Config.MarkerColor  = {r = 100, g = 204, b = 100}
+Config.ShowBlips	= true -- Ehh, hopefully self explanatory... but if not it shows the pictures on the map for you
+Config.ShowMarkers 	= false -- Ehh, hopefully self explanatory... but if not it shows the circles on the ground for you
+Config.MultPlant	= false -- Will give up to three of each product when a plant is picked
+
+--Cop Stuff--
+Config.GiveBlack = true -- Disable to give regular cash when selling drugs
+Config.ForceMulti	= false -- Force sellers to have to open the menu after every deal (chance to send notification)
+Config.EnableCops   = true -- Set true to send police notification (uses esx:notification)
+Config.UseESXPhone	= false -- Use ESXPhone/ALPhone instead of ESXNotification
+Config.UseGCPhone	= true -- Use GCphone instead of ESXNotification
+Config.RequireCops	= true -- Requires Police online to sell drugs
+Config.RequiredCopsCoke  = 1
+Config.RequiredCopsMeth  = 1
+Config.RequiredCopsWeed  = 1
+Config.RequiredCopsOpium = 1
+Config.RequiredCopsHerin = 1
+Config.RequiredCopsCrack = 1
+
+--Language--
+Config.Locale = 'en' -- Only fully supported for English
+
+--Script Stuff--
+Config.Delays = {
+	WeedProcessing = 1000 * 10,
+	CocaineProcessing = 2000 * 10,
+	EphedrineProcessing = 2000 * 10,
+	MethProcessing = 2000 * 10,
+	PoppyProcessing = 2000 * 10,
+	CrackProcessing = 2000 * 10,
+	HeroineProcessing = 1000 * 10
 }
 
-Config.WeedFarms = {
-	{x = 3194.86, y = 5355.99, z = 22.33},
-	{x = 3201.84, y = 5349.91, z = 22.33},
-	{x = 3207.79, y = 5344.64, z = 22.33},
-	{x = 3203.54, y = 5352.01, z = 22.33},
-	{x = 3209.54, y = 5346.51, z = 22.33},
-	{x = 2221.09, y = 5577.04, z = 52.84},
-	{x = 2225.79, y = 5576.81, z = 52.86},
-	{x = 695.85, y = 4186.84, z = 40.55 },
-	{x = 696.15, y = 4189.81, z = 40.99 },
-	{x = 1358.32, y = 4302.51, z = 36.54 },
-	{x = 1353.31, y = 4303.86, z = 36.66 },
-	{x = 1424.29, y = 1138.65, z = 113.34 },
-	{x = 1423.34, y = 1135.02, z = 113.34 },
-	{x = -1958.69, y = -316.85, z = 43.58 },
-	{x = -1957.24, y = -313.54, z = 43.34 },
-	{x = 122.92, y = -1964.24, z = 19.61 },
-	{x = 125.07, y = -1967.73, z = 19.40 },
-	{x = 345.79, y = -2084.35, z = 19.58 },
-	{x = 347.53, y = -2088.18, z = 19.16 },
-	{x = 402.92, y = -2029.44, z = 22.15 },
-	{x = 325.77, y = -424.46, z = 43.7 },
-	{x = 329.98, y = -422.39, z = 43.7 },
-	{x = -185.83, y = 364.64, z = 106.73 },
-	{x = -194.18, y = 362.17, z = 106.16 },
-	{x = -1011.84, y = 309.53, z = 67.25 },
-	{x = -1013.38, y = 313.39, z = 67.37 },
-	{x = 351.51, y = 932.06, z = 202.43 },
-	{x = 346.51, y = 932.11, z = 202.43 },
-	{x = 282.15, y = 955.94, z = 210.1 },
-	{x = 283.06, y = 960.76, z = 210.1 },
-
-	{x = 3194.86, y = 5355.99, z = -1122.33},
-	{x = 3201.84, y = 5349.91, z = -1122.33},
-	{x = 3207.79, y = 5344.64, z = -1122.33},
-	{x = 3203.54, y = 5352.01, z = -1122.33},
-	{x = 3209.54, y = 5346.51, z = -1122.33},
-	{x = 2221.09, y = 5577.04, z = -1152.84},
-	{x = 2225.79, y = 5576.81, z = -1152.86},
-	{x = 695.85, y = 4186.84, z = -1140.55 },
-	{x = 696.15, y = 4189.81, z = -1140.99 },
-	{x = 1358.32, y = 4302.51, z = -1136.54 },
-	{x = 1353.31, y = 4303.86, z = -1136.66 },
-	{x = 1424.29, y = 1138.65, z = -11113.34 },
-	{x = 1423.34, y = 1135.02, z = -11113.34 },
-	{x = -1958.69, y = -316.85, z = -1143.58 },
-	{x = -1957.24, y = -313.54, z = -1143.34 },
-	{x = 122.92, y = -1964.24, z = -1119.61 },
-	{x = 125.07, y = -1967.73, z = -1119.40 },
-	{x = 345.79, y = -2084.35, z = -1119.58 },
-	{x = 347.53, y = -2088.18, z = -1119.16 },
-	{x = 402.92, y = -2029.44, z = -1122.15 },
-	{x = 325.77, y = -424.46, z = -1143.7 },
-	{x = 329.98, y = -422.39, z = -1143.7 },
-	{x = -185.83, y = 364.64, z = -1106.73 },
-	{x = -194.18, y = 362.17, z = -1106.16 },
-	{x = -1011.84, y = 309.53, z = -1167.25 },
-	{x = -1013.38, y = 313.39, z = -1167.37 },
-	{x = 351.51, y = 932.06, z = -11202.43 },
-	{x = 346.51, y = 932.11, z = -11202.43 },
-	{x = 282.15, y = 955.94, z = -11210.1 },
-	{x = 283.06, y = 960.76, z = -11210.1 },
-
+Config.WeedDumpItems = {
+	marijuana = 25,
+	cannabis  = 1,
+	dabs	  = 120,
 }
 
-Config.CocaineFarms = {
-	{x = -310.3, y = -1367.84, z = -1130.35},
-	{x = -310.3, y = -1367.84, z = 30.35},
-
+Config.CocaineDumpItems = {
+	cocaine = 95,
+	coca	= 5,
 }
 
-Config.MethFarms = {
-	{x = 2349.95, y = 3133.36, z = -1147.21},
-	{x = 2349.95, y = 3133.36, z = 47.21},
+Config.MethDumpItems = {
+	meth = 135,
+	ephedra = 10,
+	ephedrine = 25,
+}
 
+Config.CrackDumpItems = {
+	crack = 135,
+}
+
+Config.OpiumDumpItems = {
+	opium = 75,
+	poppy = 10,
+}
+
+Config.HeroineDumpItems = {
+	heroine = 165
+}
+
+Config.FieldZones = {
+	WeedField = {coords = vector3(2224.2, 5566.53, 54.06)},
+	CocaineField = {coords = vector3(1849.8, 4914.2, 44.92)},
+	EphedrineField = {coords = vector3(1591.18, -1982.81, 95.12)},
+	PoppyField = {coords = vector3(-1800.83, 1990.43, 132.71)},
+}
+
+Config.ProcessZones = {
+	WeedProcessing = {coords = vector3(2329.02, 2571.29, 46.68), name = 'Hippy Hangout', color = 25, sprite = 496, radius = 1.0},
+	CocaineProcessing = {coords = vector3(-2083.58, -1011.96, 5.88), name = 'Yacht', color = 4, sprite = 455, radius = 1.0},
+	EphedrineProcessing = {coords = vector3(-1078.62, -1679.62, 4.58), name = 'Vagos Garage', color = 62, sprite = 310, radius = 1.0},
+	MethProcessing = {coords = vector3(1391.94, 3605.94, 38.94), name = 'Liquor Ace', color = 25, sprite = 93, radius = 1.0},
+	CrackProcessing = {coords = vector3(974.72, -100.91, 74.87), name = 'Lost MC Clubhouse', color = 72, sprite = 226, radius = 1.0},
+	PoppyProcessing ={coords = vector3(3559.76, 3674.54, 28.12), name = 'Humane Labs', color = 38, sprite = 499, radius = 1.0},
+	HeroineProcessing = {coords = vector3(1976.76, 3819.58, 33.45), name = 'Trevor\'s', color = 59, sprite = 388, radius = 1.0},
+}
+
+Config.DumpZones = {
+	WeedDump = {coords = vector3(-1172.02, -1571.98, 4.66), name = 'Smoke On The Water', color = 25, sprite = 140, radius = 1},
+	CocaineDump = {coords = vector3(-1366.66, 56.67, 54.1), name = 'Golf Club', color = 62, sprite = 109, radius = 1.0},
+	MethDump = {coords = vector3(-56.31, 6521.97, 31.49), name = 'Willie\'s Pharmacy', color = 49, sprite = 403, radius = 1.0},
+	HeroineDump = {coords = vector3(-431.3, -2442.74, 26.88), name = 'Frederick\'s Crane', color = 25, sprite = 68, radius = 1.0},
+	OpiumDump = {coords = vector3(2454.94, 4980.58, 46.82), name = 'O\'Neil Farm', color = 59, sprite = 387, radius = 1.0},
+	CrackDump = {coords = vector3(-4.88, -1227.61, 29.3), name = 'Homeless Hostel', color = 49, sprite = 456, radius = 1.0},
+}
+
+Config.Peds = {
+	WeedProcess =		{ ped = -264140789, x = 2328.29, y = 2569.61,	z = 45.68, 	h = 325.04 },
+	CokeProcess =		{ ped = -264140789, x = -2084.48, y = -1011.68,	z = 4.88,	h = 252.42 },
+	EphedrineProcess =	{ ped = 516505552, x = -1079.49, y = -1679.92,	z = 3.58,	h = 181.96 },
+	MethProcess =		{ ped = 516505552, x = 1976.83,	y = 3819.67,	z = 32.45,	h = 120.83 },
+	OpiumProcess =		{ ped = -730659924, x = 3559.03, y = 3674.78,	z = 27.12,	h = 224.32 },
+	CrackProcess =		{ ped = -264140789, x = 973.68, y = -100.35,	z = 73.85,	h = 277.73 },
 }
