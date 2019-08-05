@@ -1,613 +1,675 @@
-local Keys = {
-	["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57,
-	["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177,
-	["TAB"] = 37, ["Q"] = 44, ["W"] = 32, ["E"] = 38, ["R"] = 45, ["T"] = 245, ["Y"] = 246, ["U"] = 303, ["P"] = 199, ["["] = 39, ["]"] = 40, ["ENTER"] = 18,
-	["CAPS"] = 137, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["F"] = 23, ["G"] = 47, ["H"] = 74, ["K"] = 311, ["L"] = 182,
-	["LEFTSHIFT"] = 21, ["Z"] = 20, ["X"] = 73, ["C"] = 26, ["V"] = 0, ["B"] = 29, ["N"] = 249, ["M"] = 244, [","] = 82, ["."] = 81,
-	["LEFTCTRL"] = 36, ["LEFTALT"] = 19, ["SPACE"] = 22, ["RIGHTCTRL"] = 70,
-	["HOME"] = 213, ["PAGEUP"] = 10, ["PAGEDOWN"] = 11, ["DELETE"] = 178,
-	["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
-	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
-}
-
-local RequiredPolice = 2
-local DelayBetween = 300
-
 ESX = nil
-PlayerData = {}
+local menuOpen = false
+local wasOpen = false
+local count = 0
 
 Citizen.CreateThread(function()
-	while ESX == nil do
-		TriggerEvent('esx:getSharedObject', function(obj)
-			ESX = obj
-
-			if ESX.IsPlayerLoaded() == true then
-				PlayerData = ESX.GetPlayerData()
-			end
-		end)
-
-		for i=1, #Config.WeedFarms, 1 do
-			local farm = Config.WeedFarms[i]
-
-			Marker.AddMarker('weed_farm_' .. i, farm, 'Press ~INPUT_CONTEXT~ to interact with Weed', nil, 0, function()
-				OpenWeedPlantMenu('weed_' .. i)
-			end,
-			function()
-				ESX.UI.Menu.CloseAll()
-			end)
-		end
-
-		for i=1, #Config.CocaineFarms, 1 do
-			local farm = Config.CocaineFarms[i]
-
-			Marker.AddMarker('cocaine_farm_' .. i, farm, 'Press ~INPUT_CONTEXT~ to interact with Cocaine', nil, 0, function()
-				OpenCocaineFarmMenu('cocaine_' .. i)
-			end,
-			function()
-				ESX.UI.Menu.CloseAll()
-			end)
-		end
-
-		for i=1, #Config.MethFarms, 1 do
-			local farm = Config.MethFarms[i]
-
-			Marker.AddMarker('meth_farm_' .. i, farm, 'Press ~INPUT_CONTEXT~ to interact with Meth', nil, 0, function()
-				OpenMethFarmMenu('meth_' .. i)
-			end,
-			function()
-				ESX.UI.Menu.CloseAll()
-			end)
-		end
-
-		Citizen.Wait(0)
-	end
-end)
-
-RegisterNetEvent('esx:playerLoaded')
-AddEventHandler('esx:playerLoaded', function(xPlayer)
-	PlayerData = xPlayer
-end)
-
-RegisterNetEvent('esx:setJob')
-AddEventHandler('esx:setJob', function(job)
-	PlayerData.job = job
-end)
-
-function OpenWeedPlantMenu(plantId)
-	ESX.UI.Menu.CloseAll()
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'weed_plant',
-		{
-			title = 'Weed Plant',
-			align = 'top-left',
-			elements = {
-				{
-					label = 'Plant',
-					value = 'plant_seed'
-				},
-				{
-					label = 'Water',
-					value = 'water_plant'
-				},
-				{
-					label = 'Harvest',
-					value = 'harvest_plant'
-				}
-			}
-		},
-		function(data, menu)
-            ESX.UI.Menu.CloseAll()
-			ESX.TriggerServerCallback('revenge-drugs:getPolice', function(count)
-				if count >= 0 then
-					ESX.TriggerServerCallback('revenge-drugs:getProgress', function(progress, time)
-						if data.current.value == 'plant_seed' then
-							if progress.task == 'plant' then
-								Citizen.CreateThread(function()
-									ESX.TriggerServerCallback('revenge-drugs:useIngredients', function(state)
-										if state == true then
-											playAnimation(nil, 'world_human_gardener_plant')
-
-											progress.task = 'water'
-											progress.tasksLeft = 3
-
-											TriggerServerEvent('revenge-drugs:setProgress', progress)
-
-											Citizen.Wait(10000)
-											ClearPedTasks(GetPlayerPed(-1))
-										else
-											TriggerEvent('esx:showNotification', 'You have no weed seeds!')
-										end
-									end, progress)
-								end)
-							else
-								TriggerEvent('esx:showNotification', 'There is already a plant here.')
-							end
-						elseif data.current.value == 'water_plant' then
-							if progress.task == 'water' then
-								Citizen.CreateThread(function()
-									if progress.delay + DelayBetween < time then
-										playAnimation('amb@world_human_bum_wash@male@high@idle_a', 'idle_a')
-
-										if progress.tasksLeft > 1 then
-											progress.tasksLeft = progress.tasksLeft - 1
-											progress.delay = time
-										else
-											progress.task = 'harvest'
-											progress.tasksLeft = 1
-											progress.delay = time
-										end
-
-										TriggerServerEvent('revenge-drugs:setProgress', progress)
-
-										Citizen.Wait(10000)
-										ClearPedTasks(GetPlayerPed(-1))
-
-										ESX.UI.Menu.CloseAll()
-									else
-										TriggerEvent('esx:showNotification', 'Wait  ' .. ((progress.delay + DelayBetween) - time) ..' second(s) until she is thirsty.')
-									end
-								end)
-							else
-								if progress.task == 'plant' then
-									TriggerEvent('esx:showNotification', 'There is no plant here.')
-								else
-									TriggerEvent('esx:showNotification', 'You have already planted weed.')
-								end
-							end
-						elseif data.current.value == 'harvest_plant' then
-							if progress.task == 'harvest' then
-								Citizen.CreateThread(function()
-									if progress.delay + DelayBetween < time then
-										progress.task = 'plant'
-										progress.tasksLeft = 1
-										progress.delay = 0
-
-										TriggerServerEvent('revenge-drugs:setProgress', progress)
-
-										playAnimation('amb@prop_human_movie_studio_light@base', 'base')
-
-										Citizen.Wait(10000)
-										ClearPedTasks(GetPlayerPed(-1))
-
-										ESX.TriggerServerCallback('revenge-drugs:giveRewards', function()
-											TriggerEvent('esx:showNotification', 'Harvested Plant.')
-
-											ESX.UI.Menu.CloseAll()
-										end, 'weed_pooch', 20)
-
-										ESX.UI.Menu.CloseAll()
-									else
-										TriggerEvent('esx:showNotification', 'Wait  ' .. ((progress.delay + DelayBetween) - time) ..' second(s) to harvest the plant.')
-									end
-								end)
-							else
-								if progress.task == 'plant' then
-									TriggerEvent('esx:showNotification', 'There is no plant here.')
-								else
-									TriggerEvent('esx:showNotification', 'You must handle the plant first.')
-								end
-							end
-						end
-					end, plantId)
-				else
-					TriggerEvent('esx:showNotification', 'Must be at least ~b~ 0  ~w~cops to farm drugs.')
-				end
-			end)
-		end,
-		function(data, menu)
-			menu.close()
-		end
-	)
-end
-
-function OpenCocaineFarmMenu(plantId)
-	ESX.UI.Menu.CloseAll()
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cocaine_farm',
-		{
-			title = 'Cocaine Farm',
-			align = 'top-left',
-			elements = {
-				{
-					label = 'Collect',
-					value = 'ingredients'
-				},
-				{
-					label = 'Mix',
-					value = 'sample'
-				},
-				{
-					label = 'Package',
-					value = 'package'
-				}
-			}
-		},
-		function(data, menu)
-                        ESX.UI.Menu.CloseAll()
-					ESX.TriggerServerCallback('revenge-drugs:getProgress', function(progress, time)
-						if data.current.value == 'ingredients' then --2
-							if progress.task == 'ingredients' then --3
-							ESX.TriggerServerCallback('revenge-drugs:getPolice', function(count)
-								if count >= Config.MakeCopAmount then --1
-								Citizen.CreateThread(function()
-									ESX.TriggerServerCallback('revenge-drugs:useIngredients', function(state)
-										if state == true then --4
-											progress.task = 'sample'
-											progress.tasksLeft = 3
-
-											TriggerServerEvent('revenge-drugs:setProgress', progress)
-
-											playAnimation('mini@repair', 'fixing_a_ped')
-
-											Citizen.Wait(10000)
-											ClearPedTasks(GetPlayerPed(-1))
-
-											ESX.UI.Menu.CloseAll()
-										else
-											TriggerEvent('esx:showNotification', 'You must have the cooking ingredients first!')
-										end --4
-									end, progress)
-								end)
-							else
-								TriggerEvent('esx:showNotification', 'Must be ~b~' .. Config.MakeCopAmount .. ' ~w~cop(s) online to farm drugs.')
-							end
-						end)
-							else
-								TriggerEvent('esx:showNotification', 'You already mixed the ingredients.')
-							end --3
-						elseif data.current.value == 'sample' then
-							if progress.task == 'sample' then
-								Citizen.CreateThread(function()
-									if progress.delay + DelayBetween < time then
-										if progress.tasksLeft > 1 then
-											progress.tasksLeft = progress.tasksLeft - 1
-											progress.delay = time
-										else
-											progress.task = 'package'
-											progress.tasksLeft = 1
-											progress.delay = time
-										end
-
-										TriggerServerEvent('revenge-drugs:setProgress', progress)
-
-										playAnimation('mini@repair', 'fixing_a_ped')
-
-										Citizen.Wait(10000)
-										ClearPedTasks(GetPlayerPed(-1))
-
-										ESX.UI.Menu.CloseAll()
-									else
-										TriggerEvent('esx:showNotification', 'Wait ' .. ((progress.delay + DelayBetween) - time) ..' second(s) until mixing again.')
-									end
-								end)
-							else
-								if progress.task == 'ingredients' then
-									TriggerEvent('esx:showNotification', 'Must mix all ingredients first.')
-								else
-									TriggerEvent('esx:showNotification', 'The cocaine is ready for packaging.')
-								end
-							end
-						elseif data.current.value == 'package' then
-							if progress.task == 'package' then
-								Citizen.CreateThread(function()
-									if progress.delay + DelayBetween < time then
-										progress.task = 'ingredients'
-										progress.tasksLeft = 1
-										progress.delay = 0
-
-										TriggerServerEvent('revenge-drugs:setProgress', progress)
-
-										playAnimation('amb@prop_human_movie_studio_light@base', 'base')
-
-										Citizen.Wait(10000)
-										ClearPedTasks(GetPlayerPed(-1))
-
-										ESX.TriggerServerCallback('revenge-drugs:giveRewards', function()
-											TriggerEvent('esx:showNotification', 'You made cocaine.')
-
-											ESX.UI.Menu.CloseAll()
-										end, 'coke_pooch', 20)
-
-										ESX.UI.Menu.CloseAll()
-									else
-										TriggerEvent('esx:showNotification', 'Wait ' .. ((progress.delay + DelayBetween) - time) ..' second(s) to harvest coke.')
-									end
-								end)
-							else
-								if progress.task == 'ingredients' then
-									TriggerEvent('esx:showNotification', 'You must mix the ingredients first.')
-								else
-									TriggerEvent('esx:showNotification', 'Its not ready yet.')
-								end
-							end
-						end
-					end, plantId)
-		end,
-		function(data, menu)
-			menu.close()
-		end
-	)
-end
-
-function OpenMethFarmMenu(plantId)
-	ESX.UI.Menu.CloseAll()
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'meth_farm',
-		{
-			title = 'Meth Farm',
-			align = 'top-left',
-			elements = {
-				{
-					label = 'Mix',
-					value = 'ingredients'
-				},
-				{
-					label = 'Cook',
-					value = 'cook'
-				},
-				{
-					label = 'Package',
-					value = 'package'
-				}
-			}
-		},
-		function(data, menu)
-            ESX.UI.Menu.CloseAll()
-					ESX.TriggerServerCallback('revenge-drugs:getProgress', function(progress, time)
-						if data.current.value == 'ingredients' then
-							if progress.task == 'ingredients' then
-								ESX.TriggerServerCallback('revenge-drugs:getPolice', function(count)
-									if count >= Config.MakeCopAmount then
-								Citizen.CreateThread(function()
-									ESX.TriggerServerCallback('revenge-drugs:useIngredients', function(state)
-										if state == true then
-											playAnimation('mini@repair', 'fixing_a_ped')
-
-											progress.task = 'cook'
-											progress.tasksLeft = 3
-
-											TriggerServerEvent('revenge-drugs:setProgress', progress)
-
-											Citizen.Wait(10000)
-											ClearPedTasks(GetPlayerPed(-1))
-
-											ESX.UI.Menu.CloseAll()
-										else
-											TriggerEvent('esx:showNotification', 'You must collect the ingredients first!')
-										end
-									end, progress)
-								end)
-								else
-									TriggerEvent('esx:showNotification', 'Must have ~b~' .. RequiredPolice .. ' ~w~cops to farm drugs.')
-								end
-							end)
-							else
-								TriggerEvent('esx:showNotification', 'You already mixed the ingredients.')
-							end
-						elseif data.current.value == 'cook' then
-							if progress.task == 'cook' then
-								Citizen.CreateThread(function()
-									if progress.delay + DelayBetween < time then
-										playAnimation('mini@repair', 'fixing_a_ped')
-
-										if progress.tasksLeft > 1 then
-											progress.tasksLeft = progress.tasksLeft - 1
-											progress.delay = time
-										else
-											progress.task = 'package'
-											progress.tasksLeft = 1
-											progress.delay = time
-										end
-
-										TriggerServerEvent('revenge-drugs:setProgress', progress)
-
-										Citizen.Wait(10000)
-										ClearPedTasks(GetPlayerPed(-1))
-
-										ESX.UI.Menu.CloseAll()
-									else
-										TriggerEvent('esx:showNotification', 'Wait  ' .. ((progress.delay + DelayBetween) - time) ..' second(s) to cook the meth.')
-									end
-								end)
-							else
-								if progress.task == 'ingredients' then
-									TriggerEvent('esx:showNotification', 'You must mix all the ingredients first')
-								else
-									TriggerEvent('esx:showNotification', 'Meth is ready for packaging')
-								end
-							end
-						elseif data.current.value == 'package' then
-							if progress.task == 'package' then
-								Citizen.CreateThread(function()
-									if progress.delay + DelayBetween < time then
-										progress.task = 'ingredients'
-										progress.tasksLeft = 1
-										progress.delay = 0
-
-										TriggerServerEvent('revenge-drugs:setProgress', progress)
-
-										playAnimation('amb@prop_human_movie_studio_light@base', 'base')
-
-										Citizen.Wait(10000)
-										ClearPedTasks(GetPlayerPed(-1))
-
-										ESX.TriggerServerCallback('revenge-drugs:giveRewards', function()
-											TriggerEvent('esx:showNotification', 'Packaged Meth.')
-
-											ESX.UI.Menu.CloseAll()
-										end, 'meth_pooch', 20)
-
-										ESX.UI.Menu.CloseAll()
-									else
-										TriggerEvent('esx:showNotification', 'Wait  ' .. ((progress.delay + DelayBetween) - time) ..' second(s) for meth to finish cooking.')
-									end
-								end)
-							else
-								if progress.task == 'ingredients' then
-									TriggerEvent('esx:showNotification', 'You must mix the ingredients first.')
-								else
-									TriggerEvent('esx:showNotification', 'Need to prepare the meth first.')
-								end
-							end
-						end
-					end, plantId)
-		end,
-		function(data, menu)
-			menu.close()
-		end
-	)
-end
-
-local oldPed = nil
-local currentPed = nil
-local hasDrugs = false
-
-Citizen.CreateThread(function()
-	while true do
-  		Citizen.Wait(0)
-
-  		local player = GetPlayerPed(-1)
-  		local playerloc = GetEntityCoords(player, 0)
-  		local handle, ped = FindFirstPed()
-			local _no = {'Generic_Fuck_You','Generic_Frightened_High','Generic_Insult_High'} --_no[math.random(#_no)]
-
-  		repeat
-   			local success, ped = FindNextPed(handle)
-   			local pos = GetEntityCoords(ped)
-  		 	local distance = GetDistanceBetweenCoords(pos.x, pos.y, pos.z, playerloc['x'], playerloc['y'], playerloc['z'], true)
-
-   			if IsPedInAnyVehicle(GetPlayerPed(-1)) == false then
-     			if DoesEntityExist(ped) then
-        			if IsPedDeadOrDying(ped) == false then
-          				if IsPedInAnyVehicle(ped) == false then
-            				local pedType = GetPedType(ped)
-
-            				if pedType ~= 28 and IsPedAPlayer(ped) == false then
-              					currentPed = pos
-
-              					if distance <= 2 and ped  ~= GetPlayerPed(-1) and ped ~= oldPed then
-              						if hasDrugs == true then
-	              						drawTxt(0.90, 1.40, 1.0,1.0,0.4, "Press ~g~Z ~w~to sell drugs.", 255, 255, 255, 255)
-
-	              						if IsControlJustPressed(1, 20) then
-	              							FreezeEntityPosition(player, true)
-
-	                 						oldPed = ped
-
-	                  						SetEntityAsMissionEntity(ped)
-	                 						TaskStandStill(ped, 9.0)
-
-	                 						Citizen.Wait(7000)
-
-	                 						SetPedAsNoLongerNeeded(oldPed)
-
-	                 						ESX.TriggerServerCallback('revenge-drugs:isPedAccepting', function(state)
-
-																if state == false then
-
-	                 								if GetPedType(ped) == 4 then
-		                 								PlayAmbientSpeechWithVoice(ped, _no[math.random(#_no)], 'S_M_Y_HWAYCOP_01_BLACK_FULL_02', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
-		                 							else
-		                 								PlayAmbientSpeechWithVoice(ped, _no[math.random(#_no)], 'A_F_M_DOWNTOWN_01_BLACK_FULL_01', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
-		                 							end
-
-																	TriggerEvent('esx:showNotification', "~r~They didn't want to buy your drugs.")
-
-																	if (math.random(100) < Config.CopAlertChance) then
-																		local coords = GetEntityCoords(GetPlayerPed(-1))
-																		TriggerServerEvent('esx_phone:send', 'police', 'There is a potential drug sale in the area!', true, {x = coords.x, y = coords.y, z = coords.z})
-																	end
-
-	                 							else
-
-		                 							ESX.TriggerServerCallback('revenge-drugs:sellDrugs', function(money)
-
-																		if money == -1 then
-
-																			TriggerEvent('esx:showNotification', "~r~There must be " .. Config.SellCopAmount .. " officers on duty to sell drugs.")
-
-																		elseif money > 0 then
-
-			                 								if GetPedType(ped) == 4 then
-				                 								PlayAmbientSpeechWithVoice(ped, 'GENERIC_THANKS', 'S_M_Y_HWAYCOP_01_BLACK_FULL_02', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
-				                 							else
-				                 								PlayAmbientSpeechWithVoice(ped, 'GENERIC_THANKS', 'A_F_M_DOWNTOWN_01_BLACK_FULL_01', 'SPEECH_PARAMS_FORCE_SHOUTED', 0)
-				                 							end
-																			TriggerEvent('esx:showNotification', 'You sold drugs for ~g~$' .. money)
-
-		                 								end
-
-		                 							end)
-	                 							end
-	                 						end)
-	              							FreezeEntityPosition(player, false)
-	             						end
-	             					end
-
-              					end
-            				end
-         				end
-        			end
-     			end
-    		end
-  		until not success
-  			EndFindPed(handle)
-	end
-end)
-
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(2000)
-
-		ESX.TriggerServerCallback('revenge-drugs:hasDrugs', function(state)
-        	hasDrugs = state
-        end)
-	end
-end)
-
-function drawTxt(x, y, width, height, scale, text, r, g, b, a, outline)
-    SetTextFont(0)
-    SetTextProportional(0)
-    SetTextScale(scale, scale)
-    SetTextColour(r, g, b, a)
-    SetTextDropShadow(0, 0, 0, 0,255)
-    SetTextEdge(1, 0, 0, 0, 255)
-    SetTextDropShadow()
-
-    if outline == true then
-      SetTextOutline()
+    while ESX == nil do
+        TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+        Citizen.Wait(0)
     end
 
-    SetTextEntry("STRING")
+    while ESX.GetPlayerData().job == nil do
+        Citizen.Wait(100)
+    end
+
+    ESX.PlayerData = ESX.GetPlayerData()
+end)
+
+AddEventHandler('onResourceStop', function(resource)
+    if resource == GetCurrentResourceName() then
+        if menuOpen then
+            ESX.UI.Menu.CloseAll()
+        end
+    end
+end)
+
+function CreateBlipCircle(coords, text, radius, color, sprite)
+    local blip = AddBlipForRadius(coords, radius)
+
+    SetBlipHighDetail(blip, true)
+    SetBlipColour(blip, 1)
+    SetBlipAlpha (blip, 128)
+    SetBlipAsShortRange(blip, true)
+
+    -- create a blip in the middle
+    blip = AddBlipForCoord(coords)
+
+    SetBlipHighDetail(blip, true)
+    SetBlipSprite (blip, sprite)
+    SetBlipScale  (blip, 1.0)
+    SetBlipColour (blip, color)
+    SetBlipAsShortRange(blip, true)
+
+    BeginTextCommandSetBlipName("STRING")
     AddTextComponentString(text)
-    DrawText(x - width / 2, y - height / 2 + 0.005)
+    EndTextCommandSetBlipName(blip)
 end
 
-function playAnimation(group, animation)
-	if group ~= nil then
-		Citizen.CreateThread(function()
-			RequestAnimDict(group)
+Citizen.CreateThread(function()
+    while true do
 
-			while not HasAnimDictLoaded(group) do
-	        	Citizen.Wait(100)
-	      	end
+        Citizen.Wait(0)
 
-	      	TaskPlayAnim(GetPlayerPed(-1), group, animation, 8.0, -8, -1, 49, 0, 0, 0, 0)
-		end)
-	else
-		TaskStartScenarioInPlace(GetPlayerPed(-1), animation, 0, true)
+        if Config.ShowMarkers then
+
+            local coords = GetEntityCoords(GetPlayerPed(-1))
+
+            for k,v in pairs(Config.DumpZones) do
+                if GetDistanceBetweenCoords(coords, v.coords, true) < Config.DrawDistance then
+                    DrawMarker(Config.MarkerType, v.coords, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.ZoneSize.x, Config.ZoneSize.y, Config.ZoneSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+                end
+            end
+			
+	    for k,v in pairs(Config.FieldZones) do
+                if GetDistanceBetweenCoords(coords, v.coords, true) < Config.DrawDistance then
+                    DrawMarker(Config.MarkerType, v.coords, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.ZoneSize.x, Config.ZoneSize.y, Config.ZoneSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+                end
+            end
+
+            for k,v in pairs(Config.ProcessZones) do
+                if GetDistanceBetweenCoords(coords, v.coords, true) < Config.DrawDistance then
+                    DrawMarker(Config.MarkerType, v.coords, 0.0, 0.0, 0.0, 0, 0.0, 0.0, Config.ZoneSize.x, Config.ZoneSize.y, Config.ZoneSize.z, Config.MarkerColor.r, Config.MarkerColor.g, Config.MarkerColor.b, 100, false, true, 2, false, false, false, false)
+                end
+            end
+        end
+    end
+end)
+
+Citizen.CreateThread(function()
+
+    if Config.ShowBlips then
+        for k,v in pairs(Config.DumpZones) do
+            CreateBlipCircle(v.coords, v.name, v.radius, v.color, v.sprite)
+        end
+		
+		for k,v in pairs(Config.FieldZones) do
+            CreateBlipCircle(v.coords, v.name, v.radius, v.color, v.sprite)
+        end
+
+        for k,v in pairs(Config.ProcessZones) do
+            CreateBlipCircle(v.coords, v.name, v.radius, v.color, v.sprite)
+        end
+    end
+end)
+
+Citizen.CreateThread(function()
+    for k,v in pairs(Config.Peds) do
+        RequestModel(v.ped)
+        while not HasModelLoaded(v.ped) do
+            Wait(1)
+        end
+
+        -- If the zone is for a dealer, render a PED
+        local seller = CreatePed(1, v.ped, v.x, v.y, v.z, v.h, false, true)
+        SetBlockingOfNonTemporaryEvents(seller, true)
+        SetPedDiesWhenInjured(seller, false)
+        SetPedCanPlayAmbientAnims(seller, true)
+        SetPedCanRagdollFromPlayerImpact(seller, false)
+        SetEntityInvincible(seller, true)
+        FreezeEntityPosition(seller, true)
+        TaskStartScenarioInPlace(seller, "WORLD_HUMAN_CLIPBOARD", 0, true)
+    end
+end)
+
+RegisterNetEvent('esx_jk_drugs:useItem')
+AddEventHandler('esx_jk_drugs:useItem', function(itemName)
+    ESX.UI.Menu.CloseAll()
+
+    if itemName == 'marijuana' then
+        local lib, anim = 'amb@world_human_smoking_pot@male@base', 'base'
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('weed_use'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, -1, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:onPot')
+        end)
+
+    elseif itemName == 'cocaine' then
+        local lib, anim = 'anim@mp_player_intcelebrationmale@face_palm', 'face_palm' -- TODO better animations
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('cocaine_use'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, -1, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:cokedOut')
+        end)
+
+    elseif itemName == 'meth' then
+        local lib, anim = 'mp_weapons_deal_sting', 'crackhead_bag_loop' -- TODO better animations
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('meth_use'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, -1, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:icedOut')
+        end)
+
+    elseif itemName == 'crack' then
+        local lib, anim = 'mp_weapons_deal_sting', 'crackhead_bag_loop' -- TODO better animations
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('crack_use'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, -1, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:crackedOut')
+        end)
+
+    elseif itemName == 'heroine' then
+        local lib, anim = 'rcmpaparazzo1ig_4', 'miranda_shooting_up' -- TODO better animations
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('heroine_use'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, 10000, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:noddinOut')
+        end)
+
+    elseif itemName == 'drugtest' then
+        local lib, anim = 'misscarsteal2peeing', 'peeing_intro'
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('drug_test'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, -1, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:testing')
+        end)
+
+    elseif itemName == 'fakepee' then
+
+        ESX.ShowNotification(_U('fake_pee'))
+        TriggerEvent('esx_jk_drugs:fakePee')
+
+    elseif itemName == 'beer' then
+        local lib, anim = 'amb@world_human_drinking@beer@male@idle_a', 'idle_a'
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('beer'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, 5000, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:buzzin')
+        end)
+
+    elseif itemName == 'tequila' then
+        local lib, anim = 'amb@world_human_drinking@beer@male@idle_a', 'idle_a'
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('tequila'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, 5000, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:drunk')
+        end)
+
+    elseif itemName == 'vodka' then
+        local lib, anim = 'amb@world_human_drinking@beer@male@idle_a', 'idle_a'
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('vodka'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, 5000, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:drunk')
+        end)
+    elseif itemName == 'whiskey' then
+        local lib, anim = 'amb@world_human_drinking@beer@male@idle_a', 'idle_a'
+        local playerPed = PlayerPedId()
+
+        ESX.ShowNotification(_U('whiskey'))
+        ESX.Streaming.RequestAnimDict(lib, function()
+            TaskPlayAnim(playerPed, lib, anim, 8.0, -8.0, 5000, 32, 0, false, false, false)
+
+            Citizen.Wait(500)
+            while IsEntityPlayingAnim(playerPed, lib, anim, 3) do
+                Citizen.Wait(0)
+                DisableAllControlActions(0)
+            end
+
+            TriggerEvent('esx_jk_drugs:drunk')
+        end)
+    elseif itemName == 'breathalyzer' then
+
+        ESX.ShowNotification(_U('forced'))
+        TriggerEvent('esx_jk_drugs:breathalyzer')
+    end
+end)
+
+RegisterNetEvent('esx_jk_drugs:onPot')
+AddEventHandler('esx_jk_drugs:onPot', function()
+local playerPed = GetPlayerPed(-1)
+    RequestAnimSet("MOVE_M@DRUNK@SLIGHTLYDRUNK")
+    while not HasAnimSetLoaded("MOVE_M@DRUNK@SLIGHTLYDRUNK") do
+        Citizen.Wait(0)
+    end
+    onDrugs = true
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    SetTimecycleModifier("spectator5")
+    SetPedMotionBlur(GetPlayerPed(-1), true)
+    SetPedMovementClipset(GetPlayerPed(-1), "MOVE_M@DRUNK@SLIGHTLYDRUNK", true)
+    SetPedIsDrunk(GetPlayerPed(-1), true)
+	local player = PlayerId()
+    AddArmourToPed(playerPed, 20)
+    DoScreenFadeIn(1000)
+    Citizen.Wait(600000)
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    DoScreenFadeIn(1000)
+    ClearTimecycleModifier()
+    ResetScenarioTypesEnabled()
+    ResetPedMovementClipset(GetPlayerPed(-1), 0)
+    SetPedIsDrunk(GetPlayerPed(-1), false)
+    SetPedMotionBlur(GetPlayerPed(-1), false)
+    ESX.ShowNotification(_U('comin_down'))
+    onDrugs = false
+
+end)
+
+RegisterNetEvent('esx_jk_drugs:cokedOut')
+AddEventHandler('esx_jk_drugs:cokedOut', function()
+local playerPed = GetPlayerPed(-1)
+    RequestAnimSet("move_m@hurry_butch@a")
+    while not HasAnimSetLoaded("move_m@hurry_butch@a") do
+        Citizen.Wait(0)
+    end
+    onDrugs = true
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+	
+    SetPedMotionBlur(GetPlayerPed(-1), true)
+    SetPedMovementClipset(GetPlayerPed(-1), "move_m@hurry_butch@a", true)
+    SetPedRandomProps(GetPlayerPed(-1), true)
+	local player = PlayerId()
+    SetRunSprintMultiplierForPlayer(player, 1.2)
+    SetSwimMultiplierForPlayer(player, 1.2)
+    DoScreenFadeIn(1000)
+    Citizen.Wait(300000)
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    DoScreenFadeIn(1000)
+    ClearTimecycleModifier()
+    ResetPedMovementClipset(GetPlayerPed(-1), 0)
+    SetPedRandomProps(GetPlayerPed(-1), false)
+    ClearAllPedProps(GetPlayerPed(-1), true)
+    SetRunSprintMultiplierForPlayer(player, 1.0)
+    SetSwimMultiplierForPlayer(player, 1.0)
+    SetPedMotionBlur(GetPlayerPed(-1), false)
+    ESX.ShowNotification(_U('comin_down'))
+    onDrugs = false
+
+    
+
+    Wait(520000)
+
+    
+end)
+
+RegisterNetEvent('esx_jk_drugs:icedOut')
+AddEventHandler('esx_jk_drugs:icedOut', function()
+local playerPed = GetPlayerPed(-1)
+local maxHealth = GetEntityMaxHealth(playerPed)
+    RequestAnimSet("move_m@hurry_butch@b")
+    while not HasAnimSetLoaded("move_m@hurry_butch@b") do
+        Citizen.Wait(0)
+    end
+    onDrugs = true
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+	local player = PlayerId()
+	local health = GetEntityHealth(playerPed)
+    local newHealth = math.min(maxHealth , math.floor(health + maxHealth/6))
+    SetEntityHealth(playerPed, newHealth)
+    SetPedMotionBlur(GetPlayerPed(-1), true)
+    SetPedMovementClipset(GetPlayerPed(-1), "move_m@hurry_butch@b", true)
+    DoScreenFadeIn(1000)
+	repeat
+		TaskJump(GetPlayerPed(-1), false, true, false)
+		Citizen.Wait(60000)
+		count = count  + 1
+	until count == 5
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    DoScreenFadeIn(1000)
+    ClearTimecycleModifier()
+    ResetPedMovementClipset(GetPlayerPed(-1), 0)
+    ClearAllPedProps(GetPlayerPed(-1), true)
+    SetPedMotionBlur(GetPlayerPed(-1), false)
+    ESX.ShowNotification(_U('comin_down'))
+    onDrugs = false
+	 
+
+end)
+
+RegisterNetEvent('esx_jk_drugs:noddinOut')
+AddEventHandler('esx_jk_drugs:noddinOut', function()
+    RequestAnimSet("move_m@hurry_butch@c")
+    while not HasAnimSetLoaded("move_m@hurry_butch@c") do
+        Citizen.Wait(0)
+    end
+    onDrugs = true
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    SetPedMotionBlur(GetPlayerPed(-1), true)
+    SetPedMovementClipset(GetPlayerPed(-1), "move_m@hurry_butch@c", true)
+    DoScreenFadeIn(1000)
+    repeat
+		DoScreenFadeOut(1000)
+		SetPedToRagdoll(GetPlayerPed(-1), 5000, 0, 0, false, false, false)
+		Citizen.Wait(5000)
+		DoScreenFadeIn(1000)
+		count = count + 1
+	until count == 5
+    ClearTimecycleModifier()
+    ResetPedMovementClipset(GetPlayerPed(-1), 0)
+    SetPedMotionBlur(GetPlayerPed(-1), false)
+    ESX.ShowNotification(_U('comin_down'))
+    onDrugs = false
+
+end)
+
+RegisterNetEvent('esx_jk_drugs:buzzin')
+AddEventHandler('esx_jk_drugs:buzzin', function()
+    RequestAnimSet("move_m@buzzed")
+    while not HasAnimSetLoaded("move_m@buzzed") do
+        Citizen.Wait(0)
+    end
+    onBeer = true
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    SetPedMotionBlur(GetPlayerPed(-1), true)
+    SetPedMovementClipset(GetPlayerPed(-1), "move_m@buzzed", true)
+    DoScreenFadeIn(1000)
+    Citizen.Wait(150000)
+    ClearTimecycleModifier()
+    ResetPedMovementClipset(GetPlayerPed(-1), 0)
+    SetPedMotionBlur(GetPlayerPed(-1), false)
+    ESX.ShowNotification(_U('wearin_off'))
+    onBeer = false
+
+end)
+
+RegisterNetEvent('esx_jk_drugs:drunk')
+AddEventHandler('esx_jk_drugs:drunk', function()
+    RequestAnimSet("move_m@drunk@moderatedrunk")
+    while not HasAnimSetLoaded("move_m@drunk@moderatedrunk") do
+        Citizen.Wait(0)
+    end
+    onLiquor = true
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    SetPedMotionBlur(GetPlayerPed(-1), true)
+    SetPedMovementClipset(GetPlayerPed(-1), "move_m@drunk@moderatedrunk", true)
+    SetPedIsDrunk(GetPlayerPed(-1), true)
+    DoScreenFadeIn(1000)
+    Citizen.Wait(600000)
+    ClearTimecycleModifier()
+    ResetPedMovementClipset(GetPlayerPed(-1), 0)
+    SetPedMotionBlur(GetPlayerPed(-1), false)
+    SetPedIsDrunk(GetPlayerPed(-1), false)
+    ESX.ShowNotification(_U('wearin_off'))
+    onLiquor = false
+
+end)
+
+RegisterNetEvent('esx_jk_drugs:testing')
+AddEventHandler('esx_jk_drugs:testing', function()
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    DoScreenFadeIn(1000)
+    if onDrugs then
+        ESX.ShowNotification(_U('drug_fail'))
+        TriggerServerEvent('esx_jk_drugs:testResultsFail')
+    else
+        ESX.ShowNotification(_U('drug_pass'))
+        TriggerServerEvent('esx_jk_drugs:testResultsPass')
+    end
+end)
+
+RegisterNetEvent('esx_jk_drugs:fakePee')
+AddEventHandler('esx_jk_drugs:fakePee', function()
+    local wasDrugged = false
+    if onDrugs then
+        ESX.ShowNotification(_U('fake_clean'))
+        wasDrugged = true
+        onDrugs = false
+    else
+        ESX.ShowNotification(_U('not_needed'))
+    end
+    Citizen.Wait(60000)
+    if wasDrugged then
+        onDrugs = true
+    end
+end)
+
+RegisterNetEvent('esx_jk_drugs:breathalyzer')
+AddEventHandler('esx_jk_drugs:breathalyzer', function()
+
+    if onBeer then
+        ESX.ShowNotification(_U('fail_tipsy'))
+        TriggerServerEvent('esx_jk_drugs:testResultsFailTipsy')
+    elseif onLiquor then
+        ESX.ShowNotification(_U('fail_drunk'))
+        TriggerServerEvent('esx_jk_drugs:testResultsFailDrunk')
+    else
+        ESX.ShowNotification(_U('bca_pass'))
+        TriggerServerEvent('esx_jk_drugs:testResultsPassBCA')
+    end
+end)
+
+RegisterNetEvent('esx_jk_drugs:crackedOut')
+AddEventHandler('esx_jk_drugs:crackedOut', function()
+local playerPed = GetPlayerPed(-1)
+    RequestAnimSet("move_m@hurry_butch@a")
+    while not HasAnimSetLoaded("move_m@hurry_butch@a") do
+        Citizen.Wait(0)
+    end
+    onDrugs = true
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+	local player = PlayerId()
+    SetPedMotionBlur(GetPlayerPed(-1), true)
+    SetPedMovementClipset(GetPlayerPed(-1), "move_m@hurry_butch@a", true)
+    SetPedRandomProps(GetPlayerPed(-1), true)
+    SetRunSprintMultiplierForPlayer(player, 1.4)
+    SetSwimMultiplierForPlayer(player, 1.4)
+    DoScreenFadeIn(1000)
+   repeat
+		TaskJump(GetPlayerPed(-1), false, true, false)
+		Citizen.Wait(7500)
+		count = count  + 1
+	until count == 40
+    DoScreenFadeOut(1000)
+    Citizen.Wait(1000)
+    DoScreenFadeIn(1000)
+    ClearTimecycleModifier()
+    ResetPedMovementClipset(GetPlayerPed(-1), 0)
+    SetPedRandomProps(GetPlayerPed(-1), false)
+    ClearAllPedProps(GetPlayerPed(-1), true)
+    SetRunSprintMultiplierForPlayer(player, 1.0)
+    SetSwimMultiplierForPlayer(player, 1.0)
+    SetPedMotionBlur(GetPlayerPed(-1), false)
+    ESX.ShowNotification(_U('comin_down'))
+    onDrugs = false
+
+end)
+
+RegisterNetEvent('esx_jk_drugs:selling')
+AddEventHandler('esx_jk_drugs:selling', function()
+
+    local playerPed = PlayerPedId()
+    PedPosition        = GetEntityCoords(playerPed)
+    local PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z }
+    
+    local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
+    local plyPos = GetEntityCoords(GetPlayerPed(-1),  true)
+    local streetName, crossing = Citizen.InvokeNative( 0x2EB41072B4C1E4C0, plyPos.x, plyPos.y, plyPos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt() )
+    local streetName, crossing = GetStreetNameAtCoord(x, y, z)
+    streetName = GetStreetNameFromHashKey(streetName)
+    crossing = GetStreetNameFromHashKey(crossing)
+	
+	if Config.UseESXPhone then
+        if crossing ~= nil then
+
+            local coords      = GetEntityCoords(GetPlayerPed(-1))
+
+            TriggerServerEvent('esx_phone:send', "police", "Some shady prick is selling drugs on " .. streetName .. " and " .. crossing, true, {
+                x = coords.x,
+                y = coords.y,
+                z = coords.z
+            })
+        else
+            TriggerServerEvent('esx_phone:send', "police", "Some shady prick is selling drugs on " .. streetName, true, {
+                x = coords.x,
+                y = coords.y,
+                z = coords.z
+            })
+        end
+    elseif Config.UseGCPhone then
+        if crossing ~= nil then
+            local coords      = GetEntityCoords(GetPlayerPed(-1))
+
+            TriggerServerEvent('esx_addons_gcphone:startCall', 'police', "Some shady prick is selling drugs on " .. streetName .. " and " .. crossing, PlayerCoords, {
+                PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
+            })
+        else
+            TriggerServerEvent('esx_addons_gcphone:startCall', "police", "Some shady prick is selling drugs on " .. streetName, PlayerCoords, {
+                PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
+            })
+        end
+    else
+		TriggerServerEvent('esx_jk_drugs:policeAlert')
 	end
-end
+end)
 
-function playPedAnimation(ped, group, animation)
-	if group ~= nil then
-		Citizen.CreateThread(function()
-			RequestAnimDict(group)
+RegisterNetEvent('esx_jk_drugs:restricted')
+AddEventHandler('esx_jk_drugs:restricted', function()
 
-			while not HasAnimDictLoaded(group) do
-	        	Citizen.Wait(100)
-	      	end
+    local playerPed = PlayerPedId()
+    PedPosition        = GetEntityCoords(playerPed)
+    local PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z }
+    
+    local x,y,z = table.unpack(GetEntityCoords(GetPlayerPed(-1), false))
+    local plyPos = GetEntityCoords(GetPlayerPed(-1),  true)
+    local streetName, crossing = Citizen.InvokeNative( 0x2EB41072B4C1E4C0, plyPos.x, plyPos.y, plyPos.z, Citizen.PointerValueInt(), Citizen.PointerValueInt() )
+    local streetName, crossing = GetStreetNameAtCoord(x, y, z)
+    streetName = GetStreetNameFromHashKey(streetName)
+    crossing = GetStreetNameFromHashKey(crossing)
+	
+	if Config.UseESXPhone then
+        if crossing ~= nil then
 
-	      	TaskPlayAnim(ped, group, animation, 8.0, -8, -1, 49, 0, 0, 0, 0)
-		end)
-	else
-		TaskStartScenarioInPlace(ped, animation, 0, true)
+            local coords      = GetEntityCoords(GetPlayerPed(-1))
+
+            TriggerServerEvent('esx_phone:send', "police", "Someone entered a Restricted Area at " .. streetName .. " and " .. crossing, true, {
+                x = coords.x,
+                y = coords.y,
+                z = coords.z
+            })
+        else
+            TriggerServerEvent('esx_phone:send', "police", "Someone entered a Restricted Area at " .. streetName, true, {
+                x = coords.x,
+                y = coords.y,
+                z = coords.z
+            })
+        end
+    elseif Config.UseGCPhone then
+        if crossing ~= nil then
+            local coords      = GetEntityCoords(GetPlayerPed(-1))
+
+            TriggerServerEvent('esx_addons_gcphone:startCall', 'police', "Someone entered a Restricted Area at " .. streetName .. " and " .. crossing, PlayerCoords, {
+                PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
+            })
+        else
+            TriggerServerEvent('esx_addons_gcphone:startCall', "police", "Someone entered a Restricted Area at " .. streetName, PlayerCoords, {
+                PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
+            })
+        end
+    else
+		TriggerServerEvent('esx_jk_drugs:restrictedArea')
 	end
-end
+end)
+
+-- Give Cops access to test kits
+
+Citizen.CreateThread(function()
+    while true do
+        Citizen.Wait(0)	
+        if ESX.PlayerData.job ~= nil and ESX.PlayerData.job.name == 'police' then
+        
+            local coords = GetEntityCoords(GetPlayerPed(-1))
+
+            if GetDistanceBetweenCoords(coords, 461.6, -979.56, 30.69, true) < 15 then
+                DrawMarker(21, 461.6, -979.56, 30.69, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.5, 1.5, 0.5, 50, 50, 204, 100, true, true, 2, false, false, false, false)
+            end
+        
+            if GetDistanceBetweenCoords(coords, 461.6, -979.56, 30.69, true) < 1 then
+                ESX.ShowNotification("You grabbed some test kits")
+                TriggerServerEvent('esx_jk_drugs:giveItem', 'drugtest')
+                TriggerServerEvent('esx_jk_drugs:giveItem', 'breathalyzer')
+                Citizen.Wait(10000)
+            end
+        end
+    end
+end)
