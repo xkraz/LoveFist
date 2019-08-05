@@ -49,10 +49,10 @@ Config.Items = {
 }
 
 Config.Itemsprice = {
-    battery = 50,
-    lowradio = 94,
-    highradio = 350,
-    stockrim = 150,
-    highrim = 285,
-    airbag = 125
+    battery = 20,
+    lowradio = 30,
+    highradio = 50,
+    stockrim = 50,
+    highrim = 80,
+    airbag = 50
 }
