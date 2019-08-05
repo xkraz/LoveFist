@@ -103,7 +103,7 @@ function RequestAllIpls()
 	RequestIpl("ch1_02_open")
 
 	-- Garage in La Mesa (autoshop): 970.275, -1826.570, 31.115
-	RequestIpl("bkr_bi_id1_23_door")
+	--RequestIpl("bkr_bi_id1_23_door")
 
 	-- Hill Valley church - Grave: -282.464, 2835.845, 55.914
 	RequestIpl("lr_cs6_08_grave_closed")

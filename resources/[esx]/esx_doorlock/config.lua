@@ -149,7 +149,7 @@ Config.DoorList = {
 
 
 	
-	--- POLICE GATE
+	--- doors
 	
 	{
 		objName = 'v_ilev_ph_door01',
@@ -225,18 +225,44 @@ Config.DoorList = {
 
 	-- To downstairs (double doors)
 	{
-		objName = 'v_ilev_ph_gendoor005',
-		objCoords  = {x = 443.97, y = -989.033, z = 30.6896},
-		textCoords = {x = 444.020, y = -989.445, z = 31.739},
+		objName = 'v_ilev_ph_gendoor006',
+		objCoords  = {x = 446.0079, y = -989.4454, z = 30.8393},
+		textCoords = {x = 446.0079, y = -989.4454, z = 30.8393},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
 		distance = 4
 	},
 
 	{
+		objName = 'v_ilev_ph_gendoor006',
+		objCoords  = {x = 443.4078, y = -988.4454, z = 30.8393},
+		textCoords = {x = 443.4078, y = -989.4454, z = 30.8393},
+		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
+		locked = true,
+		distance = 4
+	},
+	-- door to storage
+	{
 		objName = 'v_ilev_ph_gendoor005',
-		objCoords  = {x = 445.37, y = -988.705, z = 30.6896},
-		textCoords = {x = 445.350, y = -989.445, z = 31.739},
+		objCoords  = {x = 458.2405, y = -981.68, z = 26.8219},
+		textCoords = {x = 458.2405, y = -981.68, z = 26.8219},
+		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
+		locked = true,
+		distance = 4
+	},
+	-- double doors to additional cells
+	{
+		objName = 'v_ilev_ph_gendoor005',
+		objCoords  = {x = 465.5408, y = -988.7102, z = 25.0806},
+		textCoords = {x = 465.5408, y = -988.7102, z = 25.0806},
+		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
+		locked = true,
+		distance = 4
+	},
+	{
+		objName = 'v_ilev_ph_gendoor005',
+		objCoords  = {x = 465.5563, y = -991.3135, z = 25.0806},
+		textCoords = {x = 465.5563, y = -991.3135, z = 25.0806},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
 		distance = 4
