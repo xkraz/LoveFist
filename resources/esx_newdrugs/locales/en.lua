@@ -16,12 +16,12 @@ Locales ['en'] = {
   ['weed_process_close'] = 'It smells like a weed farm over here',
   ['weed_inventoryfull'] = 'you do not have any more inventory space for ~g~Cannabis~s~.',
   ['weed_processprompt'] = 'press ~INPUT_CONTEXT~ to start ~g~Processing Cannabis~s~.',
-  ['weed_processingstarted'] = 'cleaning ~g~Cannabis~s~ for ~g~Marijuana~s~...',
-  ['weed_processingfull'] = 'cleaning ~r~canceled~s~ due to full inventory!',
-  ['weed_processingenough'] = 'you can\'t clean ~b~1x~s~ ~g~Cannabis~s~ without any.',
-  ['weed_processed'] = 'you\'ve cleaned ~b~1x~s~ ~g~Cannabis~s~ and got ~b~5x~s~ ~g~Marijuana~s~',
-  ['weed_processingtoofar'] = 'you walked away while cleaning so it was ~r~canceled~s~.',
-  ['weed_sell'] = 'Press ~INPUT_CONTEXT~ to give your weed to Smoke on the Water',
+  ['weed_processingstarted'] = 'curing ~g~Cannabis~s~ for ~g~Marijuana~s~...',
+  ['weed_processingfull'] = 'curing ~r~canceled~s~ due to full inventory!',
+  ['weed_processingenough'] = 'you can\'t cure ~b~1x~s~ ~g~Cannabis~s~ without any.',
+  ['weed_processed'] = 'you\'ve cured ~b~1x~s~ ~g~Cannabis~s~ and got ~b~5x~s~ ~g~Marijuana~s~',
+  ['weed_processingtoofar'] = 'you walked away while curing so it was ~r~canceled~s~.',
+  ['weed_sell'] = 'Press ~INPUT_CONTEXT~ to sell your weed to Smoke on the Water',
   ['weed_use'] = 'You smoked a doobie',
 
   -- cocaine
@@ -36,7 +36,7 @@ Locales ['en'] = {
   ['cocaine_processed'] = 'you\'ve processed ~b~3x~s~ ~g~CocaPlant~s~ to ~b~1x~s~ ~g~Cocaine~s~',
   ['cocaine_processingtoofar'] = 'the processing has been ~r~canceled~s~ due to you abandoning the area.',
   ['cocaine_sell'] = 'Press ~INPUT_CONTEXT~ to give your coke to The Golfing Society',
-  ['cocaine_use'] = 'You ate a pile of coke!',
+  ['cocaine_use'] = 'You snort a pile of coke!',
 
   -- ephedrine
   ['ephedrine_pickupprompt'] = 'press ~INPUT_CONTEXT~ to harvest the ~g~Ephedra~s~ plant.',
@@ -79,7 +79,7 @@ Locales ['en'] = {
 
   -- opium
   ['opium_pickupprompt'] = 'press ~INPUT_CONTEXT~ to harvest the ~g~Poppy~s~ plant.',
-  ['opium_field_close'] = '~r~The Wong Family might have your head for playing in their Poppy field',
+  ['opium_field_close'] = '~r~It is dangerous to tresspass in an owned Poppy field',
   ['opium_process_close'] = 'Looks like Humane Labs is getting into opioids',
   ['opium_inventoryfull'] = 'you do not have any more inventory space for ~g~Poppy~s~.',
   ['opium_processprompt'] = 'press ~INPUT_CONTEXT~ to start ~g~Processing Poppy~s~.',
