@@ -184,7 +184,8 @@ Config.DoorList = {
 		objCoords  = {x = 449.698, y = -986.469, z = 30.689},
 		textCoords = {x = 450.104, y = -986.388, z = 31.739},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
+		locked = true,
+		distance = 4
 	},
 
 	-- Rooftop
@@ -193,7 +194,8 @@ Config.DoorList = {
 		objCoords  = {x = 464.361, y = -984.678, z = 43.834},
 		textCoords = {x = 464.361, y = -984.050, z = 44.834},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
+		locked = true,
+		distance = 4
 	},
 
 	-- Hallway to roof
@@ -202,7 +204,8 @@ Config.DoorList = {
 		objCoords  = {x = 461.286, y = -985.320, z = 30.839},
 		textCoords = {x = 461.50, y = -986.00, z = 31.50},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
+		locked = true,
+		distance = 4
 	},
 
 	-- Armory
@@ -211,7 +214,8 @@ Config.DoorList = {
 		objCoords  = {x = 452.618, y = -982.702, z = 30.689},
 		textCoords = {x = 453.079, y = -982.600, z = 31.739},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
+		locked = true,
+		distance = 4
 	},
 
 	-- Captain Office
@@ -220,7 +224,8 @@ Config.DoorList = {
 		objCoords  = {x = 447.238, y = -980.630, z = 30.689},
 		textCoords = {x = 447.200, y = -980.010, z = 31.739},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
+		locked = true,
+		distance = 4
 	},
 
 	-- To downstairs (double doors)
@@ -257,7 +262,7 @@ Config.DoorList = {
 		textCoords = {x = 465.5408, y = -988.7102, z = 25.0806},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 4
+		distance = 3
 	},
 	{
 		objName = 'v_ilev_ph_gendoor005',
@@ -265,56 +270,90 @@ Config.DoorList = {
 		textCoords = {x = 465.5563, y = -991.3135, z = 25.0806},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 4
+		distance = 1
 	},
-
-	-- 
-	-- Mission Row Cells
-	--
-
-	-- Main Cells
+	-- Cell 1 back
 	{
+		objName = 'v_ilev_ph_cellgate',
+		objCoords  = {x = 491.14, y = -988.88, z = 25.19},
+		textCoords = {x = 491.14, y = -988.88, z = 25.19},
+		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
+		locked = true,
+		distance = 4 
+	},               
+					 
+	-- Cell 2 back   
+	{                
+		objName = 'v_ilev_ph_cellgate',
+		objCoords  = {x = 487.76, y = -988.87, z = 24.91},
+		textCoords = {x = 487.76, y = -988.87, z = 24.91},
+		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
+		locked = true,
+		distance = 4 
+	},               
+					 
+	-- Cell 3 back   
+	{                
+		objName = 'v_ilev_ph_cellgate',
+		objCoords  = {x = 484.78, y = -988.94, z = 24.91},
+		textCoords = {x = 484.78, y = -988.94, z = 24.91},
+		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
+		locked = true,
+		distance = 4 
+	},               
+					 
+	--               
+	-- Mission Row Cells
+	--               
+					 
+	-- Main Cells    
+	{                
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 463.815, y = -992.686, z = 24.9149},
 		textCoords = {x = 463.30, y = -992.686, z = 25.10},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
-	},
-
-	-- Cell 1
-	{
+		locked = true,
+		distance = 1 
+	},               
+					 
+	-- Cell 1        
+	{                
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 462.381, y = -993.651, z = 24.914},
 		textCoords = {x = 461.806, y = -993.308, z = 25.064},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
-	},
-
-	-- Cell 2
-	{
+		locked = true,
+		distance = 2 
+	},               
+					 
+	-- Cell 2        
+	{                
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 462.331, y = -998.152, z = 24.914},
 		textCoords = {x = 461.806, y = -998.800, z = 25.064},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
-	},
-
-	-- Cell 3
-	{
+		locked = true,
+		distance = 2 
+	},               
+					 
+	-- Cell 3        
+	{                
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 462.704, y = -1001.92, z = 24.9149},
 		textCoords = {x = 461.806, y = -1002.450, z = 25.064},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
-	},
-
-	-- To Back
-	{
+		locked = true,
+		distance = 2 
+	},               
+					 
+	-- To Back       
+	{                
 		objName = 'v_ilev_gtdoor',
 		objCoords  = {x = 463.478, y = -1003.538, z = 25.005},
 		textCoords = {x = 464.00, y = -1003.50, z = 25.50},
 		authorizedJobs = {'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
+		locked = true,
+		distance = 4
 	},
 
 	--
