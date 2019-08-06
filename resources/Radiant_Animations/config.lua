@@ -132,10 +132,21 @@ Config.Anims = {
 	--{name = 'night22', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_11_hippain_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	--{name = 'night22', data = {type = 'anim', ad = "anim@amb@nightclub@lazlow@hi_podium@", anim = "danceidle_mi_11_hippain_laz", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	
+	---------------------------------------DOG STUFF ------------------------------------------------------------------
 	
-	
-	
-	
+	--- PUG--
+	{name = 'dbark', data = {type = 'anim', ad = "creatures@pug@amb@world_dog_barking@idle_a", anim = "idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'dsit', data = {type = 'anim', ad = "creatures@pug@amb@world_dog_sitting@base", anim = "base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'ditch', data = {type = 'anim', ad = "creatures@pug@amb@world_dog_sitting@idle_a", anim = "idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+
+	-- ROTTIE --
+	{name = 'doglay', data = {type = 'anim', ad = "creatures@rottweiler@amb@sleep_in_kennel@", anim = "sleep_in_kennel", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'dogbark', data = {type = 'anim', ad = "creatures@rottweiler@amb@world_dog_barking@idle_a", anim = "idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'dogsit', data = {type = 'anim', ad = "creatures@rottweiler@amb@world_dog_sitting@base", anim = "base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'dogitch', data = {type = 'anim', ad = "creatures@rottweiler@amb@world_dog_sitting@idle_a", anim = "idle_a", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'dogpoint', data = {type = 'anim', ad = "creatures@rottweiler@indication@", anim = "indicate_high", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'dogattack', data = {type = 'anim', ad = "creatures@rottweiler@melee@", anim = "dog_takedown_from_back", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+	{name = 'dogtaunt', data = {type = 'anim', ad = "creatures@rottweiler@melee@streamed_taunts@", anim = "taunt_02", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	-------------------------------------- Walk Styles ----------------------------------------------------------
 	
 	
