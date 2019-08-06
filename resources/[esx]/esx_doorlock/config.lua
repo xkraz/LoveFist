@@ -2380,4 +2380,12 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
+		{--Master Door
+		objName = 'apa_p_mp_door_apart_door_black',
+		objCoords  = {x = -706.5067, y = 191.5884, z = 124.9342},
+		textCoords = {x = -706.5067, y = 191.5884, z = 124.9342},
+		authorizedJobs = { 'villakey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
 }
