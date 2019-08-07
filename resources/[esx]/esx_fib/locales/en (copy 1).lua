@@ -1,10 +1,8 @@
 Locales['en'] = {
   -- Cloakroom
   ['cloakroom'] = 'locker room',
-  ['deposit_society_money'] = 'Deposit Society Money',
   ['citizen_wear'] = 'civilian Outfit',
-  ['deposit_amount'] = 'How much would you like to deposit?',
-  ['fib_wear'] = 'fib Outfit',
+  ['police_wear'] = 'police Outfit',
   ['gilet_wear'] = 'orange reflective jacket',
   ['bullet_wear'] = 'bulletproof vest',
   ['no_outfit'] = 'there\'s no uniform that fits you!',
@@ -75,14 +73,13 @@ Locales['en'] = {
   ['put_in_vehicle'] = 'put in Vehicle',
   ['out_the_vehicle'] = 'drag out from vehicle',
   ['fine'] = 'fine',
-  ['invoice_amount'] = 'invoice amount',
   ['unpaid_bills'] = 'manage unpaid bills',
   ['license_check'] = 'manage license',
   ['license_revoke'] = 'revoke license',
   ['license_revoked'] = 'your ~b~%s~s~ has been ~y~revoked~s~!',
   ['licence_you_revoked'] = 'you revoked a ~b~%s~s~ which belonged to ~y~%s~s~',
   ['no_players_nearby'] = 'there is no player(s) nearby!',
-  ['being_searched'] = 'you are being ~y~searched~s~ by the ~b~Fib~s~',
+  ['being_searched'] = 'you are being ~y~searched~s~ by the ~b~Police~s~',
   -- Vehicle interaction
   ['vehicle_info'] = 'vehicle Info',
   ['pick_lock'] = 'lockpick Vehicle',
@@ -132,8 +129,8 @@ Locales['en'] = {
   ['got_confiscated_weapon'] = 'your ~b~%s~s~ with ~o~%s~s~ bullets was confiscated by ~y~%s~s~',
   ['traffic_offense'] = 'traffic Offense',
   ['minor_offense'] = 'minor Offense',
-  ['average_offense'] = 'misdemeanor Offense',
-  ['major_offense'] = 'felony Offense',
+  ['average_offense'] = 'average Offense',
+  ['major_offense'] = 'major Offense',
   ['fine_total'] = 'fine: %s',
   -- Vehicle Info Menu
   ['plate'] = 'plate: %s',
@@ -146,12 +143,12 @@ Locales['en'] = {
   ['have_deposited'] = 'you have deposited ~y~%sx~s~ ~b~%s~s~',
   ['quantity'] = 'quantity',
   ['inventory'] = 'inventory',
-  ['fib_stock'] = 'fib Stock',
+  ['police_stock'] = 'police Stock',
   -- Misc
   ['remove_prop'] = 'press ~INPUT_CONTEXT~ to delete the object',
-  ['map_blip'] = 'fib Station',
+  ['map_blip'] = 'police Station',
   ['unrestrained_timer'] = 'you feel your handcuffs slowly losing grip and fading away.',
   -- Notifications
-  ['alert_fib'] = 'fib alert',
-  ['phone_fib'] = 'fib',
+  ['alert_police'] = 'police alert',
+  ['phone_police'] = 'police',
 }

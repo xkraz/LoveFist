@@ -1,7 +1,7 @@
 local TeleportFromTo = {
 	["FIB ELE"] = {
 		positionFrom = { ['x'] = 136.33, ['y'] = -761.171, ['z'] = 45.75, nom = "Go up - Elevator"},
-		positionTo = { ['x'] = 136.33, ['y'] = -761.171, ['z'] = 242.6916, nom = "Go down - Elevator"},
+		positionTo = { ['x'] = 136.33, ['y'] = -761.171, ['z'] = 241.6916, nom = "Go down - Elevator"},
 	},
 	["FIB armory"] = {
 		positionFrom = { ['x'] = 141.75, ['y'] = -770.0, ['z'] = 241.75, nom = "Go in - Armory"},

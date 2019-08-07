@@ -84,8 +84,7 @@ function OpenCloakroomMenu()
 	local elements = {
 		{ label = _U('citizen_wear'), value = 'citizen_wear' },
 		{ label = _U('bullet_wear'), value = 'bullet_wear' },
-		{ label = _U('gilet_wear'), value = 'gilet_wear' },
-		{label = _U('player_clothes'), value = 'player_dressing'}
+		{ label = _U('gilet_wear'), value = 'gilet_wear' }
 	}
 
 	if grade == 'recruit' then
@@ -123,7 +122,7 @@ function OpenCloakroomMenu()
 
 	if Config.EnableNonFreemodePeds then
 		table.insert(elements, {label = 'Sheriff wear', value = 'freemode_ped', maleModel = 's_m_y_sheriff_01', femaleModel = 's_f_y_sheriff_01'})
-		table.insert(elements, {label = 'fib wear', value = 'freemode_ped', maleModel = 's_m_y_cop_01', femaleModel = 's_f_y_cop_01'})
+		table.insert(elements, {label = 'Fib wear', value = 'freemode_ped', maleModel = 's_m_y_cop_01', femaleModel = 's_f_y_cop_01'})
 		table.insert(elements, {label = 'Swat wear', value = 'freemode_ped', maleModel = 's_m_y_swat_01', femaleModel = 's_m_y_swat_01'})
 	end
 
@@ -137,61 +136,6 @@ function OpenCloakroomMenu()
 	}, function(data, menu)
 
 		cleanPlayer(playerPed)
--- CHOOSE OUTFIT
-
- if data.current.value == 'player_dressing' then
-
-        ESX.TriggerServerCallback('esx_eden_clotheshop:getPlayerDressing', function(dressing)
-
-          local elements = {}
-
-          for i=1, #dressing, 1 do
-            table.insert(elements, {label = dressing[i], value = i})
-          end
-
-          ESX.UI.Menu.Open(
-            'default', GetCurrentResourceName(), 'player_dressing',
-            {
-              title    = _U('player_clothes'),
-              align    = 'top',
-              elements = elements,
-            },
-            function(data, menu)
-
-              TriggerEvent('skinchanger:getSkin', function(skin)
-
-                ESX.TriggerServerCallback('esx_eden_clotheshop:getPlayerOutfit', function(clothes)
-
-                  TriggerEvent('skinchanger:loadClothes', skin, clothes)
-                  TriggerEvent('esx_skin:setLastSkin', skin)
-
-                  TriggerEvent('skinchanger:getSkin', function(skin)
-                    TriggerServerEvent('esx_skin:save', skin)
-                  end)
-
-				  ESX.ShowNotification(_U('loaded_outfit'))
-				  HasLoadCloth = true
-
-                end, data.current.value)
-
-              end)
-
-            end,
-            function(data, menu)
-              menu.close()
-
-			  CurrentAction     = 'shop_menu'
-			  CurrentActionMsg  = _U('press_menu')
-			  CurrentActionData = {}
-            end
-          )
-
-        end)
-
-end
-
-
----
 
 		if data.current.value == 'citizen_wear' then
 			
@@ -230,7 +174,7 @@ end
 						TriggerServerEvent('esx_service:notifyAllInService', notification, 'fib')
 
 						TriggerServerEvent('esx_service:disableService', 'fib')
-						TriggerEvent('esx_fib:updateBlip')
+						TriggerEvent('esx_fibjob:updateBlip')
 						ESX.ShowNotification(_U('service_out'))
 					end
 				end, 'fib')
@@ -260,7 +204,7 @@ end
 							}
 	
 							TriggerServerEvent('esx_service:notifyAllInService', notification, 'fib')
-							TriggerEvent('esx_fib:updateBlip')
+							TriggerEvent('esx_fibjob:updateBlip')
 							ESX.ShowNotification(_U('service_in'))
 						end
 					end, 'fib')
@@ -333,7 +277,9 @@ function OpenArmoryMenu(station)
 		table.insert(elements, {label = _U('put_weapon'),     value = 'put_weapon'})
 		table.insert(elements, {label = _U('remove_object'),  value = 'get_stock'})
 		table.insert(elements, {label = _U('deposit_object'), value = 'put_stock'})
+		table.insert(elements, {label = _U('deposit_society_money'), value = 'deposit_money'})
 	end
+
 
 	ESX.UI.Menu.CloseAll()
 
@@ -381,6 +327,28 @@ function OpenArmoryMenu(station)
 
 
 			OpenGetStocksMenu()
+			
+		elseif data.current.value == 'deposit_money' then
+		local fib23 = 'fib'
+		
+		ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'deposit_money_amount_' .. fib23,
+			{
+				title = _U('deposit_amount')
+			}, function(data, menu)
+				
+				local amount = tonumber(data.value)
+
+				if amount == nil then
+					ESX.ShowNotification(_U('invalid_amount'))
+				else
+					menu.close()
+					TriggerServerEvent('esx_society:depositMoney', fib23, amount)
+				end
+
+			end, function(data, menu)
+				menu.close()
+			end)
+			
 
 
 		end
@@ -416,7 +384,7 @@ function OpenVehicleSpawnerMenu(type, station, part, partNum)
 			local shopElements, shopCoords = {}
 
 			if type == 'car' then
-				shopCoords = Config.fibStations[station].Vehicles[partNum].InsideShop
+				shopCoords = Config.FibStations[station].Vehicles[partNum].InsideShop
 				local authorizedVehicles = Config.AuthorizedVehicles[PlayerData.job.grade_name]
 
 				if #Config.AuthorizedVehicles['Shared'] > 0 then
@@ -447,7 +415,7 @@ function OpenVehicleSpawnerMenu(type, station, part, partNum)
 					end
 				end
 			elseif type == 'helicopter' then
-				shopCoords = Config.fibStations[station].Helicopters[partNum].InsideShop
+				shopCoords = Config.FibStations[station].Helicopters[partNum].InsideShop
 				local authorizedHelicopters = Config.AuthorizedHelicopters[PlayerData.job.grade_name]
 
 				if #authorizedHelicopters > 0 then
@@ -551,7 +519,7 @@ function StoreNearbyVehicle(playerCoords)
 		return
 	end
 
-	ESX.TriggerServerCallback('esx_fib:storeNearbyVehicle', function(storeSuccess, foundNum)
+	ESX.TriggerServerCallback('esx_fibjob:storeNearbyVehicle', function(storeSuccess, foundNum)
 		if storeSuccess then
 			local vehicleId = vehiclePlates[foundNum]
 			local attempts = 0
@@ -595,7 +563,7 @@ function StoreNearbyVehicle(playerCoords)
 end
 
 function GetAvailableVehicleSpawnPoint(station, part, partNum)
-	local spawnPoints = Config.fibStations[station][part][partNum].SpawnPoints
+	local spawnPoints = Config.FibStations[station][part][partNum].SpawnPoints
 	local found, foundSpawnPoint = false, nil
 
 	for i=1, #spawnPoints, 1 do
@@ -639,7 +607,7 @@ function OpenShopMenu(elements, restoreCoords, shopCoords)
 				local props    = ESX.Game.GetVehicleProperties(vehicle)
 				props.plate    = newPlate
 
-				ESX.TriggerServerCallback('esx_fib:buyJobVehicle', function (bought)
+				ESX.TriggerServerCallback('esx_fibjob:buyJobVehicle', function (bought)
 					if bought then
 						ESX.ShowNotification(_U('vehicleshop_bought', data.current.name, ESX.Math.GroupDigits(data.current.price)))
 
@@ -760,35 +728,22 @@ function drawLoadingText(text, red, green, blue, alpha)
 	EndTextCommandDisplayText(0.5, 0.5)
 end
 
-function OpenfibActionsMenu()
+function OpenHandCuffMenu()
 	ESX.UI.Menu.CloseAll()
 
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'fib_actions',
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'fib_actions2',
 	{
-		title    = 'fib',
+		title    = 'Citizen Interaction',
 		align    = 'top',
 		elements = {
-			{label = _U('citizen_interaction'),	value = 'citizen_interaction'},
-			{label = _U('vehicle_interaction'),	value = 'vehicle_interaction'},
-			{label = _U('object_spawner'),		value = 'object_spawner'}
+			{label = _U('handcuff'),	value = 'citizen_interaction'},
 		}
 	}, function(data, menu)
 
 		if data.current.value == 'citizen_interaction' then
 			local elements = {
-				{label = _U('id_card'),			value = 'identity_card'},
-				{label = _U('search'),			value = 'body_search'},
-			--	{label = _U('handcuff'),		value = 'handcuff'},
-			--	{label = _U('drag'),			value = 'drag'},
-				{label = _U('put_in_vehicle'),	value = 'put_in_vehicle'},
-				{label = _U('out_the_vehicle'),	value = 'out_the_vehicle'},
-				{label = _U('fine'),			value = 'fine'},
-				{label = _U('unpaid_bills'),	value = 'unpaid_bills'}
+				{label = _U('handcuff'),		value = 'handcuff'},
 			}
-		
-			if Config.EnableLicenses then
-				table.insert(elements, { label = _U('license_check'), value = 'license' })
-			end
 		
 			ESX.UI.Menu.Open(
 			'default', GetCurrentResourceName(), 'citizen_interaction',
@@ -804,16 +759,16 @@ function OpenfibActionsMenu()
 					if action == 'identity_card' then
 						OpenIdentityCardMenu(closestPlayer)
 					elseif action == 'body_search' then
-						TriggerServerEvent('esx_fib:message', GetPlayerServerId(closestPlayer), _U('being_searched'))
+						TriggerServerEvent('esx_fibjob:message', GetPlayerServerId(closestPlayer), _U('being_searched'))
 						OpenBodySearchMenu(closestPlayer)
 					elseif action == 'handcuff' then
-						TriggerServerEvent('esx_fib:handcuff', GetPlayerServerId(closestPlayer))
+						TriggerServerEvent('esx_fibjob:handcuff', GetPlayerServerId(closestPlayer))
 					elseif action == 'drag' then
-						TriggerServerEvent('esx_fib:drag', GetPlayerServerId(closestPlayer))
+						TriggerServerEvent('esx_fibjob:drag', GetPlayerServerId(closestPlayer))
 					elseif action == 'put_in_vehicle' then
-						TriggerServerEvent('esx_fib:putInVehicle', GetPlayerServerId(closestPlayer))
+						TriggerServerEvent('esx_fibjob:putInVehicle', GetPlayerServerId(closestPlayer))
 					elseif action == 'out_the_vehicle' then
-						TriggerServerEvent('esx_fib:OutVehicle', GetPlayerServerId(closestPlayer))
+						TriggerServerEvent('esx_fibjob:OutVehicle', GetPlayerServerId(closestPlayer))
 					elseif action == 'fine' then
 						OpenFineMenu(closestPlayer)
 					elseif action == 'license' then
@@ -955,9 +910,204 @@ function OpenfibActionsMenu()
 	end)
 end
 
+function OpenFibActionsMenu()
+	ESX.UI.Menu.CloseAll()
+
+	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'fib_actions',
+	{
+		title    = 'Fib',
+		align    = 'top',
+		elements = {
+			{label = _U('citizen_interaction'),	value = 'citizen_interaction'},
+			{label = _U('vehicle_interaction'),	value = 'vehicle_interaction'},
+			{label = _U('object_spawner'),		value = 'object_spawner'}
+		}
+	}, function(data, menu)
+
+		if data.current.value == 'citizen_interaction' then
+			local elements = {
+				{label = _U('id_card'),			value = 'identity_card'},
+				{label = _U('search'),			value = 'body_search'},
+				{label = _U('put_in_vehicle'),	value = 'put_in_vehicle'},
+				{label = _U('out_the_vehicle'),	value = 'out_the_vehicle'},
+				{label = _U('fine'),			value = 'fine'},
+				{label = _U('unpaid_bills'),	value = 'unpaid_bills'},
+				{label = "GSR Test",			value = 'gsr_test'}
+			}
+		
+			if Config.EnableLicenses then
+				table.insert(elements, { label = _U('license_check'), value = 'license' })
+			end
+		
+			ESX.UI.Menu.Open(
+			'default', GetCurrentResourceName(), 'citizen_interaction',
+			{
+				title    = _U('citizen_interaction'),
+				align    = 'top',
+				elements = elements
+			}, function(data2, menu2)
+				local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+				if closestPlayer ~= -1 and closestDistance <= 3.0 then
+					local action = data2.current.value
+
+					if action == 'identity_card' then
+						OpenIdentityCardMenu(closestPlayer)
+					elseif action == 'body_search' then
+						TriggerServerEvent('esx_fibjob:message', GetPlayerServerId(closestPlayer), _U('being_searched'))
+						OpenBodySearchMenu(closestPlayer)
+					elseif action == 'handcuff' then
+						TriggerServerEvent('esx_fibjob:handcuff', GetPlayerServerId(closestPlayer))
+					elseif action == 'drag' then
+						TriggerServerEvent('esx_fibjob:drag', GetPlayerServerId(closestPlayer))
+					elseif action == 'put_in_vehicle' then
+						TriggerServerEvent('esx_fibjob:putInVehicle', GetPlayerServerId(closestPlayer))
+					elseif action == 'out_the_vehicle' then
+						TriggerServerEvent('esx_fibjob:OutVehicle', GetPlayerServerId(closestPlayer))
+					elseif action == 'fine' then
+						OpenFineMenu(closestPlayer)
+					elseif action == 'license' then
+						ShowPlayerLicense(closestPlayer)
+					elseif action == 'unpaid_bills' then
+						OpenUnpaidBillsMenu(closestPlayer)
+					elseif action == 'gsr_test' then
+						TriggerServerEvent('GSR:Status2', GetPlayerServerId(closestPlayer))
+					end
+
+				else
+					ESX.ShowNotification(_U('no_players_nearby'))
+				end
+			end, function(data2, menu2)
+				menu2.close()
+			end)
+		elseif data.current.value == 'vehicle_interaction' then
+			local elements  = {}
+			local playerPed = PlayerPedId()
+			local coords    = GetEntityCoords(playerPed)
+			local vehicle   = ESX.Game.GetVehicleInDirection()
+			
+			if DoesEntityExist(vehicle) then
+				table.insert(elements, {label = _U('vehicle_info'),	value = 'vehicle_infos'})
+				table.insert(elements, {label = _U('pick_lock'),	value = 'hijack_vehicle'})
+				table.insert(elements, {label = _U('impound'),		value = 'impound'})
+			end
+			
+			table.insert(elements, {label = _U('search_database'), value = 'search_database'})
+
+			ESX.UI.Menu.Open(
+			'default', GetCurrentResourceName(), 'vehicle_interaction',
+			{
+				title    = _U('vehicle_interaction'),
+				align    = 'top',
+				elements = elements
+			}, function(data2, menu2)
+				coords  = GetEntityCoords(playerPed)
+				vehicle = ESX.Game.GetVehicleInDirection()
+				action  = data2.current.value
+				
+				if action == 'search_database' then
+					LookupVehicle()
+				elseif DoesEntityExist(vehicle) then
+					local vehicleData = ESX.Game.GetVehicleProperties(vehicle)
+					if action == 'vehicle_infos' then
+						OpenVehicleInfosMenu(vehicleData)
+						
+					elseif action == 'hijack_vehicle' then
+						if IsAnyVehicleNearPoint(coords.x, coords.y, coords.z, 3.0) then
+							TaskStartScenarioInPlace(playerPed, "WORLD_HUMAN_WELDING", 0, true)
+							Citizen.Wait(20000)
+							ClearPedTasksImmediately(playerPed)
+
+							SetVehicleDoorsLocked(vehicle, 1)
+							SetVehicleDoorsLockedForAllPlayers(vehicle, false)
+							ESX.ShowNotification(_U('vehicle_unlocked'))
+						end
+					elseif action == 'impound' then
+					
+						-- is the script busy?
+						if CurrentTask.Busy then
+							return
+						end
+
+						ESX.ShowHelpNotification(_U('impound_prompt'))
+						
+						TaskStartScenarioInPlace(playerPed, 'CODE_HUMAN_MEDIC_TEND_TO_DEAD', 0, true)
+						
+						CurrentTask.Busy = true
+						CurrentTask.Task = ESX.SetTimeout(10000, function()
+							ClearPedTasks(playerPed)
+							ImpoundVehicle(vehicle)
+							Citizen.Wait(100) -- sleep the entire script to let stuff sink back to reality
+						end)
+						
+						-- keep track of that vehicle!
+						Citizen.CreateThread(function()
+							while CurrentTask.Busy do
+								Citizen.Wait(1000)
+							
+								vehicle = GetClosestVehicle(coords.x, coords.y, coords.z, 3.0, 0, 71)
+								if not DoesEntityExist(vehicle) and CurrentTask.Busy then
+									ESX.ShowNotification(_U('impound_canceled_moved'))
+									ESX.ClearTimeout(CurrentTask.Task)
+									ClearPedTasks(playerPed)
+									CurrentTask.Busy = false
+									break
+								end
+							end
+						end)
+					end
+				else
+					ESX.ShowNotification(_U('no_vehicles_nearby'))
+				end
+
+			end, function(data2, menu2)
+				menu2.close()
+			end)
+
+		elseif data.current.value == 'object_spawner' then
+			ESX.UI.Menu.Open(
+			'default', GetCurrentResourceName(), 'citizen_interaction',
+			{
+				title    = _U('traffic_interaction'),
+				align    = 'top',
+				elements = {
+					{label = _U('cone'),		value = 'prop_roadcone02a'},
+					{label = _U('barrier'),		value = 'prop_barrier_work05'},
+					{label = _U('spikestrips'),	value = 'p_ld_stinger_s'},
+					{label = _U('box'),			value = 'prop_boxpile_07d'},
+					{label = _U('cash'),		value = 'hei_prop_cash_crate_half_full'}
+				}
+			}, function(data2, menu2)
+				local model     = data2.current.value
+				local playerPed = PlayerPedId()
+				local coords    = GetEntityCoords(playerPed)
+				local forward   = GetEntityForwardVector(playerPed)
+				local x, y, z   = table.unpack(coords + forward * 1.0)
+
+				if model == 'prop_roadcone02a' then
+					z = z - 2.0
+				end
+
+				ESX.Game.SpawnObject(model, {
+					x = x,
+					y = y,
+					z = z
+				}, function(obj)
+					SetEntityHeading(obj, GetEntityHeading(playerPed))
+					PlaceObjectOnGroundProperly(obj)
+				end)
+
+			end, function(data2, menu2)
+				menu2.close()
+			end)
+		end
+
+	end, function(data, menu)
+		menu.close()
+	end)
+end
 function OpenIdentityCardMenu(player)
 
-	ESX.TriggerServerCallback('esx_fib:getOtherPlayerData', function(data)
+	ESX.TriggerServerCallback('esx_fibjob:getOtherPlayerData', function(data)
 
 		local elements    = {}
 		local nameLabel   = _U('name', data.name)
@@ -1050,7 +1200,7 @@ end
 
 function OpenBodySearchMenu(player)
 
-	ESX.TriggerServerCallback('esx_fib:getOtherPlayerData', function(data)
+	ESX.TriggerServerCallback('esx_fibjob:getOtherPlayerData', function(data)
 
 		local elements = {}
 
@@ -1107,7 +1257,7 @@ function OpenBodySearchMenu(player)
 			local amount   = data.current.amount
 
 			if data.current.value ~= nil then
-				TriggerServerEvent('esx_fib:confiscatePlayerItem', GetPlayerServerId(player), itemType, itemName, amount)
+				TriggerServerEvent('esx_fibjob:confiscatePlayerItem', GetPlayerServerId(player), itemType, itemName, amount)
 				OpenBodySearchMenu(player)
 			end
 
@@ -1120,28 +1270,55 @@ function OpenBodySearchMenu(player)
 end
 
 function OpenFineMenu(player)
+	-- JINKS don't pick fines from a menu anymore just enter the number.
+	
+			ESX.UI.Menu.Open('dialog', GetCurrentResourceName(), 'fine', {
+				title = _U('invoice_amount')
+			}, function(data, menu)
+				local amount = tonumber(data.value)
 
-	ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'fine',
-	{
-		title    = _U('fine'),
-		align    = 'top',
-		elements = {
-			{label = _U('traffic_offense'), value = 0},
-			{label = _U('minor_offense'),   value = 1},
-			{label = _U('average_offense'), value = 2},
-			{label = _U('major_offense'),   value = 3}
-		}
-	}, function(data, menu)
-		OpenFineCategoryMenu(player, data.current.value)
-	end, function(data, menu)
-		menu.close()
-	end)
+				if amount == nil or amount < 0 or amount > 200000 then
+					ESX.ShowNotification(_U('amount_invalid'))
+				else
+					local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+					if closestPlayer == -1 or closestDistance > 3.0 then
+						ESX.ShowNotification(_U('no_players_nearby'))
+					else
+						menu.close()
+						TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(closestPlayer), 'society_fib', _U('fine'), amount)
+					end
+				end
+			end, function(data, menu)
+				menu.close()
+			
+			end)
+
+
+	--ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'fine',
+	--{
+	--	title    = _U('fine'),
+	--	align    = 'top',
+	--	elements = {
+	--		{label = _U('traffic_offense'), value = 0},
+			--	{label = _U('traffic_offenses'), value = 0},
+	--		{label = _U('minor_offense'),   value = 1},
+			--	{label = _U('minor_infractions'),   value = 1},
+	--		{label = _U('average_offense'), value = 2},
+			--	{label = _U('misdemeanors'),   value = 2},
+	--		{label = _U('major_offense'),   value = 3}
+			--	{label = _U('felonys'),   value = 3},
+	--	}
+	--}, function(data, menu)
+	--	OpenFineCategoryMenu(player, data.current.value)
+	--end, function(data, menu)
+	--	menu.close()
+	--end)
 
 end
 
 function OpenFineCategoryMenu(player, category)
 
-	ESX.TriggerServerCallback('esx_fib:getFineList', function(fines)
+	ESX.TriggerServerCallback('esx_fibjob:getFineList', function(fines)
 
 		local elements = {}
 
@@ -1163,13 +1340,22 @@ function OpenFineCategoryMenu(player, category)
 
 			local label  = data.current.fineLabel
 			local amount = data.current.amount
+			---- JINKS new variable to pass fine ID 
+			local fid = data.current.value --we want to store the fine ID
+			---- JINKS
 
 			menu.close()
 
 			if Config.EnablePlayerManagement then
 				TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(player), 'society_fib', _U('fine_total', label), amount)
+				---JINKS ADD calls to new server event in server/main.lua (esx_fibjob:FinePaperwork)
+				TriggerServerEvent('esx_fibjob:FinePaperwork', GetPlayerServerId(player), fid, amount)
+				--ESX.TriggerServerCallback('esx_fibjob:FinePaperwork', function( '2', '3', '4')
 			else
 				TriggerServerEvent('esx_billing:sendBill', GetPlayerServerId(player), '', _U('fine_total', label), amount)
+				---and here.
+				TriggerServerEvent('esx_fibjob:FinePaperwork', GetPlayerServerId(player), fid, amount)
+				--ESX.TriggerServerCallback('esx_fibjob:FinePaperwork', function('2', '3', '4')
 			end
 
 			ESX.SetTimeout(300, function()
@@ -1193,7 +1379,7 @@ function LookupVehicle()
 		if data.value == nil or length < 2 or length > 13 then
 			ESX.ShowNotification(_U('search_database_error_invalid'))
 		else
-			ESX.TriggerServerCallback('esx_fib:getVehicleFromPlate', function(owner, found)
+			ESX.TriggerServerCallback('esx_fibjob:getVehicleFromPlate', function(owner, found)
 				if found then
 					ESX.ShowNotification(_U('search_database_found', owner))
 				else
@@ -1210,7 +1396,7 @@ end
 function ShowPlayerLicense(player)
 	local elements = {}
 	local targetName
-	ESX.TriggerServerCallback('esx_fib:getOtherPlayerData', function(data)
+	ESX.TriggerServerCallback('esx_fibjob:getOtherPlayerData', function(data)
 		if data.licenses then
 			for i=1, #data.licenses, 1 do
 				if data.licenses[i].label and data.licenses[i].type then
@@ -1235,7 +1421,7 @@ function ShowPlayerLicense(player)
 			elements = elements,
 		}, function(data, menu)
 			ESX.ShowNotification(_U('licence_you_revoked', data.current.label, targetName))
-			TriggerServerEvent('esx_fib:message', GetPlayerServerId(player), _U('license_revoked', data.current.label))
+			TriggerServerEvent('esx_fibjob:message', GetPlayerServerId(player), _U('license_revoked', data.current.label))
 			
 			TriggerServerEvent('esx_license:removeLicense', GetPlayerServerId(player), data.current.type)
 			
@@ -1275,7 +1461,7 @@ end
 
 function OpenVehicleInfosMenu(vehicleData)
 
-	ESX.TriggerServerCallback('esx_fib:getVehicleInfos', function(retrivedInfo)
+	ESX.TriggerServerCallback('esx_fibjob:getVehicleInfos', function(retrivedInfo)
 
 		local elements = {}
 
@@ -1302,7 +1488,7 @@ end
 
 function OpenGetWeaponMenu()
 
-	ESX.TriggerServerCallback('esx_fib:getArmoryWeapons', function(weapons)
+	ESX.TriggerServerCallback('esx_fibjob:getArmoryWeapons', function(weapons)
 		local elements = {}
 
 		for i=1, #weapons, 1 do
@@ -1323,7 +1509,7 @@ function OpenGetWeaponMenu()
 
 			menu.close()
 
-			ESX.TriggerServerCallback('esx_fib:removeArmoryWeapon', function()
+			ESX.TriggerServerCallback('esx_fibjob:removeArmoryWeapon', function()
 				OpenGetWeaponMenu()
 			end, data.current.value)
 
@@ -1359,7 +1545,7 @@ function OpenPutWeaponMenu()
 
 		menu.close()
 
-		ESX.TriggerServerCallback('esx_fib:addArmoryWeapon', function()
+		ESX.TriggerServerCallback('esx_fibjob:addArmoryWeapon', function()
 			OpenPutWeaponMenu()
 		end, data.current.value, true)
 
@@ -1443,7 +1629,7 @@ function OpenBuyWeaponsMenu()
 				OpenWeaponComponentShop(data.current.components, data.current.name, menu)
 			end
 		else
-			ESX.TriggerServerCallback('esx_fib:buyWeapon', function(bought)
+			ESX.TriggerServerCallback('esx_fibjob:buyWeapon', function(bought)
 				if bought then
 					if data.current.price > 0 then
 						ESX.ShowNotification(_U('armory_bought', data.current.weaponLabel, ESX.Math.GroupDigits(data.current.price)))
@@ -1474,7 +1660,7 @@ function OpenWeaponComponentShop(components, weaponName, parentShop)
 		if data.current.hasComponent then
 			ESX.ShowNotification(_U('armory_hascomponent'))
 		else
-			ESX.TriggerServerCallback('esx_fib:buyWeapon', function(bought)
+			ESX.TriggerServerCallback('esx_fibjob:buyWeapon', function(bought)
 				if bought then
 					if data.current.price > 0 then
 						ESX.ShowNotification(_U('armory_bought', data.current.componentLabel, ESX.Math.GroupDigits(data.current.price)))
@@ -1497,7 +1683,7 @@ end
 
 function OpenGetStocksMenu()
 
-	ESX.TriggerServerCallback('esx_fib:getStockItems', function(items)
+	ESX.TriggerServerCallback('esx_fibjob:getStockItems', function(items)
 
 		local elements = {}
 
@@ -1511,7 +1697,7 @@ function OpenGetStocksMenu()
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'stocks_menu',
 		{
 			title    = _U('fib_stock'),
-			align    = 'topt',
+			align    = 'top',
 			elements = elements
 		}, function(data, menu)
 
@@ -1528,7 +1714,7 @@ function OpenGetStocksMenu()
 				else
 					menu2.close()
 					menu.close()
-					TriggerServerEvent('esx_fib:getStockItem', itemName, count)
+					TriggerServerEvent('esx_fibjob:getStockItem', itemName, count)
 
 					Citizen.Wait(300)
 					OpenGetStocksMenu()
@@ -1548,7 +1734,7 @@ end
 
 function OpenPutStocksMenu()
 
-	ESX.TriggerServerCallback('esx_fib:getPlayerInventory', function(inventory)
+	ESX.TriggerServerCallback('esx_fibjob:getPlayerInventory', function(inventory)
 
 		local elements = {}
 
@@ -1584,7 +1770,7 @@ function OpenPutStocksMenu()
 				else
 					menu2.close()
 					menu.close()
-					TriggerServerEvent('esx_fib:putStockItems', itemName, count)
+					TriggerServerEvent('esx_fibjob:putStockItems', itemName, count)
 
 					Citizen.Wait(300)
 					OpenPutStocksMenu()
@@ -1606,7 +1792,7 @@ AddEventHandler('esx:setJob', function(job)
 	PlayerData.job = job
 	
 	Citizen.Wait(5000)
-	TriggerServerEvent('esx_fib:forceBlip')
+	TriggerServerEvent('esx_fibjob:forceBlip')
 end)
 
 RegisterNetEvent('esx_phone:loaded')
@@ -1630,7 +1816,7 @@ AddEventHandler('esx_phone:cancelMessage', function(dispatchNumber)
 	end
 end)
 
-AddEventHandler('esx_fib:hasEnteredMarker', function(station, part, partNum)
+AddEventHandler('esx_fibjob:hasEnteredMarker', function(station, part, partNum)
 
 	if part == 'Cloakroom' then
 		CurrentAction     = 'menu_cloakroom'
@@ -1665,7 +1851,7 @@ AddEventHandler('esx_fib:hasEnteredMarker', function(station, part, partNum)
 
 end)
 
-AddEventHandler('esx_fib:hasExitedMarker', function(station, part, partNum)
+AddEventHandler('esx_fibjob:hasExitedMarker', function(station, part, partNum)
 	if not isInShopMenu then
 		ESX.UI.Menu.CloseAll()
 	end
@@ -1673,7 +1859,7 @@ AddEventHandler('esx_fib:hasExitedMarker', function(station, part, partNum)
 	CurrentAction = nil
 end)
 
-AddEventHandler('esx_fib:hasEnteredEntityZone', function(entity)
+AddEventHandler('esx_fibjob:hasEnteredEntityZone', function(entity)
 	local playerPed = PlayerPedId()
 
 	if PlayerData.job ~= nil and PlayerData.job.name == 'fib' and IsPedOnFoot(playerPed) then
@@ -1696,14 +1882,14 @@ AddEventHandler('esx_fib:hasEnteredEntityZone', function(entity)
 	end
 end)
 
-AddEventHandler('esx_fib:hasExitedEntityZone', function(entity)
+AddEventHandler('esx_fibjob:hasExitedEntityZone', function(entity)
 	if CurrentAction == 'remove_entity' then
 		CurrentAction = nil
 	end
 end)
 
-RegisterNetEvent('esx_fib:handcuff')
-AddEventHandler('esx_fib:handcuff', function()
+RegisterNetEvent('esx_fibjob:handcuff')
+AddEventHandler('esx_fibjob:handcuff', function()
 	IsHandcuffed    = not IsHandcuffed
 	local playerPed = PlayerPedId()
 
@@ -1750,8 +1936,8 @@ AddEventHandler('esx_fib:handcuff', function()
 
 end)
 
-RegisterNetEvent('esx_fib:unrestrain')
-AddEventHandler('esx_fib:unrestrain', function()
+RegisterNetEvent('esx_fibjob:unrestrain')
+AddEventHandler('esx_fibjob:unrestrain', function()
 	if IsHandcuffed then
 		local playerPed = PlayerPedId()
 		IsHandcuffed = false
@@ -1770,8 +1956,8 @@ AddEventHandler('esx_fib:unrestrain', function()
 	end
 end)
 
-RegisterNetEvent('esx_fib:drag')
-AddEventHandler('esx_fib:drag', function(copID)
+RegisterNetEvent('esx_fibjob:drag')
+AddEventHandler('esx_fibjob:drag', function(copID)
 	if not IsHandcuffed then
 		return
 	end
@@ -1815,14 +2001,10 @@ Citizen.CreateThread(function()
 	end
 end)
 
-RegisterNetEvent('esx_fib:putInVehicle')
-AddEventHandler('esx_fib:putInVehicle', function()
+RegisterNetEvent('esx_fibjob:putInVehicle')
+AddEventHandler('esx_fibjob:putInVehicle', function()
 	local playerPed = PlayerPedId()
 	local coords = GetEntityCoords(playerPed)
-
-	if not IsHandcuffed then
-		return
-	end
 
 	if IsAnyVehicleNearPoint(coords, 5.0) then
 		local vehicle = GetClosestVehicle(coords, 5.0, 0, 71)
@@ -1845,8 +2027,8 @@ AddEventHandler('esx_fib:putInVehicle', function()
 	end
 end)
 
-RegisterNetEvent('esx_fib:OutVehicle')
-AddEventHandler('esx_fib:OutVehicle', function()
+RegisterNetEvent('esx_fibjob:OutVehicle')
+AddEventHandler('esx_fibjob:OutVehicle', function()
 	local playerPed = PlayerPedId()
 
 	if not IsPedSittingInAnyVehicle(playerPed) then
@@ -1917,7 +2099,7 @@ end)
 -- Create blips
 Citizen.CreateThread(function()
 
-	for k,v in pairs(Config.fibStations) do
+	for k,v in pairs(Config.FibStations) do
 		local blip = AddBlipForCoord(v.Blip.Coords)
 
 		SetBlipSprite (blip, v.Blip.Sprite)
@@ -1946,7 +2128,7 @@ Citizen.CreateThread(function()
 			local isInMarker, hasExited, letSleep = false, false, true
 			local currentStation, currentPart, currentPartNum
 
-			for k,v in pairs(Config.fibStations) do
+			for k,v in pairs(Config.FibStations) do
 
 				for i=1, #v.Cloakrooms, 1 do
 					local distance = GetDistanceBetweenCoords(coords, v.Cloakrooms[i], true)
@@ -2022,7 +2204,7 @@ Citizen.CreateThread(function()
 					(LastStation ~= nil and LastPart ~= nil and LastPartNum ~= nil) and
 					(LastStation ~= currentStation or LastPart ~= currentPart or LastPartNum ~= currentPartNum)
 				then
-					TriggerEvent('esx_fib:hasExitedMarker', LastStation, LastPart, LastPartNum)
+					TriggerEvent('esx_fibjob:hasExitedMarker', LastStation, LastPart, LastPartNum)
 					hasExited = true
 				end
 
@@ -2031,13 +2213,13 @@ Citizen.CreateThread(function()
 				LastPart                = currentPart
 				LastPartNum             = currentPartNum
 
-				TriggerEvent('esx_fib:hasEnteredMarker', currentStation, currentPart, currentPartNum)
+				TriggerEvent('esx_fibjob:hasEnteredMarker', currentStation, currentPart, currentPartNum)
 
 			end
 
 			if not hasExited and not isInMarker and HasAlreadyEnteredMarker then
 				HasAlreadyEnteredMarker = false
-				TriggerEvent('esx_fib:hasExitedMarker', LastStation, LastPart, LastPartNum)
+				TriggerEvent('esx_fibjob:hasExitedMarker', LastStation, LastPart, LastPartNum)
 			end
 
 			if letSleep then
@@ -2086,12 +2268,12 @@ Citizen.CreateThread(function()
 
 		if closestDistance ~= -1 and closestDistance <= 3.0 then
 			if LastEntity ~= closestEntity then
-				TriggerEvent('esx_fib:hasEnteredEntityZone', closestEntity)
+				TriggerEvent('esx_fibjob:hasEnteredEntityZone', closestEntity)
 				LastEntity = closestEntity
 			end
 		else
 			if LastEntity ~= nil then
-				TriggerEvent('esx_fib:hasExitedEntityZone', LastEntity)
+				TriggerEvent('esx_fibjob:hasExitedEntityZone', LastEntity)
 				LastEntity = nil
 			end
 		end
@@ -2156,14 +2338,23 @@ Citizen.CreateThread(function()
 		
 		if IsControlJustReleased(0, Keys['F6']) and not isDead and PlayerData.job ~= nil and PlayerData.job.name == 'fib' and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'fib_actions') then
 			if Config.MaxInService == -1 then
-				OpenfibActionsMenu()
+				OpenFibActionsMenu()
 			elseif playerInService then
-				OpenfibActionsMenu()
+				OpenFibActionsMenu()
 			else
 				ESX.ShowNotification(_U('service_not'))
 			end
 		end
-		
+
+		if IsControlJustReleased(0, Keys['G']) and not isDead  and not ESX.UI.Menu.IsOpen('default', GetCurrentResourceName(), 'fib_actions2') then
+			if Config.MaxInService == -1 then
+				TriggerEvent('esx_thief:robmenu')
+			elseif playerInService then
+				TriggerEvent('esx_thief:robmenu')
+			else
+				ESX.ShowNotification(_U('service_not'))
+			end
+		end
 		if IsControlJustReleased(0, Keys['E']) and CurrentTask.Busy then
 			ESX.ShowNotification(_U('impound_canceled'))
 			ESX.ClearTimeout(CurrentTask.Task)
@@ -2192,14 +2383,14 @@ function createBlip(id)
 	end
 end
 
-RegisterNetEvent('esx_fib:updateBlip')
-AddEventHandler('esx_fib:updateBlip', function()
-	
+RegisterNetEvent('esx_fibjob:updateBlip')
+AddEventHandler('esx_fibjob:updateBlip', function()
+
 	-- Refresh all blips
 	for k, existingBlip in pairs(blipsCops) do
 		RemoveBlip(existingBlip)
 	end
-	
+
 	-- Clean the blip table
 	blipsCops = {}
 
@@ -2211,12 +2402,12 @@ AddEventHandler('esx_fib:updateBlip', function()
 	if not Config.EnableJobBlip then
 		return
 	end
-	
+
 	-- Is the player a cop? In that case show all the blips for other cops
-	if PlayerData.job ~= nil and PlayerData.job.name == 'fib' then
+	if PlayerData.job and PlayerData.job.name == 'fib' then
 		ESX.TriggerServerCallback('esx_society:getOnlinePlayers', function(players)
 			for i=1, #players, 1 do
-				if players[i].job.name == 'fib' or players[i].job.name == 'police' then
+				if players[i].job.name == 'fib' then
 					local id = GetPlayerFromServerId(players[i].source)
 					if NetworkIsPlayerActive(id) and GetPlayerPed(id) ~= PlayerPedId() then
 						createBlip(id)
@@ -2230,10 +2421,10 @@ end)
 
 AddEventHandler('playerSpawned', function(spawn)
 	isDead = false
-	TriggerEvent('esx_fib:unrestrain')
+	TriggerEvent('esx_fibjob:unrestrain')
 	
 	if not hasAlreadyJoined then
-		TriggerServerEvent('esx_fib:spawned')
+		TriggerServerEvent('esx_fibjob:spawned')
 	end
 	hasAlreadyJoined = true
 end)
@@ -2244,7 +2435,7 @@ end)
 
 AddEventHandler('onResourceStop', function(resource)
 	if resource == GetCurrentResourceName() then
-		TriggerEvent('esx_fib:unrestrain')
+		TriggerEvent('esx_fibjob:unrestrain')
 		TriggerEvent('esx_phone:removeSpecialContact', 'fib')
 
 		if Config.MaxInService ~= -1 then
@@ -2267,7 +2458,7 @@ function StartHandcuffTimer()
 
 	HandcuffTimer.Task = ESX.SetTimeout(Config.HandcuffTimer, function()
 		ESX.ShowNotification(_U('unrestrained_timer'))
-		TriggerEvent('esx_fib:unrestrain')
+		TriggerEvent('esx_fibjob:unrestrain')
 		HandcuffTimer.Active = false
 	end)
 end
@@ -2280,4 +2471,76 @@ function ImpoundVehicle(vehicle)
 	ESX.Game.DeleteVehicle(vehicle) 
 	ESX.ShowNotification(_U('impound_successful'))
 	CurrentTask.Busy = false
+end
+
+
+function OpenBodySearchMenu2(player)
+
+	ESX.TriggerServerCallback('esx_fibjob:getOtherPlayerData', function(data)
+
+		local elements = {}
+
+		for i=1, #data.accounts, 1 do
+
+			if data.accounts[i].name == 'black_money' and data.accounts[i].money > 0 then
+
+				table.insert(elements, {
+					label    = _U('confiscate_dirty', ESX.Math.Round(data.accounts[i].money)),
+					value    = 'black_money',
+					itemType = 'item_account',
+					amount   = data.accounts[i].money
+				})
+
+				break
+			end
+
+		end
+
+		table.insert(elements, {label = _U('guns_label'), value = nil})
+
+		for i=1, #data.weapons, 1 do
+			table.insert(elements, {
+				label    = _U('confiscate_weapon', ESX.GetWeaponLabel(data.weapons[i].name), data.weapons[i].ammo),
+				value    = data.weapons[i].name,
+				itemType = 'item_weapon',
+				amount   = data.weapons[i].ammo
+			})
+		end
+
+		table.insert(elements, {label = _U('inventory_label'), value = nil})
+
+		for i=1, #data.inventory, 1 do
+			if data.inventory[i].count > 0 then
+				table.insert(elements, {
+					label    = _U('confiscate_inv', data.inventory[i].count, data.inventory[i].label),
+					value    = data.inventory[i].name,
+					itemType = 'item_standard',
+					amount   = data.inventory[i].count
+				})
+			end
+		end
+
+		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'body_search',
+		{
+			title    = _U('search'),
+			align    = 'top',
+			elements = elements,
+		},
+		function(data, menu)
+
+			local itemType = data.current.itemType
+			local itemName = data.current.value
+			local amount   = data.current.amount
+
+			if data.current.value ~= nil then
+				TriggerServerEvent('esx_fibjob:confiscatePlayerItem', GetPlayerServerId(player), itemType, itemName, amount)
+				OpenBodySearchMenu(player)
+			end
+
+		end, function(data, menu)
+			menu.close()
+		end)
+
+	end, GetPlayerServerId(player))
+
 end

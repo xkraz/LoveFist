@@ -7,16 +7,16 @@ if Config.MaxInService ~= -1 then
 end
 
 TriggerEvent('esx_phone:registerNumber', 'fib', _U('alert_fib'), true, true)
-TriggerEvent('esx_society:registerSociety', 'fib', 'fib', 'society_fib', 'society_fib', 'society_fib', {type = 'public'})
+TriggerEvent('esx_society:registerSociety', 'fib', 'Fib', 'society_fib', 'society_fib', 'society_fib', {type = 'public'})
 
-RegisterServerEvent('esx_fib:confiscatePlayerItem')
-AddEventHandler('esx_fib:confiscatePlayerItem', function(target, itemType, itemName, amount)
+RegisterServerEvent('esx_fibjob:confiscatePlayerItem')
+AddEventHandler('esx_fibjob:confiscatePlayerItem', function(target, itemType, itemName, amount)
 	local _source = source
 	local sourceXPlayer = ESX.GetPlayerFromId(_source)
 	local targetXPlayer = ESX.GetPlayerFromId(target)
 
 	if sourceXPlayer.job.name ~= 'fib' then
-		print(('esx_fib: %s attempted to confiscate!'):format(xPlayer.identifier))
+		print(('esx_fibjob: %s attempted to confiscate!'):format(xPlayer.identifier))
 		return
 	end
 
@@ -54,52 +54,52 @@ AddEventHandler('esx_fib:confiscatePlayerItem', function(target, itemType, itemN
 	end
 end)
 
-RegisterServerEvent('esx_fib:handcuff')
-AddEventHandler('esx_fib:handcuff', function(target)
+RegisterServerEvent('esx_fibjob:handcuff')
+AddEventHandler('esx_fibjob:handcuff', function(target)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer.job.name == 'fib' then
-		TriggerClientEvent('esx_fib:handcuff', target)
+		TriggerClientEvent('esx_fibjob:handcuff', target)
 	else
-		print(('esx_fib: %s attempted to handcuff a player (not cop)!'):format(xPlayer.identifier))
+		print(('esx_fibjob: %s attempted to handcuff a player (not cop)!'):format(xPlayer.identifier))
 	end
 end)
 
-RegisterServerEvent('esx_fib:drag')
-AddEventHandler('esx_fib:drag', function(target)
+RegisterServerEvent('esx_fibjob:drag')
+AddEventHandler('esx_fibjob:drag', function(target)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer.job.name == 'fib' then
-		TriggerClientEvent('esx_fib:drag', target, source)
+		TriggerClientEvent('esx_fibjob:drag', target, source)
 	else
-		print(('esx_fib: %s attempted to drag (not cop)!'):format(xPlayer.identifier))
+		print(('esx_fibjob: %s attempted to drag (not cop)!'):format(xPlayer.identifier))
 	end
 end)
 
-RegisterServerEvent('esx_fib:putInVehicle')
-AddEventHandler('esx_fib:putInVehicle', function(target)
+RegisterServerEvent('esx_fibjob:putInVehicle')
+AddEventHandler('esx_fibjob:putInVehicle', function(target)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer.job.name == 'fib' then
-		TriggerClientEvent('esx_fib:putInVehicle', target)
+		TriggerClientEvent('esx_fibjob:putInVehicle', target)
 	else
-		print(('esx_fib: %s attempted to put in vehicle (not cop)!'):format(xPlayer.identifier))
+		print(('esx_fibjob: %s attempted to put in vehicle (not cop)!'):format(xPlayer.identifier))
 	end
 end)
 
-RegisterServerEvent('esx_fib:OutVehicle')
-AddEventHandler('esx_fib:OutVehicle', function(target)
+RegisterServerEvent('esx_fibjob:OutVehicle')
+AddEventHandler('esx_fibjob:OutVehicle', function(target)
 	local xPlayer = ESX.GetPlayerFromId(source)
 
 	if xPlayer.job.name == 'fib' then
-		TriggerClientEvent('esx_fib:OutVehicle', target)
+		TriggerClientEvent('esx_fibjob:OutVehicle', target)
 	else
-		print(('esx_fib: %s attempted to drag out from vehicle (not cop)!'):format(xPlayer.identifier))
+		print(('esx_fibjob: %s attempted to drag out from vehicle (not cop)!'):format(xPlayer.identifier))
 	end
 end)
 
-RegisterServerEvent('esx_fib:getStockItem')
-AddEventHandler('esx_fib:getStockItem', function(itemName, count)
+RegisterServerEvent('esx_fibjob:getStockItem')
+AddEventHandler('esx_fibjob:getStockItem', function(itemName, count)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	local sourceItem = xPlayer.getInventoryItem(itemName)
@@ -126,8 +126,8 @@ AddEventHandler('esx_fib:getStockItem', function(itemName, count)
 
 end)
 
-RegisterServerEvent('esx_fib:putStockItems')
-AddEventHandler('esx_fib:putStockItems', function(itemName, count)
+RegisterServerEvent('esx_fibjob:putStockItems')
+AddEventHandler('esx_fibjob:putStockItems', function(itemName, count)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local sourceItem = xPlayer.getInventoryItem(itemName)
 
@@ -148,7 +148,7 @@ AddEventHandler('esx_fib:putStockItems', function(itemName, count)
 
 end)
 
-ESX.RegisterServerCallback('esx_fib:getOtherPlayerData', function(source, cb, target)
+ESX.RegisterServerCallback('esx_fibjob:getOtherPlayerData', function(source, cb, target)
 
 	if Config.EnableESXIdentity then
 
@@ -220,7 +220,7 @@ ESX.RegisterServerCallback('esx_fib:getOtherPlayerData', function(source, cb, ta
 
 end)
 
-ESX.RegisterServerCallback('esx_fib:getFineList', function(source, cb, category)
+ESX.RegisterServerCallback('esx_fibjob:getFineList', function(source, cb, category)
 	MySQL.Async.fetchAll('SELECT * FROM fine_types WHERE category = @category', {
 		['@category'] = category
 	}, function(fines)
@@ -228,7 +228,12 @@ ESX.RegisterServerCallback('esx_fib:getFineList', function(source, cb, category)
 	end)
 end)
 
-ESX.RegisterServerCallback('esx_fib:getVehicleInfos', function(source, cb, plate)
+
+
+
+
+
+ESX.RegisterServerCallback('esx_fibjob:getVehicleInfos', function(source, cb, plate)
 
 	MySQL.Async.fetchAll('SELECT owner FROM owned_vehicles WHERE plate = @plate', {
 		['@plate'] = plate
@@ -258,7 +263,7 @@ ESX.RegisterServerCallback('esx_fib:getVehicleInfos', function(source, cb, plate
 	end)
 end)
 
-ESX.RegisterServerCallback('esx_fib:getVehicleFromPlate', function(source, cb, plate)
+ESX.RegisterServerCallback('esx_fibjob:getVehicleFromPlate', function(source, cb, plate)
 	MySQL.Async.fetchAll('SELECT owner FROM owned_vehicles WHERE plate = @plate', {
 		['@plate'] = plate
 	}, function(result)
@@ -281,7 +286,7 @@ ESX.RegisterServerCallback('esx_fib:getVehicleFromPlate', function(source, cb, p
 	end)
 end)
 
-ESX.RegisterServerCallback('esx_fib:getArmoryWeapons', function(source, cb)
+ESX.RegisterServerCallback('esx_fibjob:getArmoryWeapons', function(source, cb)
 
 	TriggerEvent('esx_datastore:getSharedDataStore', 'society_fib', function(store)
 		local weapons = store.get('weapons')
@@ -295,7 +300,7 @@ ESX.RegisterServerCallback('esx_fib:getArmoryWeapons', function(source, cb)
 
 end)
 
-ESX.RegisterServerCallback('esx_fib:addArmoryWeapon', function(source, cb, weaponName, removeWeapon)
+ESX.RegisterServerCallback('esx_fibjob:addArmoryWeapon', function(source, cb, weaponName, removeWeapon)
 
 	local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -334,7 +339,7 @@ ESX.RegisterServerCallback('esx_fib:addArmoryWeapon', function(source, cb, weapo
 
 end)
 
-ESX.RegisterServerCallback('esx_fib:removeArmoryWeapon', function(source, cb, weaponName)
+ESX.RegisterServerCallback('esx_fibjob:removeArmoryWeapon', function(source, cb, weaponName)
 
 	local xPlayer = ESX.GetPlayerFromId(source)
 
@@ -371,7 +376,7 @@ ESX.RegisterServerCallback('esx_fib:removeArmoryWeapon', function(source, cb, we
 
 end)
 
-ESX.RegisterServerCallback('esx_fib:buyWeapon', function(source, cb, weaponName, type, componentNum)
+ESX.RegisterServerCallback('esx_fibjob:buyWeapon', function(source, cb, weaponName, type, componentNum)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local authorizedWeapons, selectedWeapon = Config.AuthorizedWeapons[xPlayer.job.grade_name]
 
@@ -383,7 +388,7 @@ ESX.RegisterServerCallback('esx_fib:buyWeapon', function(source, cb, weaponName,
 	end
 
 	if not selectedWeapon then
-		print(('esx_fib: %s attempted to buy an invalid weapon.'):format(xPlayer.identifier))
+		print(('esx_fibjob: %s attempted to buy an invalid weapon.'):format(xPlayer.identifier))
 		cb(false)
 	end
 
@@ -391,7 +396,7 @@ ESX.RegisterServerCallback('esx_fib:buyWeapon', function(source, cb, weaponName,
 	if type == 1 then
 		if xPlayer.getMoney() >= selectedWeapon.price then
 			xPlayer.removeMoney(selectedWeapon.price)
-			xPlayer.addWeapon(weaponName, 1000)
+			xPlayer.addWeapon(weaponName, 100)
 
 			cb(true)
 		else
@@ -415,20 +420,64 @@ ESX.RegisterServerCallback('esx_fib:buyWeapon', function(source, cb, weaponName,
 				cb(false)
 			end
 		else
-			print(('esx_fib: %s attempted to buy an invalid weapon component.'):format(xPlayer.identifier))
+			print(('esx_fibjob: %s attempted to buy an invalid weapon component.'):format(xPlayer.identifier))
 			cb(false)
 		end
 	end
 end)
 
 
-ESX.RegisterServerCallback('esx_fib:buyJobVehicle', function(source, cb, vehicleProps, type)
+---------JINKS     Have fines given automatically recorded into DB   
+---		19/05/15 - change storing identifier (hex id) to db id#
+RegisterServerEvent('esx_fibjob:FinePaperwork')
+AddEventHandler('esx_fibjob:FinePaperwork', function(perp, fcharge, famount)
+
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(perp)
+	local xOfficer = ESX.GetPlayerFromId(_source)
+	
+	--local result = MySQL.Sync.fetchAll('SELECT firstname, lastname FROM users WHERE identifier = @identifier', {
+	local result = MySQL.Sync.fetchAll('SELECT id, firstname, lastname FROM users WHERE identifier = @identifier', {
+			['@identifier'] = xPlayer.identifier
+	})
+	local result2 = MySQL.Sync.fetchAll('SELECT firstname, lastname FROM users WHERE identifier = @identifier', {
+			['@identifier'] = xOfficer.identifier
+	})	
+	local timestamp = os.date("%Y-%m-%d %X")
+	local offendername = result[1].firstname .. " " .. result[1].lastname
+	local officername = result2[1].firstname .. " " .. result2[1].lastname
+	local offender_id = result[1].id
+
+	--MySQL.Sync.execute('INSERT INTO cad_criminal_record (offender, identifier, charge, fine, arresting_officer, date) VALUES (@offender, @identifier, @charge, @fine, @arresting_officer, @date)', {
+	MySQL.Sync.execute('INSERT INTO cad_criminal_record (offender, identifier, id_number, charge, fine, arresting_officer, date) VALUES (@offender, @identifier, @id_number, @charge, @fine, @arresting_officer, @date)', {
+		['@offender'] = offendername,
+		['@identifier'] = xPlayer.identifier,
+		['id_number'] = offender_id,
+		['@charge'] = fcharge,
+		['@fine'] = famount,
+		['@arresting_officer'] = officername,
+		['@date'] = timestamp
+
+	}, function (rowsChanged)
+	
+	
+	end)
+	local result3 = MySQL.Sync.fetchScalar('SELECT MAX(id) FROM cad_criminal_record', {})
+
+	TriggerClientEvent('esx:showNotification', _source, ('Citation reference #') .. result3)
+end)
+---------JINKS
+
+
+
+
+ESX.RegisterServerCallback('esx_fibjob:buyJobVehicle', function(source, cb, vehicleProps, type)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local price = getPriceFromHash(vehicleProps.model, xPlayer.job.grade_name, type)
 
 	-- vehicle model not found
 	if price == 0 then
-		print(('esx_fib: %s attempted to exploit the shop! (invalid vehicle model)'):format(xPlayer.identifier))
+		print(('esx_fibjob: %s attempted to exploit the shop! (invalid vehicle model)'):format(xPlayer.identifier))
 		cb(false)
 	end
 
@@ -450,7 +499,7 @@ ESX.RegisterServerCallback('esx_fib:buyJobVehicle', function(source, cb, vehicle
 	end
 end)
 
-ESX.RegisterServerCallback('esx_fib:storeNearbyVehicle', function(source, cb, nearbyVehicles)
+ESX.RegisterServerCallback('esx_fibjob:storeNearbyVehicle', function(source, cb, nearbyVehicles)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local foundPlate, foundNum
 
@@ -476,7 +525,7 @@ ESX.RegisterServerCallback('esx_fib:storeNearbyVehicle', function(source, cb, ne
 			['@job'] = xPlayer.job.name
 		}, function (rowsChanged)
 			if rowsChanged == 0 then
-				print(('esx_fib: %s has exploited the garage!'):format(xPlayer.identifier))
+				print(('esx_fibjob: %s has exploited the garage!'):format(xPlayer.identifier))
 				cb(false)
 			else
 				cb(true, foundNum)
@@ -515,13 +564,14 @@ function getPriceFromHash(hashKey, jobGrade, type)
 	return 0
 end
 
-ESX.RegisterServerCallback('esx_fib:getStockItems', function(source, cb)
+
+ESX.RegisterServerCallback('esx_fibjob:getStockItems', function(source, cb)
 	TriggerEvent('esx_addoninventory:getSharedInventory', 'society_fib', function(inventory)
 		cb(inventory.items)
 	end)
 end)
 
-ESX.RegisterServerCallback('esx_fib:getPlayerInventory', function(source, cb)
+ESX.RegisterServerCallback('esx_fibjob:getPlayerInventory', function(source, cb)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	local items   = xPlayer.inventory
 
@@ -539,31 +589,34 @@ AddEventHandler('playerDropped', function()
 		-- Is it worth telling all clients to refresh?
 		if xPlayer ~= nil and xPlayer.job ~= nil and xPlayer.job.name == 'fib' then
 			Citizen.Wait(5000)
-			TriggerClientEvent('esx_fib:updateBlip', -1)
+			TriggerClientEvent('esx_fibjob:updateBlip', -1)
 		end
 	end	
 end)
 
-RegisterServerEvent('esx_fib:spawned')
-AddEventHandler('esx_fib:spawned', function()
+
+
+
+RegisterServerEvent('esx_fibjob:spawned')
+AddEventHandler('esx_fibjob:spawned', function()
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
 	
 	if xPlayer ~= nil and xPlayer.job ~= nil and xPlayer.job.name == 'fib' then
 		Citizen.Wait(5000)
-		TriggerClientEvent('esx_fib:updateBlip', -1)
+		TriggerClientEvent('esx_fibjob:updateBlip', -1)
 	end
 end)
 
-RegisterServerEvent('esx_fib:forceBlip')
-AddEventHandler('esx_fib:forceBlip', function()
-	TriggerClientEvent('esx_fib:updateBlip', -1)
+RegisterServerEvent('esx_fibjob:forceBlip')
+AddEventHandler('esx_fibjob:forceBlip', function()
+	TriggerClientEvent('esx_fibjob:updateBlip', -1)
 end)
 
 AddEventHandler('onResourceStart', function(resource)
 	if resource == GetCurrentResourceName() then
 		Citizen.Wait(5000)
-		TriggerClientEvent('esx_fib:updateBlip', -1)
+		TriggerClientEvent('esx_fibjob:updateBlip', -1)
 	end
 end)
 
@@ -573,7 +626,7 @@ AddEventHandler('onResourceStop', function(resource)
 	end
 end)
 
-RegisterServerEvent('esx_fib:message')
-AddEventHandler('esx_fib:message', function(target, msg)
+RegisterServerEvent('esx_fibjob:message')
+AddEventHandler('esx_fibjob:message', function(target, msg)
 	TriggerClientEvent('esx:showNotification', target, msg)
 end)
