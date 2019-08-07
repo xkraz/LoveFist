@@ -266,7 +266,6 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
 		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
-		{ weapon = 'WEAPON_FLASHBANG', price = 0 }
 	}
 }
 
