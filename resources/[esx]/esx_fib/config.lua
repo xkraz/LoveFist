@@ -19,7 +19,7 @@ Config.EnableJobBlip              = true -- enable blips for colleagues, require
 Config.MaxInService               = -1
 Config.Locale = 'en'
 
-Config.fibStations = {
+Config.FibStations = {
 
 	LSPD = {
 

@@ -37,3 +37,7 @@ dependencies {
 	'es_extended',
 	'esx_billing'
 }
+
+exports {
+'esx_society',
+}

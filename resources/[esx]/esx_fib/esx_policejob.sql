@@ -17,11 +17,11 @@ INSERT INTO `jobs` (name, label) VALUES
 ;
 
 INSERT INTO `job_grades` (job_name, grade, name, label, salary, skin_male, skin_female) VALUES
-	('fib',0,'recruit','Recrue',20,'{}','{}'),
-	('fib',1,'officer','Officier',40,'{}','{}'),
-	('fib',2,'sergeant','Sergent',60,'{}','{}'),
-	('fib',3,'lieutenant','Lieutenant',85,'{}','{}'),
-	('fib',4,'boss','Commandant',100,'{}','{}')
+	('police',0,'recruit','Recrue',20,'{}','{}'),
+	('police',1,'officer','Officier',40,'{}','{}'),
+	('police',2,'sergeant','Sergent',60,'{}','{}'),
+	('police',3,'lieutenant','Lieutenant',85,'{}','{}'),
+	('police',4,'boss','Commandant',100,'{}','{}')
 ;
 
 CREATE TABLE `fine_types` (
