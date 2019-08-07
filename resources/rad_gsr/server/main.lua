@@ -8,7 +8,7 @@ TriggerEvent('es:addCommand', 'gsr', function(source, args, user)
     local xPlayer = ESX.GetPlayerFromId(Source)
     local number = tonumber(args[1])
     if args[1] ~= nil then 
-		if xPlayer.job.name == 'police' and type(number) == "number" then
+		if xPlayer.job.name == 'police' or 'fib' and type(number) == "number" then
         	CancelEvent()
         	local identifier = GetPlayerIdentifiers(number)[1]
         	if identifier ~= nil then
