@@ -8,7 +8,7 @@ function getVehData(veh)
         fuelmix = GetVehicleHandlingFloat(veh, "CHandlingData", "fDriveInertia"),
         braking = GetVehicleHandlingFloat(veh ,"CHandlingData", "fBrakeBiasFront"),
         drivetrain = GetVehicleHandlingFloat(veh, "CHandlingData", "fDriveBiasFront"),
-        brakeforce = GetVehicleHandlingFloat(veh, "CHandlingData", "fTractionCurveMin")
+        brakeforce = GetVehicleHandlingFloat(veh, "CHandlingData", "fClutchChangeRateScaleUpShift")
     }
     return lvehstats
 end
@@ -18,7 +18,7 @@ function setVehData(veh,data)
     SetVehicleHandlingFloat(veh, "CHandlingData", "fInitialDriveForce", data.boost*1.0)
     SetVehicleHandlingFloat(veh, "CHandlingData", "fDriveInertia", data.fuelmix*1.0)
 	SetVehicleHandlingFloat(veh, "CHandlingData", "fClutchChangeRateScaleUpShift", data.gearchange*1.0)
-	SetVehicleHandlingFloat(veh, "CHandlingData", "fClutchChangeRateScaleDownShift", data.gearchange*1.0)
+	SetVehicleEnginePowerMultiplier(veh, 1.03)
     SetVehicleHandlingFloat(veh, "CHandlingData", "fBrakeBiasFront", data.braking*1.0)
     SetVehicleHandlingFloat(veh, "CHandlingData", "fDriveBiasFront", data.drivetrain*1.0)
     SetVehicleHandlingFloat(veh, "CHandlingData", "fTractionCurveMin", data.brakeforce*1.0)
