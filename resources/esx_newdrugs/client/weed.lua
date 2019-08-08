@@ -70,7 +70,9 @@ Citizen.CreateThread(function()
 						local percent = math.random(11)
 
 						if percent <= 2 or percent >= 10 then
-						TriggerEvent('esx_jk_drugs:selling', source)	
+						TriggerEvent('esx_jk_drugs:selling', source)
+
+	
 						end
 					end
 				end

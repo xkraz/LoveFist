@@ -430,8 +430,8 @@ AddEventHandler('esx_jk_drugs:processCannabis', function()
 			elseif xCannabis.count < 1 then
 				TriggerClientEvent('esx:showNotification', _source, _U('weed_processingenough'))
 			else
-				xPlayer.removeInventoryItem('cannabis', 1)
-				xPlayer.addInventoryItem('marijuana', 5)
+				xPlayer.removeInventoryItem('cannabis', 3)
+				xPlayer.addInventoryItem('marijuana', 1)
 
 				TriggerClientEvent('esx:showNotification', _source, _U('weed_processed'))
 			end

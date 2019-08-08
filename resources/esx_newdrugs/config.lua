@@ -11,7 +11,7 @@ Config.MultPlant	= false -- Will give up to three of each product when a plant i
 
 --Cop Stuff--
 Config.GiveBlack = true -- Disable to give regular cash when selling drugs
-Config.ForceMulti	= false -- Force sellers to have to open the menu after every deal (chance to send notification)
+Config.ForceMulti	= true -- Force sellers to have to open the menu after every deal (chance to send notification)
 Config.EnableCops   = true -- Set true to send police notification (uses esx:notification)
 Config.UseESXPhone	= false -- Use ESXPhone/ALPhone instead of ESXNotification
 Config.UseGCPhone	= true -- Use GCphone instead of ESXNotification
@@ -38,33 +38,33 @@ Config.Delays = {
 }
 
 Config.WeedDumpItems = {
-	marijuana = 25,
+	marijuana = 10,
 	cannabis  = 1,
 	dabs	  = 120,
 }
 
 Config.CocaineDumpItems = {
-	cocaine = 95,
+	cocaine = 25,
 	coca	= 5,
 }
 
 Config.MethDumpItems = {
-	meth = 135,
+	meth = 80,
 	ephedra = 10,
 	ephedrine = 25,
 }
 
 Config.CrackDumpItems = {
-	crack = 135,
+	crack = 45,
 }
 
 Config.OpiumDumpItems = {
-	opium = 75,
+	opium = 40,
 	poppy = 10,
 }
 
 Config.HeroineDumpItems = {
-	heroine = 165
+	heroine = 60
 }
 
 Config.FieldZones = {
