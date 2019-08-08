@@ -2,18 +2,18 @@
 
 <CVehicleModelInfoVariation>
   <variationData>
-     <Item>
-      <modelName>8pralift</modelName>
+	<Item>
+      <modelName>rmodsupra</modelName>
       <colors>
         <Item>
           <indices content="char_array">
-            36 
-            0
-            41
+            27 
+            27
+            27
             156 
           </indices>
           <liveries>
-            <Item value="false" />
+            <Item value="true" />
             <Item value="false" />
             <Item value="false" />
             <Item value="false" />
@@ -22,27 +22,11 @@
             <Item value="false" />
             <Item value="false" />
           </liveries>
-        </Item>
-		<Item>
-          <indices content="char_array">
-            13 
-            0
-            0
-            156 
-          </indices>
-          <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-          </liveries>
-        </Item>
+        </Item> 
       </colors>
-      <kits><Item>0_default_modkit</Item></kits>
+      <kits>
+        <Item>19830_rmodsupra_modkit</Item>
+      </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
         <Probabilities>
@@ -52,7 +36,7 @@
           </Item>
         </Probabilities>
       </plateProbabilities>
-      <lightSettings value="698" />
+      <lightSettings value="19830" />
       <sirenSettings value="0" />
     </Item>
   </variationData>
