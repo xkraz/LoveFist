@@ -43,22 +43,22 @@ Config.Org1Stations = {
 
 Config.AuthorizedWeapons = {
 	recruit = {
-      { weapon = 'WEAPON_COMPACTRIFLE',  price = 6000 },
+      { weapon = 'WEAPON_COMPACTRIFLE',  price = 9000 },
       { weapon = 'WEAPON_KNUCKLE', price = 700 },
 	},
 	
 	bossthree = {
-      { weapon = 'WEAPON_COMPACTRIFLE',  price = 6000 },
+      { weapon = 'WEAPON_COMPACTRIFLE',  price = 9000 },
       { weapon = 'WEAPON_KNUCKLE', price = 700 },
 	},
 
 	bosstwo = {
-      { weapon = 'WEAPON_COMPACTRIFLE',  price = 6000 },
+      { weapon = 'WEAPON_COMPACTRIFLE',  price = 9000 },
       { weapon = 'WEAPON_KNUCKLE', price = 700 },
 	},
 
 	boss = {
-      { weapon = 'WEAPON_COMPACTRIFLE', price = 6000 },
+      { weapon = 'WEAPON_COMPACTRIFLE', price = 9000 },
       { weapon = 'WEAPON_KNUCKLE', price = 700 },
  
 	} 
