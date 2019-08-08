@@ -313,7 +313,7 @@ local playerPed = GetPlayerPed(-1)
 	local player = PlayerId()
     AddArmourToPed(playerPed, 20)
     DoScreenFadeIn(1000)
-    Citizen.Wait(600000)
+    Citizen.Wait(60000)
     DoScreenFadeOut(1000)
     Citizen.Wait(1000)
     DoScreenFadeIn(1000)
@@ -345,7 +345,7 @@ local playerPed = GetPlayerPed(-1)
     SetRunSprintMultiplierForPlayer(player, 1.2)
     SetSwimMultiplierForPlayer(player, 1.2)
     DoScreenFadeIn(1000)
-    Citizen.Wait(300000)
+    Citizen.Wait(60000)
     DoScreenFadeOut(1000)
     Citizen.Wait(1000)
     DoScreenFadeIn(1000)
@@ -617,38 +617,38 @@ AddEventHandler('esx_jk_drugs:restricted', function()
     streetName = GetStreetNameFromHashKey(streetName)
     crossing = GetStreetNameFromHashKey(crossing)
 	
-	if Config.UseESXPhone then
-        if crossing ~= nil then
+	-- if Config.UseESXPhone then
+        -- if crossing ~= nil then
 
-            local coords      = GetEntityCoords(GetPlayerPed(-1))
+            -- local coords      = GetEntityCoords(GetPlayerPed(-1))
 
-            TriggerServerEvent('esx_phone:send', "police", "Someone entered a Restricted Area at " .. streetName .. " and " .. crossing, true, {
-                x = coords.x,
-                y = coords.y,
-                z = coords.z
-            })
-        else
-            TriggerServerEvent('esx_phone:send', "police", "Someone entered a Restricted Area at " .. streetName, true, {
-                x = coords.x,
-                y = coords.y,
-                z = coords.z
-            })
-        end
-    elseif Config.UseGCPhone then
-        if crossing ~= nil then
-            local coords      = GetEntityCoords(GetPlayerPed(-1))
+            -- TriggerServerEvent('esx_phone:send', "police", "Someone entered a Restricted Area at " .. streetName .. " and " .. crossing, true, {
+                -- x = coords.x,
+                -- y = coords.y,
+                -- z = coords.z
+            -- })
+        -- else
+            -- TriggerServerEvent('esx_phone:send', "police", "Someone entered a Restricted Area at " .. streetName, true, {
+                -- x = coords.x,
+                -- y = coords.y,
+                -- z = coords.z
+            -- })
+        -- end
+    -- elseif Config.UseGCPhone then
+        -- if crossing ~= nil then
+            -- local coords      = GetEntityCoords(GetPlayerPed(-1))
 
-            TriggerServerEvent('esx_addons_gcphone:startCall', 'police', "Someone entered a Restricted Area at " .. streetName .. " and " .. crossing, PlayerCoords, {
-                PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
-            })
-        else
-            TriggerServerEvent('esx_addons_gcphone:startCall', "police", "Someone entered a Restricted Area at " .. streetName, PlayerCoords, {
-                PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
-            })
-        end
-    else
-		TriggerServerEvent('esx_jk_drugs:restrictedArea')
-	end
+            -- TriggerServerEvent('esx_addons_gcphone:startCall', 'police', "Someone entered a Restricted Area at " .. streetName .. " and " .. crossing, PlayerCoords, {
+                -- PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
+            -- })
+        -- else
+            -- TriggerServerEvent('esx_addons_gcphone:startCall', "police", "Someone entered a Restricted Area at " .. streetName, PlayerCoords, {
+                -- PlayerCoords = { x = PedPosition.x, y = PedPosition.y, z = PedPosition.z },
+            -- })
+        -- end
+    -- else
+		-- TriggerServerEvent('esx_jk_drugs:restrictedArea')
+	-- end
 end)
 
 -- Give Cops access to test kits
