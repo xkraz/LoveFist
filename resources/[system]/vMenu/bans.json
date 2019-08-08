@@ -590,5 +590,12 @@
     "bannedUntil": "3000-01-01T00:00:00",
     "banReason": "Duping, all the prior stuff. Glhf",
     "bannedBy": "Perennial"
+  },
+  {
+    "playerName": "InvalidPlayerName",
+    "identifiers": [],
+    "bannedUntil": "3000-01-01T00:00:00",
+    "banReason": "Banned by staff. dbag ",
+    "bannedBy": "Not a Admin"
   }
 ]
