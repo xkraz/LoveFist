@@ -3,10 +3,10 @@
 <ShopVehicleDataArray>
 	<Vehicles>
 		<Item>
-			<lockHash>CU_NSXTYPR_VEH</lockHash>
-			<modelNameHash>nsxtypr</modelNameHash>
-			<cost value="100"/>
-			<textLabel>NSXTYPR</textLabel>
+			<lockHash>CU_500gtr_VEH</lockHash>
+			<modelNameHash>500gtrlam</modelNameHash>
+			<cost value ="297000"/>
+			<textLabel>500gtr</textLabel>
 			<vehicleMods></vehicleMods>
 		</Item>
 	</Vehicles>	
