@@ -87,6 +87,18 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -766.56, ['y'] = -24.00, ['z'] = 41.08, nom = "enter church"},
 		positionTo = { ['x'] = -1945.68, ['y'] = -13.42, ['z'] = 91.67, nom = "leave church"},
 	},
+	["backyard"] = {
+		positionFrom = { ['x'] = -1571.79, ['y'] = 136.97, ['z'] = 10.46, nom = "Yard"},
+		positionTo = { ['x'] = -1521.99, ['y'] = 143.87, ['z'] = 55.65, nom = "house"},
+	},
+	["balcony"] = {
+		positionFrom = { ['x'] = -1542.98, ['y'] = 97.65, ['z'] = 10.36, nom = "Balcony"},
+		positionTo = { ['x'] = -1547.16, ['y'] = 89.38, ['z'] = 61.31, nom = "Enter house"},
+	},
+	["garage"] = {
+		positionFrom = { ['x'] = -1524.78, ['y'] = 81.35, ['z'] = 56.63, nom = "garage"},
+		positionTo = { ['x'] = 231.53, ['y'] = -998.36, ['z'] = -99.00, nom = "driveway"},
+	},
 	
 
 
