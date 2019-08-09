@@ -1920,7 +1920,7 @@ Config.DoorList = {
 		objName = 'apa_prop_ss1_mpint_door_r',
 		objCoords  = {x = 807.816284, y = -245.587402, z = 73.9634857},
 		textCoords = {x = 807.816284, y = -245.587402, z = 73.9634857},
-		authorizedJobs = {'pdmownerkey','pdmkey','adminkey',}, 
+		authorizedJobs = {'cardealer','adminkey',}, 
 		locked = true,
 		distance = 3,
 	}, 
@@ -1928,7 +1928,7 @@ Config.DoorList = {
 		objName = 'apa_prop_ss1_mpint_door_r',
 		objCoords  = {x = 805.920837, y = -244.550735, z = 73.956398},
 		textCoords = {x = 805.920837, y = -244.550735, z = 73.956398},
-		authorizedJobs = { 'pdmownerkey','pdmkey','adminkey', },
+		authorizedJobs = { 'cardealer','adminkey', },
 		locked = true,
 		distance = 3,
 	}, 
@@ -1936,7 +1936,7 @@ Config.DoorList = {
 		objName = 'apa_p_mp_yacht_door_01',
 		objCoords  = {x = 756.255127, y = -243.222763, z = 73.6240463},
 		textCoords = {x = 756.255127, y = -243.222763, z = 73.6240463},
-		authorizedJobs = { 'pdmownerkey','pdmkey','adminkey', },
+		authorizedJobs = { 'cardealer','adminkey', },
 		locked = true,
 		distance = 3,
 	}, 
@@ -1944,7 +1944,7 @@ Config.DoorList = {
 		objName = 'apa_p_mp_yacht_door_01',
 		objCoords  = {x = 751.852844, y = -224.638428, z = 73.6124039},
 		textCoords = {x = 751.852844, y = -224.638428, z = 73.6124039},
-		authorizedJobs = { 'pdmownerkey','pdmkey','adminkey', },
+		authorizedJobs = { 'cardealer','adminkey', },
 		locked = true,
 		distance = 3,
 	}, 
@@ -1952,7 +1952,7 @@ Config.DoorList = {
 		objName = 'xm_prop_x17_l_door_frame_01',
 		objCoords  = {x = 773.180237, y = -246.895081, z = 78.6479492},
 		textCoords = {x = 773.180237, y = -246.895081, z = 78.6479492},
-		authorizedJobs = { 'pdmownerkey','adminkey', },
+		authorizedJobs = { 'cardealer','adminkey', },
 		locked = true,
 		distance = 3,
 	}, 
@@ -1960,7 +1960,7 @@ Config.DoorList = {
 		objName = 'xm_prop_x17_l_door_frame_01',
 		objCoords  = {x = 770.957214, y = -245.549759, z = 78.6575317},
 		textCoords = {x = 770.957214, y = -245.549759, z = 78.6575317},
-		authorizedJobs = { 'pdmownerkey','adminkey', },
+		authorizedJobs = { 'cardealer','adminkey', },
 		locked = true,
 		distance = 3,
 	},
@@ -2385,58 +2385,6 @@ Config.DoorList = {
 		objCoords  = {x = -706.5067, y = 191.5884, z = 124.9342},
 		textCoords = {x = -706.5067, y = 191.5884, z = 124.9342},
 		authorizedJobs = { 'villakey', 'adminkey' },
-		locked = true,
-		distance = 3
-		},
-		--Marducas's House
-
-	    {--gate 
-		objName = 'prop_lrggate_02_ld',
-		objCoords  = {x = -1474.130, y = 68.3892, z = 52.5259},
-		textCoords = {x = -1474.130, y = 68.3892, z = 53.5259},
-		authorizedJobs = { 'marducaskey', 'adminkey' },
-		locked = true,
-		distance = 20
-		},
-	
-		{--side gate
-		objName = 'bh1_36_gate_iref',
-		objCoords  = {x = -1462.425, y = 65.7159, z = 53.3868},
-		textCoords = {x = -1462.425, y = 65.7159, z = 53.3868},
-		authorizedJobs = { 'marducaskey', 'adminkey' },
-		locked = true,
-		distance = 3
-		},
-	
-		{--back gate
-		objName = 'prop_lrggate_02_ld',
-		objCoords  = {x = -1616.231, y = 79.7792, z = 60.7787},
-		textCoords = {x = -1616.231, y = 79.7792, z = 61.7787},
-		authorizedJobs = { 'marducaskey', 'adminkey' },
-		locked = true,
-		distance = 20
-		},
-		{--back small gate
-		objName = 'bh1_36_gate_iref',
-		objCoords  = {x = -1578.371, y = 153.2070, z = 58.9685},
-		textCoords = {x = -1578.371, y = 153.2070, z = 58.9685},
-		authorizedJobs = { 'marducaskey', 'adminkey' },
-		locked = true,
-		distance = 3
-		},
-		{--wall small gate
-		objName = 'bh1_36_gate_iref',
-		objCoords  = {x = -1441.726, y = 171.9104, z = 56.0649},
-		textCoords = {x = -1441.726, y = 171.9104, z = 56.0649},
-		authorizedJobs = { 'marducaskey', 'adminkey' },
-		locked = true,
-		distance = 3
-		},
-		{--very back small gate
-		objName = 'bh1_36_gate_iref',
-		objCoords  = {x = -1434.006, y = 235.0130, z = 60.3711},
-		textCoords = {x = -1434.006, y = 235.0130, z = 60.3711},
-		authorizedJobs = { 'marducaskey', 'adminkey' },
 		locked = true,
 		distance = 3
 		},
