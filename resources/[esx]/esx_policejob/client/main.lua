@@ -58,8 +58,28 @@ function setUniform(job, playerPed)
 			else
 				ESX.ShowNotification(_U('no_outfit'))
 			end
-
+			if job == 'sheriff_wear' then
+				TriggerEvent('skinchanger:loadClothes')
+			end
+			if job == 'shortsleeve_wear' then
+				TriggerEvent('skinchanger:loadClothes')
+			end
+			if job == 'noose_wear' then
+				TriggerEvent('skinchanger:loadClothes')
+			end
+			if job == 'CID_wear' then
+				TriggerEvent('skinchanger:loadClothes')
+			end
 			if job == 'bullet_wear' then
+				SetPedArmour(playerPed, 100)
+			end
+			if job == 'bppolice_wear' then
+				SetPedArmour(playerPed, 100)
+			end
+			if job == 'sheriff_wear_vest' then
+				SetPedArmour(playerPed, 100)
+			end
+			if job == 'noose_wear_vest' then
 				SetPedArmour(playerPed, 100)
 			end
 		else
@@ -83,7 +103,14 @@ function OpenCloakroomMenu()
 
 	local elements = {
 		{ label = _U('citizen_wear'), value = 'citizen_wear' },
+		{ label = _U('sheriff_wear'), value = 'sheriff_wear' },
+		{ label = _U('shortsleeve_wear'), value = 'shortsleeve_wear' },
+		{ label = _U('sheriff_wear_vest'), value = 'sheriff_wear_vest' },
+		{ label = _U('noose_wear'), value = 'noose_wear' },
+		{ label = _U('noose_wear_vest'), value = 'noose_wear_vest' },
+		{ label = _U('CID_wear'), value = 'CID_wear' },
 		{ label = _U('bullet_wear'), value = 'bullet_wear' },
+		{ label = _U('bppolice_wear'), value = 'bppolice_wear' },
 		{ label = _U('gilet_wear'), value = 'gilet_wear' }
 	}
 
@@ -233,7 +260,14 @@ function OpenCloakroomMenu()
 			data.current.value == 'chef_wear' or
 			data.current.value == 'boss_wear' or
 			data.current.value == 'bullet_wear' or
-			data.current.value == 'gilet_wear'
+			data.current.value == 'bppolice_wear' or
+			data.current.value == 'sheriff_wear_vest' or
+			data.current.value == 'noose_wear_vest' or
+			data.current.value == 'gilet_wear' or
+			data.current.value == 'sheriff_wear' or
+			data.current.value == 'shortsleeve_wear' or
+			data.current.value == 'noose_wear' or
+			data.current.value == 'CID_wear' 
 		then
 			setUniform(data.current.value, playerPed)
 		end

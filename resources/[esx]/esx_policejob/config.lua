@@ -266,6 +266,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_STUNGUN', price = 0 },
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
 		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
+		--{ weapon = 'WEAPON_FLASHBANG', price = 0 }
 	}
 }
 
@@ -298,7 +299,7 @@ Config.AuthorizedVehicles = {
 },
 	
 	airunit = {
-			{ model = 'police', label = 'Police Cruiser', price = 0 },
+		{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police2', label = 'Police Charger', price = 0 },
 		{ model = 'police3', label = 'Police Explorer', price = 0 },
 		{ model = 'police4', label = 'Police Cruiser 2', price = 0 },
@@ -684,6 +685,30 @@ Config.Uniforms = {
 			['bproof_1'] = 11,  ['bproof_2'] = 3
 		}
 	},
+	bppolice_wear = {
+		male = {
+			['bproof_1'] = 4,  ['bproof_2'] = 4
+		},
+		female = {
+			['bproof_1'] = 11,  ['bproof_2'] = 3
+		}
+	},
+	sheriff_wear_vest = {
+		male = {
+			['bproof_1'] = 4,  ['bproof_2'] = 2
+		},
+		female = {
+			['bproof_1'] = 11,  ['bproof_2'] = 3
+		}
+	},
+	noose_wear_vest = {
+		male = {
+				['bproof_1'] = 16,  ['bproof_2'] = 2
+		},
+		female = {
+				['bproof_1'] = 11,  ['bproof_2'] = 3
+		}	
+	},
 	gilet_wear = {
 		male = {
 			['bproof_1'] = 10,  ['bproof_2'] = 0,
@@ -691,6 +716,103 @@ Config.Uniforms = {
 		female = {
 			['bproof_1'] = 19,  ['bproof_2'] = 0,
 		}
-	}
-
+	},
+	--Sheriff Short Sleeve
+	sheriff_wear = {
+		male = {
+			['tshirt_1'] = 122,  ['tshirt_2'] = 0,
+			['torso_1'] = 13,   ['torso_2'] = 4,
+			['decals_1'] = 0,   ['decals_2'] = 0,
+			['arms'] = 11,
+			['pants_1'] = 25,   ['pants_2'] = 1,
+			['shoes_1'] = 25,   ['shoes_2'] = 0,
+			['helmet_1'] = -1,  ['helmet_2'] = 0,
+			['chain_1'] = 0,    ['chain_2'] = 0,
+			['ears_1'] = 2,     ['ears_2'] = 0
+		},
+		female = {
+			['tshirt_1'] = 35,  ['tshirt_2'] = 0,
+			['torso_1'] = 48,   ['torso_2'] = 0,
+			['decals_1'] = 7,   ['decals_2'] = 2,
+			['arms'] = 14,
+			['pants_1'] = 34,   ['pants_2'] = 0,
+			['shoes_1'] = 27,   ['shoes_2'] = 0,
+			['helmet_1'] = -1,  ['helmet_2'] = 0,
+			['chain_1'] = 0,    ['chain_2'] = 0,
+			['ears_1'] = 2,     ['ears_2'] = 0
+			}
+	},	
+		--Police Short Sleeve
+		shortsleeve_wear = {
+			male = {
+				['tshirt_1'] = 122,  ['tshirt_2'] = 0,
+				['torso_1'] = 13,   ['torso_2'] = 6,
+				['decals_1'] = 0,   ['decals_2'] = 0,
+				['arms'] = 11,
+				['pants_1'] = 25,   ['pants_2'] = 2,
+				['shoes_1'] = 25,   ['shoes_2'] = 0,
+				['helmet_1'] = -1,  ['helmet_2'] = 0,
+				['chain_1'] = 0,    ['chain_2'] = 0,
+				['ears_1'] = 2,     ['ears_2'] = 0
+			},
+			female = {
+				['tshirt_1'] = 35,  ['tshirt_2'] = 0,
+				['torso_1'] = 48,   ['torso_2'] = 0,
+				['decals_1'] = 7,   ['decals_2'] = 2,
+				['arms'] = 14,
+				['pants_1'] = 34,   ['pants_2'] = 0,
+				['shoes_1'] = 27,   ['shoes_2'] = 0,
+				['helmet_1'] = -1,  ['helmet_2'] = 0,
+				['chain_1'] = 0,    ['chain_2'] = 0,
+				['ears_1'] = 2,     ['ears_2'] = 0
+				}		
+			},
+		noose_wear = {
+			male = {
+				['tshirt_1'] = 122,  ['tshirt_2'] = 0,
+				['torso_1'] = 53,   ['torso_2'] = 0,
+				['decals_1'] = 0,   ['decals_2'] = 0,
+				['arms'] = 17,
+				['pants_1'] = 34,   ['pants_2'] = 0,
+				['shoes_1'] = 25,   ['shoes_2'] = 0,
+				['helmet_1'] = 123,  ['helmet_2'] = 15,
+				['chain_1'] = 0,    ['chain_2'] = 0,
+				['ears_1'] = 2,     ['ears_2'] = 0
+			},
+			female = {
+				['tshirt_1'] = 35,  ['tshirt_2'] = 0,
+				['torso_1'] = 48,   ['torso_2'] = 0,
+				['decals_1'] = 7,   ['decals_2'] = 2,
+				['arms'] = 14,
+				['pants_1'] = 34,   ['pants_2'] = 0,
+				['shoes_1'] = 27,   ['shoes_2'] = 0,
+				['helmet_1'] = -1,  ['helmet_2'] = 0,
+				['chain_1'] = 0,    ['chain_2'] = 0,
+				['ears_1'] = 2,     ['ears_2'] = 0
+			}
+		},
+		CID_wear = {
+			male = {
+				['tshirt_1'] = 130,  ['tshirt_2'] = 0,
+				['torso_1'] = 95,   ['torso_2'] = 1,
+				['decals_1'] = 0,   ['decals_2'] = 0,
+				['arms'] = 11,
+				['pants_1'] = 25,   ['pants_2'] = 5,
+				['shoes_1'] = 15,   ['shoes_2'] = 1,
+				['helmet_1'] = -1,  ['helmet_2'] = 0,
+				['chain_1'] = 0,    ['chain_2'] = 0,
+				['ears_1'] = -1,     ['ears_2'] = 0
+			},
+			female = {
+				['tshirt_1'] = 35,  ['tshirt_2'] = 0,
+				['torso_1'] = 48,   ['torso_2'] = 0,
+				['decals_1'] = 7,   ['decals_2'] = 2,
+				['arms'] = 14,
+				['pants_1'] = 34,   ['pants_2'] = 0,
+				['shoes_1'] = 27,   ['shoes_2'] = 0,
+				['helmet_1'] = -1,  ['helmet_2'] = 0,
+				['chain_1'] = 0,    ['chain_2'] = 0,
+				['ears_1'] = 2,     ['ears_2'] = 0
+				}
+			}
 }
