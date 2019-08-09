@@ -340,7 +340,7 @@ function OpenVehicleSpawnerMenu()
 						local elements = {
 							{label = 'Limousine', value = 'Stretch'},
 							{label = 'Voiture personnelle', value = 's63w222'}, --Cog552
-							{label = 'SUV', value = 'FBI2'} --FBI2 / Baller6 
+							{label = 'SUV', value = 'baller5'} --FBI2 / Baller6 
 						}
 
 						ESX.UI.Menu.CloseAll()
@@ -912,8 +912,7 @@ Citizen.CreateThread(function()
 								TriggerServerEvent('esx_society:putVehicleInGarage', 'gouvernor', vehicleProps)
 							else
 								if
-									GetEntityModel(vehicle) == GetHashKey('Buzzard2') or
-									GetEntityModel(vehicle) == GetHashKey('Frogger2')
+									GetEntityModel(vehicle) == GetHashKey('Frogger')
 									then
 									TriggerServerEvent('esx_service:disableService', 'gouvernor')
 								end
@@ -955,8 +954,8 @@ local stopRequest = false
 RegisterNetEvent("esx_gouverneur:sendRequest")
 AddEventHandler("esx_gouverneur:sendRequest", function(name,id)
 	stopRequest = true
-	SendNotification("~b~"..name.." ~w~a sonné à la porte du gouvernement.")
-	SendNotification("~b~F~w~ pour ~g~accepter~w~ / ~b~G~w~ pour ~r~refuser~w~.")
+	SendNotification("~b~"..name.." ~w~rung the doorbell at the government building.")
+	SendNotification("~b~F~w~ to ~g~accept~w~ / ~b~G~w~ to ~r~refuse~w~.")
 
 	stopRequest = false
 	while not stopRequest do
@@ -977,10 +976,10 @@ end)
 RegisterNetEvent("esx_gouverneur:sendStatus")
 AddEventHandler("esx_gouverneur:sendStatus", function(status)
 	if(status == 1) then
-		SendNotification("~g~Quelqu'un est venu vous ouvrir la porte.")
+		SendNotification("~g~The door has been opened for you.")
 		SetEntityCoords(GetPlayerPed(-1), -484.81475830078, -335.34713745117, 90.007614135742)
 	else
-		SendNotification("~r~Personne n'a voulu vous ouvrir la porte...")
+		SendNotification("~r~No one answered the door...")
 	end
 end)
 
