@@ -10,6 +10,7 @@ Citizen.CreateThread( function()
             DisableControlAction( 0, 36, true ) -- INPUT_DUCK
 
             if ( not IsPauseMenuActive() ) then
+              if not(IsPedInAnyVehicle(ped, false)) then
                 if ( IsDisabledControlJustPressed( 0, 36 ) ) then
                     RequestAnimSet( "move_ped_crouched" )
 
@@ -27,6 +28,7 @@ Citizen.CreateThread( function()
 
                     TriggerEvent('bonefive:client:crouched', crouched)
                 end
+              end
             end
         end
     end
