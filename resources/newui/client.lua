@@ -26,7 +26,7 @@ local GPS = {
 
 local useMph = true
 local screenPosX = 0.165                    -- X coordinate (top left corner of HUD)
-local screenPosY = 0.882   
+local screenPosY = 0.882
 
 function round(num, numDecimalPlaces)
 	return tonumber(string.format("%." .. (numDecimalPlaces or 0) .. "f", num))
@@ -63,7 +63,7 @@ local cruiseColorOff = {255, 96, 96}        -- Color used when seatbelt is off
 local locationColorText = {255, 255, 255}   -- Color used to display location string
 
 -- Lookup tables for direction and zone
-local directions = { [0] = 'North', [1] = 'West', [2] = 'South', [3] = 'East', [4] = 'North' } 
+local directions = { [0] = 'North', [1] = 'West', [2] = 'South', [3] = 'East', [4] = 'North' }
 local zones = { ['AIRP'] = "Los Santos International Airport", ['ALAMO'] = "Alamo Sea", ['ALTA'] = "Alta", ['ARMYB'] = "Fort Zancudo", ['BANHAMC'] = "Banham Canyon Dr", ['BANNING'] = "Banning", ['BEACH'] = "Vespucci Beach", ['BHAMCA'] = "Banham Canyon", ['BRADP'] = "Braddock Pass", ['BRADT'] = "Braddock Tunnel", ['BURTON'] = "Burton", ['CALAFB'] = "Calafia Bridge", ['CANNY'] = "Raton Canyon", ['CCREAK'] = "Cassidy Creek", ['CHAMH'] = "Chamberlain Hills", ['CHIL'] = "Vinewood Hills", ['CHU'] = "Chumash", ['CMSW'] = "Chiliad Mountain State Wilderness", ['CYPRE'] = "Cypress Flats", ['DAVIS'] = "Davis", ['DELBE'] = "Del Perro Beach", ['DELPE'] = "Del Perro", ['DELSOL'] = "La Puerta", ['DESRT'] = "Grand Senora Desert", ['DOWNT'] = "Downtown", ['DTVINE'] = "Downtown Vinewood", ['EAST_V'] = "East Vinewood", ['EBURO'] = "El Burro Heights", ['ELGORL'] = "El Gordo Lighthouse", ['ELYSIAN'] = "Elysian Island", ['GALFISH'] = "Galilee", ['GOLF'] = "GWC and Golfing Society", ['GRAPES'] = "Grapeseed", ['GREATC'] = "Great Chaparral", ['HARMO'] = "Harmony", ['HAWICK'] = "Hawick", ['HORS'] = "Vinewood Racetrack", ['HUMLAB'] = "Humane Labs and Research", ['JAIL'] = "Bolingbroke Penitentiary", ['KOREAT'] = "Little Seoul", ['LACT'] = "Land Act Reservoir", ['LAGO'] = "Lago Zancudo", ['LDAM'] = "Land Act Dam", ['LEGSQU'] = "Legion Square", ['LMESA'] = "La Mesa", ['LOSPUER'] = "La Puerta", ['MIRR'] = "Mirror Park", ['MORN'] = "Morningwood", ['MOVIE'] = "Richards Majestic", ['MTCHIL'] = "Mount Chiliad", ['MTGORDO'] = "Mount Gordo", ['MTJOSE'] = "Mount Josiah", ['MURRI'] = "Murrieta Heights", ['NCHU'] = "North Chumash", ['NOOSE'] = "N.O.O.S.E", ['OCEANA'] = "Pacific Ocean", ['PALCOV'] = "Paleto Cove", ['PALETO'] = "Paleto Bay", ['PALFOR'] = "Paleto Forest", ['PALHIGH'] = "Palomino Highlands", ['PALMPOW'] = "Palmer-Taylor Power Station", ['PBLUFF'] = "Pacific Bluffs", ['PBOX'] = "Pillbox Hill", ['PROCOB'] = "Procopio Beach", ['RANCHO'] = "Rancho", ['RGLEN'] = "Richman Glen", ['RICHM'] = "Richman", ['ROCKF'] = "Rockford Hills", ['RTRAK'] = "Redwood Lights Track", ['SANAND'] = "San Andreas", ['SANCHIA'] = "San Chianski Mountain Range", ['SANDY'] = "Sandy Shores", ['SKID'] = "Mission Row", ['SLAB'] = "Stab City", ['STAD'] = "Maze Bank Arena", ['STRAW'] = "Strawberry", ['TATAMO'] = "Tataviam Mountains", ['TERMINA'] = "Terminal", ['TEXTI'] = "Textile City", ['TONGVAH'] = "Tongva Hills", ['TONGVAV'] = "Tongva Valley", ['VCANA'] = "Vespucci Canals", ['VESP'] = "Vespucci", ['VINE'] = "Vinewood", ['WINDF'] = "Ron Alternates Wind Farm", ['WVINE'] = "West Vinewood", ['ZANCUDO'] = "Zancudo River", ['ZP_ORT'] = "Port of South Los Santos", ['ZQ_UAR'] = "Davis Quartz" }
 
 -- STATE VARIABLES
@@ -86,7 +86,7 @@ Citizen.CreateThread(function()
         local player = GetPlayerPed(-1)
         local position = GetEntityCoords(player)
         local vehicle = GetVehiclePedIsIn(player, false)
-       
+
         -- Display HUD only when in vehicle
         if (IsPedInAnyVehicle(player, false)) then
 
@@ -99,8 +99,14 @@ Citizen.CreateThread(function()
             if (GetPedInVehicleSeat(vehicle, -1) == player) then
                 -- Check if cruise control button pressed, toggle state and set maximum speed appropriately
                 if IsControlJustReleased(0, cruiseInput) then
-                    cruiseIsOn = not cruiseIsOn
-                    cruiseSpeed = currSpeed
+                    if cruiseIsOn then
+											cruiseIsOn = not cruiseIsOn
+										else
+											if GetEntitySpeed(GetVehiclePedIsIn(GetPlayerPed(-1)))*2.236936 >= 25 then
+	                    	cruiseSpeed = currSpeed
+												cruiseIsOn = not cruiseIsOn
+											end
+										end
                 end
                 local maxSpeed = cruiseIsOn and cruiseSpeed or GetVehicleHandlingFloat(vehicle,"CHandlingData","fInitialDriveMaxFlatVel")
                 SetEntityMaxSpeed(vehicle, maxSpeed)
@@ -114,7 +120,7 @@ Citizen.CreateThread(function()
             speedColor = (speed >= speedLimit) and speedColorOver or speedColorUnder
             drawTxt(("%.3d"):format(math.ceil(speed)), 2, speedColor, 0.5, screenPosX + 0.001, screenPosY + 0.017)
             drawTxt("MPH", 2, speedColorText, 0.4, screenPosX + 0.030, screenPosY + 0.020)
-            
+
             -- Draw fuel gauge; always displays 100 but can be modified by setting currentFuel with an API call
             fuelColor = (newFuel >= fuelWarnLimit) and fuelColorOver or fuelColorUnder
             drawTxt(("%.3d"):format(math.ceil(newFuel)), 2, fuelColor, 0.5, screenPosX + 0.0555, screenPosY + 0.017)
@@ -133,12 +139,12 @@ Citizen.CreateThread(function()
             -- Draw seatbelt status
             seatbeltColor = seatbeltIsOn and seatbeltColorOn or seatbeltColorOff
             drawTxt("SEATBELT", 2, seatbeltColor, 0.4, screenPosX + 0.080, screenPosY + 0.048)
-            
+
             -- Get heading and zone from lookup tables and street name from hash
             local heading = directions[math.floor((GetEntityHeading(player) + 45.0) / 90.0)]
             local zoneNameFull = zones[GetNameOfZone(position.x, position.y, position.z)]
             local streetName = GetStreetNameFromHashKey(GetStreetNameAtCoord(position.x, position.y, position.z))
-            
+
             -- Display heading, street name and zone when possible
             local locationText = heading
             locationText = (streetName == "" or streetName == nil) and (locationText) or (locationText .. " | " .. streetName)
