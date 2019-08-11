@@ -120,3 +120,14 @@ RegisterNUICallback("DeleteCharacter", function(data, cb)
     end
     cb("ok")
 end)
+RegisterNetEvent('kashactersC:Skinchanger')
+AddEventHandler('kashactersC:Skinchanger', function(source)
+    local source_ = source
+    ESX.TriggerServerCallback('esx_skin:getPlayerSkin', function(skin, jobSkin)
+    TriggerEvent('skinchanger:loadSkin', skin)
+    end)
+end)
+
+RegisterCommand('relog', function()
+TriggerEvent('kashactersC:ReloadCharacters')
+end)

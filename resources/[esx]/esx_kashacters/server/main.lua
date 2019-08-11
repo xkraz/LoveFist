@@ -39,6 +39,7 @@ AddEventHandler('kashactersS:CharacterChosen', function(charid, ischar)
     if ischar == "true" then
         spawn = GetSpawnPos(src)
 		TriggerEvent('fixvoice')
+		TriggerClientEvent("kashactersC:Skinchanger", src)
     else
 		TriggerClientEvent('skinchanger:loadDefaultModel', src, true, cb)
         spawn = { x = 332.67, y = -208.39, z = 54.28 } -- DEFAULT SPAWN POSITION
