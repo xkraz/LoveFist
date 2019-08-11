@@ -3,21 +3,23 @@ local piggyBackInProgress = false
 RegisterCommand("piggyback",function(source, args)
 	if not piggyBackInProgress then
 		piggyBackInProgress = true
-		local player = PlayerPedId()	
+		local player = PlayerPedId()
+		local car = GetVehiclePedIsIn(player)
+
 		lib = 'anim@arena@celeb@flat@paired@no_props@'
 		anim1 = 'piggyback_c_player_a'
 		anim2 = 'piggyback_c_player_b'
 		distans = -0.07
 		distans2 = 0.0
 		height = 0.45
-		spin = 0.0		
+		spin = 0.0
 		length = 100000
 		controlFlagMe = 49
 		controlFlagTarget = 33
 		animFlagTarget = 1
 		local closestPlayer = GetClosestPlayer(3)
 		target = GetPlayerServerId(closestPlayer)
-		if closestPlayer ~= nil then
+		if closestPlayer ~=  and not(IsPedInAnyVehicle(pedy, false)) and not IsPedCuffed(PlayerPedId()) then
 			print("triggering cmg2_animations:sync")
 			TriggerServerEvent('cmg2_animations:sync', closestPlayer, lib, anim1, anim2, distans, distans2, height,target,length,spin,controlFlagMe,controlFlagTarget,animFlagTarget)
 		else

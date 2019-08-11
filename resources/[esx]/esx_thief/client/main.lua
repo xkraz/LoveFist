@@ -1,10 +1,10 @@
 local Keys = {
-	["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57, 
-	["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177, 
+	["ESC"] = 322, ["F1"] = 288, ["F2"] = 289, ["F3"] = 170, ["F5"] = 166, ["F6"] = 167, ["F7"] = 168, ["F8"] = 169, ["F9"] = 56, ["F10"] = 57,
+	["~"] = 243, ["1"] = 157, ["2"] = 158, ["3"] = 160, ["4"] = 164, ["5"] = 165, ["6"] = 159, ["7"] = 161, ["8"] = 162, ["9"] = 163, ["-"] = 84, ["="] = 83, ["BACKSPACE"] = 177,
 	["TAB"] = 37, ["Q"] = 44, ["W"] = 32, ["E"] = 38, ["R"] = 45, ["T"] = 245, ["Y"] = 246, ["U"] = 303, ["P"] = 199, ["["] = 39, ["]"] = 40, ["ENTER"] = 18,
 	["CAPS"] = 137, ["A"] = 34, ["S"] = 8, ["D"] = 9, ["F"] = 23, ["G"] = 47, ["H"] = 74, ["K"] = 311, ["L"] = 182,
 	["LEFTSHIFT"] = 21, ["Z"] = 20, ["X"] = 73, ["C"] = 26, ["V"] = 0, ["B"] = 29, ["N"] = 249, ["M"] = 244, [","] = 82, ["."] = 81,
-	["LEFTCTRL"] = 36, ["LEFTALT"] = 19, ["SPACE"] = 22, ["RIGHTCTRL"] = 70, 
+	["LEFTCTRL"] = 36, ["LEFTALT"] = 19, ["SPACE"] = 22, ["RIGHTCTRL"] = 70,
 	["HOME"] = 213, ["PAGEUP"] = 10, ["PAGEDOWN"] = 11, ["DELETE"] = 178,
 	["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
 	["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
@@ -78,9 +78,9 @@ function OpenCuffMenu()
 
   local elements = {
         {label = _U('cuff'), value = 'cuff'},
-        {label = _U('uncuff'), value = 'uncuff'}, 
-        {label = _U('drag'), value = 'drag'}, 
-		{label = _U('blindfold'), value = 'blindfold'},	
+        {label = _U('uncuff'), value = 'uncuff'},
+        {label = _U('drag'), value = 'drag'},
+		{label = _U('blindfold'), value = 'blindfold'},
 		{label = _U('carry'), value = 'lift'},
 		{label = _U('search'), value = 'search'},
       }
@@ -95,13 +95,17 @@ function OpenCuffMenu()
       elements = elements
       },
           function(data2, menu2)
+				local pedy = GetPlayerPed(-1)
+				if not(IsPedInAnyVehicle(pedy, false))  then
+					if not IsPedCuffed(PlayerPedId()) then
+
             local player, distance = ESX.Game.GetClosestPlayer()
             if distance ~= -1 and distance <= 3.0 then
               if data2.current.value == 'cuff' then
                 if Config.EnableItems then
 
                     local target_id = GetPlayerServerId(player)
-                
+
                     IsAbleToSteal(target_id, function(err)
 
                         if not err then
@@ -167,8 +171,8 @@ function OpenCuffMenu()
 				end
 				end
 			end
-			
-			if data2.current.value == 'lift' then	
+
+			if data2.current.value == 'lift' then
                 local closestPlayer, distance = ESX.Game.GetClosestPlayer()
 
                 if distance ~= -1 and distance <= 3.0 and not IsPedInAnyVehicle(GetPlayerPed(-1)) and not IsPedInAnyVehicle(GetPlayerPed(closestPlayer)) then
@@ -195,7 +199,7 @@ function OpenCuffMenu()
                         end
                     else
                         ESX.ShowNotification(_U('not_cuffed'))
-                    
+
                     end
                 else
                     ESX.ShowNotification(_U('not_armed'))
@@ -204,6 +208,12 @@ function OpenCuffMenu()
             else
               ESX.ShowNotification(_U('no_players_nearby'))
             end
+					else
+						ESX.ShowNotification('You are handcuffed!')
+					end
+					else
+						ESX.ShowNotification('You are in a car!')
+					end
           end,
     function(data2, menu2)
       menu2.close()
@@ -214,7 +224,7 @@ end
 
 function OpenCuffMenu2()
 
-  local elements = { 
+  local elements = {
         {label = _U('drag'), value = 'drag'},
       }
 
@@ -234,7 +244,7 @@ function OpenCuffMenu2()
                 if Config.EnableItems then
 
                     local target_id = GetPlayerServerId(player)
-                
+
                     IsAbleToSteal(target_id, function(err)
 
                         if not err then
@@ -283,7 +293,7 @@ function OpenCuffMenu2()
                 else
                     TriggerServerEvent('dragServer2', GetPlayerServerId(player))
                 end
-              end  
+              end
               if data2.current.value == 'search' then
 
                 local ped = PlayerPedId()
@@ -302,7 +312,7 @@ function OpenCuffMenu2()
                         end
                     else
                         ESX.ShowNotification(_U('not_cuffed'))
-                    
+
                     end
                 else
                     ESX.ShowNotification(_U('not_armed'))
@@ -323,9 +333,9 @@ function OpenCuffMenu3()
 
   local elements = {
         {label = _U('cuff'), value = 'cuff'},
-        {label = _U('uncuff'), value = 'uncuff'}, 
+        {label = _U('uncuff'), value = 'uncuff'},
         {label = _U('drag'), value = 'drag'},
-		
+
       }
 
   ESX.UI.Menu.CloseAll()
@@ -344,7 +354,7 @@ function OpenCuffMenu3()
                 if Config.EnableItems2 then
 
                     local target_id = GetPlayerServerId(player)
-                
+
                     IsAbleToSteal(target_id, function(err)
 
                         if not err then
@@ -393,7 +403,7 @@ function OpenCuffMenu3()
                 else
                     TriggerServerEvent('dragServer', GetPlayerServerId(player))
                 end
-              end  
+              end
 			  if action == 'put_in_vehicle' then
 			TriggerServerEvent('esx_thief:putInVehicle', GetPlayerServerId(closestPlayer))
 				end
@@ -418,7 +428,7 @@ function OpenCuffMenu3()
                         end
                     else
                         ESX.ShowNotification(_U('not_cuffed'))
-                    
+
                     end
                 else
                     ESX.ShowNotification(_U('not_armed'))
@@ -677,7 +687,7 @@ function OpenStealMenu(target, target_id)
                                         local quantity = tonumber(data3.value)
                                         TriggerServerEvent('esx_thief:stealPlayerItem', GetPlayerServerId(target), itemType, itemName, quantity)
                                         OpenStealMenu(target)
-                                    
+
                                         menu3.close()
                                         menu2.close()
                                     end,
@@ -711,7 +721,7 @@ function OpenStealMenu(target, target_id)
             menu.close()
         end
         )
-        
+
     end, GetPlayerServerId(target))
 
 end
@@ -752,7 +762,7 @@ Citizen.CreateThread(function()
             if target ~= -1 and distance ~= -1 and distance <= 2.0 then
 
                 local target_id = GetPlayerServerId(target)
-                
+
                 IsAbleToSteal(target_id, function(err)
                     if(not err)then
                         OpenStealMenu(target, target_id)
@@ -761,15 +771,15 @@ Citizen.CreateThread(function()
 						ESX.ShowNotification(err)
 					end
                 end)
-                
+
             elseif distance < 20 and distance > 2.0 then
 
                 ESX.ShowNotification(_U('too_far'))
-                    
+
             else
-                
+
                 ESX.ShowNotification(_U('no_players_nearby'))
-                    
+
 			end
 
 		end
@@ -798,7 +808,7 @@ RegisterNetEvent('esx_thief:putInVehicle')
 AddEventHandler('esx_thief:putInVehicle', function()
 	local playerPed = PlayerPedId()
 	local coords = GetEntityCoords(playerPed)
-	
+
 	if IsAnyVehicleNearPoint(coords, 5.0) then
 		local vehicle = GetClosestVehicle(coords, 5.0, 0, 71)
 

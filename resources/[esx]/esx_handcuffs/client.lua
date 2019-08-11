@@ -33,23 +33,24 @@ AddEventHandler('esx_handcuffs:cuff', function()
     ped = GetPlayerPed(-1)
     RequestAnimDict(dict)
 
-    while not HasAnimDictLoaded(dict) do
-        Citizen.Wait(0)
-    end
 
-        if GetEntityModel(ped) == femaleHash then
-            prevFemaleVariation = GetPedDrawableVariation(ped, 7)
-            SetPedComponentVariation(ped, 7, 25, 0, 0)
-        elseif GetEntityModel(ped) == maleHash then
-            prevMaleVariation = GetPedDrawableVariation(ped, 7)
-            SetPedComponentVariation(ped, 7, 41, 0, 0)
-        end
+	    while not HasAnimDictLoaded(dict) do
+	        Citizen.Wait(0)
+	    end
 
-        SetEnableHandcuffs(ped, true)
-        TaskPlayAnim(ped, dict, anim, 8.0, -8, -1, flags, 0, 0, 0, 0)
+	        if GetEntityModel(ped) == femaleHash then
+	            prevFemaleVariation = GetPedDrawableVariation(ped, 7)
+	            SetPedComponentVariation(ped, 7, 25, 0, 0)
+	        elseif GetEntityModel(ped) == maleHash then
+	            prevMaleVariation = GetPedDrawableVariation(ped, 7)
+	            SetPedComponentVariation(ped, 7, 41, 0, 0)
+	        end
 
-    cuffed = not cuffed
-    changed = true
+	        SetEnableHandcuffs(ped, true)
+	        TaskPlayAnim(ped, dict, anim, 8.0, -8, -1, flags, 0, 0, 0, 0)
+
+	    cuffed = not cuffed
+	    changed = true
 end)
 --- Uncufing
 RegisterNetEvent('esx_handcuffs:uncuff')
@@ -79,15 +80,20 @@ end)
 RegisterNetEvent('esx_handcuffs:cuffcheck')
 AddEventHandler('esx_handcuffs:cuffcheck', function()
   local player, distance = ESX.Game.GetClosestPlayer()
-  if distance ~= -1 and distance <= 3.0 then
-  				  RequestAnimDict("amb@prop_human_bum_bin@idle_b")
-				  TaskPlayAnim(ped,"amb@prop_human_bum_bin@idle_b","idle_d",100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0, 130)
-								ESX.ShowNotification('~g~You have used your handcuffs')
-				Wait(8000)
-		TriggerServerEvent('esx_policejob:handcuff', GetPlayerServerId(player))
-				ESX.ShowNotification('~r~Person Cuffed/UnCuffed')
-  else
-    ESX.ShowNotification('No players nearby')
+	local pedy = GetPlayerPed(-1)
+	if not(IsPedInAnyVehicle(pedy, false))  then
+	  if distance ~= -1 and distance <= 3.0  then
+	  				  RequestAnimDict("amb@prop_human_bum_bin@idle_b")
+					  TaskPlayAnim(ped,"amb@prop_human_bum_bin@idle_b","idle_d",100.0, 200.0, 0.3, 120, 0.2, 0, 0, 0, 130)
+									ESX.ShowNotification('~g~You have used your handcuffs')
+					Wait(8000)
+			TriggerServerEvent('esx_policejob:handcuff', GetPlayerServerId(player))
+					ESX.ShowNotification('~r~Person Cuffed/UnCuffed')
+	  else
+	    ESX.ShowNotification('No players nearby')
+		end
+	else
+		ESX.ShowNotification('You are in a car!')
 	end
 end)
 
