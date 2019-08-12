@@ -594,5 +594,13 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 1968.13, y = 3821.59, z = 31.40 },
 		},
+		FlightSchool = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 245.98,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -1029.85, y = -2891.55, z = 12.95 },
+		},
 	},
 }
