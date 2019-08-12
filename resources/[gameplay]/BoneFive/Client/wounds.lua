@@ -498,9 +498,17 @@ end)
 
 RegisterNetEvent('bonefive:client:WalkChange')
 AddEventHandler('bonefive:client:WalkChange', function(lib,walkStyle)
-  _lib = lib
-  _walkStyle = walkStyle
+
+    if pedType = 5 then
+      _lib2 = lib
+      _walkStyle2 = walkStyle
+  	else
+      _lib = lib
+      _walkStyle = walkStyle
+    end
+
   TriggerEvent('chatMessage', '^5BoneFive', {255,255,255}, 'Saved walk style.')
+
 end)
 
 
@@ -530,8 +538,8 @@ AddEventHandler('bonefive:client:ResetLimbs', function()
         v.severity = 0
     end
 
-    
-	if pedType = 5 then 
+
+	if pedType = 5 then
 	ESX.Streaming.RequestAnimSet(_lib2, function()
   		SetPedMovementClipset(PlayerPedId(), _walkStyle2, true)
 	else
