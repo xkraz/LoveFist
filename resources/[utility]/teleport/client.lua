@@ -96,14 +96,18 @@ local TeleportFromTo = {
 		positionTo = { ['x'] = -1547.16, ['y'] = 89.38, ['z'] = 61.31, nom = "Enter house"},
 	},
 	["garage"] = {
-		positionFrom = { ['x'] = -1524.78, ['y'] = 81.35, ['z'] = 56.63, nom = "garage"},
+		positionFrom = { ['x'] = -1528.78, ['y'] = 82.35, ['z'] = 56.43, nom = "garage"},
 		positionTo = { ['x'] = 231.53, ['y'] = -998.36, ['z'] = -99.00, nom = "driveway"},
 	},
+<<<<<<< HEAD
+
+=======
 	["FIB Garage 2"] = {
 		positionFrom = { ['x'] = 142.78, ['y'] = -766.58, ['z'] = 242.15, nom = "Go to - Garage"},
 		positionTo = { ['x'] = 160.21, ['y'] = -682.35, ['z'] = 33.13, nom = "Go to - FIB Floor 2"},
 	},
 	
+>>>>>>> e0ea56b84da47e250da48617b9de0b6475a92f21
 
 
 
@@ -154,6 +158,7 @@ end
 
 Citizen.CreateThread(function()
 	while true do
+		local _tele = false
 		Citizen.Wait(2)
 		local pos = GetEntityCoords(GetPlayerPed(-1), true)
 
@@ -167,28 +172,41 @@ Citizen.CreateThread(function()
 					if(Vdist(pos.x, pos.y, pos.z, j.positionFrom.x, j.positionFrom.y, j.positionFrom.z) < 1.0)then
 						ClearPrints()
 						SetTextEntry_2("STRING")
-						AddTextComponentString("Press ~r~E~w~ to ".. j.positionFrom.nom)
+						AddTextComponentString("Press ~r~E~w~ to go to ".. j.positionFrom.nom)
 						DrawSubtitleTimed(2000, 1)
 						if IsControlJustPressed(1, 38) then
 							Citizen.Wait(20)
-							SetEntityCoords(GetPlayerPed(-1), j.positionTo.x, j.positionTo.y, j.positionTo.z - 1)
+							if not(IsPedInAnyVehicle(GetPlayerPed(-1), false))  then
+								SetEntityCoords(GetPlayerPed(-1), j.positionTo.x, j.positionTo.y, j.positionTo.z)
+							else
+								local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+								SetEntityCoordsNoOffset(vehicle, j.positionTo.x, j.positionTo.y, j.positionTo.z, 0, 0, 1)
+								SetEntityHeading(vehicle,0.0)
+							end
+							_tele = true
 						end
 					end
 				end
 			end
 
-			if(Vdist(pos.x, pos.y, pos.z, j.positionTo.x, j.positionTo.y, j.positionTo.z) < 150.0)then
+			if(Vdist(pos.x, pos.y, pos.z, j.positionTo.x, j.positionTo.y, j.positionTo.z) < 150.0) and _tele ==  false then
 				DrawMarker(1, j.positionTo.x, j.positionTo.y, j.positionTo.z - 1, 0, 0, 0, 0, 0, 0, 1.0001, 1.0001, .801, 255, 255, 255,255, 0, 0, 0,0)
 				if(Vdist(pos.x, pos.y, pos.z, j.positionTo.x, j.positionTo.y, j.positionTo.z) < 5.0)then
 					Drawing.draw3DText(j.positionTo.x, j.positionTo.y, j.positionTo.z - 1.100, j.positionTo.nom, 1, 0.2, 0.1, 255, 255, 255, 215)
 					if(Vdist(pos.x, pos.y, pos.z, j.positionTo.x, j.positionTo.y, j.positionTo.z) < 1.0)then
 						ClearPrints()
 						SetTextEntry_2("STRING")
-						AddTextComponentString("Press ~r~E~w~ to ".. j.positionTo.nom)
+						AddTextComponentString("Press ~r~E~w~ to go to ".. j.positionTo.nom)
 						DrawSubtitleTimed(2000, 1)
 						if IsControlJustPressed(1, 38) then
 							Citizen.Wait(20)
-							SetEntityCoords(GetPlayerPed(-1), j.positionFrom.x, j.positionFrom.y, j.positionFrom.z - 1)
+							if not(IsPedInAnyVehicle(GetPlayerPed(-1), false))  then
+								SetEntityCoords(GetPlayerPed(-1), j.positionFrom.x, j.positionFrom.y, j.positionFrom.z)
+							else
+								local vehicle = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+								SetEntityCoordsNoOffset(vehicle, j.positionFrom.x, j.positionFrom.y, j.positionFrom.z, 0, 0, 1)
+								SetEntityHeading(vehicle,335.0)
+							end
 						end
 					end
 				end
