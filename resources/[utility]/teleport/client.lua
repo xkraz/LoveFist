@@ -99,18 +99,10 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -1528.78, ['y'] = 82.35, ['z'] = 56.43, nom = "garage"},
 		positionTo = { ['x'] = 231.53, ['y'] = -998.36, ['z'] = -99.00, nom = "driveway"},
 	},
-<<<<<<< HEAD
-
-=======
 	["FIB Garage 2"] = {
-		positionFrom = { ['x'] = 142.78, ['y'] = -766.58, ['z'] = 242.15, nom = "Go to - Garage"},
-		positionTo = { ['x'] = 160.21, ['y'] = -682.35, ['z'] = 33.13, nom = "Go to - FIB Floor 2"},
+	positionFrom = { ['x'] = 142.78, ['y'] = -766.58, ['z'] = 242.15, nom = "Go to - Garage"},
+	positionTo = { ['x'] = 160.21, ['y'] = -682.35, ['z'] = 33.13, nom = "Go to - FIB Floor 2"},
 	},
-	
->>>>>>> e0ea56b84da47e250da48617b9de0b6475a92f21
-
-
-
 }
 
 Drawing = setmetatable({}, Drawing)
