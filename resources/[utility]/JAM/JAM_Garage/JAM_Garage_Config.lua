@@ -2,7 +2,7 @@ JAM.Garage = {}
 local JAG = JAM.Garage
 JAG.ESX = JAM.ESX
 
-JAG.Config = {	
+JAG.Config = {
 	MarkerDrawDistance 		= 100,
 	VehicleDespawnDistance 	= 500,
 
@@ -17,7 +17,7 @@ JAG.Config = {
 			Display = 4,
 			Color = 68,
 			Pos = { x = 227.50, y = -793.30, z = 30.60 },
-		},			
+		},
 		VehicleStoreGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -41,7 +41,7 @@ JAG.Config = {
 			Display = 4,
 			Color = 68,
 			Pos = { x = 105.35, y = 6613.58, z = 31.39 },
-		},			
+		},
 		PaletoImpound = {
 			Zone = "Impound",
 			Sprite = 67,
@@ -49,7 +49,7 @@ JAG.Config = {
 			Display = 4,
 			Color = 47,
 			Pos = { x = -458.17, y = 6024.81, z = 31.40 },
-		},			
+		},
 		MedicalTowerGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -57,7 +57,7 @@ JAG.Config = {
 			Display = 4,
 			Color = 68,
 			Pos = { x = -654.77, y = 310.27, z = 82.97 },
-		},	
+		},
 		SandyShoresGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -82,7 +82,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = 289.68, y = -339.55, z = 43.92 },
 		},
-		
+
 		VespucciGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -99,7 +99,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = -1050.21, y = -1428.17, z = 5.43 },
 		},
-		
+
 		WarrantGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -108,7 +108,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = 700.57, y = -1108.18, z = 22.47 },
 		},
-		
+
 		VagosGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -117,7 +117,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = 322.11, y = -2029.53, z = 19.8 },
 		},
-		
+
 		AirportGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -126,7 +126,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = -892.82, y = -2738.06, z = 12.82 },
 		},
-		
+
 		SouthGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -135,7 +135,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = 1005.86, y = -1868.31, z = 29.89 },
 		},
-		
+
 		EclipseGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -152,7 +152,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = -1292.78, y = -3350.39, z = 13.97 },
 		},
-		
+
 		DelPerroBeachGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -161,7 +161,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = -2023.85, y = -481.54, z = 11.48 },
 		},
-		
+
 		MechanicGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -170,7 +170,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = -357.05, y = -114.97, z = 38.7 },
 		},
-		
+
 		SandyGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -179,7 +179,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = 1740.79, y = 3715.44, z = 34.1 },
 		},
-		
+
 		SeaviewGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -188,7 +188,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = 2133.42, y = 4781.89, z = 40.97 },
 		},
-		
+
 		ChumashGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -197,7 +197,7 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = -3215.26, y = 914.57, z = 13.98 },
 		},
-		
+
 		PDGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -223,8 +223,8 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = 2780.5, y = -712.32, z = 4.35 },
 		},
-		
-		
+
+
 		Route68Garage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -233,12 +233,12 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = 261.2, y = 2578.02, z = 43.85 },
 		},
-		
+
 
 	},
 
 	Markers = {
-	
+
 	StrokerGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -247,7 +247,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 1410.29, y = 1118.42, z = 113.84 },
 		},
-	
+
 		Route68Garage = {
 			Zone = "Garage",
 			Type = 1,
@@ -256,7 +256,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 261.2, y = 2578.02, z = 43.85 },
 		},
-	
+
 		WineryGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -265,8 +265,8 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -1921.87, y = 2040.23, z = 139.74 },
 		},
-	
-	
+
+
 		HavenGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -275,8 +275,8 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 2780.5, y = -712.32, z = 4.35 },
 		},
-	
-	
+
+
 		PDGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -285,7 +285,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 449.6, y = -1018.84, z = 27.30 },
 		},
-		
+
 		EMSGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -294,7 +294,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 320.88, y = -549.72, z = 27.70 },
 		},
-		
+
 		ChumashGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -303,7 +303,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -3215.26, y = 914.57, z = 13.98 },
 		},
-	
+
 		SeaviewGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -320,7 +320,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 1371.67, y = 3619.67, z = 33.89 },
 		},
-	
+
 		SandyGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -329,7 +329,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 1740.79, y = 3715.44, z = 34.1 },
 		},
-	
+
 		MechanicGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -346,7 +346,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -2023.85, y = -481.54, z = 10.48  },
 		},
-	
+
 		MarducasGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -354,7 +354,7 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -1292.78, y = -3350.39, z = 12.97  },
-		},	
+		},
 		EclipseGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -362,8 +362,8 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -1653.94, y = -220.97, z = 54.04  },
-		},	
-		
+		},
+
 		WarrantGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -372,7 +372,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 700.57, y = -1108.18, z = 21.47  },
 		},
-	
+
 		SouthGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -380,7 +380,7 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 1005.86, y = -1868.31, z = 29.89  },
-		},	
+		},
 		AirportGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -388,8 +388,8 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -892.82, y = -2738.06, z = 12.82  },
-		},	
-	
+		},
+
 		VagosGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -397,7 +397,7 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 322.11, y = -2029.53, z = 19.8 },
-		},	
+		},
 		YakuzaGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -405,8 +405,8 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -1050.21, y = -1428.17, z = 4.43 },
-		},	
-	
+		},
+
 		VespucciGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -414,8 +414,8 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -453.99, y = -805.92, z = 29.54 },
-		},	
-	
+		},
+
 		PinkCageGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -423,7 +423,7 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 275.7, y = -330.6, z = 43.92 },
-		},	
+		},
 		CityGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -431,7 +431,7 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 228.75, y = -747.37, z = 29.70 },
-		},			
+		},
 		VehicleStoreGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -455,7 +455,7 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 128.78, y = 6622.99, z = 30.77 },
-		},			
+		},
 		PaletoImpound = {
 			Zone = "Impound",
 			Type = 1,
@@ -471,7 +471,7 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -654.77, y = 310.27, z = 81.97 },
-		},	
+		},
 		SandyShoresGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -487,7 +487,7 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 255, g = 165, b = 0 },
 			Pos = { x = 1736.71, y = 3689.35, z = 33.31 },
-			
+
 		},
 		vanillaunicorngarage = {
 			Zone = "Garage",
@@ -520,7 +520,7 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -2689.04, y = -81.34, z = 16.64 },
-			
+
 		},
 		gamersguild = {
 			Zone = "Garage",
@@ -577,6 +577,14 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -1302.24, y = -3328.71, z = 12.95 },
+		},
+		MarcusHouse = {
+		Zone = "Garage",
+		Type = 1,
+		Heading = 180.0,
+		Scale = { x = 2.0, y = 2.0, z = 0.5 },
+		Color = { r = 43, g = 187, b = 255 },
+		Pos = { x = 224.5, y = -980.06, z = -100.0 },
 		},
 		MunsonTrailer = {
 			Zone = "Garage",
