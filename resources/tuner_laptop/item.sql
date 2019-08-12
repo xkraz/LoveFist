@@ -1,1 +1,0 @@
-INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES ('tuning_laptop', 'Tuner Laptop', '1', '0', '1');

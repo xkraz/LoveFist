@@ -11,3 +11,10 @@ files {
     'html/css/style.css',
     'html/js/script.js'
 }
+
+exports {
+    'Progress',
+    'ProgressWithStartEvent',
+    'ProgressWithTickEvent',
+    'ProgressWithStartAndTick'
+}

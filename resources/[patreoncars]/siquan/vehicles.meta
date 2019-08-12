@@ -7,7 +7,7 @@
 		<Item>
       <modelName>c63coupe</modelName>
       <txdName>c63coupe</txdName>
-      <handlingId>TAILGATE</handlingId>
+      <handlingId>VOITURE</handlingId>
       <gameName>c63coupe</gameName>
       <vehicleMakeName>mercedesbenz</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
