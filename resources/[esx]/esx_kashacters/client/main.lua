@@ -120,6 +120,7 @@ RegisterNUICallback("DeleteCharacter", function(data, cb)
     end
     cb("ok")
 end)
+--[[
 RegisterNetEvent('kashactersC:Skinchanger')
 AddEventHandler('kashactersC:Skinchanger', function(source)
     local source_ = source
@@ -131,3 +132,4 @@ end)
 RegisterCommand('relog', function()
 TriggerEvent('kashactersC:ReloadCharacters')
 end)
+]]
