@@ -196,11 +196,11 @@ Citizen.CreateThread(function(source)
     if dist <= 1.2 and ESX.PlayerData.job.name == 'flightschool' then
 	  flightnoti('Press ~r~E ~w~to spawn a plane!')
 	  if IsControlJustReleased(0, 38) then
-	  RequestModel(-1673356438)
-      while not HasModelLoaded(-1673356438) do
+	  RequestModel(-1763555241)
+      while not HasModelLoaded(-1763555241) do
       Citizen.Wait(0)
       end
-	  CreateVehicle(-1673356438, -980.59, -2997.17, 12.95, 60.72, true, true)
+	  CreateVehicle(-1763555241, -980.59, -2997.17, 12.95, 60.72, true, true)
       end
 	end
   end
@@ -241,11 +241,11 @@ Citizen.CreateThread(function(source)
     if dist <= 1.2 and ESX.PlayerData.job.name == 'flightschool' then
 	  flightnoti('Press ~r~E ~w~to spawn a helicopter!')
 	  if IsControlJustReleased(0, 38) then
-	  RequestModel(-1660661558)
-      while not HasModelLoaded(-1660661558) do
+	  RequestModel(788747387)
+      while not HasModelLoaded(788747387) do
       Citizen.Wait(0)
       end
-	  CreateVehicle(-1660661558, -1112.58, -2883.98, 12.95, 334.3, true, true)
+	  CreateVehicle(788747387, -1112.58, -2883.98, 12.95, 334.3, true, true)
       end
 	end
   end

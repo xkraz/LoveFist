@@ -13,7 +13,7 @@ local TeleportFromTo = {
 	},
 	["FIB Garage"] = {
 		positionFrom = { ['x'] = 125.00, ['y'] = -761.39, ['z'] = 41.75, nom = "Go to - Garage"},
-		positionTo = { ['x'] = 165.42, ['y'] = -700.41, ['z'] = 32.69, nom = "Go to - FIB Building"},
+		positionTo = { ['x'] = 156.22, ['y'] = -681.21, ['z'] = 33.13, nom = "Go to - FIB Floor 1"},
 	},
 	["DEA"] = {
 		positionFrom = { ['x'] = 3594.00, ['y'] = 3673.77, ['z'] = 33.57, nom = "Go to - Lab"},
@@ -99,7 +99,15 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -1528.78, ['y'] = 82.35, ['z'] = 56.43, nom = "garage"},
 		positionTo = { ['x'] = 231.53, ['y'] = -998.36, ['z'] = -99.00, nom = "driveway"},
 	},
+<<<<<<< HEAD
 
+=======
+	["FIB Garage 2"] = {
+		positionFrom = { ['x'] = 142.78, ['y'] = -766.58, ['z'] = 242.15, nom = "Go to - Garage"},
+		positionTo = { ['x'] = 160.21, ['y'] = -682.35, ['z'] = 33.13, nom = "Go to - FIB Floor 2"},
+	},
+	
+>>>>>>> e0ea56b84da47e250da48617b9de0b6475a92f21
 
 
 
