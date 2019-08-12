@@ -2388,4 +2388,57 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
+    
+		--Marducas's House
+
+	    {--gate 
+		objName = 'prop_lrggate_02_ld',
+		objCoords  = {x = -1474.130, y = 68.3892, z = 52.5259},
+		textCoords = {x = -1474.130, y = 68.3892, z = 53.5259},
+		authorizedJobs = { 'marducaskey', 'adminkey' },
+		locked = true,
+		distance = 20
+		},
+	
+		{--side gate
+		objName = 'bh1_36_gate_iref',
+		objCoords  = {x = -1462.425, y = 65.7159, z = 53.3868},
+		textCoords = {x = -1462.425, y = 65.7159, z = 53.3868},
+		authorizedJobs = { 'marducaskey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+	
+		{--back gate
+		objName = 'prop_lrggate_02_ld',
+		objCoords  = {x = -1616.231, y = 79.7792, z = 60.7787},
+		textCoords = {x = -1616.231, y = 79.7792, z = 61.7787},
+		authorizedJobs = { 'marducaskey', 'adminkey' },
+		locked = true,
+		distance = 20
+		},
+		{--back small gate
+		objName = 'bh1_36_gate_iref',
+		objCoords  = {x = -1578.371, y = 153.2070, z = 58.9685},
+		textCoords = {x = -1578.371, y = 153.2070, z = 58.9685},
+		authorizedJobs = { 'marducaskey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--wall small gate
+		objName = 'bh1_36_gate_iref',
+		objCoords  = {x = -1441.726, y = 171.9104, z = 56.0649},
+		textCoords = {x = -1441.726, y = 171.9104, z = 56.0649},
+		authorizedJobs = { 'marducaskey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--very back small gate
+		objName = 'bh1_36_gate_iref',
+		objCoords  = {x = -1434.006, y = 235.0130, z = 60.3711},
+		textCoords = {x = -1434.006, y = 235.0130, z = 60.3711},
+		authorizedJobs = { 'marducaskey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
 }
