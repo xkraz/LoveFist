@@ -94,13 +94,13 @@ function ShowLicense(player)
 				end
 			end
 		end
-		
+
 		if ESX.PlayerData.job.name == 'flightschool' then
 			targetName = data.firstname .. ' ' .. data.lastname
 		else
 			targetName = data.name
 		end
-		
+
 		ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'manage_license',
 		{
 			title    = 'Revoke License',
@@ -109,9 +109,9 @@ function ShowLicense(player)
 		}, function(data, menu)
 			ESX.ShowNotification('You revoked the players license', data.current.label, targetName)
 			TriggerServerEvent('esx_policejob:message', GetPlayerServerId(player), 'License revoked', data.current.label)
-			
+
 			TriggerServerEvent('esx_license:removeLicense', GetPlayerServerId(player), data.current.type)
-			
+
 			ESX.SetTimeout(300, function()
 				ShowLicense(player)
 			end)
@@ -241,11 +241,11 @@ Citizen.CreateThread(function(source)
     if dist <= 1.2 and ESX.PlayerData.job.name == 'flightschool' then
 	  flightnoti('Press ~r~E ~w~to spawn a helicopter!')
 	  if IsControlJustReleased(0, 38) then
-	  RequestModel(788747387)
-      while not HasModelLoaded(788747387) do
+	  RequestModel(745926877)
+      while not HasModelLoaded(745926877) do
       Citizen.Wait(0)
       end
-	  CreateVehicle(788747387, -1112.58, -2883.98, 12.95, 334.3, true, true)
+	  CreateVehicle(745926877, -1112.58, -2883.98, 12.95, 334.3, true, true)
       end
 	end
   end
