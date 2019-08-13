@@ -255,6 +255,7 @@ files {
 	'html/img/items/dopebag.png',
 	'html/img/items/villakey.png',
 	'html/img/items/baphometkey.png',
-	'html/img/items/shitpitkey.png'
+	'html/img/items/shitpitkey.png',
+	'html/img/items/sullivansbible.png'
 
 }
