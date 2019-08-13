@@ -216,7 +216,7 @@
 		<Item>
       <modelName>pcpdvig</modelName>
       <txdName>pcpdvig</txdName>
-      <handlingId>VIGERO3</handlingId>
+      <handlingId>VIGERO5</handlingId>
       <gameName>PCPDVIG</gameName>
       <vehicleMakeName>DECLASSE</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
@@ -321,7 +321,7 @@
 		<Item>
       <modelName>policevig3</modelName>
       <txdName>policevig3</txdName>
-      <handlingId>VIGERO3</handlingId>
+      <handlingId>VIGERO5</handlingId>
       <gameName>POLVIG3</gameName>
       <vehicleMakeName>DECLASSE</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
@@ -426,7 +426,7 @@
 		<Item>
       <modelName>policevig32</modelName>
       <txdName>policevig32</txdName>
-      <handlingId>VIGERO3</handlingId>
+      <handlingId>VIGERO5</handlingId>
       <gameName>POLVIG32</gameName>
       <vehicleMakeName>DECLASSE</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
@@ -531,7 +531,7 @@
 		<Item>
       <modelName>lssheriffvig3</modelName>
       <txdName>lssheriffvig3</txdName>
-      <handlingId>VIGERO3</handlingId>
+      <handlingId>VIGERO5</handlingId>
       <gameName>SHRFVIG3</gameName>
       <vehicleMakeName>DECLASSE</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
@@ -636,7 +636,7 @@
 		<Item>
       <modelName>hwayvig3</modelName>
       <txdName>hwayvig3</txdName>
-      <handlingId>VIGERO3</handlingId>
+      <handlingId>VIGERO5</handlingId>
       <gameName>HWAYVIG3</gameName>
       <vehicleMakeName>DECLASSE</vehicleMakeName>
       <expressionDictName>null</expressionDictName>

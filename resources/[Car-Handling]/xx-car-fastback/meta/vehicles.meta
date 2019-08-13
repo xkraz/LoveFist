@@ -65,9 +65,9 @@
       <lodDistances content="float_array">
         55.000000
         90.000000
-        110.000000	
-        130.000000	
-        500.000000	
+        110.000000
+        130.000000
+        500.000000
         500.000000
       </lodDistances>
       <minSeatHeight value="0.79" />
@@ -85,7 +85,7 @@
       <type>VEHICLE_TYPE_CAR</type>
       <plateType>VPT_BACK_PLATES</plateType>
 	  <dashboardType>VDT_DUKES</dashboardType>
-      <vehicleClass>VC_MUSCEL</vehicleClass>
+      <vehicleClass>VC_SPORT_CLASSIC</vehicleClass>
       <wheelType>VWT_HIEND</wheelType>
       <trailers />
       <additionalTrailers />
