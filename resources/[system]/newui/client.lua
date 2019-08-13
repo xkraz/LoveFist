@@ -102,7 +102,7 @@ Citizen.CreateThread(function()
                     if cruiseIsOn then
 											cruiseIsOn = not cruiseIsOn
 										else
-											if GetEntitySpeed(GetVehiclePedIsIn(GetPlayerPed(-1)))*2.236936 >= 25 then
+											if (GetEntitySpeed(GetVehiclePedIsIn(GetPlayerPed(-1)))*2.236936 >= 25) and IsVehicleOnAllWheels(vehicle) then
 	                    	cruiseSpeed = currSpeed
 												cruiseIsOn = not cruiseIsOn
 											end
