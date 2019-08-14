@@ -73,6 +73,9 @@ function setUniform(job, playerPed)
 			if job == 'bullet_wear' then
 				SetPedArmour(playerPed, 100)
 			end
+			if job == 'gilet_wear' then
+				SetPedArmour(playerPed, 50)
+			end
 			if job == 'bppolice_wear' then
 				SetPedArmour(playerPed, 100)
 			end
@@ -81,6 +84,9 @@ function setUniform(job, playerPed)
 			end
 			if job == 'noose_wear_vest' then
 				SetPedArmour(playerPed, 100)
+			end
+			if job == 'undershirtarmor_wear' then
+				SetPedArmour(playerPed, 50)
 			end
 		else
 			if Config.Uniforms[job].female ~= nil then
@@ -111,6 +117,7 @@ function OpenCloakroomMenu()
 		{ label = _U('CID_wear'), value = 'CID_wear' },
 		{ label = _U('bullet_wear'), value = 'bullet_wear' },
 		{ label = _U('bppolice_wear'), value = 'bppolice_wear' },
+		{ label = _U('undershirtarmor_wear'), value = 'undershirtarmor_wear' },
 		{ label = _U('gilet_wear'), value = 'gilet_wear' }
 	}
 
@@ -267,6 +274,7 @@ function OpenCloakroomMenu()
 			data.current.value == 'sheriff_wear' or
 			data.current.value == 'shortsleeve_wear' or
 			data.current.value == 'noose_wear' or
+			data.current.value == 'undershirtarmor_wear' or
 			data.current.value == 'CID_wear' 
 		then
 			setUniform(data.current.value, playerPed)

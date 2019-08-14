@@ -12,6 +12,7 @@ Locales['en'] = {
   ['noose_wear_vest'] = 'Noose vest',
   ['sheriff_wear'] = 'Sheriff Short Sleeve' ,
   ['shortsleeve_wear'] = 'Police Short Sleeve' ,
+  ['undershirtarmor_wear'] = 'Police Under Armor' ,
   ['noose_wear'] = 'Noose' ,
   ['CID_wear'] = 'CID' ,
   ['no_outfit'] = 'there\'s no uniform that fits you!',

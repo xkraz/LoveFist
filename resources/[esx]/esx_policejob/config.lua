@@ -717,6 +717,14 @@ Config.Uniforms = {
 			['bproof_1'] = 19,  ['bproof_2'] = 0,
 		}
 	},
+	undershirtarmor_wear = {
+		male = {
+			['bproof_1'] = 0,  ['bproof_2'] = 0,
+		},
+		female = {
+			['bproof_1'] = 0,  ['bproof_2'] = 0,
+		}
+	},
 	--Sheriff Short Sleeve
 	sheriff_wear = {
 		male = {

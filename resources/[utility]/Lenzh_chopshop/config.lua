@@ -35,7 +35,7 @@ Config.DoorBrokenTrunkTime        = 5000
 Config.DeletingVehicleTime        = 5000
 
 Config.Zones = {
-    Chopshop = {coords = vector3(972.14, -1842.74, 31.28), name = _U('map_blip'), color = 49, sprite = 225, radius = 100.0, Pos = { x = 972.41, y = -1842.09, z = 30.78}, Size  = { x = 5.0, y = 5.0, z = 0.5 }, },
+    Chopshop = {coords = vector3(972.14, -1842.74, 31.28), name = _U('map_blip'), color = 49, sprite = 225, radius = 100.0, Pos = { x = -522.87, y = -1713.99, z = 18.33}, Size  = { x = 5.0, y = 5.0, z = 0.5 }, },
     Shop = {coords = vector3(-55.42, 6392.8, 30.5), name = _U('map_blip_shop'), color = 50, sprite = 120, radius = 25.0, Pos = { x = -55.42, y = 6392.8, z = 30.5}, Size  = { x = 3.0, y = 3.0, z = 1.0 }, },
 }
 
@@ -49,7 +49,7 @@ Config.Items = {
 }
 
 Config.Itemsprice = {
-    battery = 20,
+  battery = 20,
     lowradio = 30,
     highradio = 50,
     stockrim = 50,
