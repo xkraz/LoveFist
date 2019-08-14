@@ -170,9 +170,9 @@ Citizen.CreateThread(function()
 						table.remove(poppyPlants, nearbyID)
 						spawnedPoppy = spawnedPoppy - 1
 
-						Citizen.Wait(1250)
+						Citizen.Wait(1000)
 						ClearPedTasks(playerPed)
-						Citizen.Wait(1500)
+						Citizen.Wait(1000)
 						ESX.Game.DeleteObject(nearbyObject)
 
 						TriggerServerEvent('esx_jk_drugs:pickedUpPoppy')
