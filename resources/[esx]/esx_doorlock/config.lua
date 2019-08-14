@@ -270,7 +270,7 @@ Config.DoorList = {
 		textCoords = {x = 465.5563, y = -991.3135, z = 25.0806},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 1
+		distance = 3
 	},
 	-- Cell 1 back
 	{
@@ -279,7 +279,7 @@ Config.DoorList = {
 		textCoords = {x = 491.14, y = -988.88, z = 25.19},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 4 
+		distance = 2 
 	},               
 					 
 	-- Cell 2 back   
@@ -289,7 +289,7 @@ Config.DoorList = {
 		textCoords = {x = 487.76, y = -988.87, z = 24.91},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 4 
+		distance = 2
 	},               
 					 
 	-- Cell 3 back   
@@ -299,7 +299,7 @@ Config.DoorList = {
 		textCoords = {x = 484.78, y = -988.94, z = 24.91},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 4 
+		distance = 2 
 	},               
 					 
 	--               
@@ -398,38 +398,21 @@ Config.DoorList = {
 	-- Interogation 1
 	{
 		objName = 'v_ilev_ph_gendoor006',
-		objCoords  = {x = 468.73, y = -992.75, z = 25.10},
-		textCoords = {x = 467.96, y = -992.75, z = 25.10},
+		objCoords  = {x = 471.7189, y = -982.0082, z = 25.0870},
+		textCoords = {x = 471.7189, y = -982.0082, z = 25.0870},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = false,
-		distance = 2.5
+		locked = true,
+		distance = 3
 	},
-
-	-- Booking
+	
+	-- Interogation Room 2
 	{
 		objName = 'v_ilev_ph_gendoor006',
-		objCoords  = {x = 469.47, y = -987.25, z = 25.09},
-		textCoords = {x = 470.17, y = -987.25, z = 25.09},
+		objCoords  = {x = 482.3947, y = -982.0067, z = 25.0870},
+		textCoords = {x = 482.3947, y = -982.0067, z = 25.0870},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
-	},
-
-	-- LOCKUP
-	{
-		objName = 'v_ilev_ph_gendoor006',
-		objCoords  = {x = 478.42, y = -987.25, z = 25.09},
-		textCoords = {x = 477.72, y = -987.25, z = 25.09},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
-	},
-
-	-- Interogation ONE WAY ROOM
-	{
-		objName = 'v_ilev_ph_gendoor006',
-		objCoords  = {x = 470.34, y = -993.66, z = 25.10},
-		textCoords = {x = 470.30, y = -994.36, z = 25.10},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
+		locked = true,
+		distance = 3
 	},
 
 	
@@ -776,53 +759,27 @@ Config.DoorList = {
 	distance = 2.5
 },
 
--- 
+ 
 	-- Mission Row Extended
-	--
-
-	-- Interogation 1
+		
+	-- Cell Double Door Back R
 	{
-		objName = 'v_ilev_rc_door2',
-		objCoords  = {x = 443.85, y = -1002.33, z = 4.85},
-		textCoords = {x = 443.85, y = -1002.33, z = 5.5},
+		objName = 'v_ilev_ph_gendoor005',
+		objCoords  = {x = 483.1038, y = -987.6016, z = 25.0601},
+		textCoords = {x = 483.1038, y = -987.6016, z = 25.0601},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
+		locked = true,
+		distance = 3
 	},
 
-	-- Interogation 2
+	-- Cell Double Door Back L
 	{
-		objName = 'v_ilev_rc_door2',
-		objCoords  = {x = 440.33, y = -1005.05, z = 4.85},
-		textCoords = {x = 440.33, y = -1005.05, z = 5.5},
+		objName = 'v_ilev_ph_gendoor005',
+		objCoords  = {x = 483.0986, y = -985.0038, z = 25.0601},
+		textCoords = {x = 483.0986, y = -985.0038, z = 25.0601},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
-	},
-
-	-- Interogation 3
-	{
-		objName = 'v_ilev_rc_door2',
-		objCoords  = {x = 443.63, y = -1007.17, z = 4.85},
-		textCoords = {x = 443.63, y = -1007.17, z = 5.5},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
-	},
-
-	-- Interogation 4
-	{
-		objName = 'v_ilev_rc_door2',
-		objCoords  = {x = 434.52, y = -1004.80, z = 4.85},
-		textCoords = {x = 434.52, y = -1004.80, z = 5.5},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
-	},
-
-	-- Interogation 5
-	{
-		objName = 'v_ilev_rc_door2',
-		objCoords  = {x = 437.23, y = -1003.23, z = 4.85},
-		textCoords = {x = 437.23, y = -1003.23, z = 5.5},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true
+		locked = true,
+		distance = 3
 	},
 
 	-- Evidence
