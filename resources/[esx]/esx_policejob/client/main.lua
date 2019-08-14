@@ -73,6 +73,9 @@ function setUniform(job, playerPed)
 			if job == 'bullet_wear' then
 				SetPedArmour(playerPed, 100)
 			end
+			if job == 'gilet_wear' then
+				SetPedArmour(playerPed, 50)
+			end
 			if job == 'bppolice_wear' then
 				SetPedArmour(playerPed, 100)
 			end
