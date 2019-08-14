@@ -1132,6 +1132,14 @@ Config.DoorList = {
 		locked = true,
 		distance = 2.5,
 },
+    {
+	objName = 'V_ilev_fib_door_maint',
+	objCoords  = {x = 133.7720, y = -768.1588, z = 242.3019},
+	textCoords = {x = 133.7720, y = -768.1588, z = 242.3019},
+	authorizedJobs = {'fib', 'fibkey','adminkey',},
+	locked = true,
+	distance = 3,
+},
 
 --dea
 	{
