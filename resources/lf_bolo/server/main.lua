@@ -7,23 +7,6 @@ Citizen.CreateThread(function()
 	end
 end)
 
-AddEventHandler('es:playerLoaded', function(source)
-	local myID = {
-		steamid = GetPlayerIdentifiers(source)[1],
-		playerid = source
-	}
-
-	TriggerClientEvent('esx_identity:saveID', source, myID)
-	getIdentity(source, function(data)
-		if data.firstname == '' then
-			TriggerClientEvent('esx_identity:identityCheck', source, false)
-			TriggerClientEvent('esx_identity:showRegisterIdentity', source)
-		else
-			TriggerClientEvent('esx_identity:identityCheck', source, true)
-		end
-	end)
-end)
-
 
 function addBolo(data, callback)
 local date = os.date("%Y-%m-%d")
