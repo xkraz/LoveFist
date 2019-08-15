@@ -234,6 +234,14 @@ JAG.Config = {
 			Pos = { x = 261.2, y = 2578.02, z = 43.85 },
 		},
 
+		BoatGarage = {
+			Zone = "Garage",
+			Sprite = 50,
+			Scale = 0.8,
+			Display = 4,
+			Color = 68,
+			Pos = { x = -728.96, y = -1336.12, z = -0.47 },
+		},
 
 	},
 
@@ -601,6 +609,14 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -1029.85, y = -2891.55, z = 12.95 },
+		},
+		BoatGarage = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 218.98,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -728.96, y = -1336.12, z = -0.47 },
 		},
 	},
 }

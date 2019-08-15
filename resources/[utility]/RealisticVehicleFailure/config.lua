@@ -21,14 +21,14 @@ cfg = {
 
 	damageFactorEngine = 10.0,					-- Sane values are 1 to 100. Higher values means more damage to vehicle. A good starting point is 10
 	damageFactorBody = 10.0,					-- Sane values are 1 to 100. Higher values means more damage to vehicle. A good starting point is 10
-	damageFactorPetrolTank = 120.0,				-- Sane values are 1 to 200. Higher values means more damage to vehicle. A good starting point is 64
+	damageFactorPetrolTank = 30.0,				-- Sane values are 1 to 200. Higher values means more damage to vehicle. A good starting point is 64
 	engineDamageExponent = 0.6,					-- How much should the handling file engine damage setting be compressed toward 1.0. (Make cars more similar). A value of 1=no change. Lower values will compress more, values above 1 it will expand. Dont set to zero or negative.
 	weaponsDamageMultiplier = 2.0,				-- How much damage should the vehicle get from weapons fire. Range 0.0 to 10.0, where 0.0 is no damage and 10.0 is 10x damage. -1 = don't touch
 	degradingHealthSpeedFactor = 1.0,			-- Speed of slowly degrading health, but not failure. Value of 10 means that it will take about 0.25 second per health point, so degradation from 800 to 305 will take about 2 minutes of clean driving. Higher values means faster degradation
 	cascadingFailureSpeedFactor = 6.0,			-- Sane values are 1 to 100. When vehicle health drops below a certain point, cascading failure sets in, and the health drops rapidly until the vehicle dies. Higher values means faster failure. A good starting point is 8
 
 	degradingFailureThreshold = 540.0,			-- Below this value, slow health degradation will set in
-	cascadingFailureThreshold = 400.0,			-- Below this value, health cascading failure will set in
+	cascadingFailureThreshold = 300.0,			-- Below this value, health cascading failure will set in
 	engineSafeGuard = 100.0,					-- Final failure value. Set it too high, and the vehicle won't smoke when disabled. Set too low, and the car will catch fire from a single bullet to the engine. At health 100 a typical car can take 3-4 bullets to the engine before catching fire.
 
 	torqueMultiplierEnabled = true,				-- Decrease engine torque as engine gets more and more damaged
@@ -157,6 +157,7 @@ cfg = {
 
 repairCfg = {
 	mechanics = {
+	--[[
 		{name="Mechanic", id=446, r=25.0, x=-337.0,  y=-135.0,  z=39.0},	-- LSC Burton
 		{name="Mechanic", id=446, r=25.0, x=-1155.0, y=-2007.0, z=13.0},	-- LSC by airport
 		{name="Mechanic", id=446, r=25.0, x=734.0,   y=-1085.0, z=22.0},	-- LSC La Mesa
@@ -181,6 +182,7 @@ repairCfg = {
 		{name="Mechanic", id=446, r=25.0, x=437.0,   y=3568.0,  z=38.0},		-- Auto Shop, Grand Senora Desert
 		{name="Mechanic", id=446, r=25.0, x=-1194.58,   y=-1735.25,  z=4.45},		-- Marducas Brothers
 		{name="Mechanic", id=446, r=25.0, x=-103.0457,   y=-59.1305,  z=56.42}		-- Fruit Gang
+		]]
 	},
 
 	fixMessages = {

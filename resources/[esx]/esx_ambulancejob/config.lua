@@ -6,7 +6,7 @@ Config.Marker                     = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 1
 
 Config.ReviveReward               = 10  -- revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- enable anti-combat logging?
-Config.LoadIpl                    = true -- disable if you're using fivem-ipl or other IPL loaders
+Config.LoadIpl                    = false -- disable if you're using fivem-ipl or other IPL loaders
 
 Config.Locale = 'en'
 
@@ -18,7 +18,7 @@ Config.BleedoutTimer              = 60 * minute -- Time til the player bleeds ou
 
 Config.EnablePlayerManagement     = true
 
-Config.RemoveWeaponsAfterRPDeath  = false
+Config.RemoveWeaponsAfterRPDeath  = true
 Config.RemoveCashAfterRPDeath     = false	
 Config.RemoveItemsAfterRPDeath    = false
 

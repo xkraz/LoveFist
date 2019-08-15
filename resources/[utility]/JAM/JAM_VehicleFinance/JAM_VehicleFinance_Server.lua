@@ -97,7 +97,7 @@ ESX.RegisterServerCallback('JAM_VehicleFinance:RepoVehicleEnd', function(source,
 		local val = math.min(carCost/15, 3000)
 		xPlayer.addMoney(val)
 		--MySQL.Sync.execute('UPDATE addon_account_data SET money=@money WHERE account_name=@account_name',{['@money'] = datMon + carCost,['@account_name'] = 'society_cardealer'})
-		--MySQL.Async.execute('DELETE FROM owned_vehicles WHERE plate = @plate', {['@plate'] = vehicle.plate})
+		MySQL.Async.execute('DELETE FROM owned_vehicles WHERE plate = @plate', {['@plate'] = vehicle.plate})
 		cb(canDel, val)
 	else cb(false)
 	end
