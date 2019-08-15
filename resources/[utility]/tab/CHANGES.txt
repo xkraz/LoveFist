@@ -1,9 +1,0 @@
-ui.html
-	line 79 -- changed width from 1025 to 1500
-	line 82 -- pushed it down from 20px to 100px
-client.lua
-	line 58 
-
-19/06/01
-changes laws.html to the version Vaugh put out.
-

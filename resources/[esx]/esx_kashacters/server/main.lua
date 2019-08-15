@@ -18,6 +18,8 @@ local IdentifierTables = {
 	{table = "society_moneywash", column = "identifier"},
 	{table = "user_inventory", column = "identifier"},
 	{table = "user_licenses", column = "owner"},
+	{table = "criminal_records", column = "identifier"},
+	{table = "medical_records", column = "identifier"},
 
 }
 

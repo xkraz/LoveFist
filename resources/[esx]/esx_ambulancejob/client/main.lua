@@ -399,7 +399,7 @@ end)
 -- Load unloaded IPLs
 if Config.LoadIpl then
 	Citizen.CreateThread(function()
-		RequestIpl('Coroner_Int_on') -- Morgue
+		--RequestIpl('Coroner_Int_on') -- Morgue
 	end)
 end
 
