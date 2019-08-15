@@ -43,19 +43,24 @@ Config.Org2Stations = {
 
 Config.AuthorizedWeapons = {
 	recruit = {
-      {},
+      { weapon = 'WEAPON_GUSENBERG', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+      { weapon = 'WEAPON_HATCHET', price = 1000 },
 	},
 	
 	bossthree = {
-      {},
+      { weapon = 'WEAPON_GUSENBERG', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+      { weapon = 'WEAPON_HATCHET', price = 1000 },
 	},
 
 	bosstwo = {
-      {},
+      { weapon = 'WEAPON_GUSENBERG', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+      { weapon = 'WEAPON_HATCHET', price = 1000 },
 
 	},
 
 	boss = {
-      {},
+      { weapon = 'WEAPON_GUSENBERG', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+      { weapon = 'WEAPON_HATCHET', price = 1000 },
+	} },
 	} 
 }
