@@ -2602,7 +2602,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(10)
         if spikes_deployed then
-            for peeps = 0, 64 do
+            for peeps = 0, 255 do
                 if NetworkIsPlayerActive(GetPlayerFromServerId(peeps)) then
                     
                     local currentVeh = GetVehiclePedIsIn(GetPlayerPed(GetPlayerFromServerId(peeps)), false)
