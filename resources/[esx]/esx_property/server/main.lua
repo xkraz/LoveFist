@@ -246,7 +246,7 @@ AddEventHandler('esx_property:getItem', function(owner, type, item, count)
 		TriggerEvent('esx_addonaccount:getAccount', 'property_' .. item, xPlayerOwner.identifier, function(account)
 			local roomAccountMoney = account.money
 
-			if roomAccountMoney >= count then
+			if roomAccountMoney >= count and roomAccountMoney > 0 then
 				if count > roomAccountMoney then
 					account.removeMoney(roomAccountMoney)
 					xPlayer.addAccountMoney(item, roomAccountMoney)
