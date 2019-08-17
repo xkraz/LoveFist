@@ -6,6 +6,7 @@ Locales['pl'] = {
   ['gilet_wear'] = 'kamizelka odblaskowa',
   ['bullet_wear'] = 'kamizelka kuloodporna',
   ['no_outfit'] = 'brak ubrania',
+  ['test_wear_vest'] = 'test vest',
   ['open_cloackroom'] = 'naciśnij ~INPUT_CONTEXT~ aby zmienić ~y~ubranie~s~.',
   -- Armory
   ['remove_object'] = 'weź przedmiot',

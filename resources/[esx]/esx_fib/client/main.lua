@@ -62,6 +62,9 @@ function setUniform(job, playerPed)
 			if job == 'bullet_wear' then
 				SetPedArmour(playerPed, 100)
 			end
+			if job == 'fiblack_wear_vest' then
+				SetPedArmour(playerPed, 100)
+			end
 		else
 			if Config.Uniforms[job].female ~= nil then
 				TriggerEvent('skinchanger:loadClothes', skin, Config.Uniforms[job].female)
@@ -84,7 +87,8 @@ function OpenCloakroomMenu()
 	local elements = {
 		{ label = _U('citizen_wear'), value = 'citizen_wear' },
 		{ label = _U('bullet_wear'), value = 'bullet_wear' },
-		{ label = _U('gilet_wear'), value = 'gilet_wear' }
+		{ label = _U('gilet_wear'), value = 'gilet_wear' },
+		{ label = _U('fiblack_wear_vest'), value = 'fiblack_wear_vest' }
 	}
 
 	if grade == 'recruit' then
@@ -233,6 +237,7 @@ function OpenCloakroomMenu()
 			data.current.value == 'chef_wear' or
 			data.current.value == 'boss_wear' or
 			data.current.value == 'bullet_wear' or
+			data.current.value == 'fiblack_wear_vest' or
 			data.current.value == 'gilet_wear'
 		then
 			setUniform(data.current.value, playerPed)

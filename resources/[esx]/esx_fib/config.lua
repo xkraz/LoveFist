@@ -812,6 +812,14 @@ Config.Uniforms = {
 			['bproof_1'] = 13,  ['bproof_2'] = 1
 		}
 	},
+	fiblack_wear_vest = {
+		male = {
+			['bproof_1'] = 7,  ['bproof_2'] = 4
+		},
+		female = {
+			['bproof_1'] = 11,  ['bproof_2'] = 3
+		}
+	},
 	gilet_wear = {
 		male = {
 			['tshirt_1'] = 59,  ['tshirt_2'] = 1

@@ -7,6 +7,7 @@ Locales['en'] = {
   ['fib_wear'] = 'fib Outfit',
   ['gilet_wear'] = 'orange reflective jacket',
   ['bullet_wear'] = 'bulletproof vest',
+  ['fiblack_wear_vest'] = 'fiblack vest',
   ['no_outfit'] = 'there\'s no uniform that fits you!',
   ['open_cloackroom'] = 'press ~INPUT_CONTEXT~ to change ~y~clothes~s~.',
   -- Armory
