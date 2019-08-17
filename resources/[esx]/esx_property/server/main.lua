@@ -219,15 +219,22 @@ AddEventHandler('esx_property:getItem', function(owner, type, item, count)
 			local inventoryItem = inventory.getItem(item)
 
 			-- is there enough in the property?
-			if count > 0 and inventoryItem.count >= count then
-			
+			if count > 0 and inventoryItem.count >= 1 then
+
 				-- can the player carry the said amount of x item?
-				if sourceItem.limit ~= -1 and (sourceItem.count + count) > sourceItem.limit then
+				if sourceItem.limit ~= -1 and (sourceItem.count + count) > sourceItem.limit  and inventoryItem.count > sourceItem.limit then
 					TriggerClientEvent('esx:showNotification', _source, _U('player_cannot_hold'))
 				else
-					inventory.removeItem(item, count)
-					xPlayer.addInventoryItem(item, count)
-					TriggerClientEvent('esx:showNotification', _source, _U('have_withdrawn', count, inventoryItem.label))
+					if count > inventoryItem.count then
+						local tmpAmnt = inventoryItem.count
+						inventory.removeItem(item, tmpAmnt)
+						xPlayer.addInventoryItem(item, tmpAmnt)
+						TriggerClientEvent('esx:showNotification', _source, _U('have_withdrawn', tmpAmnt, inventoryItem.label))
+					else
+						inventory.removeItem(item, count)
+						xPlayer.addInventoryItem(item, count)
+						TriggerClientEvent('esx:showNotification', _source, _U('have_withdrawn', count, inventoryItem.label))
+					end
 				end
 			else
 				TriggerClientEvent('esx:showNotification', _source, _U('not_enough_in_property'))
@@ -240,8 +247,13 @@ AddEventHandler('esx_property:getItem', function(owner, type, item, count)
 			local roomAccountMoney = account.money
 
 			if roomAccountMoney >= count then
-				account.removeMoney(count)
-				xPlayer.addAccountMoney(item, count)
+				if count > roomAccountMoney then
+					account.removeMoney(roomAccountMoney)
+					xPlayer.addAccountMoney(item, roomAccountMoney)
+				else
+					account.removeMoney(count)
+					xPlayer.addAccountMoney(item, count)
+				end
 			else
 				TriggerClientEvent('esx:showNotification', _source, _U('amount_invalid'))
 			end
@@ -282,12 +294,20 @@ AddEventHandler('esx_property:putItem', function(owner, type, item, count)
 
 		local playerItemCount = xPlayer.getInventoryItem(item).count
 
-		if playerItemCount >= count and count > 0 then
-			TriggerEvent('esx_addoninventory:getInventory', 'property', xPlayerOwner.identifier, function(inventory)
-				xPlayer.removeInventoryItem(item, count)
-				inventory.addItem(item, count)
-				TriggerClientEvent('esx:showNotification', _source, _U('have_deposited', count, inventory.getItem(item).label))
-			end)
+		if playerItemCount >= 1 and count > 0 then
+			if count > playerItemCount then
+				TriggerEvent('esx_addoninventory:getInventory', 'property', xPlayerOwner.identifier, function(inventory)
+					xPlayer.removeInventoryItem(item, playerItemCount)
+					inventory.addItem(item, playerItemCount)
+					TriggerClientEvent('esx:showNotification', _source, _U('have_deposited', playerItemCount, inventory.getItem(item).label))
+				end)
+			else
+				TriggerEvent('esx_addoninventory:getInventory', 'property', xPlayerOwner.identifier, function(inventory)
+					xPlayer.removeInventoryItem(item, count)
+					inventory.addItem(item, count)
+					TriggerClientEvent('esx:showNotification', _source, _U('have_deposited', count, inventory.getItem(item).label))
+				end)
+			end
 		else
 			TriggerClientEvent('esx:showNotification', _source, _U('invalid_quantity'))
 		end
@@ -296,12 +316,20 @@ AddEventHandler('esx_property:putItem', function(owner, type, item, count)
 
 		local playerAccountMoney = xPlayer.getAccount(item).money
 
-		if playerAccountMoney >= count and count > 0 then
-			xPlayer.removeAccountMoney(item, count)
+		if playerAccountMoney >= 1 and count > 0 then
+			if count > playerAccountMoney then
+				xPlayer.removeAccountMoney(item, playerAccountMoney)
 
-			TriggerEvent('esx_addonaccount:getAccount', 'property_' .. item, xPlayerOwner.identifier, function(account)
-				account.addMoney(count)
-			end)
+				TriggerEvent('esx_addonaccount:getAccount', 'property_' .. item, xPlayerOwner.identifier, function(account)
+					account.addMoney(playerAccountMoney)
+				end)
+			else
+				xPlayer.removeAccountMoney(item, count)
+
+				TriggerEvent('esx_addonaccount:getAccount', 'property_' .. item, xPlayerOwner.identifier, function(account)
+					account.addMoney(count)
+				end)
+			end
 		else
 			TriggerClientEvent('esx:showNotification', _source, _U('amount_invalid'))
 		end
