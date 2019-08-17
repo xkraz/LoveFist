@@ -7,10 +7,11 @@ local CurrentActionMsg          = ''
 local CurrentActionData         = {}
 local isDead                    = false
 local CurrentTask               = {}
-local menuOpen 				    = false
-local wasOpen 				    = false
+local menuOpen 				          = false
+local wasOpen 				          = false
 local pedIsTryingToChopVehicle  = false
 local ChoppingInProgress        = false
+local HasChoped                 = false
 
 
 
@@ -112,14 +113,14 @@ function ChopVehicle()
     if seats ~= 0 then
         TriggerEvent('chat:addMessage', { args = { '[^1Chopshop^0]: Cannot chop with passengers' } })
     elseif
-        GetGameTimer() - lastTested > Config.CooldownMinutes * 60000 then
+        GetGameTimer() - lastTested > Config.CooldownMinutes * 60000 or (HasChoped == false) then
         lastTested = GetGameTimer()
         ESX.TriggerServerCallback('Lenzh_chopshop:anycops', function(anycops)
             if anycops >= Config.CopsRequired then
                 if Config.CallCops then
-                    local randomReport = math.random(1, Config.CallCopsPercent)
+                    local randomReport = math.random(1, 100)
 
-                    if randomReport == Config.CallCopsPercent then
+                    if randomReport <= Config.CallCopsPercent then
                         TriggerServerEvent('chopNotify')
                     end
                 end
@@ -129,7 +130,8 @@ function ChopVehicle()
                 VehiclePartsRemoval()
                 if not HasAlreadyEnteredMarker then
                     HasAlreadyEnteredMarker =  true
-                    ChoppingInProgress        = false
+                    ChoppingInProgress      = false
+                    HasChoped               = true
                     exports.pNotify:SendNotification({text = "You Left The Zone. No Rewards For You", type = "error", timeout = 1000, layout = "centerRight", queue = "right", killer = true, animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}})
                     SetVehicleAlarmTimeLeft(vehicle, 60000)
                 end
@@ -242,7 +244,6 @@ end
 function DeleteVehicle()
     if IsDriver() then
         local playerPed = PlayerPedId()
-        local coords    = GetEntityCoords(playerPed)
         if IsPedInAnyVehicle(playerPed,  false) then
             local vehicle = GetVehiclePedIsIn(playerPed, false)
             ESX.Game.DeleteVehicle(vehicle)
@@ -394,10 +395,15 @@ GetPlayerName()
 
 
 RegisterNetEvent('outlawChopNotify')
-AddEventHandler('outlawChopNotify', function(alert)
+AddEventHandler('outlawChopNotify', function()
     if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
         ESX.ShowAdvancedNotification(_U('911'), _U('chop'), _U('call'), 'CHAR_CALL911', 7)
-        PlaySoundFrontend(-1, "Event_Start_Text", "GTAO_FM_Events_Soundset", 0)
+        TriggerServerEvent('esx_phone:send', "police", "Potential chop shop activity in progress!", {
+          x = Config.ChopShop.x,
+          y = Config.ChopShop.y,
+          z = Config.ChopShop.z
+        })
+        --PlaySoundFrontend(-1, "Event_Start_Text", "GTAO_FM_Events_Soundset", 0)
     end
 end)
 
@@ -423,24 +429,6 @@ Citizen.CreateThread(function()
     end
 end)
 
-Citizen.CreateThread( function()
-    while true do
-        Wait(100)
-        local plyPos = GetEntityCoords(PlayerPedId(),  true)
-        if pedIsTryingToChopVehicle then
-            DecorSetInt(PlayerPedId(), "IsOutlaw", 2)
-            if PlayerData.job ~= nil and PlayerData.job.name == 'police' and showcopsmisbehave == false then
-            elseif PlayerData.job ~= nil and PlayerData.job.name == 'police' and showcopsmisbehave then
-                TriggerServerEvent('ChoppingInProgressPos', plyPos.x, plyPos.y, plyPos.z)
-                TriggerServerEvent('ChopInProgress')
-                Wait(3000)
-                pedIsTryingToChopVehicle = false
-            end
-        end
-    end
-end)
-
-
 RegisterNetEvent('Choplocation')
 AddEventHandler('Choplocation', function(tx, ty, tz)
     if PlayerData.job.name == 'police' then
@@ -464,5 +452,6 @@ end)
 
 RegisterNetEvent('chopEnable')
 AddEventHandler('chopEnable', function()
-    pedIsTryingToChopVehicle = true
+    TriggerServerEvent('ChoppingInProgressPos', Config.ChopShop.x, Config.ChopShop.y, Config.ChopShop.z)
+    TriggerServerEvent('ChopInProgress')
 end)

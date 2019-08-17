@@ -5,12 +5,6 @@ ESX = nil
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
-if GetCurrentResourceName() == 'Lenzh_chopshop' then
-
-  print("\n###############################")
-  print("\n".. GetCurrentResourceName() .. " Loaded ")
-  print("\n###############################")
-
     ESX.RegisterServerCallback('Lenzh_chopshop:anycops',function(source, cb)
         local anycops = 0
         local playerList = GetPlayers()
@@ -51,7 +45,7 @@ if GetCurrentResourceName() == 'Lenzh_chopshop' then
 
     RegisterServerEvent('ChopInProgress')
     AddEventHandler('ChopInProgress', function()
-        TriggerClientEvent("outlawChopNotify", -1, "")
+        TriggerClientEvent("outlawChopNotify", -1)
     end)
 
     RegisterServerEvent('ChoppingInProgressPos')
@@ -84,9 +78,3 @@ if GetCurrentResourceName() == 'Lenzh_chopshop' then
 
         TriggerClientEvent('esx:showNotification', source, _U('sold', amount, xItem.label, ESX.Math.GroupDigits(price)))
     end)
-else
-    print("\n###############################")
-    print("\n DO NOT RENAME MY CHOPSHOP FUCKERS... Change it ".. GetCurrentResourceName() .. " should be:\n".. 'Lenzh_chopshop')
-    print("\n###############################")
-
-end
