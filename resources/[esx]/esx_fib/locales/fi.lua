@@ -5,7 +5,7 @@ Locales['fi'] = {
   ['police_wear'] = 'poliisiasu',
   ['gilet_wear'] = 'huomioliivi',
   ['bullet_wear'] = 'luotiliivi',
-  ['test_wear_vest'] = 'test vest',
+  ['Fiblack_wear_vest'] = 'Fiblack vest',
   ['no_outfit'] = 'täällä ei ole sinulle sopivaa asua',
   ['open_cloackroom'] = 'paina ~INPUT_CONTEXT~ vaihtaaksesi ~y~vaatteita~s~.',
   -- Armory

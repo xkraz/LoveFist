@@ -812,7 +812,7 @@ Config.Uniforms = {
 			['bproof_1'] = 13,  ['bproof_2'] = 1
 		}
 	},
-	fiblack_wear_vest = {
+	Fiblack_wear_vest = {
 		male = {
 			['bproof_1'] = 7,  ['bproof_2'] = 4
 		},
