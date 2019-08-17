@@ -20,6 +20,7 @@ Citizen.CreateThread( function()
 
                     if ( crouched == true ) then
                         ResetPedMovementClipset( ped, 0 )
+                        TriggerEvent('bonefive:client:ResetWalk')
                         crouched = false
                     elseif ( crouched == false ) then
                         SetPedMovementClipset( ped, "move_ped_crouched", 0.25 )

@@ -331,10 +331,16 @@ function ProcessRunStuff(ped)
     else
         SetPedMoveRateOverride(ped, 1.0)
         if not _crouched then
+          if not (IsPedMale(PlayerPedId())) then
+            ESX.Streaming.RequestAnimSet(_lib2, function()
+          		SetPedMovementClipset(PlayerPedId(), _walkStyle2, true)
+          	end)
+        	else
+            ESX.Streaming.RequestAnimSet(_lib, function()
+          		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
+          	end)
+          end
 
-          ESX.Streaming.RequestAnimSet(_lib, function()
-        		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
-        	end)
         end
         if DecorGetInt(ped, 'player_thirst') > 25 or onPainKiller > 0 then
             SetPlayerSprint(PlayerId(), true)
@@ -499,7 +505,7 @@ end)
 RegisterNetEvent('bonefive:client:WalkChange')
 AddEventHandler('bonefive:client:WalkChange', function(lib,walkStyle)
 
-    if pedType = 5 then
+	  if not (IsPedMale(PlayerPedId())) then
       _lib2 = lib
       _walkStyle2 = walkStyle
   	else
@@ -507,7 +513,7 @@ AddEventHandler('bonefive:client:WalkChange', function(lib,walkStyle)
       _walkStyle = walkStyle
     end
 
-  TriggerEvent('chatMessage', '^5BoneFive', {255,255,255}, 'Saved walk style.')
+  TriggerEvent('esx:showNotification', '~g~Saved walk style.')
 
 end)
 
@@ -531,6 +537,21 @@ AddEventHandler('bonefive:client:FieldTreatLimbs', function()
     end
 end)
 
+RegisterNetEvent('bonefive:client:ResetWalk')
+AddEventHandler('bonefive:client:ResetWalk', function()
+
+	if not (IsPedMale(PlayerPedId())) then
+	ESX.Streaming.RequestAnimSet(_lib2, function()
+  		SetPedMovementClipset(PlayerPedId(), _walkStyle2, true)
+    end)
+	else
+	ESX.Streaming.RequestAnimSet(_lib, function()
+		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
+  	end)
+  end
+end)
+
+
 RegisterNetEvent('bonefive:client:ResetLimbs')
 AddEventHandler('bonefive:client:ResetLimbs', function()
     for k, v in pairs(BodyParts) do
@@ -539,15 +560,16 @@ AddEventHandler('bonefive:client:ResetLimbs', function()
     end
 
 
-	if pedType = 5 then
+	if not (IsPedMale(PlayerPedId())) then
 	ESX.Streaming.RequestAnimSet(_lib2, function()
   		SetPedMovementClipset(PlayerPedId(), _walkStyle2, true)
+    end)
 	else
 	ESX.Streaming.RequestAnimSet(_lib, function()
 		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
   	end)
-
-    injured = {}
+  end
+  injured = {}
 end)
 
 RegisterNetEvent('bonefive:client:FieldTreatBleed')
