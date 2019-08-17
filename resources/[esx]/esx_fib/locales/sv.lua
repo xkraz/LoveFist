@@ -5,7 +5,7 @@ Locales['sv'] = {
   ['police_wear'] = 'polisuniform',
   ['gilet_wear'] = 'reflektiv väst',
   ['bullet_wear'] = 'skottsäker väst',
-  ['test_wear_vest'] = 'test vest',
+  ['Fiblack_wear_vest'] = 'Fiblack vest',
   ['no_outfit'] = 'det finns ingen uniform som passar dig!',
   ['open_cloackroom'] = 'tryck ~INPUT_CONTEXT~ för att välja ~y~kläder~s~.',
   -- Armory
