@@ -62,8 +62,8 @@ local color = { r = 220, g = 220, b = 220, alpha = 255 } -- Color of the text
 local font = 0 -- Font of the text
 local time = 7000 -- Duration of the display of the text : 1000ms = 1sec
 local background = {
-    enable = false,
-    color = { r = 35, g = 35, b = 35, alpha = 200 },
+    enable = true,
+    color = { r = 35, g = 35, b = 35, alpha = 150 },
 }
 local chatMessage = true
 local dropShadow = false
@@ -83,7 +83,7 @@ end)
 
 RegisterNetEvent('3dme:triggerDisplay')
 AddEventHandler('3dme:triggerDisplay', function(text, source)
-    local offset = 1 + (nbrDisplaying*0.14)
+    local offset = (nbrDisplaying*0.14)
     Display(GetPlayerFromServerId(source), text, offset)
 end)
 
@@ -110,7 +110,6 @@ function Display(mePlayer, text, offset)
     end)
     Citizen.CreateThread(function()
         nbrDisplaying = nbrDisplaying + 1
-        print(nbrDisplaying)
         while displaying do
             Wait(0)
             local coordsMe = GetEntityCoords(GetPlayerPed(mePlayer), false)
@@ -155,20 +154,20 @@ function DrawText3D(x,y,z, text)
         EndTextCommandDisplayText(_x, _y)
 
         if background.enable then
-            DrawRect(_x, _y+scale/45, width, height, background.color.r, background.color.g, background.color.b , background.color.alpha)
+            DrawRect(_x, _y+scale/45, width+0.003, height + 0.005, background.color.r, background.color.g, background.color.b , background.color.alpha)
         end
     end
 end
 
 RegisterCommand('rolld6', function(source, args)
-    num1 = math.random(1,6)
-    local text = 'Rolled: ' .. num1 .. '/6' -- edit here if you want to change the language : EN: the person / FR: la personne
+    local text = 'Rolled: ' .. math.random(1,6) .. '/6' -- edit here if you want to change the language : EN: the person / FR: la personne
+    rolldice()
     TriggerServerEvent('3dme:shareDisplay', text)
 end)
 
 RegisterCommand('rolld20', function(source, args)
-    num1 = math.random(1,20)
-    local text = 'Rolled: ' .. num1 .. '/20' -- edit here if you want to change the language : EN: the person / FR: la personne
+    local text = 'Rolled: ' .. math.random(1,20) .. '/20' -- edit here if you want to change the language : EN: the person / FR: la personne
+    rolldice()
     TriggerServerEvent('3dme:shareDisplay', text)
 end)
 
@@ -185,7 +184,12 @@ RegisterCommand('roll', function(source, args)
     local numDice = tonumber(args[1])
 
     if numDice == nil then
-      TriggerEvent('esx:showNotification', '/Roll requires a "number" of dice!')
+      TriggerEvent('esx:showNotification', '~r~/Roll requires a "number" of dice!')
+      return -1
+    end
+
+    if numDice > 25 then
+      TriggerEvent('esx:showNotification', '~r~Cannot roll more then 25 dice!')
       return -1
     end
 
@@ -204,5 +208,20 @@ RegisterCommand('roll', function(source, args)
         print(i .. ', '..numDice)
     end
   end
-    TriggerServerEvent('3dme:shareDisplay', text)
+  rolldice()
+  TriggerServerEvent('3dme:shareDisplay', text)
 end)
+
+function rolldice()
+  loadAnimDict("anim@mp_player_intcelebrationmale@wank")
+  TaskPlayAnim(GetPlayerPed(-1), "anim@mp_player_intcelebrationmale@wank", "wank", 8.0, 1.0, -1, 49, 0, 0, 0, 0)
+  Citizen.Wait(1400)
+  ClearPedTasks(GetPlayerPed(-1))
+end
+
+function loadAnimDict(dict)
+  while not HasAnimDictLoaded(dict) do
+   RequestAnimDict( dict )
+   Citizen.Wait(5)
+  end
+end
