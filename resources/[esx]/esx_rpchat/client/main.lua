@@ -58,7 +58,7 @@ AddEventHandler('esx-qalle-chat:me', function(id, name, message)
 end)--]]
 
 -- Settings
-local color = { r = 220, g = 220, b = 220, alpha = 255 } -- Color of the text 
+local color = { r = 220, g = 220, b = 220, alpha = 255 } -- Color of the text
 local font = 0 -- Font of the text
 local time = 7000 -- Duration of the display of the text : 1000ms = 1sec
 local background = {
@@ -128,7 +128,7 @@ function DrawText3D(x,y,z, text)
     local onScreen,_x,_y = World3dToScreen2d(x,y,z)
     local px,py,pz = table.unpack(GetGameplayCamCoord())
     local dist = GetDistanceBetweenCoords(px,py,pz, x,y,z, 1)
- 
+
     local scale = ((1/dist)*2)*(1/GetGameplayCamFov())*100
 
     if onScreen then
@@ -160,15 +160,49 @@ function DrawText3D(x,y,z, text)
     end
 end
 
-RegisterCommand('roll', function(source, args)
+RegisterCommand('rolld6', function(source, args)
     num1 = math.random(1,6)
-    num2 = math.random(1,6)
-    num3 = math.random(1,6)
-    local text = num1 -- edit here if you want to change the language : EN: the person / FR: la personne
-    for i = 1,#args do
-        text = text .. 'You rolled 3 D6s' .. args[i]
+    local text = 'Rolled: ' .. num1 .. '/6' -- edit here if you want to change the language : EN: the person / FR: la personne
+    TriggerServerEvent('3dme:shareDisplay', text)
+end)
+
+RegisterCommand('rolld20', function(source, args)
+    num1 = math.random(1,20)
+    local text = 'Rolled: ' .. num1 .. '/20' -- edit here if you want to change the language : EN: the person / FR: la personne
+    TriggerServerEvent('3dme:shareDisplay', text)
+end)
+
+RegisterCommand('roll', function(source, args)
+  local text
+  if args[1] == nil then
+    print('DEFUALT')
+    local num1 = math.random(1,6)
+    local num2 = math.random(1,6)
+    local num3 = math.random(1,6)
+     text = 'Rolled: ' .. num1 .. ', ' .. num2 .. ', ' .. num3 .. ' (' .. num1+num2+num3 ..')' -- edit here if you want to change the language : EN: the person / FR: la personne
+  else
+
+    local numDice = tonumber(args[1])
+
+    if numDice == nil then
+      TriggerEvent('esx:showNotification', '/Roll requires a "number" of dice!')
+      return -1
     end
-    text = text ..num2
-    text = text ..num3
+
+    print(numDice .. ' dice')
+    local diceRolls = {}
+    local totalDice = 0
+    text = 'Rolled ' .. numDice .. ' dice: '
+    for i = 0, numDice - 1 do
+        diceRolls[i] = math.random(1,6)
+        totalDice = totalDice + diceRolls[i]
+        if not(i == numDice - 1) then
+          text = text .. diceRolls[i] .. ', '
+        else
+          text = text .. diceRolls[i] .. ' (' .. totalDice .. ')'
+        end
+        print(i .. ', '..numDice)
+    end
+  end
     TriggerServerEvent('3dme:shareDisplay', text)
 end)
