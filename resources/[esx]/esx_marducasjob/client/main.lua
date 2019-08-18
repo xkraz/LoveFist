@@ -763,6 +763,11 @@ RegisterNetEvent('esx_marducasjob:onCarokit')
 AddEventHandler('esx_marducasjob:onCarokit', function()
 	local playerPed = PlayerPedId()
 	local coords    = GetEntityCoords(playerPed)
+	local nums = {
+		eng = -1,
+		body = 1000,
+		tank = -1
+	}
 
 	if IsAnyVehicleNearPoint(coords.x, coords.y, coords.z, 5.0) then
 		local vehicle = nil
@@ -776,9 +781,8 @@ AddEventHandler('esx_marducasjob:onCarokit', function()
 		if DoesEntityExist(vehicle) then
 			TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_HAMMERING', 0, true)
 			Citizen.CreateThread(function()
-				Citizen.Wait(10000)
-				SetVehicleDeformationFixed(vehicle)
-				SetVehicleBodyHealth(vehicle, 1000.0)
+				Citizen.Wait(Config.NonMechTime)
+				TriggerServerEvent('esx_marducasjob:repaircar',vehicle,nums)
 				ClearPedTasksImmediately(playerPed)
 				ESX.ShowNotification(_U('body_repaired'))
 			end)
@@ -792,11 +796,43 @@ function mathClamp(val, lower, upper)
     return math.max(lower, math.min(upper, val))
 end
 
+RegisterNetEvent('esx_marducasjob:repaircar')
+AddEventHandler('esx_marducasjob:repaircar', function(car, specs)
+
+	if specs.eng ~= -1 then
+		SetVehicleEngineHealth(car, specs.eng)
+		SetVehicleUndriveable(car, false)
+	end
+
+	if specs.body ~= -1 then
+		SetVehicleDeformationFixed(car)
+		SetVehicleBodyHealth(car, 1000.0)
+	end
+
+	if specs.tank ~= -1 then
+		SetVehiclePetrolTankHealth(car, specs.tank)
+	end
+
+end)
+
+RegisterNetEvent('esx_marducasjob:mechrepair')
+AddEventHandler('esx_marducasjob:mechrepair', function(car)
+
+	SetVehicleFixed(car)
+	SetVehicleDeformationFixed(car)
+	SetVehicleUndriveable(car, false)
+
+end)
+
 RegisterNetEvent('esx_marducasjob:onFixkit')
 AddEventHandler('esx_marducasjob:onFixkit', function()
 	local playerPed = PlayerPedId()
 	local coords    = GetEntityCoords(playerPed)
-
+	local nums = {
+		eng = 1000.0,
+		body = -1,
+		tank = 1000.0
+	}
 	if IsAnyVehicleNearPoint(coords.x, coords.y, coords.z, 5.0) then
 		local vehicle = nil
 
@@ -812,20 +848,17 @@ AddEventHandler('esx_marducasjob:onFixkit', function()
 
 				if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) or (Config.IsMechanicJobOnly == false) then
 
-					Citizen.Wait(10000)
-
-					SetVehicleFixed(vehicle)
-					SetVehicleDeformationFixed(vehicle)
-					SetVehicleUndriveable(vehicle, false)
-					SetVehicleEngineOn(vehicle, true, true)
+					Citizen.Wait(Config.MechTime)
 					ClearPedTasksImmediately(playerPed)
-			  	ESX.ShowNotification(_U('veh_repaired'))
+			  	ESX.ShowNotification(_U('full_repaired'))
+					TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
+					return
 
 				else
 
-					Citizen.Wait(15000)
+					Citizen.Wait(Config.NonMechTime/2)
 					ESX.ShowNotification(_U('half_way'))
-					Citizen.Wait(5000)
+					Citizen.Wait(Config.NonMechTime/2)
 
 					SetVehicleUndriveable(vehicle,false)
 
@@ -833,30 +866,35 @@ AddEventHandler('esx_marducasjob:onFixkit', function()
 
 					if (vHealth >= Config.MaxRepair) then
 
-						SetVehicleFixed(vehicle)
-						ESX.ShowNotification(_U('veh_repaired'))
+						nums.eng = 1000.0
 
 					elseif (vHealth <= Config.MidA) and (vHealth >= Config.MidB) then
 
-						local tmpR = math.random(mathClamp(math.floor(vHealth), Config.MidMin, Config.MidMax),Config.MidMax) + (math.random(10,99)/100)
-						SetVehicleEngineHealth(vehicle, tmpR)
-						ESX.ShowNotification(_U('med_repaired'))
+						nums.eng = math.random(mathClamp(math.floor(vHealth), Config.MidMin, Config.MidMax) + 100 ,Config.MidMax) + (math.random(10,99)/100)
 
 					elseif (vHealth <= Config.BottomEnd) then
 
-						local tmpR = math.random(mathClamp(math.floor(vHealth), Config.RepairMin, Config.RepairMax),Config.RepairMax) + (math.random(10,99)/100)
-						SetVehicleEngineHealth(vehicle, tmpR)
-						ESX.ShowNotification(_U('bad_repaired'))
+						nums.eng = math.random(mathClamp(math.floor(vHealth), Config.RepairMin, Config.RepairMax),Config.RepairMax) + (math.random(10,99)/100)
 
+					end
+
+					if nums.eng == 1000 then
+						ESX.ShowNotification(_U('veh_repaired'))
+					elseif nums.eng <1000 and nums.eng > 700 then
+						ESX.ShowNotification(_U('med_repaired'))
+					else
+						ESX.ShowNotification(_U('bad_repaired'))
 					end
 
 					if (GetVehiclePetrolTankHealth(vehicle) <= 750.0) then
-          	SetVehiclePetrolTankHealth(vehicle, 750.0)
+						nums.tank = 750.0
+						--SetVehiclePetrolTankHealth(vehicle, 750.0)
 					else
-						SetVehiclePetrolTankHealth(vehicle, 1000.0)
+						nums.tank = 1000.0
+						--SetVehiclePetrolTankHealth(vehicle, 1000.0)
 					end
-
-					SetVehicleEngineOn(vehicle, true, true)
+					TriggerServerEvent('esx_marducasjob:repaircar',vehicle,nums)
+					--SetVehicleEngineOn(vehicle, false, true)
 					ClearPedTasksImmediately(playerPed)
 				end
 			end)

@@ -19,10 +19,12 @@ Config.MaxRepair									= 850.0
 
 Config.MidA												= 849.0
 Config.MidMin											= 750
-Config.MidMax											= 950
-Config.MidB												= 700.0
+Config.MidMax											= 900
+Config.MidB												= 600.1
 
-Config.BottomEnd									= 699.9
+Config.BottomEnd									= 600.0
+Config.MechTime										= 20 * 1000
+Config.NonMechTime								= 3 * 1000
 
 
 Config.Vehicles = {

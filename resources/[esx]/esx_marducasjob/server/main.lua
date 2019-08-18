@@ -33,6 +33,16 @@ local function Harvest(source)
 	end)
 end
 
+RegisterServerEvent('esx_marducasjob:repaircar')
+AddEventHandler('esx_marducasjob:repaircar', function(car, specs)
+	TriggerClientEvent('esx_marducasjob:repaircar', -1, car, specs)
+end)
+
+RegisterServerEvent('esx_marducasjob:mechrepair')
+AddEventHandler('esx_marducasjob:mechrepair', function(car)
+	TriggerClientEvent('esx_marducasjob:mechrepair', -1, car)
+end)
+
 RegisterServerEvent('esx_marducasjob:startHarvest')
 AddEventHandler('esx_marducasjob:startHarvest', function()
 	local _source = source

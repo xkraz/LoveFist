@@ -5,14 +5,10 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 ESX.RegisterUsableItem('repairkit', function(source)
 	local _source = source
 	local xPlayer = ESX.GetPlayerFromId(_source)
-	
-	if Config.AllowMecano then
-		TriggerClientEvent('esx_repairkit:onUse', _source)
-	else
-		if xPlayer.job.name ~= 'mecano' then
-			TriggerClientEvent('esx_repairkit:onUse', _source)
-		end
-	end
+
+	xPlayer.removeInventoryItem('repairkit', 1)
+	TriggerClientEvent('esx:showNotification', _source, _U('used_kit'))
+	TriggerClientEvent('esx_marducasjob:onFixkit', _source)
 end)
 
 RegisterNetEvent('esx_repairkit:removeKit')
