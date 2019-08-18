@@ -28,16 +28,27 @@ AddEventHandler('loffe_robbery:handsUp', function(store)
 end)
 
 RegisterServerEvent('loffe_robbery:pickUp')
-AddEventHandler('loffe_robbery:pickUp', function(store)
-    if isrobbing[store] == nil then
-      isrobbing[store] = true
-      local xPlayer = ESX.GetPlayerFromId(source)
+AddEventHandler('loffe_robbery:pickUp', function(store, player)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    local pID = player
+    if isrobbing[store] ~= nil and isrobbing[store] == pID  then
       local randomAmount = math.random(Config.Shops[store].money[1], Config.Shops[store].money[2])
       xPlayer.addMoney(randomAmount)
-      TriggerClientEvent('esx:showNotification', source, Translation[Config.Locale]['cashrecieved'] .. ' ~g~' .. randomAmount .. ' ' .. Translation[Config.Locale]['currency'])
+      TriggerClientEvent('esx:showNotification', source, Translation[Config.Locale]['cashrecieved'] .. ' ~g~$' .. randomAmount)
       TriggerClientEvent('loffe_robbery:removePickup', -1, store)
-      isrobbing[store] = nil
     end
+end)
+
+RegisterServerEvent('loffe_robbery:robID')
+AddEventHandler('loffe_robbery:robID', function(store, player)
+    if isrobbing[store] == nil then
+      isrobbing[store] = player
+    end
+end)
+
+RegisterServerEvent('loffe_robbery:clearID')
+AddEventHandler('loffe_robbery:clearID', function(store)
+      isrobbing[store] = nil
 end)
 
 ESX.RegisterServerCallback('loffe_robbery:canRob', function(source, cb, store)
@@ -60,8 +71,8 @@ ESX.RegisterServerCallback('loffe_robbery:canRob', function(source, cb, store)
     end
 end)
 
-RegisterServerEvent('loffe_robbery:rob')
-AddEventHandler('loffe_robbery:rob', function(store)
+RegisterServerEvent('loffe_robbery:notifycops')
+AddEventHandler('loffe_robbery:notifycops', function(store)
     local src = source
     Config.Shops[store].robbed = true
     local xPlayers = ESX.GetPlayers()
@@ -71,6 +82,13 @@ AddEventHandler('loffe_robbery:rob', function(store)
             TriggerClientEvent('loffe_robbery:msgPolice', xPlayer.source, store, src)
         end
     end
+end)
+
+RegisterServerEvent('loffe_robbery:rob')
+AddEventHandler('loffe_robbery:rob', function(store)
+    local src = source
+    Config.Shops[store].robbed = true
+    
     TriggerClientEvent('loffe_robbery:rob', -1, store)
     Wait(30000)
     TriggerClientEvent('loffe_robbery:robberyOver', src)

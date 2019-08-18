@@ -87,6 +87,7 @@ end)
 RegisterNetEvent('loffe_robbery:rob')
 AddEventHandler('loffe_robbery:rob', function(i)
     if not IsPedDeadOrDying(peds[i]) then
+        TriggerServerEvent('loffe_robbery:robID', i, PlayerPedId())
         SetEntityCoords(peds[i], Config.Shops[i].coords)
         loadDict('mp_am_hold_up')
         TaskPlayAnim(peds[i], "mp_am_hold_up", "holdup_victim_20s", 8.0, -8.0, -1, 2, 0, false, false, false)
@@ -144,7 +145,8 @@ AddEventHandler('loffe_robbery:rob', function(i)
                         if DoesEntityExist(bag) then
                             if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), GetEntityCoords(bag), true) <= 1.5 then
                                 PlaySoundFrontend(-1, 'ROBBERY_MONEY_TOTAL', 'HUD_FRONTEND_CUSTOM_SOUNDSET', true)
-                                TriggerServerEvent('loffe_robbery:pickUp', i)
+                                TriggerServerEvent('loffe_robbery:pickUp', i, PlayerPedId())
+                                TriggerServerEvent('loffe_robbery:clearID', i)
                                 break
                             end
                         else
@@ -259,6 +261,8 @@ Citizen.CreateThread(function()
                                 loadDict('missheist_agency2ahands_up')
                                 TaskPlayAnim(peds[i], "missheist_agency2ahands_up", "handsup_anxious", 8.0, -8.0, -1, 1, 0, false, false, false)
 
+                                TriggerServerEvent('loffe_robbery:notifycops', i)
+
                                 local scared = 0
                                 while scared < 100 and not IsPedDeadOrDying(peds[i]) and GetDistanceBetweenCoords(GetEntityCoords(me), GetEntityCoords(peds[i]), true) <= 7.5 do
                                     local sleep = 600
@@ -291,6 +295,7 @@ Citizen.CreateThread(function()
                                     while wait >= GetGameTimer() do
                                         Wait(0)
                                         DrawText3D(GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 1.5, 0.4), Translation[Config.Locale]['walked_too_far'])
+                                        TriggerServerEvent('loffe_robbery:clearID', i)
                                     end
                                     robbing = false
                                 end
