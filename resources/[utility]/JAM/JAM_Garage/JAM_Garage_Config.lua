@@ -118,15 +118,6 @@ JAG.Config = {
 			Pos = { x = 322.11, y = -2029.53, z = 19.8 },
 		},
 
-		AirportGarage = {
-			Zone = "Garage",
-			Sprite = 50,
-			Scale = 0.8,
-			Display = 4,
-			Color = 68,
-			Pos = { x = -892.82, y = -2738.06, z = 12.82 },
-		},
-
 		SouthGarage = {
 			Zone = "Garage",
 			Sprite = 50,
@@ -389,15 +380,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 1005.86, y = -1868.31, z = 29.89  },
 		},
-		AirportGarage = {
-			Zone = "Garage",
-			Type = 1,
-			Heading = 321.97,
-			Scale = { x = 3.0, y = 3.0, z = 1.0 },
-			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = -892.82, y = -2738.06, z = 12.82  },
-		},
-
+		
 		VagosGarage = {
 			Zone = "Garage",
 			Type = 1,
