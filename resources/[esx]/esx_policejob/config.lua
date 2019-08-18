@@ -102,7 +102,7 @@ Config.PoliceStations = {
 				SpawnPoints = {
 					{ coords = vector3(1879.41, 3689.78, 33.34), heading = 114.3, radius = 6.0 },
 					{ coords = vector3(1868.73, 3694.99, 33.59), heading = 210.68, radius = 6.0 }
-					
+
 				}
 			},
 
@@ -159,7 +159,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
 		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
 	},
-	
+
 	airunit = {
 		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 0, 0, nil }, price = 0 },
 		{ weapon = 'WEAPON_CARBINERIFLE', components = { 0, 0, 0, 0, 0, nil }, price = 0 },
@@ -169,7 +169,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
 		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 },
 	},
-	
+
 	recruiter = {
 		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 0, 0, nil }, price = 0 },
 		{ weapon = 'WEAPON_CARBINERIFLE', components = { 0, 0, 0, 0, 0, nil }, price = 0 },
@@ -197,7 +197,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
 		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
-	
+
 	mastersergeant = {
 		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 0, 0, nil }, price = 0 },
 		{ weapon = 'WEAPON_CARBINERIFLE', components = { 0, 0, 0, 0, 0, nil }, price = 0 },
@@ -227,7 +227,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
 		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
-	
+
 	captain = {
 		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 0, 0, nil }, price = 0 },
 		{ weapon = 'WEAPON_CARBINERIFLE', components = { 0, 0, 0, 0, 0, nil }, price = 0 },
@@ -237,7 +237,7 @@ Config.AuthorizedWeapons = {
 		{ weapon = 'WEAPON_PISTOL', price = 0 },
 		{ weapon = 'WEAPON_FLASHLIGHT', price = 0 }
 	},
-	
+
 	bossthree = {
 		{ weapon = 'WEAPON_COMBATPISTOL', components = { 0, 0, 0, 0, nil }, price = 0 },
 		{ weapon = 'WEAPON_CARBINERIFLE', components = { 0, 0, 0, 0, 0, nil }, price = 0 },
@@ -272,32 +272,32 @@ Config.AuthorizedWeapons = {
 
 Config.AuthorizedVehicles = {
 	Shared = {
-		
-		
-		
-		
+
+
+
+
 	},
 
 	recruit = {
 		{ model = 'police7', label = 'Recruit Cruiser', price = 0 },
 
 	},
-	
+
 	officer = {
 		{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police4', label = 'Police Cruiser 2', price = 0 },
 		{ model = 'policeb', label = 'Police Bike', price = 0 },
 
 },
-	
+
 	officertwo = {
 		{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police2', label = 'Police Charger', price = 0 },
 		{ model = 'police4', label = 'Police Cruiser 2', price = 0 },
 		{ model = 'policeb', label = 'Police Bike', price = 0 },
-		
+
 },
-	
+
 	airunit = {
 		{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police2', label = 'Police Charger', price = 0 },
@@ -314,7 +314,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'fbi', label = 'Unmarked Charger', price = 0 },
 		{ model = 'fbi2', label = 'Unmarked SUV', price = 0 },
 },
-	
+
 	recruiter = {
 		{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police2', label = 'Police Charger', price = 0 },
@@ -323,7 +323,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'policeb', label = 'Police Bike', price = 0 },
 		{ model = 'pcpdvig', label = 'Police rod', price = 0 },
 },
-	
+
 	corporal = {
 		{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police2', label = 'Police Charger', price = 0 },
@@ -331,7 +331,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'police4', label = 'Police Cruiser 2', price = 0 },
 		{ model = 'policeb', label = 'Police Bike', price = 0 },
 },
-	
+
 	sergeant = {
 		{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police2', label = 'Police Charger', price = 0 },
@@ -341,7 +341,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'pcpdvig', label = 'Police rod', price = 0 },
 		{ model = 'polschafter3', label = 'Unmarked Schafter', price = 0 },
 },
-	
+
 	mastersergeant = {
 		{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police2', label = 'Police Charger', price = 0 },
@@ -370,7 +370,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'pbus', label = 'Police Prison Bus', price = 0 },
 		{ model = 'polschafter3', label = 'Unmarked Schafter', price = 0 },
 		{ model = 'fbi2', label = 'Unmarked SUV', price = 0 },
-	
+
 
 	},
 
@@ -389,7 +389,7 @@ Config.AuthorizedVehicles = {
 		{ model = 'polschafter3', label = 'Unmarked Schafter', price = 0 },
 		{ model = 'fbi2', label = 'Unmarked SUV', price = 0 },
 	},
-	
+
 	captain = {
 		{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police2', label = 'Police Charger', price = 0 },
@@ -402,10 +402,12 @@ Config.AuthorizedVehicles = {
 		{ model = '2015polstang', label = 'Police Stang', price = 0 },
 		{ model = 'pcpdvig', label = 'Police rod', price = 0 },
 		{ model = 'pbus', label = 'Police Prison Bus', price = 0 },
+		{ model = 'umkscout', label = 'Unmarked SUV', price = 0 },
+		{ model = 'contendred', label = 'Sheriff Truck', price = 0 },
 		{ model = 'polschafter3', label = 'Unmarked Schafter', price = 0 },
 		{ model = 'fbi2', label = 'Unmarked SUV', price = 0 },
 	},
-	
+
 	bossthree = {
 			{ model = 'police', label = 'Police Cruiser', price = 0 },
 		{ model = 'police2', label = 'Police Charger', price = 0 },
@@ -418,9 +420,11 @@ Config.AuthorizedVehicles = {
 		{ model = '2015polstang', label = 'Police Stang', price = 0 },
 		{ model = 'pcpdvig', label = 'Police rod', price = 0 },
 		{ model = 'pbus', label = 'Police Prison Bus', price = 0 },
+		{ model = 'umkscout', label = 'Unmarked SUV', price = 0 },
+		{ model = 'contendred', label = 'Sheriff Truck', price = 0 },
 		{ model = 'polschafter3', label = 'Unmarked Schafter', price = 0 },
 		{ model = 'fbi2', label = 'Unmarked SUV', price = 0 },
-		
+
 	},
 
 	bosstwo = {
@@ -435,6 +439,8 @@ Config.AuthorizedVehicles = {
 		{ model = '2015polstang', label = 'Police Stang', price = 0 },
 		{ model = 'pcpdvig', label = 'Police rod', price = 0 },
 		{ model = 'pbus', label = 'Police Prison Bus', price = 0 },
+		{ model = 'umkscout', label = 'Unmarked SUV', price = 0 },
+		{ model = 'contendred', label = 'Sheriff Truck', price = 0 },
 		{ model = 'polschafter3', label = 'Unmarked Schafter', price = 0 },
 		{ model = 'fbi2', label = 'Unmarked SUV', price = 0 },
 
@@ -452,35 +458,37 @@ Config.AuthorizedVehicles = {
 		{ model = '2015polstang', label = 'Police Stang', price = 0 },
 		{ model = 'pcpdvig', label = 'Police rod', price = 0 },
 		{ model = 'pbus', label = 'Police Prison Bus', price = 0 },
+		{ model = 'umkscout', label = 'Unmarked SUV', price = 0 },
+		{ model = 'contendred', label = 'Sheriff Truck', price = 0 },
 		{ model = 'polschafter3', label = 'Unmarked Schafter', price = 0 },
 		{ model = 'fbi2', label = 'Unmarked SUV', price = 0 },
-		
+
 	}
 }
 
 Config.AuthorizedHelicopters = {
 	recruit = {},
-	
+
 	officer = {},
-	
+
 	officertwo = {},
-	
+
 	airunit = {
 		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 0 }
 	},
-	
+
 	recruiter = {
 		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 0 }
 },
-	
+
 	corporal = {
 		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 0 }
 },
-	
+
 	sergeant = {
 		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 0 }
 },
-	
+
 	mastersergeant = {
 		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 0 }
 },
@@ -488,11 +496,11 @@ Config.AuthorizedHelicopters = {
 	lieutenant = {
 		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 0 }
 	},
-	
+
 	captain = {
 		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 0 }
 	},
-	
+
 	bossthree = {
 		{ model = 'polmav', label = 'Police Maverick', livery = 0, price = 0 }
 	},
@@ -707,7 +715,7 @@ Config.Uniforms = {
 		},
 		female = {
 				['bproof_1'] = 11,  ['bproof_2'] = 3
-		}	
+		}
 	},
 	gilet_wear = {
 		male = {
@@ -749,7 +757,7 @@ Config.Uniforms = {
 			['chain_1'] = 0,    ['chain_2'] = 0,
 			['ears_1'] = 2,     ['ears_2'] = 0
 			}
-	},	
+	},
 		--Police Short Sleeve
 		shortsleeve_wear = {
 			male = {
@@ -773,7 +781,7 @@ Config.Uniforms = {
 				['helmet_1'] = -1,  ['helmet_2'] = 0,
 				['chain_1'] = 0,    ['chain_2'] = 0,
 				['ears_1'] = 2,     ['ears_2'] = 0
-				}		
+				}
 			},
 		noose_wear = {
 			male = {
