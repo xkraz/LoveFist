@@ -24,7 +24,7 @@ Config.MidB												= 600.1
 
 Config.BottomEnd									= 600.0
 Config.MechTime										= 20 * 1000
-Config.NonMechTime								= 3 * 1000
+Config.NonMechTime								= 30 * 1000
 
 
 Config.Vehicles = {
