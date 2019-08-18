@@ -2,6 +2,7 @@ ESX = nil
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 local deadPeds = {}
+local isrobbing = {}
 
 RegisterServerEvent('loffe_robbery:pedDead')
 AddEventHandler('loffe_robbery:pedDead', function(store)
@@ -28,11 +29,15 @@ end)
 
 RegisterServerEvent('loffe_robbery:pickUp')
 AddEventHandler('loffe_robbery:pickUp', function(store)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local randomAmount = math.random(Config.Shops[store].money[1], Config.Shops[store].money[2])
-    xPlayer.addMoney(randomAmount)
-    TriggerClientEvent('esx:showNotification', source, Translation[Config.Locale]['cashrecieved'] .. ' ~g~' .. randomAmount .. ' ' .. Translation[Config.Locale]['currency'])
-    TriggerClientEvent('loffe_robbery:removePickup', -1, store) 
+    if isrobbing[store] == nil then
+      isrobbing[store] = true
+      local xPlayer = ESX.GetPlayerFromId(source)
+      local randomAmount = math.random(Config.Shops[store].money[1], Config.Shops[store].money[2])
+      xPlayer.addMoney(randomAmount)
+      TriggerClientEvent('esx:showNotification', source, Translation[Config.Locale]['cashrecieved'] .. ' ~g~' .. randomAmount .. ' ' .. Translation[Config.Locale]['currency'])
+      TriggerClientEvent('loffe_robbery:removePickup', -1, store)
+      isrobbing[store] = nil
+    end
 end)
 
 ESX.RegisterServerCallback('loffe_robbery:canRob', function(source, cb, store)

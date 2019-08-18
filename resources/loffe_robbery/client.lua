@@ -54,10 +54,10 @@ end)
 
 RegisterNetEvent('loffe_robbery:removePickup')
 AddEventHandler('loffe_robbery:removePickup', function(bank)
-    for i = 1, #objects do 
-        if objects[i].bank == bank and DoesEntityExist(objects[i].object) then 
-            DeleteObject(objects[i].object) 
-        end 
+    for i = 1, #objects do
+        if objects[i].bank == bank and DoesEntityExist(objects[i].object) then
+            DeleteObject(objects[i].object)
+        end
     end
 end)
 
@@ -105,7 +105,7 @@ AddEventHandler('loffe_robbery:rob', function(i)
                 CreateModelSwap(GetEntityCoords(cashRegister), 0.5, GetHashKey('prop_till_01'), GetHashKey('prop_till_01_dam'), false)
             end
 
-            timer = GetGameTimer() + 200 
+            timer = GetGameTimer() + 200
             while timer >= GetGameTimer() do
                 if IsPedDeadOrDying(peds[i]) then
                     break
@@ -117,7 +117,7 @@ AddEventHandler('loffe_robbery:rob', function(i)
             RequestModel(model)
             while not HasModelLoaded(model) do Wait(0) end
             local bag = CreateObject(model, GetEntityCoords(peds[i]), false, false)
-                        
+
             AttachEntityToEntity(bag, peds[i], GetPedBoneIndex(peds[i], 60309), 0.1, -0.11, 0.08, 0.0, -75.0, -75.0, 1, 1, 0, 0, 2, 1)
             timer = GetGameTimer() + 10000
             while timer >= GetGameTimer() do
@@ -206,7 +206,7 @@ end
 
 Citizen.CreateThread(function()
     while not ESXLoaded do Wait(0) end
-    for i = 1, #Config.Shops do 
+    for i = 1, #Config.Shops do
         peds[i] = _CreatePed(Config.Shopkeeper, Config.Shops[i].coords, Config.Shops[i].heading)
 
         if Config.Shops[i].blip then
@@ -322,7 +322,7 @@ end
 function DrawText3D(coords, text)
     local onScreen, _x, _y = World3dToScreen2d(coords.x, coords.y, coords.z)
     local pX, pY, pZ = table.unpack(GetGameplayCamCoords())
-  
+
     SetTextScale(0.4, 0.4)
     SetTextFont(4)
     SetTextProportional(1)
@@ -330,7 +330,7 @@ function DrawText3D(coords, text)
     SetTextCentre(1)
     SetTextColour(255, 255, 255, 255)
     SetTextOutline()
-  
+
     AddTextComponentString(text)
     DrawText(_x, _y)
 end
