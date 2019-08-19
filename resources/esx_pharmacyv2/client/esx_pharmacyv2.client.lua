@@ -39,29 +39,29 @@ Citizen.CreateThread(function()
     for k,v in pairs(Config.Shops) do
       if GetDistanceBetweenCoords(coords, v.x, v.y, v.z, true) < Config.DrawDistance then
         DrawMarker(
-          Config.MarkerType, 
-          v.x, 
-          v.y, 
-          v.z, 
-          0.0, 
-          0.0, 
-          0.0, 
-          0, 
-          0.0, 
-          0.0, 
-          Config.MarkerSize.x, 
-          Config.MarkerSize.y, 
-          Config.MarkerSize.z, 
-          Config.MarkerColor.r, 
-          Config.MarkerColor.g, 
-          Config.MarkerColor.b, 
-          100, 
-          false, 
-          true, 
-          2, 
-          false, 
-          false, 
-          false, 
+          Config.MarkerType,
+          v.x,
+          v.y,
+          v.z,
+          0.0,
+          0.0,
+          0.0,
+          0,
+          0.0,
+          0.0,
+          Config.MarkerSize.x,
+          Config.MarkerSize.y,
+          Config.MarkerSize.z,
+          Config.MarkerColor.r,
+          Config.MarkerColor.g,
+          Config.MarkerColor.b,
+          100,
+          false,
+          true,
+          2,
+          false,
+          false,
+          false,
           false
         )
       end
@@ -187,7 +187,7 @@ AddEventHandler('esx_pharmacyv2:useDefibrillateur', function(itemName)
         Citizen.Wait(15000)
         ClearPedTasks(playerPed)
         if GetEntityHealth(closestPlayer) == 0 then
-          TriggerServerEvent('esx_ambulancejob:revive', GetPlayerServerId(closestPlayer))
+          TriggerClientEvent('esx_ambulancejob:reviveP', GetPlayerServerId(closestPlayer))
           ESX.ShowNotification(_U('revive_complete') .. GetPlayerName(closestPlayer))
         else
           ESX.ShowNotification(GetPlayerName(closestPlayer) .. _U('isdead'))
@@ -214,7 +214,7 @@ while true do
 
    if chanceill < chance then -- Vérifie si le nombre aléatoire est inférieur à 6, 5% de 100 (par défaut).
        ill = true -- Tomber malade si vous avez eu la "chance" avec succès.
-     
+
     end
   end
 end)
@@ -260,7 +260,7 @@ while true do
   end
 end)
 
---trucs antibiotiques 
+--trucs antibiotiques
 RegisterNetEvent('esx_pharmacyv2:frisk')
 AddEventHandler('esx_pharmacyv2:frisk', function()
   ill = false
