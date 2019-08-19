@@ -87,7 +87,6 @@ end)
 RegisterNetEvent('loffe_robbery:rob')
 AddEventHandler('loffe_robbery:rob', function(i)
     if not IsPedDeadOrDying(peds[i]) then
-        TriggerServerEvent('loffe_robbery:robID', i, PlayerPedId())
         SetEntityCoords(peds[i], Config.Shops[i].coords)
         loadDict('mp_am_hold_up')
         TaskPlayAnim(peds[i], "mp_am_hold_up", "holdup_victim_20s", 8.0, -8.0, -1, 2, 0, false, false, false)
@@ -144,9 +143,7 @@ AddEventHandler('loffe_robbery:rob', function(i)
                         Wait(5)
                         if DoesEntityExist(bag) then
                             if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), GetEntityCoords(bag), true) <= 1.5 then
-                                PlaySoundFrontend(-1, 'ROBBERY_MONEY_TOTAL', 'HUD_FRONTEND_CUSTOM_SOUNDSET', true)
                                 TriggerServerEvent('loffe_robbery:pickUp', i, PlayerPedId())
-                                TriggerServerEvent('loffe_robbery:clearID', i)
                                 break
                             end
                         else
@@ -246,6 +243,7 @@ Citizen.CreateThread(function()
                 for i = 1, #peds do
                     if HasEntityClearLosToEntityInFront(me, peds[i], 19) and not IsPedDeadOrDying(peds[i]) and GetDistanceBetweenCoords(GetEntityCoords(me), GetEntityCoords(peds[i]), true) <= 5.0 then
                         if not robbing then
+                            TriggerServerEvent('loffe_robbery:robID', i, PlayerPedId())
                             local canRob = nil
                             ESX.TriggerServerCallback('loffe_robbery:canRob', function(cb)
                                 canRob = cb
@@ -305,6 +303,8 @@ Citizen.CreateThread(function()
                                     Wait(0)
                                     DrawText3D(GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 1.5, 0.4), Translation[Config.Locale]['no_cops'])
                                 end
+                            elseif canRob == 'inprog' then
+                              Wait(1000)
                             else
                                 TriggerEvent('loffe_robbery:talk', i, '~g~*' .. Translation[Config.Locale]['shopkeeper'] .. '* ~w~' .. Translation[Config.Locale]['robbed'], 5)
                                 Wait(2500)
