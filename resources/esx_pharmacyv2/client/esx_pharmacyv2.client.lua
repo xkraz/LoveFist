@@ -187,7 +187,7 @@ AddEventHandler('esx_pharmacyv2:useDefibrillateur', function(itemName)
         Citizen.Wait(15000)
         ClearPedTasks(playerPed)
         if GetEntityHealth(closestPlayer) == 0 then
-          TriggerClientEvent('esx_ambulancejob:reviveP', GetPlayerServerId(closestPlayer))
+          TriggerServerEvent('esx_ambulancejob:reviveP', GetPlayerServerId(closestPlayer))
           ESX.ShowNotification(_U('revive_complete') .. GetPlayerName(closestPlayer))
         else
           ESX.ShowNotification(GetPlayerName(closestPlayer) .. _U('isdead'))
