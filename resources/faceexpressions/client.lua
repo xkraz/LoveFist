@@ -7,7 +7,7 @@ Citizen.CreateThread(function()
   end
 end)
 
--- FACIAL EXPRESSIONS: normal, smug, happy, excited, upset, angry, stress, sad, wow, focus,
+-- FACIAL EXPRESSIONS: normal, smug, happy, upset, angry, stress, sad, wow, focus,
 
 RegisterCommand('normal', function(source, args, rawCommand)
     local ped = GetPlayerPed(-1)
