@@ -66,13 +66,13 @@ Citizen.CreateThread(function()
 				if IsControlJustReleased(0, 38) then
 					wasOpen4 = true
 					OpenWeedDump()
-					if Config.EnableCops then	
+					if Config.EnableCops then
 						local percent = math.random(11)
 
 						if percent <= 2 or percent >= 10 then
 						TriggerEvent('esx_jk_drugs:selling', source)
 
-	
+
 						end
 					end
 				end
@@ -163,7 +163,7 @@ Citizen.CreateThread(function()
 
 			if IsControlJustReleased(0, 38) and not isPickingUp then
 				isPickingUp = true
-
+				TriggerClientEvent('ragdollset', false)
 				ESX.TriggerServerCallback('esx_jk_drugs:canPickUp', function(canPickUp)
 
 					if canPickUp then
@@ -183,6 +183,7 @@ Citizen.CreateThread(function()
 					end
 				end, 'cannabis')
 				isPickingUp = false
+				TriggerClientEvent('ragdollset', true)
 			end
 		else
 			Citizen.Wait(500)
@@ -249,8 +250,8 @@ function GenerateWeedCoords()
 
 		weedCoordX = Config.FieldZones.WeedField.coords.x + modX
 		weedCoordY = Config.FieldZones.WeedField.coords.y + modY
-		
-		
+
+
 		local coordZ = GetCoordZ(weedCoordX, weedCoordY)
 		local coord = vector3(weedCoordX, weedCoordY, coordZ)
 

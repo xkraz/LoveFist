@@ -66,11 +66,11 @@ Citizen.CreateThread(function()
 				if IsControlJustReleased(0, 38) then
 					wasOpen = true
 					OpenCocaineDump()
-					if Config.EnableCops then	
+					if Config.EnableCops then
 						local percent = math.random(11)
 
 						if percent <= 2 or percent >= 10 then
-						TriggerEvent('esx_jk_drugs:selling', source)	
+						TriggerEvent('esx_jk_drugs:selling', source)
 						end
 					end
 				end
@@ -160,6 +160,7 @@ Citizen.CreateThread(function()
 
 			if IsControlJustReleased(0, 38) and not isPickingUp then
 				isPickingUp = true
+				TriggerClientEvent('ragdollset', false)
 
 				ESX.TriggerServerCallback('esx_jk_drugs:canPickUp', function(canPickUp)
 
@@ -171,7 +172,7 @@ Citizen.CreateThread(function()
 
 						Citizen.Wait(1000)
 						ClearPedTasks(playerPed)
-						Citizen.Wait(1000)					
+						Citizen.Wait(1000)
 						ESX.Game.DeleteObject(nearbyObject)
 
 						TriggerServerEvent('esx_jk_drugs:pickedUpCocaPlant')
@@ -180,6 +181,7 @@ Citizen.CreateThread(function()
 					end
 				end, 'cocaine')
 				isPickingUp = false
+				TriggerClientEvent('ragdollset', true)
 			end
 		else
 			Citizen.Wait(500)
@@ -317,11 +319,11 @@ Citizen.CreateThread(function()
 				if IsControlJustReleased(0, 38) then
 					wasOpen5 = true
 					OpenCrackDump()
-					if Config.EnableCops then	
+					if Config.EnableCops then
 						local percent = math.random(11)
 
 						if percent <= 2 or percent >= 10 then
-						TriggerEvent('esx_jk_drugs:selling', source)	
+						TriggerEvent('esx_jk_drugs:selling', source)
 						end
 					end
 				end

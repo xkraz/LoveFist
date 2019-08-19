@@ -78,12 +78,12 @@ Citizen.CreateThread(function()
 
 			if not isPickingUp and IsControlJustReleased(0, 38) then
 				isPickingUp = true
-
+				TriggerClientEvent('ragdollset', false)
 				ESX.TriggerServerCallback('esx_jk_drugs:canPickUp', function(canPickUp)
 
 					if canPickUp then
 						TaskStartScenarioInPlace(playerPed, 'world_human_gardener_plant', 0, false)
-		
+
 						table.remove(ephedraPlants, nearbyID)
 						spawnedEphedra = spawnedEphedra - 1
 
@@ -91,13 +91,14 @@ Citizen.CreateThread(function()
 						ClearPedTasks(playerPed)
 						Citizen.Wait(1000)
 						ESX.Game.DeleteObject(nearbyObject)
-		
+
 						TriggerServerEvent('esx_jk_drugs:pickedUpEphedra')
 					else
 						ESX.ShowNotification(_U('ephedrine_inventoryfull'))
 					end
 				end, 'ephedrine')
 				isPickingUp = false
+				TriggerClientEvent('ragdollset', true)
 			end
 		else
 			Citizen.Wait(500)
@@ -237,11 +238,11 @@ Citizen.CreateThread(function()
 				if IsControlJustReleased(0, 38) then
 					wasOpen2 = true
 					OpenMethDump()
-					if Config.EnableCops then	
+					if Config.EnableCops then
 						local percent = math.random(11)
 
 						if percent <= 2 or percent >= 10 then
-						TriggerEvent('esx_jk_drugs:selling', source)	
+						TriggerEvent('esx_jk_drugs:selling', source)
 						end
 					end
 				end

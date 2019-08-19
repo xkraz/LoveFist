@@ -66,11 +66,11 @@ Citizen.CreateThread(function()
 				if IsControlJustReleased(0, 38) then
 					wasOpen3 = true
 					OpenOpiumDump()
-					if Config.EnableCops then	
+					if Config.EnableCops then
 						local percent = math.random(11)
 
 						if percent <= 2 or percent >= 10 then
-						TriggerEvent('esx_jk_drugs:selling', source)	
+						TriggerEvent('esx_jk_drugs:selling', source)
 						end
 					end
 				end
@@ -161,7 +161,7 @@ Citizen.CreateThread(function()
 
 			if IsControlJustReleased(0, 38) and not isPickingUp then
 				isPickingUp = true
-
+				TriggerClientEvent('ragdollset', false)
 				ESX.TriggerServerCallback('esx_jk_drugs:canPickUp', function(canPickUp)
 
 					if canPickUp then
@@ -181,6 +181,7 @@ Citizen.CreateThread(function()
 					end
 				end, 'opium')
 				isPickingUp = false
+				TriggerClientEvent('ragdollset', true)
 			end
 		else
 			Citizen.Wait(500)
@@ -318,11 +319,11 @@ Citizen.CreateThread(function()
 				if IsControlJustReleased(0, 38) then
 					wasOpen1 = true
 					OpenHeroineDump()
-					if Config.EnableCops then	
+					if Config.EnableCops then
 						local percent = math.random(11)
 
 						if percent <= 2 or percent >= 10 then
-						TriggerEvent('esx_jk_drugs:selling', source)	
+						TriggerEvent('esx_jk_drugs:selling', source)
 						end
 					end
 				end
