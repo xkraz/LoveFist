@@ -380,7 +380,7 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 1005.86, y = -1868.31, z = 29.89  },
 		},
-		
+
 		VagosGarage = {
 			Zone = "Garage",
 			Type = 1,
@@ -561,14 +561,6 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 1864.25, y = 3703.99, z = 32.41 },
 		},
-	    Marcus2 = {
-			Zone = "Garage",
-			Type = 1,
-			Heading = 333.29,
-			Scale = { x = 3.0, y = 3.0, z = 1.0 },
-			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = -1302.24, y = -3328.71, z = 12.95 },
-		},
 		MarcusHouse = {
 		Zone = "Garage",
 		Type = 1,
@@ -588,10 +580,10 @@ JAG.Config = {
 		FlightSchool = {
 			Zone = "Garage",
 			Type = 1,
-			Heading = 245.98,
+			Heading = 61.93,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = -1029.85, y = -2891.55, z = 12.95 },
+			Pos = { x = -995.02, y = -2989.67, z = 12.95 },
 		},
 		BoatGarage = {
 			Zone = "Garage",
