@@ -143,9 +143,7 @@ AddEventHandler('loffe_robbery:rob', function(i)
                         Wait(5)
                         if DoesEntityExist(bag) then
                             if GetDistanceBetweenCoords(GetEntityCoords(PlayerPedId()), GetEntityCoords(bag), true) <= 1.5 then
-                                PlaySoundFrontend(-1, 'ROBBERY_MONEY_TOTAL', 'HUD_FRONTEND_CUSTOM_SOUNDSET', true)
                                 TriggerServerEvent('loffe_robbery:pickUp', i, PlayerPedId())
-                                TriggerServerEvent('loffe_robbery:clearID', i)
                                 break
                             end
                         else

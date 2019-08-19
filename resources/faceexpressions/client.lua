@@ -138,6 +138,9 @@ RegisterCommand('smug', function(source, args, rawCommand)
 			ESX.Streaming.RequestAnimDict('facials@gen_female@base')
 			TaskPlayAnim(ped, 'facials@gen_female@base', 'mood_smug_1', 2.0, -8.0, -1, 35, 0, 0, 0, 0)
 		end
+		
+end)
 	
 		
-end) 
+
+
