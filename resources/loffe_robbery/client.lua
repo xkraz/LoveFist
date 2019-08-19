@@ -139,6 +139,7 @@ AddEventHandler('loffe_robbery:rob', function(i)
                 ApplyForceToEntity(bag, 3, vector3(0.0, 50.0, 0.0), 0.0, 0.0, 0.0, 0, true, true, false, false, true)
                 table.insert(objects, {bank = i, object = bag})
                 Citizen.CreateThread(function()
+                    local xx = 0
                     while true do
                         Wait(5)
                         if DoesEntityExist(bag) then
@@ -148,6 +149,11 @@ AddEventHandler('loffe_robbery:rob', function(i)
                             end
                         else
                             break
+                        end
+                        xx = xx + 1
+                        if xx > 6000 then
+                          TriggerServerEvent('loffe_robbery:clearbag', i, PlayerPedId())
+                          break
                         end
                     end
                 end)
@@ -293,7 +299,7 @@ Citizen.CreateThread(function()
                                     while wait >= GetGameTimer() do
                                         Wait(0)
                                         DrawText3D(GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 1.5, 0.4), Translation[Config.Locale]['walked_too_far'])
-                                        TriggerServerEvent('loffe_robbery:clearID', i)
+                                        TriggerServerEvent('loffe_robbery:clearID', i, PlayerPedId())
                                     end
                                     robbing = false
                                 end
