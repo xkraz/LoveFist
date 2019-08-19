@@ -236,34 +236,48 @@ AddEventHandler('esx_marducasjob:onNPCJobMissionCompleted', function()
 	TriggerClientEvent("esx:showNotification", _source, _U('your_comp_earned').. total)
 end)
 
+RegisterServerEvent('esx_marducasjob:removetorch')
+AddEventHandler('esx_marducasjob:removetorch', function()
+	local _source = source
+	local xPlayer  = ESX.GetPlayerFromId(source)
+	xPlayer.removeInventoryItem('blowtorch', 1)
+end)
+
+RegisterServerEvent('esx_marducasjob:removerepair')
+AddEventHandler('esx_marducasjob:removerepair', function()
+	local _source = source
+	local xPlayer  = ESX.GetPlayerFromId(source)
+	xPlayer.removeInventoryItem('fixkit', 1)
+end)
+
+RegisterServerEvent('esx_marducasjob:removekit')
+AddEventHandler('esx_marducasjob:removekit', function()
+	local _source = source
+	local xPlayer  = ESX.GetPlayerFromId(source)
+	xPlayer.removeInventoryItem('carokit', 1)
+end)
+
+
 ESX.RegisterUsableItem('blowtorch', function(source)
 	local _source = source
 	local xPlayer  = ESX.GetPlayerFromId(source)
 
 	xPlayer.removeInventoryItem('blowtorch', 1)
-
+	TriggerClientEvent('esx_inventoryhud:close', _source)
 	TriggerClientEvent('esx_marducasjob:onHijack', _source)
 	TriggerClientEvent('esx:showNotification', _source, _U('you_used_blowtorch'))
 end)
 
 ESX.RegisterUsableItem('fixkit', function(source)
 	local _source = source
-	local xPlayer  = ESX.GetPlayerFromId(source)
-
-	xPlayer.removeInventoryItem('fixkit', 1)
-
+	TriggerClientEvent('esx_inventoryhud:close', _source)
 	TriggerClientEvent('esx_marducasjob:onFixkit', _source)
-	TriggerClientEvent('esx:showNotification', _source, _U('you_used_repair_kit'))
 end)
 
 ESX.RegisterUsableItem('carokit', function(source)
 	local _source = source
-	local xPlayer  = ESX.GetPlayerFromId(source)
-
-	xPlayer.removeInventoryItem('carokit', 1)
-
+	TriggerClientEvent('esx_inventoryhud:close', _source)
 	TriggerClientEvent('esx_marducasjob:onCarokit', _source)
-	TriggerClientEvent('esx:showNotification', _source, _U('you_used_body_kit'))
 end)
 
 RegisterServerEvent('esx_marducasjob:getStockItem')

@@ -779,13 +779,17 @@ AddEventHandler('esx_marducasjob:onCarokit', function()
 		end
 
 		if DoesEntityExist(vehicle) then
+			ESX.ShowNotification(_U('you_used_body_kit'))
 			TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_HAMMERING', 0, true)
 			Citizen.CreateThread(function()
 				Citizen.Wait(Config.NonMechTime)
 				TriggerServerEvent('esx_marducasjob:repaircar',vehicle,nums)
 				ClearPedTasksImmediately(playerPed)
 				ESX.ShowNotification(_U('body_repaired'))
+				TriggerServerEvent('esx_marducasjob:removekit')
 			end)
+		else
+			ESX.ShowNotification('~r~No vehicle found!')
 		end
 	end
 end)
@@ -807,6 +811,16 @@ AddEventHandler('esx_marducasjob:repaircar', function(car, specs)
 	if specs.body ~= -1 then
 		SetVehicleDeformationFixed(car)
 		SetVehicleBodyHealth(car, 1000.0)
+
+		for i = 0, 4 do
+			SetVehicleTyreFixed(vehicle, i)
+		end
+
+		for i = 0, 6 do
+			FixVehicleWindow(vehicle, i)
+		end
+
+
 	end
 
 	if specs.tank ~= -1 then
@@ -824,6 +838,161 @@ AddEventHandler('esx_marducasjob:mechrepair', function(car)
 
 end)
 
+function checkDistance(car)
+
+	local pl = GetEntityCoords(GetPlayerPed(PlayerId()), true)
+	local p2 = hoodLocation(car)
+
+	print(GetDistanceBetweenCoords(pl, p2, true))
+	if GetDistanceBetweenCoords(pl, p2, true) <= 1.6 then
+		return true
+	else
+		return false
+	end
+end
+
+function repairLocation(car)
+	local dim = GetModelDimensions(GetEntityModel(car), vector3(0.0, 0.0, 0.0), vector3(10.0, 10.0, 10.0))
+	return GetOffsetFromEntityInWorldCoords(car, 0.0, (dim.y*-1), 0.0)
+end
+
+function hoodLocation(car)
+	local dim = GetModelDimensions(GetEntityModel(car), vector3(0.0, 0.0, 0.0), vector3(10.0, 10.0, 10.0))
+	return GetOffsetFromEntityInWorldCoords(car, 0.0, (dim.y*-1) - 1, 0.0)
+end
+
+function makeEntityFaceEntity(entity2 )
+    local p1 = GetEntityCoords(GetPlayerPed(PlayerId()), true)
+    local p2 = entity2
+		print(p1)
+		print(p2)
+    local dx = p2.x - p1.x
+    local dy = p2.y - p1.y
+
+    local heading = GetHeadingFromVector_2d(dx, dy)
+    SetEntityHeading( GetPlayerPed(PlayerId()), heading )
+end
+
+function DrawText3D(coords, text)
+    local onScreen, _x, _y = World3dToScreen2d(coords.x, coords.y, coords.z)
+    local pX, pY, pZ = table.unpack(GetGameplayCamCoords())
+
+    SetTextScale(0.4, 0.4)
+    SetTextFont(4)
+    SetTextProportional(1)
+    SetTextEntry("STRING")
+    SetTextCentre(1)
+    SetTextColour(255, 10, 10, 255)
+    SetTextOutline()
+
+    AddTextComponentString(text)
+    DrawText(_x, _y)
+end
+
+RegisterNetEvent('esx_marducasjob:onFixkit2')
+AddEventHandler('esx_marducasjob:onFixkit2', function()
+	local playerPed = PlayerPedId()
+	local coords    = GetEntityCoords(playerPed)
+	local nums = {
+		eng = 1000.0,
+		body = -1,
+		tank = 1000.0
+	}
+	if IsAnyVehicleNearPoint(coords.x, coords.y, coords.z, 5.0) then
+		local vehicle = nil
+
+		if IsPedInAnyVehicle(playerPed, false) then
+			ESX.ShowNotification('~r~Cannot repair from inside!')
+			return
+		else
+			vehicle = GetClosestVehicle(coords.x, coords.y, coords.z, 5.0, 0, 71)
+		end
+
+		if DoesEntityExist(vehicle) then
+			if checkDistance(vehicle) then
+				TriggerServerEvent('esx_repairkit:removeKit')
+
+				ESX.ShowNotification(_U('you_used_repair_kit'))
+
+				local hood = hoodLocation(vehicle)
+				makeEntityFaceEntity(hood)
+
+				local bonnet = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'bonnet')
+				if bonnet ~= -1 then
+						SetVehicleDoorOpen(vehicle, 4, false, false)
+				end
+
+				SetVehicleDoorOpen(vehicle, 4, false, false)
+
+				TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
+				Citizen.CreateThread(function()
+
+					if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) or (Config.IsMechanicJobOnly == false) then
+
+						Citizen.Wait(Config.MechTime)
+						ClearPedTasksImmediately(playerPed)
+				  	ESX.ShowNotification(_U('full_repaired'))
+						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
+						return
+
+					else
+
+						Citizen.Wait(Config.NonMechTime/2)
+						ESX.ShowNotification(_U('half_way'))
+						Citizen.Wait(Config.NonMechTime/2)
+
+						SetVehicleUndriveable(vehicle,false)
+
+						local vHealth = GetVehicleEngineHealth(vehicle)
+
+						if (vHealth >= Config.MaxRepair) then
+
+							nums.eng = 1000.0
+
+						elseif (vHealth <= Config.MidA) and (vHealth >= Config.MidB) then
+
+							nums.eng = math.random(mathClamp(math.floor(vHealth), Config.MidMin, Config.MidMax) + 100 ,Config.MidMax) + (math.random(10,99)/100)
+
+						elseif (vHealth <= Config.BottomEnd) then
+
+							nums.eng = math.random(mathClamp(math.floor(vHealth), Config.RepairMin, Config.RepairMax),Config.RepairMax) + (math.random(10,99)/100)
+
+						end
+
+						if nums.eng == 1000 then
+							ESX.ShowNotification(_U('veh_repaired'))
+						elseif nums.eng <1000 and nums.eng > 700 then
+							ESX.ShowNotification(_U('med_repaired'))
+						else
+							ESX.ShowNotification(_U('bad_repaired'))
+						end
+
+						if (GetVehiclePetrolTankHealth(vehicle) <= 750.0) then
+							nums.tank = 750.0
+						else
+							nums.tank = 1000.0
+						end
+						SetVehicleDoorShut(vehicle, 4, false)
+						TriggerServerEvent('esx_marducasjob:repaircar',vehicle,nums)
+						ClearPedTasksImmediately(playerPed)
+					end
+				end)
+			else
+				Citizen.CreateThread(function()
+					local txt = repairLocation(vehicle)
+					for i= 0,500 do
+						DrawText3D(txt, 'Stand here!')
+						ESX.ShowNotification('~r~Stand by hood to repair!')
+						Wait(10)
+					end
+				end)
+			end
+		end
+	else
+		ESX.ShowNotification('~r~No vehicle nearby!')
+	end
+end)
+
 RegisterNetEvent('esx_marducasjob:onFixkit')
 AddEventHandler('esx_marducasjob:onFixkit', function()
 	local playerPed = PlayerPedId()
@@ -837,68 +1006,92 @@ AddEventHandler('esx_marducasjob:onFixkit', function()
 		local vehicle = nil
 
 		if IsPedInAnyVehicle(playerPed, false) then
-			vehicle = GetVehiclePedIsIn(playerPed, false)
+			ESX.ShowNotification('~r~Cannot repair from inside!')
+			return
 		else
 			vehicle = GetClosestVehicle(coords.x, coords.y, coords.z, 5.0, 0, 71)
 		end
 
 		if DoesEntityExist(vehicle) then
-			TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
-			Citizen.CreateThread(function()
+			if checkDistance(vehicle) then
+				TriggerServerEvent('esx_marducasjob:removekit')
+				local hood = hoodLocation(vehicle)
+				makeEntityFaceEntity(hood)
 
-				if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) or (Config.IsMechanicJobOnly == false) then
-
-					Citizen.Wait(Config.MechTime)
-					ClearPedTasksImmediately(playerPed)
-			  	ESX.ShowNotification(_U('full_repaired'))
-					TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
-					return
-
-				else
-
-					Citizen.Wait(Config.NonMechTime/2)
-					ESX.ShowNotification(_U('half_way'))
-					Citizen.Wait(Config.NonMechTime/2)
-
-					SetVehicleUndriveable(vehicle,false)
-
-					local vHealth = GetVehicleEngineHealth(vehicle)
-
-					if (vHealth >= Config.MaxRepair) then
-
-						nums.eng = 1000.0
-
-					elseif (vHealth <= Config.MidA) and (vHealth >= Config.MidB) then
-
-						nums.eng = math.random(mathClamp(math.floor(vHealth), Config.MidMin, Config.MidMax) + 100 ,Config.MidMax) + (math.random(10,99)/100)
-
-					elseif (vHealth <= Config.BottomEnd) then
-
-						nums.eng = math.random(mathClamp(math.floor(vHealth), Config.RepairMin, Config.RepairMax),Config.RepairMax) + (math.random(10,99)/100)
-
-					end
-
-					if nums.eng == 1000 then
-						ESX.ShowNotification(_U('veh_repaired'))
-					elseif nums.eng <1000 and nums.eng > 700 then
-						ESX.ShowNotification(_U('med_repaired'))
-					else
-						ESX.ShowNotification(_U('bad_repaired'))
-					end
-
-					if (GetVehiclePetrolTankHealth(vehicle) <= 750.0) then
-						nums.tank = 750.0
-						--SetVehiclePetrolTankHealth(vehicle, 750.0)
-					else
-						nums.tank = 1000.0
-						--SetVehiclePetrolTankHealth(vehicle, 1000.0)
-					end
-					TriggerServerEvent('esx_marducasjob:repaircar',vehicle,nums)
-					--SetVehicleEngineOn(vehicle, false, true)
-					ClearPedTasksImmediately(playerPed)
+				local bonnet = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'bonnet')
+				if bonnet ~= -1 then
+						SetVehicleDoorOpen(vehicle, 4, false, false)
 				end
-			end)
+
+				SetVehicleDoorOpen(vehicle, 4, false, false)
+
+				TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
+				Citizen.CreateThread(function()
+
+					if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) or (Config.IsMechanicJobOnly == false) then
+
+						Citizen.Wait(Config.MechTime)
+						ClearPedTasksImmediately(playerPed)
+				  	ESX.ShowNotification(_U('full_repaired'))
+						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
+						return
+
+					else
+
+						Citizen.Wait(Config.NonMechTime/2)
+						ESX.ShowNotification(_U('half_way'))
+						Citizen.Wait(Config.NonMechTime/2)
+
+						SetVehicleUndriveable(vehicle,false)
+
+						local vHealth = GetVehicleEngineHealth(vehicle)
+
+						if (vHealth >= Config.MaxRepair) then
+
+							nums.eng = 1000.0
+
+						elseif (vHealth <= Config.MidA) and (vHealth >= Config.MidB) then
+
+							nums.eng = math.random(mathClamp(math.floor(vHealth), Config.MidMin, Config.MidMax) + 100 ,Config.MidMax) + (math.random(10,99)/100)
+
+						elseif (vHealth <= Config.BottomEnd) then
+
+							nums.eng = math.random(mathClamp(math.floor(vHealth), Config.RepairMin, Config.RepairMax),Config.RepairMax) + (math.random(10,99)/100)
+
+						end
+
+						if nums.eng == 1000 then
+							ESX.ShowNotification(_U('veh_repaired'))
+						elseif nums.eng <1000 and nums.eng > 700 then
+							ESX.ShowNotification(_U('med_repaired'))
+						else
+							ESX.ShowNotification(_U('bad_repaired'))
+						end
+
+						if (GetVehiclePetrolTankHealth(vehicle) <= 750.0) then
+							nums.tank = 750.0
+						else
+							nums.tank = 1000.0
+						end
+						SetVehicleDoorShut(vehicle, 4, false)
+						TriggerServerEvent('esx_marducasjob:repaircar',vehicle,nums)
+						ClearPedTasksImmediately(playerPed)
+
+					end
+				end)
+			else
+				Citizen.CreateThread(function()
+					local txt = repairLocation(vehicle)
+					for i= 0,500 do
+						DrawText3D(txt, 'Stand here!')
+						ESX.ShowNotification('~r~Stand by hood to repair!')
+						Wait(10)
+					end
+				end)
+			end
 		end
+	else
+		ESX.ShowNotification('~r~No vehicle nearby!')
 	end
 end)
 

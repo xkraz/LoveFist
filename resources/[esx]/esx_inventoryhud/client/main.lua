@@ -116,6 +116,11 @@ function openInventory()
     SetNuiFocus(true, true)
 end
 
+RegisterNetEvent('esx_inventoryhud:close')
+AddEventHandler('esx_inventoryhud:close', function()
+  closeInventory()
+end)
+
 function closeInventory()
     isInInventory = false
     SendNUIMessage(
