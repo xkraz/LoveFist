@@ -205,63 +205,63 @@ function helpDisplay(text, state)
   DisplayHelpTextFromStringLabel(0, state, 0, -1)
 end
 
-Citizen.CreateThread(function()
+--Citizen.CreateThread(function()
 
-while true do
-    Citizen.Wait(60000)
+--while true do
+  --  Citizen.Wait(60000)
 
-  local chanceill = math.random(1, 100)
+  --local chanceill = math.random(1, 100)
 
-   if chanceill < chance then -- Vérifie si le nombre aléatoire est inférieur à 6, 5% de 100 (par défaut).
-       ill = true -- Tomber malade si vous avez eu la "chance" avec succès.
+   --if chanceill < chance then -- Vérifie si le nombre aléatoire est inférieur à 6, 5% de 100 (par défaut).
+     --  ill = true -- Tomber malade si vous avez eu la "chance" avec succès.
 
-    end
-  end
-end)
+    --end
+  --end
+--end)
 
 
-Citizen.CreateThread(function()
+-- Citizen.CreateThread(function()
 
-while true do
-     local chansatthosta = math.random(30000, 100000)
+-- while true do
+     -- local chansatthosta = math.random(30000, 100000)
 
-    Citizen.Wait(chansatthosta)
+    -- Citizen.Wait(chansatthosta)
 
-    if ill then --Vérifie si malade
+    -- if ill then --Vérifie si malade
 
 --Animation toux
-     RequestAnimDict("timetable@gardener@smoking_joint")
-         while not HasAnimDictLoaded("timetable@gardener@smoking_joint") do
-          Citizen.Wait(100)
-         end
+     -- RequestAnimDict("timetable@gardener@smoking_joint")
+         -- while not HasAnimDictLoaded("timetable@gardener@smoking_joint") do
+          -- Citizen.Wait(100)
+         -- end
 
-      SetNotificationTextEntry('STRING')
-      AddTextComponentString(_U('care_needs'))
-      DrawNotification(false, false)
-    TaskPlayAnim(GetPlayerPed(-1), "timetable@gardener@smoking_joint", "idle_cough", 8.0, 8.0, -1, 50, 0, false, false, false)
-        Citizen.Wait(3000)
-      ClearPedSecondaryTask(GetPlayerPed(-1))
+      -- SetNotificationTextEntry('STRING')
+      -- AddTextComponentString(_U('care_needs'))
+      -- DrawNotification(false, false)
+    -- TaskPlayAnim(GetPlayerPed(-1), "timetable@gardener@smoking_joint", "idle_cough", 8.0, 8.0, -1, 50, 0, false, false, false)
+        -- Citizen.Wait(3000)
+      -- ClearPedSecondaryTask(GetPlayerPed(-1))
 
-   end
-  end
-end)
+   -- end
+  -- end
+-- end)
 
-Citizen.CreateThread(function()
-while true do
+-- Citizen.CreateThread(function()
+-- while true do
 
-     local chanstillfrisk = math.random(900000, 1800000) -- Chance d'être la santé par vous-même
+     -- local chanstillfrisk = math.random(900000, 1800000) -- Chance d'être la santé par vous-même
 
-    Citizen.Wait(chanstillfrisk)
+    -- Citizen.Wait(chanstillfrisk)
 
-    if ill then
-    ill = false
+    -- if ill then
+    -- ill = false
 
-    end
-  end
-end)
+    -- end
+  -- end
+-- end)
 
 --trucs antibiotiques
-RegisterNetEvent('esx_pharmacyv2:frisk')
-AddEventHandler('esx_pharmacyv2:frisk', function()
-  ill = false
-  end)
+-- RegisterNetEvent('esx_pharmacyv2:frisk')
+-- AddEventHandler('esx_pharmacyv2:frisk', function()
+  -- ill = false
+  -- end)
