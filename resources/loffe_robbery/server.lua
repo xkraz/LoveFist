@@ -37,6 +37,8 @@ AddEventHandler('loffe_robbery:pickUp', function(store, player)
       TriggerClientEvent('esx:showNotification', source, Translation[Config.Locale]['cashrecieved'] .. ' ~g~$' .. randomAmount)
       TriggerClientEvent('loffe_robbery:removePickup', -1, store)
       isrobbing[store] = nil
+    else
+      TriggerClientEvent('esx:showNotification', source, '~r~Not you payout!')
     end
 end)
 
