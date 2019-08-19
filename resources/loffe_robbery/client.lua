@@ -151,8 +151,8 @@ AddEventHandler('loffe_robbery:rob', function(i)
                             break
                         end
                         xx = xx + 1
-                        if xx > 6000 then
-                          TriggerServerEvent('loffe_robbery:clearbag', i, PlayerPedId())
+                        if xx > 60000 then
+                          TriggerServerEvent('loffe_robbery:clearbag', i)
                           break
                         end
                     end
@@ -268,7 +268,7 @@ Citizen.CreateThread(function()
                                 TriggerServerEvent('loffe_robbery:notifycops', i)
 
                                 local scared = 0
-                                while scared < 100 and not IsPedDeadOrDying(peds[i]) and GetDistanceBetweenCoords(GetEntityCoords(me), GetEntityCoords(peds[i]), true) <= 7.5 do
+                                while scared < 140 and not IsPedDeadOrDying(peds[i]) and GetDistanceBetweenCoords(GetEntityCoords(me), GetEntityCoords(peds[i]), true) <= 7.5 do
                                     local sleep = 600
                                     SetEntityAnimSpeed(peds[i], "missheist_agency2ahands_up", "handsup_anxious", 1.0)
                                     if IsPlayerFreeAiming(PlayerId()) then

@@ -158,7 +158,6 @@ end
 function VehiclePartsRemoval()
     local ped = PlayerPedId()
     local vehicle = GetVehiclePedIsIn( ped, false )
-    SetVehicleNumberPlateText(vehicle, "stolen")
     SetVehicleEngineOn(vehicle, false, false, true)
     SetVehicleUndriveable(vehicle, false)
     if ChoppingInProgress == true then

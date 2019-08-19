@@ -43,9 +43,7 @@ AddEventHandler('loffe_robbery:pickUp', function(store, player)
 end)
 
 RegisterServerEvent('loffe_robbery:clearbag')
-AddEventHandler('loffe_robbery:clearbag', function(store, player)
-    local xPlayer = ESX.GetPlayerFromId(source)
-    local pID = player
+AddEventHandler('loffe_robbery:clearbag', function(store)
     TriggerClientEvent('loffe_robbery:removePickup', -1, store)
     isrobbing[store] = nil
 end)
