@@ -1,19 +1,19 @@
 local weapons = {
-	'WEAPON_KNIFE',
-	'WEAPON_NIGHTSTICK',
-	'WEAPON_HAMMER',
-	'WEAPON_BAT',
-	'WEAPON_GOLFCLUB',
-	'WEAPON_CROWBAR',
-	'WEAPON_BOTTLE',
-	'WEAPON_DAGGER',
-	'WEAPON_HATCHET',
-	'WEAPON_MACHETE',
-	'WEAPON_SWITCHBLADE',
-	'WEAPON_BATTLEAXE',
-	'WEAPON_POOLCUE',
-	'WEAPON_WRENCH',
-	'WEAPON_PISTOL',
+	--'WEAPON_KNIFE',
+	--'WEAPON_NIGHTSTICK',
+	--'WEAPON_HAMMER',
+	--'WEAPON_BAT',
+	--'WEAPON_GOLFCLUB',
+	--'WEAPON_CROWBAR',
+	--'WEAPON_BOTTLE',
+	--'WEAPON_DAGGER',
+	--'WEAPON_HATCHET',
+	--'WEAPON_MACHETE',
+	--'WEAPON_SWITCHBLADE',
+	--'WEAPON_BATTLEAXE',
+	--'WEAPON_POOLCUE',
+	--'WEAPON_WRENCH',
+	--'WEAPON_PISTOL',
 	'WEAPON_COMBATPISTOL',
 	'WEAPON_APPISTOL',
 	'WEAPON_PISTOL50',
@@ -100,9 +100,9 @@ Citizen.CreateThread(function()
 						canFire = true
 					elseif newWeap ~= currWeapon then
 						canFire = false
-						TaskPlayAnimAdvanced(GetPlayerPed(-1), "reaction@intimidation@1h", "outro", GetEntityCoords(GetPlayerPed(-1), true), 0, 0, rot, 8.0, 3.0, -1, 50, 0, 0, 0)
-						Citizen.Wait(1600)
-						SetCurrentPedWeapon(GetPlayerPed(-1), GetHashKey('WEAPON_UNARMED'), true)
+						--TaskPlayAnimAdvanced(GetPlayerPed(-1), "reaction@intimidation@1h", "outro", GetEntityCoords(GetPlayerPed(-1), true), 0, 0, rot, 8.0, 3.0, -1, 50, 0, 0, 0)
+						--Citizen.Wait(1600)
+						--SetCurrentPedWeapon(GetPlayerPed(-1), GetHashKey('WEAPON_UNARMED'), true)
 						--ClearPedTasks(GetPlayerPed(-1))
 						TaskPlayAnimAdvanced(GetPlayerPed(-1), "reaction@intimidation@1h", "intro", GetEntityCoords(GetPlayerPed(-1), true), 0, 0, rot, 8.0, 3.0, -1, 50, 0, 0, 0)
 						Citizen.Wait(1000)
