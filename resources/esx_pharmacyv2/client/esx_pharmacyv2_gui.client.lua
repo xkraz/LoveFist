@@ -9,10 +9,10 @@ function OpenShopMenu()
       label = _U('firstaidkit') .. ' : [' .. Config.Price['firstaidkit'] .. '$]',
       value = { name = 'firstaidkit',    price = Config.Price['firstaidkit'] } 
     },
-	{
-	  label = _U('anti') .. ' : [' .. Config.Price['anti'] .. '$]',
-	  value = { name = 'anti',    price = Config.Price['anti'] }
-	},
+	-- {
+	  -- label = _U('anti') .. ' : [' .. Config.Price['anti'] .. '$]',
+	  -- value = { name = 'anti',    price = Config.Price['anti'] }
+	-- },
     { 
       label = _U('defibrillateur') .. ' : [' .. Config.Price['defibrillateur'] .. '$]',
       value = { name = 'defibrillateur', price = Config.Price['defibrillateur'] }
@@ -20,7 +20,7 @@ function OpenShopMenu()
   }
 
   ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop', {
-      css =  'superete',
+      css =  'pharmacy',
 	  title    = _U('drugstore'),
       align    = 'top-left',
       elements = elements
@@ -28,7 +28,7 @@ function OpenShopMenu()
       local element = data.current.value
 
       ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'shop_confirm', {
-          css =  'valider',
+          css =  'validate',
 		  title = _U('valid_this_purchase'),
           align = 'top-left',
           elements = {

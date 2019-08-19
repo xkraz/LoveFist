@@ -2,7 +2,7 @@ Locales['en'] = {
 
     ['firstaidkit']         = 'First aid kit',
 	['anti']                = 'Antibiotic',
-    ['defibrillateur']      = 'Défibrillator',
+    ['defibrillateur']      = 'Defibrillator',
 
     ['yes']                 = 'Yes',
     ['no']                  = 'No',
