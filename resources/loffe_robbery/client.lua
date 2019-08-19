@@ -305,6 +305,8 @@ Citizen.CreateThread(function()
                                     Wait(0)
                                     DrawText3D(GetOffsetFromEntityInWorldCoords(PlayerPedId(), 0.0, 1.5, 0.4), Translation[Config.Locale]['no_cops'])
                                 end
+                            elseif canRob == 'inprog'
+                              Wait(1000)
                             else
                                 TriggerEvent('loffe_robbery:talk', i, '~g~*' .. Translation[Config.Locale]['shopkeeper'] .. '* ~w~' .. Translation[Config.Locale]['robbed'], 5)
                                 Wait(2500)
