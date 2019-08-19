@@ -42,6 +42,14 @@ AddEventHandler('loffe_robbery:pickUp', function(store, player)
     end
 end)
 
+RegisterServerEvent('loffe_robbery:clearbag')
+AddEventHandler('loffe_robbery:clearbag', function(store, player)
+    local xPlayer = ESX.GetPlayerFromId(source)
+    local pID = player
+    TriggerClientEvent('loffe_robbery:removePickup', -1, store)
+    isrobbing[store] = nil
+end)
+
 RegisterServerEvent('loffe_robbery:robID')
 AddEventHandler('loffe_robbery:robID', function(store, player)
     if isrobbing[store] == nil then
@@ -50,8 +58,10 @@ AddEventHandler('loffe_robbery:robID', function(store, player)
 end)
 
 RegisterServerEvent('loffe_robbery:clearID')
-AddEventHandler('loffe_robbery:clearID', function(store)
-      isrobbing[store] = nil
+AddEventHandler('loffe_robbery:clearID', function(store, player)
+      if isrobbing[store] == player then
+        isrobbing[store] = nil
+      end
 end)
 
 ESX.RegisterServerCallback('loffe_robbery:canRob', function(source, cb, store)
