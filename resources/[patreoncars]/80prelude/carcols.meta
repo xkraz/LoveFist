@@ -3,8 +3,8 @@
 <CVehicleModelInfoVarGlobal>     
   <Kits>
     <Item>
-      <kitName>130_80prelude_modkit</kitName>
-      <id value="1056" />	 	  
+      <kitName>80prelude_modkit</kitName>
+      <id value="2038" />	 	  
       <kitType>MKT_SPECIAL</kitType>
       <visibleMods>
         <Item>

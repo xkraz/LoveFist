@@ -13,14 +13,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -31,14 +23,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -49,14 +33,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -67,14 +43,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -85,14 +53,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -103,14 +63,7 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
+ 
           </liveries>
         </Item>
         <Item>
@@ -121,14 +74,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -139,14 +84,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -157,14 +94,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -175,14 +104,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -193,14 +114,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -211,14 +124,6 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
         <Item>
@@ -229,19 +134,11 @@
             156 
           </indices>
           <liveries>
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
-            <Item value="false" />
           </liveries>
         </Item>
       </colors>
       <kits>
-        <Item>922_80prelude_modkit</Item>
+        <Item>80prelude_modkit</Item>
       </kits>
       <windowsWithExposedEdges />
       <plateProbabilities>
