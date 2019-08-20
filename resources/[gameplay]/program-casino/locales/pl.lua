@@ -47,4 +47,21 @@ Locales['pl'] = {
   ['craft_miss']               = 'On average, this mixture came out ...',
   ['not_enough']               = 'Lack ~r~ ',
   ['craft']                    = 'Complete mixing ~g~',
+  
+  
+  --- USED DRINKS
+  
+  ['used_jagercerbere']              = 'Casino Special straight to the brain!',
+  ['used_metreshooter']              = 'Thats a big shot!',
+  ['used_mixapero']                  = 'You drink a Mixapero',
+  ['used_mojito']              		 = 'Mojitooooooooooos',
+  ['used_rhumcoca']              	 = 'Rhum and Cokes are your favorite',
+  ['used_teqpaf']             	     = 'You drink the Teqpaf',
+  ['used_rhumfruit']                 = 'Fruity delicious goodness',
+  ['used_vodkafruit']                = 'Nothing wrong with a little fruit cocktail',
+  ['used_vodkaenergy']               = 'Get it pumping through veins!',
+  ['used_whiskycoca']                = 'Classy Whisky Cola, spicy!',
+  ['used_golem']                     = 'Hopefully this doesnt turn you into a monster',
+  ['used_jagerbomb']                 = 'Jagerbombs! Lets go!!!',
+
 }

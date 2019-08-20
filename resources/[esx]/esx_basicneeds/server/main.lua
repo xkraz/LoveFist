@@ -232,9 +232,134 @@ ESX.RegisterUsableItem('cigarett', function(source)
 			xPlayer.removeInventoryItem('cigarett', 1)
 			TriggerClientEvent('esx_cigarett:startSmoke', source)
 		else
-			TriggerClientEvent('esx:showNotification', source, ('Não tens ~r~isqueiro'))
+			TriggerClientEvent('esx:showNotification', source, ('No lighter available.'))
 		end
 end)
+
+----------- COCKTAILS ---------------------------
+
+ESX.RegisterUsableItem('jagerbomb', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('jagerbomb', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 400000)
+	TriggerClientEvent('esx_basicneeds:onDrinkJagerbomb', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_jagerbomb'))
+end)
+
+ESX.RegisterUsableItem('golem', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('golem', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 50000)
+	TriggerClientEvent('esx_basicneeds:onDrinkGolem', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_golem'))
+end)
+
+ESX.RegisterUsableItem('whiskycoca', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('whiskycoca', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 50000)
+	TriggerClientEvent('esx_basicneeds:onDrinkWhiskycoca', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_whiskycoca'))
+end)
+
+ESX.RegisterUsableItem('vodkaenergy', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('vodkaenergy', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 200000)
+	TriggerClientEvent('esx_basicneeds:onDrinkVodkaenergy', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_vodkaenergy'))
+end)
+
+ESX.RegisterUsableItem('vodkafruit', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('vodkafruit', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 50000)
+	TriggerClientEvent('esx_basicneeds:onDrinkVodkafruit', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_vodkafruit'))
+end)
+
+ESX.RegisterUsableItem('rhumfruit', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('rhumfruit', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 50000)
+	TriggerClientEvent('esx_basicneeds:onDrinkRhumfruit', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_rhumfruit'))
+end)
+
+ESX.RegisterUsableItem('teqpaf', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('teqpaf', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 50000)
+	TriggerClientEvent('esx_basicneeds:onDrinkTeqpaf', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_teqpaf'))
+end)
+
+ESX.RegisterUsableItem('rhumcoca', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('rhumcoca', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 50000)
+	TriggerClientEvent('esx_basicneeds:onDrinkRhumcoca', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_rhumcoca'))
+end)
+
+ESX.RegisterUsableItem('mojito', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('mojito', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 50000)
+	TriggerClientEvent('esx_basicneeds:onDrinkMojito', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_mojito'))
+end)
+
+ESX.RegisterUsableItem('mixapero', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('mixapero', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 350000)
+	TriggerClientEvent('esx_basicneeds:onDrinkMixapero', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_mixapero'))
+end)
+
+ESX.RegisterUsableItem('metreshooter', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('metreshooter', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 400000)
+	TriggerClientEvent('esx_basicneeds:onDrinkMetreshooter', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_metreshooter'))
+end)
+
+ESX.RegisterUsableItem('jagercerbere', function(source)
+	local xPlayer = ESX.GetPlayerFromId(source)
+
+	xPlayer.removeInventoryItem('jagercerbere', 1)
+
+	TriggerClientEvent('esx_status:add', source, 'drunk', 500000)
+	TriggerClientEvent('esx_basicneeds:onDrinkJagercerbere', source)
+	TriggerClientEvent('esx:showNotification', source, _U('used_jagercerbere'))
+end)
+
+
+
 
 TriggerEvent('es:addGroupCommand', 'heal', 'mod', function(source, args, user)
 	-- heal another player - don't heal source
