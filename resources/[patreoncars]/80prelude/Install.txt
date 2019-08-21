@@ -1,0 +1,25 @@
+SA version created by SGdesign
+Converted for V by Ghost0912 
+
+
+
+Replaces: FuroreGT
+
+
+Bug List: 
+- lights corona incorrect 
+- lights glass tinted 
+- dials not work
+
+Featured List: 
+- original steeringwheel work 
+- glass crashes 
+- working lights 
+- correct door, bonnet and boot collision and opening 
+- correct hand position 
+- 2 version JDM/Stock
+- paintable rims
+
+
+Install Replace: 
+mods\x64w.rpf\dlcpacks\mplts\dlc.rpf\x64\levels\gta5\vehicles\ltsvehicles.rpf 

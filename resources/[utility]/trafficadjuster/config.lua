@@ -1,6 +1,6 @@
 TrafficAmount = 4
 PedestrianAmount = 50
-ParkedAmount = 10
+ParkedAmount = 25
 EnableDispatch = true
 
 
