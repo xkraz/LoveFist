@@ -813,6 +813,7 @@ AddEventHandler('esx_marducasjob:repaircar', function(car, specs)
 		SetVehicleBodyHealth(car, 1000.0)
 
 		for i = 0, 4 do
+			SetVehicleTyreBurst(vehicle, i, true, 0.0)
 			SetVehicleTyreFixed(vehicle, i)
 		end
 
@@ -832,9 +833,9 @@ end)
 RegisterNetEvent('esx_marducasjob:mechrepair')
 AddEventHandler('esx_marducasjob:mechrepair', function(car)
 
-	SetVehicleFixed(car)
-	SetVehicleDeformationFixed(car)
-	SetVehicleUndriveable(car, false)
+		SetVehicleFixed(car)
+		SetVehicleDeformationFixed(car)
+		SetVehicleUndriveable(car, false)
 
 end)
 
@@ -927,9 +928,20 @@ AddEventHandler('esx_marducasjob:onFixkit2', function()
 				TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
 				Citizen.CreateThread(function()
 
-					if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) or (Config.IsMechanicJobOnly == false) then
+					if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) then
 
-						Citizen.Wait(Config.MechTime)
+						Citizen.Wait(Config.MechTime/2)
+						ESX.ShowNotification(_U('half_way'))
+						Citizen.Wait(Config.MechTime/2)
+						ClearPedTasksImmediately(playerPed)
+				  	ESX.ShowNotification(_U('full_repaired'))
+						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
+						return
+
+					elseif ESX.PlayerData.job.name == 'police' then
+						Citizen.Wait(Config.NonMechTime/2)
+						ESX.ShowNotification(_U('half_way'))
+						Citizen.Wait(Config.NonMechTime/2)
 						ClearPedTasksImmediately(playerPed)
 				  	ESX.ShowNotification(_U('full_repaired'))
 						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
@@ -1014,7 +1026,7 @@ AddEventHandler('esx_marducasjob:onFixkit', function()
 
 		if DoesEntityExist(vehicle) then
 			if checkDistance(vehicle) then
-				TriggerServerEvent('esx_marducasjob:removekit')
+				TriggerServerEvent('esx_marducasjob:removerepair')
 				local hood = hoodLocation(vehicle)
 				makeEntityFaceEntity(hood)
 
@@ -1030,7 +1042,18 @@ AddEventHandler('esx_marducasjob:onFixkit', function()
 
 					if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) or (Config.IsMechanicJobOnly == false) then
 
-						Citizen.Wait(Config.MechTime)
+						Citizen.Wait(Config.MechTime/2)
+						ESX.ShowNotification(_U('half_way'))
+						Citizen.Wait(Config.MechTime/2)
+						ClearPedTasksImmediately(playerPed)
+				  	ESX.ShowNotification(_U('full_repaired'))
+						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
+						return
+
+					elseif ESX.PlayerData.job.name == 'police' then
+						Citizen.Wait(Config.NonMechTime/2)
+						ESX.ShowNotification(_U('half_way'))
+						Citizen.Wait(Config.NonMechTime/2)
 						ClearPedTasksImmediately(playerPed)
 				  	ESX.ShowNotification(_U('full_repaired'))
 						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
