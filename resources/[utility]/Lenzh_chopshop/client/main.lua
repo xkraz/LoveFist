@@ -11,8 +11,8 @@ local menuOpen 				          = false
 local wasOpen 				          = false
 local pedIsTryingToChopVehicle  = false
 local ChoppingInProgress        = false
-local HasChoped                 = false
-
+local lastTested                = nil
+local servTime                  = nil
 
 
 Citizen.CreateThread(function()
@@ -107,40 +107,89 @@ function MaxSeats(vehicle)
     return vehpas
 end
 
-local lastTested = 0
-function ChopVehicle()
-    local seats = MaxSeats(vehicle)
-    if seats ~= 0 then
-        TriggerEvent('chat:addMessage', { args = { '[^1Chopshop^0]: Cannot chop with passengers' } })
-    elseif
-        GetGameTimer() - lastTested > Config.CooldownMinutes * 60000 or (HasChoped == false) then
-        lastTested = GetGameTimer()
-        ESX.TriggerServerCallback('Lenzh_chopshop:anycops', function(anycops)
-            if anycops >= Config.CopsRequired then
-                if Config.CallCops then
-                    local randomReport = math.random(1, 100)
+RegisterNetEvent('chopStart')
+AddEventHandler('chopStart', function(pID)
+  if PlayerId() == pID then
+    ChopVehicle()
+  end
+end)
 
-                    if randomReport <= Config.CallCopsPercent then
-                        TriggerServerEvent('chopNotify')
-                    end
-                end
-                local ped = PlayerPedId()
-                local vehicle = GetVehiclePedIsIn( ped, false )
-                ChoppingInProgress        = true
-                VehiclePartsRemoval()
-                if not HasAlreadyEnteredMarker then
-                    HasAlreadyEnteredMarker =  true
-                    ChoppingInProgress      = false
-                    HasChoped               = true
-                    exports.pNotify:SendNotification({text = "You Left The Zone. No Rewards For You", type = "error", timeout = 1000, layout = "centerRight", queue = "right", killer = true, animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}})
-                    SetVehicleAlarmTimeLeft(vehicle, 60000)
-                end
-            else
-                ESX.ShowNotification(_U('not_enough_cops'))
-            end
-        end)
-    else
-        local timerNewChop = Config.CooldownMinutes * 60000 - (GetGameTimer() - lastTested)
+RegisterNetEvent('chopGetTime')
+AddEventHandler('chopGetTime', function(time, pID)
+  local tim
+  if pID == PlayerId() then
+    tim = time
+    updateTime(tim)
+  end
+end)
+
+RegisterNetEvent("chopGetServTime")
+AddEventHandler("chopGetServTime", function(time, pID)
+  local tim
+  if pID == PlayerId() then
+    tim = time
+    updateServTime(tim)
+  end
+end)
+
+
+function updateTime(time)
+  lastTested = time
+end
+
+function updateServTime(time)
+  servTime = time
+end
+
+function ChopVehicle(pID)
+  TriggerServerEvent('chopGetTime', PlayerId())
+  TriggerServerEvent('chopGetServTime', PlayerId())
+
+  while lastTested == nil or servTime == nil do
+      Citizen.Wait(100)
+  end
+
+  print('Current time: ' .. servTime .. ', Last Time: ' .. lastTested)
+  print(math.abs(servTime - lastTested) .. ' | ' .. Config.CooldownMinutes * 60000)
+  print(servTime - lastTested > Config.CooldownMinutes * 60000)
+
+  local seats = MaxSeats(vehicle)
+
+  if seats ~= 0 then
+      TriggerEvent('chat:addMessage', { args = { '[^1Chopshop^0]: Cannot chop with passengers' } })
+  elseif (servTime - lastTested > Config.CooldownMinutes * 60000) or lastTested == 0 then
+      if lastTested == 0 then
+        print('First Time')
+      else
+        print('Cooldown Over')
+      end
+      ESX.TriggerServerCallback('Lenzh_chopshop:anycops', function(anycops)
+          if anycops >= Config.CopsRequired then
+              if Config.CallCops then
+                  local randomReport = math.random(1, 100)
+
+                  if randomReport <= Config.CallCopsPercent then
+                      TriggerServerEvent('chopNotify')
+                  end
+              end
+              local ped = PlayerPedId()
+              local vehicle = GetVehiclePedIsIn( ped, false )
+              ChoppingInProgress        = true
+              VehiclePartsRemoval()
+              if not HasAlreadyEnteredMarker then
+                  HasAlreadyEnteredMarker =  true
+                  ChoppingInProgress      = false
+                  exports.pNotify:SendNotification({text = "You Left The Zone. No Rewards For You", type = "error", timeout = 1000, layout = "centerRight", queue = "right", killer = true, animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}})
+                  SetVehicleAlarmTimeLeft(vehicle, 60000)
+              end
+          else
+              ESX.ShowNotification(_U('not_enough_cops'))
+          end
+      end)
+  else
+      print('Wait Time')
+      local timerNewChop = Config.CooldownMinutes * 60000 - (servTime - lastTested)
+      if timerNewChop >= 60000 then
         exports.pNotify:SendNotification({
             text = "Comeback in " ..math.floor(timerNewChop / 60000).. " minute(s)",
             type = "error",
@@ -150,7 +199,18 @@ function ChopVehicle()
             killer = true,
             animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}
         })
-    end
+      else
+        exports.pNotify:SendNotification({
+            text = "Comeback in " ..math.floor(timerNewChop / 1000).. " seconds(s)",
+            type = "error",
+            timeout = 1000,
+            layout = "centerRight",
+            queue = "right",
+            killer = true,
+            animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}
+        })
+      end
+  end
 end
 
 
@@ -248,6 +308,8 @@ function DeleteVehicle()
             ESX.Game.DeleteVehicle(vehicle)
         end
         TriggerServerEvent("lenzh_chopshop:rewards", rewards)
+        TriggerServerEvent('chopSetTime', PlayerId())
+        lastTested = nil
     end
 end
 
@@ -369,7 +431,7 @@ Citizen.CreateThread(function()
             if IsControlJustReleased(0, 38) then
                 if IsDriver() then
                     if CurrentAction == 'Chopshop' then
-                        ChopVehicle()
+                        TriggerServerEvent('chopshopStart', PlayerId())
                     end
                 end
                 CurrentAction = nil

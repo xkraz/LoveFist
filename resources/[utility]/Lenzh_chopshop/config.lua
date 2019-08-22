@@ -6,7 +6,7 @@ Config.MarkerType         = 27    -- Change to -1 to disable marker.
 Config.MarkerColor        = { r = 255, g = 0, b = 0 } -- Change the marker color.
 
 Config.Locale             = 'en' -- Change the language. Currently available (en or fr).
-Config.CooldownMinutes    = 15 -- Minutes between chopping.
+Config.CooldownMinutes    = 5 -- Minutes between chopping.
 
 Config.CallCops           = true -- Set to true if you want cops to be alerted when chopping is in progress
 Config.CallCopsPercent    = 45 -- (min1) if 1 then cops will be called every time=100%, 2=50%, 3=33%, 4=25%, 5=20%.
@@ -21,19 +21,19 @@ Config.GiveBlack          = true -- Wanna use Blackmoney?
 
 -- Change the time it takes to open door then to break them.
 -- Time in Seconde. 1000 = 1 seconde
-Config.DoorOpenFrontLeftTime      = 5000
-Config.DoorBrokenFrontLeftTime    = 5000
-Config.DoorOpenFrontRightTime     = 5000
-Config.DoorBrokenFrontRightTime   = 5000
-Config.DoorOpenRearLeftTime       = 5000
-Config.DoorBrokenRearLeftTime     = 5000
-Config.DoorOpenRearRightTime      = 5000
-Config.DoorBrokenRearRightTime    = 5000
-Config.DoorOpenHoodTime           = 5000
-Config.DoorBrokenHoodTime         = 5000
-Config.DoorOpenTrunkTime          = 5000
-Config.DoorBrokenTrunkTime        = 5000
-Config.DeletingVehicleTime        = 5000
+Config.DoorOpenFrontLeftTime      = 500
+Config.DoorBrokenFrontLeftTime    = 500
+Config.DoorOpenFrontRightTime     = 500
+Config.DoorBrokenFrontRightTime   = 500
+Config.DoorOpenRearLeftTime       = 500
+Config.DoorBrokenRearLeftTime     = 500
+Config.DoorOpenRearRightTime      = 500
+Config.DoorBrokenRearRightTime    = 500
+Config.DoorOpenHoodTime           = 500
+Config.DoorBrokenHoodTime         = 500
+Config.DoorOpenTrunkTime          = 500
+Config.DoorBrokenTrunkTime        = 500
+Config.DeletingVehicleTime        = 500
 
 Config.Zones = {
     Chopshop = {coords = vector3(972.14, -1842.74, 31.28), name = _U('map_blip'), color = 49, sprite = 225, radius = 50.0, Pos = { x = Config.ChopShop.x, y = Config.ChopShop.y, z = Config.ChopShop.z}, Size  = { x = 5.0, y = 5.0, z = 0.5 }, },
