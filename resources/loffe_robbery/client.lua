@@ -283,7 +283,7 @@ Citizen.CreateThread(function()
                                     while sleep >= GetGameTimer() and not IsPedDeadOrDying(peds[i]) do
                                         Wait(0)
                                         DrawRect(0.5, 0.5, 0.2, 0.03, 75, 75, 75, 200)
-                                        local draw = scared/500
+                                        local draw = (scared/700)
                                         DrawRect(0.5, 0.5, draw, 0.03, 0, 221, 255, 200)
                                     end
                                     scared = scared + 1
