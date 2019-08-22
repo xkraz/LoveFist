@@ -16,9 +16,9 @@ local headCount = 0
 local playerHealth = nil
 local playerArmour = nil
 
-local _lib = 'move_m@confident'
+local _lib = 'move_m@shocked@a'
 local _lib2 = 'move_f@heels@c'
-local _walkStyle = 'move_m@confident'
+local _walkStyle = 'move_m@shocked@a'
 local _walkStyle2 = 'move_f@heels@c'
 local _crouched = false;
 
