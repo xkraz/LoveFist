@@ -145,10 +145,14 @@ function ChopVehicle(pID)
   TriggerServerEvent('chopGetTime', PlayerId())
   TriggerServerEvent('chopGetServTime', PlayerId())
 
+  local speed = 0
+
   while lastTested == nil or servTime == nil do
-      Citizen.Wait(100)
+      Citizen.Wait(1)
+      speed = speed + 1
   end
 
+  print(speed .. 'ms')
   print('Current time: ' .. servTime .. ', Last Time: ' .. lastTested)
   print(math.abs(servTime - lastTested) .. ' | ' .. Config.CooldownMinutes * 60000)
   print(servTime - lastTested > Config.CooldownMinutes * 60000)
@@ -211,6 +215,7 @@ function ChopVehicle(pID)
         })
       end
   end
+  lastTested, servTime = nil
 end
 
 
