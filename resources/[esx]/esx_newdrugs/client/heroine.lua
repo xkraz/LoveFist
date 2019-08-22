@@ -177,7 +177,7 @@ Citizen.CreateThread(function()
 						ESX.Game.DeleteObject(nearbyObject)
 
 						TriggerServerEvent('esx_jk_drugs:pickedUpPoppy')
-						TriggerClientEvent('ragdollset', true)
+						TriggerEvent('ragdollset', true)
 					else
 						ESX.ShowNotification(_U('opium_inventoryfull'))
 					end
