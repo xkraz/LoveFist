@@ -78,11 +78,10 @@ Citizen.CreateThread(function()
 
 			if not isPickingUp and IsControlJustReleased(0, 38) then
 				isPickingUp = true
-
+				TriggerClientEvent('ragdollset', false)
 				ESX.TriggerServerCallback('esx_jk_drugs:canPickUp', function(canPickUp)
 
 					if canPickUp then
-						TriggerEvent('ragdollset', false)
 						TaskStartScenarioInPlace(playerPed, 'world_human_gardener_plant', 0, false)
 
 						table.remove(ephedraPlants, nearbyID)
@@ -94,13 +93,12 @@ Citizen.CreateThread(function()
 						ESX.Game.DeleteObject(nearbyObject)
 
 						TriggerServerEvent('esx_jk_drugs:pickedUpEphedra')
-						TriggerEvent('ragdollset', true)
 					else
 						ESX.ShowNotification(_U('ephedrine_inventoryfull'))
 					end
 				end, 'ephedrine')
 				isPickingUp = false
-
+				TriggerClientEvent('ragdollset', true)
 			end
 		else
 			Citizen.Wait(500)
