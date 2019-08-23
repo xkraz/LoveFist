@@ -61,7 +61,9 @@ function removePlayerFromRadio(channelId, playerServerId)
 	end
 end
 RegisterServerEvent("TokoVoip:removePlayerFromRadio");
-AddEventHandler("TokoVoip:removePlayerFromRadio", removePlayerFromRadio);
+AddEventHandler("TokoVoip:removePlayerFromRadio", function(channel, id)
+		removePlayerFromRadio(channel, id)
+end)
 
 function removePlayerFromAllRadio(playerServerId)
 	for channelId, channel in pairs(channels) do

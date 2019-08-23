@@ -242,8 +242,11 @@ AddEventHandler("TokoVoip:addPlayerToRadio", addPlayerToRadio);
 function removePlayerFromRadio(channel)
 	TriggerServerEvent("TokoVoip:removePlayerFromRadio", channel, voip.serverId);
 end
-RegisterNetEvent("TokoVoip:removePlayerFromRadio");
-AddEventHandler("TokoVoip:removePlayerFromRadio", removePlayerFromRadio);
+
+RegisterNetEvent("removePlayerFromRadio")
+AddEventHandler("removePlayerFromRadio", function(channel)
+	removePlayerFromRadio(channel)
+end)
 
 RegisterNetEvent("TokoVoip:onPlayerLeaveChannel");
 AddEventHandler("TokoVoip:onPlayerLeaveChannel", function(channelId, playerServerId)
