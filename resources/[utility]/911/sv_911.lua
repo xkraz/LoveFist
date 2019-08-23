@@ -31,6 +31,12 @@ AddEventHandler('911', function(location, msg, x, y, z, name, ped)
 	--		elseif (xPlayer.getInventoryItem('police_scanner')>=1)
 	--			TriggerClientEvent('chatMessage', xPlayers[i], 'Scanner:', {255,0,0}, ' ^4Report: ^0' .. msg)
 			end
+			if xPlayer.job.name == 'reporter' then
+				Citizen.CreateThread(function()
+					Citizen.Wait(60000)
+					TriggerClientEvent('chatMessage', xPlayers[i], '', {255,255,255}, '^*^1311 Call: ^4Report: ^0' .. msg)
+				end)
+			end
 		end
 		sendDiscord('911 Communications', '**911 | Caller ID: **' .. playername .. '** | Report: **' .. msg)
   else
@@ -43,6 +49,13 @@ AddEventHandler('911', function(location, msg, x, y, z, name, ped)
 			--TriggerClientEvent('chatMessage', xPlayers[i], '', {255,255,255}, '^*^1911 Call: ^4Location: ^0' .. location .. '^*^4  Report: ^0' .. msg)
 			--TriggerClientEvent('911:setBlip', xPlayers[i], name, x, y, z)
 			end
+			if xPlayer.job.name == 'reporter' then
+				Citizen.CreateThread(function()
+					Citizen.Wait(60000)
+					TriggerClientEvent('chatMessage', xPlayers[i], '', {255,255,255}, '^*^1911 Call: ^4Location: ^0' .. location .. '^*^4  Report: ^0' .. msg)
+					TriggerClientEvent('911:setBlip', xPlayers[i], name, x, y, z)
+				end)
+			end
 		end
 		sendDiscord('911 Communications', '**911 | Caller ID: **' .. playername .. '** | Location: **' .. location .. '** | Report: **' .. msg)
 
@@ -50,6 +63,49 @@ AddEventHandler('911', function(location, msg, x, y, z, name, ped)
 
 		Wait(displayTime * 1000)
 		TriggerClientEvent('911:killBlip', -1)
+	end
+end)
+
+RegisterServerEvent('311')
+AddEventHandler('311', function(location, msg, x, y, z, name, ped)
+	local playername = GetPlayerName(source)
+	local ped = GetPlayerPed(source)
+	local xPlayers = ESX.GetPlayers()
+
+	if displayLocation == false then
+		for i=1, #xPlayers, 1 do
+			local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+			if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' or xPlayer.job.name == 'ambulance' or xPlayer.job.name == 'sheriff' then
+				TriggerClientEvent('chatMessage', xPlayers[i], '', {255,255,255}, '^*^1311 Call: ^4Report: ^0' .. msg)
+	--		elseif (xPlayer.getInventoryItem('police_scanner')>=1)
+	--			TriggerClientEvent('chatMessage', xPlayers[i], 'Scanner:', {255,0,0}, ' ^4Report: ^0' .. msg)
+			end
+			if xPlayer.job.name == 'reporter' then
+				Citizen.CreateThread(function()
+					Citizen.Wait(60000)
+					TriggerClientEvent('chatMessage', xPlayers[i], '', {255,255,255}, '^*^1311 Call: ^4Report: ^0' .. msg)
+				end)
+			end
+		end
+		sendDiscord('311 Communications', '**311 | Caller ID: **' .. playername .. '** | Report: **' .. msg)
+  else
+		for i=1, #xPlayers, 1 do
+			local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
+			if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' or xPlayer.job.name == 'ambulance' or xPlayer.job.name == 'sheriff' then
+				TriggerClientEvent('chatMessage', xPlayers[i], '', {255,255,255}, '^*^3311 Call: ^4Location: ^0' .. location .. '^*^4  Report: ^0' .. msg)
+		--elseif (xPlayer.getInventoryItem('police_scanner')>=1)
+			--TriggerClientEvent('chatMessage', xPlayers[i], '', {255,255,255}, '^*^1311 Call: ^4Location: ^0' .. location .. '^*^4  Report: ^0' .. msg)
+			--TriggerClientEvent('311:setBlip', xPlayers[i], name, x, y, z)
+			end
+			if xPlayer.job.name == 'reporter' then
+				Citizen.CreateThread(function()
+					Citizen.Wait(60000)
+					TriggerClientEvent('chatMessage', xPlayers[i], '', {255,255,255}, '^*^3311 Call: ^4Location: ^0' .. location .. '^*^4  Report: ^0' .. msg)
+				end)
+			end
+		end
+		sendDiscord('311 Communications', '**311 | Caller ID: **' .. playername .. '** | Location: **' .. location .. '** | Report: **' .. msg)
+
 	end
 end)
 
