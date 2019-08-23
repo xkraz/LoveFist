@@ -132,6 +132,8 @@ function TokoVoip.initialize(self)
 				if (self.mode > 3) then
 					self.mode = 1;
 				end
+				setPlayerData(self.serverId, "voip:mode", self.mode, true);
+				self:updateTokoVoipInfo();
 			elseif (IsControlJustPressed(0, self.keyProximitybroadcast)) and (IsControlJustPressed(0, self.keyProximitybroadcast2)) then -- Switch proximity modes (normal / whisper / shout)
 				if (not self.mode) then
 					self.mode = 1;
