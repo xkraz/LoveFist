@@ -1,7 +1,7 @@
 
 
 ESX = nil
-
+local times = {}
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
@@ -19,6 +19,29 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
         cb(anycops)
     end)
 
+    RegisterServerEvent("chopSetTime")
+    AddEventHandler("chopSetTime", function(playID)
+      times[playID] = GetGameTimer()
+    end)
+
+    RegisterServerEvent("chopGetTime")
+    AddEventHandler("chopGetTime", function(playID)
+      if times[playID] == nil then
+        times[playID] = 0
+      end
+      TriggerClientEvent("chopGetTime", -1, times[playID], playID)
+    end)
+
+    RegisterServerEvent("chopGetServTime")
+    AddEventHandler("chopGetServTime", function(playID)
+      TriggerClientEvent("chopGetServTime", -1, GetGameTimer(), playID)
+    end)
+
+    RegisterServerEvent("chopshopStart")
+    AddEventHandler("chopshopStart", function(playID)
+      TriggerClientEvent("chopStart", -1, playID)
+    end)
+
     RegisterServerEvent("lenzh_chopshop:rewards")
     AddEventHandler("lenzh_chopshop:rewards", function(rewards)
         --Rewards()
@@ -27,10 +50,12 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
         if not xPlayer then return; end
         for k,v in pairs(Config.Items) do
             local randomCount = math.random(0, 3)
-            if xPlayer.getInventoryItem(v).count >= xPlayer.getInventoryItem(v).limit then
-                TriggerClientEvent('esx:showNotification', source, '~r~You cant carry anymore!')
-            else
-                xPlayer.addInventoryItem(v, randomCount)
+            if randomCount ~= 0 then
+              if xPlayer.getInventoryItem(v).count >= xPlayer.getInventoryItem(v).limit then
+                  TriggerClientEvent('esx:showNotification', source, '~r~You cant carry anymore!')
+              else
+                  xPlayer.addInventoryItem(v, randomCount)
+              end
             end
         end
 

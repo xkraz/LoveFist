@@ -33,6 +33,11 @@ local function Harvest(source)
 	end)
 end
 
+RegisterNetEvent('SetVehicleDirtLevel')
+AddEventHandler('SetVehicleDirtLevel', function(vehicle, amt)
+	TriggerClientEvent('SetVehicleDirtLevel', -1, vehicle, amt)
+end)
+
 RegisterServerEvent('esx_marducasjob:repaircar')
 AddEventHandler('esx_marducasjob:repaircar', function(car, specs)
 	TriggerClientEvent('esx_marducasjob:repaircar', -1, car, specs)
