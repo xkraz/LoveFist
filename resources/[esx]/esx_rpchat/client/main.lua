@@ -171,6 +171,10 @@ RegisterCommand('rolld20', function(source, args)
     TriggerServerEvent('3dme:shareDisplay', text)
 end)
 
+TriggerEvent('chat:addSuggestion', '/roll', 'Roll some 6 sided dice!', {
+{ name="#", help="Number of dice to roll! Default is 3!" }
+})
+
 RegisterCommand('roll', function(source, args)
   local text
   if args[1] == nil then
