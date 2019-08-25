@@ -43,3 +43,18 @@ RegisterCommand('911', function(source, args)
         TriggerEvent('chatMessage', '^5911', {255,255,255}, ' ^7Message received.')
     end
 end)
+
+RegisterCommand('311', function(source, args)
+    local name = GetPlayerName(PlayerId())
+    local ped = GetPlayerPed(PlayerId())
+    local x, y, z = table.unpack(GetEntityCoords(ped, true))
+    local street = GetStreetNameAtCoord(x, y, z)
+    local location = GetStreetNameFromHashKey(street)
+    local msg = table.concat(args, ' ')
+    if args[1] == nil then
+        TriggerEvent('chatMessage', '^4311', {255,255,255}, ' ^7Please enter your ^1report/issue.')
+    else
+        TriggerServerEvent('311', location, msg, x, y, z, name)
+        TriggerEvent('chatMessage', '^4311', {255,255,255}, ' ^7Message received.')
+    end
+end)

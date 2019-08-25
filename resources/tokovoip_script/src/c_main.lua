@@ -21,6 +21,7 @@ local scriptVersion = "1.3.4";
 local animStates = {}
 local displayingPluginScreen = false;
 local HeadBone = 0x796e;
+local _mono = true
 
 --------------------------------------------------------------------------------
 --	Plugin functions
@@ -105,11 +106,16 @@ local function clientProcessing()
 				volume = -30,
 				muted = 1,
 				radioEffect = false,
-				posX = voip.plugin_data.enableStereoAudio and math.cos(angleToTarget) * dist or 0,
-				posY = voip.plugin_data.enableStereoAudio and math.sin(angleToTarget) * dist or 0,
-				posZ = voip.plugin_data.enableStereoAudio and playerPos.z or 0
+				posX = _mono and voip.plugin_data.enableStereoAudio and math.cos(angleToTarget) * dist or 0,
+				posY = _mono and voip.plugin_data.enableStereoAudio and math.sin(angleToTarget) * dist or 0,
+				posZ = _mono and voip.plugin_data.enableStereoAudio and playerPos.z or 0
 			};
 			--
+			if dist <= voip.monodist then
+				tbl.posX = 0
+				tbl.posY = 0
+				tbl.posZ = 0
+			end
 
 			-- Process proximity
 			if (dist >= voip.distance[mode]) then
@@ -242,8 +248,11 @@ AddEventHandler("TokoVoip:addPlayerToRadio", addPlayerToRadio);
 function removePlayerFromRadio(channel)
 	TriggerServerEvent("TokoVoip:removePlayerFromRadio", channel, voip.serverId);
 end
-RegisterNetEvent("TokoVoip:removePlayerFromRadio");
-AddEventHandler("TokoVoip:removePlayerFromRadio", removePlayerFromRadio);
+
+RegisterNetEvent("removePlayerFromRadio")
+AddEventHandler("removePlayerFromRadio", function(channel)
+	removePlayerFromRadio(channel)
+end)
 
 RegisterNetEvent("TokoVoip:onPlayerLeaveChannel");
 AddEventHandler("TokoVoip:onPlayerLeaveChannel", function(channelId, playerServerId)
@@ -299,6 +308,11 @@ function isPlayerInChannel(channel)
 	end
 end
 
+RegisterCommand('mono', function(source, args)
+	print(_mono)
+	_mono = false
+	print(_mono)
+end)
 --------------------------------------------------------------------------------
 --	Specific utils
 --------------------------------------------------------------------------------
