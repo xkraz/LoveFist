@@ -4,6 +4,7 @@ local count = 25
 
 Citizen.CreateThread(function()
 	while true do
+	
 		Wait(1)
 		local myPed = GetPlayerPed(-1)
 		if IsPedInMeleeCombat(myPed) then
@@ -48,4 +49,13 @@ Citizen.CreateThread(function()
           Citizen.Wait(0)
           SetPlayerHealthRechargeMultiplier(PlayerId(), 0.0)
      end
+end)
+
+Citizen.CreateThread(function()
+    while true do
+	N_0x4757f00bc6323cfe(GetHashKey("WEAPON_UNARMED"), 0.1) 
+    	Wait(0)
+    	N_0x4757f00bc6323cfe(GetHashKey("WEAPON_NIGHTSTICK"), 0.1) 
+    	Wait(0)
+    end
 end)
