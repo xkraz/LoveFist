@@ -12,9 +12,9 @@ Citizen.CreateThread( function()
 		Citizen.Wait(5)
 		if (IsControlJustPressed(0,Config.HoverHolsterKey)) then
 			local player = PlayerPedId()
-	
+
 			if ( DoesEntityExist( player ) and not IsEntityDead( player ) ) then
-	
+
 				if IsEntityPlayingAnim(player, "move_m@intimidation@cop@unarmed", "idle", 3) then
 					ClearPedSecondaryTask(player)
 				else
@@ -120,7 +120,7 @@ end)
 RegisterNetEvent('Radiant_Animations:Scenario')
 AddEventHandler('Radiant_Animations:Scenario', function(ad)
 	local player = PlayerPedId()
-	TaskStartScenarioInPlace(player, ad, 0, 1)   
+	TaskStartScenarioInPlace(player, ad, 0, 1)
 end)
 
 RegisterNetEvent('Radiant_Animations:Walking')
@@ -138,10 +138,10 @@ AddEventHandler('Radiant_Animations:Surrender', function()
 	local ad = "random@arrests"
 	local ad2 = "random@arrests@busted"
 
-	if ( DoesEntityExist( player ) and not IsEntityDead( player )) then 
+	if ( DoesEntityExist( player ) and not IsEntityDead( player )) then
 		loadAnimDict( ad )
 		loadAnimDict( ad2 )
-		if ( IsEntityPlayingAnim( player, ad2, "idle_a", 3 ) ) then 
+		if ( IsEntityPlayingAnim( player, ad2, "idle_a", 3 ) ) then
 			TaskPlayAnim( player, ad2, "exit", 8.0, 1.0, -1, 2, 0, 0, 0, 0 )
 			Wait (3000)
 			TaskPlayAnim( player, ad, "kneeling_arrest_get_up", 8.0, 1.0, -1, 128, 0, 0, 0, 0 )
@@ -165,7 +165,7 @@ AddEventHandler('Radiant_Animations:Surrender', function()
 			LastAD = ad2
 			RemoveAnimDict("random@arrests" )
 			RemoveAnimDict("random@arrests@busted")
-		end     
+		end
 	end
 
 	Citizen.CreateThread(function() --disabling controls while surrendering
@@ -208,17 +208,17 @@ RegisterCommand("e", function(source, args)
 	else
 		for i = 1, #Config.Anims, 1 do
 			local name = Config.Anims[i].name
-			if argh == name then				
+			if argh == name then
 				local prop_one = Config.Anims[i].data.prop
 				local boneone = Config.Anims[i].data.boneone
-				if ( DoesEntityExist( player ) and not IsEntityDead( player )) then 
+				if ( DoesEntityExist( player ) and not IsEntityDead( player )) then
 
 					if Config.Anims[i].data.type == 'prop' then
 						if playerCurrentlyHasProp then --- Delete Old Prop
 
 							TriggerEvent('Radiant_Animations:KillProps')
 						end
-						
+
 						TriggerEvent('Radiant_Animations:AttachProp', prop_one, boneone, Config.Anims[i].data.x, Config.Anims[i].data.y, Config.Anims[i].data.z, Config.Anims[i].data.xa, Config.Anims[i].data.yb, Config.Anims[i].data.zc)
 
 					elseif Config.Anims[i].data.type == 'brief' then
@@ -237,35 +237,37 @@ RegisterCommand("e", function(source, args)
 								ClearPedTasks(player)
 							else
 								TriggerEvent('Radiant_Animations:Scenario', ad)
-							end 
-						end
-						
-						elseif Config.Anims[i].data.type == 'sitchair' then
-if vehiclecheck() then
-    if IsPedActiveInScenario(player) then
-        ClearPedTasks(player)
-    else
-	     pos = GetEntityCoords(player)
-	     head = GetEntityHeading(player)
-TaskStartScenarioAtPosition(player, 'PROP_HUMAN_SEAT_CHAIR_MP_PLAYER', pos['x'], pos['y'], pos['z'] - 1, head, 0, 0, false)
-		end 
-			end
-
-					elseif Config.Anims[i].data.type == 'walkstyle' then
-						local ad = Config.Anims[i].data.ad
-						if vehiclecheck() then
-							TriggerEvent('Radiant_Animations:Walking', ad)
-							if not playerCurrentlyHasWalkstyle then
-								playerCurrentlyHasWalkstyle = true
 							end
 						end
-					else
+
+						elseif Config.Anims[i].data.type == 'sitchair' then
+							if vehiclecheck() then
+							    if IsPedActiveInScenario(player) then
+							        ClearPedTasks(player)
+							    else
+										TriggerEvent("ragdollset", false)
+								     pos = GetOffsetFromEntityInWorldCoords(player, 0.0, -0.5, -0.48)
+								     head = GetEntityHeading(player)
+										 TaskStartScenarioAtPosition(player, 'PROP_HUMAN_SEAT_CHAIR_MP_PLAYER', pos.x, pos.y, pos.z, head, 0, 0, false)
+										 Citizen.Wait(2300)
+										 TriggerEvent("ragdollset", true)
+									end
+							end
+							elseif Config.Anims[i].data.type == 'walkstyle' then
+								local ad = Config.Anims[i].data.ad
+								if vehiclecheck() then
+									TriggerEvent('Radiant_Animations:Walking', ad)
+									if not playerCurrentlyHasWalkstyle then
+										playerCurrentlyHasWalkstyle = true
+									end
+								end
+							else
 
 						if vehiclecheck() then
 							local ad = Config.Anims[i].data.ad
 							local anim = Config.Anims[i].data.anim
 							local body = Config.Anims[i].data.body
-							
+
 							TriggerEvent('Radiant_Animations:Animation', ad, anim, body) -- Load/Start animation
 
 							if prop_one ~= 0 then
@@ -305,9 +307,9 @@ end
 
 function RequestWalking(ad)
 	RequestAnimSet( ad )
-	while ( not HasAnimSetLoaded( ad ) ) do 
+	while ( not HasAnimSetLoaded( ad ) ) do
 		Citizen.Wait( 500 )
-	end 
+	end
 end
 
 function vehiclecheck()
