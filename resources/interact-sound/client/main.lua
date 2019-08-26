@@ -102,7 +102,20 @@ end)
 
 RegisterCommand('play',  function(source, args)
   if args[1] ~= nil then
-    TriggerEvent('PlaySoundAt',GetEntityCoords(PlayerPedId()),5,10,args[1])
+    if args[1] == 'list' then
+      local txt = ''
+      for k,v in pairs(_sounds) do
+        if k ~= _sounds[#sounds] then
+          txt = txt .. k ..', '
+        else
+          txt = txt .. k ..'.'
+        end
+      end
+      TriggerEvent("chatMessage", "", {190,190,190},txt) -- Displaying the emotes in grey
+      TriggerEvent("chatMessage", "", {255,0,0}, "Plays a sounds on your end at your location to see the diffrent sounds.")
+    else
+      TriggerEvent('PlaySoundAt',GetEntityCoords(PlayerPedId()),5,10,args[1])
+    end
   end
 end)
 
