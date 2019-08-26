@@ -11,9 +11,12 @@ ESX = nil
 local PlayerData                = {}
 
 Citizen.CreateThread(function()
-  while ESX == nil do
-    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-    Citizen.Wait(0)
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(0)
+	end
+	while ESX.GetPlayerData().job == nil do
+		Citizen.Wait(10)
 	end
 end)
 
@@ -25,22 +28,23 @@ Citizen.CreateThread(function()
 
   while true do
       local playerName = GetPlayerName(PlayerId())
-      for k, v in pairs(ESX.GetPlayerData().inventory) do
-        if v.name == 'radio' then
-          if v.count == 0 then
-
-            local data = exports.tokovoip_script:getPlayerData(playerName, "radio:channel")
-            if tonumber(data) ~= nil then
-              print('Leave Channel')
-              TriggerEvent('removePlayerFromRadio', data)
-              exports.tokovoip_script:setPlayerData(playerName, "radio:channel", "nil", true)
-              exports['mythic_notify']:DoHudText('inform', Config.messages['you_leave'] .. data .. 'MHz </b>')
-              TriggerEvent('tokoupdate')
+      if ESX ~= nil and ESX.GetPlayerData().inventory ~= nil then
+        for k, v in pairs(ESX.GetPlayerData().inventory) do
+          if v.name == 'radio' then
+            if v.count == 0 then
+              local data = exports.tokovoip_script:getPlayerData(playerName, "radio:channel")
+              if tonumber(data) ~= nil then
+                print('Leave Channel')
+                TriggerEvent('removePlayerFromRadio', data)
+                exports.tokovoip_script:setPlayerData(playerName, "radio:channel", "nil", true)
+                exports['mythic_notify']:DoHudText('inform', Config.messages['you_leave'] .. data .. 'MHz </b>')
+                TriggerEvent('tokoupdate')
+              end
             end
           end
         end
       end
-    Citizen.Wait(100)
+    Citizen.Wait(1000)
 	end
 end)
 
@@ -56,8 +60,6 @@ local radioMenu = false
 function PrintChatMessage(text)
     TriggerEvent('chatMessage', "system", { 255, 0, 0 }, text)
 end
-
-
 
 function enableRadio(enable)
 

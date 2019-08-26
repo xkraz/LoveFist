@@ -8,6 +8,7 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 RegisterServerEvent('cuffServer')
 AddEventHandler('cuffServer', function(closestID)
 	TriggerClientEvent('cuffClient', closestID)
+	TriggerClientEvent('PlaySoundAt', GetEntityCoords(closestID),2,10,"item_cuffs")
 end)
 
 RegisterServerEvent('unCuffServer')
@@ -77,7 +78,7 @@ AddEventHandler('esx_thief:stealPlayerItem', function(target, itemType, itemName
         local targetItemCount = targetXPlayer.getInventoryItem(itemName).count
 
         if amount > 0 and targetItemCount >= amount then
-    
+
             if itemLimit ~= -1 and (sourceItemCount + amount) > itemLimit then
                 TriggerClientEvent('esx:showNotification', targetXPlayer.source, _U('ex_inv_lim_target'))
                 TriggerClientEvent('esx:showNotification', sourceXPlayer.source, _U('ex_inv_lim_source'))

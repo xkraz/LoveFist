@@ -12,7 +12,7 @@ Citizen.CreateThread(function()
             Citizen.Wait(1000)
         end
         if envAttempts >= 5 then
-            print("[txAdminClient] Waiting for environment setup...")
+            --print("[txAdminClient] Waiting for environment setup...")
         end
         envAttempts = envAttempts + 1
         apiPort = GetConvar("txAdmin-apiPort", "invalid")
