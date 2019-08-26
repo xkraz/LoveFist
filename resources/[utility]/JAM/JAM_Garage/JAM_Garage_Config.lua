@@ -326,7 +326,7 @@ JAG.Config = {
 			Heading = 22.16,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 1740.79, y = 3715.44, z = 34.1 },
+			Pos = { x = 1740.79, y = 3715.44, z = 33.1 },
 		},
 
 		MechanicGarage = {

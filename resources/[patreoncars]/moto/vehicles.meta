@@ -101,7 +101,12 @@
       <trailers />
       <additionalTrailers />
       <drivers />
-      <extraIncludes />
+      <extraIncludes>
+        <Item>dynasty_big_luga</Item>
+		<Item>dynasty_big_lugb</Item>
+		<Item>dynasty_liv4</Item>
+		<Item>dynasty_vis_f</Item>
+      </extraIncludes>
       <doorsWithCollisionWhenClosed />
       <driveableDoors />
       <bumpersNeedToCollideWithMap value="false" />
