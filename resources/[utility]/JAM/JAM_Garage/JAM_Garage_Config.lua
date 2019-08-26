@@ -609,5 +609,13 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -222.61, y = -1294.84, z = 30.3 },
 		},
+		Casino = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 318.67,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = 938.33, y = 72.19, z = 77.78 },
+		},
 	},
 }
