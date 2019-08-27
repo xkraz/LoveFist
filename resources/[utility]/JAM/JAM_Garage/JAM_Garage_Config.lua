@@ -429,7 +429,7 @@ JAG.Config = {
 			Heading = 327.63,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 738.9, y = -225.67, z = 72.52 },
+			Pos = { x = -64.82, y = -1165.92, z = 24.99 },
 		},
 		CityImpound = {
 			Zone = "Impound",
