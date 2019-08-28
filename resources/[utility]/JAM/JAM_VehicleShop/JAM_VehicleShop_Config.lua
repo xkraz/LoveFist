@@ -19,8 +19,8 @@ JVS.PurchasedUtilPos = vector4(-17.88, -1113.94, 26.67, 158.04)
 JVS.SmallSpawnVeh = 'asea'
 JVS.SmallSpawnPos = vector4(-52.08, -1095.08, 25.98, 203.66)
 
-JVS.LargeSpawnVeh = 'towtruck'
-JVS.LargeSpawnPos = vector4(-18.57, -1103.14, 26.67, 159.95)
+JVS.LargeSpawnVeh = 'police7'
+JVS.LargeSpawnPos = vector4(384.48, -1617.37, 29.49, 148.35)
 
 JVS.DisplayPositions = {
 	[1] = vector4(-49.05, -1100.63, 25.81, 40.00),
