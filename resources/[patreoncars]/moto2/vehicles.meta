@@ -92,11 +92,7 @@
           <npcName />
         </Item>
       </drivers>
-       <extraIncludes>
-        <Item>
-	 EXTRA_1 EXTRA_3
-       </Item>
-      </extraIncludes>
+       <extraIncludes />
       <doorsWithCollisionWhenClosed />
       <driveableDoors />
       <bumpersNeedToCollideWithMap value="false" />

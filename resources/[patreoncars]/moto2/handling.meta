@@ -53,7 +53,7 @@
       <strDamageFlags>0</strDamageFlags>
       <AIHandling>AVERAGE</AIHandling>
       <SubHandlingData>
-      <Item type="CVehicleWeaponHandlingData">
+<!--       <Item type="CVehicleWeaponHandlingData">
           <uWeaponHash>
             <Item>VEHICLE_WEAPON_TANK</Item>
             <Item>VEHICLE_WEAPON_SEARCHLIGHT</Item>
@@ -94,7 +94,7 @@
           <fUvAnimationMult value="0.560000" />
           <fMiscGadgetVar value="1.500000" />
           <fWheelImpactOffset value="0.080000" />
-        </Item>
+        </Item> -->
         <Item type="CCarHandlingData">
           <fBackEndPopUpCarImpulseMult value="0.450000" />
           <fBackEndPopUpBuildingImpulseMult value="0.500000" />

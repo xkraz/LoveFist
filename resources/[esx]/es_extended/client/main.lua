@@ -385,13 +385,20 @@ end)
 
 RegisterNetEvent('esx:deleteVehicle')
 AddEventHandler('esx:deleteVehicle', function()
-    local playerPed = PlayerPedId()
-    local vehicle   = ESX.Game.GetVehicleInDirection()
-    local entity = vehicle
-    carModel = GetEntityModel(entity)
-    carName = GetDisplayNameFromVehicleModel(carModel)
-    NetworkRequestControlOfEntity(entity)
-    
+local entity
+    local veh = GetVehiclePedIsIn(GetPlayerPed(PlayerId()), false)
+    if veh == -1 then
+      local playerPed = PlayerPedId()
+      local vehicle   = ESX.Game.GetVehicleInDirection()
+      entity = vehicle
+      carModel = GetEntityModel(entity)
+      carName = GetDisplayNameFromVehicleModel(carModel)
+      NetworkRequestControlOfEntity(entity)
+    else
+      NetworkRequestControlOfEntity(GetEntityModel(veh))
+      entity = veh
+    end
+
     local timeout = 2000
     while timeout > 0 and not NetworkHasControlOfEntity(entity) do
         Wait(100)
@@ -399,7 +406,7 @@ AddEventHandler('esx:deleteVehicle', function()
     end
 
     SetEntityAsMissionEntity(entity, true, true)
-    
+
     local timeout = 2000
     while timeout > 0 and not IsEntityAMissionEntity(entity) do
         Wait(100)
@@ -407,10 +414,10 @@ AddEventHandler('esx:deleteVehicle', function()
     end
 
     Citizen.InvokeNative( 0xEA386986E786A54F, Citizen.PointerValueIntInitialized( entity ) )
-    
-    if (DoesEntityExist(entity)) then 
+
+    if (DoesEntityExist(entity)) then
         DeleteEntity(entity)
-    end 
+    end
 end)
 
 -- Pause menu disable HUD display
@@ -551,7 +558,7 @@ Citizen.CreateThread(function()
 
 		local playerPed = PlayerPedId()
 		local coords    = GetEntityCoords(playerPed)
-		
+
 		-- if there's no nearby pickups we can wait a bit to save performance
 		if next(Pickups) == nil then
 			Citizen.Wait(500)
@@ -612,7 +619,7 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         -- Not sure which one is needed so you can choose/test which of these is the one you need.
-        HideHudComponentThisFrame(3) -- SP Cash display 
+        HideHudComponentThisFrame(3) -- SP Cash display
         HideHudComponentThisFrame(4)  -- MP Cash display
         HideHudComponentThisFrame(13) -- Cash changes
     end

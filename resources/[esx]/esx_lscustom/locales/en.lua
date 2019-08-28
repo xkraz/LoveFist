@@ -7,7 +7,11 @@ Locales['en'] = {
   ['press_custom'] = 'press ~INPUT_PICKUP~ to ~y~personalize~s~ your vehicle.',
   ['level'] = 'level %s',
   ['neon'] = 'neon',
-  ['blip_name'] = 'los Santos Customs',
+  ['blip_name'] = 'Los Santos Customs',
+  ['blip_name2'] = 'Docs Hot Rod Shop',
+  ['blip_name3'] = 'Docs Hot Rod Shop North',
+  ['blip_name4'] = 'Marducas Motors',  
+  ['blip_name5'] = 'Marducas Motors North', 
 -- Paint Colors
   -- Black
   ['black'] = 'black',

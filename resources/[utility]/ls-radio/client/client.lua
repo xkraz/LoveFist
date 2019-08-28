@@ -11,9 +11,12 @@ ESX = nil
 local PlayerData                = {}
 
 Citizen.CreateThread(function()
-  while ESX == nil do
-    TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
-    Citizen.Wait(0)
+	while ESX == nil do
+		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
+		Citizen.Wait(0)
+	end
+	while ESX.GetPlayerData().job == nil do
+		Citizen.Wait(10)
 	end
 end)
 
@@ -23,24 +26,25 @@ Citizen.CreateThread(function()
     Citizen.Wait(100)
   end
 
-  while true and ESX ~= nil do
+  while true do
       local playerName = GetPlayerName(PlayerId())
-      for k, v in pairs(ESX.GetPlayerData().inventory) do
-        if v.name == 'radio' then
-          if v.count == 0 then
-
-            local data = exports.tokovoip_script:getPlayerData(playerName, "radio:channel")
-            if tonumber(data) ~= nil then
-              print('Leave Channel')
-              TriggerEvent('removePlayerFromRadio', data)
-              exports.tokovoip_script:setPlayerData(playerName, "radio:channel", "nil", true)
-              exports['mythic_notify']:DoHudText('inform', Config.messages['you_leave'] .. data .. 'MHz </b>')
-              TriggerEvent('tokoupdate')
+      if ESX ~= nil and ESX.GetPlayerData().inventory ~= nil then
+        for k, v in pairs(ESX.GetPlayerData().inventory) do
+          if v.name == 'radio' then
+            if v.count == 0 then
+              local data = exports.tokovoip_script:getPlayerData(playerName, "radio:channel")
+              if tonumber(data) ~= nil then
+                print('Leave Channel')
+                TriggerEvent('removePlayerFromRadio', data)
+                exports.tokovoip_script:setPlayerData(playerName, "radio:channel", "nil", true)
+                exports['mythic_notify']:DoHudText('inform', Config.messages['you_leave'] .. data .. 'MHz </b>')
+                TriggerEvent('tokoupdate')
+              end
             end
           end
         end
       end
-    Citizen.Wait(100)
+    Citizen.Wait(1000)
 	end
 end)
 
@@ -56,8 +60,6 @@ local radioMenu = false
 function PrintChatMessage(text)
     TriggerEvent('chatMessage', "system", { 255, 0, 0 }, text)
 end
-
-
 
 function enableRadio(enable)
 
@@ -90,48 +92,56 @@ if Config.enableCmd then
   if args[1] == nil then
     enableRadio(true)
   else
-
-    local PlayerData = ESX.GetPlayerData(PlayerId())
     local playerName = GetPlayerName(PlayerId())
-    local chan = tonumber(args[1])
-    local getPlayerRadioChannel = exports.tokovoip_script:getPlayerData(playerName, "radio:channel")
 
-    if chan == nil then
-      TriggerEvent('esx:showNotification', '~r~Radio requires a "number" to join channel!')
-      return -1
-    end
-    if chan <= Config.RestrictedChannels then
-      if(PlayerData.job.name == 'police' or PlayerData.job.name == 'ambulance' or PlayerData.job.name == 'fib'or PlayerData.job.name == 'warrant') then
+    for k, v in pairs(ESX.GetPlayerData().inventory) do
+      if v.name == 'radio' then
+        if v.count > 0 then
+          local PlayerData = ESX.GetPlayerData(PlayerId())
+          local playerName = GetPlayerName(PlayerId())
+          local chan = tonumber(args[1])
+          local getPlayerRadioChannel = exports.tokovoip_script:getPlayerData(playerName, "radio:channel")
 
-        if getPlayerRadioChannel ~= nil and tonumber(getPlayerRadioChannel) ~= nil then
-          if  getPlayerRadioChannel ~= "nil" then
-            exports['mythic_notify']:DoHudText('inform', Config.messages['you_leave'] .. getPlayerRadioChannel .. 'MHz </b>')
+          if chan == nil then
+            TriggerEvent('esx:showNotification', '~r~Radio requires a "number" to join channel!')
+            return -1
           end
-          TriggerEvent('removePlayerFromRadio', getPlayerRadioChannel)
+          if chan <= Config.RestrictedChannels then
+            if(PlayerData.job.name == 'police' or PlayerData.job.name == 'ambulance' or PlayerData.job.name == 'fib'or PlayerData.job.name == 'warrant') then
+
+              if getPlayerRadioChannel ~= nil and tonumber(getPlayerRadioChannel) ~= nil then
+                if  getPlayerRadioChannel ~= "nil" then
+                  exports['mythic_notify']:DoHudText('inform', Config.messages['you_leave'] .. getPlayerRadioChannel .. 'MHz </b>')
+                end
+                TriggerEvent('removePlayerFromRadio', getPlayerRadioChannel)
+              end
+
+              exports.tokovoip_script:setPlayerData(playerName, "radio:channel", tonumber(chan), true);
+              exports.tokovoip_script:addPlayerToRadio(tonumber(chan))
+              exports['mythic_notify']:DoHudText('inform', Config.messages['joined_to_radio'] .. chan .. 'MHz </b>')
+
+            elseif not (PlayerData.job.name == 'police' or PlayerData.job.name == 'ambulance' or PlayerData.job.name == 'fire') then
+              --- info że nie możesz dołączyć bo nie jesteś policjantem
+              exports['mythic_notify']:DoHudText('error', Config.messages['restricted_channel_error'])
+            end
+          end
+
+          if chan > Config.RestrictedChannels then
+              if getPlayerRadioChannel ~= nil and tonumber(getPlayerRadioChannel) ~= nil then
+                if  getPlayerRadioChannel ~= "nil" then
+                  exports['mythic_notify']:DoHudText('inform', Config.messages['you_leave'] .. getPlayerRadioChannel .. 'MHz </b>')
+                end
+                TriggerEvent('removePlayerFromRadio', getPlayerRadioChannel)
+              end
+              exports.tokovoip_script:setPlayerData(playerName, "radio:channel", tonumber(chan), true);
+              exports.tokovoip_script:addPlayerToRadio(tonumber(chan))
+              exports['mythic_notify']:DoHudText('inform', Config.messages['joined_to_radio'] .. chan .. 'MHz </b>')
+          end
+        else
+          ESX.ShowNotification('~r~You dont own a radio!')
         end
-
-        exports.tokovoip_script:setPlayerData(playerName, "radio:channel", tonumber(chan), true);
-        exports.tokovoip_script:addPlayerToRadio(tonumber(chan))
-        exports['mythic_notify']:DoHudText('inform', Config.messages['joined_to_radio'] .. chan .. 'MHz </b>')
-
-      elseif not (PlayerData.job.name == 'police' or PlayerData.job.name == 'ambulance' or PlayerData.job.name == 'fire') then
-        --- info że nie możesz dołączyć bo nie jesteś policjantem
-        exports['mythic_notify']:DoHudText('error', Config.messages['restricted_channel_error'])
       end
     end
-
-    if chan > Config.RestrictedChannels then
-        if getPlayerRadioChannel ~= nil and tonumber(getPlayerRadioChannel) ~= nil then
-          if  getPlayerRadioChannel ~= "nil" then
-            exports['mythic_notify']:DoHudText('inform', Config.messages['you_leave'] .. getPlayerRadioChannel .. 'MHz </b>')
-          end
-          TriggerEvent('removePlayerFromRadio', getPlayerRadioChannel)
-        end
-        exports.tokovoip_script:setPlayerData(playerName, "radio:channel", tonumber(chan), true);
-        exports.tokovoip_script:addPlayerToRadio(tonumber(chan))
-        exports['mythic_notify']:DoHudText('inform', Config.messages['joined_to_radio'] .. chan .. 'MHz </b>')
-    end
-
   end
 end
 end, false)

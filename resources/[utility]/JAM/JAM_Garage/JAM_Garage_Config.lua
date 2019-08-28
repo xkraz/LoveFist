@@ -326,7 +326,7 @@ JAG.Config = {
 			Heading = 22.16,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 1740.79, y = 3715.44, z = 34.1 },
+			Pos = { x = 1740.79, y = 3715.44, z = 33.1 },
 		},
 
 		MechanicGarage = {
@@ -429,7 +429,7 @@ JAG.Config = {
 			Heading = 327.63,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 738.9, y = -225.67, z = 72.52 },
+			Pos = { x = -64.82, y = -1165.92, z = 24.99 },
 		},
 		CityImpound = {
 			Zone = "Impound",
@@ -600,6 +600,22 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -57.41, y = -1832.79, z = 26.24 },
+		},
+		Bennys = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 242.9,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -222.61, y = -1294.84, z = 30.3 },
+		},
+		Casino = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 318.67,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = 938.33, y = 72.19, z = 77.78 },
 		},
 	},
 }

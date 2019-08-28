@@ -901,7 +901,6 @@ function repair(kit)
 						SetVehicleDoorOpen(vehicle, 4, false, false)
 				end
 
-				SetVehicleDoorOpen(vehicle, 4, false, false)
 
 				TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
 				Citizen.CreateThread(function()
@@ -960,7 +959,7 @@ function repair(kit)
 						else
 							nums.tank = 1000.0
 						end
-						SetVehicleDoorShut(vehicle, 4, false)
+
 						TriggerServerEvent('esx_marducasjob:repaircar',vehicle,nums)
 						ClearPedTasksImmediately(playerPed)
 						if kit == 1 then
@@ -968,6 +967,7 @@ function repair(kit)
 						else
 							TriggerServerEvent('esx_repairkit:removeKit')
 						end
+						SetVehicleDoorShut(vehicle, 4, false)
 					end
 				end)
 			else

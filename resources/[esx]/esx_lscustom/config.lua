@@ -10,7 +10,7 @@ Config.Zones = {
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,
-		Name  = _U('blip_name'),
+		Name  = _U('blip_name2'),
 		Hint  = _U('press_custom')
 	},
 
@@ -37,7 +37,7 @@ Config.Zones = {
 		Size  = {x = 3.0, y = 3.0, z = 0.2},
 		Color = {r = 204, g = 204, b = 0},
 		Marker= 1,
-		Name  = _U('blip_name'),
+		Name  = _U('blip_name3'),
 		Hint  = _U('press_custom')
 	},
 
@@ -55,7 +55,7 @@ Config.Zones = {
         Size  = {x = 3.0, y = 3.0, z = 0.2},
         Color = {r = 204, g = 204, b = 0},
         Marker= 1,
-        Name  = "Marducas",
+		Name  = _U('blip_name5'),
         Hint  = _U('press_custom')
     },
 	
@@ -64,7 +64,7 @@ Config.Zones = {
         Size  = {x = 3.0, y = 3.0, z = 0.2},
         Color = {r = 204, g = 204, b = 0},
         Marker= 1,
-        Name  = "Marducas",
+		Name  = _U('blip_name4'),
         Hint  = _U('press_custom')
     }
 

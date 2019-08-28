@@ -1,0 +1,64 @@
+<html>
+    <head>
+        <!-- Need to include jQuery! -->
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js" type="text/javascript"></script>
+        <script>
+            var audioPlayer = [];
+            // Listen for NUI Messages.
+            window.addEventListener('message', function(event) {
+                // Check for playSound transaction
+                if (event.data.transactionType == "playSound") {
+                  if (audioPlayer.length == 0) {
+                    audioPlayer.push({id:event.data.playerID,player:new Howl({src: ["./sounds/" + event.data.transactionFile + ".ogg"]})});
+                    audioPlayer[audioPlayer.length - 1].player.volume(event.data.volume);
+                    audioPlayer[audioPlayer.length - 1].player.play();
+                  } else {
+                    for (var x = 0; x < audioPlayer.length; x++){
+                      if (audioPlayer[x].id == event.data.playerID) {
+                        audioPlayer[x].player.play();
+                        return;
+                      }
+                    };
+                    audioPlayer.push({id:event.data.playerID,player:new Howl({src: ["./sounds/" + event.data.transactionFile + ".ogg"]})});
+                    audioPlayer[audioPlayer.length - 1].player.volume(event.data.volume);
+                    audioPlayer[audioPlayer.length - 1].player.play();
+                  }
+                }
+                if (event.data.transactionType == "loop") {
+                  for (var x = 0; x < audioPlayer.length; x++){
+                      if (audioPlayer[x].id == event.data.playerID) {
+                        audioPlayer[x].player.loop(event.data.loop)
+                      }
+                    };
+                }
+                if (event.data.transactionType == "setVolume") {
+                  for (var x = 0; x < audioPlayer.length; x++){
+                      if (audioPlayer[x].id == event.data.playerID) {
+                        audioPlayer[x].player.volume(event.data.volume)
+                      }
+                    };
+                }
+                if (event.data.transactionType == "restart") {
+                  for (var x = 0; x < audioPlayer.length; x++){
+                    if (audioPlayer[x].id == event.data.playerID) {
+                      audioPlayer[x].player.play();
+                    }
+                  };
+                }
+                if (event.data.transactionType == "stop") {
+                  for (var x = 0; x < audioPlayer.length; x++){
+                    console.log('x: ' + x)
+                    if (audioPlayer[x].id == event.data.playerID) {
+                      console.log(audioPlayer[x].id)
+                      console.log('length ' + audioPlayer.length)
+                      console.log('inside x: ' + x)
+                      audioPlayer.splice(x,1);
+                      console.log('length ' + audioPlayer.length)
+                    }
+                  };
+                }
+            });
+        </script>
+    </head>
+</html>

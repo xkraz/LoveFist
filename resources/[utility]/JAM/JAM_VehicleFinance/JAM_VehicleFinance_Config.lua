@@ -7,5 +7,5 @@ JVF.FinanceStartingAmount = 10
 JVF.MaxRepayTime = 24 -- hours
 JVF.TowDriverJob = "mechanic"
 JVF.TowDriverLabel = "Experienced"
-JVF.RepoPoint = vector3(744.1, -214.42, 73.64)
+JVF.RepoPoint = vector3(-45.18, -1082.68, 25.22)
 JVF.MaxRepayments = 10
