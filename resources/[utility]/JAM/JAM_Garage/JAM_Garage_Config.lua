@@ -24,7 +24,7 @@ JAG.Config = {
 			Scale = 0.8,
 			Display = 4,
 			Color = 68,
-			Pos = { x = 738.9, y = -225.67, z = 73.52 },
+			Pos = { x = -64.82, y = -1165.92, z = 24.99 },
 		},
 		CityImpound = {
 			Zone = "Impound",
@@ -233,7 +233,46 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = -728.96, y = -1336.12, z = -0.47 },
 		},
-
+		GroveSt = {
+			Zone = "Garage",
+			Sprite = 50,
+			Scale = 0.8,
+			Display = 4,
+			Color = 68,
+			Pos = { x = -57.41, y = -1832.79, z = 26.24 },
+		},
+		Bennys = {
+			Zone = "Garage",
+			Sprite = 50,
+			Scale = 0.8,
+			Display = 4,
+			Color = 68,
+			Pos = { x = -222.61, y = -1294.84, z = 30.3 },
+		},
+		Casino = {
+			Zone = "Garage",
+			Sprite = 50,
+			Scale = 0.8,
+			Display = 4,
+			Color = 68,
+			Pos = { x = 938.33, y = 72.19, z = 77.78 },
+		},
+		LSCustoms01 = {
+			Zone = "Garage",
+			Sprite = 50,
+			Scale = 0.8,
+			Display = 4,
+			Color = 68,
+			Pos = { x = -1130.74, y = -1997.9, z = 13.17 },
+		},
+		FlightSchool = {
+			Zone = "Garage",
+			Sprite = 50,
+			Scale = 0.8,
+			Display = 4,
+			Color = 68,
+			Pos = { x = -891.31, y = -2040.77, z = 8.3 },
+		},
 	},
 
 	Markers = {
@@ -309,7 +348,7 @@ JAG.Config = {
 			Heading = 21.29,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = 2133.42, y = 4781.89, z = 40.97 },
+			Pos = { x = 2133.42, y = 4781.89, z = 39.97 },
 		},
 		MayhemGarage = {
 			Zone = "Garage",
@@ -426,7 +465,7 @@ JAG.Config = {
 		VehicleStoreGarage = {
 			Zone = "Garage",
 			Type = 1,
-			Heading = 327.63,
+			Heading = 94.3,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -64.82, y = -1165.92, z = 24.99 },
@@ -616,6 +655,22 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 938.33, y = 72.19, z = 77.78 },
+		},
+		LSCustoms01 = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 314.89,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -1130.74, y = -1997.9, z = 12.17 },
+		},
+		FlightSchool = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 126.02,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -891.31, y = -2040.77, z = 8.3 },
 		},
 	},
 }
