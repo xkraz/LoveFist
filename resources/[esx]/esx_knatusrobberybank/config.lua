@@ -26,13 +26,13 @@ Banks = {
 		lastrobbed = 0,
 		doortype = 'hei_prop_heist_sec_door'
 	},
-	["blainecounty"] = {
-		position = { ['x'] = -107.06505584717, ['y'] = 6474.8012695313, ['z'] = 31.62670135498 },
-		hackposition = { ['x'] = -107.06505584717, ['y'] = 6700.8012695313, ['z'] = -31.62670135498 },
-		reward = math.random(15000,30000),
-		nameofbank = "Blaine County Savings",
-		lastrobbed = 0
-	},
+	-- ["blainecounty"] = {
+		-- position = { ['x'] = -107.06505584717, ['y'] = 6474.8012695313, ['z'] = 31.62670135498 },
+		-- hackposition = { ['x'] = -107.06505584717, ['y'] = 6700.8012695313, ['z'] = -31.62670135498 },
+		-- reward = math.random(15000,30000),
+		-- nameofbank = "Blaine County Savings",
+		-- lastrobbed = 0
+	-- },
 
 	["PrincipalBank"] = {
 		position = { ['x'] = 264.99899291992, ['y'] = 213.50576782227, ['z'] = 101.68346405029 },
