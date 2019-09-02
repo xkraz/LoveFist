@@ -82,7 +82,7 @@ Config.DoorList = {
 		textCoords = {x = 1374.2533, y = 3612.4375, z = 35.7443581},
 		authorizedJobs = { 'org1', 'adminkey', },
 		locked = true,
-		distance =15.0
+		distance =25.0
 	},
 	
 	-- arve stroker
