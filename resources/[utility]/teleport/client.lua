@@ -48,7 +48,7 @@ local TeleportFromTo = {
 		positionTo = { ['x'] = -308.71, ['y'] = 2811.37, ['z'] = -185.26, nom = "Exit Church"},
 	},
 	["PRIVATEEYE"] = {
-		positionFrom = { ['x'] = -524.46, ['y'] = -711.15, ['z'] = 33.83, nom = "Enter LF Investigations"},
+		positionFrom = { ['x'] = -524.46, ['y'] = -711.15, ['z'] = 33.83, nom = "Berkinshaw Surveillance"},
 		positionTo = { ['x'] = 1173.74, ['y'] = -3196.6, ['z'] = -39.01, nom = "Exit to City"},
 	},
 	["exit aprt glitch"] = {
