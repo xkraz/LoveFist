@@ -540,14 +540,14 @@ Citizen.CreateThread(function()
 
   for k,v in pairs(Config.LawyerStations) do
 
-    local Blip = AddBlipForCoord(-747.22, -1039.7, 16.14)
+    local Blip = AddBlipForCoord(-524.46, -711.15, 33.83)
         SetBlipSprite (Blip, 102)
         SetBlipDisplay(Blip, 4)
         SetBlipScale  (Blip, 1.2)
         SetBlipColour (Blip, 5)
         SetBlipAsShortRange(Blip, true)
         BeginTextCommandSetBlipName("STRING")
-        AddTextComponentString("Lucky Cat Investigations")
+        AddTextComponentString("Berkinshaw Surveillance")
         EndTextCommandSetBlipName(Blip)
 
   end

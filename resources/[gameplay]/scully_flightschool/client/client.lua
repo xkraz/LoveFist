@@ -16,7 +16,7 @@ Citizen.CreateThread(function()
 end)
 
 local flightblip = {
-    {title="Flight School", colour=27, id=307, x = -927.79, y = -2040.58, z = 9.3} -- you can change the blip here
+    {title="Flight School", colour=27, id=307, x = -988.58, y = -2978.98, z = 13.95} -- you can change the blip here
 }
 
 Citizen.CreateThread(function()
@@ -123,48 +123,48 @@ function ShowLicense(player)
 end
 
 -- Teleport to the airfield
-Citizen.CreateThread(function()
-    while true do
-        Citizen.Wait(0)
-            DrawMarker(1, -915.19, -2038.48, 8.4, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- tp to the airfield...change the 2nd, 3rd and 4th values to change the coords
-			DrawMarker(1, -1148.54, -2826.75, 12.96, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- tp back to flight school...change the 2nd, 3rd and 4th values to change the coords
-            DrawMarker(1, -1120.55, -2841.25, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- Caddy spawn
-			DrawMarker(1, -941.4, -2955.05, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- Plane spawn
-			DrawMarker(1, -980.59, -2997.17, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 0, 0, 0, 0, 0) -- Plane spawn2
-			DrawMarker(1, -1070.65, -2868.44, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- Heli spawn
-			DrawMarker(1, -1112.66, -2883.98, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 0, 0, 0, 0, 0) -- Heli spawn2
-   end
-end)
+-- Citizen.CreateThread(function()
+    -- while true do
+        -- Citizen.Wait(0)
+            -- DrawMarker(1, -915.19, -2038.48, 8.4, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- tp to the airfield...change the 2nd, 3rd and 4th values to change the coords
+			-- DrawMarker(1, -1148.54, -2826.75, 12.96, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- tp back to flight school...change the 2nd, 3rd and 4th values to change the coords
+            -- DrawMarker(1, -1120.55, -2841.25, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- Caddy spawn
+			-- DrawMarker(1, -941.4, -2955.05, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- Plane spawn
+			-- DrawMarker(1, -980.59, -2997.17, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 0, 0, 0, 0, 0) -- Plane spawn2
+			-- DrawMarker(1, -1070.65, -2868.44, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 100, 0, 0, 0, 0) -- Heli spawn
+			-- DrawMarker(1, -1112.66, -2883.98, 12.95, 0, 0, 0, 0, 0, 0, 1.001, 1.0001, 0.5001, 255, 0, 0, 0, 0, 0, 0, 0) -- Heli spawn2
+   -- end
+-- end)
 
-Citizen.CreateThread(function(source)
-    while true do
-      Citizen.Wait(0)
-      local plyCoords = GetEntityCoords(GetPlayerPed(-1), false)
-      local dist = Vdist(plyCoords.x, plyCoords.y, plyCoords.z, -915.19, -2038.48, 8.4) -- change the last 3 values to change the coords
-    if dist <= 1.2 then
-	  flightnoti('Press ~r~E ~w~to go to the airfield!')
-	  if IsControlJustReleased(0, 38) then
-	  ESX.Game.Teleport(PlayerPedId(-1), {x = -1147.74, y = -2825.29, z = 12.96 }) -- these coords are where you spawn at the airfield
-      end
-	end
-  end
-end)
+-- Citizen.CreateThread(function(source)
+    -- while true do
+      -- Citizen.Wait(0)
+      -- local plyCoords = GetEntityCoords(GetPlayerPed(-1), false)
+      -- local dist = Vdist(plyCoords.x, plyCoords.y, plyCoords.z, -915.19, -2038.48, 8.4) -- change the last 3 values to change the coords
+    -- if dist <= 1.2 then
+	  -- flightnoti('Press ~r~E ~w~to go to the airfield!')
+	  -- if IsControlJustReleased(0, 38) then
+	  -- ESX.Game.Teleport(PlayerPedId(-1), {x = -1147.74, y = -2825.29, z = 12.96 }) -- these coords are where you spawn at the airfield
+      -- end
+	-- end
+  -- end
+-- end)
 
 -- Teleport back to the flight school
 
-Citizen.CreateThread(function(source)
-    while true do
-      Citizen.Wait(0)
-      local plyCoords = GetEntityCoords(GetPlayerPed(-1), false)
-      local dist = Vdist(plyCoords.x, plyCoords.y, plyCoords.z, -1148.54, -2826.75, 12.96) -- change the last 3 values to change the coords
-    if dist <= 1.2 then
-	  flightnoti('Press ~r~E ~w~to go to the flight school!')
-	  if IsControlJustReleased(0, 38) then
-	  ESX.Game.Teleport(PlayerPedId(-1), {x = -915.19, y = -2038.48, z = 8.4 }) -- these coords are where you spawn at the flight school
-      end
-	end
-  end
-end)
+-- Citizen.CreateThread(function(source)
+    -- while true do
+      -- Citizen.Wait(0)
+      -- local plyCoords = GetEntityCoords(GetPlayerPed(-1), false)
+      -- local dist = Vdist(plyCoords.x, plyCoords.y, plyCoords.z, -1148.54, -2826.75, 12.96) -- change the last 3 values to change the coords
+    -- if dist <= 1.2 then
+	  -- flightnoti('Press ~r~E ~w~to go to the flight school!')
+	  -- if IsControlJustReleased(0, 38) then
+	  -- ESX.Game.Teleport(PlayerPedId(-1), {x = -915.19, y = -2038.48, z = 8.4 }) -- these coords are where you spawn at the flight school
+      -- end
+	-- end
+  -- end
+-- end)
 
 -- Spawn the caddy
 

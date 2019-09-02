@@ -13,7 +13,7 @@ Config.LawyerStations = {
   LAWYER = {
 
     Blip = {
-      Pos     = {x = -747.22,y = -51039.7,z = 16.4 },
+      Pos     = {x = -524.46,y = -711.15,z = 33.83 },
       Sprite  = 498,
       Display = 4,
       Scale   = 1.2,
@@ -25,7 +25,7 @@ Config.LawyerStations = {
     },	
 
     Cloakrooms = {
-      {x = -757.0,y = -1038.5,z = 12.0 },
+      {x = 1157.44,y = -3195.12,z = -40.01 },
     },
 
     Vehicles = {
@@ -41,7 +41,7 @@ Config.LawyerStations = {
     },
 	
     BossActions = {
-      {x = -753.68,y = -1044.55,z = 12.0 },
+      {x = 1164.33,y = -3198.88,z = -40.01 },
     },
 
   },
