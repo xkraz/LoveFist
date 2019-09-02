@@ -18,7 +18,7 @@ Config.PlateUseSpace = true
 Config.Zones = {
 
 	ShopEntering = { -- Marker for Accessing Shop
-		Pos   = { x = -936.77, y = -3033.16, z = 12.44 },
+		Pos   = { x = -936.77, y = -3033.16, z = 12.55 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Type  = 1
 	},
