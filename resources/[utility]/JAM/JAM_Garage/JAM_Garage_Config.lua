@@ -273,6 +273,14 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = -997.59, y = -2995.44, z = 13.95 },
 		},
+		Caesars24hr = {
+			Zone = "Garage",
+			Sprite = 50,
+			Scale = 0.8,
+			Display = 4,
+			Color = 68,
+			Pos = { x = 73.94, y = 16.35, z = 68.57 },
+		},
 	},
 
 	Markers = {
@@ -638,7 +646,7 @@ JAG.Config = {
 			Heading = 318.97,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = -57.41, y = -1832.79, z = 26.24 },
+			Pos = { x = -57.41, y = -1832.79, z = 25.24 },
 		},
 		Bennys = {
 			Zone = "Garage",
@@ -671,6 +679,14 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -997.59, y = -2995.44, z = 12.95 },
+		},
+		Caesars24hr = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 161.01,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = 73.94, y = 16.35, z = 67.57 },
 		},
 	},
 }
