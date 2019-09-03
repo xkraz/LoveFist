@@ -25,16 +25,16 @@ Config.Org3Stations = {
 
 
 		Cloakrooms = {
-			vector3(-871.84, -1440.59, 7.53)
+			vector3(239.31, -2016.53, 18.34)
 		},
 
 		Armories = {
-			vector3(-892.16, -1444.59, 7.53)
+			vector3(233.92, -2023.35, 19.06)
 		},
 
 
 		BossActions = {
-			vector3(-879.58, -1464.98, 7.0)
+			vector3(240.6, -2021.4, 18.71)
 		}
 
 	}
@@ -43,23 +43,28 @@ Config.Org3Stations = {
 
 Config.AuthorizedWeapons = {
 	recruit = {
-      { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+      -- { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
       { weapon = 'WEAPON_SWITCHBLADE', price = 1000 },
 	},
 	
-	bossthree = {
-      { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+	maestro1 = {
+      -- { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+      { weapon = 'WEAPON_SWITCHBLADE', price = 1000 },
+	},
+	
+	maestro2 = {
+      -- { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
       { weapon = 'WEAPON_SWITCHBLADE', price = 1000 },
 	},
 
-	bosstwo = {
-      { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+	mano = {
+      -- { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
       { weapon = 'WEAPON_SWITCHBLADE', price = 1000 },
 
 	},
 
 	boss = {
-      { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+      -- { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
       { weapon = 'WEAPON_SWITCHBLADE', price = 1000 },
 	} 
 }

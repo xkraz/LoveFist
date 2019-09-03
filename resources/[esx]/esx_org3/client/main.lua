@@ -62,7 +62,7 @@ function OpenArmoryMenu(station)
 		table.insert(elements, {label = _U('remove_object'),  value = 'get_stock'})
 		table.insert(elements, {label = _U('deposit_object'), value = 'put_stock'})
 		table.insert(elements, {label = _U('deposit_society_money'), value = 'deposit_money'})
-		table.insert(elements, {label = _U('buy_coke_ind'), value = 'coke_ind'})
+		-- table.insert(elements, {label = _U('buy_coke_ind'), value = 'coke_ind'})
 	end
 
 	ESX.UI.Menu.CloseAll()
