@@ -44,12 +44,12 @@ Config.WeedDumpItems = {
 }
 
 Config.CocaineDumpItems = {
-	cocaine = 25,
+	cocaine = 80,
 	coca	= 5,
 }
 
 Config.MethDumpItems = {
-	meth = 80,
+	meth = 100,
 	ephedra = 10,
 	ephedrine = 25,
 }
