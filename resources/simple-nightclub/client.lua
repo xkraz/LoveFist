@@ -601,7 +601,7 @@ local function HandleNightclubDance()
 			grooving = true
 		end
 
-		DrawTopNotification("Appuyez sur ~INPUT_CONTEXT~ pour danser.")
+		DrawTopNotification("Press ~INPUT_CONTEXT~ to start dancing.")
 
 		if IsControlJustPressed(0, 51) and InNightClub then
 			Citizen.Wait(0)
@@ -632,7 +632,7 @@ local function HandleNightclubDance()
 				if IsControlPressed(0, 51) then
 					SetEntityHeading(ped, GetEntityHeading(ped) - 2.0)
 				end
-				DrawTopNotification("~INPUT_ATTACK~ Danse: " .. danceAnim[index].Name .. "~n~~INPUT_JUMP~ Changer l'intensité~n~~INPUT_COVER~ / ~INPUT_CONTEXT~ Bouger~n~~INPUT_CONTENT~ Arrêter de danser")
+				DrawTopNotification("~INPUT_ATTACK~ Dance: " .. danceAnim[index].Name .. "~n~~INPUT_JUMP~ Change intensity~n~~INPUT_COVER~ / ~INPUT_CONTEXT~ Move your body~n~~INPUT_CONTENT~ Stop Dancing")
 			end
 			ClearPedTasks(ped)
 		end

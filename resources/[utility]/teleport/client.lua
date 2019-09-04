@@ -123,6 +123,12 @@ local TeleportFromTo = {
 	positionFrom = { ['x'] = 241.10, ['y'] = -1379.00, ['z'] = 33.74, nom = "Enter Private Hospital"},
 	positionTo = { ['x'] = 275.76, ['y'] = -1361.38, ['z'] = 24.54, nom = "Leave Hospital"},
     },
+	["Nightclub"] = {
+	positionFrom = { ['x'] = -15.87, ['y'] = 239.79, ['z'] = 109.55, nom = "Enter Galaxy"},
+	positionTo = { ['x'] = -1569.45, ['y'] = -3017.38, ['z'] = -74.41, nom = "Leave Galaxy"},
+    },
+	
+	
 }
 
 Drawing = setmetatable({}, Drawing)
