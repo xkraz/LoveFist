@@ -47,6 +47,11 @@ Config.AuthorizedWeapons = {
       { weapon = 'WEAPON_SWITCHBLADE', price = 1000 },
 	},
 	
+	comuni = {
+      -- { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
+      { weapon = 'WEAPON_SWITCHBLADE', price = 1000 },
+	},
+	
 	maestro1 = {
       -- { weapon = 'WEAPON_SPECIALCARBINE', components = { 0, 2147000000, 2147000000, 800, 1200, 2147000000, 1000, nil }, price = 9000 },
       { weapon = 'WEAPON_SWITCHBLADE', price = 1000 },
