@@ -111,6 +111,18 @@ local TeleportFromTo = {
 	positionFrom = { ['x'] = 141.07, ['y'] = -735.74, ['z'] = 262.85, nom = "Go to - FiB Con"},
 	positionTo = { ['x'] = 156.64, ['y'] = -758.05, ['z'] = 258.15, nom = "Go to - FiB Rooftop"},
     },
+	  ["Moneywash"] = {
+	positionFrom = { ['x'] = 1196.83, ['y'] = -3253.63, ['z'] = 7.1, nom = "Go to - Suspicious Warehouse"},
+	positionTo = { ['x'] = 1138.1, ['y'] = -3198.65, ['z'] = -39.67, nom = "Go Outside"},
+    },
+	 ["Moneywash2"] = {
+	positionFrom = { ['x'] = 1233.34, ['y'] = -3235.37, ['z'] = 5.53, nom = "Go to - Suspicious Warehouse"},
+	positionTo = { ['x'] = 1118.69, ['y'] = -3193.43, ['z'] = -40.39, nom = "Go Outside"},
+    },
+	 ["HospitalBack"] = {
+	positionFrom = { ['x'] = 241.10, ['y'] = -1379.00, ['z'] = 33.74, nom = "Enter Private Hospital"},
+	positionTo = { ['x'] = 275.76, ['y'] = -1361.38, ['z'] = 24.54, nom = "Leave Hospital"},
+    },
 }
 
 Drawing = setmetatable({}, Drawing)

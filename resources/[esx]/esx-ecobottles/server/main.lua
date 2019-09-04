@@ -28,13 +28,27 @@ AddEventHandler("esx-ecobottles:retrieveBottle", function()
     local player = ESX.GetPlayerFromId(source)
 
     math.randomseed(os.time())
-    local luck = math.random(0, 69)
+    local luck = math.random(0, 100)
     local randomBottle = math.random((Config.BottleRecieve[1] or 1), (Config.BottleRecieve[2] or 6))
 
     if luck >= 0 and luck <= 29 then
-        TriggerClientEvent("esx:showNotification", source, "The bin had no bottles in it.")
-    else
+        TriggerClientEvent("esx:showNotification", source, "The bin has nothing in it.")
+	end
+    if luck >= 30 and luck <= 70 then
         player.addInventoryItem("bottle", randomBottle)
         TriggerClientEvent("esx:showNotification", source, ("You found x%s bottles"):format(randomBottle))
     end
+	 if luck >= 71 and luck <= 75 then
+        player.addInventoryItem("bobbypin", randomBottle)
+        TriggerClientEvent("esx:showNotification", source, ("You found x%s bobbypins"):format(randomBottle))
+    end
+	if luck >= 76 and luck <= 92 then
+        player.addInventoryItem("rubberband", randomBottle)
+        TriggerClientEvent("esx:showNotification", source, ("You found x%s rubberbands"):format(randomBottle))
+    end
+	if luck >= 93 and luck <= 100 then
+        player.addInventoryItem("solvent", randomBottle)
+        TriggerClientEvent("esx:showNotification", source, ("You found x%s solvents"):format(randomBottle))
+    end
 end)
+

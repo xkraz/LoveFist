@@ -204,6 +204,9 @@ Citizen.CreateThread(function()
 		if IsControlPressed(0,  Keys['F3']) then
 			animBind:Visible(true)
 		end
+		if IsControlJustReleased(0, Keys['X']) and IsInputDisabled(0) and not isDead then
+			ClearPedTasks(PlayerPedId())
+		end
 	end
 end)
 
