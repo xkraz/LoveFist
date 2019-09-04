@@ -8,7 +8,7 @@ JVS.SpawnVehDist = 5000.0
 JVS.VehRetDist = 5.0
 
 JVS.CarDealerJobLabel = "cardealer"
-JVS.DealerMarkerPos = vector3(-33.79, -1101.7, 25.30)
+JVS.DealerMarkerPos = vector3(-35.58, -1107.64, 25.42)
 
 -- Why vector4's, you ask?
 -- X, Y, Z, Heading.

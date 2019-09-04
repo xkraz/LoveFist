@@ -44,7 +44,7 @@ Config.Zones = {
 	 },
 
 	 BossActions = {
-		Pos   = { x = 768.93, y = -252.34, z = 77.56 },
+		Pos   = { x = -33.6, y = -1102.07, z = 25.42 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Type  = -1
  }

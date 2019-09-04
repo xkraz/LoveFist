@@ -12,7 +12,7 @@ Config.AlertCopsDelayRangeStart	= 5
 Config.AlertCopsDelayRangeEnd	= 5
 Config.TimerBeforeNewDelievery   = 1000000 -- The cooldown timer
 --If you want to notify more societies add them here. example { "mafia", "bikers" }
-Config.AlertExtraSocieties 		= { "fib", "org1", "org2", "org3" }
+Config.AlertExtraSocieties 		= { "police","fib", "org1", "org2", "org3" }
 
 --Self Explained
 Config.CargoProviderLocation	= { x = -471.8, y = -2700.45, z = 5.00, h = 225.39}
@@ -37,7 +37,7 @@ Config.Scenarios = {
 		MinCopsOnline = 5,
 		CargoCost = 0,
 		lastDelievery = 0,
-		CargoReward = math.random(6000, 7000)
+		CargoReward = math.random(15000, 20000)
 	
 	}
 }
