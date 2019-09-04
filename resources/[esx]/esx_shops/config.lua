@@ -10,7 +10,7 @@ Config.Map = {
   {name="Bahamas",color=27, id=93,x =-1388.409, y =-585.624, z =100.319},
   --{name="Stripclub",color=27, id=121,x =132.17, y =-1304.42, z =100.319},--
   {name="Yellow Jack",color=27, id=93,x =1992.69, y =3058.57, z =100.319},
-  {name="Galaxy",color=27, id=93,x =5.00, y =220.24, z =107.72}, -- Wainting for the nightclub id blip
+  {name="The Palace",color=27, id=136,x =5.00, y =220.24, z =107.72}, -- Wainting for the nightclub id blip
   --{name="Shop",color=2, id=52,x =373.875, y =325.896, z =100.319},
   {name="Shop",color=2, id=52,x =2557.458, y =382.282, z =100.319},
   {name="Shop",color=2, id=52,x =-3038.939, y =585.954, z =6.908},
