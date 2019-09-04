@@ -103,7 +103,7 @@ function RequestAllIpls()
 	RequestIpl("ch1_02_open")
 
 	-- Garage in La Mesa (autoshop): 970.275, -1826.570, 31.115
-	--RequestIpl("bkr_bi_id1_23_door")
+	RequestIpl("bkr_bi_id1_23_door")
 
 	-- Hill Valley church - Grave: -282.464, 2835.845, 55.914
 	RequestIpl("lr_cs6_08_grave_closed")
@@ -438,7 +438,7 @@ RemoveIpl("rc12b_default")
 	--]]
 
 	-- North Yankton: 3217.697, -4834.826, 111.815
-	--[[
+	
 	RequestIpl("prologue01")
 	RequestIpl("prologue01c")
 	RequestIpl("prologue01d")
@@ -465,5 +465,20 @@ RemoveIpl("rc12b_default")
 	RequestIpl("prologue_DistantLights")
 	RequestIpl("prologue_LODLights")
 	RequestIpl("prologue_m2_door")
-	--]]
+	
+	--RequestIpl("racetrack01")
+	--RequestIpl("vw_casino_penthouse")
+	--RequestIpl("hei_dlc_windows_casino")
+	--RequestIpl("vw_casino_carpark")
+	--RequestIpl("vw_casino_garage")
+	--RequestIpl("vw_casino_main")
+	RequestIpl("golfflags")
+	
+	
+	
+	RequestIpl("hei_dlc_windows_casino")
+	RequestIpl("ferris_finale_Anim")
+	RequestIpl("DES_stilthouse_rebuild")
+	RequestIpl("cargoship")
+	
 end
