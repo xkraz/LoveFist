@@ -196,7 +196,7 @@ Config.Jobs.miner = {
 					time = 500,
 					remove = 1,
 					max = 400, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 1,
+					price = 3,
 					requires = "copper",
 					requires_name = _U("m_copper"),
 					drop = 100
@@ -222,7 +222,7 @@ Config.Jobs.miner = {
 					time = 500,
 					remove = 1,
 					max = 300, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 2,
+					price = 6,
 					requires = "iron",
 					requires_name = _U("m_iron"),
 					drop = 100
@@ -248,7 +248,7 @@ Config.Jobs.miner = {
 					time = 500,
 					remove = 1,
 					max = 150, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 3,
+					price = 15,
 					requires = "gold",
 					requires_name = _U("m_gold"),
 					drop = 100
@@ -274,7 +274,7 @@ Config.Jobs.miner = {
 					time = 500,
 					remove = 1,
 					max = 100, -- if not present, probably an error at itemQtty >= item.max in esx_jobs_sv.lua
-					price = 15,
+					price = 20,
 					requires = "diamond",
 					requires_name = _U("m_diamond"),
 					drop = 100
