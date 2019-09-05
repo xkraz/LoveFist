@@ -42,11 +42,11 @@ AddEventHandler("esx-ecobottles:retrieveBottle", function()
         player.addInventoryItem("bobbypin", randomBottle)
         TriggerClientEvent("esx:showNotification", source, ("You found x%s bobbypins"):format(randomBottle))
     end
-	if luck >= 76 and luck <= 92 then
+	if luck >= 76 and luck <= 84 then
         player.addInventoryItem("rubberband", randomBottle)
         TriggerClientEvent("esx:showNotification", source, ("You found x%s rubberbands"):format(randomBottle))
     end
-	if luck >= 93 and luck <= 100 then
+	if luck >= 85 and luck <= 100 then
         player.addInventoryItem("solvent", randomBottle)
         TriggerClientEvent("esx:showNotification", source, ("You found x%s solvents"):format(randomBottle))
     end

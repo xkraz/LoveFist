@@ -38,8 +38,8 @@ Config.Delays = {
 }
 
 Config.WeedDumpItems = {
-	marijuana = 10,
-	cannabis  = 1,
+	marijuana = 15,
+	cannabis  = 3,
 	dabs	  = 120,
 }
 
@@ -50,21 +50,21 @@ Config.CocaineDumpItems = {
 
 Config.MethDumpItems = {
 	meth = 100,
-	ephedra = 10,
+	ephedra = 13,
 	ephedrine = 25,
 }
 
 Config.CrackDumpItems = {
-	crack = 45,
+	crack = 55,
 }
 
 Config.OpiumDumpItems = {
-	opium = 40,
-	poppy = 10,
+	opium = 60,
+	poppy = 15,
 }
 
 Config.HeroineDumpItems = {
-	heroine = 60
+	heroine = 70
 }
 
 Config.FieldZones = {

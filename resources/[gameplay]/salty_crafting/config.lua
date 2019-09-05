@@ -39,8 +39,8 @@ Config.Recipes = {
 	},
 	
 	["animal_fat"] = {
-		{item = "fish", quantity = 25 },
-		{item = "slaughtered_chicken", quantity = 25 },
+		{item = "fish", quantity = 10 },
+		{item = "slaughtered_chicken", quantity = 10 },
 		
 	},
 		
@@ -50,29 +50,6 @@ Config.Recipes = {
 		
 	},
 	
-	["chemical_mix_coke"] = {
-		{items = "glue", quantity = 100 },
-		{items = "solvent", quantity = 100 },
-		{items = "antibiotics", quantity = 100 },
-		{items = "clothe", quantity = 100 },
-		
-	},
-	
-	["chemical_mix_meth"] = {
-		{items = "glue", quantity = 100 },
-		{items = "solvent", quantity = 100 },
-		{items = "antibiotics", quantity = 100 },
-		{items = "packaged_chicken", quantity = 100 },
-		
-	},
-	
-	["drug_filler"] = {
-		{items = "cutted_wood", quantity = 25 },
-		{items = "copper", quantity = 25 },
-		{items = "fabric", quantity = 25 },
-		
-		
-	},
 	
 ---------------   TIER 3 ITEMS  ---------------------------
 	
@@ -86,23 +63,7 @@ Config.Recipes = {
 	},
 	
 
-	
-	["meth_ingredients"] = { 
-		{item = "animal_fat", quantity = 100 },
-		{item = "chemical_mix_meth", quantity = 100 },
-		{item = "drug_filler", quantity = 1 },
-		{item = "grand_cru", quantity = 1 },
 
-	},
-
-
-	["coke_ingredients"] = { 
-		{item = "animal_fat", quantity = 100 },
-		{item = "chemical_mix_coke", quantity = 100 },
-		{item = "drug_filler", quantity = 1 },
-		{item = "grand_cru", quantity = 1 },
-
-	},
 
 
 	
