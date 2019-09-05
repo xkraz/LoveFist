@@ -49,7 +49,7 @@ AddEventHandler('99kr-burglary:sellring', function()
 				
 		if ring > 0 then
 			xPlayer.removeInventoryItem('ring', 1)
-			xPlayer.addMoney(10)
+			xPlayer.addMoney(20)
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "$10 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a ring to sell!")
@@ -72,7 +72,7 @@ AddEventHandler('99kr-burglary:sellrolex', function()
 				
 		if rolex > 0 then
 			xPlayer.removeInventoryItem('rolex', 1)
-			xPlayer.addMoney(50)
+			xPlayer.addMoney(100)
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "$50 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a rolex to sell!")
@@ -95,7 +95,7 @@ AddEventHandler('99kr-burglary:sellcamera', function()
 				
 	    if camera > 0 then
 		  xPlayer.removeInventoryItem('camera', 1)
-			xPlayer.addMoney(30)
+			xPlayer.addMoney(45)
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "$30 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a camera to sell!")
@@ -118,7 +118,7 @@ AddEventHandler('99kr-burglary:sellgoldNecklace', function()
 				
 		if goldNecklace > 0 then
 			xPlayer.removeInventoryItem('goldNecklace', 1)
-			xPlayer.addMoney(20)
+			xPlayer.addMoney(35)
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "$20 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a goldNecklace to sell!")
@@ -141,7 +141,7 @@ AddEventHandler('99kr-burglary:selllaptop', function()
 				
 		if laptop > 0 then
 			xPlayer.removeInventoryItem('laptop', 1)
-			xPlayer.addMoney(25)
+			xPlayer.addMoney(55)
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "$25 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a laptop to sell!")
@@ -165,7 +165,7 @@ AddEventHandler('99kr-burglary:sellsamsungS10', function()
 				
 		if samsungS10 > 0 then
 			xPlayer.removeInventoryItem('samsungS10', 1)
-			xPlayer.addMoney(15)
+			xPlayer.addMoney(25)
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "$15 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a samsungS10 to sell!")
