@@ -155,8 +155,8 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 							TriggerClientEvent('esx_holdupbank:robberycomplete', savedSource, tmpAmnt)
 							TriggerClientEvent("bankstopalarm", -1,robb)
 							if(xPlayer)then
-
-								TriggerEvent('dbug','xPlayer.addAccountMoney(black_money, '..tmpAmnt..')')
+								xPlayer.addAccountMoney('black_money', tmpAmnt)
+								--TriggerEvent('dbug','xPlayer.addAccountMoney(black_money, '..tmpAmnt..')')
 								local xPlayers = ESX.GetPlayers()
 								for i=1, #xPlayers, 1 do
 									local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
