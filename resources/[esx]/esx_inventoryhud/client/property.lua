@@ -1,20 +1,23 @@
+local isPlayerSafe = false
+
 RegisterNetEvent("esx_inventoryhud:openPropertyInventory")
-AddEventHandler(
-    "esx_inventoryhud:openPropertyInventory",
-    function(data)
-        setPropertyInventoryData(data)
-        openPropertyInventory()
+AddEventHandler("esx_inventoryhud:openPropertyInventory", function(data, playerSafe)
+    if playerSafe then isPlayerSafe = playerSafe; else isPlayerSafe = false; end
+    setPropertyInventoryData(data)
+    openPropertyInventory()
     end
 )
 
 function refreshPropertyInventory()
-    ESX.TriggerServerCallback(
-        "esx_property:getPropertyInventory",
-        function(inventory)
+    if isPlayerSafe then
+        ESX.TriggerServerCallback('MF_PlayerSafes:GetSafeInventory', function(inventory) 
+            setPropertyInventoryData(inventory); 
+        end,isPlayerSafe.safeid)
+    else
+        ESX.TriggerServerCallback("esx_property:getPropertyInventory",function(inventory)
             setPropertyInventoryData(inventory)
-        end,
-        ESX.GetPlayerData().identifier
-    )
+        end,ESX.GetPlayerData().identifier)
+    end
 end
 
 function setPropertyInventoryData(data)
@@ -96,19 +99,28 @@ end
 
 RegisterNUICallback(
     "PutIntoProperty",
-    function(data, cb)
+    function(data, cb) 
         if IsPedSittingInAnyVehicle(playerPed) then
             return
         end
 
+        print(data)
+        for k,v in pairs(data) do print(k,v); end
+
         if type(data.number) == "number" and math.floor(data.number) == data.number then
             local count = tonumber(data.number)
-
+            local isWeapon = false
             if data.item.type == "item_weapon" then
+                isWeapon = true
                 count = GetAmmoInPedWeapon(PlayerPedId(), GetHashKey(data.item.name))
             end
 
-            TriggerServerEvent("esx_property:putItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, count)
+            if isPlayerSafe then       
+                print("DOPUTSAFE")     
+                TriggerServerEvent("MF_PlayerSafes:PutItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, count, isPlayerSafe.safeid, isWeapon)
+            else
+                TriggerServerEvent("esx_property:putItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, count)
+            end
         end
 
         Wait(150)
@@ -128,7 +140,11 @@ RegisterNUICallback(
         end
 
         if type(data.number) == "number" and math.floor(data.number) == data.number then
-            TriggerServerEvent("esx_property:getItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, tonumber(data.number))
+            if isPlayerSafe then
+                TriggerServerEvent("MF_PlayerSafes:GetItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, tonumber(data.number), isPlayerSafe.safeid)
+            else
+                TriggerServerEvent("esx_property:getItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, tonumber(data.number))
+            end
         end
 
         Wait(150)

@@ -129,7 +129,11 @@ function closeInventory()
         }
     )
     SetNuiFocus(false, false)
+	TriggerEvent('esx_inventoryhud:closeInventory')
 end
+
+RegisterNetEvent('esx_inventoryhud:doClose')
+AddEventHandler('esx_inventoryhud:doClose', function(...) closeInventory(...); end)
 
 RegisterNUICallback(
     "NUIFocusOff",
