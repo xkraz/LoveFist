@@ -292,7 +292,7 @@ Citizen.CreateThread(function()
           TriggerServerEvent('dbug', 'PlaySound|NoLoop|KillSound|OUT| ' .. #sounds)
         end
       end
-      DrawText3D(v.location, math.floor(dist) .. ' away; Volume: ' .. tonumber(volume) .. '; Time ran: ' .. GetGameTimer() - v.startTime .. '; Loop: ' .. tostring(v.loop))
+      --DrawText3D(v.location, math.floor(dist) .. ' away; Volume: ' .. tonumber(volume) .. '; Time ran: ' .. GetGameTimer() - v.startTime .. '; Loop: ' .. tostring(v.loop))
     end
     Citizen.Wait(10)
   end
