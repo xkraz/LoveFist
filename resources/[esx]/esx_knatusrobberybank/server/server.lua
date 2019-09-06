@@ -131,7 +131,7 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 		if robbed[robb]== false then
 			xPlayer = ESX.GetPlayerFromId(source)
 			if xPlayer.getInventoryItem('blowtorch').count >= 1 then
-				if(cops >= Config.NumberOfCopsRequired)then
+				if(cops >= bank.NumberOfCopsRequired)then
 
 					rob[robb]= true
 					robbed[robb] = true
@@ -170,7 +170,7 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 					end)
 				else
 			end
-				TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..Config.NumberOfCopsRequired)
+				TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..bank.NumberOfCopsRequired)
 			 else
 				 TriggerClientEvent('esx:showNotification', source, _U('blowtorch_needed'))
 			 end
@@ -209,7 +209,7 @@ AddEventHandler('esx_holdupbank:hack', function(robb)
 
 
 
-			if(cops >= Config.NumberOfCopsRequired)then
+			if(cops >= bank.NumberOfCopsRequired)then
 
 				if xPlayer.getInventoryItem('rasperry').count >= 1 then
 					xPlayer.removeInventoryItem('rasperry', 1)
@@ -224,7 +224,7 @@ AddEventHandler('esx_holdupbank:hack', function(robb)
 					TriggerClientEvent('esx:showNotification', source, _U('rasperry_needed'))
 				end
 			else
-				TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..Config.NumberOfCopsRequired)
+				TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..bank.NumberOfCopsRequired)
 			end
 	end
 end)
@@ -258,7 +258,7 @@ AddEventHandler('esx_holdupbank:plantbomb', function(robb)
         end
 
 
-        if(cops >= Config.NumberOfCopsRequired)then
+        if(cops >= bank.NumberOfCopsRequired)then
 
 			if xPlayer.getInventoryItem('c4_bank').count >= 1 then
 				xPlayer.removeInventoryItem('c4_bank', 1)
@@ -297,7 +297,7 @@ AddEventHandler('esx_holdupbank:plantbomb', function(robb)
 				TriggerClientEvent('esx:showNotification', source, _U('c4_needed'))
 			end
         else
-            TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..Config.NumberOfCopsRequired)
+            TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..bank.NumberOfCopsRequired)
         end
 
     end

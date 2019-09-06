@@ -1,6 +1,5 @@
 Config = {}
 Config.Locale = 'en'
-Config.NumberOfCopsRequired = 6
 Config.NewsDelay = 90  -- Time delay in seconds for reporters to get robbery notification
 
 Banks = {
@@ -16,6 +15,7 @@ Banks = {
 		bombdoortype = 'V_ILEV_GB_VAULDR',
 		cooldown = 2 * 60 * 60 * 1000 ,
 		robtime = 300000,
+		NumberOfCopsRequired = 4,
 		id = 1,
 		doortype = 'V_ILEV_GB_VAULDR' -- Name or ID of the gameobject that will be rotate to make the open efect, you can check what id or name you need here: https://objects.gt-mp.net/ if you dont find it, contact with you developer, he will know how to get it in game
 	},
@@ -29,6 +29,7 @@ Banks = {
 		lastrobbed = 0,
 		cooldown = 2 * 60 * 60 * 1000,
 		robtime = 300000,
+		NumberOfCopsRequired = 4,
 		id = 2,
 		doortype = 'hei_prop_heist_sec_door'
 	},
@@ -38,6 +39,7 @@ Banks = {
 		nameofbank = "Blaine County Savings",
 		cooldown = 30 * 60 * 1000,
 		robtime = 300000,
+		NumberOfCopsRequired = 4,
 		lastrobbed = 0,
 		id = 3
 	},
@@ -51,6 +53,7 @@ Banks = {
 		lastrobbed = 0,
 		cooldown = 2 * 60 * 60 * 1000 ,
 		robtime = 300000,
+		NumberOfCopsRequired = 6,
 		id = 4,
     bombdoortype = 'v_ilev_bk_vaultdoor', -- If this var is set you will need set the var "bombposition" to work properly , you can find the name or id here: https://objects.gt-mp.net/  if you dont find it, contact with your devs
     doortype = 'hei_v_ilev_bk_gate2_pris'
