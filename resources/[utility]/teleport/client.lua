@@ -130,7 +130,12 @@ local TeleportFromTo = {
 	["BagPool"] = {
 	positionFrom = { ['x'] = -3032.54, ['y'] = 740.46, ['z'] = 2176.75, nom = "Enter Pool"},
 	positionTo = { ['x'] = -3003.13, ['y'] = 743.63, ['z'] = 27.59, nom = "Leave Pool"},
-	},	
+	},
+	["BagPadio"] = {
+		positionFrom = { ['x'] = -3017.12, ['y'] = 740.91, ['z'] = 2181.44, nom = "Enter Padio"},
+		positionTo = { ['x'] = -3017.03, ['y'] = 758.44, ['z'] = 31.58, nom = "Leave Padio"},
+		},
+
 	
 }
 
