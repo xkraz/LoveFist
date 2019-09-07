@@ -44,6 +44,7 @@ Config.Anims =  {
         {name = "Acrobatics 2", anim = {"anim@arena@celeb@flat@solo@no_props@", "flip_a_player_a"}},
         {name = "Acrobat 3", anim = {"anim@arena@celeb@flat@solo@no_props@", "pageant_a_player_a"}},
         {name = "Radio", anim = {"random@arrests", "generic_radio_chatter"}, func = 49},
+        {name = "Garden", anim = {"amb@world_human_gardener_plant@male@base", "base"}},
         },
     ["Gestures"] = {
         {name = "Kiss on your finger", anim = {"anim@mp_player_intcelebrationfemale@finger_kiss", "finger_kiss"}},
