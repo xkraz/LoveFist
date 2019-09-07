@@ -258,5 +258,5 @@ files {
 	'html/img/items/shitpitkey.png',
 	'html/img/items/sullivansbible.png',
 	'html/img/items/sealedjar.png',
-  'html/img/items/repairkit.png'
+    'html/img/items/repairkit.png'
 }
