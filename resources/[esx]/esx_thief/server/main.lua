@@ -8,7 +8,6 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 RegisterServerEvent('cuffServer')
 AddEventHandler('cuffServer', function(closestID)
 	TriggerClientEvent('cuffClient', closestID)
-	TriggerClientEvent('PlaySoundAt', GetEntityCoords(closestID),2,10,"item_cuffs")
 end)
 
 RegisterServerEvent('unCuffServer')

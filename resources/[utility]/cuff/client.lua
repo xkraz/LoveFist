@@ -9,17 +9,17 @@ local Keys = {
     ["LEFT"] = 174, ["RIGHT"] = 175, ["TOP"] = 27, ["DOWN"] = 173,
     ["NENTER"] = 201, ["N4"] = 108, ["N5"] = 60, ["N6"] = 107, ["N+"] = 96, ["N-"] = 97, ["N7"] = 117, ["N8"] = 61, ["N9"] = 118
   }
-  
+
   local PlayerData              = {}
-  local JobLabel 				= 'police'	
+  local JobLabel 				= 'police'
   local JobLabel2				= 'fib'
-  local Arrested				= false		
-  local Arrested2				= false		
-   
+  local Arrested				= false
+  local Arrested2				= false
+
   local ArrestAnimation			= 'mp_arrest_paired'
-  local ArrestAnimation2 		= 'cop_p2_back_left'	
-  local ArrestAnimation3		= 'crook_p2_back_left'		
-  local RecentlyArrested		= 0	
+  local ArrestAnimation2 		= 'cop_p2_back_left'
+  local ArrestAnimation3		= 'crook_p2_back_left'
+  local RecentlyArrested		= 0
   local IsHandcuffed            = false
   local IsDragged               = false
   local playerhandcuffed 		= false
@@ -90,7 +90,7 @@ AddEventHandler('ArrestAnimation', function()
 	end
 
 	TaskPlayAnim(playerPed, ArrestAnimation, ArrestAnimation2, 8.0, -8.0, 5500, 33, 0, false, false, false)
-	
+
 
 	Citizen.Wait(3000)
 
@@ -110,13 +110,15 @@ Citizen.CreateThread(function()
 			if playerhandcuffed == false then
 				Arrested = true
        			RecentlyArrested = GetGameTimer()
-        
 
-				ESX.ShowNotification("~b~Arresting player~r~" .. GetPlayerServerId(closestPlayer) .. "")						
-				TriggerServerEvent('StartArresting', GetPlayerServerId(closestPlayer))								
 
-				Citizen.Wait(2100)																								
-				Citizen.Wait(3000)																									
+				ESX.ShowNotification("~b~Arresting player~r~" .. GetPlayerServerId(closestPlayer) .. "")
+				TriggerServerEvent('StartArresting', GetPlayerServerId(closestPlayer))
+
+				Citizen.Wait(1100)
+        TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(closestID)),2,10,"item_cuffs")
+        Citizen.Wait(1000)
+				Citizen.Wait(3000)
 				ESX.ShowNotification("~b~Arrested player~r~" .. GetPlayerServerId(closestPlayer) .. "")
 				TriggerServerEvent('cuffServer', GetPlayerServerId(closestPlayer))
 				playerhandcuffed = true
@@ -168,7 +170,7 @@ local boomanimName = "hold_cellphone"
 local bag_net = nil
 local radioStation = math.random(1, 8)
 
-local UI = { 
+local UI = {
 	x =  0.000 ,
 	y = -0.001 ,
 }
@@ -184,7 +186,7 @@ AddEventHandler("boombox:ToggleBoombox", function()
         while not HasModelLoaded(GetHashKey(boomModel)) do
             Citizen.Wait(100)
         end
-		
+
 		while not HasAnimDictLoaded(boomanimDict) do
 			RequestAnimDict(boomanimDict)
 			Citizen.Wait(100)
@@ -209,5 +211,5 @@ AddEventHandler("boombox:ToggleBoombox", function()
         bag_net = nil
         holdingBoombox = false
         usingBoombox = false
-    end	
+    end
 end)
