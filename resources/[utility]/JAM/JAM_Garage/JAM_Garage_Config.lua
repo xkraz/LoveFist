@@ -688,5 +688,13 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 73.94, y = 16.35, z = 67.57 },
 		},
+		BagGarage = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 97.58,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -3017.99, y = 739.36, z = 26.59 },
+		},
 	},
 }

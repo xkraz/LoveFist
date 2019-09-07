@@ -2406,4 +2406,20 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
+		{--Bag Uette door to upstairs
+		objName = 'apa_p_mp_yacht_door_01',
+		objCoords  = {x = -3027.503, y = 754.1219, z = 2177.7229},
+		textCoords = {x = -3027.503, y = 754.1219, z = 2177.7229},
+		authorizedJobs = { 'bagkey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--Bag Uette door to pool
+		objName = 'apa_p_mp_yacht_door_02',
+		objCoords  = {x = -3029.704, y = 743.1281, z = 2176.8948},
+		textCoords = {x = -3029.704, y = 743.1281, z = 2176.8948},
+		authorizedJobs = { 'bagkey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
 }
