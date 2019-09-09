@@ -21,41 +21,41 @@ Config.Vehicles = {
 Config.Zones = {
 
 	mechanic2Actions = {
-		Pos   = { x = -199.7481, y = -1320.376, z = 30.29 },
+		Pos   = { x = -1143.51, y = -2006.22, z = 12.18 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = 1,
 	},
 
 	Garage = {
-		Pos   = { x = -211.60, y = -1324.14, z = 33.95 },
+		Pos   = { x = -1155.12, y = -1994.43, z = 12.51 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Color = { r = 104, g = 104, b = 204 },
 		Type  = 1,
 	},
 
 	Craft = {
-		Pos   = { x = -225.0399, y = -1328.408, z = 29.91 },
+		Pos   = { x = -1155.18, y = -2022.46, z = 12.17 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = 1,
 	},
 
 	VehicleSpawnPoint = {
-		Pos   = { x = -196.4631, y = -1303.08, z = 30.38 },
+		Pos   = { x = -1130.46	, y = -1979.28, z = 12.16 },
 		Size  = { x = 1.5, y = 1.5, z = 1.0 },
 		Type  = -1,
 	},
 
 	VehicleDeleter = {
-		Pos   = { x = -212.5728, y = -1328.749, z = 29.89 },
+		Pos   = { x = -1151.03, y = -1983.34, z = 12.16 },
 		Size  = { x = 3.0, y = 3.0, z = 1.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = 1,
 	},
 
 	VehicleDelivery = {
-		Pos   = { x = -196.4631, y = -1303.08, z = 30.38 },
+		Pos   = { x = -1146.22, y = -1971.24, z = 12.16 },
 		Size  = { x = 20.0, y = 20.0, z = 3.0 },
 		Color = { r = 204, g = 204, b = 0 },
 		Type  = -1,
