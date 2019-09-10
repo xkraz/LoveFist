@@ -19,7 +19,7 @@ Citizen.CreateThread(function()
 		local lPed = GetPlayerPed(-1)
 		RequestAnimDict("rcmnigel1c")
 		if not IsPedInAnyVehicle(lPed, false) and not IsPedSwimming(lPed) and not IsPedShooting(lPed) and not IsPedClimbing(lPed) and not IsPedCuffed(lPed) and not IsPedDiving(lPed) and not IsPedFalling(lPed) and not IsPedJumping(lPed) and not IsPedJumpingOutOfVehicle(lPed) and IsPedOnFoot(lPed) and not IsPedRunning(lPed) and not IsPedUsingAnyScenario(lPed) and not IsPedInParachuteFreeFall(lPed) then
-			if IsControlPressed(1, 74) then
+			if IsControlPressed(1, 246) then
 				if DoesEntityExist(lPed) then
 					SetCurrentPedWeapon(lPed, 0xA2719263, true)
 					Citizen.CreateThread(function()
@@ -36,7 +36,7 @@ Citizen.CreateThread(function()
 				end
 			end
 		end
-		if IsControlReleased(1, 74) then
+		if IsControlReleased(1, 246) then
 			if DoesEntityExist(lPed) then
 				Citizen.CreateThread(function()
 					RequestAnimDict("rcmnigel1c")
