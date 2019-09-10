@@ -471,7 +471,7 @@ Config.Menus = {
 		modBrakes		= _U('brakes'),
 		modTransmission	= _U('transmission'),
 		modSuspension	= _U('suspension'),
-		modArmor		= _U('armor'),
+		-- modArmor		= _U('armor'),
 		modTurbo		= _U('turbo')
 	},
 	modEngine = {
