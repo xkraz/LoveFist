@@ -38,7 +38,7 @@ AddEventHandler('lf_warrantstart', function()
 local closestPlayer, distance = ESX.Game.GetClosestPlayer()
 local id = GetPlayerServerId(closestPlayer)
 		xPlayer = ESX.GetPlayerData()
-	if xPlayer.job.name == 'courthouse' then
+	if xPlayer.job.name == 'courthouse' and xPlayer.job.grade == 'boss' then
 			EnableGui(true)
 		else 
 			ESX.ShowNotification('Your not allowed to do that!')
