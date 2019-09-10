@@ -27,7 +27,6 @@
                 }
                 if (event.data.transactionType == "seek") {
                   if (audioPlayer.length == 0) {
-                    console.log('NONE')
                     audioPlayer.push({id:event.data.playerID,player:new Howl({src: ["./sounds/" + event.data.transactionFile + ".ogg"]})});
                     audioPlayer[audioPlayer.length - 1].player.volume(event.data.volume);
                     audioPlayer[audioPlayer.length - 1].player.seek(event.data.seek/1000);
@@ -35,14 +34,12 @@
                   } else {
                     for (var x = 0; x < audioPlayer.length; x++){
                       if (audioPlayer[x].id == event.data.playerID) {
-                        console.log(event.data.volume)
                         audioPlayer[x].player.volume(event.data.volume);
                         audioPlayer[x].player.seek(event.data.seek/1000);
                         audioPlayer[x].player.play();
                         return;
                       }
                     };
-                    console.log('NEW')
                     audioPlayer.push({id:event.data.playerID,player:new Howl({src: ["./sounds/" + event.data.transactionFile + ".ogg"]})});
                     audioPlayer[audioPlayer.length - 1].player.volume(event.data.volume);
                     audioPlayer[audioPlayer.length - 1].player.seek(event.data.seek/1000);

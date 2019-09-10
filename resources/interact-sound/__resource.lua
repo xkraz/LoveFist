@@ -18,6 +18,7 @@ files {
     -- client/html/sounds/ ... .ogg
     'client/html/sounds/demo.ogg',
     'client/html/sounds/bankAlarm.ogg',
+    'client/html/sounds/jewelryAlarm.ogg',
     'client/html/sounds/item_chips.ogg',
     'client/html/sounds/item_cuffs.ogg',
     'client/html/sounds/ambient_farm.ogg',

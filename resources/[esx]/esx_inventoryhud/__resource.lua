@@ -258,8 +258,15 @@ files {
 	'html/img/items/shitpitkey.png',
 	'html/img/items/sullivansbible.png',
 	'html/img/items/sealedjar.png',
-    'html/img/items/repairkit.png',
-	'html/img/items/bagkey.png',
-	'html/img/items/www.png',
-	'html/img/items/gheart.png'
+  'html/img/items/repairkit.png',
+  'html/img/items/bagkey.png',
+  'html/img/items/airbag.png',
+  'html/img/items/highradio.png',
+  'html/img/items/highrim.png',
+  'html/img/items/lowradio.png',
+	'html/img/items/stockrim.png',
+  'html/img/items/marijuana.png',
+  'html/img/items/taco.png',
+  'html/img/items/firstaidkit.png',
+  'html/img/items/defibrillateur.png'
 }
