@@ -300,21 +300,68 @@ function VehiclePartsRemoval()
     exports['progressBars']:startUI(Config.DeletingVehicleTime, "Deleting Vehicle If Allowed")
     Citizen.Wait(Config.DeletingVehicleTime)
     if ChoppingInProgress == true then
-        DeleteVehicle()
+        DeleteVehicle(vehicle)
         exports.pNotify:SendNotification({text = "Vehicle Chopped Successfully...", type = "success", timeout = 1000, layout = "centerRight", queue = "right", animation = {open = "gta_effects_fade_in", close = "gta_effects_fade_out"}})
     end
 end
 
-function DeleteVehicle()
+function DeleteVehicle(car)
     if IsDriver() then
+
+        local class = GetVehicleClass(car)
+
         local playerPed = PlayerPedId()
         if IsPedInAnyVehicle(playerPed,  false) then
             local vehicle = GetVehiclePedIsIn(playerPed, false)
             ESX.Game.DeleteVehicle(vehicle)
         end
-        TriggerServerEvent("lenzh_chopshop:rewards", rewards)
+
+        local tier = 'low'
+        if class == 0 then
+          tier = 'low'
+        elseif class == 1 then
+          tier = 'low'
+        elseif class == 2 then
+          tier = 'mid'
+        elseif class == 3 then
+          tier = 'low'
+        elseif class == 4 then
+          tier = 'mid'
+        elseif class == 5 then
+          tier = 'mid'
+        elseif class == 6 then
+          tier = 'mid'
+        elseif class == 7 then
+          tier = 'high'
+        elseif class == 8 then
+          tier = 'low'
+        elseif class == 9 then
+          tier = 'low'
+        elseif class == 10 then
+          tier = 'mid'
+        elseif class == 11 then
+          tier = 'low'
+        elseif class == 12 then
+          tier = 'low'
+        elseif class == 13 then -- BICYCLES
+          TriggerEvent('esx:showNotification', '~r~YOU CANT SCRAP A BIKE!')
+          lastTested = nil
+          zone = nil
+          return
+        elseif class == 17 then
+          tier = 'low'
+        elseif class == 18 then
+          tier = 'high'
+        elseif class == 19 then
+          tier = 'high'
+        else
+          tier = 'low'
+        end
+
+        TriggerServerEvent("lenzh_chopshop:rewards", tier)
         TriggerServerEvent('chopSetTime', PlayerId())
         lastTested = nil
+        zone = nil
     end
 end
 

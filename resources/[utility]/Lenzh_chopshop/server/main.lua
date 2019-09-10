@@ -43,18 +43,81 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
     end)
 
     RegisterServerEvent("lenzh_chopshop:rewards")
-    AddEventHandler("lenzh_chopshop:rewards", function(rewards)
+    AddEventHandler("lenzh_chopshop:rewards", function(_tier)
         --Rewards()
         local _source = source
         local xPlayer = ESX.GetPlayerFromId(_source)
         if not xPlayer then return; end
+        local mathMax = 0
+        local mathMin = 0
+
         for k,v in pairs(Config.Items) do
-            local randomCount = math.random(0, 3)
+          local randomCount
+
+          if v == 'battery' then
+            if _tier == 'low' then
+              mathMax = 1
+            elseif _tier == 'mid' then
+              mathMax = 3
+            elseif _tier == 'high' then
+              mathMin = 2
+              mathMax = 5
+            end
+          elseif v == 'lowradio' then
+            if _tier == 'low' then
+              mathMax = 1
+            elseif _tier == 'mid' then
+              mathMax = 3
+            elseif _tier == 'high' then
+              mathMin = 2
+              mathMax = 5
+            end
+          elseif v == 'stockrims' then
+            if _tier == 'low' then
+              mathMax = 1
+            elseif _tier == 'mid' then
+              mathMax = 3
+            elseif _tier == 'high' then
+              mathMin = 2
+              mathMax = 5
+            end
+          elseif v == 'airbag' then
+            if _tier == 'low' then
+              mathMax = 1
+            elseif _tier == 'mid' then
+              mathMax = 3
+            elseif _tier == 'high' then
+              mathMin = 2
+              mathMax = 5
+            end
+          elseif v == 'highradio' then
+            if _tier == 'low' then
+              mathMax = 0
+            elseif _tier == 'mid' then
+              mathMax = 2
+            elseif _tier == 'high' then
+              mathMin = 2
+              mathMax = 4
+            end
+          elseif v == 'highrim' then
+            if _tier == 'low' then
+              mathMax = 0
+            elseif _tier == 'mid' then
+              mathMax = 2
+            elseif _tier == 'high' then
+              mathMin = 2
+              mathMax = 4
+            end
+          end
+
+            local randomCount = math.random(0, mathMax)
             if randomCount ~= 0 then
-              if xPlayer.getInventoryItem(v).count >= xPlayer.getInventoryItem(v).limit then
-                  TriggerClientEvent('esx:showNotification', source, '~r~You cant carry anymore!')
+              if xPlayer.getInventoryItem(v).count + randomCount >= xPlayer.getInventoryItem(v).limit then
+                local min = xPlayer.getInventoryItem(v).count
+                local max = xPlayer.getInventoryItem(v).limit
+                xPlayer.addInventoryItem(v, max - min)
               else
-                  xPlayer.addInventoryItem(v, randomCount)
+                xPlayer.addInventoryItem(v, randomCount)
               end
             end
         end
