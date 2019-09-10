@@ -259,5 +259,7 @@ files {
 	'html/img/items/sullivansbible.png',
 	'html/img/items/sealedjar.png',
     'html/img/items/repairkit.png',
-	'html/img/items/bagkey.png'
+	'html/img/items/bagkey.png',
+	'html/img/items/www.png',
+	'html/img/items/gheart.png'
 }
