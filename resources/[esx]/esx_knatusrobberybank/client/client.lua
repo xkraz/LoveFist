@@ -14,7 +14,7 @@ globalDoortype = nil
 globalbombcoords = nil
 globalbombrotation = nil
 globalbombDoortype = nil
-
+local playerJob = ""
 
 
 
@@ -25,6 +25,10 @@ Citizen.CreateThread(function()
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
+	while ESX.GetPlayerData().job == nil do
+		Citizen.Wait(10)
+	end
+	playerJob = ESX.GetPlayerData().job.name
 end)
 
 function DisplayHelpText(str)
@@ -46,14 +50,14 @@ function drawTxt(x,y ,width,height,scale, text, r,g,b,a, outline)
 	end
     SetTextEntry("STRING")
     AddTextComponentString(text)
-    DrawText(x - width/2, y - height/2 + 0.005)
+    DrawText(x, y+ 0.005)
 end
 
 RegisterNetEvent('esx_holdupbank:currentlyrobbing')
 AddEventHandler('esx_holdupbank:currentlyrobbing', function(robb)
 	holdingup = true
 	bank = robb
-	secondsRemaining = 300
+	secondsRemaining = Banks[robb].robtime
 end)
 
 RegisterNetEvent('esx_holdupbank:currentlyhacking')
@@ -63,7 +67,7 @@ AddEventHandler('esx_holdupbank:currentlyhacking', function(robb, thisbank)
 	TriggerEvent("mhacking:start",1,20, opendoors)
 	savedbank = thisbank
 	bank = robb
-	secondsRemaining = 20
+	secondsRemaining = 20000
 end)
 
 RegisterNetEvent('esx_holdupbank:plantingbomb')
@@ -73,13 +77,13 @@ AddEventHandler('esx_holdupbank:plantingbomb', function(robb, thisbank)
 	savedbank = thisbank
 	bank = robb
 	plantBombAnimation()
-	secondsRemaining = 20
+	secondsRemaining = 20000
 end)
 
 RegisterNetEvent('esx_holdupbank:newsbroadcast')
 AddEventHandler('esx_holdupbank:newsbroadcast', function(bankk, robb, _c4)
 
-	if (ESX.PlayerData.job.name == 'police') or (ESX.PlayerData.job.name == 'fib') then
+	if (playerJob == 'police') or (playerJob == 'fib') then
 			TriggerEvent('chatMessage', 'NEWS',{ 255, 0, 0}, " Robbery in progress at ^2" .. bankk)
 			TriggerEvent('esx:showNotification', _U('rob_in_prog') .. bankk)
 
@@ -88,7 +92,7 @@ AddEventHandler('esx_holdupbank:newsbroadcast', function(bankk, robb, _c4)
 			end
 	end
 
-	if (ESX.PlayerData.job.name == 'reporter') then
+	if (playerJob == 'reporter') then
 		Citizen.CreateThread(function()
 			Citizen.Wait(1000*Config.NewsDelay)
 			TriggerEvent('chatMessage', 'NEWS',{ 255, 0, 0}, " Robbery in progress at ^2" .. bankk)
@@ -149,7 +153,7 @@ end)
 RegisterNetEvent('esx_holdupbank:robberycomplete')
 AddEventHandler('esx_holdupbank:robberycomplete', function(_amount)
 	holdingup = false
-	ESX.ShowNotification(_U('robbery_complete') .. _amount.. ' Now run!')
+	ESX.ShowNotification(_U('robbery_complete') .. _amount.. ', ~w~now run!')
 	bank = ""
 	TriggerEvent('esx_blowtorch:finishclear')
 	TriggerServerEvent('esx_holdupbank:closedoor')
@@ -244,19 +248,28 @@ Citizen.CreateThread(function()
 		if holdingup then
 			Citizen.Wait(1000)
 			if(secondsRemaining > 0)then
-				secondsRemaining = secondsRemaining - 1
+				secondsRemaining = secondsRemaining - 1000
+			end
+			if secondsRemaining < 1000 and secondsRemaining > 0 then
+				secondsRemaining = 0
 			end
 		end
 		if hackholdingup then
 			Citizen.Wait(1000)
 			if(secondsRemaining > 0)then
-				secondsRemaining = secondsRemaining - 1
+				secondsRemaining = secondsRemaining - 1000
+			end
+			if secondsRemaining < 1000 and secondsRemaining > 0 then
+				secondsRemaining = 0
 			end
 		end
 		if bombholdingup then
 			Citizen.Wait(1000)
 			if(secondsRemaining > 0)then
-				secondsRemaining = secondsRemaining - 1
+				secondsRemaining = secondsRemaining - 1000
+			end
+			if secondsRemaining < 1000 and secondsRemaining > 0 then
+				secondsRemaining = 0
 			end
 		end
 	end
@@ -305,8 +318,7 @@ Citizen.CreateThread(function()
 		end
 
 		if holdingup then
-
-			drawTxt(0.66, 1.44, 1.0,1.0,0.4, _U('robbery_of') .. secondsRemaining .. _U('seconds_remaining'), 255, 255, 255, 255)
+			drawTxt(0.4, 0.94, 1.0,1.0,0.4, _U('robbery_of') .. fmtTime(secondsRemaining) .. ' remains!', 255, 255, 255, 255)
 			DisplayHelpText(_U('press_to_cancel'))
 
 			local pos2 = Banks[bank].position
@@ -325,28 +337,85 @@ Citizen.CreateThread(function()
 		Citizen.Wait(0)
 	end
 end)
+-- esx_knatusrobberybank
+RegisterNetEvent('bankstartalarm')
+AddEventHandler('bankstartalarm', function(_bank)
+	TriggerEvent('PlayLoopAt',Banks[_bank].position,10,50,"bankAlarm")
+end)
 
+RegisterNetEvent('bankstopalarm')
+AddEventHandler('bankstopalarm', function(_bank)
+	TriggerEvent('StopLoopAt',Banks[_bank].position)
+end)
+
+RegisterCommand('sound',  function(source, args)
+	TriggerEvent('PlayLoopAt',vector3(-107.06505584717, 6474.8012695313, 31.62670135498 ),10,50,"bankAlarm")
+end)
+
+RegisterCommand('soundoff',  function(source, args)
+	local pos = GetEntityCoords(GetPlayerPed(-1), true)
+	TriggerEvent('StopLoopAll')
+end)
+
+function fmtTime(_in)
+	local out = ""
+	local _tmp = _in
+	local _hour = (60*60000)
+	local _minute = 60000
+	local _second = 1000
+ 	if _in ~= nil then
+		if _in >= (_hour) then
+			local tmp = math.floor(_in / _hour)
+			_in = _in - tmp * _hour
+			out = tmp .. 'h'
+		end
+
+		if _in >= (_minute) then
+			local tmp = math.floor(_in / _minute)
+			_in = _in - tmp * _minute
+			if out ~= "" then out = out .. " " end
+			out = out .. tmp .. 'm'
+		end
+
+		if _in >= (_second) and _tmp < 600000 then
+			local tmp = math.floor(_in / _second)
+			_in = _in - tmp * _second
+			if out ~= "" then out = out .. " " end
+			out = out .. tmp .. 's'
+		end
+
+		if _in >= 1 and _tmp < 30000 then
+			local tmp = _in
+			_in = _in - tmp
+			if out ~= "" then out = out .. " " end
+			out = out .. tmp .. 'ms'
+		end
+
+		return out
+	end
+end
 Citizen.CreateThread(function()
 	while true do
 		local pos = GetEntityCoords(GetPlayerPed(-1), true)
 
 		for k,v in pairs(Banks)do
 			local pos2 = v.hackposition
+			if pos2 ~= nil then
+				if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 15.0) then
+					if not hackholdingup then
+						DrawMarker(1, v.hackposition.x, v.hackposition.y, v.hackposition.z - 1, 0, 0, 0, 0, 0, 0, 1.0001, 1.0001, 1.5001, 1555, 0, 0,255, 0, 0, 0,0)
 
-			if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 15.0)then
-				if not hackholdingup then
-					DrawMarker(1, v.hackposition.x, v.hackposition.y, v.hackposition.z - 1, 0, 0, 0, 0, 0, 0, 1.0001, 1.0001, 1.5001, 1555, 0, 0,255, 0, 0, 0,0)
-
-					if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 1.0)then
-						if (incircle == false) then
-							DisplayHelpText(_U('press_to_hack') .. v.nameofbank)
+						if(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) < 1.0)then
+							if (incircle == false) then
+								DisplayHelpText(_U('press_to_hack') .. v.nameofbank)
+							end
+							incircle = true
+							if IsControlJustReleased(1, 51) then
+								TriggerServerEvent('esx_holdupbank:hack', k)
+							end
+						elseif(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) > 1.0)then
+							incircle = false
 						end
-						incircle = true
-						if IsControlJustReleased(1, 51) then
-							TriggerServerEvent('esx_holdupbank:hack', k)
-						end
-					elseif(Vdist(pos.x, pos.y, pos.z, pos2.x, pos2.y, pos2.z) > 1.0)then
-						incircle = false
 					end
 				end
 			end

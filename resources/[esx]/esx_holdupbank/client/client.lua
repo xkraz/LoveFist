@@ -54,15 +54,6 @@ AddEventHandler('esx_holdupbank:setblip', function(position)
     PulseBlip(blipRobbery)
 end)
 
-RegisterNetEvent('esx_holdupbank:toofarlocal')
-AddEventHandler('esx_holdupbank:toofarlocal', function(robb)
-	holdingup = false
-	ESX.ShowNotification(_U('robbery_cancelled'))
-	robbingName = ""
-	secondsRemaining = 0
-	incircle = false
-end)
-
 
 RegisterNetEvent('esx_holdupbank:robberycomplete')
 AddEventHandler('esx_holdupbank:robberycomplete', function(robb)

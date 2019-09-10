@@ -3,6 +3,7 @@ TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
 local deadPeds = {}
 local isrobbing = {}
+local times = {}
 
 RegisterServerEvent('loffe_robbery:pedDead')
 AddEventHandler('loffe_robbery:pedDead', function(store)
@@ -22,6 +23,11 @@ AddEventHandler('loffe_robbery:pedDead', function(store)
     end
 end)
 
+RegisterServerEvent('loffe_robbery:setTime')
+AddEventHandler('loffe_robbery:setTime', function(store)
+  times[store] = GetGameTimer()
+end)
+
 RegisterServerEvent('loffe_robbery:handsUp')
 AddEventHandler('loffe_robbery:handsUp', function(store)
     TriggerClientEvent('loffe_robbery:handsUp', -1, store)
@@ -32,11 +38,19 @@ AddEventHandler('loffe_robbery:pickUp', function(store, player)
     local xPlayer = ESX.GetPlayerFromId(source)
     local pID = player
     if isrobbing[store] ~= nil and isrobbing[store] == pID  then
-      local randomAmount = math.random(Config.Shops[store].money[1], Config.Shops[store].money[2])
-      xPlayer.addMoney(randomAmount)
-      TriggerClientEvent('esx:showNotification', source, Translation[Config.Locale]['cashrecieved'] .. ' ~g~$' .. randomAmount)
-      TriggerClientEvent('loffe_robbery:removePickup', -1, store)
-      isrobbing[store] = nil
+      if (GetGameTimer() - times[store] <= 60000) then
+        local randomAmount = math.random(Config.Shops[store].money[1], Config.Shops[store].money[2])
+        xPlayer.addMoney(randomAmount)
+        TriggerClientEvent('esx:showNotification', source, Translation[Config.Locale]['cashrecieved'] .. ' ~g~$' .. randomAmount)
+        TriggerClientEvent('loffe_robbery:removePickup', -1, store)
+        isrobbing[store] = nil
+        times[store] = nil
+      else
+        TriggerClientEvent('esx:showNotification', source, 'You ~r~waited ~w~to long! Someone else must have grabbed the payout.')
+        TriggerClientEvent('loffe_robbery:removePickup', -1, store)
+        isrobbing[store] = nil
+        times[store] = nil
+      end
     else
       TriggerClientEvent('esx:showNotification', source, '~r~Not you payout!')
     end

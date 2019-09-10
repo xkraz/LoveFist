@@ -38,7 +38,9 @@ function IsAbleToSteal(targetSID, err)
     	end
     end, targetSID)
 end
-
+RegisterCommand('cuff', function()
+	TriggerServerEvent('cuffServer', PlayerPedId())
+end)
 ---- MENU
 
 function GetPlayers()
@@ -113,6 +115,7 @@ function OpenCuffMenu()
                                 if quantity > 0 then
 									local targetPlayer = GetPlayerServerId(player)
                                     IsAbleToSearch = true
+																		TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(player)),2,10,"item_cuffs")
                                     TriggerServerEvent('cuffServer', GetPlayerServerId(player))
 									TriggerEvent('playerNOTalreadyhandcuffed', GetPlayerServerId(player))
                                 else
@@ -125,6 +128,7 @@ function OpenCuffMenu()
                     end)
                 else
                     IsAbleToSearch = true
+										TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(player)),2,10,"item_cuffs")
                     TriggerServerEvent('cuffServer', GetPlayerServerId(player))
                 end
               end
@@ -251,6 +255,7 @@ function OpenCuffMenu2()
                             ESX.TriggerServerCallback('esx_thief:getItemQ', function(quantity)
                                 if quantity > 0 then
                                     IsAbleToSearch = true
+																		TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(player)),2,10,"item_cuffs")
                                     TriggerServerEvent('cuffServer', GetPlayerServerId(player))
                                 else
                                     ESX.ShowNotification(_U('no_handcuffs'))
@@ -262,6 +267,7 @@ function OpenCuffMenu2()
                     end)
                 else
                     IsAbleToSearch = true
+										TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(player)),2,10,"item_cuffs")
                     TriggerServerEvent('cuffServer', GetPlayerServerId(player))
                 end
               end
@@ -277,6 +283,7 @@ function OpenCuffMenu2()
                     end, 'handcuffs')
                 else
                     IsAbleToSearch = false
+										TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(player)),2,10,"item_cuffs")
                     TriggerServerEvent('cuffServer', GetPlayerServerId(player))
                 end
               end
@@ -361,6 +368,7 @@ function OpenCuffMenu3()
                             ESX.TriggerServerCallback('esx_thief:getItemQ', function(quantity)
                                 if quantity > 0 then
                                     IsAbleToSearch = true
+																		TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(player)),2,10,"item_cuffs")
                                     TriggerServerEvent('cuffServer', GetPlayerServerId(player))
                                 else
                                     ESX.ShowNotification(_U('no_handcuffs'))
@@ -372,6 +380,7 @@ function OpenCuffMenu3()
                     end)
                 else
                     IsAbleToSearch = true
+										TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(player)),2,10,"item_cuffs")
                     TriggerServerEvent('cuffServer', GetPlayerServerId(player))
                 end
               end
@@ -387,6 +396,7 @@ function OpenCuffMenu3()
                     end, 'handcuffs')
                 else
                     IsAbleToSearch = false
+										TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(player)),2,10,"item_cuffs")
                     TriggerServerEvent('cuffServer', GetPlayerServerId(player))
                 end
               end

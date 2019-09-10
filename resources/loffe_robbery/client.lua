@@ -136,6 +136,7 @@ AddEventHandler('loffe_robbery:rob', function(i)
                     Wait(0)
                 end
                 SetEntityHeading(bag, Config.Shops[i].heading)
+                TriggerServerEvent('loffe_robbery:setTime', i)
                 ApplyForceToEntity(bag, 3, vector3(0.0, 50.0, 0.0), 0.0, 0.0, 0.0, 0, true, true, false, false, true)
                 table.insert(objects, {bank = i, object = bag})
                 Citizen.CreateThread(function()
@@ -268,7 +269,7 @@ Citizen.CreateThread(function()
                                 TriggerServerEvent('loffe_robbery:notifycops', i)
 
                                 local scared = 0
-                                while scared < 140 and not IsPedDeadOrDying(peds[i]) and GetDistanceBetweenCoords(GetEntityCoords(me), GetEntityCoords(peds[i]), true) <= 7.5 do
+                                while scared < 200 and not IsPedDeadOrDying(peds[i]) and GetDistanceBetweenCoords(GetEntityCoords(me), GetEntityCoords(peds[i]), true) <= 7.5 do
                                     local sleep = 600
                                     SetEntityAnimSpeed(peds[i], "missheist_agency2ahands_up", "handsup_anxious", 1.0)
                                     if IsPlayerFreeAiming(PlayerId()) then
@@ -283,7 +284,7 @@ Citizen.CreateThread(function()
                                     while sleep >= GetGameTimer() and not IsPedDeadOrDying(peds[i]) do
                                         Wait(0)
                                         DrawRect(0.5, 0.5, 0.2, 0.03, 75, 75, 75, 200)
-                                        local draw = (scared/700)
+                                        local draw = (scared/1000)
                                         DrawRect(0.5, 0.5, draw, 0.03, 0, 221, 255, 200)
                                     end
                                     scared = scared + 1

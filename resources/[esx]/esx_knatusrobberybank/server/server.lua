@@ -1,6 +1,12 @@
-local rob = false
+local rob = {}
+local robbed = {}
 local robbers = {}
 ESX = nil
+
+for k,v in pairs(Banks) do
+	rob[k] = false
+	robbed[k] = false
+end
 
 TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 
@@ -12,7 +18,7 @@ RegisterServerEvent('esx_holdupbank:toofar')
 AddEventHandler('esx_holdupbank:toofar', function(robb)
 	local source = source
 	local xPlayers = ESX.GetPlayers()
-	rob = false
+	rob[robb] = false
 	for i=1, #xPlayers, 1 do
  		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
  		if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' then
@@ -24,15 +30,16 @@ AddEventHandler('esx_holdupbank:toofar', function(robb)
 		TriggerClientEvent('esx_holdupbank:toofarlocal', source)
 		robbers[source] = nil
 		TriggerClientEvent('esx:showNotification', source, _U('robbery_has_cancelled') .. Banks[robb].nameofbank)
-		TriggerClientEvent('esx_holdupbank:killblip', xPlayers[i])
+		TriggerClientEvent('esx_holdupbank:killblip', source)
 	end
+	TriggerClientEvent('bankstopalarm', -1,robb)
 end)
 
 RegisterServerEvent('esx_holdupbank:toofarhack')
 AddEventHandler('esx_holdupbank:toofarhack', function(robb)
 	local source = source
 	local xPlayers = ESX.GetPlayers()
-	rob = false
+	rob[robb]= false
 	for i=1, #xPlayers, 1 do
  		local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
  		if xPlayer.job.name == 'police' or xPlayer.job.name == 'fib' then
@@ -47,6 +54,41 @@ AddEventHandler('esx_holdupbank:toofarhack', function(robb)
 	end
 end)
 
+function fmtTime(_in)
+	local out = ""
+	local _tmp = _in
+	local _hour = (60*60000)
+	local _minute = 60000
+	local _second = 1000
+ 	if _in ~= nil then
+		if _in >= (_hour) then
+			local tmp = math.floor(_in / _hour)
+			_in = _in - tmp * _hour
+			out = tmp .. 'h '
+		end
+
+		if _in >= (_minute) then
+			local tmp = math.floor(_in / _minute)
+			_in = _in - tmp * _minute
+			out = out .. tmp .. 'm '
+		end
+
+		if _in >= (_second) and _tmp < 60000 then
+			local tmp = math.floor(_in / _second)
+			_in = _in - tmp * _second
+			out = out .. tmp .. 's '
+		end
+
+		if _in >= 1 and _tmp < 1000 then
+			local tmp = _in
+			_in = _in - tmp
+			out = out .. tmp .. 'ms'
+		end
+
+		return out
+	end
+end
+
 RegisterServerEvent('esx_holdupbank:rob')
 AddEventHandler('esx_holdupbank:rob', function(robb)
 
@@ -55,13 +97,25 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 	local xPlayers = ESX.GetPlayers()
 
 	if Banks[robb] then
-
 		local bank = Banks[robb]
+		local _timeLeft = (bank.cooldown - (GetGameTimer() - bank.lastrobbed))
+		local _hour = (60*60000)
+		local _minute = 60000
+		local _second = 1000
 
-		if (os.time() - bank.lastrobbed) < 1800000 and bank.lastrobbed ~= 0 then
-
-			TriggerClientEvent('esx:showNotification', source, _U('already_robbed') .. (1800000 - (os.time() - bank.lastrobbed)) .. _U('seconds'))
+		if _timeLeft > 0 and bank.lastrobbed ~= 0 and robbed[robb] == true then
+			TriggerEvent('dbug', 'esx_holdupbank:rob:TIME LEFT ' .. bank.nameofbank .. ': ' .. fmtTime(_timeLeft) .. '/' .. fmtTime(bank.cooldown) .. ' ROBBED: ' .. fmtTime(GetGameTimer() - bank.lastrobbed) .. 'ago.')
+			if _timeLeft >= _hour then
+				TriggerClientEvent('esx:showNotification', source, _U('already_robbed') .. fmtTime(_timeLeft))
+			elseif _timeLeft < _hour and _timeLeft >= _minute then
+				TriggerClientEvent('esx:showNotification', source, _U('already_robbed') .. fmtTime(_timeLeft))
+			else
+				TriggerClientEvent('esx:showNotification', source, _U('already_robbed') .. fmtTime(_timeLeft))
+			end
 			return
+		elseif _timeLeft <= 0 and robbed[robb] == true then
+			TriggerEvent('dbug', 'esx_holdupbank:rob COOLDOWN OVER | RESSETING | ROBBED: ' .. fmtTime(GetGameTimer() - bank.lastrobbed) .. 'ago, COOLDOWN: ' .. fmtTime(bank.cooldown))
+			robbed[robb] = false
 		end
 
 
@@ -74,33 +128,35 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 		end
 
 
-		if rob == false then
+		if robbed[robb]== false then
+			xPlayer = ESX.GetPlayerFromId(source)
+			if xPlayer.getInventoryItem('blowtorch').count >= 1 then
+				if(cops >= bank.NumberOfCopsRequired)then
 
-			 if xPlayer.getInventoryItem('blowtorch').count >= 1 then
-				if(cops >= Config.NumberOfCopsRequired)then
-
-					rob = true
+					rob[robb]= true
+					robbed[robb] = true
 					TriggerClientEvent('esx_holdupbank:newsbroadcast', -1 ,bank.nameofbank,robb, false)
 					xPlayer.removeInventoryItem('blowtorch', 1)
-
+    			TriggerClientEvent('bankstartalarm', -1,robb)
 					TriggerClientEvent('esx:showNotification', source, _U('started_to_rob') .. bank.nameofbank .. _U('do_not_move'))
 					TriggerClientEvent('esx:showNotification', source, _U('alarm_triggered'))
 					TriggerClientEvent('esx:showNotification', source, _U('hold_pos'))
 					TriggerClientEvent('esx_holdupbank:currentlyrobbing', source, robb)
 					TriggerClientEvent('esx_blowtorch:startblowtorch', source)
-					Banks[robb].lastrobbed = os.time()
+					Banks[robb].lastrobbed = GetGameTimer()
 					robbers[source] = robb
 					local savedSource = source
-					SetTimeout(300000, function()
+					SetTimeout(bank.robtime, function()
 
 						if(robbers[savedSource])then
 
-							rob = false
-							local tmpAmnt = bank.reward
+							rob[robb]= false
+							local tmpAmnt = math.random(bank.reward.min, bank.reward.max)
 							TriggerClientEvent('esx_holdupbank:robberycomplete', savedSource, tmpAmnt)
+							TriggerClientEvent("bankstopalarm", -1,robb)
 							if(xPlayer)then
-
 								xPlayer.addAccountMoney('black_money', tmpAmnt)
+								--TriggerEvent('dbug','xPlayer.addAccountMoney(black_money, '..tmpAmnt..')')
 								local xPlayers = ESX.GetPlayers()
 								for i=1, #xPlayers, 1 do
 									local xPlayer = ESX.GetPlayerFromId(xPlayers[i])
@@ -114,7 +170,7 @@ AddEventHandler('esx_holdupbank:rob', function(robb)
 					end)
 				else
 			end
-				TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..Config.NumberOfCopsRequired)
+				TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..bank.NumberOfCopsRequired)
 			 else
 				 TriggerClientEvent('esx:showNotification', source, _U('blowtorch_needed'))
 			 end
@@ -153,7 +209,7 @@ AddEventHandler('esx_holdupbank:hack', function(robb)
 
 
 
-			if(cops >= Config.NumberOfCopsRequired)then
+			if(cops >= bank.NumberOfCopsRequired)then
 
 				if xPlayer.getInventoryItem('rasperry').count >= 1 then
 					xPlayer.removeInventoryItem('rasperry', 1)
@@ -168,7 +224,7 @@ AddEventHandler('esx_holdupbank:hack', function(robb)
 					TriggerClientEvent('esx:showNotification', source, _U('rasperry_needed'))
 				end
 			else
-				TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..Config.NumberOfCopsRequired)
+				TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..bank.NumberOfCopsRequired)
 			end
 	end
 end)
@@ -202,7 +258,7 @@ AddEventHandler('esx_holdupbank:plantbomb', function(robb)
         end
 
 
-        if(cops >= Config.NumberOfCopsRequired)then
+        if(cops >= bank.NumberOfCopsRequired)then
 
 			if xPlayer.getInventoryItem('c4_bank').count >= 1 then
 				xPlayer.removeInventoryItem('c4_bank', 1)
@@ -221,7 +277,7 @@ AddEventHandler('esx_holdupbank:plantbomb', function(robb)
 
 					if(robbers[savedSource])then
 
-						rob = false
+						rob[robb]= false
 						TriggerClientEvent('esx_holdupbank:plantbombcomplete', savedSource, Banks[robb])
 						if(xPlayer)then
 
@@ -241,7 +297,7 @@ AddEventHandler('esx_holdupbank:plantbomb', function(robb)
 				TriggerClientEvent('esx:showNotification', source, _U('c4_needed'))
 			end
         else
-            TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..Config.NumberOfCopsRequired)
+            TriggerClientEvent('esx:showNotification', source, _U('min_two_police')..bank.NumberOfCopsRequired)
         end
 
     end

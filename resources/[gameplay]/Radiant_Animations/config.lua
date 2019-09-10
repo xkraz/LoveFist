@@ -50,7 +50,8 @@ Config.Anims = {
     {name = 'sitchair', data = {type = 'sitchair', ad = "", anim = "", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'squat', data = {type = 'anim', ad = "amb@lo_res_idles@", anim = "squat_lo_res_base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	{name = 'sitm', data = {type = 'anim', ad = "amb@lo_res_idles@", anim = "world_human_picnic_male_lo_res_base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
-	{name = 'sitf', data = {type = 'anim', ad = "amb@lo_res_idles@", anim = "world_human_picnic_female_lo_res_base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'sitf', data = {type = 'anim', ad = "amb@lo_res_idles@", anim = "world_human_picnic_female_lo_res_base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
+    {name = 'garden', data = {type = 'anim', ad = "amb@world_human_gardener_plant@male@base", anim = "base", prop = 0, proptwo = 0, boneone = nil, bonetwo = nil, body = 33, x = 0.0, y = 0.0, z = 0.0, xa = 0.0, yb = 0.0, zc = 0.0}},
 	
 	
 	

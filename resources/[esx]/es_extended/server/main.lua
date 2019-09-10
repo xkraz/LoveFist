@@ -366,9 +366,9 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 				TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_quantity'))
 			else
 				if (itemCount > xItem.count) then
-					print(xItem.count)
+					
 					local mxamount = xItem.count
-					print(mxamount)
+
 					xPlayer.removeInventoryItem(itemName, mxamount)
 
 					local pickupLabel = ('~y~%s~s~ [~b~%s~s~]'):format(xItem.label, mxamount)
@@ -424,17 +424,17 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 			local xPlayer = ESX.GetPlayerFromId(source)
 			local account = xPlayer.getAccount(itemName)
 
-			if account < 1 then
+			if account.money < 1 then
 				TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_quantity'))
 			else
-				if (itemCount > account) then
+				if (itemCount > account.money) then
+					local tmpAmt = account.money
+					xPlayer.removeAccountMoney(itemName, tmpAmt)
 
-					xPlayer.removeAccountMoney(itemName, account)
-
-					local pickupLabel = ('~y~%s~s~ [~g~%s~s~]'):format(account.label, _U('locale_currency', ESX.Math.GroupDigits(account)))
-					ESX.CreatePickup('item_account', itemName, account, pickupLabel, _source)
-					TriggerClientEvent('esx:showNotification', _source, _U('threw_account', ESX.Math.GroupDigits(account), string.lower(account.label)))
-					TriggerEvent("esx:dropdirtymoneyalert",xPlayer.name,account)
+					local pickupLabel = ('~y~%s~s~ [~g~%s~s~]'):format(account.label, _U('locale_currency', ESX.Math.GroupDigits(tmpAmt)))
+					ESX.CreatePickup('item_account', itemName, tmpAmt, pickupLabel, _source)
+					TriggerClientEvent('esx:showNotification', _source, _U('threw_account', ESX.Math.GroupDigits(tmpAmt), string.lower(account.label)))
+					TriggerEvent("esx:dropdirtymoneyalert",xPlayer.name,tmpAmt)
 				else
 					xPlayer.removeAccountMoney(itemName, itemCount)
 
@@ -443,16 +443,6 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 					TriggerClientEvent('esx:showNotification', _source, _U('threw_account', ESX.Math.GroupDigits(itemCount), string.lower(account.label)))
 					TriggerEvent("esx:dropdirtymoneyalert",xPlayer.name,itemCount)
 				end
-			end
-			if (itemCount > account.money or account.money < 1) then
-				TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_amount'))
-			else
-				xPlayer.removeAccountMoney(itemName, itemCount)
-
-				local pickupLabel = ('~y~%s~s~ [~g~%s~s~]'):format(account.label, _U('locale_currency', ESX.Math.GroupDigits(itemCount)))
-				ESX.CreatePickup('item_account', itemName, itemCount, pickupLabel, _source)
-				TriggerClientEvent('esx:showNotification', _source, _U('threw_account', ESX.Math.GroupDigits(itemCount), string.lower(account.label)))
-				TriggerEvent("esx:dropdirtymoneyalert",xPlayer.name,itemCount)
 			end
 		end
 

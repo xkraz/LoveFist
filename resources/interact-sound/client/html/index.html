@@ -25,6 +25,27 @@
                     audioPlayer[audioPlayer.length - 1].player.play();
                   }
                 }
+                if (event.data.transactionType == "seek") {
+                  if (audioPlayer.length == 0) {
+                    audioPlayer.push({id:event.data.playerID,player:new Howl({src: ["./sounds/" + event.data.transactionFile + ".ogg"]})});
+                    audioPlayer[audioPlayer.length - 1].player.volume(event.data.volume);
+                    audioPlayer[audioPlayer.length - 1].player.seek(event.data.seek/1000);
+                    audioPlayer[audioPlayer.length - 1].player.play();
+                  } else {
+                    for (var x = 0; x < audioPlayer.length; x++){
+                      if (audioPlayer[x].id == event.data.playerID) {
+                        audioPlayer[x].player.volume(event.data.volume);
+                        audioPlayer[x].player.seek(event.data.seek/1000);
+                        audioPlayer[x].player.play();
+                        return;
+                      }
+                    };
+                    audioPlayer.push({id:event.data.playerID,player:new Howl({src: ["./sounds/" + event.data.transactionFile + ".ogg"]})});
+                    audioPlayer[audioPlayer.length - 1].player.volume(event.data.volume);
+                    audioPlayer[audioPlayer.length - 1].player.seek(event.data.seek/1000);
+                    audioPlayer[audioPlayer.length - 1].player.play();
+                  }
+                }
                 if (event.data.transactionType == "loop") {
                   for (var x = 0; x < audioPlayer.length; x++){
                       if (audioPlayer[x].id == event.data.playerID) {
@@ -48,13 +69,8 @@
                 }
                 if (event.data.transactionType == "stop") {
                   for (var x = 0; x < audioPlayer.length; x++){
-                    console.log('x: ' + x)
                     if (audioPlayer[x].id == event.data.playerID) {
-                      console.log(audioPlayer[x].id)
-                      console.log('length ' + audioPlayer.length)
-                      console.log('inside x: ' + x)
                       audioPlayer.splice(x,1);
-                      console.log('length ' + audioPlayer.length)
                     }
                   };
                 }

@@ -138,12 +138,12 @@ function Openmechanic2ActionsMenu()
 			else
 
 				local elements = {
-					{label = _U('flat_bed'),  value = 'flatbed'},
+					{label = _U('flat_bed'),  value = 'towtruck'},
 					{label = _U('tow_truck'), value = 'towtruck2'}
 				}
 
 				if Config.EnablePlayerManagement and ESX.PlayerData.job and (ESX.PlayerData.job.grade_name == 'boss' or ESX.PlayerData.job.grade_name == 'chef' or ESX.PlayerData.job.grade_name == 'experimente') then
-					table.insert(elements, {label = 'SlamVan', value = 'slamvan3'})
+					table.insert(elements, {label = 'SlamVan', value = 'slamvan2'})
 				end
 
 				ESX.UI.Menu.CloseAll()
@@ -1070,9 +1070,9 @@ Citizen.CreateThread(function()
 					else
 
 						if
-							GetEntityModel(vehicle) == GetHashKey('flatbed')   or
+							GetEntityModel(vehicle) == GetHashKey('towtruck')   or
 							GetEntityModel(vehicle) == GetHashKey('towtruck2') or
-							GetEntityModel(vehicle) == GetHashKey('slamvan3')
+							GetEntityModel(vehicle) == GetHashKey('slamvan2')
 						then
 							TriggerServerEvent('esx_service:disableService', 'mechanic2')
 						end

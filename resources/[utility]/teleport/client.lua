@@ -115,11 +115,11 @@ local TeleportFromTo = {
 	positionFrom = { ['x'] = 1196.83, ['y'] = -3253.63, ['z'] = 7.1, nom = "Go to - Suspicious Warehouse"},
 	positionTo = { ['x'] = 1138.1, ['y'] = -3198.65, ['z'] = -39.67, nom = "Go Outside"},
     },
-	 ["Moneywash2"] = {
+	["Moneywash2"] = {
 	positionFrom = { ['x'] = 1233.34, ['y'] = -3235.37, ['z'] = 5.53, nom = "Go to - Suspicious Warehouse"},
 	positionTo = { ['x'] = 1118.69, ['y'] = -3193.43, ['z'] = -40.39, nom = "Go Outside"},
     },
-	 ["HospitalBack"] = {
+	["HospitalBack"] = {
 	positionFrom = { ['x'] = 241.10, ['y'] = -1379.00, ['z'] = 33.74, nom = "Enter Private Hospital"},
 	positionTo = { ['x'] = 275.76, ['y'] = -1361.38, ['z'] = 24.54, nom = "Leave Hospital"},
     },
@@ -127,7 +127,15 @@ local TeleportFromTo = {
 	positionFrom = { ['x'] = -15.87, ['y'] = 239.79, ['z'] = 109.55, nom = "Enter Galaxy"},
 	positionTo = { ['x'] = -1569.45, ['y'] = -3017.38, ['z'] = -74.41, nom = "Leave Galaxy"},
     },
-	
+	["BagPool"] = {
+	positionFrom = { ['x'] = -3032.54, ['y'] = 740.46, ['z'] = 2176.75, nom = "Enter Pool"},
+	positionTo = { ['x'] = -3003.13, ['y'] = 743.63, ['z'] = 27.59, nom = "Leave Pool"},
+	},
+	["BagPadio"] = {
+		positionFrom = { ['x'] = -3017.12, ['y'] = 740.91, ['z'] = 2181.44, nom = "Enter Padio"},
+		positionTo = { ['x'] = -3017.03, ['y'] = 758.44, ['z'] = 31.58, nom = "Leave Padio"},
+		},
+
 	
 }
 
