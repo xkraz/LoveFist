@@ -478,25 +478,25 @@ Config.Menus = {
 		label = _U('engine'),
 		parent = 'upgrades',
 		modType = 11,
-		price = {2500, 5000, 7500, 11000}
+		price = {250, 500, 700, 1000}
 	},
 	modBrakes = {
 		label = _U('brakes'),
 		parent = 'upgrades',
 		modType = 12,
-		price = {2000, 3500, 5000, 13.95}
+		price = {200, 300, 500, 13.95}
 	},
 	modTransmission = {
 		label = _U('transmission'),
 		parent = 'upgrades',
 		modType = 13,
-		price = {1500, 3500, 6000}
+		price = {200, 600, 1000}
 	},
 	modSuspension = {
 		label = _U('suspension'),
 		parent = 'upgrades',
 		modType = 15,
-		price = {300, 1500, 3000, 5500, 40.2}
+		price = {100, 300, 500, 1000, 40.2}
 	},
 	modArmor = {
 		label = _U('armor'),
@@ -508,7 +508,7 @@ Config.Menus = {
 		label = _U('turbo'),
 		parent = 'upgrades',
 		modType = 17,
-		price = {5000}
+		price = {1000}
 	},
 	cosmetics = {
 		label				= _U('cosmetics'),
