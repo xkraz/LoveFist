@@ -138,7 +138,7 @@ function Openmechanic2ActionsMenu()
 			else
 
 				local elements = {
-					{label = _U('flat_bed'),  value = 'towtruck'},
+					{label = _U('flat_bed'),  value = 'flatbed'},
 					{label = _U('tow_truck'), value = 'towtruck2'}
 				}
 
@@ -1070,7 +1070,7 @@ Citizen.CreateThread(function()
 					else
 
 						if
-							GetEntityModel(vehicle) == GetHashKey('towtruck')   or
+							GetEntityModel(vehicle) == GetHashKey('flatbed')   or
 							GetEntityModel(vehicle) == GetHashKey('towtruck2') or
 							GetEntityModel(vehicle) == GetHashKey('slamvan2')
 						then

@@ -1,5 +1,5 @@
 Locales['en'] = {
-  ['mechanic2']                  = 'Bennys',
+  ['mechanic2']                  = 'mechanic',
   ['drive_to_indicated']        = '~y~Drive~s~ to the indicated location.',
   ['mission_canceled']          = 'Mission ~r~canceled~s~',
   ['vehicle_list']              = 'vehicle List',
