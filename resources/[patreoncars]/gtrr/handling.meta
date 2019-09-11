@@ -5,23 +5,23 @@
 	<Item type="CHandlingData">
       <handlingName>370Z</handlingName>
       <fMass value="1350.000000" />
-      <fInitialDragCoeff value="8.700000" />
+      <fInitialDragCoeff value="7.2270" />
       <fPercentSubmerged value="85.000000" />
       <vecCentreOfMassOffset x="0.000000" y="-0.070000" z="0.000000" />
       <vecInertiaMultiplier x="1.200000" y="1.200000" z="1.200000" />
-      <fDriveBiasFront value="0.000000" />
+      <fDriveBiasFront value="0.300000" />
       <nInitialDriveGears value="6" />
-      <fInitialDriveForce value="0.335000" />
+      <fInitialDriveForce value="0.4600000" />
       <fDriveInertia value="1.000000" />
-      <fClutchChangeRateScaleUpShift value="2.200000" />
-      <fClutchChangeRateScaleDownShift value="3.000000" />
-      <fInitialDriveMaxFlatVel value="152.000000" />
-      <fBrakeForce value="1.00000" />
-      <fBrakeBiasFront value="0.550000" />
-      <fHandBrakeForce value="0.650000" />
+      <fClutchChangeRateScaleUpShift value="4.000000" />
+      <fClutchChangeRateScaleDownShift value="5.000000" />
+      <fInitialDriveMaxFlatVel value="175.300000" />
+      <fBrakeForce value="1.100000" />
+      <fBrakeBiasFront value="0.610000" />
+      <fHandBrakeForce value="0.800000" />
       <fSteeringLock value="40.000000" />
-      <fTractionCurveMax value="2.560000" />
-      <fTractionCurveMin value="2.470000" />
+      <fTractionCurveMax value="2.40000" />
+      <fTractionCurveMin value="1.60000" />
       <fTractionCurveLateral value="22.500000" />
       <fTractionSpringDeltaMax value="0.150000" />
       <fLowSpeedTractionLossMult value="1.200000" />
