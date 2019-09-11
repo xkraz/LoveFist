@@ -83,6 +83,7 @@ AddEventHandler('salty_crafting:craftItem', function(ingredients)
 		end
 	end
 end)
+<<<<<<< HEAD
 
 ESX.RegisterUsableItem('packed_pistol', function(source)
 		local xPlayer = ESX.GetPlayerFromId(source)
@@ -101,3 +102,5 @@ ESX.RegisterUsableItem('packed_50pistol', function(source)
 		xPlayer.addWeapon('WEAPON_PISTOL50', 100)
 		end
 end)
+=======
+>>>>>>> parent of 6f91edd1... Salty
