@@ -83,3 +83,12 @@ AddEventHandler('salty_crafting:craftItem', function(ingredients)
 		end
 	end
 end)
+
+ESX.RegisterUsableItem('packed_pistol', function(source)
+		local xPlayer = ESX.GetPlayerFromId(source)
+		local pistol = xPlayer.getInventoryItem('packed_pistol').count
+		if pistol > 0 then
+		xPlayer.removeInventoryItem('packed_pistol', 1)
+		xPlayer.addWeapon('WEAPON_COMBATPISTOL', 100)
+		end
+end)
