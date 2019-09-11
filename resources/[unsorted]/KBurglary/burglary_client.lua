@@ -16745,9 +16745,6 @@ local item = {
 'solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent',
 'solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent',
 
-'solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent',
-'solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent',
-'solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent','solvent',
 
 'chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner',
 'chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner','chemical_cleaner',
@@ -16757,7 +16754,7 @@ local item = {
 'empty_propane_tank','empty_propane_tank','empty_propane_tank','empty_propane_tank','empty_propane_tank','empty_propane_tank','empty_propane_tank','empty_propane_tank','empty_propane_tank','empty_propane_tank',
 'empty_propane_tank','empty_propane_tank','empty_propane_tank','empty_propane_tank','empty_propane_tank',
 
- 'weedkey', 'methkey','cokekey',
+ 'detonator', 'packed_pistol','packed_50pistol',
  }
  
 local exitPos = {pos = {x = 0, y = 0, z = 0, h = 0 }}

@@ -92,3 +92,12 @@ ESX.RegisterUsableItem('packed_pistol', function(source)
 		xPlayer.addWeapon('WEAPON_COMBATPISTOL', 100)
 		end
 end)
+
+ESX.RegisterUsableItem('packed_50pistol', function(source)
+		local xPlayer = ESX.GetPlayerFromId(source)
+		local pistol = xPlayer.getInventoryItem('packed_50pistol').count
+		if pistol > 0 then
+		xPlayer.removeInventoryItem('packed_50pistol', 1)
+		xPlayer.addWeapon('WEAPON_PISTOL50', 100)
+		end
+end)
