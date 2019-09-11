@@ -29,7 +29,15 @@
 _sounds = {
   bankAlarm = {
     length = 11980,
-    volume = 0.1,
+    volume = 0.05,
+    fallOff = {
+      min = 10,
+      max = 50
+    }
+  },
+  jewelryAlarm = {
+    length = 2500,
+    volume = 0.5,
     fallOff = {
       min = 10,
       max = 50
@@ -45,7 +53,7 @@ _sounds = {
   },
   item_cuffs = {
     length = 1700,
-    volume = 1.0,
+    volume = 0.7,
     fallOff = {
       min = 1,
       max = 5

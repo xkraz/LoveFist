@@ -366,9 +366,9 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 				TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_quantity'))
 			else
 				if (itemCount > xItem.count) then
-					print(xItem.count)
+					
 					local mxamount = xItem.count
-					print(mxamount)
+
 					xPlayer.removeInventoryItem(itemName, mxamount)
 
 					local pickupLabel = ('~y~%s~s~ [~b~%s~s~]'):format(xItem.label, mxamount)
