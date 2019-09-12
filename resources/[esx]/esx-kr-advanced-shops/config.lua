@@ -33,7 +33,10 @@ Config.Items = {
 	[21] = {label = "Turtle Bait",      item = "turtlebait",       price = 15},
 	[22] = {label = "Binoculars",      item = "binoculars",       price = 200},
 	[23] = {label = "Phone",      item = "phone",       price = 250},
-	[23] = {label = "Contract",      item = "contract",       price = 1500},
+  [24] = {label = "Contract",      item = "contract",       price = 1500},
+  [25] = {label = "Radio",      item = "radio",       price = 400},
+  [26] = {label = "Player Safe (Small)",      item = "playersafeSmall",       price = 7000},
+  [27] = {label = "Player Safe (Large)",      item = "playersafeLarge",       price = 23000},
 }
 
 Config.Images = {
@@ -61,7 +64,9 @@ Config.Images = {
   [22] = {item = "binoculars",   src = "img/binoculars.png"},
   [23] = {item = "phone",   src = "img/phone.png"},
   [24] = {item = "contract",   src = "img/contract.png"},
- 
+  [25] = {item = "radio",   src = "img/items/radio.png"},
+  [26] = {item = "playersafeSmall", src = "img/items/playersafeSmall.png"},
+  [27] = {item = "playersafeLarge", src = "img/items/playersafeLarge.png"}
 }
 
 Config.Zones = {
@@ -91,13 +96,13 @@ Config.Zones = {
     Pos = {x = 2679.916,  y = 3281.671, z = 54.241, number = 7},
   },
   Shop8 = {
-    Pos = {x = -49.519,   y = -1758.514, z = 28.421, number = 8},
+    Pos = {x = -48.61,   y = -1757.46, z = 28.42, number = 8},
   },
   Shop9 = {
-    Pos = {x = 1164.373,  y = -324.801,  z = 68.205, number = 9},
+    Pos = {x = 1163.24,   y = -323.79, z = 68.21, number = 9},
   },
   Shop10 = {
-    Pos = {x = -708.501,  y = -915.260,  z = 18.215, number = 10},
+    Pos = {x = -707.87,  y = -914.62,  z = 18.22, number = 10},
   },
   Shop11 = {
     Pos = {x = -1821.523, y = 793.518,   z = 137.118, number = 11},
