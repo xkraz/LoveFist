@@ -118,11 +118,7 @@ local TeleportFromTo = {
 	["Moneywash2"] = {
 	positionFrom = { ['x'] = 1233.34, ['y'] = -3235.37, ['z'] = 5.53, nom = "Go to - Suspicious Warehouse"},
 	positionTo = { ['x'] = 1118.69, ['y'] = -3193.43, ['z'] = -40.39, nom = "Go Outside"},
-    },
-	["HospitalBack"] = {
-	positionFrom = { ['x'] = 241.10, ['y'] = -1379.00, ['z'] = 33.74, nom = "Enter Private Hospital"},
-	positionTo = { ['x'] = 275.76, ['y'] = -1361.38, ['z'] = 24.54, nom = "Leave Hospital"},
-    },
+	},   
 	["Nightclub"] = {
 	positionFrom = { ['x'] = -15.87, ['y'] = 239.79, ['z'] = 109.55, nom = "Enter Galaxy"},
 	positionTo = { ['x'] = -1569.45, ['y'] = -3017.38, ['z'] = -74.41, nom = "Leave Galaxy"},
