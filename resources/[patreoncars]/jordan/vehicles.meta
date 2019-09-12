@@ -116,8 +116,12 @@
 
   <txdRelationships>
     <Item>
-      <parent>vehicles_comet_interior</parent>
+      <parent>supersport1</parent>
       <child>supersport</child>
+    </Item>
+    <Item>
+      <parent>vehicles_comet_interior</parent>
+      <child>supersport1</child>
     </Item>
   </txdRelationships>
 
