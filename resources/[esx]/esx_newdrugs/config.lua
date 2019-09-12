@@ -85,12 +85,12 @@ Config.ProcessZones = {
 }
 
 Config.DumpZones = {
-	WeedDump = {coords = vector3(-1172.02, -1571.98, 4.66), name = 'Smoke On The Water', color = 25, sprite = 140, radius = 1},
-	CocaineDump = {coords = vector3(-1366.66, 56.67, 54.1), name = 'Golf Club', color = 62, sprite = 109, radius = 1.0},
-	MethDump = {coords = vector3(-56.31, 6521.97, 31.49), name = 'Pharmacy', color = 49, sprite = 403, radius = 1.0},
-	HeroineDump = {coords = vector3(-431.3, -2442.74, 26.88), name = 'Frederick\'s Crane', color = 25, sprite = 68, radius = 1.0},
-	OpiumDump = {coords = vector3(2454.94, 4980.58, 46.82), name = 'O\'Neil Farm', color = 59, sprite = 387, radius = 1.0},
-	CrackDump = {coords = vector3(-4.88, -1227.61, 29.3), name = 'Homeless Hostel', color = 49, sprite = 456, radius = 1.0},
+	WeedDump = {}, --coords = vector3(-1172.02, -1571.98, 4.66), name = 'Smoke On The Water', color = 25, sprite = 140, radius = 1
+	CocaineDump = {}, --coords = vector3(-1366.66, 56.67, 54.1), name = 'Golf Club', color = 62, sprite = 109, radius = 1.0
+	MethDump = {}, --coords = vector3(-56.31, 6521.97, 31.49), name = 'Pharmacy', color = 49, sprite = 403, radius = 1.0
+	HeroineDump = {}, --coords = vector3(-431.3, -2442.74, 26.88), name = 'Frederick\'s Crane', color = 25, sprite = 68, radius = 1.0
+	OpiumDump = {}, --coords = vector3(2454.94, 4980.58, 46.82), name = 'O\'Neil Farm', color = 59, sprite = 387, radius = 1.0
+	CrackDump = {}, --coords = vector3(-4.88, -1227.61, 29.3), name = 'Homeless Hostel', color = 49, sprite = 456, radius = 1.0
 }
 
 Config.Peds = {
