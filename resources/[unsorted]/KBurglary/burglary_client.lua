@@ -17750,12 +17750,20 @@ function OpenSellMenu()
       {
           title    = 'Do you have any of the following you want to sell?',
           elements = {
-              {label = 'Ring ($10)', value = 'ring'},
-              {label = 'Rolex ($50)', value = 'rolex'},
-              {label = 'Camera ($30)', value = 'camera'},
-              {label = 'Gold Necklace ($20)', value = 'goldNecklace'},
-              {label = 'Laptop ($25)', value = 'laptop'},
-              {label = 'Samsung S10($15)', value = 'samsungS10'},
+              {label = 'Ring ($20)', value = 'ring'},
+              {label = 'Rolex ($100)', value = 'rolex'},
+              {label = 'Camera ($45)', value = 'camera'},
+			  {label = 'Samsung S10 (25)', value = 'samsungS10'},
+              {label = 'Gold Necklace ($35)', value = 'goldNecklace'},
+              {label = 'Laptop ($55)', value = 'laptop'},
+              {label = 'Ruby (65$)', value = 'ruby'},
+			  {label = 'Sapphire (75$)', value = 'sapphire'},
+			  {label = 'Emerald (85$)', value = 'emerald'},
+			 
+			  
+		
+			  
+			  
           }
       },
       function(data, menu)
@@ -17771,6 +17779,14 @@ function OpenSellMenu()
               TriggerServerEvent('99kr-burglary:selllaptop')
           elseif data.current.value == 'samsungS10' then
               TriggerServerEvent('99kr-burglary:sellsamsungS10')
+		  elseif data.current.value == 'ruby' then
+              TriggerServerEvent('99kr-burglary:sellruby')
+		  elseif data.current.value == 'sapphire' then
+              TriggerServerEvent('99kr-burglary:sellsapphire')
+		  elseif data.current.value == 'emerald' then
+              TriggerServerEvent('99kr-burglary:sellemerald')
+
+		  
           end
       end,
       function(data, menu)

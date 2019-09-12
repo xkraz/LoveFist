@@ -50,7 +50,7 @@ AddEventHandler('99kr-burglary:sellring', function()
 		if ring > 0 then
 			xPlayer.removeInventoryItem('ring', 1)
 			xPlayer.addMoney(20)
-			TriggerClientEvent('esx:showNotification', xPlayer.source, "$10 added")
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "$20 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a ring to sell!")
 		end
@@ -73,7 +73,7 @@ AddEventHandler('99kr-burglary:sellrolex', function()
 		if rolex > 0 then
 			xPlayer.removeInventoryItem('rolex', 1)
 			xPlayer.addMoney(100)
-			TriggerClientEvent('esx:showNotification', xPlayer.source, "$50 added")
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "$100 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a rolex to sell!")
 		end
@@ -96,7 +96,7 @@ AddEventHandler('99kr-burglary:sellcamera', function()
 	    if camera > 0 then
 		  xPlayer.removeInventoryItem('camera', 1)
 			xPlayer.addMoney(45)
-			TriggerClientEvent('esx:showNotification', xPlayer.source, "$30 added")
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "$45 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a camera to sell!")
 	    end
@@ -119,7 +119,7 @@ AddEventHandler('99kr-burglary:sellgoldNecklace', function()
 		if goldNecklace > 0 then
 			xPlayer.removeInventoryItem('goldNecklace', 1)
 			xPlayer.addMoney(35)
-			TriggerClientEvent('esx:showNotification', xPlayer.source, "$20 added")
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "$35 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a goldNecklace to sell!")
 		end
@@ -142,7 +142,7 @@ AddEventHandler('99kr-burglary:selllaptop', function()
 		if laptop > 0 then
 			xPlayer.removeInventoryItem('laptop', 1)
 			xPlayer.addMoney(55)
-			TriggerClientEvent('esx:showNotification', xPlayer.source, "$25 added")
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "$55 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a laptop to sell!")
 		end
@@ -166,7 +166,76 @@ AddEventHandler('99kr-burglary:sellsamsungS10', function()
 		if samsungS10 > 0 then
 			xPlayer.removeInventoryItem('samsungS10', 1)
 			xPlayer.addMoney(25)
-			TriggerClientEvent('esx:showNotification', xPlayer.source, "$15 added")
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "$25 added")
+		else 
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a samsungS10 to sell!")
+		end
+end)
+
+RegisterServerEvent('99kr-burglary:sellruby')
+AddEventHandler('99kr-burglary:sellruby', function()
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+	local ruby = 0
+			
+	for i=1, #xPlayer.inventory, 1 do
+		local item = xPlayer.inventory[i]
+			
+		if item.name == "ruby" then
+			ruby = item.count
+		end
+	end
+				
+		if ruby > 0 then
+			xPlayer.removeInventoryItem('ruby', 1)
+			xPlayer.addMoney(65)
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "$65 added")
+		else 
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a Ruby to sell!")
+		end
+end)
+
+RegisterServerEvent('99kr-burglary:sellsapphire')
+AddEventHandler('99kr-burglary:sellsapphire', function()
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+	local sapphire = 0
+			
+	for i=1, #xPlayer.inventory, 1 do
+		local item = xPlayer.inventory[i]
+			
+		if item.name == "sapphire" then
+			sapphire = item.count
+		end
+	end
+				
+		if sapphire > 0 then
+			xPlayer.removeInventoryItem('sapphire', 1)
+			xPlayer.addMoney(75)
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "$75 added")
+		else 
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a samsungS10 to sell!")
+		end
+end)
+
+RegisterServerEvent('99kr-burglary:sellemerald')
+AddEventHandler('99kr-burglary:sellemerald', function()
+	local _source = source
+	local xPlayer = ESX.GetPlayerFromId(_source)
+	local emerald = 0
+			
+	for i=1, #xPlayer.inventory, 1 do
+		local item = xPlayer.inventory[i]
+			
+		if item.name == "emerald" then
+			emerald = item.count
+		end
+	end
+				
+		if emerald > 0 then
+			xPlayer.removeInventoryItem('emerald', 1)
+			xPlayer.addMoney(85)
+			TriggerClientEvent('esx:showNotification', xPlayer.source, "$85 added")
 		else 
 			TriggerClientEvent('esx:showNotification', xPlayer.source, "You don't have a samsungS10 to sell!")
 		end
