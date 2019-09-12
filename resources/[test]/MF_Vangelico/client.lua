@@ -8,23 +8,23 @@ RegisterNetEvent('MF_Vangelico:SyncCops')
 local MFV = MF_Vangelico
 MFV.PoliceOnline = 0
 function MFV:Start(...)
-  self.SoundID    = GetSoundId() 
+  self.SoundID    = GetSoundId()
   self.Timer      = GetGameTimer()
   self:SetupBlip()
   self.Looted = {}
   self.CurJob = ESX.GetPlayerData().job
-  ESX.TriggerServerCallback('MF_Vangelico:GetLootStatus', function(loot) 
+  ESX.TriggerServerCallback('MF_Vangelico:GetLootStatus', function(loot)
     self.LootRemaining = loot
-    for k,v in pairs(self.LootRemaining) do 
+    for k,v in pairs(self.LootRemaining) do
       local loot = true
-      local noloot = false 
+      local noloot = false
       for k,v in pairs(v) do
         if v == 0 then
           if not loot then
             noloot = true
-          else 
+          else
             loot = false
-          end 
+          end
         else
           if noloot then noloot = false; end
           loot = true
@@ -38,23 +38,25 @@ function MFV:Start(...)
   end)
 end
 
+local robbing = false
+
 function MFV:Update()
   local tick = 0
   while self.cS and self.dS do
-    Citizen.Wait(0)  
+    Citizen.Wait(0)
     tick = tick + 1
     --if self.CurJob and self.CurJob.name ~= self.PoliceJobName then
       local plyPed = GetPlayerPed(-1)
       local plyPos = GetEntityCoords(plyPed)
-      if (Utils:GetVecDist(plyPos, self.VangelicoPosition) < self.LoadZoneDist) and not self.DoingAction then   
-        if not self.InZone then     
+      if (Utils:GetVecDist(plyPos, self.VangelicoPosition) < self.LoadZoneDist) and not self.DoingAction then
+        if not self.InZone then
           self.InZone = true
         end
-        if self.PoliceOnline and self.PoliceOnline >= self.MinPoliceOnline then  
+        if self.PoliceOnline and self.PoliceOnline >= self.MinPoliceOnline then
           if not self.DeletedSeats then self:DeleteSeats(); end
           local key,val,closestDist,safe = self:GetClosestMarker(plyPos)
           if closestDist < self.InteractDist then
-            if not safe then              
+            if not safe then
               if self.UsingSafe then
                 self.UsingSafe = false
                 TriggerEvent('MF_SafeCracker:EndGame')
@@ -64,10 +66,18 @@ function MFV:Update()
               if (not self.Looted or (self.Looted and not self.Looted[key])) and lootRemains then
                 Utils:DrawText3D(val.Pos.x,val.Pos.y,val.Pos.z, "Press [~r~E~s~] to break the glass.")
                 if Utils:GetKeyPressed("E") then
+                  coord = GetEntityCoords(plyPed)
+                  while GetDistanceBetweenCoords(GetEntityCoords(plyPed), coord.x, coord.y, coord.z, false) > 0.2 do
+                    TaskPedSlideToCoord(ped, x, y, z, heading, duration)
+                    Citizen.Wait(0)
+                  end
+                  ClearPedTasksImmediately(plyPed)
+                  FreezeEntityPosition(plyPed, true)
                   self:Interact(key,val, plyPed,false)
+                  FreezeEntityPosition(plyPed, false)
                 end
               end
-            elseif not self.SafeUsed then          
+            elseif not self.SafeUsed and robbing then
               Utils:DrawText3D(self.SafePos.x,self.SafePos.y,self.SafePos.z, "Press [~r~E~s~] to attempt to crack the safe.")
               if not self.Interacting and Utils:GetKeyPressed("E") then
                 self:Interact(key,val, plyPed,true)
@@ -101,7 +111,7 @@ function MFV:Update()
       end
     --end
   end
-end     
+end
 
 function MFV:DeleteSeats()
   local newPos = vector3(-625.243, -223.44, 37.78)
@@ -110,7 +120,7 @@ function MFV:DeleteSeats()
   local objects = ESX.Game.GetObjects()
   for k,v in pairs(objects) do
     local model = GetEntityModel(v) % 0x100000000
-    if model == self.SeatHash then 
+    if model == self.SeatHash then
       SetEntityAsMissionEntity(v,false)
       DeleteObject(v)
     end
@@ -118,6 +128,7 @@ function MFV:DeleteSeats()
 end
 
 function MFV:SetupBlip()
+  TriggerServerEvent('dbug','CREATE BLIP')
   local blip = AddBlipForCoord(self.VangelicoPosition.x, self.VangelicoPosition.y, self.VangelicoPosition.z)
   SetBlipSprite               (blip, 439)
   SetBlipDisplay              (blip, 3)
@@ -155,6 +166,17 @@ function MFV:GetClosestMarker(pos)
   end
 end
 
+function makeEntityFaceLoc(_loc)
+    local p1 = GetEntityCoords(GetPlayerPed(PlayerId()), true)
+    local p2 = _loc
+    local dx = p2.x - p1.x
+    local dy = p2.y - p1.y
+    local heading = GetHeadingFromVector_2d(dx, dy)
+    SetEntityHeading( GetPlayerPed(PlayerId()), heading )
+end
+
+local lastSound = 0
+
 function MFV:Interact(key,val, plyPed, safe)
   if not safe then
     local plySkin
@@ -170,23 +192,35 @@ function MFV:Interact(key,val, plyPed, safe)
       self.Looted = self.Looted or {}
       self.Looted[key] = true
       self.DoingAction = true
+      robbing = true
       TriggerServerEvent('MF_Vangelico:Loot', key,val)
       local loot = self.LootRemaining[key]
 
-      TaskTurnPedToFaceCoord(plyPed, val.Pos.x, val.Pos.y, val.Pos.z, -1)
       Wait(1500)
 
+      FreezeEntityPosition(plyPed, false)
+      makeEntityFaceLoc(val.Pos)
       ESX.Streaming.RequestAnimDict('missheist_jewel', function(...)
-        TaskPlayAnim( plyPed, "missheist_jewel", "smash_case_tray_a", 8.0, 1.0, -1, 2, 0, 0, 0, 0 )     
+        TaskPlayAnim( plyPed, "missheist_jewel", "smash_case_tray_a", 8.0, 1.0, -1, 2, 0, 0, 0, 0 )
       end)
-      Wait(500)
-
+      local newSound = math.random(1, 5)
+      if newSound == lastSound then
+        if newSound ~= 4 then
+          newSound = (newSound + 1) % 5
+        else
+          newSound = 5
+        end
+      end
+      Wait(250)
+      TriggerServerEvent("PlaySoundAt", val.Pos, "glassbreak" .. tostring(newSound))
+      Wait(250)
+      lastSound = newSound
       if not HasNamedPtfxAssetLoaded("scr_jewelheist") then RequestNamedPtfxAsset("scr_jewelheist"); end
-      while not HasNamedPtfxAssetLoaded("scr_jewelheist") do Citizen.Wait(0); end    
+      while not HasNamedPtfxAssetLoaded("scr_jewelheist") do Citizen.Wait(0); end
 
       SetPtfxAssetNextCall("scr_jewelheist")
-      StartParticleFxLoopedAtCoord("scr_jewel_cab_smash", val.Pos.x, val.Pos.y, val.Pos.z, 0.0, 0.0, 0.0, 1.0, false, false, false, false)                
-      PlaySoundFromCoord(-1, "Glass_Smash", val.Pos.x, val.Pos.y, val.Pos.z, 0, 0, 0, 0)
+      StartParticleFxLoopedAtCoord("scr_jewel_cab_smash", val.Pos.x, val.Pos.y, val.Pos.z, 0.0, 0.0, 0.0, 1.0, false, false, false, false)
+
       Wait(2400)
 
       ClearPedTasksImmediately(plyPed)
@@ -201,15 +235,24 @@ function MFV:Interact(key,val, plyPed, safe)
     elseif plySkin["bags_2"] == 0 and plySkin["bags_1"] == 0 then
       ESX.ShowNotification("You need a bag to carry the goods with.")
     elseif matching then
-      ESX.ShowNotification("You can't break the glass with this.")      
+      ESX.ShowNotification("You can't break the glass with this.")
     end
-  else 
+  else
     self.SafeUsed = true
     ESX.TriggerServerCallback('MF_Vangelico:GetSafeState', function(canUse)
       if canUse then
         self.UsingSafe = true
-        TriggerEvent('MF_SafeCracker:StartMinigame', self.SafeRewards)
-        self:SpawnGuardNPC()
+        local chance = math.random(1, 100)
+        if chance < 5 then
+          TriggerEvent('MF_SafeCracker:StartMinigame', {
+            CashAmount    = math.random(7500,25000),
+            ItemsAmount   = 1, -- math.random(0,itemsamount) = reward
+            Items = {'c4_bank'} -- ^ for all
+          })
+        else
+          TriggerEvent('MF_SafeCracker:StartMinigame', self.SafeRewards)
+        end
+        --self:SpawnGuardNPC()
       else
         ESX.ShowNotification("Somebody has already cracked this safe.")
       end
@@ -220,7 +263,8 @@ end
 function MFV:Awake(...)
     while not ESX do Citizen.Wait(0); end
     while not ESX.IsPlayerLoaded() do Citizen.Wait(0); end
-    ESX.TriggerServerCallback('MF_Vangelico:GetStartData', function(retVal,cops) self.PoliceOnline = cops; self.dS = true; self.cS = retVal; end)
+    local pd = PlayerId()
+    ESX.TriggerServerCallback('MF_Vangelico:GetStartData', function(retVal,cops, pd) self.PoliceOnline = cops; self.dS = true; self.cS = true; end)
     while not self.dS do Citizen.Wait(0); end
     self.PlayerData = ESX.GetPlayerData()
     self:Start()
@@ -250,12 +294,12 @@ function MFV:SpawnGuardNPC()
       TaskGotoEntityAiming(newPed, plyPed, 3.0, 5.0)
       Wait(5000)
 
-      local timer = GetGameTimer() 
+      local timer = GetGameTimer()
       local dist = Utils:GetVecDist(plyPos,GetEntityCoords(newPed))
       while dist > 10.0 do
         Citizen.Wait(100)
         plyPos = GetEntityCoords(GetPlayerPed(v))
-        dist = Utils:GetVecDist(plyPos,GetEntityCoords(newPed))       
+        dist = Utils:GetVecDist(plyPos,GetEntityCoords(newPed))
       end
       ClearPedTasksImmediately(newPed)
       Citizen.Wait(1000)
@@ -280,8 +324,40 @@ function MFV:DoSyncLoot(loot,new,key)
   if new then
     self.SafeUsed = false
     self.Looted = {}
+    robbing = false
   end
 end
+
+RegisterNetEvent('jewel:newsbroadcast')
+AddEventHandler('jewel:newsbroadcast', function()
+  local playerJob = ESX.GetPlayerData().job.name
+	if (playerJob == 'police') or (playerJob == 'fib') then
+    TriggerEvent('esx:showNotification', '~y~NEWS: ~w~Robbery in progress at ~b~Jewelry Store')
+    Citizen.CreateThread(function()
+      while true do
+          local name = GetCurrentResourceName() .. math.random(999)
+          AddTextEntry(name, '~INPUT_CONTEXT~ ' .. self.Translation['en']['set_waypoint'] .. '\n~INPUT_FRONTEND_RRIGHT~ ' .. self.Translation['en']['hide_box'])
+          DisplayHelpTextThisFrame(name, false)
+          if IsControlPressed(0, 38) then
+              SetNewWaypoint(self.VangelicoPosition.x, self.VangelicoPosition.y)
+              return
+          elseif IsControlPressed(0, 194) then
+              return
+          end
+          Wait(0)
+      end
+    end)
+	end
+
+	if (playerJob == 'reporter') then
+    Citizen.CreateThread(function()
+			Wait(1000*60)
+    	TriggerEvent('chatMessage', 'NEWS',{ 255, 0, 0}, " Robbery in progress at ^2Jewelry Store")
+
+      TriggerEvent('esx:showNotification', '~y~NEWS: ~w~Robbery in progress at ~b~Jewelry Store')
+		end)
+	end
+end)
 
 function MFV:SetJob(job)
   self.CurJob = job;

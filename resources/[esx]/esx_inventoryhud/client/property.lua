@@ -1,5 +1,5 @@
 local isPlayerSafe = false
-
+local size
 RegisterNetEvent("esx_inventoryhud:openPropertyInventory")
 AddEventHandler("esx_inventoryhud:openPropertyInventory", function(data, playerSafe)
     if playerSafe then isPlayerSafe = playerSafe; else isPlayerSafe = false; end
@@ -26,6 +26,8 @@ function setPropertyInventoryData(data)
     local blackMoney = data.blackMoney
     local propertyItems = data.items
     local propertyWeapons = data.weapons
+    local safeAmt = 0
+    if blackMoney == nil or propertyItems == nil or propertyWeapons == nil then return end
 
     if blackMoney > 0 then
         accountData = {
@@ -39,6 +41,7 @@ function setPropertyInventoryData(data)
             canRemove = false
         }
         table.insert(items, accountData)
+        safeAmt = blackMoney / 1000
     end
 
     for i = 1, #propertyItems, 1 do
@@ -52,6 +55,7 @@ function setPropertyInventoryData(data)
             item.canRemove = false
 
             table.insert(items, item)
+            safeAmt = safeAmt + item.count
         end
     end
 
@@ -72,7 +76,20 @@ function setPropertyInventoryData(data)
                     canRemove = false
                 }
             )
+            safeAmt = safeAmt + 1
         end
+    end
+
+    if data.size ~= nil then
+      local _label = "SMALL"
+      if data.size == 500 then _label = "LARGE" end
+
+      SendNUIMessage(
+          {
+              action = "setInfoText",
+              text = "<h3>Player Safe</h3><br><strong>Size:</strong>" .. _label .. "<br><strong>Capacity:</strong> " .. math.floor(safeAmt) .. "/".. data.size
+          }
+      )
     end
 
     SendNUIMessage(
@@ -90,7 +107,7 @@ function openPropertyInventory()
     SendNUIMessage(
         {
             action = "display",
-            type = "property"
+            type = "safe"
         }
     )
 
@@ -112,8 +129,14 @@ RegisterNUICallback(
                 count = GetAmmoInPedWeapon(PlayerPedId(), GetHashKey(data.item.name))
             end
 
-            if isPlayerSafe then      
-                TriggerServerEvent("MF_PlayerSafes:PutItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, count, isPlayerSafe.safeid, isWeapon)
+            if isPlayerSafe then
+                local _size = 100
+                if isPlayerSafe.size == 'small' then
+                  _size = 200
+                elseif isPlayerSafe.size == 'large' then
+                  _size = 500
+                end
+                TriggerServerEvent("MF_PlayerSafes:PutItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, count, isPlayerSafe.safeid, isWeapon, _size)
             else
                 TriggerServerEvent("esx_property:putItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, count)
             end

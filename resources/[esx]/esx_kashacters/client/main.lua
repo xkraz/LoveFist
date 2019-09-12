@@ -61,7 +61,7 @@ RegisterNetEvent('kashactersC:SpawnCharacter')
 AddEventHandler('kashactersC:SpawnCharacter', function(spawn, isnew)
     TriggerServerEvent('es:firstJoinProper')
     TriggerEvent('es:allowedToSpawn')
-	
+
     SetTimecycleModifier('default')
     local pos = spawn
     SetEntityCoords(GetPlayerPed(-1), pos.x, pos.y, pos.z)
@@ -73,10 +73,10 @@ AddEventHandler('kashactersC:SpawnCharacter', function(spawn, isnew)
     Citizen.Wait(900)
     exports.spawnmanager:setAutoSpawn(false)
     --TriggerEvent('esx_ambulancejob:multicharacter', source)
-    
- if isnew then
-        TriggerEvent('esx_identity:showRegisterIdentity')
- end
+
+     if isnew then
+            TriggerEvent('esx_identity:showRegisterIdentity')
+     end
 
     cam = CreateCamWithParams("DEFAULT_SCRIPTED_CAMERA", pos.x,pos.y,pos.z+200, 300.00,0.00,0.00, 100.00, false, 0)
     PointCamAtCoord(cam, pos.x,pos.y,pos.z+2)
@@ -92,6 +92,7 @@ AddEventHandler('kashactersC:SpawnCharacter', function(spawn, isnew)
     IsChoosing = false
     DisplayHud(true)
     DisplayRadar(true)
+    TriggerServerEvent('safe:CharacterChosen',spawn)
 	TriggerEvent("andreas_spawnlocation:setNui")
 end)
 
@@ -109,7 +110,7 @@ RegisterNUICallback("CharacterChosen", function(data, cb)
         Citizen.Wait(10)
     end
     cb("ok")
-	
+
 end)
 RegisterNUICallback("DeleteCharacter", function(data, cb)
     SetNuiFocus(false,false)

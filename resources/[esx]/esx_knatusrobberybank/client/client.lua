@@ -340,7 +340,7 @@ end)
 -- esx_knatusrobberybank
 RegisterNetEvent('bankstartalarm')
 AddEventHandler('bankstartalarm', function(_bank)
-	TriggerEvent('PlayLoopAt',Banks[_bank].position,10,50,"bankAlarm")
+	TriggerEvent('PlayLoopAt',Banks[_bank].position,"bankAlarm")
 end)
 
 RegisterNetEvent('bankstopalarm')
@@ -349,7 +349,7 @@ AddEventHandler('bankstopalarm', function(_bank)
 end)
 
 RegisterCommand('sound',  function(source, args)
-	TriggerEvent('PlayLoopAt',vector3(-107.06505584717, 6474.8012695313, 31.62670135498 ),10,50,"bankAlarm")
+	TriggerEvent('PlayLoopAt',vector3(-107.06505584717, 6474.8012695313, 31.62670135498 ),"bankAlarm")
 end)
 
 RegisterCommand('soundoff',  function(source, args)

@@ -24,6 +24,12 @@ AddEventHandler(
     local vehicules = {}
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
+
+    while ESX.GetPlayerFromId(_source)) == nil do
+      xPlayer = ESX.GetPlayerFromId(_source)
+      Wait(0)
+    end
+
     MySQL.Async.fetchAll(
       "SELECT * FROM owned_vehicles WHERE owner = @owner",
       {

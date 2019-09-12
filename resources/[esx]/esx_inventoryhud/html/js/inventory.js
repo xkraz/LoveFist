@@ -11,6 +11,8 @@ window.addEventListener("message", function (event) {
             $(".info-div").hide();
         } else if (type === "trunk") {
             $(".info-div").show();
+        } else if (type === "safe") {
+            $(".info-div").show();
         } else if (type === "property") {
             $(".info-div").hide();
         } else if (type === "player") {
@@ -288,6 +290,12 @@ $(document).ready(function () {
                     item: itemData,
                     number: parseInt($("#count").val())
                 }));
+            } else if (type === "safe" && itemInventory === "second") {
+                disableInventory(500);
+                $.post("http://esx_inventoryhud/TakeFromProperty", JSON.stringify({
+                    item: itemData,
+                    number: parseInt($("#count").val())
+                }));
             } else if (type === "player" && itemInventory === "second") {
                 disableInventory(500);
                 $.post("http://esx_inventoryhud/TakeFromPlayer", JSON.stringify({
@@ -315,6 +323,12 @@ $(document).ready(function () {
                     item: itemData,
                     number: parseInt($("#count").val())
                 }));
+            } else if (type === "safe" && itemInventory === "main") {
+                disableInventory(500);
+                $.post("http://esx_inventoryhud/PutIntoProperty", JSON.stringify({
+                    item: itemData,
+                    number: parseInt($("#count").val())
+                }));
             } else if (type === "player" && itemInventory === "main") {
                 disableInventory(500);
                 $.post("http://esx_inventoryhud/PutIntoPlayer", JSON.stringify({
@@ -337,7 +351,7 @@ $.widget('ui.dialog', $.ui.dialog, {
     options: {
         // Determine if clicking outside the dialog shall close it
         clickOutside: false,
-        // Element (id or class) that triggers the dialog opening 
+        // Element (id or class) that triggers the dialog opening
         clickOutsideTrigger: ''
     },
     open: function () {
@@ -359,7 +373,7 @@ $.widget('ui.dialog', $.ui.dialog, {
     close: function () {
         // Remove document wide click handler for the current dialog
         $(document).off('click.ui.dialogClickOutside' + this.eventNamespace);
-        // Invoke parent close method 
+        // Invoke parent close method
         this._super();
     },
 });

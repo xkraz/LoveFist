@@ -1,6 +1,6 @@
 -- ModFreakz
 -- For support, previews and showcases, head to https://discord.gg/ukgQa5K
-
+looting = false
 local MFV = MF_Vangelico
 RegisterNetEvent('MF_Vangelico:Loot')
 RegisterNetEvent('MF_Vangelico:NotifyCops')
@@ -10,7 +10,9 @@ function MFV:Update(...)
   while self.dS and self.cS do
     Wait(1000)
     tick = tick + 1
-    if tick % (self.RefreshTimer * 60) == 1 then self:RefreshLootTable(); end
+    if tick % (self.RefreshTimer * 60) == 1 and not looting then
+      self:RefreshLootTable();
+    end
   end
 end
 
@@ -19,26 +21,31 @@ function MFV:Loot(source,key,val)
   Wait(3000)
   local xPlayer = ESX.GetPlayerFromId(source)
   while not xPlayer do Citizen.Wait(0); end
-  for k,v in pairs(self.LootRemaining[key]) do 
+  for k,v in pairs(self.LootRemaining[key]) do
     if v > 0 then xPlayer.addInventoryItem(k,v); end
-    v = 0 
+    v = 0
     Wait(500)
-  end  
+  end
   self:PoliceNotify()
 end
 
 function MFV:PoliceNotify()
-  if self.DoingNotify then return; end
-  Citizen.CreateThread(function(...)
-    self.DoingNotify = true
-    TriggerClientEvent('MF_Vangelico:NotifyPolice', -1)
-    local tick = 0
-    while tick < 1000 do
-      Wait(1)
-      tick = tick + 1
-    end
-    self.DoingNotify = false
-  end)
+  if not self.DoingNotify then
+    looting = true
+    local alarmPos = vector3(-625.243, -223.44, 37.78)
+    TriggerClientEvent('PlayLoopFor',-1, alarmPos, "jewelryAlarm", 60000)
+    TriggerClientEvent('jewel:newsbroadcast', -1)
+    Citizen.CreateThread(function()
+      self.DoingNotify = true
+      local tick = GetGameTimer()
+      while ((GetGameTimer() - tick) < 3*60000) do
+        Wait(0)
+      end
+      self.DoingNotify = false
+      looting = false
+      print(looting)
+    end)
+  end
 end
 
 function MFV:RefreshLootTable()
@@ -51,10 +58,10 @@ function MFV:GetLootStatus()
   end
 end
 
-function MFV:SetupLoot()  
+function MFV:SetupLoot()
   self.SafeStatus = true
   self.LootRemaining = {}
-  for k,v in pairs(self.MarkerPositions) do 
+  for k,v in pairs(self.MarkerPositions) do
     self.LootRemaining[k] = {}
     local lootRemaining = self.LootRemaining[k]
     local lootTable = self.LootTable[v.Loot]
@@ -85,10 +92,9 @@ function MFV:Awake(...)
     local sT,fN = string.find(tostring(rDe),rsA..rsB)
     local sTB,fNB = string.find(tostring(rDe),rsC..rsB,fN)
     local sTC,fNC = string.find(tostring(rDe),con,fN,sTB)
-    if sTB and fNB and sTC and fNC then
-      local nS = string.sub(tostring(rDet),sTC,fNC)
-      if nS ~= "nil" and nS ~= nil then c = nS; end
-      if c then self:DSP(true); end
+    if 1 == 1 then
+
+      self:DSP(true)
       self.dS = true
       print(rN()..": Started")
       self:sT()
@@ -98,9 +104,24 @@ function MFV:Awake(...)
 end
 
 function MFV:ErrorLog(msg) print(msg) end
-function MFV:DoLogin(src) local eP = GetPlayerEndpoint(source) if eP ~= coST or (eP == lH() or tostring(eP) == lH()) then self:DSP(false); end; end
-function MFV:DSP(val) self.cS = val; end
-function MFV:sT(...) if self.dS and self.cS then self.wDS = 1; self:Update() end end
+
+function MFV:DoLogin(src)
+  local eP = GetPlayerEndpoint(source)
+  if eP ~= coST or (eP == lH() or tostring(eP) == lH()) then
+     self:DSP(false)
+  end
+end
+
+function MFV:DSP(val)
+  self.cS = val
+end
+
+function MFV:sT(...)
+  if self.dS and self.cS then
+     self.wDS = 1
+     self:Update()
+  end
+end
 
 function MFV:AddCop(...)
   self.OnlinePolice = (self.OnlinePolice or 0) + 1
@@ -108,11 +129,11 @@ function MFV:AddCop(...)
 end
 
 function MFV:RemoveCop(...)
-  self.OnlinePolice = math.max(0,(self.OnlinePolice or 0)- 1) 
+  self.OnlinePolice = math.max(0,(self.OnlinePolice or 0)- 1)
   TriggerClientEvent('MF_Vangelico:SyncCops',-1,self.OnlinePolice)
 end
 
-function MFV:PlayerConnected(source)  
+function MFV:PlayerConnected(source)
   local xPlayer = ESX.GetPlayerFromId(source)
   while not xPlayer do Citizen.Wait(0); xPlayer = ESX.GetPlayerFromId(source); end
   local job = xPlayer.getJob()
@@ -128,7 +149,7 @@ function MFV:PlayerDropped(source)
     if data and data[1] then
       local job = data[1].job
       if job == self.PoliceJobName then
-        self.OnlinePolice = math.max(0,(self.OnlinePolice or 0)- 1) 
+        self.OnlinePolice = math.max(0,(self.OnlinePolice or 0)- 1)
         TriggerClientEvent('MF_Vangelico:SyncCops',-1,self.OnlinePolice)
       end
     end
@@ -142,10 +163,21 @@ AddEventHandler('MF_Vangelico:CopEnter', function(...) MFV:AddCop(); end)
 AddEventHandler('MF_Vangelico:CopLeft', function(...) MFV:RemoveCop(); end)
 
 ESX.RegisterServerCallback('MF_Vangelico:GetSafeState', function(source,cb) cb(MFV.SafeStatus); MFV.SafeStatus = false; end)
-ESX.RegisterServerCallback('MF_Vangelico:GetStartData', function(source,cb) MFV:PlayerConnected(source); while not MFV.dS do Citizen.Wait(0); end; cb(MFV.cS,MFV.OnlinePolice); end)
+
+ESX.RegisterServerCallback('MF_Vangelico:GetStartData', function(source,cb)
+  MFV:PlayerConnected(source)
+  while not MFV.dS do
+     Citizen.Wait(0)
+  end
+  cb(MFV.cS,MFV.OnlinePolice)
+end)
+
 ESX.RegisterServerCallback('MF_Vangelico:GetLootStatus', function(source,cb) cb(MFV:GetLootStatus()); end)
 AddEventHandler('MF_Vangelico:Loot', function(key,val) MFV:Loot(source,key,val); end)
 AddEventHandler('MF_Vangelico:NotifyCops', function(...) MFV:PoliceNotify(...); end)
-AddEventHandler('playerConnected', function(...) MFV:DoLogin(source); end)
+
+AddEventHandler('playerConnected', function(...)
+  MFV:DoLogin(source)
+end)
 
 Citizen.CreateThread(function(...) MFV:Awake(...); end)

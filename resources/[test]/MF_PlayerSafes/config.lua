@@ -19,3 +19,5 @@ MFS.DrawTextDist  = 010.0
 MFS.InteractDist  = 002.0
 MFS.LoadSafeDist  = 050.0
 MFS.DespawnDist   = 100.0
+MFS.SmallSafeSize = 200.0
+MFS.LargeSafeSize = 500.0

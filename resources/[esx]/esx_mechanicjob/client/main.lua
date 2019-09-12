@@ -421,33 +421,7 @@ function OpenMobileMechanicActionsMenu()
 
 	elseif data.current.value == 'fix_vehicle' then
 
-		local playerPed = PlayerPedId()
-		local vehicle   = ESX.Game.GetVehicleInDirection()
-		local coords    = GetEntityCoords(playerPed)
-
-		if IsPedSittingInAnyVehicle(playerPed) then
-			ESX.ShowNotification(_U('inside_vehicle'))
-			return
-		end
-
-		if DoesEntityExist(vehicle) then
-			isBusy = true
-			TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
-			Citizen.CreateThread(function()
-				Citizen.Wait(20000)
-
-				SetVehicleFixed(vehicle)
-				SetVehicleDeformationFixed(vehicle)
-				SetVehicleUndriveable(vehicle, false)
-				SetVehicleEngineOn(vehicle, true, true)
-				ClearPedTasksImmediately(playerPed)
-
-				ESX.ShowNotification(_U('vehicle_repaired'))
-				isBusy = false
-			end)
-		else
-			ESX.ShowNotification(_U('no_vehicle_nearby'))
-		end
+		TriggerEvent('esx_marducasjob:onFixkit2')
 
 	elseif data.current.value == 'clean_vehicle' then
 
@@ -484,22 +458,93 @@ function OpenMobileMechanicActionsMenu()
 			local vehicle = GetVehiclePedIsIn(playerPed, false)
 
 			if GetPedInVehicleSeat(vehicle, -1) == playerPed then
-				ESX.ShowNotification(_U('vehicle_impounded'))
-				ESX.Game.DeleteVehicle(vehicle)
+
+				local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
+
+				local maxPassengers = GetVehicleMaxNumberOfPassengers(vehicle)
+				local MyPed = GetPlayerPed(-1)
+				local MyPedVeh = GetVehiclePedIsIn(playerPed,false)
+				local PlateVeh = GetVehicleNumberPlateText(MyPedVeh)
+
+				for seat = -1,maxPassengers-1,1 do
+					local ped = GetPedInVehicleSeat(vehicle,seat)
+					if ped and ped ~= 0 then TaskLeaveVehicle(ped,vehicle,16); end
+				end
+
+				while true do
+					if not IsPedInVehicle(GetPlayerPed(PlayerId()), vehicle, false) then
+						TriggerEvent('esx:showNotification', 'The vehicle has been sent to ~r~Impound!~s~')
+						ESX.TriggerServerCallback('JAG:StoreVehicle', function(valid)
+
+							local model = GetEntityModel(MyPedVeh)
+							local veh = {
+								model =  GetEntityModel(MyPedVeh),
+								plate = PlateVeh,
+								fuel = GetVehicleFuelLevel(MyPedVeh),
+								damage = {
+									body = GetVehicleBodyHealth(MyPedVeh) ,
+									engine = GetVehicleEngineHealth(MyPedVeh),
+									tank = GetVehiclePetrolTankHealth(MyPedVeh)
+								},
+								loc = {
+									x = 491.90,
+									y = -1315.00
+								},
+								headlight = GetVehicleHeadlightsColour(MyPedVeh)
+							}
+							TriggerEvent('setDetails', veh)
+							TriggerServerEvent('storedCar',veh)
+							DeleteVehicle(vehicle)
+						end, vehicleProps, 2)
+						break
+					end
+					Citizen.Wait(0)
+				end
 			else
 				ESX.ShowNotification(_U('must_seat_driver'))
 			end
 		else
 			local vehicle = ESX.Game.GetVehicleInDirection()
-
 			if DoesEntityExist(vehicle) then
-				ESX.ShowNotification(_U('vehicle_impounded'))
-				ESX.Game.DeleteVehicle(vehicle)
+				local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
+
+				local maxPassengers = GetVehicleMaxNumberOfPassengers(vehicle)
+
+				for seat = -1,maxPassengers-1,1 do
+					local ped = GetPedInVehicleSeat(vehicle,seat)
+					if ped and ped ~= 0 then
+						TriggerEvent('esx:showNotification', 'The vehicle must be empty to ~r~Impound!~s~')
+						return
+					end
+				end
+
+				TriggerEvent('esx:showNotification', 'The vehicle has been sent to ~r~Impound!~s~')
+
+				ESX.TriggerServerCallback('JAG:StoreVehicle', function(valid)
+
+					local veh = {
+						model = GetEntityModel(vehicle),
+						plate = GetVehicleNumberPlateText(vehicle),
+						fuel = GetVehicleFuelLevel(vehicle),
+						damage = {
+							body = GetVehicleBodyHealth(vehicle) ,
+							engine = GetVehicleEngineHealth(vehicle),
+							tank = GetVehiclePetrolTankHealth(vehicle)
+						},
+						loc = {
+							x = 491.90,
+							y = -1315.00
+						},
+						headlight = GetVehicleHeadlightsColour(vehicle)
+					}
+					TriggerEvent('setDetails', veh)
+					TriggerServerEvent('storedCar',veh)
+					DeleteVehicle(vehicle)
+				end, vehicleProps, 2)
 			else
 				ESX.ShowNotification(_U('must_near'))
 			end
 		end
-
 	elseif data.current.value == 'dep_vehicle' then
 
 		local playerPed = PlayerPedId()

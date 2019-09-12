@@ -294,7 +294,7 @@ end
 
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(50)
+		Citizen.Wait(100)
 		local ped = GetPlayerPed(-1)
 		if isPedDrivingAVehicle() then
 			vehicle = GetVehiclePedIsIn(ped, false)
@@ -332,6 +332,7 @@ Citizen.CreateThread(function()
 
 			-- If ped spawned a new vehicle while in a vehicle or teleported from one vehicle to another, handle as if we just entered the car
 			if vehicle ~= lastVehicle then
+				TriggerServerEvent('dbug', '????')
 				pedInSameVehicleLast = false
 			end
 
@@ -388,6 +389,40 @@ Citizen.CreateThread(function()
 					if healthBodyNew < 0  then
 						healthBodyNew = 0.0
 					end
+					-- set the actual new values
+					if (healthBodyLast - healthBodyNew < 100) and (healthBodyLast - healthBodyNew > 0) then
+						TriggerServerEvent('dbug', 'Body 25 ' ..healthBodyLast - healthBodyNew)
+						healthBodyNew = healthBodyNew - ((healthBodyLast - healthBodyNew) * 2)
+
+					elseif (healthBodyLast - healthBodyNew <= 250) and (healthBodyLast - healthBodyNew >= 101) then
+						healthBodyNew = healthBodyNew - ((healthBodyLast - healthBodyNew) * 1.7)
+						TriggerServerEvent('dbug', 'Body 50')
+					elseif (healthBodyLast - healthBodyNew <= 400) and (healthBodyLast - healthBodyNew >= 251) then
+						healthBodyNew = healthBodyNew - ((healthBodyLast - healthBodyNew) * 0.9)
+						TriggerServerEvent('dbug', 'Body 100')
+					end
+					if healthEngineLast >= 600 then
+						if (healthEngineLast - healthEngineNew < 150) and (healthEngineLast - healthEngineNew > 100) then
+							TriggerServerEvent('dbug', 'Engine 25 ' ..healthEngineLast - healthEngineNew)
+							healthEngineNew = healthEngineNew + ((healthEngineLast - healthEngineNew) * 0.8)
+						elseif (healthEngineLast - healthEngineNew <= 300) and (healthEngineLast - healthEngineNew >= 151) then
+							TriggerServerEvent('dbug', 'Engine 60 ' ..healthEngineLast - healthEngineNew)
+							healthEngineNew = healthEngineNew + ((healthEngineLast - healthEngineNew) * 0.5)
+						elseif (healthEngineLast - healthEngineNew <= 400) and (healthEngineLast - healthEngineNew >= 301) then
+							TriggerServerEvent('dbug', 'Engine 122 ' ..healthEngineLast - healthEngineNew)
+							healthEngineNew = healthEngineNew + ((healthEngineLast - healthEngineNew) * 0.3)
+						end
+					end
+
+					if healthEngineNew ~= healthEngineLast then
+						 SetVehicleEngineHealth(vehicle, healthEngineNew)
+					 	end
+					if healthBodyNew ~= healthBodyLast then	SetVehicleBodyHealth(vehicle, healthBodyNew) end
+					if healthPetrolTankNew ~= healthPetrolTankCurrent then SetVehiclePetrolTankHealth(vehicle, healthPetrolTankNew) end
+
+					healthEngineLast = healthEngineNew
+					healthBodyLast = healthBodyNew
+					healthPetrolTankLast = healthPetrolTankNew
 				end
 			else
 				-- Just got in the vehicle. Damage can not be multiplied this round
@@ -417,13 +452,6 @@ Citizen.CreateThread(function()
 				pedInSameVehicleLast = true
 			end
 
-			-- set the actual new values
-			if healthEngineNew ~= healthEngineCurrent then
-				SetVehicleEngineHealth(vehicle, healthEngineNew)
-			end
-			if healthBodyNew ~= healthBodyCurrent then SetVehicleBodyHealth(vehicle, healthBodyNew) end
-			if healthPetrolTankNew ~= healthPetrolTankCurrent then SetVehiclePetrolTankHealth(vehicle, healthPetrolTankNew) end
-
 			-- Store current values, so we can calculate delta next time around
 			healthEngineLast = healthEngineNew
 			healthBodyLast = healthBodyNew
@@ -433,7 +461,7 @@ Citizen.CreateThread(function()
 		else
 			if pedInSameVehicleLast == true then
 				-- We just got out of the vehicle
-				lastVehicle = GetVehiclePedIsIn(ped, true)				
+				lastVehicle = GetVehiclePedIsIn(ped, true)
 				if cfg.deformationMultiplier ~= -1 then SetVehicleHandlingFloat(lastVehicle, 'CHandlingData', 'fDeformationDamageMult', fDeformationDamageMult) end -- Restore deformation multiplier
 				SetVehicleHandlingFloat(lastVehicle, 'CHandlingData', 'fBrakeForce', fBrakeForce)  -- Restore Brake Force multiplier
 				if cfg.weaponsDamageMultiplier ~= -1 then SetVehicleHandlingFloat(lastVehicle, 'CHandlingData', 'fWeaponDamageMult', cfg.weaponsDamageMultiplier) end	-- Since we are out of the vehicle, we should no longer compensate for bodyDamageFactor
@@ -444,4 +472,3 @@ Citizen.CreateThread(function()
 		end
 	end
 end)
-

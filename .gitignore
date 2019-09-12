@@ -2,3 +2,5 @@ cache/
 essentialmode.db
 Cars.cfg
 local.cfg
+resources/interact-sound/howler.min.js
+resources/interact-sound/client/html/sounds/videoplayback.m4a

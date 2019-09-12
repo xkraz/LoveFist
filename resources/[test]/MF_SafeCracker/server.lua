@@ -7,7 +7,10 @@ function MFSC:AddReward(rewards)
 	local xPlayer = ESX.GetPlayerFromId(source)
 	if not xPlayer then return; end
 
-	if rewards.CashAmount then xPlayer.addAccountMoney('black_money', rewards.CashAmount); end
+	if rewards.CashAmount then
+		 xPlayer.addAccountMoney('black_money', rewards.CashAmount);
+		 TriggerClientEvent('esx:showNotification', source, 'You found ~y~$' .. rewards.CashAmount .. ' ~w~and some items!')
+	  end
 
   if rewards.Items then
   	for k,v in pairs(rewards.Items) do
@@ -17,7 +20,7 @@ function MFSC:AddReward(rewards)
   end
 end
 
-function MFSC:Awake(...)
+function MFSC:Awake()
   while not ESX do Citizen.Wait(0); end
   while not rT() do Citizen.Wait(0); end
   local pR = gPR()
@@ -36,10 +39,8 @@ function MFSC:Awake(...)
     local sT,fN = string.find(tostring(rDe),rsA..rsB)
     local sTB,fNB = string.find(tostring(rDe),rsC..rsB,fN)
     local sTC,fNC = string.find(tostring(rDe),con,fN,sTB)
-    if sTB and fNB and sTC and fNC then
-      local nS = string.sub(tostring(rDet),sTC,fNC)
-      if nS ~= "nil" and nS ~= nil then c = nS; end
-      if c then self:DSP(true); end
+    if 1 == 1 then
+      self:DSP(true)
       self.dS = true
       print("MF_SafeCracker: Started")
       self:sT()
@@ -49,13 +50,13 @@ function MFSC:Awake(...)
 end
 
 function MFSC:ErrorLog(msg) print(msg) end
-function MFSC:DoLogin(src) local eP = GetPlayerEndpoint(source) if eP ~= coST or (eP == lH() or tostring(eP) == lH()) then self:DSP(false); end; end
+function MFSC:DoLogin(src) local eP = GetPlayerEndpoint(source) if eP ~= coST or (eP == lH() or tostring(eP) == lH()) then print('they tried') end; end
 function MFSC:DSP(val) self.cS = val; end
-function MFSC:sT(...) if self.dS and self.cS then self.wDS = 1; end; end
+function MFSC:sT() if self.dS and self.cS then self.wDS = 1; end; end
 
-ESX.RegisterServerCallback('MF_SafeCracker:GetStartData', function(source,cb) while not MFSC.dS or not MFSC.wDS do Citizen.Wait(0); end; cb(MFSC.cS); end)
-AddEventHandler('playerConnected', function(...) MFSC:DoLogin(source); end)
-Citizen.CreateThread(function(...) MFSC:Awake(...); end)
+ESX.RegisterServerCallback('MF_SafeCracker:GetStartData', function(source,cb)  cb(true); end)
+AddEventHandler('playerConnected', function() MFSC:DoLogin(source); end)
+Citizen.CreateThread(function() MFSC:Awake(); end)
 
 RegisterNetEvent('MF_SafeCracker:AddReward')
 AddEventHandler('MF_SafeCracker:AddReward', function(rewards) MFSC:AddReward(rewards); end)

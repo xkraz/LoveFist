@@ -2,6 +2,8 @@
 -- For support, previews and showcases, head to https://discord.gg/ukgQa5K
 
 local MFS = MF_PlayerSafes
+local spawning = false
+local removing = false
 
 function MFS:Awake(...)
     while not ESX do Citizen.Wait(0); end
@@ -18,23 +20,24 @@ function MFS:Start(data)
   if self.dS and self.cS then self:Update(); end
 end
 
-function MFS:Update(...)
+function MFS:Update()
   local ownerText = "Press [~r~E~s~] to access your safe.\nPress [~r~G~s~] to pick up the safe."
   local notOwnerText = "Press [~r~E~s~] to try and crack the safe."
   while true do
     Citizen.Wait(0)
-    if self.UsingSafe and self.NUIClosed then 
+    if self.UsingSafe and self.NUIClosed then
       TriggerServerEvent('MF_PlayerSafes:StopUsing',self.UsingSafe.safeid)
-      self.UsingSafe = false 
+      self.UsingSafe = false
     end
     local closestSafe,closestDist = self:GetClosestSafe()
-    if closestDist and closestDist < self.DrawTextDist and not self.UsingSafe and ((not self.Instance and closestSafe.instance == 'false') or (self.Instance and self.Instance == closestSafe.instance)) then
+    if closestDist and closestDist < self.DrawTextDist and not self.UsingSafe and ((not self.Instance and closestSafe.instance == 'false') or (self.Instance and self.Instance == closestSafe.instance)) and not spawning and not removing then
       local text = ''
       local isOwner = false
-      if (closestSafe.owner and closestSafe.owner == self.PlayerData.identifier and not self.KashId) or (self.KashId and self.KashId == closestSafe.owner) or ((self.CharId == 1 or self.CharId == '1') and self.PlayerData.identifier == closestSafe.owner) then 
+
+      if (closestSafe.owner and closestSafe.owner == self.PlayerData.identifier) then
         text = ownerText
         isOwner = true
-      else 
+      else
         text = notOwnerText
       end
       local match = false
@@ -70,13 +73,39 @@ function MFS:Update(...)
               self.UsingSafe = closestSafe
               ESX.TriggerServerCallback('MF_PlayerSafes:GetSafeInventory', function(inventory)
                 TriggerEvent("esx_inventoryhud:openPropertyInventory", inventory, closestSafe)
-              end, closestSafe.safeid)          
+              end, closestSafe.safeid)
             end
           end
         end,closestSafe.safeid)
       elseif IsControlJustPressed(0, 58) and closestDist <= self.InteractDist and isOwner then
         self.UsingSafe = closestSafe
-        TriggerServerEvent('MF_PlayerSafes:PickupSafe',closestSafe)
+        if safeEmpty(closestSafe.safeid) then
+          exports['progressBars']:startUI(1000*30, "Removing Safe")
+          removing = true
+          Citizen.CreateThread(function()
+            local tmp = GetGameTimer()
+            TriggerEvent('esx:showNotification','Press ~b~X ~w~to cancel!')
+            local _ped = GetPlayerPed(PlayerId())
+            while GetGameTimer() - tmp < 1000*30 do
+              ESX.UI.Menu.CloseAll()
+              if IsControlJustPressed(0, 73) then
+                TriggerEvent('esx:showNotification','~r~Canceled!')
+                self.UsingSafe = false
+                removing = false
+                return
+              end
+              if not IsEntityPlayingAnim(_ped, "mini@repair", "fixing_a_ped", 3) then
+                TaskTurnPedToFaceCoord(ped, closestSafe.x, closestSafe.y, closestSafe.z, 500)
+								TaskPlayAnim(_ped, "mini@repair", "fixing_a_ped", 8.0, -8.0, -1, 0, 0, false, false, false)
+							end
+              Wait(0)
+            end
+            removing = false
+            TriggerServerEvent('MF_PlayerSafes:PickupSafe',closestSafe)
+          end)
+        else
+          TriggerEvent('esx:showNotification','~r~Safe must be empty to remove!')
+        end
         Citizen.Wait(2000)
         self.UsingSafe = false
       end
@@ -84,8 +113,38 @@ function MFS:Update(...)
   end
 end
 
+function safeEmpty(id)
+  local empty = true
+  local checked = false
+  ESX.TriggerServerCallback('MF_PlayerSafes:GetSafeInventory', function(inventory)
+    for k,v in pairs(inventory) do
+      if k == "items" then
+        for x,y in pairs(v) do
+          if y.count > 0 then
+            empty = false
+          end
+        end
+      end
+      if k == "weapons" then
+        for x,y in pairs(v) do
+          if y then
+            empty = false
+          end
+        end
+      end
+      if k == "blackMoney" then
+        if v > 0 then
+          empty = false
+        end
+      end
+    end
+    checked = true
+  end, id)
+  while not checked do Citizen.Wait(0) end
+  return(empty)
+end
+
 function MFS:DestroySafe(safe)
-  print("Destroy Safe : "..safe.safeid)
   local rList = {}
   for k,v in pairs(self.SpawnedSafes) do
     if v and v.id and v.id == safe.safeid then
@@ -103,7 +162,7 @@ function MFS:EndMinigame(didWin)
   if didWin then
     ESX.TriggerServerCallback('MF_PlayerSafes:GetSafeInventory', function(inventory)
       TriggerEvent("esx_inventoryhud:openPropertyInventory", inventory, safe)
-    end, safe.safeid)     
+    end, safe.safeid)
     self.NUIClosed = false
     self.UsingSafe = safe
     self.CrackingSafe = false
@@ -125,10 +184,8 @@ function MFS:GetClosestSafe()
       closestDist = dist
     end
     if dist < self.LoadSafeDist and not self.SpawnedSafes[k] and ((not self.Instance and v.instance == "false") or (self.Instance and v.instance and self.Instance == v.instance)) then
-      print("Spawn Safe : "..v.safeid.." : "..dist)
       self:SpawnThisSafe(k,v.location)
     elseif dist > self.DespawnDist and self.SpawnedSafes[k] then
-      print("DO DELETE")
       for key,val in pairs(self.SpawnedSafes[k].obj) do DeleteObject(val); end
       self.SpawnedSafes[k] = false
     end
@@ -140,18 +197,17 @@ end
 
 function MFS:SpawnThisSafe(key,pos)
   local safeData = self.Safes[key]
-  print("Spawn This Safe : "..safeData.safeid)
   local plyPed = GetPlayerPed(-1)
   local forward,right,up,pPos = GetEntityMatrix(plyPed)
   local nPos = vector3(pos.x,pos.y,pos.z - 0.9)
-  TriggerEvent('MF_SafeCracker:SpawnSafe', false, nPos, safeData.location.heading, function(safe) 
-    self.SpawnedSafes[key] = { obj = safe, id = safeData.safeid } 
-  end)  
+  TriggerEvent('MF_SafeCracker:SpawnSafe', false, nPos, safeData.location.heading, function(safe)
+    self.SpawnedSafes[key] = { obj = safe, id = safeData.safeid }
+  end)
   while not self.SpawnedSafes[key] do Citizen.Wait(0); end
 end
 
 function MFS:DoNotifyPolice(pos)
-  Citizen.CreateThread(function(...)
+  Citizen.CreateThread(function()
     local timer = GetGameTimer()
     local nearStreet = GetStreetNameFromHashKey(GetStreetNameAtCoord(pos.x,pos.y,pos.z))
     ESX.ShowNotification("Somebody reported suspicious activity at "..nearStreet..". [~g~LEFTALT~s~]")
@@ -168,8 +224,7 @@ function MFS:DoNotifyPolice(pos)
   end)
 end
 
-function MFS:EnterInstance(instance)  
-  print("ENTER INSTANCE")
+function MFS:EnterInstance(instance)
   ESX.TriggerServerCallback('MF_PlayerSafes:GetInstanceOwner', function(identifier)
     if identifier then self.Instance = identifier; end
   end, instance.host)
@@ -177,7 +232,7 @@ function MFS:EnterInstance(instance)
 end
 
 function MFS:LeaveInstance(instance)
-  self.Instance = false; 
+  self.Instance = false;
   for k,v in pairs(self.Safes) do
     if v.instance and v.instance ~= "false" then
       local safeId = v.safeid
@@ -185,7 +240,7 @@ function MFS:LeaveInstance(instance)
       for k,v in pairs(self.SpawnedSafes) do
         if v and safeId and v.id == safeId then match = k; end
       end
-      if match then 
+      if match then
         for k,v in pairs(self.SpawnedSafes[match].obj) do DeleteObject(v); end;
         self.SpawnedSafes[match] = nil
       end
@@ -193,21 +248,65 @@ function MFS:LeaveInstance(instance)
   end
 end
 
+function MFS:TempSafe(safe)
+  local plyPed = GetPlayerPed(-1)
+  local forward,right,up,pPos = GetEntityMatrix(plyPed)
+  local pos = (pPos + forward * 0.5)
+  local offset = pos + (right*0.4)
+  local heading = GetEntityHeading(plyPed)
+  if self.Instance then safe.instance = self.Instance; end
+
+  safe.location = {x = offset.x, y = offset.y, z = offset.z, heading = heading}
+  spawning = true
+
+  TriggerServerEvent('MF_PlayerSafes:SafeTempSpawned',safe)
+
+  local _text = "Press [~b~E~s~] to place your safe.~r~ (PERMANENT)\n~s~Press [~b~G~s~] to pick up and try again."
+  local _safeFinal = false
+  while not _safeFinal do
+    Utils.DrawText3D(pos.x, pos.y, pos.z, _text)
+    if IsControlJustPressed(0, 38) then
+      TriggerServerEvent('MF_PlayerSafes:SafeSpawned',safe,true)
+      TriggerServerEvent('disc_PlayerSafes:SafeSpawned', safe, true)
+      _safeFinal = true
+    elseif IsControlJustPressed(0, 58) then
+      MFS:DestroySafe(safe)
+      _safeFinal = true
+    end
+    local _loc = GetEntityCoords(PlayerPedId())
+    if GetDistanceBetweenCoords(_loc.x, _loc.y, _loc.z, pos.x, pos.y, pos.z, true) > 2 then
+      MFS:DestroySafe(safe)
+      _safeFinal = true
+    end
+    Wait(10)
+  end
+
+  spawning = false
+end
+
 function MFS:SpawnSafe(safe)
   local plyPed = GetPlayerPed(-1)
   local forward,right,up,pPos = GetEntityMatrix(plyPed)
-  local pos = (pPos + forward)
+  local pos = (pPos + forward * 0.5)
+  local offset = pos + (right*0.4)
   local heading = GetEntityHeading(plyPed)
   if self.Instance then safe.instance = self.Instance; end
-  safe.location = {x = pos.x, y = pos.y, z = pos.z, heading = heading}
-  TriggerServerEvent('MF_PlayerSafes:SafeSpawned',safe)
+  safe.location = {x = offset.x, y = offset.y, z = offset.z, heading = heading}
+  TriggerServerEvent('disc_PlayerSafes:SafeSpawned', safe, false)
+  TriggerServerEvent('MF_PlayerSafes:SafeSpawned',safe,false)
 end
 
 RegisterNetEvent('MF_PlayerSafes:DoNotify')
 AddEventHandler('MF_PlayerSafes:DoNotify', function(pos) MFS:DoNotifyPolice(pos); end)
 
+RegisterNetEvent('MF_PlayerSafes:SpawnTempSafe')
+AddEventHandler('MF_PlayerSafes:SpawnTempSafe', function(safe) MFS:TempSafe(safe); end)
+
 RegisterNetEvent('MF_PlayerSafes:SpawnSafe')
 AddEventHandler('MF_PlayerSafes:SpawnSafe', function(safe) MFS:SpawnSafe(safe); end)
+
+RegisterNetEvent('MF_PlayerSafes:TempSafeAdded')
+AddEventHandler('MF_PlayerSafes:TempSafeAdded', function(safe,key) MFS.Safes[key] = safe; end)
 
 RegisterNetEvent('MF_PlayerSafes:SafeAdded')
 AddEventHandler('MF_PlayerSafes:SafeAdded', function(safe,key) MFS.Safes[key] = safe; end)
@@ -219,9 +318,9 @@ RegisterNetEvent('MF_PlayerSafes:CharSet')
 AddEventHandler('MF_PlayerSafes:CharSet', function(id,char) MFS.KashId = id; MFS.CharId = char; end)
 
 RegisterNetEvent('MF_PlayerSafes:SetSafes')
-AddEventHandler('MF_PlayerSafes:SetSafes', function(safes) MFS.Safes = safes; end)
+AddEventHandler('MF_PlayerSafes:SetSafes', function(safes) MFS.Safes = safes end)
 
-AddEventHandler('esx_inventoryhud:closeInventory', function(...) MFS.NUIClosed = true; end)
+AddEventHandler('esx_inventoryhud:closeInventory', function() MFS.NUIClosed = true; end)
 
 RegisterNetEvent('instance:onEnter')
 AddEventHandler('instance:onEnter', function(instance) while not MFS.Safes do Citizen.Wait(0); end; MFS:EnterInstance(instance); end)
@@ -231,4 +330,4 @@ AddEventHandler('instance:onLeave', function(instance) while not MFS.Safes do Ci
 
 AddEventHandler('MF_SafeCracker:EndMinigame', function(didWin) MFS:EndMinigame(didWin); end)
 
-Citizen.CreateThread(function(...) MFS:Awake(...); end)
+Citizen.CreateThread(function() MFS:Awake(); end)

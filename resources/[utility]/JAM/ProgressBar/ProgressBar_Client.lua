@@ -1,8 +1,15 @@
-function startUI(time, text) 
+function startUI(time, text)
 	SendNUIMessage({
 		type = "ui",
 		display = true,
 		time = time,
 		text = text
+	})
+end
+
+function closeUI()
+	SendNUIMessage({
+		type = "ui",
+		display = false,
 	})
 end

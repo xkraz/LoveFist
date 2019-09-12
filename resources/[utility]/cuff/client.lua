@@ -116,7 +116,7 @@ Citizen.CreateThread(function()
 				TriggerServerEvent('StartArresting', GetPlayerServerId(closestPlayer))
 
 				Citizen.Wait(1100)
-        TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(closestID)),2,10,"item_cuffs")
+        TriggerServerEvent('PlaySoundAt', GetEntityCoords(GetPlayerPed(closestID)), "item_cuffs")
         Citizen.Wait(1000)
 				Citizen.Wait(3000)
 				ESX.ShowNotification("~b~Arrested player~r~" .. GetPlayerServerId(closestPlayer) .. "")

@@ -14,14 +14,14 @@
 -- $$$$$$$$$$$$$$$ SERVER EVENTS YOU CAN CALL $$$$$$$$$$$$$$$$$$$
 -- $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
 -- #                                                            #
--- # PlaySoundAt   loc, _min, _max, soundFile                   #
--- # PlaySoundOn   _ent, _min, _max, soundFile                  #
--- # PlayLoopAt    loc, _min, _max, soundFile                   #
+-- # PlaySoundAt   loc, soundFile                               #
+-- # PlaySoundOn   _ent, soundFile                              #
+-- # PlayLoopAt    loc, soundFile                               #
 -- # StopLoopAt    loc                                          #
--- # PlayLoopFor   loc, _min, _max, soundFile, loopLength       #
--- # PlayLoopOn    _ent, _min, _max, soundFile                  #
+-- # PlayLoopFor   loc, soundFile, loopLength                   #
+-- # PlayLoopOn    _ent, soundFile                              #
 -- # StopLoopOn    _ent                                         #
--- # PlayLoopOnFor _ent, _min, _max, soundFile, loopLength      #
+-- # PlayLoopOnFor _ent, soundFile, loopLength                  #
 -- # StopLoopAll                                                #
 -- #                                                            #
 -- ##############################################################
@@ -29,17 +29,17 @@
 _sounds = {
   bankAlarm = {
     length = 11980,
-    volume = 0.05,
+    volume = 0.03,
     fallOff = {
-      min = 10,
-      max = 50
+      min = 5,
+      max = 70
     }
   },
   jewelryAlarm = {
     length = 2500,
-    volume = 0.5,
+    volume = 0.3,
     fallOff = {
-      min = 10,
+      min = 5,
       max = 50
     }
   },
@@ -81,6 +81,46 @@ _sounds = {
     fallOff = {
       min = 10,
       max = 50
+    }
+  },
+  glassbreak1 = {
+    length = 2136,
+    volume = 0.3,
+    fallOff = {
+      min = 1,
+      max = 20
+    }
+  },
+  glassbreak2 = {
+    length = 2856,
+    volume = 0.2,
+    fallOff = {
+      min = 5,
+      max = 20
+    }
+  },
+  glassbreak3 = {
+    length = 1920,
+    volume = 0.3,
+    fallOff = {
+      min = 1,
+      max = 20
+    }
+  },
+  glassbreak4 = {
+    length = 3000,
+    volume = 0.5,
+    fallOff = {
+      min = 1,
+      max = 20
+    }
+  },
+  glassbreak5 = {
+    length = 3000,
+    volume = 0.3,
+    fallOff = {
+      min = 1,
+      max = 20
     }
   }
 }
@@ -321,7 +361,7 @@ RegisterCommand('play',  function(source, args)
           txt = txt .. k ..'.'
         end
       end
-      TriggerEvent("chatMessage", "", {190,190,190},txt)
+      TriggerEvent("chatMessage", "", {190,190,190}, txt)
       TriggerEvent("chatMessage", "", {190,235,235}, "Plays a sounds on your end at your location to see the diffrent sounds.")
     else
       for k,v in pairs(_sounds) do
@@ -337,30 +377,30 @@ RegisterCommand('play',  function(source, args)
 end)
 
 RegisterNetEvent('PlaySoundAt')
-AddEventHandler('PlaySoundAt', function(loc, _min, _max, soundFile)
+AddEventHandler('PlaySoundAt', function(loc, soundFile)
   for k,v in pairs(_sounds) do
     if soundFile == k then
-      _addSound(loc, _min, _max, soundFile, v.length, false)
+      _addSound(loc, v.fallOff.min, v.fallOff.max, soundFile, v.length, false)
       return
     end
   end
 end)
 
 RegisterNetEvent('PlaySoundOn')
-AddEventHandler('PlaySoundOn', function(_ent, _min, _max, soundFile)
+AddEventHandler('PlaySoundOn', function(_ent, soundFile)
   for k,v in pairs(_sounds) do
     if soundFile == k then
-      _addSoundOn(_ent, _min, _max, soundFile, v.length, false)
+      _addSoundOn(_ent, v.fallOff.min, v.fallOff.max, soundFile, v.length, false)
       return
     end
   end
 end)
 
 RegisterNetEvent('PlayLoopAt')
-AddEventHandler('PlayLoopAt', function(loc, _min, _max, soundFile)
+AddEventHandler('PlayLoopAt', function(loc, soundFile)
   for k,v in pairs(_sounds) do
     if soundFile == k then
-      _addSound(loc, _min, _max, soundFile, v.length, true)
+      _addSound(loc, v.fallOff.min, v.fallOff.max, soundFile, v.length, true)
       return
     end
   end
@@ -379,10 +419,10 @@ end)
 -- PLAYLOOPFOR loopLength == how long to loop for
 
 RegisterNetEvent('PlayLoopFor')
-AddEventHandler('PlayLoopFor', function(loc, _min, _max, soundFile, loopLength)
+AddEventHandler('PlayLoopFor', function(loc, soundFile, loopLength)
   for k,v in pairs(_sounds) do
     if soundFile == k then
-      _addLoop(loc, _min, _max, soundFile, v.length, true, loopLength)
+      _addLoop(loc, v.fallOff.min, v.fallOff.max, soundFile, v.length, true, loopLength)
       return
     end
   end
@@ -391,10 +431,10 @@ end)
 -- PLAYLOOPON loopLength == how long to loop for
 
 RegisterNetEvent('PlayLoopOn')
-AddEventHandler('PlayLoopOn', function(_ent, _min, _max, soundFile)
+AddEventHandler('PlayLoopOn', function(_ent, soundFile)
   for k,v in pairs(_sounds) do
     if soundFile == k then
-      _addSoundOn(_ent, _min, _max, soundFile, v.length, true)
+      _addSoundOn(_ent, v.fallOff.min, v.fallOff.max, soundFile, v.length, true)
       return
     end
   end
@@ -411,10 +451,10 @@ AddEventHandler('StopLoopOn', function(_ent)
 end)
 
 RegisterNetEvent('PlayLoopOnFor')
-AddEventHandler('PlayLoopOnFor', function(_ent, _min, _max, soundFile, loopLength)
+AddEventHandler('PlayLoopOnFor', function(_ent, soundFile, loopLength)
   for k,v in pairs(_sounds) do
     if soundFile == k then
-      _addLoopOn(_ent, _min, _max, soundFile, v.length, loopLength)
+      _addLoopOn(_ent, v.fallOff.min, v.fallOff.max, soundFile, v.length, loopLength)
       return
     end
   end

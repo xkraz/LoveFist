@@ -6,10 +6,10 @@ CREATE TABLE IF NOT EXISTS `playersafes` (
   `inventory` longtext NOT NULL,
   `dirtymoney` int(11) NOT NULL,
   `weapons` longtext NOT NULL,
+  `size` varchar(10) NOT NULL,
   `safeid` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 INSERT INTO `items` (`name`, `label`, `limit`) VALUES
   ('playersafe','Player Safe',1);
-
