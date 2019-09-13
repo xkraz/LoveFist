@@ -131,6 +131,10 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -3017.12, ['y'] = 740.91, ['z'] = 2181.44, nom = "Enter Padio"},
 		positionTo = { ['x'] = -3017.03, ['y'] = 758.44, ['z'] = 31.58, nom = "Leave Padio"},
 		},
+	["Bunker"] = {
+		positionFrom = { ['x'] = -2691.91, ['y'] = -85.35, ['z'] = 17.03, nom = "Enter Bunker"},
+		positionTo = { ['x'] = 894.53, ['y'] = -3244.97, ['z'] = -98.26, nom = "Leave Bunker"},
+		},
 
 	
 }
