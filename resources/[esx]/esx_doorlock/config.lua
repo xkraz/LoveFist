@@ -7,7 +7,7 @@ Config.DoorList = {
 
 
 -- OFFICE
-{ 
+{
 		objName = 'v_ilev_cor_offdoora',
 		objCoords  = {x = 323.72, y = -590.71, z = 28.94},
 		textCoords = {x = 324.4, y = -590.87, z = 28.94},
@@ -15,7 +15,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 2.5
 	},
-	
+
 	-- TRAINING
 	{
 		objName = 'v_ilev_cor_darkdoor',
@@ -25,7 +25,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 	},
-	
+
 	{
 		objName = 'v_ilev_cor_darkdoor',
 		objCoords  = {x = 316.52, y = -588.10, z = 28.98},
@@ -43,8 +43,8 @@ Config.DoorList = {
 		locked = true,
 		distance = 2.0
 	},
-	
-	
+
+
 	{
 		objName = 'v_ilev_cor_firedoorwide',
 		objCoords  = {x = 332.71, y = -587.72, z = 28.81},
@@ -56,8 +56,8 @@ Config.DoorList = {
 
 
 	-- MASTERS CLUB
-	
-	
+
+
 	{
 		objName = 'apa_heist_apart2_door',
 		objCoords  = {x = 1381.86, y = 3617.88, z = 39.45},
@@ -66,7 +66,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 2.5
 	},
-	
+
 	{
 		objName = 'prop_arm_gate_l',
 		objCoords  = {x = 1406.33069, y = 3623.52173, z = 35.6310081},
@@ -75,7 +75,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 5.0
 	},
-	
+
 	{
 		objName = 'prop_ss1_14_garage_door',
 		objCoords  = {x = 1374.2533, y = 3612.4375, z = 35.7443581},
@@ -84,9 +84,9 @@ Config.DoorList = {
 		locked = true,
 		distance =25.0
 	},
-	
+
 	-- arve stroker
-	
+
 	--garage
 	{
 		objName = 'prop_ch_025c_g_door_01',
@@ -105,11 +105,11 @@ Config.DoorList = {
 		locked = true,
 		distance = 3.0
 	},
-	
-	
+
+
 	-- METH SPOT
-	
-	
+
+
 	{
 		objName = 'apa_heist_apart2_door',
 		objCoords  = {x = 2363.08, y = 3134.58, z = 48.37},
@@ -118,7 +118,7 @@ Config.DoorList = {
 		locked = false,
 		distance = 2.5
 	},
-	
+
 		{
 		objName = 'apa_heist_apart2_door',
 		objCoords  = {x = 2339.9590, y = 3135.1953, z = 48.6022},
@@ -127,10 +127,10 @@ Config.DoorList = {
 		locked = false,
 		distance = 2.5
 	},
-	
-	
+
+
 	--- COKE
-	
+
 	{
 		objName = 'ex_prop_door_arcad_roof_l',
 		objCoords  = {x = -323.4244, y = -1367.134, z = 31.0707},
@@ -139,18 +139,18 @@ Config.DoorList = {
 		locked = false,
 		distance = 2.5
 	},
-	
-	
-	
+
+
+
 	--
 	-- Mission Row First Floor
 	--
 
 
 
-	
+
 	--- doors
-	
+
 	{
 		objName = 'v_ilev_ph_door01',
 		objCoords  = {x = 434.747, y = -980.618, z = 30.839},
@@ -159,7 +159,7 @@ Config.DoorList = {
 		locked = false,
 		distance = 2.5
 	},
-	
+
 	{
 		objName = 'apa_heist_apart2_door',
 		objCoords  = {x = 1381.86, y = 3617.88, z = 39.45},
@@ -279,75 +279,75 @@ Config.DoorList = {
 		textCoords = {x = 491.14, y = -988.88, z = 25.19},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 2 
-	},               
-					 
-	-- Cell 2 back   
-	{                
+		distance = 2
+	},
+
+	-- Cell 2 back
+	{
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 487.76, y = -988.87, z = 24.91},
 		textCoords = {x = 487.76, y = -988.87, z = 24.91},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
 		distance = 2
-	},               
-					 
-	-- Cell 3 back   
-	{                
+	},
+
+	-- Cell 3 back
+	{
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 484.78, y = -988.94, z = 24.91},
 		textCoords = {x = 484.78, y = -988.94, z = 24.91},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 2 
-	},               
-					 
-	--               
+		distance = 2
+	},
+
+	--
 	-- Mission Row Cells
-	--               
-					 
-	-- Main Cells    
-	{                
+	--
+
+	-- Main Cells
+	{
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 463.815, y = -992.686, z = 24.9149},
 		textCoords = {x = 463.30, y = -992.686, z = 25.10},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 1 
-	},               
-					 
-	-- Cell 1        
-	{                
+		distance = 1
+	},
+
+	-- Cell 1
+	{
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 462.381, y = -993.651, z = 24.914},
 		textCoords = {x = 461.806, y = -993.308, z = 25.064},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 2 
-	},               
-					 
-	-- Cell 2        
-	{                
+		distance = 2
+	},
+
+	-- Cell 2
+	{
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 462.331, y = -998.152, z = 24.914},
 		textCoords = {x = 461.806, y = -998.800, z = 25.064},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 2 
-	},               
-					 
-	-- Cell 3        
-	{                
+		distance = 2
+	},
+
+	-- Cell 3
+	{
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = 462.704, y = -1001.92, z = 24.9149},
 		textCoords = {x = 461.806, y = -1002.450, z = 25.064},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
-		distance = 2 
-	},               
-					 
-	-- To Back       
-	{                
+		distance = 2
+	},
+
+	-- To Back
+	{
 		objName = 'v_ilev_gtdoor',
 		objCoords  = {x = 463.478, y = -1003.538, z = 25.005},
 		textCoords = {x = 464.00, y = -1003.50, z = 25.50},
@@ -359,7 +359,7 @@ Config.DoorList = {
 	--
 	-- Mission Row Back
 	--
-	
+
 
 	-- Back (double doors)
 	{
@@ -391,7 +391,7 @@ Config.DoorList = {
 		size = 2
 	},
 
-	-- 
+	--
 	-- Mission Row Extended
 	--
 
@@ -404,7 +404,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 	},
-	
+
 	-- Interogation Room 2
 	{
 		objName = 'v_ilev_ph_gendoor006',
@@ -415,7 +415,7 @@ Config.DoorList = {
 		distance = 3
 	},
 
-	
+
 
 	--
 	-- Sandy Shores
@@ -430,7 +430,7 @@ Config.DoorList = {
 		locked = true
 	},
 	-- JAIL CELL 1
-	{ 
+	{
 		objName = 'Prop_LD_jail_door',
 		objCoords  = {x = 1849.713, y = 3708.264, z = 1.2100},
 		textCoords = {x = 1849.713, y = 3708.264, z = 1.2100},
@@ -519,7 +519,7 @@ Config.DoorList = {
 	--
 	-- Central Hospital
 	--
-	
+
 		{
 		objName = 'prop_sc1_06_gate_r',
 		objCoords  = {x = 333.1839, y = -561.3282, z = 27.74027},
@@ -538,7 +538,7 @@ Config.DoorList = {
 		distance = 15
 	},
 
-	
+
 
 	-- Door Wide 1
 	{
@@ -759,9 +759,9 @@ Config.DoorList = {
 	distance = 2.5
 },
 
- 
+
 	-- Mission Row Extended
-		
+
 	-- Cell Double Door Back R
 	{
 		objName = 'v_ilev_ph_gendoor005',
@@ -790,7 +790,7 @@ Config.DoorList = {
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true
 	},
-	
+
 	--
 	-- Car Dealer
 	--
@@ -833,8 +833,8 @@ Config.DoorList = {
 		distance = 2.5
 	},
 
-	
-	
+
+
 
 	{
 		objName = 'prop_fnclink_09gate1',
@@ -857,7 +857,7 @@ Config.DoorList = {
 
 	},
 
-	{  ---- DRIVEWAY GATE 
+	{  ---- DRIVEWAY GATE
 		objName = 'prop_lrggate_02_ld',
 		objCoords  = {x = -844.05, y = 155.96, z = 66.03},
 		textCoords = {x = -843.96, y = 159.03, z = 66.80},
@@ -887,7 +887,7 @@ Config.DoorList = {
 		distance = 2.5,
 
 	},
-	
+
 	{  ---- BLACKMARKET DOOR
 		objName = 'v_ilev_mm_doorw',
 		objCoords  = {x = -809.2809, y = 177.8554, z = 76.89033},
@@ -941,7 +941,7 @@ Config.DoorList = {
 
 	},
 --
--- MASTERS OF MAYHEM 
+-- MASTERS OF MAYHEM
 --
 	{  ---- BACK ROOM
 		objName = 'v_ilev_mldoor02',
@@ -983,22 +983,7 @@ Config.DoorList = {
 
 	},
 
---
---- WARRANT OFFICER
---
-
-	{  ---- Garage Door
-		objName = 'prop_id2_11_gdoor',
-		objCoords  = {x = 723.116, y = -1088.831, z = 23.23201},
-		textCoords = {x = 723.116, y = -1088.831, z = 23.23201},
-		authorizedJobs = { 'warrant', 'warrantkey','adminkey', },
-		locked = true,
-		distance = 10,
-
-	},
-
-
---- 
+---
 ---- LSPD AND SUCH ADDITIONS
 ---
 
@@ -1194,14 +1179,14 @@ Config.DoorList = {
 -- NEW MARDUCAS
 
 --FRONT DOOR R
-{ 
+{
 		objName = 'hei_prop_ss1_mpint_door_r',
 		objCoords  = {x = -1124.88, y = -1728.76, z = 4.92},
 		textCoords = {x = -1124.88, y = -1728.76, z = 4.92},
 		authorizedJobs = {  'marducas', 'marducaskey','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 -- FRONT DOOR L
 {
 		objName = 'hei_prop_ss1_mpint_door_l',
@@ -1210,17 +1195,17 @@ Config.DoorList = {
 		authorizedJobs = {  'marducas', 'marducaskey','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 --SIDE DOOR L
-{ 
+{
 		objName = 'hei_prop_ss1_mpint_door_l',
 		objCoords  = {x = -1153.28, y = -1729.47, z = 4.91},
 		textCoords = {x = -1153.28, y = -1729.47, z = 4.91},
 		authorizedJobs = {  'marducas', 'marducaskey','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 -- SIDE DOOR R
 {
 		objName = 'hei_prop_ss1_mpint_door_r',
@@ -1229,17 +1214,17 @@ Config.DoorList = {
 		authorizedJobs = {  'marducas', 'marducaskey','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 --EAST SIDE DOOR L
-{ 
+{
 		objName = 'hei_prop_ss1_mpint_door_l',
 		objCoords  = {x = -1181.05, y = -1737.15, z = 4.90},
 		textCoords = {x = -1181.05, y = -1737.15, z = 4.90},
 		authorizedJobs = {  'marducas', 'marducaskey','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 -- EAST SIDE DOOR R
 {
 		objName = 'hei_prop_ss1_mpint_door_r',
@@ -1248,7 +1233,7 @@ Config.DoorList = {
 		authorizedJobs = {  'marducas', 'marducaskey','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 --
 -- LOST MC
@@ -1262,7 +1247,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org2', 'org2key','adminkey',  },
 		locked = true,
 		distance = 25,
-}, 
+},
 
 
 { -- GARAGE FLOOR 2
@@ -1272,7 +1257,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org2', 'org2key','adminkey',  },
 		locked = true,
 		distance = 25,
-}, 
+},
 
 { -- SLIDING DOOR
 		objName = 'imp_Prop_ImpExp_Liftdoor_R',
@@ -1281,7 +1266,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org2', 'org2key','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 { -- HELI SLIDING DOOR
 		objName = 'imp_Prop_ImpExp_Liftdoor_R',
@@ -1290,7 +1275,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org2', 'org2key','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 
 --
@@ -1304,7 +1289,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org3','org3key','adminkey',  },
 		locked = true,
 		distance = 10,
-}, 
+},
 
 { -- MAIN GATE L
 		objName = 'yakuza_gate_l',
@@ -1313,7 +1298,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org3','org3key','adminkey',  },
 		locked = true,
 		distance = 10,
-}, 
+},
 
 { -- MONEY WASH R
 		objName = 'prop_grumandoor_r',
@@ -1322,7 +1307,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org3','org3key','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 { -- MONEY WASH L
 		objName = 'prop_grumandoor_l',
@@ -1331,7 +1316,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org3','org3key','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 { -- MEDITATION R
 		objName = 'prop_grumandoor_r',
@@ -1340,7 +1325,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org3','org3key','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 { -- MEDITATION L
 		objName = 'prop_grumandoor_l',
@@ -1349,7 +1334,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org3','org3key','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 { -- BOSS ROOM R
 		objName = 'prop_sm1_11_doorr',
@@ -1358,7 +1343,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org3','org3key','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 { -- BOSS ROOM L
 		objName = 'prop_sm1_11_doorl',
@@ -1367,7 +1352,7 @@ Config.DoorList = {
 		authorizedJobs = {  'org3','org3key','adminkey',  },
 		locked = true,
 		distance = 5,
-}, 
+},
 
 --
 -- CASINO
@@ -1380,7 +1365,7 @@ Config.DoorList = {
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- Door 2
 		objName = 'v_ilev_cd_entrydoor',
 		objCoords  = {x = 972.0149, y = 38.5791, z = 3.58573200},
@@ -1388,7 +1373,7 @@ Config.DoorList = {
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- Door 3
 		objName = 'v_ilev_cd_entrydoor',
 		objCoords  = {x = 979.3969, y = 40.02075, z = 3.58573200},
@@ -1404,7 +1389,7 @@ Config.DoorList = {
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- Security Door
 		objName = 'v_ilev_cd_entrydoor',
 		objCoords  = {x = 978.59140000, y = 35.89788000, z = 3.58573200},
@@ -1412,7 +1397,7 @@ Config.DoorList = {
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- Back Room First Door
 		objName = 'v_ilev_cd_entrydoor',
 		objCoords  = {x = 978.77490000, y = 30.28588000, z = 3.58573200},
@@ -1420,7 +1405,7 @@ Config.DoorList = {
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- Door 7
 		objName = 'v_ilev_cd_entrydoor',
 		objCoords  = {x = 978.20550000, y = 42.57952000, z = 3.58573200},
@@ -1428,7 +1413,7 @@ Config.DoorList = {
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- Gate 1
 		objName = 'hei_v_ilev_bk_gate_molten',
 		objCoords  = {x = 981.06990000, y = 41.89270000, z = 3.58560900},
@@ -1436,7 +1421,7 @@ Config.DoorList = {
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- Gate 2
 		objName = 'hei_v_ilev_bk_gate_molten',
 		objCoords  = {x = 980.88800000, y = 39.57867000, z = 3.58560900},
@@ -1444,10 +1429,10 @@ Config.DoorList = {
 		authorizedJobs = {  'casino', 'casinokey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 --- bank
 ---
----	
+---
     { -- Door 1
 		objName = 'v_ilev_bk_door',
 		objCoords  = {x = 237.7704, y = 227.87, z = 106.426},
@@ -1455,7 +1440,7 @@ Config.DoorList = {
 		authorizedJobs = {  'bankerkey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- Door 2
 		objName = 'v_ilev_bk_door',
 		objCoords  = {x = 266.3624, y = 217.5697, z = 110.4328},
@@ -1463,13 +1448,13 @@ Config.DoorList = {
 		authorizedJobs = {  'bankerkey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
-	
-	
+	},
+
+
 	---
-	---- COURTHOUSE 
+	---- COURTHOUSE
 	---
-	
+
 	{ -- GLASS FRONT LEFT
 		objName = 'hei_prop_bh1_08_hdoor',
 		objCoords  = {x = 1211.794, y = 3585.347, z = 37.45167},
@@ -1477,8 +1462,8 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
-	
+	},
+
 	{ -- GLASS FRONT RIGHT
 		objName = 'hei_prop_bh1_08_hdoor',
 		objCoords  = {x = 1213.064, y = 3587.497, z = 37.46204},
@@ -1486,7 +1471,7 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
+	},
 	{ -- Secret Door
 		objName = 'v_ilev_cbankcountdoor01',
 		objCoords  = {x = 1224.086, y = 3599.331, z = 37.4556},
@@ -1494,7 +1479,7 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
+	},
 	{ -- Office Door
 		objName = 'apa_v_ilev_ss_door2',
 		objCoords  = {x = 1186.463, y = 3577.96, z = 37.33998},
@@ -1502,8 +1487,8 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
-	
+	},
+
 	{ -- Cell Door
 		objName = 'v_ilev_fingate',
 		objCoords  = {x = 1175.5356, y = 3576.0051, z = 36.9301},
@@ -1511,8 +1496,8 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
-	
+	},
+
 	{ -- Cell Door 2
 		objName = 'v_ilev_fingate',
 		objCoords  = {x = 1176.1736, y = 3578.7158, z = 36.9366},
@@ -1520,8 +1505,8 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
-	
+	},
+
 	{ -- Cell Door 3
 		objName = 'v_ilev_fingate',
 		objCoords  = {x = 1167.6437, y = 3574.7319, z = 36.9268},
@@ -1529,8 +1514,8 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
-	
+	},
+
 	{ -- Cell Door 4
 		objName = 'v_ilev_fingate',
 		objCoords  = {x = 1168.4250, y = 3578.4197, z = 36.9424},
@@ -1538,8 +1523,8 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
-	
+	},
+
 	{ -- Security Door
 		objName = 'v_ilev_arm_secdoor',
 		objCoords  = {x = 1166.5002, y = 3576.8796, z = 37.1851},
@@ -1547,8 +1532,8 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
-	
+	},
+
 	{ -- Garage Gate
 		objName = 'prop_sc1_06_gate_r',
 		objCoords  = {x = 1159.9706, y = 3570.0, z = 36.0115},
@@ -1556,8 +1541,8 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 10,
-	}, 
-	
+	},
+
 	{ -- Courtroom Door Right
 		objName = 'apa_p_mp_yacht_door',
 		objCoords  = {x = 1218.9344, y = 3598.9939, z = 36.8056},
@@ -1565,7 +1550,7 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
+	},
 	{ -- Courtroom Door Left
 		objName = 'apa_p_mp_yacht_door',
 		objCoords  = {x = 1216.6008, y = 3599.1377, z = 37.1008},
@@ -1573,7 +1558,7 @@ Config.DoorList = {
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
+	},
 	{ --Bank gate
 		objName = 'v_ilev_bk_vaultdoor',
 		objCoords  = {x = 255.2283, y = 223.976, z = 102.3932},
@@ -1581,78 +1566,78 @@ Config.DoorList = {
 		authorizedJobs = {  'police', 'policekey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
-	
-	
+	},
+
+
 	---
 	---
 	----           WEED DOOR
 	---
 	---
-	
+
 	{ -- MAIN DOOR
-	
+
 		objName = 'v_ilev_cd_secdoor',
 		objCoords  = {x = 3187.497, y = 5357.329, z = 23.417},
 		textCoords = {x = 3187.497, y = 5357.329, z = 23.417},
 		authorizedJobs = {  'weedkey','adminkey',  },
 		locked = false,
 		distance = 5,
-	}, 
-	
+	},
+
 	{ -- PD VEHICL GARGAGE
-	
+
 		objName = 'prop_com_gar_door_01',
 		objCoords  = {x = 459.5504, y = -1014.646, z = 29.10957},
 		textCoords = {x = 459.5504, y = -1014.646, z = 29.10957},
 		authorizedJobs = {  'ambulance','fib','police','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
-	
+	},
+
 	{ -- PD VEHICL GARGAGE
-	
+
 		objName = 'prop_com_gar_door_01',
 		objCoords  = {x = 459.5504, y = -1019.699, z = 29.08874},
 		textCoords = {x = 459.5504, y = -1019.699, z = 29.08874},
 		authorizedJobs = {  'ambulance','fib','police','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
-	
+	},
+
 		{ -- Patreon
-	
+
 		objName = 'v_ilev_ch_glassdoor',
 		objCoords  = {x = -157.1293, y = -306.4341, z = 39.99308},
 		textCoords = {x = -157.1293, y = -306.4341, z = 39.99308},
 		authorizedJobs = {  'patreonkey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
-	
+	},
+
 	{ -- Patreon
-	
+
 		objName = 'v_ilev_ch_glassdoor',
 		objCoords  = {x = -156.439, y = -304.4294, z = 39.99308},
 		textCoords = {x = -156.439, y = -304.4294, z = 39.99308},
 		authorizedJobs = {  'patreonkey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
-	
-	-- simmons house 
-	
+	},
+
+	-- simmons house
+
 	{ -- simmons house front door
-	
+
 		objName = 'apa_p_mp_yacht_door_02',
 		objCoords  = {x = 165.300598, y = 877.256226, z = 201.003036},
 		textCoords = {x = 165.300598, y = 878.256226, z = 201.003036},
 		authorizedJobs = {  'simmonskey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
+	},
 	{ -- simmons house front door
-	
+
 		objName = 'apa_p_mp_yacht_door_02',
 		objCoords  = {x = 165.300598, y = 879.256226, z = 201.003036},
 		textCoords = {x = 166.300598, y = 879.256226, z = 201.003036},
@@ -1660,11 +1645,11 @@ Config.DoorList = {
 		locked = true,
 		distance = 5,
 	},
-	
-       ---central pd 
-	   
-	{ -- pd gate 
-	
+
+       ---central pd
+
+	{ -- pd gate
+
 		objName = 'p_gate_prison_01_s',
 		objCoords  = {x = 420.160339, y = -1020.76715, z = 28.0157566},
 		textCoords = {x = 420.160339, y = -1024.76715, z = 30.0157566},
@@ -1673,7 +1658,7 @@ Config.DoorList = {
 		distance = 20.00,
 	},
 	{ -- pd gate sandy
-	
+
 		objName = 'prop_gate_airport_01',
 		objCoords  = {x = 1877.52283, y = 3688.69336, z = 32.4202614},
 		textCoords = {x = 1877.52283, y = 3688.69336, z = 34.4202614},
@@ -1682,49 +1667,49 @@ Config.DoorList = {
 		distance = 20.00,
 	},
 
-	{ -- pd side gate  
-	
+	{ -- pd side gate
+
 		objName = 'prop_fnclink_03gate5',
 		objCoords  = {x = 425.263245, y = -1004.59229, z = 31.3285046},
 		textCoords = {x = 425.263245, y = -1004.59229, z = 31.3285046},
 		authorizedJobs = {  'policekey','adminkey','police',  },
 		locked = true,
 		distance = 10.00,
-	}, 
-	
-	{ -- PI Office 
-	
+	},
+
+	{ -- PI Office
+
 		objName = 'v_ilev_janitor_frontdoor',
 		objCoords  = {x = -742.89, y = -1042.09, z = 13},
 		textCoords = {x = -742.89, y = -1042.09, z = 13},
 		authorizedJobs = {  'lawyer','adminkey','lawyerkey',  },
 		locked = true,
 		distance = 5.0,
-	}, 
-	
-		{ -- PI Office 
-	
+	},
+
+		{ -- PI Office
+
 		objName = 'v_ilev_cf_officedoor',
 		objCoords  = {x = -748.1444, y = -1041.377, z = 13.19008},
 		textCoords = {x = -748.1444, y = -1041.377, z = 13.19008},
 		authorizedJobs = {  'lawyer','adminkey','lawyerkey',  },
 		locked = true,
 		distance = 5.0,
-	}, 
-	
-	{ -- PI Office 
-	
+	},
+
+	{ -- PI Office
+
 		objName = 'apa_v_ilev_fh_heistdoor1',
 		objCoords  = {x = -740.67010, y = -1041.327, z = 13.15057},
 		textCoords = {x = -740.67010, y = -1041.327, z = 13.15057},
 		authorizedJobs = {  'lawyer','adminkey','lawyerkey',  },
 		locked = true,
 		distance = 5.0,
-	}, 
+	},
 	---
-	---- stroker property 
+	---- stroker property
 	---
-	
+
 	{ -- front gate 1
 		objName = 'prop_gate_tep_01_l',
 		objCoords  = {x = 1315.60474, y = 1109.74634, z = 106.665199},
@@ -1740,7 +1725,7 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey',  },
 		locked = true,
 		distance = 15,
-	}, 
+	},
 	{ -- glass front R
 		objName = 'v_ilev_ra_door1_r',
 		objCoords  = {x = 1390.666, y = 1133.317, z = 114.4808},
@@ -1748,7 +1733,7 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
+	},
 	{ -- glass front l
 		objName = 'v_ilev_ra_door1_l',
 		objCoords  = {x = 1390.666, y = 1131.117, z = 114.4808},
@@ -1756,7 +1741,7 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
+	},
 	{ -- bunker entrance
 		objName = 'prop_ld_vault_door',
 		objCoords  = {x = 1461.41345, y = 1089.74072, z = 114.589523},
@@ -1764,7 +1749,7 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey',  },
 		locked = true,
 		distance = 5,
-	}, 
+	},
 	{ -- front door r
 		objName = 'v_ilev_ra_door4r',
 		objCoords  = {x = 1395.92, y = 1140.705, z = 114.7902},
@@ -1772,8 +1757,8 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey',  },
 		locked = true,
 		distance = 3,
-	}, 
-	
+	},
+
 	{ -- front door l
 		objName = 'v_ilev_ra_door4l',
 		objCoords  = {x = 1395.92, y = 1142.904, z = 114.7902},
@@ -1781,8 +1766,8 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey',  },
 		locked = true,
 		distance = 3,
-	}, 
-	
+	},
+
 	{ -- side gate l
 		objName = 'prop_gate_tep_01_l',
 		objCoords  = {x = 1364.93689, y = 1161.87183, z = 114.536491},
@@ -1790,7 +1775,7 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey',  },
 		locked = true,
 		distance = 15,
-	}, 
+	},
 	{ -- side gate R
 		objName = 'prop_gate_tep_01_r',
 		objCoords  = {x = 1357.10657, y = 1161.56677, z = 114.534531},
@@ -1798,7 +1783,7 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey',  },
 		locked = true,
 		distance = 15,
-	}, 
+	},
 	{ -- side glass l
 		objName = 'v_ilev_ra_door1_l',
 		objCoords  = {x = 1400.489, y = 1128.314, z = 114.4836},
@@ -1806,7 +1791,7 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey',  },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- side glass R
 		objName = 'v_ilev_ra_door1_r',
 		objCoords  = {x = 1400.488, y = 1128.314, z = 114.4836},
@@ -1814,7 +1799,7 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey', },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	{ -- barn door
 		objName = 'apa_p_mp_door_01',
 		objCoords  = {x = 1454.98962, y = 1132.83765, z = 114.502357},
@@ -1822,38 +1807,38 @@ Config.DoorList = {
 		authorizedJobs = { 'strokerkey','adminkey', },
 		locked = true,
 		distance = 2,
-	}, 
+	},
 	---
 	---
 	---  siquans penthouse garage
-	
-	{ -- garage door 
+
+	{ -- garage door
 		objName = 'hei_prop_com_mp_gar2',
 		objCoords  = {x = -33.80561, y = -621.6387, z = 36.06102},
 		textCoords = {x = -33.80561, y = -621.6387, z = 36.06102},
 		authorizedJobs = { 'penthousekey','adminkey', },
 		locked = true,
 		distance = 10,
-	}, 
+	},
 	---  emergency garage
-	
-	{ -- front door r 
+
+	{ -- front door r
 		objName = 'xm_prop_lab_door01_star_r',
 		objCoords  = {x = 393.798004, y = -1612.84546, z = 29.4582901},
 		textCoords = {x = 393.798004, y = -1612.84546, z = 29.4582901},
 		authorizedJobs = { 'police','fib','marducas','mechanic','ambulance','warrant','adminkey', },
 		locked = true,
 		distance = 3,
-	}, 
-	{ -- front door L 
+	},
+	{ -- front door L
 		objName = 'xm_prop_lab_door01_star_l',
 		objCoords  = {x = 395.045532, y = -1611.18652, z = 29.44944},
 		textCoords = {x = 395.045532, y = -1611.18652, z = 29.44944},
 		authorizedJobs = { 'police','fib','marducas','mechanic','ambulance','warrant','adminkey', },
 		locked = true,
 		distance = 3,
-	}, 
-	{ -- garage door 
+	},
+	{ -- garage door
 		objName = 'prop_ss1_14_garage_door',
 		objCoords  = {x = 385.358215, y = -1623.62634, z = 30.1002388},
 		textCoords = {x = 385.358215, y = -1623.62634, z = 30.1002388},
@@ -1862,41 +1847,41 @@ Config.DoorList = {
 		distance = 15,
 	},
 ---  reds house
-	
-	{ -- front door  
+
+	{ -- front door
 		objName = 'v_ilev_housedoor1',
 		objCoords  = {x = -2698.09, y = -80.15, z = 17.47},
 		textCoords = {x = -2698.09, y = -80.15, z = 17.47},
-		authorizedJobs = {'redskey','adminkey', }, 
+		authorizedJobs = {'redskey','adminkey', },
 		locked = true,
 		distance = 3,
-	}, 
-	{ -- back door 
+	},
+	{ -- back door
 		objName = 'hei_heist_apart2_door',
 		objCoords  = {x = -2704.52, y = -89.10, z = 17.54},
 		textCoords = {x = -2704.52, y = -89.10, z = 17.54},
 		authorizedJobs = { 'redskey','adminkey', },
 		locked = true,
 		distance = 3,
-	}, 
+	},
 	---  pdm
-	
-	{ -- stairs l  
+
+	{ -- stairs l
 		objName = 'apa_prop_ss1_mpint_door_r',
 		objCoords  = {x = 807.816284, y = -245.587402, z = 73.9634857},
 		textCoords = {x = 807.816284, y = -245.587402, z = 73.9634857},
-		authorizedJobs = {'cardealer','adminkey',}, 
+		authorizedJobs = {'cardealer','adminkey',},
 		locked = true,
 		distance = 3,
-	}, 
-	{ -- stairs r 
+	},
+	{ -- stairs r
 		objName = 'apa_prop_ss1_mpint_door_r',
 		objCoords  = {x = 805.920837, y = -244.550735, z = 73.956398},
 		textCoords = {x = 805.920837, y = -244.550735, z = 73.956398},
 		authorizedJobs = { 'cardealer','adminkey', },
 		locked = true,
 		distance = 3,
-	}, 
+	},
 	{ -- office 1
 		objName = 'apa_p_mp_yacht_door_01',
 		objCoords  = {x = 756.255127, y = -243.222763, z = 73.6240463},
@@ -1904,7 +1889,7 @@ Config.DoorList = {
 		authorizedJobs = { 'cardealer','adminkey', },
 		locked = true,
 		distance = 3,
-	}, 
+	},
 	{ -- office 2
 		objName = 'apa_p_mp_yacht_door_01',
 		objCoords  = {x = 751.852844, y = -224.638428, z = 73.6124039},
@@ -1912,7 +1897,7 @@ Config.DoorList = {
 		authorizedJobs = { 'cardealer','adminkey', },
 		locked = true,
 		distance = 3,
-	}, 
+	},
 	{ -- office L upstairs
 		objName = 'xm_prop_x17_l_door_frame_01',
 		objCoords  = {x = 773.180237, y = -246.895081, z = 78.6479492},
@@ -1920,7 +1905,7 @@ Config.DoorList = {
 		authorizedJobs = { 'cardealer','adminkey', },
 		locked = true,
 		distance = 3,
-	}, 
+	},
 	{ -- office R upstairs
 		objName = 'xm_prop_x17_l_door_frame_01',
 		objCoords  = {x = 770.957214, y = -245.549759, z = 78.6575317},
@@ -1929,14 +1914,14 @@ Config.DoorList = {
 		locked = true,
 		distance = 3,
 	},
-		
+
 		---
 		--- marducas
-	
+
 
 	  -- door 1
-	
-	
+
+
 	-- door 2
 	{
 		objName = 'prop_ss1_14_garage_door',
@@ -1996,7 +1981,7 @@ Config.DoorList = {
 		distance = 15,
 	},
 	--- villa del grapes
-	
+
 	{--right front gate
 		objName = 'prop_lrggate_01c_r',
 		objCoords  = {x = -1801.691, y = 475.4424, z = 133.9669},
@@ -2005,8 +1990,8 @@ Config.DoorList = {
 		locked = true,
 		distance = 6.0
 	},
-	
-	{-- left front gate 
+
+	{-- left front gate
 		objName = 'prop_lrggate_01c_l',
 		objCoords  = {x = -1799.039, y = 470.6359, z = 133.9505},
 		textCoords = {x = -1799.039, y = 470.6359, z = 133.9505},
@@ -2024,7 +2009,7 @@ Config.DoorList = {
 		distance = 3.0
 	},
 	--- church of the baphomet
-	
+
 	{--right front door
 		objName = 'apa_p_mp_yacht_door_02',
 		objCoords  = {x = -915.120789, y = 4828.72119, z = 312.679474},
@@ -2033,8 +2018,8 @@ Config.DoorList = {
 		locked = true,
 		distance = 6.0
 	},
-	
-	{-- left front door 
+
+	{-- left front door
 		objName = 'apa_p_mp_yacht_door_02',
 		objCoords  = {x = -915.87146, y = 4826.2627, z = 312.679474},
 		textCoords = {x = -915.87146, y = 4826.2627, z = 312.679474},
@@ -2051,8 +2036,8 @@ Config.DoorList = {
 		locked = true,
 		distance = 3.0
 	},
-	--- prison 
-	
+	--- prison
+
 	{--first gate
 		objName = 'prop_gate_prison_01',
 		objCoords  = {x = 1844.998, y = 2604.813, z = 44.63978},
@@ -2061,8 +2046,8 @@ Config.DoorList = {
 		locked = true,
 		distance = 12
 	},
-	
-	{-- left front door 
+
+	{-- left front door
 		objName = 'prop_gate_prison_01',
 		objCoords  = {x = 1799.608, y = 2616.975, z = 44.60325},
 		textCoords = {x = 1799.608, y = 2616.975, z = 44.60325},
@@ -2080,7 +2065,7 @@ Config.DoorList = {
 		distance = 5.0
 	},
 	--- fib garages
-	
+
 	{--door 1
 		objName = 'prop_ss1_mpint_garage',
 		objCoords  = {x = 181.389603, y = -727.474243, z = 34.8785057},
@@ -2089,7 +2074,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 20
 	},
-	
+
 	{-- door 2
 		objName = 'prop_ss1_mpint_garage',
 		objCoords  = {x = 184.339417, y = -719.535339, z = 35.0694389},
@@ -2108,7 +2093,7 @@ Config.DoorList = {
 		distance = 20
 	},
 	--- munsons shit pit
-	
+
 	{--door 1
 		objName = 'v_ilev_trevtraildr',
 		objCoords  = {x = 1972.769, y = 3815.366, z = 33.66326},
@@ -2118,7 +2103,7 @@ Config.DoorList = {
 		distance = 3
 	},
 	--- casino management
-	
+
 	{--door 1
 		objName = 'vw_prop_vw_casino_door_01a',
 		objCoords  = {x = 1122.351, y = 265.5158, z = -50.89093},
@@ -2127,7 +2112,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 	},
-	
+
 	{-- door 2
 		objName = 'vw_prop_vw_casino_door_01a',
 		objCoords  = {x = 1122.351, y = 263.5161, z = -50.89093},
@@ -2289,7 +2274,7 @@ Config.DoorList = {
 	locked = true,
 	distance = 3
 	},
-	
+
 	{--First Patient Room R
 	objName = 'v_ilev_cor_firedoor',
 	objCoords  = {x = 346.0310, y = -574.1888, z = 28.7973},
@@ -2297,7 +2282,7 @@ Config.DoorList = {
 	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
 	locked = true,
 	distance = 3
-	},	
+	},
 
 	{--Back Door R
 	objName = 'hei_Prop_Heist_CutScene_DoorC_R',
@@ -2306,7 +2291,7 @@ Config.DoorList = {
 	authorizedJobs = { 'ambulance', 'ambulancekey', 'police', 'policekey', 'adminkey' },
 	locked = true,
 	distance = 3
-	},	
+	},
 
 	{--Back Door L
 	objName = 'hei_Prop_Heist_CutScene_DoorC_R',
@@ -2327,7 +2312,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
-	
+
 		{--Front Door L
 		objName = 'apa_p_mp_door_apart_door_black',
 		objCoords  = {x = -734.0055, y = 194.4428, z = 124.8781},
@@ -2336,7 +2321,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
-	
+
 		{--Front Door R
 		objName = 'apa_p_mp_door_apart_door_black',
 		objCoords  = {x = -731.6414, y = 195.5259, z = 124.8781},
@@ -2353,10 +2338,10 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
-    
+
 		--Marducas's House
 
-	    {--gate 
+	    {--gate
 		objName = 'prop_lrggate_02_ld',
 		objCoords  = {x = -1474.130, y = 68.3892, z = 52.5259},
 		textCoords = {x = -1474.130, y = 68.3892, z = 53.5259},
@@ -2364,7 +2349,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 20
 		},
-	
+
 		{--side gate
 		objName = 'bh1_36_gate_iref',
 		objCoords  = {x = -1462.425, y = 65.7159, z = 53.3868},
@@ -2373,7 +2358,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
-	
+
 		{--back gate
 		objName = 'prop_lrggate_02_ld',
 		objCoords  = {x = -1616.231, y = 79.7792, z = 60.7787},
