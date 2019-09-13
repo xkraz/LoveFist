@@ -1,9 +1,18 @@
 Crafting = {}
 -- You can configure locations here
 Crafting.Locations = {
-    [1] = {x = 1015.003, y = -3158.878, z = -38.907},
-    [2] = {x = 1175.433, y = 2635.81, z = 37.755},
-    [3] = {x = -1154.895, y = -2022.624, z = 13.176},
+    [1] = {x = 176.05, y = -1000.14, z = -99.00}, --wORKSHOP
+    [2] = {x = 1175.433, y = 2635.81, z = 37.755}, --SandyGarage
+    [3] = {x = -1154.895, y = -2022.624, z = 13.176}, --LsCustomsAirport
+	[4] = {x = -341.16, y = -140.86, z = 39.03}, --Docs
+	[5] = {x = -198.90, y = -1315.19, z = 31.09}, --Bennys
+	[6] = {x = -25.65, y = -1424.46, z = 30.69}, --Franklins Garage
+	[7] = {x = 101.36, y = 6616.40, z = 32.44}, --Something
+	[8] = {x = 544.16, y = -173.01, z = 54.48}, --AutoExotic
+	[9] = {x = 455.84, y = -553.91, z = 28.50}, --NearHospital
+	[10] = {x = 737.76, y = -1077.97, z = 22.17}, --PayNSprayWarrant
+	[11] = {x = 672.16, y = -718.02, z = 29.99}, --RailHouse
+	[12] = {x = -40.50, y = -1088.22, z = 26.42}, --PDM
 }
 --[[
     You can add or remove if you want, be sure to use the right format like this:
