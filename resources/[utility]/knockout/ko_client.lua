@@ -57,5 +57,7 @@ Citizen.CreateThread(function()
     	Wait(0)
     	N_0x4757f00bc6323cfe(GetHashKey("WEAPON_NIGHTSTICK"), 0.3) 
     	Wait(0)
+		N_0x4757f00bc6323cfe(GetHashKey("WEAPON_RAYPISTOL"), 0.0) 
+		Wait(0)
     end
 end)
