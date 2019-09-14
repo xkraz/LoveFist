@@ -40,11 +40,11 @@ Config.Hospitals = {
 		},
 
 		AmbulanceActions = {
-			vector3(335.77, -580.4, 27.79)
+			vector3(337.49, -588.01, 42.33)
 		},
 
 		Pharmacies = {
-			vector3(335.04, -585.44, 27.79)
+			vector3(316.60, -588.29, 42.29)
 		},
 
 		Vehicles = {
@@ -74,14 +74,14 @@ Config.Hospitals = {
 
 		FastTravels = {
 			{
-				From = vector3(341.68, -595.54, 27.79),
-				To = { coords = vector3(336.9, -591.4, 43.3), heading = 67.3 },
+				From = vector3(355.85, -596.34, 27.78),
+				To = { coords = vector3(336.9, -591.4, 42.3), heading = 67.3 },
 				Marker = { type = 1, x = 1.5, y = 1.5, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			},
 
 			{
 				From = vector3(339.3, -592.5, 42.3),
-				To = { coords = vector3(339.59, -594.95, 28.79), heading = 66.97 },
+				To = { coords = vector3(359.73, -584.95, 27.82), heading = 247.08 },
 				Marker = { type = 1, x = 1.5, y = 1.5, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = false }
 			}
 		},
