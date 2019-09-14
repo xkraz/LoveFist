@@ -16,7 +16,10 @@ AddEventHandler('storedCar', function(veh)
 	for k,v in pairs(_cars) do
 		if v.plate == veh.plate and v.model == veh.model then
 			table.remove(_cars, k)
-			table.remove(_carsOld, k)
+			
+			if _carsOld[k] then
+				table.remove(_carsOld, k)
+			end
 		end
 	end
 end)

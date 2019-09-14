@@ -16,19 +16,18 @@ client_scripts {
   'JAM_Garage/JAM_Garage_Config.lua',
   'JAM_Garage/JAM_Garage_Client.lua',
 
-	'JAM_Garage/JAM_Garage_Damagec.lua',
 	-- DNATracker
 --	'JAM_DNATracker/JAM_DNATracker_Config.lua',
 --	'JAM_DNATracker/JAM_DNATracker_Client.lua',
 
     -- VehicleShop
-  'JAM_VehicleShop/JAM_VehicleShop_Config.lua',
+  'JAM_VehicleShop/JAM_VehicleShop_Config.lua', 
   'JAM_VehicleShop/JAM_VehicleShop_Client.lua',
 
-  -- VehicleFinance
-  'JAM_VehicleFinance/JAM_VehicleFinance_Config.lua',
+  -- VehicleFinance  
+  'JAM_VehicleFinance/JAM_VehicleFinance_Config.lua', 
   'JAM_VehicleFinance/JAM_VehicleFinance_Client.lua',
-
+  
   -- Race Mod
 	'JAM_RaceMod/JAM_RaceMod_Config.lua',
 	'JAM_RaceMod/JAM_RaceMod_Client.lua',
@@ -84,7 +83,7 @@ client_scripts {
   "NativeUILua-Reloaded/NativeUI.lua",
 }
 
-server_scripts {
+server_scripts {	
 	-- Base
 	'JAM_Main.lua',
 	'JAM_Server.lua',
@@ -96,19 +95,19 @@ server_scripts {
   -- Garage
   'JAM_Garage/JAM_Garage_Config.lua',
   'JAM_Garage/JAM_Garage_Server.lua',
-	'JAM_Garage/JAM_Garage_Damage.lua',
+
 	-- DNATracker
 	--'JAM_DNATracker/JAM_DNATracker_Config.lua',
 --	'JAM_DNATracker/JAM_DNATracker_Server.lua',
 
 	-- VehicleShop
-	'JAM_VehicleShop/JAM_VehicleShop_Config.lua',
+	'JAM_VehicleShop/JAM_VehicleShop_Config.lua',	
 	'JAM_VehicleShop/JAM_VehicleShop_Server.lua',
 
 	-- VehicleFinance
-	'JAM_VehicleFinance/JAM_VehicleFinance_Config.lua',
+	'JAM_VehicleFinance/JAM_VehicleFinance_Config.lua',	
 	'JAM_VehicleFinance/JAM_VehicleFinance_Server.lua',
-
+	
 		-- Race Mod
 	'JAM_RaceMod/JAM_RaceMod_Config.lua',
 	'JAM_RaceMod/JAM_RaceMod_Server.lua',
@@ -118,7 +117,7 @@ server_scripts {
  -- 'JAM_TunerLaptop/JAM_TunerLaptop_Server.lua',
 }
 
-files {
+files {	
   'JAM_TunerLaptop/Laptop.png',
 }
 
