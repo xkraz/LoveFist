@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ShopVehicleDataArray>
+	<Vehicles>
+		<Item>
+			<lockHash>CU_SUPERDUTY_VEH</lockHash>
+			<modelNameHash>superduty</modelNameHash>
+			<cost value ="0"/>
+			<textLabel>SUPERDUTY</textLabel>
+			<vehicleMods></vehicleMods>
+		</Item>
+	</Vehicles>	
+</ShopVehicleDataArray>

@@ -25,7 +25,7 @@ AddEventHandler(
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
 
-    while ESX.GetPlayerFromId(_source)) == nil do
+    while ESX.GetPlayerFromId(_source) == nil do
       xPlayer = ESX.GetPlayerFromId(_source)
       Wait(0)
     end

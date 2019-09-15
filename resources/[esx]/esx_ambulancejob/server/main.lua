@@ -105,7 +105,7 @@ ESX.RegisterServerCallback('esx_ambulancejob:removeItemsAfterRPDeath', function(
 			table.insert(playerLoadout, xPlayer.loadout[i])
 		end
 
-		-- give back wepaons after a couple of seconds
+		--give back wepaons after a couple of seconds
 	end
 
 	cb()

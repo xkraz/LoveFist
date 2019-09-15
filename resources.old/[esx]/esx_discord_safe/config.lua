@@ -1,0 +1,14 @@
+Config                        = {}
+Config.Locale = 'en'
+Config.green 				  = 56108
+Config.grey 				  = 8421504
+Config.red 					  = 16711680
+Config.orange 				  = 16744192
+Config.blue 				  = 2061822
+Config.purple 				  = 6965387
+Config.pink                   = 11750815
+Config.yellow                 = 16449301
+Config.white                  = 16777215
+Config.black                  = 0
+Config.bluetweet              = 4436965
+Config.webhook                = "https://discordapp.com/api/webhooks/621655595405148177/wLFgBE8eGSa7kIesDsjwvsLQZ2NN-ULSPlafb5dL-HsApveHKU2BEHZzeuQKE3jF5J71"

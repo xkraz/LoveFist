@@ -4,7 +4,7 @@
 local crouched = false
 local proned = false
 crouchKey = 36
-proneKey = 19
+proneKey = 243
 
 Citizen.CreateThread( function()
 	while true do 

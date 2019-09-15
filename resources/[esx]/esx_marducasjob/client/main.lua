@@ -457,93 +457,22 @@ function OpenMobilemarducasActionsMenu()
 			local vehicle = GetVehiclePedIsIn(playerPed, false)
 
 			if GetPedInVehicleSeat(vehicle, -1) == playerPed then
-
-				local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
-
-				local maxPassengers = GetVehicleMaxNumberOfPassengers(vehicle)
-				local MyPed = GetPlayerPed(-1)
-				local MyPedVeh = GetVehiclePedIsIn(playerPed,false)
-				local PlateVeh = GetVehicleNumberPlateText(MyPedVeh)
-
-				for seat = -1,maxPassengers-1,1 do
-					local ped = GetPedInVehicleSeat(vehicle,seat)
-					if ped and ped ~= 0 then TaskLeaveVehicle(ped,vehicle,16); end
-				end
-
-				while true do
-					if not IsPedInVehicle(GetPlayerPed(PlayerId()), vehicle, false) then
-						TriggerEvent('esx:showNotification', 'The vehicle has been sent to ~r~Impound!~s~')
-						ESX.TriggerServerCallback('JAG:StoreVehicle', function(valid)
-
-							local model = GetEntityModel(MyPedVeh)
-							local veh = {
-								model =  GetEntityModel(MyPedVeh),
-								plate = PlateVeh,
-								fuel = GetVehicleFuelLevel(MyPedVeh),
-								damage = {
-									body = GetVehicleBodyHealth(MyPedVeh) ,
-									engine = GetVehicleEngineHealth(MyPedVeh),
-									tank = GetVehiclePetrolTankHealth(MyPedVeh)
-								},
-								loc = {
-									x = 491.90,
-									y = -1315.00
-								},
-								headlight = GetVehicleHeadlightsColour(MyPedVeh)
-							}
-							TriggerEvent('setDetails', veh)
-							TriggerServerEvent('storedCar',veh)
-							DeleteVehicle(vehicle)
-						end, vehicleProps, 2)
-						break
-					end
-					Citizen.Wait(0)
-				end
+				ESX.ShowNotification(_U('vehicle_impounded'))
+				ESX.Game.DeleteVehicle(vehicle)
 			else
 				ESX.ShowNotification(_U('must_seat_driver'))
 			end
 		else
 			local vehicle = ESX.Game.GetVehicleInDirection()
+
 			if DoesEntityExist(vehicle) then
-				local vehicleProps = ESX.Game.GetVehicleProperties(vehicle)
-
-				local maxPassengers = GetVehicleMaxNumberOfPassengers(vehicle)
-
-				for seat = -1,maxPassengers-1,1 do
-					local ped = GetPedInVehicleSeat(vehicle,seat)
-					if ped and ped ~= 0 then
-						TriggerEvent('esx:showNotification', 'The vehicle must be empty to ~r~Impound!~s~')
-						return
-					end
-				end
-
-				TriggerEvent('esx:showNotification', 'The vehicle has been sent to ~r~Impound!~s~')
-
-				ESX.TriggerServerCallback('JAG:StoreVehicle', function(valid)
-
-					local veh = {
-						model = GetEntityModel(vehicle),
-						plate = GetVehicleNumberPlateText(vehicle),
-						fuel = GetVehicleFuelLevel(vehicle),
-						damage = {
-							body = GetVehicleBodyHealth(vehicle) ,
-							engine = GetVehicleEngineHealth(vehicle),
-							tank = GetVehiclePetrolTankHealth(vehicle)
-						},
-						loc = {
-							x = 491.90,
-							y = -1315.00
-						},
-						headlight = GetVehicleHeadlightsColour(vehicle)
-					}
-					TriggerEvent('setDetails', veh)
-					TriggerServerEvent('storedCar',veh)
-					DeleteVehicle(vehicle)
-				end, vehicleProps, 2)
+				ESX.ShowNotification(_U('vehicle_impounded'))
+				ESX.Game.DeleteVehicle(vehicle)
 			else
 				ESX.ShowNotification(_U('must_near'))
 			end
 		end
+
 	elseif data.current.value == 'dep_vehicle' then
 
 		local playerPed = PlayerPedId()
@@ -860,14 +789,19 @@ AddEventHandler('esx_marducasjob:repaircar', function(car, specs)
 	end
 
 	if specs.body ~= -1 then
-		local tmpEng = GetVehicleEngineHealth(car)
-		local tmpTank = GetVehiclePetrolTankHealth(car)
-
-		SetVehicleFixed(car)
 		SetVehicleDeformationFixed(car)
+		SetVehicleBodyHealth(car, 1000.0)
 
-		SetVehicleEngineHealth(car, tmpEng)
-		SetVehiclePetrolTankHealth(car, tmpTank)
+		for i = 0, 4 do
+			SetVehicleTyreBurst(vehicle, i, true, 0.0)
+			SetVehicleTyreFixed(vehicle, i)
+		end
+
+		for i = 0, 6 do
+			FixVehicleWindow(vehicle, i)
+		end
+
+
 	end
 
 	if specs.tank ~= -1 then
@@ -911,6 +845,8 @@ end
 function makeEntityFaceEntity(entity2 )
     local p1 = GetEntityCoords(GetPlayerPed(PlayerId()), true)
     local p2 = entity2
+		print(p1)
+		print(p2)
     local dx = p2.x - p1.x
     local dy = p2.y - p1.y
 
@@ -960,23 +896,13 @@ function repair(kit)
 				local hood = hoodLocation(vehicle)
 				makeEntityFaceEntity(hood)
 
-				local bonnet = GetEntityBoneIndexByName(vehicle, 'bonnet')
+				local bonnet = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'bonnet')
 				if bonnet ~= -1 then
 						SetVehicleDoorOpen(vehicle, 4, false, false)
 				end
 
-				local _repairing = true
-				Citizen.CreateThread(function()
-					ESX.Streaming.RequestAnimDict("mini@repair", function()
-						while _repairing do
-							if not IsEntityPlayingAnim(playerPed, "mini@repair", "fixing_a_ped", 3) then
-								TaskPlayAnim(playerPed, "mini@repair", "fixing_a_ped", 8.0, -8.0, -1, 0, 0, false, false, false)
-							end
-							Wait(100)
-						end
-					end)
-				end)
 
+				TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
 				Citizen.CreateThread(function()
 
 					if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) then
@@ -986,17 +912,15 @@ function repair(kit)
 						ClearPedTasksImmediately(playerPed)
 						ESX.ShowNotification(_U('full_repaired'))
 						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
-						_repairing = false
 						return
 
-					elseif ESX.PlayerData.job.name == 'police' or ESX.PlayerData.job.name == 'ambulance' then
+					elseif ESX.PlayerData.job.name == 'police' then
 
 						exports['progressBars']:startUI(Config.NonMechTime, "Repairing Engine")
 						Citizen.Wait(Config.NonMechTime)
 						ClearPedTasksImmediately(playerPed)
 						ESX.ShowNotification(_U('full_repaired'))
 						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
-						_repairing = false
 						return
 
 					else
@@ -1035,9 +959,7 @@ function repair(kit)
 						else
 							nums.tank = 1000.0
 						end
-						SetVehicleDoorShut(vehicle, 4, false)
-						exports['progressBars']:startUI(1500, "Closing hood")
-						Citizen.Wait(1500)
+
 						TriggerServerEvent('esx_marducasjob:repaircar',vehicle,nums)
 						ClearPedTasksImmediately(playerPed)
 						if kit == 1 then
@@ -1045,7 +967,7 @@ function repair(kit)
 						else
 							TriggerServerEvent('esx_repairkit:removeKit')
 						end
-						_repairing = false
+						SetVehicleDoorShut(vehicle, 4, false)
 					end
 				end)
 			else

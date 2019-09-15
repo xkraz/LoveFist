@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>LoveFist CAD</title>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="app.js"></script>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<div class="wrapper" style="display: none;">
+	
+		<div class="nav">
+			<a href="#activeCalls" class="active">Active Calls</a>
+			<a href="#crimLookup">Citizen Lookup</a>
+			<a href="#plateCheck" style="border-right: none;">Plate Checker</a>
+			<a href="#activeBolos" style="border-right: none;">Active Bolos</a>
+			<a href="#activeWarrants" style="border-right: none;">Active Warrants</a>
+		</div>
+		
+		<div class="content">
+			<div id="activeCalls-content">
+				<h3>Active Calls</h3>
+				<div class="callsignSection">
+					<input type="text" id="callsign" placeholder="callsign (eg H5-21)">
+					<button class="btn" id="saveCallsign">Save</button>
+				</div>
+				<button class="btn" style="float: right;width: 200px;margin-top: -47px;" id="newCall" >New Call</button>
+				<table class="table">
+					<thead>
+						<tr>
+							<th>Call ID</th>
+							<th>Type</th>
+							<th>Message</th>
+							<th>Location</th>
+							<th>Units</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody class="tableBody">
+						<tr>
+							<td colspan="6">Please wait a moment...</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<div id="crimLookup-content" style="display: none;">
+				<div class="search">
+					<h3>Citizen Lookup</h3>
+					<input type="text" class="searchBar char" id="firstName" placeholder="First Name..." />
+					<input type="text" class="searchBar char" id="lastName" placeholder="Last Name..." />
+					<button type="submit" class="btn" id="lookupChar">Search Now</button>
+				</div>
+				<div class="searchResults">
+				
+				</div>
+			</div>
+			<div id="activeBolos-content" style="display: none;">
+			<!-- <td><button id="reloadbolo" style="float: right;width: 200px;margin-top: px;" class="btn">Reload</button></td> -->
+				<div class="searchResultsbolos">
+
+				</div>
+				
+			</div>
+			<div id="activeWarrants-content" style="display: none;">
+			<!-- <td><button id="reloadbolo" style="float: right;width: 200px;margin-top: px;" class="btn">Reload</button></td> -->
+				<div class="searchResultswarrant">
+
+				</div>
+				
+			</div>
+			<div id="plateCheck-content" style="display: none;">
+				<div class="search">
+					<h3>Vehicle Plate Lookup</h3>
+					<input type="text "class="searchBar" id="plate" placeholder="Vehicle Plate..." />
+					<button type="submit" class="btn" id="lookupPlate">Lookup Now</button>
+				</div>
+				<div class="plateResults">
+				
+				</div>
+			</div>
+		</div>
+		
+	</div>
+	
+	<div id="newCallWeapper" style="display: none;">
+		<h2>New Call</h2>
+		<input type="text" placeholder="Type" id="newCallType">
+		<input type="text" placeholder="Location" id="newCallLocation">
+		<textarea placeholder="Message" id="newCallMessage"></textarea>
+		<button type="submit" class="btn" id="submitNewCall">Submit Call</button>
+	</div>
+
+</body>
+</html>

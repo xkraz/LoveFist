@@ -30,12 +30,12 @@ function MFS:Awake()
     end
   end)
 end
-
+--[[
 RegisterServerEvent("safe:CharacterChosen")
 AddEventHandler('safe:CharacterChosen', function(id)
   MFS:RefreshListing(source)
 end)
-
+]]
 RegisterCommand('spawnsafe', function(source, args)
   local xPlayer = ESX.GetPlayerFromId(source)
   while not xPlayer do xPlayer = ESX.GetPlayerFromId(source); Citizen.Wait(0); end
