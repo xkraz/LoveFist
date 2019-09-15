@@ -48,30 +48,35 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 		-- Get inventory
 		table.insert(tasks, function(cb)
 
-			MySQL.Async.fetchAll('SELECT * FROM `user_inventory_new` WHERE `identifier` = @identifier', {
+			MySQL.Async.fetchAll('SELECT * FROM `user_inventory` WHERE `identifier` = @identifier', {
 				['@identifier'] = player.getIdentifier()
 			}, function(inventory)
-				local _inventory
-				for k,v in pairs(inventory) do
-					for x,y in pairs(v) do
-						if x == 'items' then
-							_inventory = json.decode(y)
-						end
-					end
+
+				local tasks2 = {}
+
+				for i=1, #inventory, 1 do
+					table.insert(userData.inventory, {
+						name = inventory[i].item,
+						count = inventory[i].count,
+						label = ESX.Items[inventory[i].item].label,
+						limit = ESX.Items[inventory[i].item].limit,
+						usable = ESX.UsableItemsCallbacks[inventory[i].item] ~= nil,
+						rare = ESX.Items[inventory[i].item].rare,
+						canRemove = ESX.Items[inventory[i].item].canRemove
+					})
 				end
 
 				for k,v in pairs(ESX.Items) do
-					if _inventory[k] ~= nil then
-						table.insert(userData.inventory, {
-							name = k,
-							count = _inventory[k],
-							label = ESX.Items[k].label,
-							limit = ESX.Items[k].limit,
-							usable = ESX.UsableItemsCallbacks[k] ~= nil,
-							rare = ESX.Items[k].rare,
-							canRemove = ESX.Items[k].canRemove
-						})
-					else
+					local found = false
+
+					for j=1, #userData.inventory, 1 do
+						if userData.inventory[j].name == k then
+							found = true
+							break
+						end
+					end
+
+					if not found then
 						table.insert(userData.inventory, {
 							name = k,
 							count = 0,
@@ -81,11 +86,30 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 							rare = ESX.Items[k].rare,
 							canRemove = ESX.Items[k].canRemove
 						})
+
+						local scope = function(item, identifier)
+							table.insert(tasks2, function(cb2)
+								MySQL.Async.execute('INSERT INTO user_inventory (identifier, item, count) VALUES (@identifier, @item, @count)', {
+									['@identifier'] = identifier,
+									['@item'] = item,
+									['@count'] = 0
+								}, function(rowsChanged)
+									cb2()
+								end)
+							end)
+						end
+
+						scope(k, player.getIdentifier())
 					end
+
 				end
+
+				Async.parallelLimit(tasks2, 5, function(results) end)
+
 				table.sort(userData.inventory, function(a,b)
 					return a.label < b.label
 				end)
+
 				cb()
 			end)
 
@@ -178,18 +202,17 @@ AddEventHandler('es:playerLoaded', function(source, _player)
 			local xPlayer = CreateExtendedPlayer(player, userData.accounts, userData.inventory, userData.job, userData.loadout, userData.playerName, userData.lastPosition)
 
 			xPlayer.getMissingAccounts(function(missingAccounts)
-				if missingAccounts ~= 0 then
-					if #missingAccounts > 0 then
-						for i=1, #missingAccounts, 1 do
-							table.insert(xPlayer.accounts, {
-								name  = missingAccounts[i],
-								money = 0,
-								label = Config.AccountLabels[missingAccounts[i]]
-							})
-						end
+				if #missingAccounts > 0 then
 
-						xPlayer.createAccounts(missingAccounts)
+					for i=1, #missingAccounts, 1 do
+						table.insert(xPlayer.accounts, {
+							name  = missingAccounts[i],
+							money = 0,
+							label = Config.AccountLabels[missingAccounts[i]]
+						})
 					end
+
+					xPlayer.createAccounts(missingAccounts)
 				end
 
 				ESX.Players[_source] = xPlayer
@@ -343,7 +366,7 @@ AddEventHandler('esx:removeInventoryItem', function(type, itemName, itemCount)
 				TriggerClientEvent('esx:showNotification', _source, _U('imp_invalid_quantity'))
 			else
 				if (itemCount > xItem.count) then
-
+					
 					local mxamount = xItem.count
 
 					xPlayer.removeInventoryItem(itemName, mxamount)

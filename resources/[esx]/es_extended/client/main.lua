@@ -351,10 +351,8 @@ end)
 
 RegisterNetEvent('esx:removePickup')
 AddEventHandler('esx:removePickup', function(id)
-	if id ~= nil
-    ESX.Game.DeleteObject(Pickups[id].obj)
-	  Pickups[id] = nil
-  end
+	ESX.Game.DeleteObject(Pickups[id].obj)
+	Pickups[id] = nil
 end)
 
 RegisterNetEvent('esx:pickupWeapon')
