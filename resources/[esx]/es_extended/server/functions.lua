@@ -57,21 +57,32 @@ ESX.SavePlayer = function(xPlayer, cb)
 		end
 	end
 
-	-- Inventory items
-	for i=1, #xPlayer.inventory, 1 do
-		if ESX.LastPlayerData[xPlayer.source].items[xPlayer.inventory[i].name] ~= xPlayer.inventory[i].count then
-			table.insert(asyncTasks, function(cb)
-				MySQL.Async.execute('UPDATE user_inventory SET `count` = @count WHERE identifier = @identifier AND item = @item', {
-					['@count']      = xPlayer.inventory[i].count,
-					['@identifier'] = xPlayer.identifier,
-					['@item']       = xPlayer.inventory[i].name
-				}, function(rowsChanged)
-					cb()
-				end)
-			end)
+-- Inventory items
 
-			ESX.LastPlayerData[xPlayer.source].items[xPlayer.inventory[i].name] = xPlayer.inventory[i].count
-		end
+	local _inv ={inventory = {}}
+	local _changed = false
+
+  for i=1, #xPlayer.inventory, 1 do
+			if xPlayer.inventory[i].count > 0 then
+				_inv.inventory[xPlayer.inventory[i].name] = xPlayer.inventory[i].count
+				if ESX.LastPlayerData[xPlayer.source].items[xPlayer.inventory[i].name] ~= xPlayer.inventory[i].count then
+					ESX.LastPlayerData[xPlayer.source].items[xPlayer.inventory[i].name] = xPlayer.inventory[i].count
+					changed = true
+				end
+			else
+				ESX.LastPlayerData[xPlayer.source].items[xPlayer.inventory[i].name] = 0
+			end
+  end
+
+	if changed then
+		table.insert(asyncTasks, function(cb)
+			MySQL.Async.execute('UPDATE user_inventory_new SET `items` = @items WHERE identifier = @identifier', {
+				['@identifier'] = xPlayer.identifier,
+				['@items']       = json.encode(_inv.inventory)
+			}, function(rowsChanged)
+				cb()
+			end)
+		end)
 	end
 
 	-- Job, loadout and position
