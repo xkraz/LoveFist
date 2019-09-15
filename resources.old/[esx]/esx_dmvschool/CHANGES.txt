@@ -1,4 +1,0 @@
-Changed units from km/h to MPH
-Billing goes to bank instead of wallet
- - kept being able to go negative which makes more sense from a bank account than wallet
-

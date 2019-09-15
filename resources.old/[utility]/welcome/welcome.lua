@@ -1,6 +1,0 @@
-AddEventHandler("playerSpawned", function(spawn)
-TriggerEvent("chatMessage", "", { 255, 255, 255 }, "Welcome to the ^9LoveFist Roleplay Server")
-TriggerEvent("chatMessage", "", { 255, 255, 255 }, "Join the Discord: ^8https://discord.gg/gabK72P")
-TriggerEvent("chatMessage", "", { 255, 255, 255 }, "^4Confused? Try typing: /help, /cmds, /sinfo, /rules.")
-TriggerEvent("chatMessage", "", { 255, 255, 255 }, "^2 DEFAULT CHAT IS EMOTE: USE /ooc message TO GLOBAL CHAT")
-end)
