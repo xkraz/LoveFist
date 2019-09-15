@@ -234,8 +234,11 @@ function CreateExtendedPlayer(player, accounts, inventory, job, loadout, name, l
 					end
 				end
 			end
-
-			cb(missingAccounts)
+			if missingAccounts == {} then
+				cb(missingAccounts)
+			else
+				cb(0)
+			end
 		end)
 	end
 

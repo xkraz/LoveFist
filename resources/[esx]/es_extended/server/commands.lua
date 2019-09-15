@@ -2,7 +2,7 @@ TriggerEvent('es:addGroupCommand', 'tp', 'admin', function(source, args, user)
 	local x = tonumber(args[1])
 	local y = tonumber(args[2])
 	local z = tonumber(args[3])
-	
+
 	if x and y and z then
 		TriggerClientEvent('esx:teleport', source, {
 			x = x,
@@ -96,7 +96,7 @@ TriggerEvent('es:addGroupCommand', 'setmoney', 'admin', function(source, args, u
 	local target = tonumber(args[1])
 	local money_type = args[2]
 	local money_amount = tonumber(args[3])
-	
+
 	local xPlayer = ESX.GetPlayerFromId(target)
 
 	if target and money_type and money_amount and xPlayer ~= nil then
@@ -114,9 +114,9 @@ TriggerEvent('es:addGroupCommand', 'setmoney', 'admin', function(source, args, u
 		TriggerClientEvent('chatMessage', _source, "SYSTEM", {255, 0, 0}, "Invalid arguments.")
 		return
 	end
-	
+
 	print('es_extended: ' .. GetPlayerName(source) .. ' just set $' .. money_amount .. ' (' .. money_type .. ') to ' .. xPlayer.name)
-	
+
 	if xPlayer.source ~= _source then
 		TriggerClientEvent('esx:showNotification', xPlayer.source, _U('money_set', money_amount, money_type))
 	end
@@ -150,7 +150,7 @@ TriggerEvent('es:addGroupCommand', 'giveitem', 'admin', function(source, args, u
 	local count   = (args[3] == nil and 1 or tonumber(args[3]))
 
 	if count ~= nil then
-		if xPlayer.getInventoryItem(item) ~= nil then
+		if xPlayer.getInventoryItem(item) ~= nil and item ~= nil then
 			xPlayer.addInventoryItem(item, count)
 		else
 			TriggerClientEvent('esx:showNotification', _source, _U('invalid_item'))
