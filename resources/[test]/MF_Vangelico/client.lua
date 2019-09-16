@@ -336,7 +336,7 @@ AddEventHandler('jewel:newsbroadcast', function()
     Citizen.CreateThread(function()
       while true do
           local name = GetCurrentResourceName() .. math.random(999)
-          AddTextEntry(name, '~INPUT_CONTEXT~ ' .. self.Translation['en']['set_waypoint'] .. '\n~INPUT_FRONTEND_RRIGHT~ ' .. self.Translation['en']['hide_box'])
+          AddTextEntry(name, '~INPUT_CONTEXT~ Set waypoint to the store\n~INPUT_FRONTEND_RRIGHT~ Close this box')
           DisplayHelpTextThisFrame(name, false)
           if IsControlPressed(0, 38) then
               SetNewWaypoint(self.VangelicoPosition.x, self.VangelicoPosition.y)
