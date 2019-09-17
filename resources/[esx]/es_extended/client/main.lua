@@ -351,10 +351,8 @@ end)
 
 RegisterNetEvent('esx:removePickup')
 AddEventHandler('esx:removePickup', function(id)
-	if id ~= nil
-    ESX.Game.DeleteObject(Pickups[id].obj)
-	  Pickups[id] = nil
-  end
+  	ESX.Game.DeleteObject(Pickups[id].obj)
+  	Pickups[id] = nil
 end)
 
 RegisterNetEvent('esx:pickupWeapon')
@@ -391,10 +389,9 @@ local entity
     local veh = GetVehiclePedIsIn(GetPlayerPed(PlayerId()), false)
     if veh == -1 then
       local playerPed = PlayerPedId()
-      local vehicle   = ESX.Game.GetVehicleInDirection()
-      entity = vehicle
-      carModel = GetEntityModel(entity)
-      carName = GetDisplayNameFromVehicleModel(carModel)
+      local loc = GetEntityCoords(GetPlayerPed(PlayerPedId()))
+      local entity   = GetClosestVehicle(loc.x, loc.y, loc.z, 2, 0, 71)
+
       NetworkRequestControlOfEntity(entity)
     else
       NetworkRequestControlOfEntity(GetEntityModel(veh))
