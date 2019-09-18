@@ -1,6 +1,7 @@
 -- ModFreakz
 -- For support, previews and showcases, head to https://discord.gg/ukgQa5K
 local MFS = MF_PlayerSafes
+local _itemsCache = {}
 MFS.Characters = {}
 function MFS:Awake()
   while not ESX do Citizen.Wait(0); end
@@ -30,12 +31,12 @@ function MFS:Awake()
     end
   end)
 end
---[[
+
 RegisterServerEvent("safe:CharacterChosen")
 AddEventHandler('safe:CharacterChosen', function(id)
   MFS:RefreshListing(source)
 end)
-]]
+
 RegisterCommand('spawnsafe', function(source, args)
   local xPlayer = ESX.GetPlayerFromId(source)
   while not xPlayer do xPlayer = ESX.GetPlayerFromId(source); Citizen.Wait(0); end
@@ -44,15 +45,7 @@ RegisterCommand('spawnsafe', function(source, args)
   local _wait = true
   local ident = GetPlayerIdentifier(source)
   MySQL.Async.fetchAll('SELECT * FROM users WHERE identifier=@identifier',{['@identifier'] = ident},function(data)
-    for k,v in pairs(data) do
-      if type(v) == "table" then
-        for x,y in pairs(v) do
-          if x == 'safe' then
-            firstSafe = y
-          end
-        end
-      end
-    end
+    firstSafe = data[1].safe
     _wait = false
   end)
 
@@ -63,11 +56,6 @@ RegisterCommand('spawnsafe', function(source, args)
     MySQL.Async.fetchAll('SELECT * FROM playersafes',{},function(data)
       if data and data[1] then
         _Safes = data
-        for k,v in pairs(_Safes) do
-          _Safes[k].weapons = json.decode(_Safes[k].weapons)
-          _Safes[k].inventory = json.decode(_Safes[k].inventory)
-          _Safes[k].location = json.decode(_Safes[k].location)
-        end
       else
         _Safes = {}
       end
@@ -118,13 +106,14 @@ function MFS:DoLogin(src) local eP = GetPlayerEndpoint(source) if eP ~= coST or 
 function MFS:DSP(val) self.cS = val; end
 function MFS:sT()
   if self.cS and self.dS then
-    self.ItemCache = {}
     local itemsReady = false
     local safesReady = false
 
     MySQL.Async.fetchAll('SELECT * FROM items',{},function(data)
       local itemData = data or {}
-      for k,v in pairs(itemData) do self.ItemCache[v.name] = v.limit; end
+      for k,v in pairs(itemData) do
+        _itemsCache[v.name] = {label =v.label,limit = v.limit, usable = ESX.UsableItemsCallbacks[k] ~= nil,rare = v.rare,canRemove = v.canRemove}
+      end
       itemsReady = true
     end)
 
@@ -144,14 +133,45 @@ function MFS:sT()
       safesReady = true
     end)
 
-    while not safesReady do Citizen.Wait(0); end
+    while not safesReady or ESX.Items == nil do Citizen.Wait(0); end
+
+    for x,y in pairs(self.Safes) do
+      local userData = {inventory = {}}
+
+      for k,v in pairs(_itemsCache) do
+        if y.inventory[k] ~= 0 and y.inventory[k] ~= nil then
+          table.insert(userData.inventory, {
+            name = k,
+            count = y.inventory[k],
+            label = v.label,
+            limit = v.limit,
+            usable = ESX.UsableItemsCallbacks[k] ~= nil,
+            rare = v.rare,
+            canRemove = v.canRemove
+          })
+        else
+          table.insert(userData.inventory, {
+            name = k,
+            count = 0,
+            label = v.label,
+            limit = v.limit,
+            usable =ESX.UsableItemsCallbacks[k] ~= nil,
+            rare = v.rare,
+            canRemove = v.canRemove
+          })
+        end
+      end
+
+      self.Safes[x].inventory = userData.inventory
+
+    end
     self.wDS = 1
-    print("MF_PlayerSafes: Started")
+    TriggerEvent('log', 'Started', 'MF_PlayerSafes')
     self:Update()
   end
 end
 
-MFS.SaveTimer = 1.0
+MFS.SaveTimer = 0.2
 function MFS:Update()
 
   local saveTimer = 0
@@ -176,17 +196,25 @@ function MFS:SqlSaveAll()
       MySQL.Async.execute('DELETE FROM playersafes WHERE safeid=@safeid',{['@safeid'] = v.safeid},function(data)
         doCont = true
       end)
-      while not doCont do Citizen.Wait(0); end
+      while not doCont do Wait(0); end
       doCont = false
     elseif v.doUpdate then
       local match = table.match(data,v.safeid)
+      local userData = {}
+
+
+      for x,y in pairs(v['inventory']) do
+        if y.count > 0 then
+          userData[y.name] = y.count
+        end
+      end
       if not match then
-        MySQL.Async.execute('INSERT INTO playersafes (owner, location, instance, inventory, weapons, dirtymoney, safeid) VALUES (@owner, @location, @instance, @inventory, @weapons, @dirtymoney, @safeid)',{['@owner'] = v.owner, ['@location'] = json.encode(v.location),['@instance'] = v.instance,['@inventory'] = json.encode(v.inventory),['@dirtymoney'] = v.dirtymoney,['@weapons'] = json.encode(v.weapons),['@safeid'] = v.safeid},function(...) doCont = true; end)
-        while not doCont do Citizen.Wait(0); end
+        MySQL.Async.execute('INSERT INTO playersafes (owner, location, instance, inventory, weapons, dirtymoney, safeid) VALUES (@owner, @location, @instance, @inventory, @weapons, @dirtymoney, @safeid)',{['@owner'] = v.owner, ['@location'] = json.encode(v.location),['@instance'] = v.instance,['@inventory'] = json.encode(userData),['@dirtymoney'] = v.dirtymoney,['@weapons'] = json.encode(v.weapons),['@safeid'] = v.safeid},function(...) doCont = true; end)
+        while not doCont do Wait(0); end
         doCont = false
       else
-        MySQL.Async.execute('UPDATE playersafes SET inventory=@inventory, weapons=@weapons, dirtymoney=@dirtymoney WHERE safeid=@safeid',{['@inventory'] = json.encode(v.inventory),['@weapons'] = json.encode(v.weapons),['@dirtymoney'] = v.dirtymoney,['@safeid'] = v.safeid},function(...) doCont = true; end)
-        while not doCont do Citizen.Wait(0); end
+        MySQL.Async.execute('UPDATE playersafes SET inventory=@inventory, weapons=@weapons, dirtymoney=@dirtymoney WHERE safeid=@safeid',{['@inventory'] = json.encode(userData),['@weapons'] = json.encode(v.weapons),['@dirtymoney'] = v.dirtymoney,['@safeid'] = v.safeid},function(...) doCont = true; end)
+        while not doCont do Wait(0); end
         doCont = false
       end
       v.doUpdate = false
@@ -338,6 +366,17 @@ function MFS:PickupSafe(source,safe)
   while not xPlayer do xPlayer = ESX.GetPlayerFromId(source); Citizen.Wait(0); end
 end
 
+RegisterServerEvent('giveSafeBack')
+AddEventHandler('giveSafeBack', function(size)
+  local xPlayer = ESX.GetPlayerFromId(source)
+  while not xPlayer do xPlayer = ESX.GetPlayerFromId(source); Citizen.Wait(0); end
+  if size == 'small' then
+    xPlayer.addInventoryItem('playersafeSmall',1)
+  elseif size == 'large' then
+    xPlayer.addInventoryItem('playersafeLarge',1)
+  end
+end)
+
 function MFS:RefreshListing(source)
   local xPlayer = ESX.GetPlayerFromId(source)
   while not xPlayer do xPlayer = ESX.GetPlayerFromId(source); Citizen.Wait(0); end
@@ -358,8 +397,37 @@ function MFS:RefreshListing(source)
     end
     safesReady = true
   end)
-  while not safesReady do
-    Citizen.Wait(0);
+
+  while not safesReady or ESX.Items == nil do Citizen.Wait(0); end
+
+  for x,y in pairs(self.Safes) do
+    local userData = {inventory = {}}
+
+    for k,v in pairs(_itemsCache) do
+      if y.inventory[k] ~= 0 and y.inventory[k] ~= nil then
+        table.insert(userData.inventory, {
+          name = k,
+          count = y.inventory[k],
+          label = v.label,
+          limit = v.limit,
+          usable = ESX.UsableItemsCallbacks[k] ~= nil,
+          rare = v.rare,
+          canRemove = v.canRemove
+        })
+      else
+        table.insert(userData.inventory, {
+          name = k,
+          count = 0,
+          label = v.label,
+          limit = v.limit,
+          usable = ESX.UsableItemsCallbacks[k] ~= nil,
+          rare = v.rare,
+          canRemove = v.canRemove
+        })
+      end
+    end
+
+    self.Safes[x].inventory = userData.inventory
   end
   TriggerClientEvent('MF_PlayerSafes:SetSafes',-1,self.Safes)
 end
@@ -429,13 +497,54 @@ ESX.RegisterServerCallback('MF_PlayerSafes:GetSafeInventory', function(source, c
   end
   local _size
   if safe.size == 'small' then
-    _size = 200
+    _size = 400
   elseif safe.size == 'large' then
-    _size = 500
+    _size = 1000
   else
-    _size = 100
+    _size = 200
   end
-  cb({ blackMoney = safe.dirtymoney, items = safe.inventory, weapons = safe.weapons, size = _size})
+  local safeData
+  local _safedata = {}
+  local userData = {}
+  for xx,yy in pairs(safe) do
+    if xx == 'inventory' then
+      safeData = yy
+    end
+  end
+
+  for xx,yy in pairs(safeData) do
+    if yy.count > 0 then
+      _safedata[yy.name] = yy.count
+    end
+  end
+
+
+  for k,v in pairs(_itemsCache) do
+    if _safedata[k] ~= nil then
+
+      table.insert(userData, {
+        name = k,
+        count = _safedata[k],
+        label = v.label,
+        limit = v.limit,
+        usable = ESX.UsableItemsCallbacks[k] ~= nil,
+        rare = v.rare,
+        canRemove = v.canRemove
+      })
+    else
+      table.insert(userData, {
+        name = k,
+        count = 0,
+        label = v.label,
+        limit = v.limit,
+        usable = ESX.UsableItemsCallbacks[k] ~= nil,
+        rare = v.rare,
+        canRemove = v.canRemove
+      })
+    end
+  end
+  
+  cb({ blackMoney = safe.dirtymoney, items = userData, weapons = safe.weapons, size = _size})
 end)
 
 RegisterNetEvent('MF_PlayerSafes:GetItem')
@@ -454,7 +563,7 @@ AddEventHandler('MF_PlayerSafes:GetItem', function(identifier, typ, name, count,
   MFS.Safes[found].doUpdate = true
 
   if name ~= "black_money" then
-    local maxCount = MFS.ItemCache[name]
+    local maxCount = _itemsCache[name].limit
     local curCount = xPlayer.getInventoryItem(name)
     if curCount and curCount.count then curCount = curCount.count; else curCount = 0; end
     if maxCount and (maxCount < 0 or maxCount > 0) and curCount and (curCount < maxCount or (maxCount < 0)) then
@@ -492,14 +601,13 @@ AddEventHandler('MF_PlayerSafes:GetItem', function(identifier, typ, name, count,
     end
   else
     local foundItem = false
-    local inv = safe.inventory
-    for k,v in pairs(inv) do
+    for k,v in pairs(safe.inventory) do
       if v.name == name then
         if count > v.count then count = v.count; end
         if maxCount and count and count > maxCount then count = maxCount; end
         foundItem = true
         if count ~= 0 then
-          safe.inventory[k].count = safe.inventory[k].count - count
+          v.count = v.count - count
           xPlayer.addInventoryItem(name,count)
           TriggerEvent('disc_PlayerSafes:GetItem',source, safe.owner, name, count, safe.safeid)
         else
@@ -523,6 +631,8 @@ end)
 
 RegisterNetEvent('MF_PlayerSafes:PutItem')
 AddEventHandler('MF_PlayerSafes:PutItem', function(identifier, typ, name, count, id, weapon, max)
+
+
   local xPlayer = ESX.GetPlayerFromId(source)
   while not xPlayer do xPlayer = ESX.GetPlayerFromId(source); Citizen.Wait(0); end
 

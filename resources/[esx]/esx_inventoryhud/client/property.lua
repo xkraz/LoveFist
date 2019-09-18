@@ -130,11 +130,11 @@ RegisterNUICallback(
             end
 
             if isPlayerSafe then
-                local _size = 100
+                local _size = 200
                 if isPlayerSafe.size == 'small' then
-                  _size = 200
+                  _size = 400
                 elseif isPlayerSafe.size == 'large' then
-                  _size = 500
+                  _size = 1000
                 end
                 TriggerServerEvent("MF_PlayerSafes:PutItem", ESX.GetPlayerData().identifier, data.item.type, data.item.name, count, isPlayerSafe.safeid, isWeapon, _size)
             else
