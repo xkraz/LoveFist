@@ -6,26 +6,26 @@ local firstAnim = true
 local playerPropList = {}
 local LastAD
 
-Citizen.CreateThread( function()
+-- Citizen.CreateThread( function()
 
-	while true do
-		Citizen.Wait(5)
-		if (IsControlJustPressed(0,Config.HoverHolsterKey)) then
-			local player = PlayerPedId()
+	-- while true do
+		-- Citizen.Wait(5)
+		-- if (IsControlJustPressed(0,Config.HoverHolsterKey)) then
+			-- local player = PlayerPedId()
 
-			if ( DoesEntityExist( player ) and not IsEntityDead( player ) ) then
+			-- if ( DoesEntityExist( player ) and not IsEntityDead( player ) ) then
 
-				if IsEntityPlayingAnim(player, "move_m@intimidation@cop@unarmed", "idle", 3) then
-					ClearPedSecondaryTask(player)
-				else
-					loadAnimDict( "move_m@intimidation@cop@unarmed" )
-					TaskPlayAnim(player, "move_m@intimidation@cop@unarmed", "idle", 2.0, 2.5, -1, 49, 0, 0, 0, 0 )
-					RemoveAnimDict("move_m@intimidation@cop@unarmed")
-				end
-			end
-		end
-	end
-end)
+				-- if IsEntityPlayingAnim(player, "move_m@intimidation@cop@unarmed", "idle", 3) then
+					-- ClearPedSecondaryTask(player)
+				-- else
+					-- loadAnimDict( "move_m@intimidation@cop@unarmed" )
+					-- TaskPlayAnim(player, "move_m@intimidation@cop@unarmed", "idle", 2.0, 2.5, -1, 49, 0, 0, 0, 0 )
+					-- RemoveAnimDict("move_m@intimidation@cop@unarmed")
+				-- end
+			-- end
+		-- end
+	-- end
+-- end)
 
 RegisterNetEvent('Radiant_Animations:KillProps')
 AddEventHandler('Radiant_Animations:KillProps', function()
