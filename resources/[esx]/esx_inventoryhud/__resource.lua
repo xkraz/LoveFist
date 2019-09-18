@@ -50,6 +50,7 @@ files {
 	'html/img/items/journalistekey.png',
 	'html/img/items/courthousekey.png',
 	'html/img/items/marducaskey.png',
+	'html/img/items/hifi.png',
 	'html/img/items/warrantkey.png',
 	'html/img/items/fibkey.png',
 	'html/img/items/fruitgangkey.png',
