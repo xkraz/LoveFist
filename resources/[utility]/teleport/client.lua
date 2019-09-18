@@ -139,6 +139,19 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -596.80, ['y'] = -1620.13, ['z'] = 33.01, nom = "Enter Workshop"},
 		positionTo = { ['x'] = 179.03, ['y'] = -1000.13, ['z'] = -99.00, nom = "Leave Workshop"},
 		},
+		
+	["IllegalHospital"] = {
+		positionFrom = { ['x'] = 240.94, ['y'] = -1378.98, ['z'] = 33.74, nom = "Enter Private Hospital"},
+		positionTo = { ['x'] = 275.81, ['y'] = -1361.23, ['z'] = 24.54, nom = "Exit Private Hospital"},
+		},
+	["RACE-SPA"] = {
+		positionFrom = { ['x'] = 1737.00, ['y'] = 3309.73, ['z'] = 41.22, nom = "Fly to Spa Racetrack"},
+		positionTo = { ['x'] = 4383.43, ['y'] = 8693.50, ['z'] = 93.66, nom = "Return to Los Santos"},
+		},
+	["RACE-MONACO"] = {
+		positionFrom = { ['x'] = 1730.57, ['y'] = 3307.26, ['z'] = 41.22, nom = "Fly to Monaco Racetrack"},
+		positionTo = { ['x'] = -2832.74, ['y'] = -6963.87, ['z'] = 11.04, nom = "Return to Los Santos"},
+		},
 
 	
 }

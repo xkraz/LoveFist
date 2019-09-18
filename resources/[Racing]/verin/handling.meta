@@ -5,13 +5,13 @@
     <Item type="CHandlingData">
       <handlingName>VERIN</handlingName>
       <fMass value="225.000000" />
-      <fInitialDragCoeff value="8.750000" />
+      <fInitialDragCoeff value="9.750000" />
       <fPercentSubmerged value="95.000000" />
       <vecCentreOfMassOffset x="0.000000" y="0.000000" z="-0.280000" />
       <vecInertiaMultiplier x="1.000000" y="1.500000" z="1.500000" />
       <fDriveBiasFront value="0.000000" />
       <nInitialDriveGears value="5" />
-      <fInitialDriveForce value="0.340000" />
+      <fInitialDriveForce value="0.290000" />
       <fDriveInertia value="1.000000" />
       <fClutchChangeRateScaleUpShift value="1.300000" />
       <fClutchChangeRateScaleDownShift value="1.300000" />
