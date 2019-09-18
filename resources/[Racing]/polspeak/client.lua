@@ -27,16 +27,16 @@ local ped = GetPlayerPed(-1)
       --TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_vehicle", 0.6)
     end
     if item == shout2 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_vehicle-2", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_vehicle-2", 0.4)
     end
     if item == shout3 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_the_f_car", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_the_f_car", 0.4)
     end
     if item == shout4 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_or_executed", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_or_executed", 0.4)
     end
     if item == shout5 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_or_i_kill", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_or_i_kill", 0.4)
     end
     end	
 end
@@ -57,19 +57,19 @@ function Stop(menu)
 
     submenu4.OnItemSelect = function(sender, item, index)
     if item == shout1 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "dont_make_me", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "dont_make_me", 0.4)
     end	
     if item == shout2 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_dont_move", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stop_dont_move", 0.4)
     end
     if item == shout3 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "give_yourself_up", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "give_yourself_up", 0.4)
     end	
     if item == shout4 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stay_right_there", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "stay_right_there", 0.4)
     end	
     if item == shout5 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "freeze_lspd", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "freeze_lspd", 0.4)
     end			
     end	
 end
@@ -91,19 +91,19 @@ function Clear(menu)
 
     submenu2.OnItemSelect = function(sender, item, index)
     if item == shout1 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "clear_the_area", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "clear_the_area", 0.4)
     end		
     if item == shout2 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "this_is_the_lspd", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "this_is_the_lspd", 0.4)
     end	
     if item == shout3 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "move_along_people", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "move_along_people", 0.4)
     end	
     if item == shout4 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "get_out_of_here_now", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "get_out_of_here_now", 0.4)
     end	
     if item == shout5 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "disperse_now", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "disperse_now", 0.4)
     end	
     end	
 end
@@ -125,19 +125,19 @@ function Insults(menu)
 
     submenu3.OnItemSelect = function(sender, item, index)	
     if item == shout1 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "its_over_for_you", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "its_over_for_you", 0.4)
     end	
     if item == shout2 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "you_are_finished_dhead", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "you_are_finished_dhead", 0.4)
     end	
     if item == shout3 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "cant_hide_boi", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "cant_hide_boi", 0.4)
     end	
     if item == shout4 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "drop_a_missile", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "drop_a_missile", 0.4)
     end
     if item == shout5 then
-      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "shoot_to_kill", 0.6)
+      TriggerServerEvent("InteractSound_SV:PlayWithinDistance", 30.0, "shoot_to_kill", 0.4)
     end		
     end	
 end
