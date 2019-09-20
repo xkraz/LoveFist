@@ -273,5 +273,6 @@ files {
     'html/img/items/www.png',
     'html/img/items/gheart.png',
     'html/img/items/playersafeSmall.png',
-    'html/img/items/playersafeLarge.png'
+	'html/img/items/playersafeLarge.png',
+	'html/img/items/vitohouse.png',
 }

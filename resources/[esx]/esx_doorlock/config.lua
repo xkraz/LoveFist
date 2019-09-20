@@ -899,13 +899,13 @@ Config.DoorList = {
 	},
 
 --
--- CARTEL
+-- Vito House
 --
 	{  ---- FRONT DOOR
 		objName = 'prop_lrggate_01c_r',
 		objCoords  = {x = -2652.75, y = 1327.77, z = 147.61},
 		textCoords = {x = -2652.92, y = 1326.26, z = 147.45},
-		authorizedJobs = { 'org2', 'org2key','adminkey', },
+		authorizedJobs = { 'vitohouse', 'adminkey', },
 		locked = true,
 		distance = 4,
 
@@ -915,7 +915,7 @@ Config.DoorList = {
 		objName = 'apa_prop_ss1_mpint_garage2',
 		objCoords  = {x = -2652.44, y = 1307.366, z = 147.679},
 		textCoords = {x = -2652.44, y = 1307.366, z = 147.679},
-		authorizedJobs = { 'org2', 'org2key','adminkey', },
+		authorizedJobs = { 'vitohouse', 'adminkey', },
 		locked = true,
 		distance = 15,
 
@@ -925,7 +925,7 @@ Config.DoorList = {
 		objName = 'apa_p_mp_yacht_door_01',
 		objCoords  = {x = -2667.602, y = 1326.96, z = 147.5934},
 		textCoords = {x = -2667.888, y = 1326.00, z = 147.449},
-		authorizedJobs = { 'org2', 'org2key','adminkey', },
+		authorizedJobs = { 'vitohouse', 'adminkey', },
 		locked = true,
 		distance = 2.5,
 
@@ -935,7 +935,7 @@ Config.DoorList = {
 		objName = 'xm_Prop_IAA_BASE_Door_01',
 		objCoords  = {x = -2666.40, y = 1330.10, z = 147.5934},
 		textCoords = {x = -2667.506, y = 1330.391, z = 147.4449},
-		authorizedJobs = { 'org2', 'org2key','adminkey', },
+		authorizedJobs = { 'vitohouse', 'adminkey', },
 		locked = true,
 		distance = 2.5,
 
