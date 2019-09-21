@@ -279,7 +279,11 @@ AddEventHandler('esx_jk_drugs:pickedUpCannabis', function()
 		if Config.MultiPlant then
 			local picked = math.random(3)
 			if xItem.limit ~= -1 and (xItem.count + picked) > xItem.limit then
-				TriggerClientEvent('esx:showNotification', _source, _U('weed_inventoryfull'))
+				if xItem.limit ~= -1 and xItem.limit > xItem.count then
+					xPlayer.addInventoryItem(xItem.name, xItem.limit - xItem.count)
+				else
+					TriggerClientEvent('esx:showNotification', _source, _U('weed_inventoryfull'))
+				end
 			else
 				xPlayer.addInventoryItem(xItem.name, picked)
 			end
@@ -304,7 +308,11 @@ AddEventHandler('esx_jk_drugs:pickedUpCocaPlant', function()
 		if Config.MultiPlant then
 			local picked = math.random(3)
 			if xItem.limit ~= -1 and (xItem.count + picked) > xItem.limit then
-				TriggerClientEvent('esx:showNotification', _source, _U('cocaine_inventoryfull'))
+				if xItem.limit ~= -1 and xItem.limit > xItem.count then
+					xPlayer.addInventoryItem(xItem.name, xItem.limit - xItem.count)
+				else
+					TriggerClientEvent('esx:showNotification', _source, _U('weed_inventoryfull'))
+				end
 			else
 				xPlayer.addInventoryItem(xItem.name, picked)
 			end
@@ -329,7 +337,11 @@ AddEventHandler('esx_jk_drugs:pickedUpEphedra', function()
 		if Config.MultiPlant then
 			local picked = math.random(3)
 			if xItem.limit ~= -1 and (xItem.count + picked) > xItem.limit then
-				TriggerClientEvent('esx:showNotification', _source, _U('ephedra_inventoryfull'))
+				if xItem.limit ~= -1 and xItem.limit > xItem.count then
+					xPlayer.addInventoryItem(xItem.name, xItem.limit - xItem.count)
+				else
+					TriggerClientEvent('esx:showNotification', _source, _U('weed_inventoryfull'))
+				end
 			else
 				xPlayer.addInventoryItem(xItem.name, picked)
 			end
@@ -354,7 +366,11 @@ AddEventHandler('esx_jk_drugs:pickedUpPoppy', function()
 		if Config.MultiPlant then
 			local picked = math.random(3)
 			if xItem.limit ~= -1 and (xItem.count + picked) > xItem.limit then
-				TriggerClientEvent('esx:showNotification', _source, _U('opium_inventoryfull'))
+				if xItem.limit ~= -1 and xItem.limit > xItem.count then
+					xPlayer.addInventoryItem(xItem.name, xItem.limit - xItem.count)
+				else
+					TriggerClientEvent('esx:showNotification', _source, _U('weed_inventoryfull'))
+				end
 			else
 				xPlayer.addInventoryItem(xItem.name, picked)
 			end

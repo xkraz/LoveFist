@@ -7,7 +7,7 @@ Config.ZoneSize     = {x = 1.0, y = 1.0, z = -1.0}
 Config.MarkerColor  = {r = 100, g = 204, b = 100}
 Config.ShowBlips	= false -- Ehh, hopefully self explanatory... but if not it shows the pictures on the map for you
 Config.ShowMarkers 	= true -- Ehh, hopefully self explanatory... but if not it shows the circles on the ground for you
-Config.MultPlant	= true -- Will give up to three of each product when a plant is picked
+Config.MultiPlant	= true -- Will give up to three of each product when a plant is picked
 
 --Cop Stuff--
 Config.GiveBlack = true -- Disable to give regular cash when selling drugs

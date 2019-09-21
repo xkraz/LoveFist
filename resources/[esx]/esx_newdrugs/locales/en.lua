@@ -9,7 +9,7 @@ Locales ['en'] = {
   ['restriced_zone'] = 'Someone has entered a Restricted Area, please respond immediately!',
   ['police_alert'] = 'Some shady prick is selling drugs',
   ['act_imp_police'] = 'The buyer likes to give the Police a chance to catch you, wait til one is on duty',
-  
+
   -- weed
   ['weed_pickupprompt'] = 'press ~INPUT_CONTEXT~ to harvest the ~g~Cannabis~s~ plant.',
   ['weed_field_close'] = 'You smell a really strong skunky scent',
@@ -19,7 +19,7 @@ Locales ['en'] = {
   ['weed_processingstarted'] = 'curing ~g~Cannabis~s~ for ~g~Marijuana~s~...',
   ['weed_processingfull'] = 'curing ~r~canceled~s~ due to full inventory!',
   ['weed_processingenough'] = 'you can\'t cure ~b~1x~s~ ~g~Cannabis~s~ without any.',
-  ['weed_processed'] = 'you\'ve cured ~b~1x~s~ ~g~Cannabis~s~ and got ~b~5x~s~ ~g~Marijuana~s~',
+  ['weed_processed'] = 'you\'ve cured ~b~3x~s~ ~g~Cannabis~s~ and got ~b~1x~s~ ~g~Marijuana~s~',
   ['weed_processingtoofar'] = 'you walked away while curing so it was ~r~canceled~s~.',
   ['weed_sell'] = 'Press ~INPUT_CONTEXT~ to sell your weed to Smoke on the Water',
   ['weed_use'] = 'You smoked a doobie',
@@ -129,7 +129,7 @@ Locales ['en'] = {
   ['blip_cokefield'] = 'Cotton Field',
   ['blip_poppyfield'] = 'Wong Property',
   ['blip_ephedrinefield'] = 'Restricted Area',
-  
+
   -- misc
   ['not_needed'] = 'You shouldn\'t take drugs you don\'t need!',
   ['fake_clean'] = 'You\'ll appear clean for a minute!',
