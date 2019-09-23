@@ -190,7 +190,7 @@ function OpenCuffMenu()
                 local ped = PlayerPedId()
 
                 if IsPedArmed(ped, 7) then
-                    if IsAbleToSearch  or IsPlayerDead(ESX.Game.GetClosestPlayer()) then
+                    if IsAbleToSearch  and not IsPlayerDead(ESX.Game.GetClosestPlayer()) then
                         local target, distance = ESX.Game.GetClosestPlayer()
                         if target ~= -1 and distance ~= -1 and distance <= 2.0 then
                             local target_id = GetPlayerServerId(target)
