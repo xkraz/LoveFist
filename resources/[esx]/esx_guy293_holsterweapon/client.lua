@@ -41,7 +41,7 @@ RegisterNetEvent('esx:setJob')
 
 		if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
 			if not IsPedInAnyVehicle(ped, false) then
-				if GetVehiclePedIsTryingToEnter (ped) == 0 and (GetPedParachuteState(ped) == -1 or GetPedParachuteState(ped) == 0) and not IsPedInParachuteFreeFall(ped) then
+				if GetVehiclePedIsTryingToEnter (ped) == 0 and (GetPedParachuteState(ped) == -1 or GetPedParachuteState(ped) == 0) and not IsPedInParachuteFreeFall(ped) and not IsPedInAnyVehicle(ped) then
 					if CheckWeapon(ped) then
 						--if IsPedArmed(ped, 4) then
 						if holstered then
