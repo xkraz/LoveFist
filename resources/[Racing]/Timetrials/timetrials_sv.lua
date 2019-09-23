@@ -80,5 +80,5 @@ AddEventHandler('racePlayerFinished', function(source, message, title, newScore)
     saveScores(allScores)
     
     -- Trigger message to all players
-    TriggerClientEvent('chatMessage', -1, "[RACE]", msgColor, message .. msgAppend)
+    TriggerClientEvent('chatMessage', source, "[RACE]", msgColor, message .. msgAppend)
 end)
