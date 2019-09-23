@@ -6,7 +6,7 @@ Config.Locale = 'en'
 Config.Timer = 1
 
 -- Set if show alert when player use gun
-Config.GunshotAlert = false
+Config.GunshotAlert = true
 
 -- Set if show when player do carjacking
 Config.CarJackingAlert = false
