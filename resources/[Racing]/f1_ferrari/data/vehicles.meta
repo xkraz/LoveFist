@@ -5,9 +5,9 @@
   <InitDatas>
     <Item><modelName>seb5</modelName>
       <txdName>seb5</txdName>
-      <handlingId>seb5</handlingId>
-      <gameName>seb5</gameName>
-      <vehicleMakeName>seb5</vehicleMakeName>
+      <handlingId>sf70h</handlingId>
+      <gameName>SF70H05</gameName>
+      <vehicleMakeName>FERRARI</vehicleMakeName>
       <expressionDictName>null</expressionDictName>
       <expressionName>null</expressionName>
       <animConvRoofDictName>null</animConvRoofDictName>

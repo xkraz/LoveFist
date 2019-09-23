@@ -11,5 +11,4 @@ files {
   'data/carcols.meta',
   'data/carvariations.meta',
 }
-
 client_script 'vehicle_name.lua'
