@@ -4,6 +4,7 @@ local drifting = false
 RegisterNetEvent('drifting')
 
 Citizen.CreateThread(function()
+if IsPedInAnyVehicle then
 	while true do
     if (IsControlJustReleased(1, 70)) and (IsControlJustReleased(1, 57)) then
       if not drifting then
