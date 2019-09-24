@@ -174,7 +174,7 @@ local UI = {
 	x =  0.000 ,
 	y = -0.001 ,
 }
-
+[[
 RegisterCommand("bbox", function()
     TriggerEvent("boombox:ToggleBoombox")
 end, false)
@@ -213,3 +213,4 @@ AddEventHandler("boombox:ToggleBoombox", function()
         usingBoombox = false
     end
 end)
+]]
