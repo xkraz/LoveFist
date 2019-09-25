@@ -782,7 +782,10 @@ end
 
 RegisterNetEvent('esx_marducasjob:repaircar')
 AddEventHandler('esx_marducasjob:repaircar', function(car, specs)
-
+	while not NetworkHasControlOfEntity(car) do
+		NetworkRequestControlOfEntity(car)
+		Citizen.Wait(0)
+	end
 	if specs.eng ~= -1 then
 		SetVehicleEngineHealth(car, specs.eng)
 		SetVehicleUndriveable(car, false)
@@ -812,7 +815,10 @@ end)
 
 RegisterNetEvent('esx_marducasjob:mechrepair')
 AddEventHandler('esx_marducasjob:mechrepair', function(car)
-
+		while not NetworkHasControlOfEntity(car) do
+			NetworkRequestControlOfEntity(car)
+			Citizen.Wait(0)
+		end
 		SetVehicleFixed(car)
 		SetVehicleDeformationFixed(car)
 		SetVehicleUndriveable(car, false)
@@ -890,20 +896,22 @@ function repair(kit)
 
 		if DoesEntityExist(vehicle) then
 			if checkDistance(vehicle) then
-
-				ESX.ShowNotification(_U('you_used_repair_kit'))
-
-				local hood = hoodLocation(vehicle)
-				makeEntityFaceEntity(hood)
-
-				local bonnet = GetEntityBoneIndexByName(vehicle, 'bonnet')
-				if bonnet ~= -1 then
-						SetVehicleDoorOpen(vehicle, 4, false, false)
-				end
-
-
-				TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
 				Citizen.CreateThread(function()
+					while not NetworkHasControlOfEntity(vehicle) do
+						NetworkRequestControlOfEntity(vehicle)
+						Citizen.Wait(0)
+					end
+					ESX.ShowNotification(_U('you_used_repair_kit'))
+
+					local hood = hoodLocation(vehicle)
+					makeEntityFaceEntity(hood)
+
+					local bonnet = GetEntityBoneIndexByName(vehicle, 'bonnet')
+					if bonnet ~= -1 then
+							SetVehicleDoorOpen(vehicle, 4, false, false)
+					end
+
+					TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
 
 					if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) then
 
@@ -969,7 +977,7 @@ function repair(kit)
 						end
 						SetVehicleDoorShut(vehicle, 4, false)
 					end
-				end)
+			end)
 			else
 				Citizen.CreateThread(function()
 					local txt = repairLocation(vehicle)
