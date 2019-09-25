@@ -896,7 +896,7 @@ function repair(kit)
 				local hood = hoodLocation(vehicle)
 				makeEntityFaceEntity(hood)
 
-				local bonnet = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'bonnet')
+				local bonnet = GetEntityBoneIndexByName(vehicle, 'bonnet')
 				if bonnet ~= -1 then
 						SetVehicleDoorOpen(vehicle, 4, false, false)
 				end
