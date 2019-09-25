@@ -281,6 +281,14 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = 73.94, y = 16.35, z = 68.57 },
 		},
+		FishingGarage = {
+			Zone = "Garage",
+			Sprite = 50,
+			Scale = 0.8,
+			Display = 4,
+			Color = 68,
+			Pos = { x = 3788.65, y = 4446.97, z = 4.67 },
+		},
 	},
 
 	Markers = {
@@ -695,6 +703,14 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -3017.99, y = 739.36, z = 26.59 },
+		},
+		Fishing2Garage = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 97.58,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = 3788.65, y = 4446.97, z = 3.67 },
 		},
 	},
 }
