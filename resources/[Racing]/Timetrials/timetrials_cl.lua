@@ -32,11 +32,11 @@ end)
 function preRace()
     -- Initialize race state
     raceState.cP = 1
-    raceState.index = 0 
+    raceState.index = 0
     raceState.startTime = 0
     raceState.blip = nil
     raceState.checkpoint = nil
-    
+
     -- While player is not racing
     while raceState.index == 0 do
         -- Update every frame
@@ -49,7 +49,7 @@ function preRace()
         if IsWaypointActive() and IsControlJustReleased(0, 182) then
             -- Teleport player to waypoint
             local waypoint = GetFirstBlipInfoId(8)
-            if DoesBlipExist(waypoint) then 
+            if DoesBlipExist(waypoint) then
                 -- Teleport to location, wait 100ms to load then get ground coordinate
                 local coords = GetBlipInfoIdCoord(waypoint)
                 teleportToCoord(coords.x, coords.y, coords.z, 0)
@@ -64,7 +64,7 @@ function preRace()
             if race.isEnabled then
                 -- Draw map marker
                 DrawMarker(1, race.start.x, race.start.y, race.start.z - 1, 0, 0, 0, 0, 0, 0, 3.0001, 3.0001, 1.5001, 255, 165, 0,165, 0, 0, 0,0)
-                
+
                 -- Check distance from map marker and draw text if close enough
                 if GetDistanceBetweenCoords( race.start.x, race.start.y, race.start.z, GetEntityCoords(player)) < DRAW_TEXT_DISTANCE then
                     -- Draw race name
@@ -118,7 +118,7 @@ function preRace()
                         end
                     end
                 end
-                
+
                 -- When close enough, prompt player
                 if GetDistanceBetweenCoords( race.start.x, race.start.y, race.start.z, GetEntityCoords(player)) < START_PROMPT_DISTANCE then
                     helpMessage("Press ~INPUT_CONTEXT~ to Race!")
@@ -147,32 +147,32 @@ RegisterNetEvent("raceCountdown")
 AddEventHandler("raceCountdown", function()
     -- Get race from index
     local race = races[raceState.index]
-    
+
     -- Teleport player to start and set heading
     teleportToCoord(race.start.x, race.start.y, race.start.z + 4.0, race.start.heading)
-    
+
     Citizen.CreateThread(function()
         -- Countdown timer
         local time = 0
         function setcountdown(x) time = GetGameTimer() + x*1000 end
         function getcountdown() return math.floor((time-GetGameTimer())/1000) end
-        
+
         -- Count down to race start
         setcountdown(6)
         while getcountdown() > 0 do
             -- Update HUD
             Citizen.Wait(1)
             DrawHudText(getcountdown(), {255,191,0,255},0.5,0.4,4.0,4.0)
-            
+
             -- Disable acceleration/reverse until race starts
             DisableControlAction(2, 71, true)
             DisableControlAction(2, 72, true)
         end
-        
+
         -- Enable acceleration/reverse once race starts
         EnableControlAction(2, 71, true)
         EnableControlAction(2, 72, true)
-        
+
         -- Start race
         TriggerEvent("raceRaceActive")
     end)
@@ -183,33 +183,33 @@ RegisterNetEvent("raceRaceActive")
 AddEventHandler("raceRaceActive", function()
     -- Get race from index
     local race = races[raceState.index]
-    
+
     -- Start a new timer
     raceState.startTime = GetGameTimer()
     Citizen.CreateThread(function()
         -- Create first checkpoint
         checkpoint = CreateCheckpoint(race.checkpoints[raceState.cP].type, race.checkpoints[raceState.cP].x,  race.checkpoints[raceState.cP].y,  race.checkpoints[raceState.cP].z + CHECKPOINT_Z_OFFSET, race.checkpoints[raceState.cP].x,race.checkpoints[raceState.cP].y, race.checkpoints[raceState.cP].z, race.checkpointRadius, 204, 204, 1, math.ceil(255*race.checkpointTransparency), 0)
         raceState.blip = AddBlipForCoord(race.checkpoints[raceState.cP].x, race.checkpoints[raceState.cP].y, race.checkpoints[raceState.cP].z)
-        
+
         -- Set waypoints if enabled
         if race.showWaypoints == true then
             SetNewWaypoint(race.checkpoints[raceState.cP+1].x, race.checkpoints[raceState.cP+1].y)
         end
-        
+
         -- While player is racing, do stuff
-        while raceState.index ~= 0 do 
+        while raceState.index ~= 0 do
             Citizen.Wait(1)
-            
+
             -- Stop race when L is pressed, clear and reset everything
             if IsControlJustReleased(0, 182) and GetLastInputMethod(0) then
                 -- Delete checkpoint and raceState.blip
                 DeleteCheckpoint(checkpoint)
                 RemoveBlip(raceState.blip)
-                
-                -- Set new waypoint and teleport to the same spot 
+
+                -- Set new waypoint and teleport to the same spot
                 SetNewWaypoint(race.start.x, race.start.y)
                 teleportToCoord(race.start.x, race.start.y, race.start.z + 4.0, race.start.heading)
-                
+
                 -- Clear racing index and break
                 raceState.index = 0
                 break
@@ -219,22 +219,22 @@ AddEventHandler("raceRaceActive", function()
             local checkpointDist = math.floor(GetDistanceBetweenCoords(race.checkpoints[raceState.cP].x,  race.checkpoints[raceState.cP].y,  race.checkpoints[raceState.cP].z, GetEntityCoords(GetPlayerPed(-1))))
             DrawHudText(("%.3fs"):format((GetGameTimer() - raceState.startTime)/1000), RACING_HUD_COLOR, 0.015, 0.725, 0.7, 0.7)
             DrawHudText(string.format("Checkpoint %i / %i (%d m)", raceState.cP, #race.checkpoints, checkpointDist), RACING_HUD_COLOR, 0.015, 0.765, 0.5, 0.5)
-            
+
             -- Check distance from checkpoint
             if GetDistanceBetweenCoords(race.checkpoints[raceState.cP].x,  race.checkpoints[raceState.cP].y,  race.checkpoints[raceState.cP].z, GetEntityCoords(GetPlayerPed(-1))) < race.checkpointRadius then
-                -- Delete checkpoint and map raceState.blip, 
+                -- Delete checkpoint and map raceState.blip,
                 DeleteCheckpoint(checkpoint)
                 RemoveBlip(raceState.blip)
-                
+
                 -- Play checkpoint sound
                 PlaySoundFrontend(-1, "RACE_PLACED", "HUD_AWARDS")
-                
+
                 -- Check if at finish line
                 if raceState.cP == #(race.checkpoints) then
                     -- Save time and play sound for finish line
                     local finishTime = (GetGameTimer() - raceState.startTime)
                     PlaySoundFrontend(-1, "ScreenFlash", "WastedSounds")
-                    
+
                     -- Get vehicle name and create score
                     local aheadVehHash = GetEntityModel(GetVehiclePedIsUsing(GetPlayerPed(-1)))
                     local aheadVehNameText = GetLabelText(GetDisplayNameFromVehicleModel(aheadVehHash))
@@ -242,11 +242,12 @@ AddEventHandler("raceRaceActive", function()
                     score.player = GetPlayerName(PlayerId())
                     score.time = finishTime
                     score.car = aheadVehNameText
-                    
+
                     -- Send server event with score and message, move this to server eventually
                     message = string.format("Player " .. GetPlayerName(PlayerId()) .. " finished " .. race.title .. " using " .. aheadVehNameText .. " in " .. (finishTime / 1000) .. " s")
-                    TriggerServerEvent('racePlayerFinished', GetPlayerName(PlayerId()), message, race.title, score)
-                    
+
+                    TriggerServerEvent('racePlayerFinished', message, race.title, score)
+
                     -- Clear racing index and break
                     raceState.index = 0
                     break
@@ -267,7 +268,7 @@ AddEventHandler("raceRaceActive", function()
                 end
             end
         end
-                
+
         -- Reset race
         preRace()
     end)
