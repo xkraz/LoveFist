@@ -851,8 +851,6 @@ end
 function makeEntityFaceEntity(entity2 )
     local p1 = GetEntityCoords(GetPlayerPed(PlayerId()), true)
     local p2 = entity2
-		print(p1)
-		print(p2)
     local dx = p2.x - p1.x
     local dy = p2.y - p1.y
 
@@ -896,6 +894,21 @@ function repair(kit)
 
 		if DoesEntityExist(vehicle) then
 			if checkDistance(vehicle) then
+				local _repairing = true
+				Citizen.CreateThread(function()
+					ESX.Streaming.RequestAnimDict("mini@repair", function()
+						Wait(1000)
+						while _repairing do
+							if not IsEntityPlayingAnim(playerPed, "mini@repair", "fixing_a_ped", 3) then
+								TaskPlayAnim(playerPed, "mini@repair", "fixing_a_ped", 8.0, -8.0, -1, 0, 0, false, false, false)
+							end
+							Wait(100)
+						end
+					end)
+
+					ClearPedTasksImmediately(playerPed)
+				end)
+
 				Citizen.CreateThread(function()
 					while not NetworkHasControlOfEntity(vehicle) do
 						NetworkRequestControlOfEntity(vehicle)
@@ -911,24 +924,29 @@ function repair(kit)
 							SetVehicleDoorOpen(vehicle, 4, false, false)
 					end
 
-					TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
-
 					if (ESX.PlayerData.job ~= nil and (ESX.PlayerData.job.name == 'mechanic' or ESX.PlayerData.job.name == 'marducas')) then
 
 						exports['progressBars']:startUI(Config.MechTime, "Repairing Engine")
 						Citizen.Wait(Config.MechTime)
 						ClearPedTasksImmediately(playerPed)
+						exports['progressBars']:startUI(1500, "Closing hood")
+						SetVehicleDoorShut(vehicle, 4, false)
+						Citizen.Wait(1500)
 						ESX.ShowNotification(_U('full_repaired'))
 						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
+						_repairing = false
 						return
 
 					elseif ESX.PlayerData.job.name == 'police' then
 
 						exports['progressBars']:startUI(Config.NonMechTime, "Repairing Engine")
 						Citizen.Wait(Config.NonMechTime)
-						ClearPedTasksImmediately(playerPed)
+						ClearPedTasksImmediately(playerPed)exports['progressBars']:startUI(1500, "Closing hood")
+						SetVehicleDoorShut(vehicle, 4, false)
+						Citizen.Wait(1500)
 						ESX.ShowNotification(_U('full_repaired'))
 						TriggerServerEvent('esx_marducasjob:mechrepair',vehicle)
+						_repairing = false
 						return
 
 					else
@@ -937,6 +955,10 @@ function repair(kit)
 						Citizen.Wait(Config.NonMechTime)
 
 						SetVehicleUndriveable(vehicle,false)
+
+						exports['progressBars']:startUI(1500, "Closing hood")
+						SetVehicleDoorShut(vehicle, 4, false)
+						Citizen.Wait(1500)
 
 						local vHealth = GetVehicleEngineHealth(vehicle)
 
@@ -975,7 +997,7 @@ function repair(kit)
 						else
 							TriggerServerEvent('esx_repairkit:removeKit')
 						end
-						SetVehicleDoorShut(vehicle, 4, false)
+						_repairing = false
 					end
 			end)
 			else
