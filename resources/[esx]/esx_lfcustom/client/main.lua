@@ -388,7 +388,7 @@ Citizen.CreateThread(function()
 			local currentZone = nil
 			local zone 		  = nil
 			local lastZone    = nil
-			if (PlayerData.job ~= nil and (PlayerData.job.name == 'mechanic2' or PlayerData.job.name == 'marducas')) or Config.IsMechanicJobOnly == false then
+			if (PlayerData.job ~= nil and (PlayerData.job.name == 'mechanic2')) or Config.IsMechanicJobOnly == false then
 				for k,v in pairs(Config.Zones) do
 					if GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < v.Size.x then
 						isInLSMarker  = true
@@ -401,7 +401,7 @@ Citizen.CreateThread(function()
 			end
 
 			if IsControlJustReleased(0, Keys['E']) and not lsMenuIsShowed and isInLSMarker then
-				if (PlayerData.job ~= nil and (PlayerData.job.name == 'mechanic2' or PlayerData.job.name == 'marducas')) or Config.IsMechanicJobOnly == false then
+				if (PlayerData.job ~= nil and (PlayerData.job.name == 'mechanic2')) or Config.IsMechanicJobOnly == false then
 					lsMenuIsShowed = true
 
 					local vehicle = GetVehiclePedIsIn(playerPed, false)
@@ -427,20 +427,20 @@ Citizen.CreateThread(function()
 end)
 
 -- Prevent Free Tunning Bug
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
-		if lsMenuIsShowed then
-			DisableControlAction(2, Keys['F1'], true)
-			DisableControlAction(2, Keys['F2'], true)
-			DisableControlAction(2, Keys['F3'], true)
-			DisableControlAction(2, Keys['F6'], true)
-			DisableControlAction(2, Keys['F7'], true)
-			DisableControlAction(2, Keys['F'], true)
-			DisableControlAction(0, 75, true)  -- Disable exit vehicle
-			DisableControlAction(27, 75, true) -- Disable exit vehicle
-		else
-			Citizen.Wait(500)
-		end
-	end
-end)
+-- Citizen.CreateThread(function()
+	-- while true do
+		-- Citizen.Wait(1)
+		-- if lsMenuIsShowed then
+			-- DisableControlAction(2, Keys['F1'], true)
+			-- DisableControlAction(2, Keys['F2'], true)
+			-- DisableControlAction(2, Keys['F3'], true)
+			-- DisableControlAction(2, Keys['F6'], true)
+			-- DisableControlAction(2, Keys['F7'], true)
+			-- DisableControlAction(2, Keys['F'], true)
+			-- DisableControlAction(0, 75, true)  -- Disable exit vehicle
+			-- DisableControlAction(27, 75, true) -- Disable exit vehicle
+		-- else
+			-- Citizen.Wait(500)
+		-- end
+	-- end
+-- end)
