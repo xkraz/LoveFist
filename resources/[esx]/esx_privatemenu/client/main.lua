@@ -74,40 +74,55 @@ function getLicenses()
 	end
 end
 
+local drifting = false
+AddEventHandler('drifting', function(isDrifting)
+  drifting = isDrifting
+end)
+
+local _focus = false
 Citizen.CreateThread(function()
 
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
 		Citizen.Wait(0)
 	end
-	
+
 	while true do
 		Wait(0)
-
-		if IsControlJustPressed(1, 10) and GetLastInputMethod(2) then
-			SetNuiFocus(true, true)
-			SendNUIMessage({type = 'openGeneral'})
-			local ped = GetPlayerPed(-1)
-			if IsPedInAnyVehicle(ped, true) then 
-				SendNUIMessage({type = 'showVehicleButton'})
-			else 
-				SendNUIMessage({type = 'hideVehicleButton'})
-			end		
-		end
-		
-		if Config.debug then
-			if IsControlJustPressed(1, 42) and GetLastInputMethod(2) then
-				local myId = PlayerId()
-				local coords = GetEntityCoords(GetPlayerPed(myId))
-				ESX.ShowNotification('X: ' .. tostring(coords.x) .. ' Y: ' .. tostring(coords.y) .. ' Z: ' .. tostring(coords.z))
-				local heading = GetEntityHeading(GetPlayerPed(-1))
-				ESX.ShowNotification('Heading: ' .. tostring(heading))
+		if not drifting then
+			if IsControlJustPressed(1, 10) and GetLastInputMethod(2) then
+				SetNuiFocus(true, true)
+				SendNUIMessage({type = 'openGeneral'})
+				local ped = GetPlayerPed(-1)
+				if IsPedInAnyVehicle(ped, true) then
+					SendNUIMessage({type = 'showVehicleButton'})
+				else
+					SendNUIMessage({type = 'hideVehicleButton'})
+				end
+				_focus = true
 			end
-		end
-		
-		if IsControlJustPressed(1, 322) and GetLastInputMethod(2) then
-			SetNuiFocus(false, false)
-			SendNUIMessage({type = 'close'})
+
+			if Config.debug then
+				if IsControlJustPressed(1, 42) and GetLastInputMethod(2) then
+					local myId = PlayerId()
+					local coords = GetEntityCoords(GetPlayerPed(myId))
+					ESX.ShowNotification('X: ' .. tostring(coords.x) .. ' Y: ' .. tostring(coords.y) .. ' Z: ' .. tostring(coords.z))
+					local heading = GetEntityHeading(GetPlayerPed(-1))
+					ESX.ShowNotification('Heading: ' .. tostring(heading))
+				end
+			end
+
+			if IsControlJustPressed(1, 322) and GetLastInputMethod(2) then
+				SetNuiFocus(false, false)
+				SendNUIMessage({type = 'close'})
+				_focus = false
+			end
+		else
+			if _focus then
+				SetNuiFocus(false, false)
+				SendNUIMessage({type = 'close'})
+				_focus = false
+			end
 		end
 	end
 end)
@@ -287,7 +302,7 @@ RegisterNUICallback('NUIJobActions', function(data)
 		SendNUIMessage({type = 'hideTaxiButton'})
 		SendNUIMessage({type = 'hideFireButton'})
 	elseif job == 'fire' then
-		SendNUIMessage({type = 'showFireButton'})  
+		SendNUIMessage({type = 'showFireButton'})
 		SendNUIMessage({type = 'hideMechanicButton'})
 		SendNUIMessage({type = 'hidePoliceButton'})
 		SendNUIMessage({type = 'hidePortButton'})
@@ -373,20 +388,20 @@ end)
 RegisterNUICallback('toggleAllOpenables', function()
 	local vehicle = GetVehiclePedIsIn(PlayerPedId(), false)
 	if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
-		if GetVehicleDoorAngleRatio(vehicle, 0) > 0.0 then 
+		if GetVehicleDoorAngleRatio(vehicle, 0) > 0.0 then
 			SetVehicleDoorShut(vehicle, 0, false)
 			SetVehicleDoorShut(vehicle, 1, false)
-			SetVehicleDoorShut(vehicle, 2, false)	
-			SetVehicleDoorShut(vehicle, 3, false)	
-			SetVehicleDoorShut(vehicle, 4, false)	
-			SetVehicleDoorShut(vehicle, 5, false)				
+			SetVehicleDoorShut(vehicle, 2, false)
+			SetVehicleDoorShut(vehicle, 3, false)
+			SetVehicleDoorShut(vehicle, 4, false)
+			SetVehicleDoorShut(vehicle, 5, false)
 		else
-			SetVehicleDoorOpen(vehicle, 0, false) 
-			SetVehicleDoorOpen(vehicle, 1, false)   
-			SetVehicleDoorOpen(vehicle, 2, false)   
-			SetVehicleDoorOpen(vehicle, 3, false)   
-			SetVehicleDoorOpen(vehicle, 4, false)   
-			SetVehicleDoorOpen(vehicle, 5, false)               
+			SetVehicleDoorOpen(vehicle, 0, false)
+			SetVehicleDoorOpen(vehicle, 1, false)
+			SetVehicleDoorOpen(vehicle, 2, false)
+			SetVehicleDoorOpen(vehicle, 3, false)
+			SetVehicleDoorOpen(vehicle, 4, false)
+			SetVehicleDoorOpen(vehicle, 5, false)
 		end
 	else
 		ESX.ShowNotification('You must be the driver of a vehicle to use this.')
@@ -398,10 +413,10 @@ RegisterNUICallback('toggleFrontLeftDoor', function()
 	if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
 		local frontLeftDoor = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'door_dside_f')
 		if frontLeftDoor ~= -1 then
-			if GetVehicleDoorAngleRatio(vehicle, 0) > 0.0 then 
-				SetVehicleDoorShut(vehicle, 0, false)            
+			if GetVehicleDoorAngleRatio(vehicle, 0) > 0.0 then
+				SetVehicleDoorShut(vehicle, 0, false)
 			else
-				SetVehicleDoorOpen(vehicle, 0, false)             
+				SetVehicleDoorOpen(vehicle, 0, false)
 			end
 		else
 			ESX.ShowNotification('This vehicle does not have a front driver-side door.')
@@ -416,10 +431,10 @@ RegisterNUICallback('toggleFrontRightDoor', function()
 	if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
 		local frontRightDoor = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'door_pside_f')
 		if frontRightDoor ~= -1 then
-			if GetVehicleDoorAngleRatio(vehicle, 1) > 0.0 then 
-				SetVehicleDoorShut(vehicle, 1, false)            
+			if GetVehicleDoorAngleRatio(vehicle, 1) > 0.0 then
+				SetVehicleDoorShut(vehicle, 1, false)
 			else
-				SetVehicleDoorOpen(vehicle, 1, false)             
+				SetVehicleDoorOpen(vehicle, 1, false)
 			end
 		else
 			ESX.ShowNotification('This vehicle does not have a front passenger-side door.')
@@ -434,10 +449,10 @@ RegisterNUICallback('toggleRearLeftDoor', function()
 	if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
 		local rearLeftDoor = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'door_dside_r')
 		if rearLeftDoor ~= -1 then
-			if GetVehicleDoorAngleRatio(vehicle, 2) > 0.0 then 
-				SetVehicleDoorShut(vehicle, 2, false)            
+			if GetVehicleDoorAngleRatio(vehicle, 2) > 0.0 then
+				SetVehicleDoorShut(vehicle, 2, false)
 			else
-				SetVehicleDoorOpen(vehicle, 2, false)             
+				SetVehicleDoorOpen(vehicle, 2, false)
 			end
 		else
 			ESX.ShowNotification('This vehicle does not have a rear driver-side door.')
@@ -452,10 +467,10 @@ RegisterNUICallback('toggleRearRightDoor', function()
 	if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
 		local rearRightDoor = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'door_pside_r')
 		if rearRightDoor ~= -1 then
-			if GetVehicleDoorAngleRatio(vehicle, 3) > 0.0 then 
-				SetVehicleDoorShut(vehicle, 3, false)            
+			if GetVehicleDoorAngleRatio(vehicle, 3) > 0.0 then
+				SetVehicleDoorShut(vehicle, 3, false)
 			else
-				SetVehicleDoorOpen(vehicle, 3, false)             
+				SetVehicleDoorOpen(vehicle, 3, false)
 			end
 		else
 			ESX.ShowNotification('This vehicle does not have a rear passenger-side door.')
@@ -470,10 +485,10 @@ RegisterNUICallback('toggleHood', function()
 	if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
 		local bonnet = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'bonnet')
 		if bonnet ~= -1 then
-			if GetVehicleDoorAngleRatio(vehicle, 4) > 0.0 then 
-				SetVehicleDoorShut(vehicle, 4, false)            
+			if GetVehicleDoorAngleRatio(vehicle, 4) > 0.0 then
+				SetVehicleDoorShut(vehicle, 4, false)
 			else
-				SetVehicleDoorOpen(vehicle, 4, false)             
+				SetVehicleDoorOpen(vehicle, 4, false)
 			end
 		else
 			ESX.ShowNotification('This vehicle does not have a hood.')
@@ -488,10 +503,10 @@ RegisterNUICallback('toggleTrunk', function()
 	if vehicle ~= nil and vehicle ~= 0 and GetPedInVehicleSeat(vehicle, 0) then
 		local boot = GetEntityBoneIndexByName(GetVehiclePedIsIn(GetPlayerPed(-1), false), 'boot')
 		if boot ~= -1 then
-			if GetVehicleDoorAngleRatio(vehicle, 5) > 0.0 then 
-				SetVehicleDoorShut(vehicle, 5, false)            
+			if GetVehicleDoorAngleRatio(vehicle, 5) > 0.0 then
+				SetVehicleDoorShut(vehicle, 5, false)
 			else
-				SetVehicleDoorOpen(vehicle, 5, false)             
+				SetVehicleDoorOpen(vehicle, 5, false)
 			end
 		else
 			ESX.ShowNotification('This vehicle does not have a trunk.')
@@ -869,7 +884,7 @@ RegisterNUICallback('NUItoggleID', function(data)
 		characterJob		= 'Current Job: ' .. charJob,
 		licensesButton		= '---LICENSES BELOW---',
 		characterLicenses	= licenseString .. '|'
-	}) 
+	})
 end)
 
 RegisterNUICallback('NUIshowID', function(data)
@@ -970,13 +985,13 @@ RegisterNUICallback('NUIdeleteCharacter', function(data)
 	Wait(1000)
 	SetNuiFocus(true, true)
 	local charName = myIdentity.characterName
-  
+
 	SendNUIMessage({
 		type = "deleteCharacter",
 		characterName = charName,
 		backBtn  = "Back",
 		exitBtn  = "Exit"
-	}) 
+	})
 end)
 
 RegisterNetEvent('InteractSound_CL:PlayWithinDistance')
