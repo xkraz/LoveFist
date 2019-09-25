@@ -418,7 +418,7 @@ function OpenMobilemechanic2ActionsMenu()
 
 	elseif data.current.value == 'fix_vehicle' then
 
-		TriggerEvent('esx_marducasjob:onFixkit2')
+		TriggerEvent('esx_mechanic2job:onFixkit')
 
 	elseif data.current.value == 'clean_vehicle' then
 
@@ -847,10 +847,9 @@ AddEventHandler('esx_mechanic2job:onFixkit', function()
 			TaskStartScenarioInPlace(playerPed, 'PROP_HUMAN_BUM_BIN', 0, true)
 			Citizen.CreateThread(function()
 				Citizen.Wait(20000)
-				SetVehicleUndriveable(vehicle,false)
-				SetVehicleEngineHealth(vehicle, math.random(600,700))
-				SetVehiclePetrolTankHealth(vehicle, 750.0)
-				SetVehicleEngineOn(vehicle, true, true)
+				SetVehicleFixed(vehicle)
+				SetVehicleDeformationFixed(vehicle)
+				SetVehicleUndriveable(vehicle, false)
 				ClearPedTasksImmediately(playerPed)
 				ESX.ShowNotification(_U('veh_repaired'))
 			end)
