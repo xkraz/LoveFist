@@ -4,13 +4,13 @@
     <Item type="CHandlingData">
       <handlingName>HVROD</handlingName>
       <fMass value="230.0" />
-      <fInitialDragCoeff value="4.7" />
+      <fInitialDragCoeff value="3.7" />
       <fPercentSubmerged value="95.0" />
       <vecCentreOfMassOffset x="0.0" y="0.0" z="-0.05" />
       <vecInertiaMultiplier x="1.1" y="1.3" z="1.9" />
       <fDriveBiasFront value="0.0" />
       <nInitialDriveGears value="5" />
-      <fInitialDriveForce value="0.420" />
+      <fInitialDriveForce value="0.470" />
       <fDriveInertia value="1.1" />
       <fClutchChangeRateScaleUpShift value="3.3" />
       <fClutchChangeRateScaleDownShift value="2.6" />
