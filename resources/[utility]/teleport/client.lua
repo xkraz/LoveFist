@@ -88,11 +88,11 @@ local TeleportFromTo = {
 		positionTo = { ['x'] = -1945.68, ['y'] = -13.42, ['z'] = 91.67, nom = "leave church"},
 	},
 	["backyard"] = {
-		positionFrom = { ['x'] = -1571.79, ['y'] = 136.97, ['z'] = 10.46, nom = "Yard"},
+		positionFrom = { ['x'] = -1571.79, ['y'] = 136.97, ['z'] = 2209.91, nom = "Yard"},
 		positionTo = { ['x'] = -1521.99, ['y'] = 143.87, ['z'] = 55.65, nom = "house"},
 	},
 	["balcony"] = {
-		positionFrom = { ['x'] = -1542.98, ['y'] = 97.65, ['z'] = 10.36, nom = "Balcony"},
+		positionFrom = { ['x'] = -1542.98, ['y'] = 97.65, ['z'] = 2209.76, nom = "Balcony"},
 		positionTo = { ['x'] = -1547.16, ['y'] = 89.38, ['z'] = 61.31, nom = "Enter house"},
 	},
 	["garage"] = {
@@ -118,7 +118,7 @@ local TeleportFromTo = {
 	["Moneywash2"] = {
 	positionFrom = { ['x'] = 1233.34, ['y'] = -3235.37, ['z'] = 5.53, nom = "Go to - Suspicious Warehouse"},
 	positionTo = { ['x'] = 1118.69, ['y'] = -3193.43, ['z'] = -40.39, nom = "Go Outside"},
-	},   
+	},
 	["Nightclub"] = {
 	positionFrom = { ['x'] = -15.87, ['y'] = 239.79, ['z'] = 109.55, nom = "Enter Galaxy"},
 	positionTo = { ['x'] = -1569.45, ['y'] = -3017.38, ['z'] = -74.41, nom = "Leave Galaxy"},
@@ -139,7 +139,7 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -596.80, ['y'] = -1620.13, ['z'] = 33.01, nom = "Enter Workshop"},
 		positionTo = { ['x'] = 179.03, ['y'] = -1000.13, ['z'] = -99.00, nom = "Leave Workshop"},
 		},
-		
+
 	["IllegalHospital"] = {
 		positionFrom = { ['x'] = 240.94, ['y'] = -1378.98, ['z'] = 33.74, nom = "Enter Private Hospital"},
 		positionTo = { ['x'] = 275.81, ['y'] = -1361.23, ['z'] = 24.54, nom = "Exit Private Hospital"},
@@ -153,7 +153,7 @@ local TeleportFromTo = {
 		positionTo = { ['x'] = -2832.74, ['y'] = -6963.87, ['z'] = 11.04, nom = "Return to Los Santos"},
 		},
 
-	
+
 }
 
 Drawing = setmetatable({}, Drawing)
