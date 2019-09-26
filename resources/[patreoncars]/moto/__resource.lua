@@ -5,6 +5,7 @@ files {
 	'handling.meta',
 	'vehicles.meta',
 	'carcols.meta',
+	'contentunlocks.meta',
 	'carvariations.meta',
 	'audio/dlcvinewood_amp.dat10',
 	'audio/dlcvinewood_amp.dat10.nametable',
