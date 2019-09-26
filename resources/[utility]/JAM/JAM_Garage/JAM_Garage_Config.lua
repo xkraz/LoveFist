@@ -186,7 +186,7 @@ JAG.Config = {
 			Scale = 0.8,
 			Display = 4,
 			Color = 68,
-			Pos = { x = -3215.26, y = 914.57, z = 13.98 },
+			Pos = { x = -3215.26, y = 914.57, z = 12.98 },
 		},
 
 		PDGarage = {
@@ -355,7 +355,7 @@ JAG.Config = {
 			Heading = 246.44,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = -3215.26, y = 914.57, z = 13.98 },
+			Pos = { x = -3215.26, y = 914.57, z = 13.00 },
 		},
 
 		SeaviewGarage = {
