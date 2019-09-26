@@ -275,4 +275,5 @@ files {
 	'html/img/items/playersafeLarge.png',
 	'html/img/items/vitohouse.png',
   'html/img/items/matthiasash.png',
+  'html/img/items/tacorub.png',
 }

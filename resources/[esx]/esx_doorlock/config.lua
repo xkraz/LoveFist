@@ -2407,4 +2407,36 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
+		{--Taco Front Door L
+		objName = 'apa_p_mp_door_apartfrt_door_black',
+		objCoords  = {x = -2764.690, y = -65.56622, z = 8.2989},
+		textCoords = {x = -2764.690, y = -65.56622, z = 8.2989},
+		authorizedJobs = { 'tacorub', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--Taco Front Door R
+		objName = 'apa_p_mp_door_apartfrt_door_black',
+		objCoords  = {x = -2775.013, y = -65.2973, z = 8.2598},
+		textCoords = {x = -2775.013, y = -65.2973, z = 8.2598},
+		authorizedJobs = { 'tacorub', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--Taco Front Door Dance
+		objName = 'apa_p_mp_door_apartfrt_door_black',
+		objCoords  = {x = -2785.239, y = -76.9610, z = 8.2711},
+		textCoords = {x = -2785.239, y = -76.9610, z = 8.2711},
+		authorizedJobs = { 'tacorub', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--Taco Front Door Lift Room
+		objName = 'apa_p_mp_door_apartfrt_door_black',
+		objCoords  = {x = -2757.114, y = -63.7440, z = 15.8814},
+		textCoords = {x = -2757.114, y = -63.7440, z = 15.8814},
+		authorizedJobs = { 'tacorub', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
 }
