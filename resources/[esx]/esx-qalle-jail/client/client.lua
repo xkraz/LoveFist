@@ -110,6 +110,9 @@ function InJail()
 				UnJail()
 
 				TriggerServerEvent("esx-qalle-jail:updateJailTime", 0)
+			elseif GetDistanceBetweenCoords(GetEntityCoords(GetPlayerPed(-1)), 1664.74, 2604.82, 45.56, true) >= 1000 then
+               jailTime = 0 
+               TriggerServerEvent("esx-qalle-jail:updateJailTime", 0)
 			end
 
 			Citizen.Wait(60000)

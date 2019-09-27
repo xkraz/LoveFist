@@ -1,6 +1,6 @@
 RegisterCommand("jailmenu", function(source, args)
 
-	if PlayerData.job.name == "police" or PlayerData.job.name == "dea" or PlayerData.job.name == "fib" then
+	if PlayerData.job.name == "police" then
 		OpenJailMenu()
 	else
 		ESX.ShowNotification("You are not an officer!")
@@ -52,11 +52,11 @@ function Cutscene()
 	TriggerEvent('skinchanger:getSkin', function(skin)
 		if GetHashKey(GetEntityModel(PlayerPedId())) == Male then
 			local clothesSkin = {
-				['tshirt_1'] = 15, ['tshirt_2'] = 0,
-				['torso_1'] = 65, ['torso_2'] = 0,
-				['arms'] = 1,
-				['pants_1'] = 38, ['pants_2'] = 0,
-				['shoes_1'] = 7, ['shoes_2'] = 0,
+				['tshirt_1'] = 20, ['tshirt_2'] = 15,
+				['torso_1'] = 33, ['torso_2'] = 0,
+				['arms'] = 0,
+				['pants_1'] = 7, ['pants_2'] = 0,
+				['shoes_1'] = 34, ['shoes_2'] = 0,
 			}
 			TriggerEvent('skinchanger:loadClothes', skin, clothesSkin)
 
@@ -147,7 +147,7 @@ function TeleportPlayer(pos)
 			local action = data.current.value
 			local position = Config.Teleports[action]
 
-			if action == "Security" then
+			if action == "Boiling Broke" or action == "Security" then
 
 				if PlayerData.job.name ~= "police" then
 					ESX.ShowNotification("You don't have an key to go here!")

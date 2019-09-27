@@ -4,45 +4,39 @@ Locales['en'] = {
 
   -- Menu
   ['securitycams_menu'] = 'Security Cameras',
-  ['bank_menu_selection'] = 'Bank Cameras',
-  ['police_menu_selection'] = 'Store Cameras',
+  ['bank_menu_selection'] = 'Pacific Standard Bank',
+  ['police_menu_selection'] = 'Police Station',
 
   -- In Cameras
-  ['pacific_standard_bank'] = 'Bank Cameras',
-  ['police_station'] = 'Store Cameras',
+  ['pacific_standard_bank'] = 'Pacific Standard Bank',
+  ['police_station'] = 'Police Station',
 
-  -- Bank Cameras
-  ['bcam'] = 'Main Bank Entrance',
-  ['bcam2'] = 'Main Bank Lobby',
-  ['bcam3'] = 'Main Bank Second Entrance',
-  ['bcam4'] = 'Main Bank Staircase To Second Floor',
-  ['bcam5'] = 'Main Bank Staircase Above Bankvault',
-  ['bcam6'] = 'Main Bank Offices Corridor #1',
-  ['bcam7'] = 'Main Bank Offices Corridor #2',
-  ['bcam8'] = 'Main Bank Second Floor #1',
-  ['bcam9'] = 'Main Bank Second Floor #2',
-  ['bcam10'] = 'Main Bank Staircase To Bankvault',
-  ['bcam11'] = 'Main Bank Outside The Bankvault',
-  ['bcam12'] = 'Blaine County Entrace',
-  ['bcam13'] = 'Blaine County Booths',
-  ['bcam14'] = 'Blaine County Vaults',
-  ['bcam15'] = 'Fleeca Highway Bank Entrance',
-  ['bcam16'] = 'Fleeca Highway Bank Booths',
-  ['bcam17'] = 'Fleeca Highway Bank Vault',
-  ['bcam18'] = 'Fleeca City Bank Entrance',
-  ['bcam19'] = 'Fleeca City Bank Booths',
-  ['bcam20'] = 'Fleeca City Bank Vault',
+  -- Pacific Standard Bank Cameras
+  ['bcam'] = 'Main Entrance',
+  ['bcam2'] = 'Lobby',
+  ['bcam3'] = 'Second Entrance',
+  ['bcam4'] = 'Staircase To Second Floor',
+  ['bcam5'] = 'Staircase Above Bankvault',
+  ['bcam6'] = 'Offices Corridor #1',
+  ['bcam7'] = 'Offices Corridor #2',
+  ['bcam8'] = 'Second Floor #1',
+  ['bcam9'] = 'Second Floor #2',
+  ['bcam10'] = 'Staircase To Bankvault',
+  ['bcam11'] = 'Outside The Bankvault',
 
   -- Police Station Cameras
-  ['pcam'] = 'Jewelry Store Inside',
-  ['pcam2'] = 'Jewelry Store Outside',
+  ['pcam'] = 'Parking Lot',
+  ['pcam2'] = 'Cell #1',
   ['pcam3'] = 'Cell #2',
   ['pcam4'] = 'Cell #3',
   ['pcam5'] = 'Polices Parking Lot & Garage',
   ['pcam6'] = 'Outside Entrance',
   ['pcam7'] = 'Lobby',
-
-  -- Settings
+  ['pcam8'] = 'Boiling Broke Cell-Block 2f',
+  ['pcam9'] = 'Boiling Broke Cell-Block 1f',
+  ['pcam10'] = 'Boiling Broke Cell-Block 2f',
+  ['pcam11'] = 'Visitation Check-in Desk',
+  
   ['next'] = 'NEXT CAMERA',
   ['previous'] = 'PREVIOUS CAMERA',
   ['close'] = 'CLOSE CAMERA',
