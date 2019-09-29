@@ -37,6 +37,8 @@ Config.Items = {
   [25] = {label = "Radio",      item = "radio",       price = 400},
   [26] = {label = "Player Safe (Small)",      item = "playersafeSmall",       price = 7000},
   [27] = {label = "Player Safe (Large)",      item = "playersafeLarge",       price = 23000},
+  [27] = {label = "Player Safe (Large)",      item = "playersafeLarge",       price = 23000},
+  [27] = {label = "Boombox",      item = "hifi",       price = 750},
 }
 
 Config.Images = {
@@ -66,7 +68,8 @@ Config.Images = {
   [24] = {item = "contract",   src = "img/contract.png"},
   [25] = {item = "radio",   src = "img/items/radio.png"},
   [26] = {item = "playersafeSmall", src = "img/items/playersafeSmall.png"},
-  [27] = {item = "playersafeLarge", src = "img/items/playersafeLarge.png"}
+  [27] = {item = "playersafeLarge", src = "img/items/playersafeLarge.png"},
+  [28] = {item = "hifi", src = "img/items/hifi.png"}
 }
 
 Config.Zones = {
