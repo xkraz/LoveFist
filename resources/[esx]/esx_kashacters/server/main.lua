@@ -20,7 +20,6 @@ local IdentifierTables = {
 	{table = "user_licenses", column = "owner"},
 	{table = "criminal_records", column = "identifier"},
 	{table = "medical_records", column = "identifier"},
-  {table = "playersafes", column = "owner"},
   {table = "owned_vehicles_details", column = "id"},
 
 }
