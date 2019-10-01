@@ -277,4 +277,5 @@ files {
 	'html/img/items/winekey.png',
   'html/img/items/matthiasash.png',
   'html/img/items/tacorub.png',
+  'html/img/items/flightkey.png',
 }
