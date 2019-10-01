@@ -1,15 +1,15 @@
 INSERT INTO `items` (`name`, `label`, `limit`, `rare`, `can_remove`) VALUES
-	('oxygen_mask', 'Oxygen Mask', -1, 0, 1),
-	('bulletproof', 'Bullet-Proof Vest', -1, 0, 1),
-	('firstaidkit', 'First Aid Kit', -1, 0, 1),
-	('darknet', 'Dark Net', 1, 0, 1),
-	('clip', 'Weapon Clip', -1, 0, 1)
-;
-
-INSERT INTO `shops` (store, item, price) VALUES
-	('ExtraItemsShop', 'oxygen_mask', 500),
-	('ExtraItemsShop', 'bulletproof', 2500),
-	('ExtraItemsShop', 'firstaidkit', 3000),
-	('ExtraItemsShop', 'darknet', 250),
-	('ExtraItemsShop', 'clip', 5000)
+	('oxygen_mask', 'Syrgasmask', -1, 0, 1),
+	('bulletproof', 'Skottsäker Väst', -1, 0, 1),
+	('firstaidkit', 'Första Hjälpen Kit', -1, 0, 1),
+	('clip', 'Ammunition', -1, 0, 1),
+	('carcleankit', 'Bil Tvätts Kit', -1, 0, 1),
+	('cigaretter', 'Cigarettpaket', -1, 0, 1),
+	('cigarett', 'Cigarett', -1, 0, 1),
+	('snusdosa', 'Snusdosa', -1, 0, 1),
+	('snus', 'snus', -1, 0, 1),
+	('paraply', 'Paraply', -1, 0, 1),
+	('picknick', 'Picknick kit', -1, 0, 1),
+	('ros', 'Röd Ros', -1, 0, 1),
+	('monster', 'Monster Energy', -1, 0, 1)
 ;
