@@ -2439,4 +2439,12 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
+		{--williams front door cabin 
+		objName = 'hei_prop_sync_door01a',
+		objCoords  = {x = -421.83493, y = 3838.65308, z = 65.9981155},
+		textCoords = {x = -421.83493, y = 3838.65308, z = 65.9981155},
+		authorizedJobs = { 'cabinkey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
 }
