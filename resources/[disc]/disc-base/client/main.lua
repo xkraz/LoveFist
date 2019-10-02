@@ -44,6 +44,8 @@ AddEventHandler('disc-base:openMenu', function(menu)
         OpenDefaultMenu(menu)
     elseif type == 'dialog' then
         OpenDialogMenu(menu)
+    elseif type == 'list' then
+        OpenListMenu(menu)
     end
 end)
 

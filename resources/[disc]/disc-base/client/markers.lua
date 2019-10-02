@@ -28,7 +28,24 @@ AddEventHandler('disc-base:registerMarker', function(marker)
         end
     end
 
-    markers[getOrElse(marker.name, #markers + 1)] = marker
+    if marker.command then
+        RegisterCommand(marker.command.key, function(src, args, raw)
+            local command = marker.command.key
+            if args and marker.command.args then
+                command = command .. ' ' .. marker.command.args
+            end
+            if raw == command then
+                TriggerEvent('disc-base:triggerCurrentMarkerAction')
+            end
+        end)
+    end
+
+    if markers[marker.name] then
+        markers[marker.name] = marker
+    else
+        markers[getOrElse(marker.name, #markers + 1)] = marker
+    end
+
 end)
 
 Citizen.CreateThread(function()
@@ -42,13 +59,21 @@ Citizen.CreateThread(function()
         for k, v in pairs(markers) do
             local distance = GetDistanceBetweenCoords(coords.x, coords.y, coords.z, v.coords.x, v.coords.y, v.coords.z, true)
             if distance < Config.DrawDistance and v.shouldDraw() then
-                DrawMarker(v.type, v.coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.size.x, v.size.y, v.size.z, v.colour.r, v.colour.g, v.colour.b, 100, getOrElse(v.bob, false), true, 2, true, false, false, false)
+                if v.show3D then
+                    if distance < Config.Draw3DDistance then
+                        ESX.Game.Utils.DrawText3D(v.coords, v.msg, 0.5)
+                    end
+                elseif v.type ~= -1 then
+                    DrawMarker(v.type, v.coords, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, v.size.x, v.size.y, v.size.z, v.colour.r, v.colour.g, v.colour.b, 100, getOrElse(v.bob, false), true, 2, true, false, false, false)
+                end
             end
             if distance < v.size.x and v.shouldDraw() then
+                if v.enableE then
+                    EnableControlAction(0, 38)
+                end
                 isInMarker = true
                 lastMarker = v
             end
-
         end
 
         if isInMarker and not HasAlreadyEnteredMarker then
@@ -69,7 +94,9 @@ AddEventHandler('disc-base:hasExitedMarker', function()
 end)
 
 AddEventHandler('disc-base:hasEnteredMarker', function(marker)
-    print('Marker: ' .. marker.name)
+    if marker.show3D then
+        PlaySound(GetSoundId(), "SELECT", "HUD_FRONTEND_DEFAULT_SOUNDSET", 0, 0, 1)
+    end
     CurrentMarker = marker
 end)
 
@@ -78,7 +105,9 @@ Citizen.CreateThread(function()
         Citizen.Wait(0)
 
         if CurrentMarker and CurrentMarker.shouldDraw() then
-            ESX.ShowHelpNotification(CurrentMarker.msg)
+            if not CurrentMarker.show3D then
+                ESX.ShowHelpNotification(CurrentMarker.msg)
+            end
 
             if IsControlJustReleased(0, 38) then
                 if CurrentMarker.action ~= nil then
@@ -86,6 +115,13 @@ Citizen.CreateThread(function()
                 end
             end
         end
+    end
+end)
+
+RegisterNetEvent('disc-base:triggerCurrentMarkerAction')
+AddEventHandler('disc-base:triggerCurrentMarkerAction', function()
+    if CurrentMarker and CurrentMarker.action ~= nil then
+        CurrentMarker.action(CurrentMarker)
     end
 end)
 
@@ -99,7 +135,9 @@ AddEventHandler('disc-base:registerBlip', function(blip)
 
     local _blip = AddBlipForCoord(blip.coords)
     SetBlipSprite(_blip, getOrElse(blip.sprite, 1))
-    SetBlipDisplay(_blip, 4)
+
+    SetBlipDisplay(_blip, getOrElse(blip.display, 4))
+
     if blip.scale then
         SetBlipScale(_blip, getOrElse(blip.scale, 0.5))
     end
@@ -107,16 +145,33 @@ AddEventHandler('disc-base:registerBlip', function(blip)
     BeginTextCommandSetBlipName("STRING")
     AddTextComponentString(getOrElse(blip.name, "Blip Missing Name"))
     EndTextCommandSetBlipName(_blip)
-    blips[getOrElse(blip.id, #blips + 1)] = _blip
+    blips[getOrElse(blip.id, #blips + 1)] = {
+        _blip = _blip,
+        blip = blip
+    }
 end)
 
 RegisterNetEvent('disc-base:updateBlip')
-AddEventHandler('disc-base:updateBlip', function(blip)
-    if not blip.id then
-        print('Blip Id Missing')
+AddEventHandler('disc-base:updateBlip', function(blip, debug)
+    if blip.id == nil or blips[blip.id] == nil then
         return
     end
-    local _blip = blips[blip.id]
+    local _blip = blips[blip.id]._blip
+
+    if blip.coords then
+
+        if _blip and GetBlipCoords(_blip) ~= blip.coords then
+            RemoveBlip(_blip)
+            local tempBlip = blips[blip.id].blip
+            blips[blip.id] = nil
+            tempBlip.coords = blip.coords
+            tempBlip.display = blip.display
+            TriggerEvent('disc-base:registerBlip', tempBlip)
+            return
+        end
+
+    end
+
     if blip.sprite then
         SetBlipSprite(_blip, blip.sprite)
     end
