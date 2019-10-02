@@ -59,9 +59,9 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = 1461.11, ['y'] = 1086.46, ['z'] = 114.33, nom = "Enter bunker"},
 		positionTo = { ['x'] = 1477.24, ['y'] = 1060.82, ['z'] = 27.71, nom = "Exit bunker"},
 	},
-	["mitchell & dawns"] = {
-		positionFrom = { ['x'] = -1838.86, ['y'] = 436.82, ['z'] = 126.11, nom = "Enter house"},
-		positionTo = { ['x'] = -726.71, ['y'] = 199.72, ['z'] = 124.28, nom = "Exit house"},
+	["Winery"] = {
+		positionFrom = { ['x'] = -1893.11, ['y'] = 2076.12, ['z'] = 141.00, nom = "Enter Winery"},
+		positionTo = { ['x'] = -1884.24, ['y'] = 2062.39, ['z'] = 73.97, nom = "Exit Winery"},
 	},
 	["sanctuary"] = {
 		positionFrom = { ['x'] = -933.04, ['y'] = 4839.83, ['z'] = 312.51, nom = "BE CLEANSED"},
@@ -151,6 +151,10 @@ local TeleportFromTo = {
 	["RACE-MONACO"] = {
 		positionFrom = { ['x'] = 1730.57, ['y'] = 3307.26, ['z'] = 41.22, nom = "Fly to Monaco Racetrack"},
 		positionTo = { ['x'] = -2832.74, ['y'] = -6963.87, ['z'] = 11.04, nom = "Return to Los Santos"},
+		},
+    ["TacoEscape"] = {
+		positionFrom = { ['x'] = -2772.03, ['y'] = -72.32, ['z'] = 4.03, nom = "Escape Frrom Taco"},
+		positionTo = { ['x'] = -2800.32, ['y'] = -70.09, ['z'] = 2.09, nom = "You made it"},
 		},
 
 
