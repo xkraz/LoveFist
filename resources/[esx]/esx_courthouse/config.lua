@@ -13,7 +13,7 @@ Config.CourthouseStations = {
   Courthouse = {
 
     Blip = {
-      Pos     = {x = 1205.43,y = 3591.59,z = 35.33 },
+      Pos     = {x = -466.34,y = 1168.34,z = 328.98 },
       Sprite  = 438,
       Display = 4,
       Scale   = 1.2,
@@ -25,23 +25,23 @@ Config.CourthouseStations = {
     },	
 
     Cloakrooms = {
-      {x = 1181.71,y = 3575.69,z = 36.19 },
+      {x = -458.44,y = 1178.62,z = 326.47 },
     },
 
     Vehicles = {
        { 
-        Spawner    = {x = 1165.17,y = 3579.61,z = 35.52 },
-        SpawnPoint = {x = 1158.85,y = 3578.57,z = 35.52 },
-        Heading    = 178.1
+        Spawner    = {x = -474.79,y = 1164.7,z = 325.25 },
+        SpawnPoint = {x = -474.79,y = 1164.7,z = 325.25 },
+        Heading    = 38.65
        }
     },
 
     VehicleDeleters = {
-      {x = 1152.3,y = 3578.44,z = 35.52 },
+      {x = -483.3,y = 1170.07,z = 324.68 },
     },
 	
     BossActions = {
-      {x = 1222.98,y = 3577.83,z = 36.25 },
+      {x = -460.3,y = 1175.31,z = 329.58 },
     },
 
   },
