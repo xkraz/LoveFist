@@ -257,6 +257,7 @@ RegisterCommand("e", function(source, args)
 								local ad = Config.Anims[i].data.ad
 								if vehiclecheck() then
 									TriggerEvent('Radiant_Animations:Walking', ad)
+									TriggerEvent('bonefive:client:WalkChange', ad)
 									if not playerCurrentlyHasWalkstyle then
 										playerCurrentlyHasWalkstyle = true
 									end
