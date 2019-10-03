@@ -2765,3 +2765,9 @@ AddEventHandler("police:Deploy", function()
         end
 	end)
 end)
+
+function getJob()
+  if PlayerData.job ~= nil then
+	return PlayerData.job.name
+  end
+end

@@ -40,4 +40,6 @@ dependencies {
 
 exports {
 'esx_society',
+'getJob',
+  'OpenPoliceActionsMenu'
 }
