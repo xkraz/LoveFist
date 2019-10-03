@@ -274,6 +274,8 @@ files {
     'html/img/items/playersafeSmall.png',
 	'html/img/items/playersafeLarge.png',
 	'html/img/items/vitohouse.png',
+	'html/img/items/winekey.png',
   'html/img/items/matthiasash.png',
   'html/img/items/tacorub.png',
+  'html/img/items/flightkey.png',
 }

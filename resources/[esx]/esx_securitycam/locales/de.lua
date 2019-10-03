@@ -42,7 +42,7 @@ Locales['de'] = {
   ['pcam14'] 						= 'Bürgermeister #1',
   ['pcam15'] 						= 'Bürgermeister #2',
 
-  -- Police Cameras
+  -- Cardealer Cameras
   ['ccam'] 							= 'Parkplatzbereich',
   ['ccam2'] 						= 'Verkaufshalle #1',
   ['ccam3'] 						= 'Verkaufshalle #2',

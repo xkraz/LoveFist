@@ -351,10 +351,8 @@ end)
 
 RegisterNetEvent('esx:removePickup')
 AddEventHandler('esx:removePickup', function(id)
-  if (id ~= nil) then
-    ESX.Game.DeleteObject(Pickups[id].obj)
-	  Pickups[id] = nil
-  end
+	ESX.Game.DeleteObject(Pickups[id].obj)
+	Pickups[id] = nil
 end)
 
 RegisterNetEvent('esx:pickupWeapon')
@@ -390,11 +388,14 @@ AddEventHandler('esx:deleteVehicle', function()
 local entity
     local veh = GetVehiclePedIsIn(GetPlayerPed(PlayerId()), false)
     if veh == -1 then
-      local loc = GetEntityCoords(GetPlayerPed(PlayerPedId()))
-      local entity   = GetClosestVehicle(loc.x, loc.y, loc.z, 2, 0, 71)
+      local playerPed = PlayerPedId()
+      local vehicle   = ESX.Game.GetVehicleInDirection()
+      entity = vehicle
+      carModel = GetEntityModel(entity)
+      carName = GetDisplayNameFromVehicleModel(carModel)
       NetworkRequestControlOfEntity(entity)
     else
-      NetworkRequestControlOfEntity(veh)
+      NetworkRequestControlOfEntity(GetEntityModel(veh))
       entity = veh
     end
 
@@ -448,9 +449,9 @@ Citizen.CreateThread(function()
 		local loadout        = {}
 		local loadoutChanged = false
 
-		if IsPedDeadOrDying(playerPed) then
-			LoadoutLoaded = false
-		end
+		-- if IsPedDeadOrDying(playerPed) then
+			-- LoadoutLoaded = false
+		-- end
 
 		for i=1, #Config.Weapons, 1 do
 

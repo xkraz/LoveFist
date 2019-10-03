@@ -2439,4 +2439,68 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
+		{--williams front door cabin 
+		objName = 'hei_prop_sync_door01a',
+		objCoords  = {x = -421.83493, y = 3838.65308, z = 65.9981155},
+		textCoords = {x = -421.83493, y = 3838.65308, z = 65.9981155},
+		authorizedJobs = { 'cabinkey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--WineryMaster
+		objName = 'ex_p_mp_door_apart_door_black',
+		objCoords  = {x = -1886.963, y = 2057.5776, z = 74.1364},
+		textCoords = {x = -1886.963, y = 2057.5776, z = 74.1364},
+		authorizedJobs = { 'winekey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--WineryEnrty
+		objName = 'ex_p_mp_door_apart_door_black',
+		objCoords  = {x = -1894.282, y = 2057.7449, z = 74.1150},
+		textCoords = {x = -1894.282, y = 2057.7449, z = 74.1150},
+		authorizedJobs = { 'winekey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--WineryBar
+		objName = 'ex_p_mp_door_apart_door_black',
+		objCoords  = {x = -1898.476, y = 2069.4685, z = 69.1140},
+		textCoords = {x = -1898.476, y = 2069.4685, z = 69.1140},
+		authorizedJobs = { 'winekey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--WineryOffice
+		objName = 'apa_p_mp_yacht_door_01',
+		objCoords  = {x = -1898.014, y = 2060.3999, z = 69.1346},
+		textCoords = {x = -1898.014, y = 2060.3999, z = 69.1346},
+		authorizedJobs = { 'winekey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--Flight school L
+		objName = 'apa_prop_ss1_mpint_door_l',
+		objCoords  = {x = -1002.227, y = -2934.841, z = 14.4418},
+		textCoords = {x = -1002.227, y = -2934.841, z = 14.4418},
+		authorizedJobs = { 'flightkey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--Flight school R
+		objName = 'apa_prop_ss1_mpint_door_r',
+		objCoords  = {x = -1000.365, y = -2935.901, z = 14.4384},
+		textCoords = {x = -1000.365, y = -2935.901, z = 14.4384},
+		authorizedJobs = { 'flightkey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
+		{--Flight school office
+		objName = 'v_ilev_cf_officedoor',
+		objCoords  = {x = -1001.722, y = -2926.963, z = 14.0951},
+		textCoords = {x = -1001.722, y = -2926.963, z = 14.0951},
+		authorizedJobs = { 'flightkey', 'adminkey' },
+		locked = true,
+		distance = 3
+		},
 }

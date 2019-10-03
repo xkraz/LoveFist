@@ -14,7 +14,7 @@ local second = 1000
 local minute = 60 * second
 
 Config.EarlyRespawnTimer          = 6 * minute  -- Time til respawn is available
-Config.BleedoutTimer              = 60 * minute -- Time til the player bleeds out
+Config.BleedoutTimer              = 15 * minute -- Time til the player bleeds out
 
 Config.EnablePlayerManagement     = true
 

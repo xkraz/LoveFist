@@ -155,19 +155,6 @@ function MFS:DestroySafe(safe)
   for k,v in pairs(rList) do self.SpawnedSafes[v] = nil; self.Safes[v] = nil; end
 end
 
-function MFS:DestroySafeItem(safe)
-  local rList = {}
-  TriggerServerEvent('giveSafeBack', 'small')
-  for k,v in pairs(self.SpawnedSafes) do
-    if v and v.id and v.id == safe.safeid then
-      for k,v in pairs(v.obj) do DeleteObject(v); end
-      table.insert(rList,k)
-    end
-  end
-  for k,v in pairs(rList) do self.SpawnedSafes[v] = nil; self.Safes[v] = nil; end
-
-end
-
 function MFS:EndMinigame(didWin)
   if not self.CrackingSafe then return; end
   FreezeEntityPosition(GetPlayerPed(-1),false)
@@ -264,13 +251,14 @@ end
 function MFS:TempSafe(safe)
   local plyPed = GetPlayerPed(-1)
   local forward,right,up,pPos = GetEntityMatrix(plyPed)
-  local pos = (pPos + forward * 0.4)
-  local offset = pos + (right*0.35)
+  local pos = (pPos + forward * 0.5)
+  local offset = pos + (right*0.4)
   local heading = GetEntityHeading(plyPed)
   if self.Instance then safe.instance = self.Instance; end
 
   safe.location = {x = offset.x, y = offset.y, z = offset.z, heading = heading}
   spawning = true
+
   TriggerServerEvent('MF_PlayerSafes:SafeTempSpawned',safe)
 
   local _text = "Press [~b~E~s~] to place your safe.~r~ (PERMANENT)\n~s~Press [~b~G~s~] to pick up and try again."
@@ -288,42 +276,6 @@ function MFS:TempSafe(safe)
     local _loc = GetEntityCoords(PlayerPedId())
     if GetDistanceBetweenCoords(_loc.x, _loc.y, _loc.z, pos.x, pos.y, pos.z, true) > 2 then
       MFS:DestroySafe(safe)
-      _safeFinal = true
-    end
-    Wait(10)
-  end
-
-  spawning = false
-end
-
-function MFS:TempSafeItem(safe)
-  local plyPed = GetPlayerPed(-1)
-  local forward,right,up,pPos = GetEntityMatrix(plyPed)
-  local pos = (pPos + forward * 0.4)
-  local offset = pos + (right*0.35)
-  local heading = GetEntityHeading(plyPed)
-  if self.Instance then safe.instance = self.Instance; end
-
-  safe.location = {x = offset.x, y = offset.y, z = offset.z, heading = heading}
-  spawning = true
-  TriggerServerEvent('MF_PlayerSafes:SafeTempSpawned',safe)
-
-  local _text = "Press [~b~E~s~] to place your safe.~r~ (PERMANENT)\n~s~Press [~b~G~s~] to pick up and try again."
-  local _safeFinal = false
-  while not _safeFinal do
-    Utils.DrawText3D(pos.x, pos.y, pos.z, _text)
-    if IsControlJustPressed(0, 38) then
-      TriggerServerEvent('MF_PlayerSafes:SafeSpawned',safe,true)
-      TriggerServerEvent('disc_PlayerSafes:SafeSpawned', safe, true)
-      _safeFinal = true
-    elseif IsControlJustPressed(0, 58) then
-      MFS:DestroySafeItem(safe)
-      _safeFinal = true
-    end
-    local _loc = GetEntityCoords(PlayerPedId())
-    if GetDistanceBetweenCoords(_loc.x, _loc.y, _loc.z, pos.x, pos.y, pos.z, true) > 2 then
-      TriggerServerEvent('MF_PlayerSafes:SafeSpawned',safe,true)
-      TriggerServerEvent('disc_PlayerSafes:SafeSpawned', safe, true)
       _safeFinal = true
     end
     Wait(10)
@@ -335,7 +287,7 @@ end
 function MFS:SpawnSafe(safe)
   local plyPed = GetPlayerPed(-1)
   local forward,right,up,pPos = GetEntityMatrix(plyPed)
-  local pos = (pPos + forward * 0.4)
+  local pos = (pPos + forward * 0.5)
   local offset = pos + (right*0.4)
   local heading = GetEntityHeading(plyPed)
   if self.Instance then safe.instance = self.Instance; end
@@ -351,7 +303,7 @@ RegisterNetEvent('MF_PlayerSafes:SpawnTempSafe')
 AddEventHandler('MF_PlayerSafes:SpawnTempSafe', function(safe) MFS:TempSafe(safe); end)
 
 RegisterNetEvent('MF_PlayerSafes:SpawnSafe')
-AddEventHandler('MF_PlayerSafes:SpawnSafe', function(safe) MFS:TempSafeItem(safe); end)
+AddEventHandler('MF_PlayerSafes:SpawnSafe', function(safe) MFS:SpawnSafe(safe); end)
 
 RegisterNetEvent('MF_PlayerSafes:TempSafeAdded')
 AddEventHandler('MF_PlayerSafes:TempSafeAdded', function(safe,key) MFS.Safes[key] = safe; end)

@@ -87,7 +87,7 @@ Citizen.CreateThread(function()
 					DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, false, false, false)
 
 					if GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < 1.5 then
-						DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] View Cameras.", 0.80)
+						DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Access Cameras.", 0.80)
 					end
 				end
 			end
@@ -102,7 +102,7 @@ Citizen.CreateThread(function()
 						DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, false, false, false)
 
 						if GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < 1.5 then
-							DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Börja hacka kamerorna.", 0.80)
+							DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Hack Police Cameras.", 0.80)
 						end
 					end
 				end
@@ -118,7 +118,7 @@ Citizen.CreateThread(function()
 						DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, false, false, false)
 
 						if GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < 1.5 then
-							DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Börja hacka kamerorna.", 0.80)
+							DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Hack Bank Cameras", 0.80)
 						end
 					end
 				end
@@ -132,7 +132,7 @@ Citizen.CreateThread(function()
 						DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, false, false, false)
 
 						if GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < 1.5 then
-							DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Ta bort virus.", 0.80)
+							DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Activate Virus Protection.", 0.80)
 						end
 					end
 				end
@@ -146,7 +146,7 @@ Citizen.CreateThread(function()
 						DrawMarker(v.Type, v.Pos.x, v.Pos.y, v.Pos.z, 0.0, 0.0, 0.0, 0, 0.0, 0.0, v.Size.x, v.Size.y, v.Size.z, v.Color.r, v.Color.g, v.Color.b, 100, false, true, 2, false, false, false, false)
 
 						if GetDistanceBetweenCoords(coords, v.Pos.x, v.Pos.y, v.Pos.z, true) < 1.5 then
-							DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Ta bort virus.", 0.80)
+							DrawText3D(v.Pos.x, v.Pos.y, v.Pos.z+0.9, "~w~[~g~E~w~] Activate Virus Protection.", 0.80)
 						end
 					end
 				end
@@ -244,7 +244,7 @@ Citizen.CreateThread(function()
 				ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'cloakroom',
 				{
 					title    = _U('securitycams_menu'),
-					align    = 'top',
+					align    = 'top-left',
 					elements = elements
 				}, function(data, menu)
 
@@ -497,9 +497,9 @@ function StartHideHUD()
 		while blockbuttons do
 			Citizen.Wait(100)
 			DisplayRadar(false)
-			--ESX.UI.HUD.SetDisplay(0.0)
-			--TriggerEvent('es:setMoneyDisplay', 0.0)
-			--TriggerEvent('esx_status:setDisplay', 0.0)
+			ESX.UI.HUD.SetDisplay(0.0)
+			TriggerEvent('es:setMoneyDisplay', 0.0)
+			TriggerEvent('esx_status:setDisplay', 0.0)
 		end
 	end)
 end
@@ -509,9 +509,9 @@ function StopHideHUD()
 		while not blockbuttons do
 			Citizen.Wait(100)
 			DisplayRadar(true)
-			--ESX.UI.HUD.SetDisplay(1.0)
-			--TriggerEvent('es:setMoneyDisplay', 1.0)
-			--TriggerEvent('esx_status:setDisplay', 1.0)
+			ESX.UI.HUD.SetDisplay(1.0)
+			TriggerEvent('es:setMoneyDisplay', 1.0)
+			TriggerEvent('esx_status:setDisplay', 1.0)
 		end
 	end)
 end

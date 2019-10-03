@@ -8,7 +8,7 @@ AddEventHandler('towreward', function()
 
     local ImpoundPrice = math.random(6, 15)
 	
-	if xPlayer.job.name == 'mechanic' or xPlayer.job.name == 'fruitgang' or xPlayer.job.name == 'marducas' then
+	if xPlayer.job.name == 'mechanic' or xPlayer.job.name == 'mechanic2' or xPlayer.job.name == 'marducas' then
         xPlayer.addMoney(ImpoundPrice)
         TriggerClientEvent('esx:showNotification', xPlayer.source, 'You impounded a car for $' .. ImpoundPrice)
 		else

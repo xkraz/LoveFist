@@ -23,7 +23,7 @@ Config.Zones = {
 -- Screenshot: https://i.imgur.com/f5WNrRj.jpg
 Config.HackingPolice = {
 	HackingPolice = {
-		Pos   = {x = 440.17, y = -975.74, z = 9929.69},
+		Pos   = {x = 440.17, y = -975.74, z = 29.69},
 		Size  = {x = 1.7, y = 1.7, z = 0.5},
 		Color = {r = 26, g = 55, b = 186},
 		Type = 27,
@@ -32,7 +32,7 @@ Config.HackingPolice = {
 
 Config.UnHackPolice = {
 	UnHackPolice = {
-		Pos   = {x = 440.17, y = -975.74, z = 9929.69},
+		Pos   = {x = 440.17, y = -975.74, z = 29.69},
 		Size  = {x = 1.7, y = 1.7, z = 0.5},
 		Color = {r = 26, g = 55, b = 186},
 		Type = 27,
@@ -44,7 +44,7 @@ Config.UnHackPolice = {
 -- Screenshot: https://i.imgur.com/nvcFUhu.jpg
 Config.HackingBank = {
 	HackingBank = {
-		Pos   = {x = 264.87, y = 219.93, z = 99100.68},
+		Pos   = {x = 264.87, y = 219.93, z = 100.68},
 		Size  = {x = 1.7, y = 1.7, z = 0.5},
 		Color = {r = 26, g = 55, b = 186},
 		Type = 27,
@@ -53,7 +53,7 @@ Config.HackingBank = {
 
 Config.UnHackBank = {
 	UnHackBank = {
-		Pos   = {x = 264.87, y = 219.93, z = 99100.68},
+		Pos   = {x = 264.87, y = 219.93, z = 100.68},
 		Size  = {x = 1.7, y = 1.7, z = 0.5},
 		Color = {r = 26, g = 55, b = 186},
 		Type = 27,
@@ -75,22 +75,22 @@ Config.Locations = {
 			{label = _U('bcam8'), x = 235.53, y = 227.37, z = 113.23, r = {x = -35.0, y = 0.0, z = -160.29}, canRotate = true},
 			{label = _U('bcam9'), x = 254.72, y = 206.06, z = 113.28, r = {x = -35.0, y = 0.0, z = 44.70}, canRotate = true},
 			{label = _U('bcam10'), x = 269.89, y = 223.76, z = 106.48, r = {x = -35.0, y = 0.0, z = 112.62}, canRotate = true},
-			{label = _U('bcam11'), x = 252.27, y = 225.52, z = 103.99, r = {x = -35.0, y = 0.0, z = -74.87}, canRotate = true},
-			{label = _U('bcam12'), x = -105.00, y = 6451.61, z = 34.21, r = {x = -35.0, y = 0.0, z = 70.62}, canRotate = true},
-			{label = _U('bcam13'), x = -115.24, y = 6472.61, z = 32.51, r = {x = -35.0, y = 0.0, z = 180.87}, canRotate = true},
-			{label = _U('bcam14'), x = -104.99, y = 6478.75, z = 32.51, r = {x = -35.0, y = 0.0, z = 180.62}, canRotate = true},
-			{label = _U('bcam15'), x = -2966.45, y = 485.87, z = 17.26, r = {x = -25.0, y = 0.0, z = 150.91}, canRotate = true},
-			{label = _U('bcam16'), x = -2962.29, y = 486.197, z = 16.58, r = {x = -25.0, y = 0.0, z = 160.91}, canRotate = true},
-			{label = _U('bcam17'), x = -2959.71, y = 476.47, z = 17.08, r = {x = -25.0, y = 0.0, z = 0.91}, canRotate = true},
-			{label = _U('bcam18'), x = 148.76, y = -1036.21, z = 32.90, r = {x = -25.0, y = 0.0, z = 280.91}, canRotate = true},
-			{label = _U('bcam19'), x = 145.10, y = -1035.88, z = 30.50, r = {x = -25.0, y = 0.0, z = 200.91}, canRotate = true},
-			{label = _U('bcam20'), x = 144.96, y = -1042.90, z = 30.75, r = {x = -25.0, y = 0.0, z = 200.91}, canRotate = true},
+			{label = _U('bcam11'), x = 252.27, y = 225.52, z = 103.99, r = {x = -35.0, y = 0.0, z = -74.87}, canRotate = true}
 		},
 
 	policeCamLabel = {label = _U('police_station')},
 		policeCameras = {
-			{label = _U('pcam'), x = -620.41, y = -224.96, z = 40.2, r = {x = -25.0, y = 0.0, z = -200.91}, canRotate = true},
-			{label = _U('pcam2'), x = -645.81, y = -239.07, z = 44.88, r = {x = -25.0, y = 0.0, z = 260.91}, canRotate = true}
+			{label = _U('pcam'), x = 416.744, y = -1009.270, z = 34.08, r = {x = -25.0, y = 0.0, z = 28.05}, canRotate = true},
+			{label = _U('pcam2'), x = 465.151, y = -994.266, z = 27.23, r = {x = -30.0, y = 0.0, z = 100.29}, canRotate = true},
+			{label = _U('pcam3'), x = 465.631, y = -997.777, z = 27.48, r = {x = -35.0, y = 0.0, z = 90.46}, canRotate = true},
+			{label = _U('pcam4'), x = 465.544, y = -1001.583, z = 27.1, r = {x = -25.0, y = 0.0, z = 90.01}, canRotate = true},
+			{label = _U('pcam5'), x = 420.241, y = -1009.010, z = 34.95, r = {x = -25.0, y = 0.0, z = 230.95}, canRotate = true},
+			{label = _U('pcam6'), x = 433.249, y = -977.786, z = 33.456, r = {x = -40.0, y = 0.0, z = 100.49}, canRotate = true},
+			{label = _U('pcam7'), x = 449.440, y = -987.639, z = 33.25, r = {x = -30.0, y = 0.0, z = 50.50}, canRotate = true},
+			{label = _U('pcam8'),  x = 1801.281, y = 2479.288, z = -117.2525, r = {x = -25.0, y = 0.0, z = 45.0}, canRotate = true},
+			{label = _U('pcam9'), x = 1785.808, y = 2486.758, z = -120.5894, r = {x = -45, y = 0.0, z = 230.95}, canRotate = true},
+			{label = _U('pcam10'), x = 1785.808, y = 2486.854, z = -117.1499, r = {x = -35.0, y = 0.0, z = 230.95}, canRotate = true},
+			{label = _U('pcam11'), x = 1706.41, y = 2582.03, z = -67.41, r = {x = -35.0, y = 0.0, z = 130.0}, canRotate = true}
 		},
-	}
+	},
 }

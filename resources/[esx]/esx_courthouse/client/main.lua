@@ -483,7 +483,7 @@ Citizen.CreateThread(function()
 
   for k,v in pairs(Config.CourthouseStations) do
 
-    local Blip = AddBlipForCoord(1205.38, 3596.49, 35.23)
+    local Blip = AddBlipForCoord(-466.34, 1168.34, 328.98)
         SetBlipSprite (Blip, 438)
         SetBlipDisplay(Blip, 4)
         SetBlipScale  (Blip, 1.2)
