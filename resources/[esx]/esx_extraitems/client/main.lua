@@ -43,7 +43,7 @@ AddEventHandler('esx_extraitems:oxygen_mask', function()
       end
       TaskPlayAnim(playerped, dict, "pickupwait", 8.0, -16.0, -1, 1, 0, false, false, false)
 
-	exports['t0sic_loadingbar']:loadingbar ('Sätter på Syrgasmask...', 6500)
+	-- exports['t0sic_loadingbar']:loadingbar ('Sätter på Syrgasmask...', 6500)
         Citizen.Wait(6500)
 	ClearPedTasks(GetPlayerPed(-1))
 	
@@ -118,7 +118,7 @@ AddEventHandler('esx_extraitems:bulletproof', function()
       end
       TaskPlayAnim(playerped, dict, "pickupwait", 8.0, -16.0, -1, 1, 0, false, false, false)
 
-	exports['t0sic_loadingbar']:loadingbar ('Sätter på Vest...', 3000)
+	-- exports['t0sic_loadingbar']:loadingbar ('Sätter på Vest...', 3000)
         Citizen.Wait(3000)
 	ClearPedTasks(GetPlayerPed(-1))
 	SetPedComponentVariation(playerPed, 9, 27, 9, 2)
@@ -138,7 +138,7 @@ local dict = "missheistdockssetup1clipboard@idle_a"
         Citizen.Wait(0)
       end
       TaskPlayAnim(playerped, dict, "idle_a", 8.0, -16.0, -1, 1, 0, false, false, false)
-    exports['t0sic_loadingbar']:loadingbar ('Använder Förbandslåda...', 10000)
+    -- exports['t0sic_loadingbar']:loadingbar ('Använder Förbandslåda...', 10000)
     Citizen.Wait(10000)
 	ClearPedTasks(GetPlayerPed(-1))
 	local playerPed = GetPlayerPed(-1)
@@ -165,7 +165,7 @@ AddEventHandler('esx_extraitems:clipcli', function()
 	if IsPedArmed(ped, 4) then
 		hash = GetSelectedPedWeapon(ped)
 		if hash ~= nil then
-			exports['t0sic_loadingbar']:loadingbar ('Laddar Vapen...', 6500)
+			-- exports['t0sic_loadingbar']:loadingbar ('Laddar Vapen...', 6500)
 			Citizen.Wait(6500)
 			AddAmmoToPed(GetPlayerPed(-1), hash,1000)
 			ESX.ShowNotification(_U("clip_use"))
@@ -195,7 +195,7 @@ AddEventHandler('esx_extraitems:carcleankit', function()
 				isBusy = true
 				TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_MAID_CLEAN', 0, true)
 				Citizen.CreateThread(function()
-					exports['t0sic_loadingbar']:loadingbar ('Tvättar Fordon...', 10000)
+					-- exports['t0sic_loadingbar']:loadingbar ('Tvättar Fordon...', 10000)
 					Citizen.Wait(10000)
 
 					SetVehicleDirtLevel(vehicle, 0)
@@ -214,7 +214,7 @@ end)
 
 RegisterNetEvent('esx_cigarett:startSmoke')
 AddEventHandler('esx_cigarett:startSmoke', function(source)
-	exports['t0sic_loadingbar']:loadingbar ('Tänder cigarett...', 10000)
+	-- exports['t0sic_loadingbar']:loadingbar ('Tänder cigarett...', 10000)
 	SmokeAnimation()
 end)
 
@@ -235,7 +235,7 @@ AddEventHandler("esx_cigarett:openCigarettes", function(item)
         Citizen.Wait(0)
       end
       TaskPlayAnim(playerped, dict, "idle_a", 8.0, -16.0, -1, 1, 0, false, false, false)
-    exports['t0sic_loadingbar']:loadingbar ('Öppnar cigarettpaket...', 3000)
+    -- exports['t0sic_loadingbar']:loadingbar ('Öppnar cigarettpaket...', 3000)
         Citizen.Wait(3000)
       ClearPedTasks(GetPlayerPed(-1))
 end)
@@ -317,7 +317,7 @@ AddEventHandler('esx_extraitems:picknick', function()
       end
       TaskPlayAnim(playerped, dict, "pickupwait", 8.0, -16.0, -1, 1, 0, false, false, false)
 
-	exports['t0sic_loadingbar']:loadingbar ('Lägger filt på marken...', 3000)
+	-- exports['t0sic_loadingbar']:loadingbar ('Lägger filt på marken...', 3000)
         Citizen.Wait(3000)
 	ClearPedTasks(GetPlayerPed(-1))
 
