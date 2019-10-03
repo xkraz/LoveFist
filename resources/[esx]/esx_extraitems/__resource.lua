@@ -20,7 +20,3 @@ server_scripts {
 	'config.lua',
 	'server/main.lua'
 }
-
-dependencies {
-	't0sic_loadingbar'
-}
