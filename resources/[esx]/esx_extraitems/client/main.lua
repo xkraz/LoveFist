@@ -127,57 +127,7 @@ AddEventHandler('esx_extraitems:bulletproof', function()
 end)
 
 -- End of Bullet Proof Vest
--- Start of First Aid Kit
 
-RegisterNetEvent('esx_extraitems:firstaidkit')
-AddEventHandler('esx_extraitems:firstaidkit', function()
-local dict = "missheistdockssetup1clipboard@idle_a"
-      local playerped = GetPlayerPed(PlayerId())
-      RequestAnimDict(dict)
-      while not HasAnimDictLoaded(dict) do
-        Citizen.Wait(0)
-      end
-      TaskPlayAnim(playerped, dict, "idle_a", 8.0, -16.0, -1, 1, 0, false, false, false)
-    -- exports['t0sic_loadingbar']:loadingbar ('Använder Förbandslåda...', 10000)
-    Citizen.Wait(10000)
-	ClearPedTasks(GetPlayerPed(-1))
-	local playerPed = GetPlayerPed(-1)
-	local health = GetEntityHealth(playerPed)
-	local max = GetEntityMaxHealth(playerPed)
-	
-	if health > 0 and health < max then
-		ESX.ShowNotification(_U('use_firstaidkit'))
-		
-		health = health + (max / 4)
-		if health > max then
-			health = max
-		end
-		SetEntityHealth(playerPed, health)
-	end
-end)
-
--- End of First Aid Kit
--- Start of Weapon Clip
-
-RegisterNetEvent('esx_extraitems:clipcli')
-AddEventHandler('esx_extraitems:clipcli', function()
-	ped = GetPlayerPed(-1)
-	if IsPedArmed(ped, 4) then
-		hash = GetSelectedPedWeapon(ped)
-		if hash ~= nil then
-			-- exports['t0sic_loadingbar']:loadingbar ('Laddar Vapen...', 6500)
-			Citizen.Wait(6500)
-			AddAmmoToPed(GetPlayerPed(-1), hash,1000)
-			ESX.ShowNotification(_U("clip_use"))
-		else
-			ESX.ShowNotification(_U("clip_no_weapon"))
-		end
-	else
-		ESX.ShowNotification(_U("clip_not_suitable"))
-	end
-end)
-
--- End of Weapon Clip
 -- Start of Carcleankit
 
 RegisterNetEvent('esx_extraitems:carcleankit')
@@ -201,11 +151,11 @@ AddEventHandler('esx_extraitems:carcleankit', function()
 					SetVehicleDirtLevel(vehicle, 0)
 					ClearPedTasksImmediately(playerPed)
 
-					ESX.ShowNotification('fordonet har ~g~rengjorts~s~')
+					ESX.ShowNotification('Vehicle has been ~g~cleaned~s~')
 					isBusy = false
 				end)
 			else
-				ESX.ShowNotification('det finns inget fordon i närheten')
+				ESX.ShowNotification('There is no vehicle nearby')
 			end
 end)
 
@@ -260,7 +210,7 @@ AddEventHandler('esx_snus:useSnus', function(source)
             Citizen.Wait(1000)
             ClearPedSecondaryTask(spelare)
             usingSnus = false
-            ESX.ShowNotification('Du satte upp en snus under läppen')
+            ESX.ShowNotification('You put snuff under your lip.')
         
         end)
     end
@@ -270,7 +220,7 @@ end)
 RegisterNetEvent('esx_snus:openSnusdosa')
 AddEventHandler('esx_snus:openSnusdosa', function(source)
 
-    ESX.ShowNotification('Du öppnade din snusdosa och tog ut snuset')
+    ESX.ShowNotification('You unwrap your snuff tin.')
 
 end)
 
@@ -409,7 +359,7 @@ AddEventHandler('esx_extraitems:monster', function()
 		DeleteObject(object)
 		ClearPedSecondaryTask(playerPed)
 	end)
-	ESX.ShowNotification('du känner dig hypad och energifull. Du kan nu springa ~y~5~w~ minuter ~o~utan att bli trött~w~!')
+	ESX.ShowNotification('You feel hyped. You can runa ~y~5~w~ minutes ~o~without getting tiredt~w~!')
 	
 	local timer = 0
 	while timer < 300 do
@@ -417,5 +367,5 @@ AddEventHandler('esx_extraitems:monster', function()
 		Citizen.Wait(2000)
 		timer = timer + 2
 	end
-	ESX.ShowNotification('Du känner din att puls återgår till en normal nivå')
+	ESX.ShowNotification('Your heart rate returns to normal.')
 end)

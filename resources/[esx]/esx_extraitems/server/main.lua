@@ -26,19 +26,6 @@ ESX.RegisterUsableItem('bulletproof', function(source)
 	xPlayer.removeInventoryItem('bulletproof', 1)
 end)
 
--- First Aid Kit
-ESX.RegisterUsableItem('firstaidkit', function(source)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	TriggerClientEvent('esx_extraitems:firstaidkit', source)
-	xPlayer.removeInventoryItem('firstaidkit', 1)
-end)
-
--- Weapon Clip
-ESX.RegisterUsableItem('clip', function(source)
-	local xPlayer = ESX.GetPlayerFromId(source)
-	TriggerClientEvent('esx_extraitems:clipcli', source)
-	xPlayer.removeInventoryItem('clip', 1)
-end)
 
 -- Carcleankit
 ESX.RegisterUsableItem('carcleankit', function(source)
