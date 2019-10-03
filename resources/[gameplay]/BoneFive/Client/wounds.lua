@@ -503,13 +503,11 @@ AddEventHandler('bonefive:client:crouched', function(_bool)
 end)
 
 RegisterNetEvent('bonefive:client:WalkChange')
-AddEventHandler('bonefive:client:WalkChange', function(lib,walkStyle)
+AddEventHandler('bonefive:client:WalkChange', function(walkStyle)
 
 	  if not (IsPedMale(PlayerPedId())) then
-      _lib2 = lib
       _walkStyle2 = walkStyle
   	else
-      _lib = lib
       _walkStyle = walkStyle
     end
 
