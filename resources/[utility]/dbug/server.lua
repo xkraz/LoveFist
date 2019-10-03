@@ -1,6 +1,6 @@
 
 --require "ansicolors"
-_debug = true
+_debug = false
 
 local colors = {
     -- attributes
