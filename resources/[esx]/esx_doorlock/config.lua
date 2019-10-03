@@ -3,7 +3,16 @@ Config.Locale = 'en'
 
 Config.DoorList = {
 
---- NEW HOSPITAL
+--- Willy Safe House
+
+{
+		objName = 'cj_ext_door_17',
+		objCoords  = {x = 350.37, y = -1026.86, z = 29.58},
+		textCoords = {x = 349.66, y = -1026.92, z = 29.33},
+		authorizedJobs = { 'vegaskey', 'adminkey', },
+		locked = true,
+		distance = 2.5
+	},
 
 
 -- OFFICE
