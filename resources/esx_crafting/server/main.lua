@@ -29,10 +29,7 @@ AddEventHandler('rs_crafting:CraftingFailed', function(CraftItem)
     local rand = math.random(1,50)
     if rand >= 50 then
         TriggerClientEvent('esx:showNotification', src, "Luckily you still have your items..")
-    else
-        for itemname, v in pairs(item.needs) do
-            xPlayer.removeInventoryItem(itemname, v.count)
-        end
+  
     end
     -- Adding function for crafting points (you can remove it if you want, YOU HAVE TO REMOVE THRESHOLDS ASWELL)
 	RemoveCraftingPoints(src)
