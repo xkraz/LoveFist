@@ -1554,14 +1554,15 @@ Config.DoorList = {
 		distance = 2,
 	},
 
-	{ -- Courtroom Door Right
-		objName = 'apa_p_mp_yacht_door',
-		objCoords  = {x = 1218.9344, y = 3598.9939, z = 36.8056},
-		textCoords = {x = 1218.9344, y = 3598.9939, z = 36.8056},
+	{ -- Court DownStairs Office
+		objName = 'apa_p_mp_yacht_door_01',
+		objCoords  = {x = -456.2044, y = 1173.4658, z = 327.4054},
+		textCoords = {x = -456.2044, y = 1173.4658, z = 327.4054},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
-		distance = 5,
+		distance = 3,
 	},
+	
 	{ -- Courtroom Door Left
 		objName = 'apa_p_mp_yacht_door',
 		objCoords  = {x = 1216.6008, y = 3599.1377, z = 37.1008},
@@ -1570,6 +1571,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 5,
 	},
+	
 	{ --Bank gate
 		objName = 'v_ilev_bk_vaultdoor',
 		objCoords  = {x = 255.2283, y = 223.976, z = 102.3932},
