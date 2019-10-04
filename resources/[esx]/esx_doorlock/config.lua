@@ -1466,102 +1466,103 @@ Config.DoorList = {
 	---- COURTHOUSE
 	---
 
-	{ -- GLASS FRONT LEFT
-		objName = 'hei_prop_bh1_08_hdoor',
-		objCoords  = {x = 1211.794, y = 3585.347, z = 37.45167},
-		textCoords = {x = 1211.794, y = 3585.347, z = 37.45167},
+	{ -- New Court Front L
+		objName = 'apa_Prop_SS1_MPint_Door_L',
+		objCoords  = {x = -463.6745, y = 1164.0845, z = 329.2481},
+		textCoords = {x = -463.6745, y = 1164.0845, z = 329.2481},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
-		distance = 5,
+		distance = 4,
 	},
 
-	{ -- GLASS FRONT RIGHT
-		objName = 'hei_prop_bh1_08_hdoor',
-		objCoords  = {x = 1213.064, y = 3587.497, z = 37.46204},
-		textCoords = {x = 1213.064, y = 3587.497, z = 37.46204},
+	{ -- New Court Front R
+		objName = 'apa_Prop_SS1_MPint_Door_L',
+		objCoords  = {x = -462.0705, y = 1165.5148, z = 329.2481},
+		textCoords = {x = -462.0705, y = 1165.5148, z = 329.2481},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
-		distance = 5,
+		distance = 4,
 	},
-	{ -- Secret Door
-		objName = 'v_ilev_cbankcountdoor01',
-		objCoords  = {x = 1224.086, y = 3599.331, z = 37.4556},
-		textCoords = {x = 1224.086, y = 3599.331, z = 37.4556},
+	{ -- Court Room 
+		objName = 'v_ilev_ra_door2',
+		objCoords  = {x = -467.6623, y = 1166.1450, z = 329.1158},
+		textCoords = {x = -467.6623, y = 1166.1450, z = 329.1158},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
-		distance = 5,
+		distance = 3,
 	},
-	{ -- Office Door
-		objName = 'apa_v_ilev_ss_door2',
-		objCoords  = {x = 1186.463, y = 3577.96, z = 37.33998},
-		textCoords = {x = 1186.463, y = 3577.96, z = 37.33998},
+	{ -- To Garage
+		objName = 'v_ilev_fa_frontdoor',
+		objCoords  = {x = -468.7912, y = 1171.6295, z = 329.0633},
+		textCoords = {x = -468.7912, y = 1171.6295, z = 329.0633},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
-		distance = 5,
+		distance = 3,
 	},
 
-	{ -- Cell Door
-		objName = 'v_ilev_fingate',
-		objCoords  = {x = 1175.5356, y = 3576.0051, z = 36.9301},
-		textCoords = {x = 1175.5356, y = 3576.0051, z = 36.9301},
+	{ -- Chief's Office
+		objName = 'v_ilev_cor_darkdoor',
+		objCoords  = {x = -459.4737, y = 1177.6865, z = 330.6999},
+		textCoords = {x = -459.4737, y = 1177.6865, z = 330.6999},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 2,
 	},
 
-	{ -- Cell Door 2
-		objName = 'v_ilev_fingate',
-		objCoords  = {x = 1176.1736, y = 3578.7158, z = 36.9366},
-		textCoords = {x = 1176.1736, y = 3578.7158, z = 36.9366},
+	{ -- Confrence Room
+		objName = 'prop_bh1_44_door_01l',
+		objCoords  = {x = -459.5285, y = 1180.0321, z = 330.7856},
+		textCoords = {x = -459.5285, y = 1180.0321, z = 330.7856},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 2,
 	},
 
-	{ -- Cell Door 3
-		objName = 'v_ilev_fingate',
-		objCoords  = {x = 1167.6437, y = 3574.7319, z = 36.9268},
-		textCoords = {x = 1167.6437, y = 3574.7319, z = 36.9268},
+	{ -- Court Room To Garage/Chambers
+		objName = 'v_ilev_fa_frontdoor',
+		objCoords  = {x = -477.1078, y = 1168.6976, z = 329.0623},
+		textCoords = {x = -477.1078, y = 1168.6976, z = 329.0623},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
-		distance = 2,
+		distance = 3,
 	},
 
-	{ -- Cell Door 4
-		objName = 'v_ilev_fingate',
-		objCoords  = {x = 1168.4250, y = 3578.4197, z = 36.9424},
-		textCoords = {x = 1168.4250, y = 3578.4197, z = 36.9424},
-		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
-		locked = true,
-		distance = 2,
-	},
-
-	{ -- Security Door
-		objName = 'v_ilev_arm_secdoor',
-		objCoords  = {x = 1166.5002, y = 3576.8796, z = 37.1851},
-		textCoords = {x = 1166.5002, y = 3576.8796, z = 37.1851},
-		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
-		locked = true,
-		distance = 2,
-	},
-
-	{ -- Garage Gate
-		objName = 'prop_sc1_06_gate_r',
-		objCoords  = {x = 1159.9706, y = 3570.0, z = 36.0115},
-		textCoords = {x = 1159.9706, y = 3570.0, z = 36.0115},
+	{ -- Court Garage 
+		objName = 'hei_prop_dt1_20_mp_gar2',
+		objCoords  = {x = -477.9643, y = 1168.3265, z = 325.7799},
+		textCoords = {x = -477.9643, y = 1168.3265, z = 325.7799},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
 		distance = 10,
 	},
 
-	{ -- Courtroom Door Right
-		objName = 'apa_p_mp_yacht_door',
-		objCoords  = {x = 1218.9344, y = 3598.9939, z = 36.8056},
-		textCoords = {x = 1218.9344, y = 3598.9939, z = 36.8056},
+	{ -- Court Garage back door 1
+		objName = 'apa_p_mp_door_Apart_door_black',
+		objCoords  = {x = -461.4822, y = 1182.7344, z = 325.7567},
+		textCoords = {x = -461.4822, y = 1182.7344, z = 325.7567},
 		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
 		locked = true,
-		distance = 5,
+		distance = 3,
 	},
+
+	{ -- Court Garage back door 2
+		objName = 'apa_p_mp_door_Apart_door_black',
+		objCoords  = {x = -479.9727, y = 1161.0249, z = 325.3877},
+		textCoords = {x = -479.9727, y = 1161.0249, z = 325.3877},
+		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
+		locked = true,
+		distance = 2,
+	},
+
+	{ -- Court DownStairs Office
+		objName = 'apa_p_mp_yacht_door_01',
+		objCoords  = {x = -456.2044, y = 1173.4658, z = 327.4054},
+		textCoords = {x = -456.2044, y = 1173.4658, z = 327.4054},
+		authorizedJobs = {  'courthouse', 'courthousekey','adminkey',  },
+		locked = true,
+		distance = 3,
+	},
+	
 	{ -- Courtroom Door Left
 		objName = 'apa_p_mp_yacht_door',
 		objCoords  = {x = 1216.6008, y = 3599.1377, z = 37.1008},
@@ -1570,6 +1571,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 5,
 	},
+	
 	{ --Bank gate
 		objName = 'v_ilev_bk_vaultdoor',
 		objCoords  = {x = 255.2283, y = 223.976, z = 102.3932},

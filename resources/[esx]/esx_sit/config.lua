@@ -121,6 +121,12 @@ Config.Interactables = {
 	"apa_mp_h_stn_chairstrip_05",
 	"apa_mp_h_din_chair_12",
 	"apa_mp_h_stn_sofacorn_10",
+	"xm_base_cia_chair_conf",
+	"prop_fbibombfile",
+	"labfutureceilingrb_mb5",
+	"bkr_Prop_Biker_BoardChair01",
+	"ex_Prop_OffChair_Exec_01",
+	"prop_cabinet_01",
 
 	
 }
