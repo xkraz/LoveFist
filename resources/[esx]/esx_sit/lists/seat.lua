@@ -87,7 +87,11 @@ Config.Sitable = {
 	apa_mp_h_stn_chairstrip_07	= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 	apa_mp_h_stn_chairstrip_05	= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 	apa_mp_h_din_chair_12		= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
-
+	xm_base_cia_chair_conf		= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
+	labfutureceilingrb_mb5m		= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
+	bkr_Prop_Biker_BoardChair01	= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.0, forwardOffset = 0.0, leftOffset = 0.0},
+	ex_Prop_OffChair_Exec_01	= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.0, forwardOffset = 0.0, leftOffset = 0.0},
+    prop_cabinet_01	            = { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.0, forwardOffset = 0.0, leftOffset = 0.0},
 
 	v_ilev_fh_kitchenstool 		= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 	v_ilev_tort_stool 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
@@ -106,6 +110,8 @@ Config.Sitable = {
 	prop_yacht_seat_03 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 	prop_hobo_seat_01 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.65, forwardOffset = 0.0, leftOffset = 0.0},
 	prop_front_seat_03			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
+	prop_fbibombfile		    = { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
+	bkr_Prop_Biker_BoardChair01	= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.0, forwardOffset = 0.0, leftOffset = 0.0},
 	-- COUCH
 	prop_rub_couch01 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 	miss_rub_couch_01 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
