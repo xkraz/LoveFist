@@ -222,6 +222,8 @@ RegisterNUICallback('NUIopenPhone', function()
 	exports['esx_phone']:openESXPhone()
 end)
 
+
+
 RegisterNUICallback('NUIopenBilling', function()
 	exports['esx_billing']:ShowBillsMenu()
 end)
@@ -808,83 +810,7 @@ AddEventHandler('noIdentity', function()
 end)
 
 RegisterNUICallback('NUItoggleID', function(data)
-	TriggerServerEvent('esx_privatemenu:setCharacter', myIdentifiers)
-	local job = tostring(exports['esx_policejob']:getJob())
-	Wait(1000)
-	SetNuiFocus(true, true)
-	licenseString = ""
-	getLicenses()
-	Wait(2000)
-	local charName 		= myIdentity.characterName
-	local charDOB  		= myIdentity.characterDOB
-	local charSex		= myIdentity.characterSex
-	local charHeight 	= myIdentity.characterHeight
-	local charJob		= "Unemployed"
-	local charLicenses	= licenseString
-	if job == 'taxi' then
-		charJob = "Taxi Driver"
-	elseif job == 'tailor' then
-		charJob = "Tailor"
-	elseif job == 'slaughterer' then
-		charJob = "Butcher"
-	elseif job == 'reporter' then
-		charJob = "Reporter"
-	elseif job == 'realestateagent' then
-		charJob = "Realtor"
-	elseif job == 'miner' then
-		charJob = "Miner"
-	elseif job == 'mechanic' then
-		charJob = "Mechanic"
-	elseif job == 'lumberjack' then
-		charJob = "Lumberjack"
-	elseif job == 'fueler' then
-		charJob = "Refiner"
-	elseif job == 'fisherman' then
-		charJob = "Fisherman"
-	elseif job == 'cardealer' then
-		charJob = "Car Dealer"
-	elseif job == 'banker' then
-		charJob = "Banker"
-	elseif job == 'ambulance' then
-		charJob = "EMS"
-	elseif job == 'police' then
-		charJob = "Police Officer"
-	elseif job == 'port' then
-		charJob = 'Port'
-	elseif job == 'state' then
-		charJob = 'State'
-	elseif job == 'sheriff' then
-		charJob = 'Sheriff'
-	-- INSERT ANY OTHER JOBS HERE
-	-- elseif data.characterJob == 'mechanic' then
-	-- 	charJob = "Mechanic"
-	end
-
-	local height = charHeight
-	local heightDivide = height / 12
-	local heightFeet = math.floor(heightDivide)
-	local heightMultiply = heightFeet * 12
-	local heightIn = height - heightMultiply
-	local heightInches = math.floor(heightIn)
-	local convertedHeight = 0
-
-	if heightFeet ~= 0 then
-		convertedHeight = tostring(heightFeet) .. " Feet " .. tostring(heightInches) .. " Inches"
-	else
-		convertedHeight = tostring(heightInches) .. " Inches"
-	end
-
-	Wait(1000)
-	SendNUIMessage({
-		type = "toggleIDCard",
-		characterName 		= 'Name: ' .. charName,
-		characterDOB		= 'Date of Birth: ' .. charDOB,
-		characterSex		= 'Sex: ' .. charSex,
-		characterHeight 	= 'Height: ' .. convertedHeight,
-		characterJob		= 'Current Job: ' .. charJob,
-		licensesButton		= '---LICENSES BELOW---',
-		characterLicenses	= licenseString .. '|'
-	})
+	TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()))
 end)
 
 RegisterNUICallback('NUIshowID', function(data)
@@ -893,17 +819,17 @@ end)
 
 function showID(data)
 	local player, distance = ESX.Game.GetClosestPlayer()
-	licenseString = ""
-	getLicenses()
-	Wait(2000)
+	
 	if distance ~= -1 and distance <= 3.0 then
-		local job = tostring(exports['esx_policejob']:getJob())
-		TriggerServerEvent('esx_privatemenu:showID', GetPlayerServerId(PlayerId()), GetPlayerServerId(player), job, licenseString)
+		
+		TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(player))
 		ESX.ShowNotification('You showed your ID.')
 	else
 		ESX.ShowNotification('There is no one nearby.')
 	end
 end
+
+
 
 RegisterNetEvent('esx_privatemenu:showID')
 AddEventHandler('esx_privatemenu:showID', function(data)
