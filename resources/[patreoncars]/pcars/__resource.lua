@@ -599,13 +599,6 @@ data_file 'VEHICLE_METADATA_FILE' 'kosta2/vehicles.meta'
 data_file 'CARCOLS_FILE' 'kosta2/carcols.meta'
 data_file 'VEHICLE_VARIATION_FILE' 'kosta2/carvariations.meta'
 
---kymberley
-data_file 'HANDLING_FILE' 'kymberley/vhandling.meta'
-data_file 'VEHICLE_METADATA_FILE' 'kymberley/vehicles.meta'
-data_file 'CARCOLS_FILE' 'kymberley/carcols.meta'
-data_file 'VEHICLE_VARIATION_FILE' 'kymberley/carvariations.meta'
-data_file 'VEHICLE_VARIATION_FILE' 'kymberley/dlctext.meta'
-data_file 'VEHICLE_LAYOUTS_FILE' 'kymberley/vehiclelayouts.meta'
 
 --lawson
 data_file 'HANDLING_FILE' 'lawson/handling.meta'
