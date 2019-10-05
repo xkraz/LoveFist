@@ -8232,13 +8232,13 @@ fWeaponDamageScaledToVehHealthMult
 		<Item type="CHandlingData">
 			<handlingName>NERO</handlingName>
 			<fMass value="1995.000000" />
-			<fInitialDragCoeff value="5.100000" />
+			<fInitialDragCoeff value="8.100000" />
 			<fPercentSubmerged value="85.000000" />
 			<vecCentreOfMassOffset x="0.000000" y="0.000000" z="0.000000" />
 			<vecInertiaMultiplier x="1.000000" y="1.300000" z="1.500000" />
 			<fDriveBiasFront value="0.200000" />
 			<nInitialDriveGears value="6" />
-			<fInitialDriveForce value="0.517500" />
+			<fInitialDriveForce value="0.539500" />
 			<fDriveInertia value="2.000000" />
 			<fClutchChangeRateScaleUpShift value="3.50000" />
 			<fClutchChangeRateScaleDownShift value="3.500000" />
