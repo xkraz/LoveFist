@@ -151,11 +151,6 @@ files {
 	'dude/carcols.meta',
     'dude/handling.meta',
 
-	--dude2
-  	'dude2/vehicles.meta',
-   	'dude2/carvariations.meta',
-	'dude2/carcols.meta',
-    'dude2/handling.meta',	
 	
 	--dude3
   	'dude3/vehicles.meta',

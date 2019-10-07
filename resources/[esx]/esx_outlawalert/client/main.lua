@@ -2,7 +2,7 @@ ESX = nil
 
 local timing, isPlayerWhitelisted = math.ceil(Config.Timer * 60000), false
 local streetName, playerGender
-local ped = PlayerPedId()
+
 Citizen.CreateThread(function()
 	while ESX == nil do
 		TriggerEvent('esx:getSharedObject', function(obj) ESX = obj end)
@@ -32,9 +32,6 @@ end)
 RegisterNetEvent('esx_outlawalert:outlawNotify')
 AddEventHandler('esx_outlawalert:outlawNotify', function(alert)
 	if isPlayerWhitelisted then
-		if GetHashKey("WEAPON_PISTOL50") == GetSelectedPedWeapon(ped) then
-			return true
-		end
 		ESX.ShowNotification(alert)
 	end
 end)
@@ -108,7 +105,7 @@ AddEventHandler('esx_outlawalert:carJackInProgress', function(targetCoords)
 					return
 				end
 			end
-			
+
 		end
 	end
 end)
@@ -116,32 +113,6 @@ end)
 RegisterNetEvent('esx_outlawalert:gunshotInProgress')
 AddEventHandler('esx_outlawalert:gunshotInProgress', function(targetCoords)
 	if isPlayerWhitelisted and Config.GunshotAlert then
-			if GetHashKey("WEAPON_PISTOL50") == GetSelectedPedWeapon(ped) then
-			return true
-		end
-		local alpha = 250
-		local gunshotBlip = AddBlipForRadius(targetCoords.x, targetCoords.y, targetCoords.z, Config.BlipGunRadius)
-
-		SetBlipHighDetail(gunshotBlip, true)
-		SetBlipColour(gunshotBlip, 1)
-		SetBlipAlpha(gunshotBlip, alpha)
-		SetBlipAsShortRange(gunshotBlip, true)
-
-		while alpha ~= 0 do
-			Citizen.Wait(Config.BlipGunTime * 4)
-			alpha = alpha - 1
-			SetBlipAlpha(gunshotBlip, alpha)
-
-			if alpha == 0 then
-				RemoveBlip(gunshotBlip)
-				return
-			end
-		end
-	end
-end)
-RegisterNetEvent('esx_outlawalert:cargoInProgress')
-AddEventHandler('esx_outlawalert:cargoInProgress', function(targetCoords)
-	if isPlayerWhitelisted then
 		local alpha = 250
 		local gunshotBlip = AddBlipForRadius(targetCoords.x, targetCoords.y, targetCoords.z, Config.BlipGunRadius)
 
@@ -244,9 +215,9 @@ Citizen.CreateThread(function()
 					z = ESX.Math.Round(playerCoords.z, 1)
 				}, streetName, playerGender)
 			end
+		
 
-		-- TODO is the ped's weapon suppressed?
-		elseif IsPedShooting(playerPed) and Config.GunshotAlert then
+		elseif IsPedShooting(playerPed) and not IsPedCurrentWeaponSilenced(playerPed)  and Config.GunshotAlert then
 
 			Citizen.Wait(3000)
 

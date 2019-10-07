@@ -9,13 +9,13 @@ Config.Timer = 1
 Config.GunshotAlert = true
 
 -- Set if show when player do carjacking
-Config.CarJackingAlert = false
+Config.CarJackingAlert = true
 
 -- Set if show when player fight in melee
-Config.MeleeAlert = false
+Config.MeleeAlert = true
 
 -- In seconds
-Config.BlipGunTime = 20.00
+Config.BlipGunTime = 5
 
 -- Blip radius, in float value!
 Config.BlipGunRadius = 50.0
@@ -27,7 +27,7 @@ Config.BlipMeleeTime = 7
 Config.BlipMeleeRadius = 50.0
 
 -- In seconds
-Config.BlipJackingTime = 20.00
+Config.BlipJackingTime = 10
 
 -- Blip radius, in float value!
 Config.BlipJackingRadius = 50.0
@@ -37,5 +37,5 @@ Config.ShowCopsMisbehave = true
 
 -- Jobs in this table are considered as cops
 Config.WhitelistedCops = {
-		'fib' , 'police'
+	'police'
 }
