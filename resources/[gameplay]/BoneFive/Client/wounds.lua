@@ -245,7 +245,7 @@ local weapons = {
     [`WEAPON_STICKYBOMB`] = WeaponClasses['EXPLOSIVE'],
 
     --[[ Other ]]--
-    [`WEAPON_FALL`] = WeaponClasses['OTHER'], -- Fall
+    [`WEAPON_FALL`] = WeaponClasses['FALL'], -- Fall
     [`WEAPON_HIT_BY_WATER_CANNON`] = WeaponClasses['OTHER'], -- Water Cannon
     [`WEAPON_RAMMED_BY_CAR`] = WeaponClasses['OTHER'], -- Rammed
     [`WEAPON_RUN_OVER_BY_CAR`] = WeaponClasses['OTHER'], -- Ran Over
@@ -271,7 +271,7 @@ local injured = {}
 
 function IsInjuryCausingLimp()
     for k, v in pairs(BodyParts) do
-        if v.causeLimp and (v.severity > 1) then
+        if v.causeLimp and v.severity > 1 then
             return true
         end
     end
@@ -306,14 +306,15 @@ end
 
 function ProcessRunStuff(ped)
     if IsInjuryCausingLimp() and not (onPainKiller > 0)  then
-        if not _crouched then
-          RequestAnimSet("move_m@injured")
-          while not HasAnimSetLoaded("move_m@injured") do
-              Citizen.Wait(0)
-          end
-          SetPedMovementClipset(ped, "move_m@injured", 1 )
-          SetPlayerSprint(PlayerId(), false)
+      if not _crouched then
+        RequestAnimSet("move_m@injured")
+        while not HasAnimSetLoaded("move_m@injured") do
+            Citizen.Wait(0)
         end
+        SetPedMovementClipset(ped, "move_m@injured", 1 )
+        SetPlayerSprint(PlayerId(), false)
+      end
+
         local level = 0
         for k, v in pairs(injured) do
             if v.severity > level then
@@ -329,19 +330,19 @@ function ProcessRunStuff(ped)
             exports['mythic_notify']:DoCustomHudText('inform', 'You\'ve Realized Doing Drugs Does Not Fix All Your Problems', 5000)
         end
     else
-        SetPedMoveRateOverride(ped, 1.0)
-        if not _crouched then
-          if not (IsPedMale(PlayerPedId())) then
-            ESX.Streaming.RequestAnimSet(_lib2, function()
-          		SetPedMovementClipset(PlayerPedId(), _walkStyle2, true)
-          	end)
-        	else
-            ESX.Streaming.RequestAnimSet(_lib, function()
-          		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
-          	end)
-          end
-
+      SetPedMoveRateOverride(ped, 1.0)
+      if not _crouched then
+        if not (IsPedMale(PlayerPedId())) then
+          ESX.Streaming.RequestAnimSet(_lib2, function()
+            SetPedMovementClipset(PlayerPedId(), _walkStyle2, true)
+          end)
+        else
+          ESX.Streaming.RequestAnimSet(_lib, function()
+            SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
+          end)
         end
+
+      end
         if DecorGetInt(ped, 'player_thirst') > 25 or onPainKiller > 0 then
             SetPlayerSprint(PlayerId(), true)
         end
@@ -354,10 +355,22 @@ function ProcessRunStuff(ped)
     end
 end
 
+Citizen.CreateThread(function()
+    while true do
+        for k, v in pairs(injured) do
+            if (v.part == 'RARM' and v.severity >= 2) or (v.part == 'LARM' and v.severity >= 2) or (v.part == 'RHAND' and v.severity >= 1) or (v.part == 'LHAND' and v.severity >= 1) then
+                SetCurrentPedWeapon(GetPlayerPed(-1), GetHashKey("WEAPON_UNARMED"), true)
+                BlockWeaponWheelThisFrame()
+            end
+        end
+        Citizen.Wait(0)
+    end
+end)
+
 function ProcessDamage(ped)
     if not IsEntityDead(ped) or not (onDrugs > 0) then
         for k, v in pairs(injured) do
-            if (v.part == 'LLEG' and v.severity >= 2) or (v.part == 'RLEG' and v.severity >= 2) or (v.part == 'LFOOT' and v.severity >= 3) or (v.part == 'RFOOT' and v.severity >= 3) then
+            if (v.part == 'LLEG' and v.severity >= 1) or (v.part == 'RLEG' and v.severity >= 1) or (v.part == 'LFOOT' and v.severity >= 2) or (v.part == 'RFOOT' and v.severity >= 2) then
                 if legCount >= 15 then
                     if not IsPedRagdoll(ped) and IsPedOnFoot(ped) then
                         local chance = math.random(100)
@@ -379,7 +392,7 @@ function ProcessDamage(ped)
                 else
                     legCount = legCount + 1
                 end
-            elseif (v.part == 'LARM' and v.severity > 1) or (v.part == 'LHAND' and v.severity > 1) or (v.part == 'LFINGER' and v.severity > 2) or (v.part == 'RARM' and v.severity > 1) or (v.part == 'RHAND' and v.severity > 1) or (v.part == 'RFINGER' and v.severity > 2) then
+            elseif (v.part == 'LARM' and v.severity >= 1) or (v.part == 'LHAND' and v.severity >= 1) or (v.part == 'LFINGER' and v.severity >= 2) or (v.part == 'RARM' and v.severity >= 1) or (v.part == 'RHAND' and v.severity >= 1) or (v.part == 'RFINGER' and v.severity >= 2) then
                 if armcount >= 30 then
                     local chance = math.random(100)
 
@@ -387,7 +400,7 @@ function ProcessDamage(ped)
                 else
                     armcount = armcount + 1
                 end
-            elseif (v.part == 'HEAD' and v.severity > 2) then
+            elseif (v.part == 'HEAD' and v.severity >= 2) then
                 if headCount >= 30 then
                     local chance = math.random(100)
 
@@ -430,8 +443,9 @@ function ProcessDamage(ped)
 end
 
 function CheckDamage(ped, bone, weapon)
+    TriggerServerEvent('log', 'IN')
     if weapon == nil then return end
-
+    TriggerServerEvent('log', 'UMM')
     if parts[bone] ~= nil then
         if not BodyParts[parts[bone]].isDamaged then
             BodyParts[parts[bone]].isDamaged = true
@@ -455,7 +469,7 @@ function CheckDamage(ped, bone, weapon)
                 label = BodyParts[parts[bone]].label,
                 severity = BodyParts[parts[bone]].severity
             })
-
+            TriggerServerEvent('log', 'UNINJURED')
             TriggerServerEvent('bonefive:server:SyncInjuries', {
                 limbs = BodyParts,
                 isBleeding = tonumber(isBleeding)
@@ -472,7 +486,7 @@ function CheckDamage(ped, bone, weapon)
                     isBleeding = tonumber(isBleeding) + 1
                 end
             end
-
+            TriggerServerEvent('log', 'Injured')
             if BodyParts[parts[bone]].severity < 4 then
                 BodyParts[parts[bone]].severity = BodyParts[parts[bone]].severity + 1
                 TriggerServerEvent('bonefive:server:SyncInjuries', {
@@ -496,7 +510,6 @@ function CheckDamage(ped, bone, weapon)
     end
 end
 
-
 RegisterNetEvent('bonefive:client:crouched')
 AddEventHandler('bonefive:client:crouched', function(_bool)
   _crouched = _bool
@@ -514,7 +527,6 @@ AddEventHandler('bonefive:client:WalkChange', function(walkStyle)
   TriggerEvent('esx:showNotification', '~g~Saved walk style.')
 
 end)
-
 
 RegisterNetEvent('bonefive:client:SyncBleed')
 AddEventHandler('bonefive:client:SyncBleed', function(bleedStatus)
@@ -549,25 +561,23 @@ AddEventHandler('bonefive:client:ResetWalk', function()
   end
 end)
 
-
 RegisterNetEvent('bonefive:client:ResetLimbs')
 AddEventHandler('bonefive:client:ResetLimbs', function()
     for k, v in pairs(BodyParts) do
         v.isDamaged = false
         v.severity = 0
     end
-
-
-	if not (IsPedMale(PlayerPedId())) then
-	ESX.Streaming.RequestAnimSet(_lib2, function()
-  		SetPedMovementClipset(PlayerPedId(), _walkStyle2, true)
-    end)
-	else
-	ESX.Streaming.RequestAnimSet(_lib, function()
-		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
-  	end)
-  end
-  injured = {}
+    if not (IsPedMale(PlayerPedId())) then
+  	ESX.Streaming.RequestAnimSet(_lib2, function()
+    		SetPedMovementClipset(PlayerPedId(), _walkStyle2, true)
+      end)
+  	else
+  	ESX.Streaming.RequestAnimSet(_lib, function()
+  		SetPedMovementClipset(PlayerPedId(), _walkStyle, true)
+    	end)
+    end
+    injured = {}
+    TriggerServerEvent('bonefive:server:SyncInjuries', {})
 end)
 
 RegisterNetEvent('bonefive:client:FieldTreatBleed')
@@ -735,3 +745,269 @@ Citizen.CreateThread(function()
 		Citizen.Wait(333)
 	end
 end)
+
+function GetPedInFront()
+	local plyPed = GetPlayerPed(PlayerId())
+	local plyPos = GetEntityCoords(plyPed, false)
+	local plyOffset = GetOffsetFromEntityInWorldCoords(plyPed, 0.0, 1.3, 0.0)
+	local rayHandle = StartShapeTestCapsule(plyPos.x, plyPos.y, plyPos.z, plyOffset.x, plyOffset.y, plyOffset.z, 1.0, 12, plyPed, 7)
+	local _, _, _, _, ped = GetShapeTestResult(rayHandle)
+	return ped
+end
+
+function GetPlayerFromPed(ped)
+	for a = 1, 64 do
+    TriggerServerEvent('log', a)
+    TriggerServerEvent('log', json.encode(GetPlayerPed(a)))
+		if GetPlayerPed(a) == ped then
+			return a
+		end
+	end
+	return -1
+end
+
+RegisterCommand("checkinjury", function()
+  local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+
+  if closestPlayer == -1 or closestDistance > 3.0 then
+    ESX.ShowNotification('~y~No one nearby.')
+    TriggerServerEvent('bonefive:server:CheckInjury', GetPlayerServerId(PlayerId()))
+  else
+    if closestPlayer ~= 0 then
+      TriggerServerEvent('bonefive:server:CheckInjury', GetPlayerServerId(closestPlayer))
+    end
+  end
+end)
+
+RegisterNetEvent('bonefive:client:ShowInjury')
+AddEventHandler('bonefive:client:ShowInjury', function(targetInjurys, targetPed)
+  local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
+
+  TriggerServerEvent('log', '{purple}targetPed: ' .. closestPlayer)
+  TriggerServerEvent('log', '{purple}targetPed: ' .. json.encode(GetPlayerPed(closestPlayer)))
+
+  if IsEntityDead(GetPlayerPed(closestPlayer)) then
+    TriggerServerEvent('log', '{red}Dead! ' .. getDeathReason(GetPlayerPed(closestPlayer)))
+    TriggerEvent('chatMessage', "INJURYS ", {30, 144, 255}, '^1' .. getDeathReason(GetPlayerPed(closestPlayer)))
+  else
+    TriggerServerEvent('log', '{green}Alive!')
+  end
+  if targetInjurys and targetInjurys ~= -1 then
+
+    if targetInjurys.isBleeding > 0 then
+      TriggerServerEvent('log', '{red}Bleeding: ' .. targetInjurys.isBleeding)
+      if targetInjurys.isBleeding > 0 and targetInjurys.isBleeding < 3 then
+        TriggerEvent('chatMessage', "INJURYS ", {30, 144, 255}, '^8You notice some bleeding.')
+      elseif targetInjurys.isBleeding < 5 then
+        TriggerEvent('chatMessage', "INJURYS ", {30, 144, 255}, '^8You notice a lot of bleeding!')
+      else
+        TriggerEvent('chatMessage', "INJURYS ", {30, 144, 255}, '^8You notice significant bleeding! They are pale from all the bloodloss')
+      end
+    end
+    local damageText = "^0You notice injury(s): "
+    for k,v in pairs(targetInjurys.limbs) do
+      if v.isDamaged then
+        TriggerServerEvent('log', '{blue}Bone: ' .. tostring(v.label))
+        TriggerServerEvent('log', '{yellow}Damaged: ' .. tostring(v.isDamaged))
+        TriggerServerEvent('log', '{yellow}Severity: ' .. tostring(v.severity))
+        damageText = damageText .. '^6' .. tostring(v.label) .. '^5(' .. tostring(v.severity) .. ')^7, '
+      end
+    end
+
+    TriggerEvent('chatMessage', "INJURYS ", {30, 144, 255}, damageText)
+  else
+    TriggerEvent('esx:showNotification', '~r~Player not injured!')
+  end
+end)
+
+function getDeathReason(target)
+	local DeathReason, Killer, DeathCauseHash
+		if IsEntityDead(target) then
+			DeathCauseHash = GetPedCauseOfDeath(target)
+        TriggerServerEvent('log', 'HASH: ' .. tostring(DeathCauseHash))
+
+			if IsMelee(DeathCauseHash) then
+				DeathReason = 'You Notice Blunt Trauma'
+			elseif IsTorch(DeathCauseHash) or (DeathCauseHash ==  -544306709) then
+				DeathReason = 'You Notice They Are Very Burnt'
+			elseif IsKnife(DeathCauseHash) then
+				DeathReason = 'You Notice a Slash Wound'
+			elseif IsPistol(DeathCauseHash) then
+				DeathReason = 'You Notice a Bullet Wound'
+			elseif IsSub(DeathCauseHash) or (DeathCauseHash ==  -1121678507) then
+				DeathReason = 'You Notice Many Small Bullet Wounds'
+			elseif IsRifle(DeathCauseHash) then
+				DeathReason = 'You Notice Large Bullet Wound'
+			elseif IsLight(DeathCauseHash) then
+				DeathReason = 'You Notice Many Small Bullet Wounds'
+			elseif IsShotgun(DeathCauseHash) then
+				DeathReason = 'You Notice a Shotgun Wound'
+			elseif IsSniper(DeathCauseHash) then
+				DeathReason = 'You Notice a Large Bullet Wound'
+			elseif IsHeavy(DeathCauseHash) then
+				DeathReason = 'You Notice a Large Bullet Wound'
+			elseif IsMinigun(DeathCauseHash) then
+				DeathReason = 'You Notice Many Large Bullet Wounds'
+			elseif IsBomb(DeathCauseHash) then
+				DeathReason = 'You Notice They Blew up'
+			elseif IsVeh(DeathCauseHash) then
+				DeathReason = 'You Notice They Were Ran Over'
+			elseif IsVK(DeathCauseHash) then
+				DeathReason = 'You Notice They Were Ran Over'
+      elseif (DeathCauseHash == -868994466) then
+        DeathReason = 'You Notice Lungs filled with water'
+      elseif (DeathCauseHash == -656458692) then
+        DeathReason = 'You Notice Brass Knuckle Impacts'
+      elseif (DeathCauseHash == 419712736) then
+        DeathReason = 'You Notice Blunt Trauma'
+      elseif (DeathCauseHash == -1810795771) then
+        DeathReason = 'You Notice a Long Skinny Trauma'
+      elseif (DeathCauseHash == -853065399) then
+        DeathReason = 'You Notice a Deep Slash'
+      else
+				DeathReason = 'Death cause unsure'
+			end
+
+      return DeathReason
+		end
+end
+
+function IsMelee(Weapon)
+	local Weapons = {'WEAPON_UNARMED', 'WEAPON_CROWBAR', 'WEAPON_BAT', 'WEAPON_GOLFCLUB', 'WEAPON_HAMMER', 'WEAPON_NIGHTSTICK'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsTorch(Weapon)
+	local Weapons = {'WEAPON_MOLOTOV'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsKnife(Weapon)
+	local Weapons = {'WEAPON_DAGGER', 'WEAPON_KNIFE', 'WEAPON_SWITCHBLADE', 'WEAPON_HATCHET', 'WEAPON_BOTTLE'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsPistol(Weapon)
+	local Weapons = {'WEAPON_SNSPISTOL', 'WEAPON_HEAVYPISTOL', 'WEAPON_VINTAGEPISTOL', 'WEAPON_PISTOL', 'WEAPON_APPISTOL', 'WEAPON_COMBATPISTOL'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsSub(Weapon)
+	local Weapons = {'WEAPON_MICROSMG', 'WEAPON_SMG'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsRifle(Weapon)
+	local Weapons = {'WEAPON_CARBINERIFLE', 'WEAPON_MUSKET', 'WEAPON_ADVANCEDRIFLE', 'WEAPON_ASSAULTRIFLE', 'WEAPON_SPECIALCARBINE', 'WEAPON_COMPACTRIFLE', 'WEAPON_BULLPUPRIFLE'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsLight(Weapon)
+	local Weapons = {'WEAPON_MG', 'WEAPON_COMBATMG'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsShotgun(Weapon)
+	local Weapons = {'WEAPON_BULLPUPSHOTGUN', 'WEAPON_ASSAULTSHOTGUN', 'WEAPON_DBSHOTGUN', 'WEAPON_PUMPSHOTGUN', 'WEAPON_HEAVYSHOTGUN', 'WEAPON_SAWNOFFSHOTGUN'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsSniper(Weapon)
+	local Weapons = {'WEAPON_MARKSMANRIFLE', 'WEAPON_SNIPERRIFLE', 'WEAPON_HEAVYSNIPER', 'WEAPON_ASSAULTSNIPER', 'WEAPON_REMOTESNIPER'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsHeavy(Weapon)
+	local Weapons = {'WEAPON_GRENADELAUNCHER', 'WEAPON_RPG', 'WEAPON_FLAREGUN', 'WEAPON_HOMINGLAUNCHER', 'WEAPON_FIREWORK', 'VEHICLE_WEAPON_TANK'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsMinigun(Weapon)
+	local Weapons = {'WEAPON_MINIGUN'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsBomb(Weapon)
+	local Weapons = {'WEAPON_GRENADE', 'WEAPON_PROXMINE', 'WEAPON_EXPLOSION', 'WEAPON_STICKYBOMB'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsVeh(Weapon)
+	local Weapons = {'VEHICLE_WEAPON_ROTORS'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
+
+function IsVK(Weapon)
+	local Weapons = {'WEAPON_RUN_OVER_BY_CAR', 'WEAPON_RAMMED_BY_CAR'}
+	for i, CurrentWeapon in ipairs(Weapons) do
+		if GetHashKey(CurrentWeapon) == Weapon then
+			return true
+		end
+	end
+	return false
+end
