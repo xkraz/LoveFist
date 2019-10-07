@@ -37,8 +37,19 @@ Config.Items = {
   [25] = {label = "Radio",      item = "radio",       price = 400},
   [26] = {label = "Player Safe (Small)",      item = "playersafeSmall",       price = 7000},
   [27] = {label = "Player Safe (Large)",      item = "playersafeLarge",       price = 23000},
-  [27] = {label = "Player Safe (Large)",      item = "playersafeLarge",       price = 23000},
-  [27] = {label = "Boombox",      item = "hifi",       price = 750},
+  [28] = {label = "Player Safe (Large)",      item = "playersafeLarge",       price = 23000},
+  [29] = {label = "Boombox",      item = "hifi",       price = 750},
+  [30] = {label = "Oxygen_Mask",      item = "oxygen_mask",       price = 250},
+  [31] = {label = "Car Cleaning Kit",      item = "carcleankit",       price = 50},
+  [32] = {label = "Pack of Smokes",      item = "cigaretter",       price = 10},
+  [32] = {label = "Snuff Tin",      item = "snusdosa",       price = 5},
+  [33] = {label = "Snuff",      item = "snus",       price = 1},
+  [34] = {label = "Umbrella",      item = "paraply",       price = 20},
+  [35] = {label = "Red Rose",      item = "ros",       price = 4},
+  [36] = {label = "Monster Energy",      item = "monster",       price = 10},
+  [37] = {label = "Donut",      item = "donut",       price = 2},
+  [37] = {label = "Picnic Basket",      item = "picknick",       price = 15},
+  [38] = {label = "Pack of Smokes",      item = "cigaretter",       price = 10},
 }
 
 Config.Images = {
@@ -69,7 +80,10 @@ Config.Images = {
   [25] = {item = "radio",   src = "img/items/radio.png"},
   [26] = {item = "playersafeSmall", src = "img/items/playersafeSmall.png"},
   [27] = {item = "playersafeLarge", src = "img/items/playersafeLarge.png"},
-  [28] = {item = "hifi", src = "img/items/hifi.png"}
+  [28] = {item = "hifi", src = "img/items/hifi.png"},
+  [29] = {item = "Oxygen Mask", src = "img/items/oxygen_mask.png"},
+  [30] = {item = "Car Cleaning Kit", src = "img/items/carcleankit.png"},
+  [31] = {item = "Pack of Smokes", src = "img/items/cigaretter.png"},
 }
 
 Config.Zones = {
