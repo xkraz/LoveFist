@@ -168,13 +168,15 @@ ESX.RegisterServerCallback('CAD:getChar', function(source, cb, id)
 					end
 				MySQL.Async.fetchAll("SELECT * FROM medical_records WHERE identifier = @identifier AND firstname = @fname AND lastname = @lname",
 				{
-					['@identifier'] = result[1]["identifier"]
-				}, function(res7)
-					if res7[1] ~= nil then
-						result[1]["medicals"] = res7
-					else
-						result[1]["medicals"] = {}
-					end
+				['@identifier'] = result[1]["identifier"],
+				['@fname'] = result[1]["firstname"],
+				['@lname'] = result[1]["lastname"]
+			}, function(res7)
+				if res7[1] ~= nil then
+					result[1]["medicals"] = res7
+				else
+					result[1]["medicals"] = {}
+				end
 					cb(result)
 				end)
 			end)
