@@ -81,7 +81,7 @@ Citizen.CreateThread(function()
   while true do
     Citizen.Wait(0)
     if takePhoto ~= true then
-      if IsControlJustPressed(1, KeyOpenClose) and not drifting then
+      if IsControlJustPressed(1, KeyOpenClose) and not drifting and not(IsEntityDead(PlayerPedId())) then
         hasPhone(function (hasPhone)
           if hasPhone == true then
             TooglePhone()
@@ -101,6 +101,11 @@ Citizen.CreateThread(function()
           SetNuiFocus(nuiFocus, nuiFocus)
           hasFocus = nuiFocus
         elseif useMouse == false and hasFocus == true then
+          SetNuiFocus(false, false)
+          hasFocus = false
+        end
+        if IsEntityDead(PlayerPedId()) then
+          menuIsOpen = false
           SetNuiFocus(false, false)
           hasFocus = false
         end
@@ -166,7 +171,7 @@ function showFixePhoneHelper (coords)
       SetTextComponentFormat("STRING")
       AddTextComponentString("~g~" .. data.name .. ' ~o~' .. number .. '~n~~INPUT_PICKUP~~w~ Utiliser')
       DisplayHelpTextFromStringLabel(0, 0, 0, -1)
-      if IsControlJustPressed(1, KeyTakeCall) then
+      if IsControlJustPressed(1, KeyTakeCall) and not(IsEntityDead(PlayerPedId())) then
         startFixeCall(number)
       end
       break
@@ -195,7 +200,7 @@ Citizen.CreateThread(function ()
             SetTextComponentFormat("STRING")
             AddTextComponentString("~INPUT_PICKUP~ Décrocher")
             DisplayHelpTextFromStringLabel(0, 0, 1, -1)
-            if IsControlJustPressed(1, KeyTakeCall) then
+            if IsControlJustPressed(1, KeyTakeCall) and not(IsEntityDead(PlayerPedId())) then
               PhonePlayCall(true)
               TakeAppel(PhoneInCall[i])
               PhoneInCall = {}
