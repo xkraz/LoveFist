@@ -284,4 +284,5 @@ files {
 	'html/img/items/meat.png',
 	'html/img/items/donut.png',
 	'html/img/items/picknick.png',
+	'html/img/items/grand_cru.png',
 }
