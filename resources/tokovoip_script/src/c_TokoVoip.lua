@@ -147,7 +147,7 @@ function TokoVoip.initialize(self)
 			end
 
 
-			if (IsControlPressed(0, self.radioKey) and self.plugin_data.radioChannel ~= -1) then -- Talk on radio
+			if (IsControlPressed(0, self.radioKey) and self.plugin_data.radioChannel ~= -1) and not(IsEntityDead(PlayerPedId())) then -- Talk on radio
 				self.plugin_data.radioTalking = true;
 				self.plugin_data.localRadioClicks = true;
 				if (self.plugin_data.radioChannel > 100) then
@@ -173,7 +173,7 @@ function TokoVoip.initialize(self)
 					setPlayerData(self.serverId, "radio:talking", false, true);
 				end
 				self:updateTokoVoipInfo();
-				
+
 				if lastTalkState == true then
 					lastTalkState = false
 					StopAnimTask(PlayerPedId(), "random@arrests","generic_radio_chatter", -4.0);
