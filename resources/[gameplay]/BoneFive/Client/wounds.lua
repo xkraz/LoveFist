@@ -358,7 +358,7 @@ end
 Citizen.CreateThread(function()
     while true do
         for k, v in pairs(injured) do
-            if (v.part == 'RARM' and v.severity >= 2) or (v.part == 'LARM' and v.severity >= 2) or (v.part == 'RHAND' and v.severity >= 1) or (v.part == 'LHAND' and v.severity >= 1) then
+            if (v.part == 'RARM' and v.severity >= 2) or (v.part == 'RHAND' and v.severity >= 1) then
                 SetCurrentPedWeapon(GetPlayerPed(-1), GetHashKey("WEAPON_UNARMED"), true)
                 BlockWeaponWheelThisFrame()
             end
