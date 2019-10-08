@@ -217,7 +217,7 @@ Citizen.CreateThread(function()
 			end
 		
 
-		elseif IsPedShooting(playerPed) and not IsPedCurrentWeaponSilenced(playerPed)  and Config.GunshotAlert then
+		elseif IsPedShooting(playerPed) and not IsPedCurrentWeaponSilenced(playerPed) and Config.GunshotAlert and GetSelectedPedWeapon(playerPed) ~= 0x3656C8C1 then
 
 			Citizen.Wait(3000)
 
