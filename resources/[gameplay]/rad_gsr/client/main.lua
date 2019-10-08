@@ -17,7 +17,8 @@ Citizen.CreateThread(function()
     while true do
         Citizen.Wait(0)
         ped = PlayerPedId()
-        if IsPedShooting(ped) then
+		-- added "and GetSelectedPedWeapon(playerPed) ~= 0x3656C8C1 and GetSelectedPedWeapon(playerPed) ~= 0x34A67B97"
+        if IsPedShooting(ped) and GetSelectedPedWeapon(ped) ~= 0x3656C8C1 and GetSelectedPedWeapon(ped) ~= 0x34A67B97 then
             TriggerServerEvent('GSR:SetGSR', timer)
             hasShot = true
             Citizen.Wait(Config.gsrUpdate)
