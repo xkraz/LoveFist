@@ -3,9 +3,9 @@
 ------------------------------------------------------------------------------
 
 Config = {}
-Config.TrafficX 			= 325
-Config.PedestrianX 			= 435
-Config.ParkedX 				= 398
+Config.TrafficX 			= 225
+Config.PedestrianX 			= 335
+Config.ParkedX 				= 298
 Config.Divider 				= 1000
 Config.iPlayers				= 0
 Config.Static				= 1.95
@@ -17,5 +17,12 @@ Config.Wanted				= false
 Config.VehicleBlacklist = {
 	'rubble',
 	'biff',
-	'taco'
+	'taco',
+	'rhino',
+	'lazer',
+	'TITAN',
+	'buzzard',
+	'hydra',
+	
+	
 }
