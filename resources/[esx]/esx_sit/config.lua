@@ -127,6 +127,9 @@ Config.Interactables = {
 	"bkr_Prop_Biker_BoardChair01",
 	"ex_Prop_OffChair_Exec_01",
 	"prop_cabinet_01",
-
-	
+    "v_club_stagechair",
+	"v_ilev_ph_bench ",
+	"prop_armchair_01",
+    "prop_cs_folding_chair_01",
+    "prop_flipchair_01",
 }
