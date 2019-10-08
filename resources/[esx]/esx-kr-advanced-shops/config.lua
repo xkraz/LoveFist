@@ -50,7 +50,7 @@ Config.Items = {
   [37] = {label = "Donut",      item = "donut",       price = 2},
   [37] = {label = "Picnic Basket",      item = "picknick",       price = 15},
   [38] = {label = "Pack of Smokes",      item = "cigaretter",       price = 10},
-  [38] = {label = "Pet Food",      item = "croquettes",       price = 300},
+  [38] = {label = "Scooby Snack",      item = "croquettes",       price = 300},
 }
 
 Config.Images = {
