@@ -1,4 +1,4 @@
 Config                            = {}
 
-Config.MaxItemCount = 50 
-Config.MaxDifferentItems = 10
+Config.MaxItemCount = 100
+Config.MaxDifferentItems = 50
