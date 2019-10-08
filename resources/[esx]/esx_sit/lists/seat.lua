@@ -2,6 +2,8 @@ Config.Sitable = {
 	--Only verticalOffset works right now!	
 	--all scenarios: pastebin.com/6mrYTdQv
 	
+	
+	
 	-- BENCH
 	prop_bench_01a 				= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 	prop_bench_01b 				= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
@@ -19,6 +21,7 @@ Config.Sitable = {
 	prop_fib_3b_bench 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 	prop_ld_bench01 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 	prop_wait_bench_01 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
+	v_ilev_ph_bench 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 
 	-- CHAIR
 	hei_prop_heist_off_chair 	= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
@@ -92,6 +95,10 @@ Config.Sitable = {
 	bkr_Prop_Biker_BoardChair01	= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.0, forwardOffset = 0.0, leftOffset = 0.0},
 	ex_Prop_OffChair_Exec_01	= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.0, forwardOffset = 0.0, leftOffset = 0.0},
     prop_cabinet_01	            = { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.0, forwardOffset = 0.0, leftOffset = 0.0},
+	v_club_stagechair 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
+	prop_armchair_01			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
+	prop_cs_folding_chair_01 	= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
+	prop_flipchair_01 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 
 	v_ilev_fh_kitchenstool 		= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
 	v_ilev_tort_stool 			= { scenario = 'PROP_HUMAN_SEAT_BENCH', verticalOffset = -0.5, forwardOffset = 0.0, leftOffset = 0.0},
