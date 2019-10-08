@@ -37,7 +37,7 @@ Banks = {
 		position = vector3(-107.06505584717, 6474.8012695313, 31.62670135498 ),
 		reward = {min=15000,max=30000},
 		nameofbank = "Blaine County Savings",
-		cooldown = 30 * 60 * 1000,
+		cooldown = 2 * 60 * 60 * 1000,
 		robtime = 300000,
 		NumberOfCopsRequired = 4,
 		lastrobbed = 0,
