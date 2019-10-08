@@ -1,5 +1,5 @@
 local hospitalCheckin = {x = 308.06161499023, y = -595.19683837891, z = 43.291839599609, h = 180.4409942627}
-local sandyCheckin = {x = 1840.12, y = 3673.33, z = 34.28, h = 27.55}
+local sandyCheckin = {x = 1839.20, y = 3672.78, z = 10.69, h = 27.55}
 local paletoCheckin = {x = -247.78, y = 6331.31, z = 32.43}
 local pillboxTeleports = {
     {},

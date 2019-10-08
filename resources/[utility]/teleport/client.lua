@@ -19,30 +19,6 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = 3594.00, ['y'] = 3673.77, ['z'] = 33.57, nom = "Go to - Lab"},
 		positionTo = { ['x'] = 3540.72, ['y'] = 3676.00, ['z'] = 27.75, nom = "Go to - Surface"},
 	},
-	["CASINO"] = {
-		positionFrom = { ['x'] = 930.11, ['y'] = 41.6, ['z'] = 81.1, nom = "Enter Casino"},
-		positionTo = { ['x'] = 984.02, ['y'] = 20.48, ['z'] = 3.47, nom = "Leave Casino"},
-	},
-	["SANDYSHORESPD"] = {
-		positionFrom = { ['x'] = 1851.04, ['y'] = 3683.22, ['z'] = 34.27, nom = "Offices & Jail"},
-		positionTo = { ['x'] = 1854.37, ['y'] = 3716.53, ['z'] = 1.08, nom = "Back to Lobby"},
-	},
-	["YAKUZAARMORY"] = {
-		positionFrom = { ['x'] = -888.9, ['y'] = -1439.3, ['z'] = 7.53, nom = "Enter Armory"},
-		positionTo = { ['x'] = -893.76, ['y'] = -1441.36, ['z'] = 7.53, nom = "Exit Armory"},
-	},
-	["ADMINAPPSTPUP"] = {
-		positionFrom = { ['x'] = -1425.65, ['y'] = -1004.45, ['z'] = 4.93, nom = "Go Upstairs"},
-		positionTo = { ['x'] = -1399.39, ['y'] = -986.16, ['z'] = 19.38, nom = "Go Downstairs"},
-	},
-	["ADMINAPT1"] = {
-		positionFrom = { ['x'] = -1393.38, ['y'] = -995.68, ['z'] = 19.38, nom = "Red's Apartment"},
-		positionTo = { ['x'] = -1396.3, ['y'] = -1000.68, ['z'] = 34.7, nom = "Exit Apartment"},
-	},
-	["ADMINAPT3"] = {
-		positionFrom = { ['x'] = -1406.09, ['y'] = -977.45, ['z'] = 19.38, nom = "Admin Apt 3"},
-		positionTo = { ['x'] = -1418.22, ['y'] = -966.75, ['z'] = 34.7, nom = "Exit Apartment"},
-	},
 	["CHURCH"] = {
 		positionFrom = { ['x'] = -320.62, ['y'] = 2818.95, ['z'] = 59.45, nom = "Enter Church"},
 		positionTo = { ['x'] = -308.71, ['y'] = 2811.37, ['z'] = -185.26, nom = "Exit Church"},
@@ -155,6 +131,10 @@ local TeleportFromTo = {
     ["TacoEscape"] = {
 		positionFrom = { ['x'] = -2772.03, ['y'] = -72.32, ['z'] = 4.03, nom = "Escape Frrom Taco"},
 		positionTo = { ['x'] = -2800.32, ['y'] = -70.09, ['z'] = 2.09, nom = "You made it"},
+		},
+	["SandyHospital"] = {
+		positionFrom = { ['x'] = 1839.14, ['y'] = 3673.41, ['z'] = 33.80, nom = "Enter Hospital"},
+		positionTo = { ['x'] = 1841.90, ['y'] = 3670.74, ['z'] = 10.00, nom = "Exit Hospital"},
 		},
 
 

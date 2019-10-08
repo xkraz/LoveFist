@@ -166,6 +166,7 @@ AddEventHandler('esx_pharmacyv2:useKit', function(itemName, hp_regen)
       health = max
     end
     SetEntityHealth(ped, health)
+	TriggerEvent('bonefive:client:RemoveBleed')
   end
 end)
 
@@ -189,6 +190,8 @@ AddEventHandler('esx_pharmacyv2:useDefibrillateur', function(itemName)
         if GetEntityHealth(closestPlayer) == 0 then
           TriggerServerEvent('esx_ambulancejob:reviveP', GetPlayerServerId(closestPlayer))
           ESX.ShowNotification(_U('revive_complete') .. GetPlayerName(closestPlayer))
+		  TriggerEvent('bonefive:client:RemoveBleed')
+			TriggerEvent('bonefive:client:ResetLimbs')
         else
           ESX.ShowNotification(GetPlayerName(closestPlayer) .. _U('isdead'))
         end

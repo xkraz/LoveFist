@@ -132,4 +132,5 @@ Config.Interactables = {
 	"prop_armchair_01",
     "prop_cs_folding_chair_01",
     "prop_flipchair_01",
+	"v_serv_ct_chair02",
 }
