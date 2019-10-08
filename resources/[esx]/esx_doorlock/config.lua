@@ -687,7 +687,7 @@ Config.DoorList = {
 		objCoords  = {x = 283.00, y = -1341.54, z = 24.54},
 		textCoords = {x = 283.00, y = -1341.54, z = 25.00},
 		authorizedJobs = { 'ambulance', 'police' , 'fib', 'ambulancekey', 'adminkey', },
-		locked = true,
+		locked = false,
 		distance = 2.5
 	},
 
@@ -697,7 +697,7 @@ Config.DoorList = {
 		objCoords  = {x = 282.44, y = -1342.36, z = 24.54},
 		textCoords = {x = 282.44, y = -1342.36, z = 25.00},
 		authorizedJobs = { 'ambulance', 'police' , 'fib', 'ambulancekey', 'adminkey', },
-		locked = true,
+		locked = false,
 		distance = 2.5
 	},
 

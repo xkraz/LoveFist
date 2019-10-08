@@ -141,8 +141,8 @@ local TeleportFromTo = {
 		},
 
 	["IllegalHospital"] = {
-		positionFrom = { ['x'] = 240.94, ['y'] = -1378.98, ['z'] = 33.74, nom = "Enter Private Hospital"},
-		positionTo = { ['x'] = 275.81, ['y'] = -1361.23, ['z'] = 24.54, nom = "Exit Private Hospital"},
+		positionFrom = { ['x'] = 240.94, ['y'] = -1378.98, ['z'] = 33.74, nom = "Enter Morgue"},
+		positionTo = { ['x'] = 275.81, ['y'] = -1361.23, ['z'] = 24.54, nom = "Exit Morgue"},
 		},
 	["RACE-SPA"] = {
 		positionFrom = { ['x'] = 1737.00, ['y'] = 3309.73, ['z'] = 41.22, nom = "Fly to Spa Racetrack"},
