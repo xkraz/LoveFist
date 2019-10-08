@@ -14,7 +14,7 @@ AddEventHandler('loffe-fishing:sellFish', function()
 	sendNotification(_source, 'You have no Fish', 'error', 2500)
 	else
 	xPlayer.removeInventoryItem('fish', fishQuantity)
-	xPlayer.addAccountMoney('bank', fishQuantity * 50)
+	xPlayer.addAccountMoney('bank', fishQuantity * 20)
 	sendNotification(_source, 'You sold ' .. fishQuantity .. ' fish to ' .. fishQuantity * randomMoney .. ' $', 'success', 3500)
 	end
 
