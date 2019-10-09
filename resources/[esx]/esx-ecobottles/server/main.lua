@@ -1,7 +1,7 @@
 local ESX = nil
 
-TriggerEvent("esx:getSharedObject", function(obj) 
-    ESX = obj 
+TriggerEvent("esx:getSharedObject", function(obj)
+    ESX = obj
 end)
 
 RegisterServerEvent("esx-ecobottles:sellBottles")
@@ -9,7 +9,7 @@ AddEventHandler("esx-ecobottles:sellBottles", function()
     local player = ESX.GetPlayerFromId(source)
 
     local currentBottles = player.getInventoryItem("bottle")["count"]
-    
+
     if currentBottles > 0 then
         math.randomseed(os.time())
         local randomMoney = math.random((Config.BottleReward[1] or 1), (Config.BottleReward[2] or 4))
@@ -48,7 +48,6 @@ AddEventHandler("esx-ecobottles:retrieveBottle", function()
     end
 	if luck >= 85 and luck <= 100 then
         player.addInventoryItem("solvent", 1)
-        TriggerClientEvent("esx:showNotification", source, ("You found x%s solvents"):format(randomBottle))
+        TriggerClientEvent("esx:showNotification", source, "You found a jug of solvent")
     end
 end)
-
