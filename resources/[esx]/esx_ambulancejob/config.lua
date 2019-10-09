@@ -4,7 +4,7 @@ Config.DrawDistance               = 100.0
 
 Config.Marker                     = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 
-Config.ReviveReward               = 10  -- revive reward, set to 0 if you don't want it enabled
+Config.ReviveReward               = 250  -- revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- enable anti-combat logging?
 Config.LoadIpl                    = false -- disable if you're using fivem-ipl or other IPL loaders
 
@@ -144,6 +144,36 @@ Config.Hospitals = {
 				}
 			}
 		},
+		
+		FastTravels = {
+			{
+				From = vector3(1833.96,  3679.74, -6.06),
+				To = { coords = vector3(1843.96,  3689.74, -6.06), heading = 67.3 },
+				Marker = { type = 1, x = 1.5, y = 1.5, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			},
+
+			{
+				From = vector3(1863.96,  3699.74, -6.06),
+				To = { coords = vector3(1963.96,  3799.74, -6.06), heading = 247.08 },
+				Marker = { type = 1, x = 1.5, y = 1.5, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			}
+		},
+
+		FastTravelsPrompt = {
+			{
+				From = vector3(1833.96,  3679.74, -6.06),
+				To = { coords = vector3(1843.96,  3689.74, -6.06), heading = 249.1 },
+				Marker = { type = 34, x = 1.0, y = 1.0, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = true },
+				Prompt = 'Press ~INPUT_CONTEXT~ to fast travel to the roof.'
+			},
+
+			{
+				From = vector3(1863.96,  3699.74, -6.06),
+				To = { coords = vector3(1963.96,  3799.74, -6.06), heading = 255.1 },
+				Marker = { type = 42, x = 1.0, y = 1.0, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = true },
+				Prompt = 'Press ~INPUT_CONTEXT~ to fast travel to the hospital.'
+			}
+		}
 
 
 		

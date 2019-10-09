@@ -16,5 +16,5 @@ server_scripts {
 }
 
 dependencies {
-  'MF_SafeCracker',
+  'lovefist_cracker',
 }
