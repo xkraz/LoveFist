@@ -2650,4 +2650,21 @@ Config.DoorList = {
 		locked = true,
 		distance = 2
 		},
+			{-- HOUSE ROBBERY BEACH
+		objName = 'v_ilev_trev_doorfront',
+		objCoords  = {x = -1149.709, y = -1521.088, z = 10.78267},
+		textCoords = {x = 1846.39, y = 3684.45, z = 34.40},
+		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
+		locked = true,
+		distance = 5
+		},
+		
+		{-- PRISON OUTSIDE LOCK
+		objName = 'v_ilev_gtdoor',
+		objCoords  = {x = 1690.86, y = 2566.625, z = 45.60403},
+		textCoords = {x = 1690.86, y = 2566.625, z = 45.60403},
+		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
+		locked = true,
+		distance = 5
+		},
 }

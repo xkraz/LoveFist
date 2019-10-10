@@ -60,8 +60,8 @@ local TeleportFromTo = {
 		positionTo = { ['x'] = 1685.78, ['y'] = 2534.37, ['z'] = 45.56, nom = "The Pin"},
 	},
 	["rockford hills church"] = {
-		positionFrom = { ['x'] = -766.56, ['y'] = -24.00, ['z'] = 41.08, nom = "enter church"},
-		positionTo = { ['x'] = -1945.68, ['y'] = -13.42, ['z'] = 91.67, nom = "leave church"},
+		positionFrom = { ['x'] = -766.56, ['y'] = -24.00, ['z'] = 41.08, nom = "Enter Church"},
+		positionTo = { ['x'] = -785.54, ['y'] = -13.52, ['z'] = -16.78, nom = "Leave Church"},
 	},
 	["backyard"] = {
 		positionFrom = { ['x'] = -1571.79, ['y'] = 136.97, ['z'] = 2209.91, nom = "Yard"},
