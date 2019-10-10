@@ -122,7 +122,7 @@ function OpenmarducasActionsMenu()
 						menu.close()
 						local vehicleProps = data.current.value
 
-						ESX.Game.SpawnVehicle(vehicleProps.model, Config.Zones.VehicleSpawnPoint.Pos, 270.0, function(vehicle)
+						ESX.Game.SpawnVehicle(vehicleProps.model, Config.Zones.VehicleSpawnPoint.Pos, 7.0, function(vehicle)
 							ESX.Game.SetVehicleProperties(vehicle, vehicleProps)
 							local playerPed = PlayerPedId()
 							TaskWarpPedIntoVehicle(playerPed,  vehicle,  -1)
@@ -142,7 +142,7 @@ function OpenmarducasActionsMenu()
 				}
 
 				if Config.EnablePlayerManagement and ESX.PlayerData.job and (ESX.PlayerData.job.grade_name == 'boss' or ESX.PlayerData.job.grade_name == 'chef' or ESX.PlayerData.job.grade_name == 'experimente') then
-					table.insert(elements, {label = 'Raptor', value = 'raptor12'})
+					table.insert(elements, {label = 'Raptor', value = 'raptor2017'})
 				end
 
 				ESX.UI.Menu.CloseAll()
@@ -790,27 +790,20 @@ AddEventHandler('esx_marducasjob:repaircar', function(car, specs)
 		SetVehicleEngineHealth(car, specs.eng)
 		SetVehicleUndriveable(car, false)
 	end
-
 	if specs.body ~= -1 then
 		SetVehicleDeformationFixed(car)
 		SetVehicleBodyHealth(car, 1000.0)
-
 		for i = 0, 4 do
 			SetVehicleTyreBurst(vehicle, i, true, 0.0)
 			SetVehicleTyreFixed(vehicle, i)
 		end
-
 		for i = 0, 6 do
 			FixVehicleWindow(vehicle, i)
 		end
-
-
 	end
-
 	if specs.tank ~= -1 then
 		SetVehiclePetrolTankHealth(car, specs.tank)
 	end
-
 end)
 
 RegisterNetEvent('esx_marducasjob:mechrepair')
@@ -1144,7 +1137,7 @@ end)
 
 -- Create Blips
 Citizen.CreateThread(function()
-	local blip = AddBlipForCoord(Config.Zones.marducasActions.Pos.x, Config.Zones.marducasActions.Pos.y, Config.Zones.marducasActions.Pos.z)
+	local blip = AddBlipForCoord(815.41, -921.91, 25.53)
 
 	SetBlipSprite (blip, 546)
 	SetBlipDisplay(blip, 4)
