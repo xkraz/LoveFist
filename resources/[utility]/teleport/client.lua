@@ -140,6 +140,10 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = 1839.14, ['y'] = 3673.41, ['z'] = 33.80, nom = "Enter Hospital"},
 		positionTo = { ['x'] = 1841.90, ['y'] = 3670.74, ['z'] = 10.00, nom = "Exit Hospital"},
 		},
+	["beachapartment"] = {
+		positionFrom = { ['x'] = -1396.84, ['y'] = -1008.7, ['z'] = 24.70, nom = "to pool"},
+		positionTo = { ['x'] = -1399.37, ['y'] = -986.11, ['z'] = 19.38, nom = "back inside"},
+		},
 
 
 }
