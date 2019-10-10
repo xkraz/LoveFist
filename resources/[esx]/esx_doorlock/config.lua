@@ -503,7 +503,7 @@ Config.DoorList = {
 		locked = false,
 		distance = 2.5
 	},
-	
+
 	{-- PALETO CELL 1
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = -428.06, y = 5996.67, z = 31.87},
@@ -512,7 +512,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 2.5
 		},
-		
+
 			{-- PALETO CELL 2
 		objName = 'v_ilev_ph_cellgate',
 		objCoords  = {x = -431.19, y = 5999.74, z = 31.87},
@@ -521,7 +521,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 2.5
 		},
-	
+
 	{ -- PALETO INT WATCH
 		objName = 'v_ilev_rc_door2',
 		objCoords  = {x = -449.7946, y = 6015.448, z = 31.86633},
@@ -538,7 +538,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 2.5
 	},
-	
+
 	{ -- PALETO BACKDOOR 1
 		objName = 'v_ilev_gc_door01',
 		objCoords  = {x = -450.97870, y = 6006.075, z = 31.99417},
@@ -579,7 +579,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 2.5
 	},
-	
+
 	{ -- PALETO LOBBY LEFT 1
 		objName = 'v_ilev_bk_door2',
 		objCoords  = {x = -440.98070, y = 6012.771, z = 31.86633},
@@ -596,7 +596,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 2.5
 	},
-	
+
 		{ -- PALETO LOBBY LEFT 2
 		objName = 'v_ilev_ss_door7',
 		objCoords  = {x = -449.55, y = 6008.558, z = 31.80887},
@@ -1593,7 +1593,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 4,
 	},
-	{ -- Court Room 
+	{ -- Court Room
 		objName = 'v_ilev_ra_door2',
 		objCoords  = {x = -467.6623, y = 1166.1450, z = 329.1158},
 		textCoords = {x = -467.6623, y = 1166.1450, z = 329.1158},
@@ -1637,7 +1637,7 @@ Config.DoorList = {
 		distance = 3,
 	},
 
-	{ -- Court Garage 
+	{ -- Court Garage
 		objName = 'hei_prop_dt1_20_mp_gar2',
 		objCoords  = {x = -477.9643, y = 1168.3265, z = 325.7799},
 		textCoords = {x = -477.9643, y = 1168.3265, z = 325.7799},
@@ -1672,7 +1672,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3,
 	},
-	
+
 	{ -- Courtroom Door Left
 		objName = 'apa_p_mp_yacht_door',
 		objCoords  = {x = 1216.6008, y = 3599.1377, z = 37.1008},
@@ -1681,7 +1681,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 5,
 	},
-	
+
 	{ --Bank gate
 		objName = 'v_ilev_bk_vaultdoor',
 		objCoords  = {x = 255.2283, y = 223.976, z = 102.3932},
@@ -2045,7 +2045,7 @@ Config.DoorList = {
 	  -- door 1
 
 
-	-- door 2
+	--[[ door 2
 	{
 		objName = 'prop_ss1_14_garage_door',
 		objCoords  = {x = -1280.65723, y = -3352.1377, z = 14.8663607},
@@ -2053,56 +2053,8 @@ Config.DoorList = {
 		authorizedJobs = { 'marducaskey', 'adminkey', },
 		locked = true,
 		distance = 15,
-	},
+	},]]
 
-	-- door 3
-	{
-		objName = 'prop_ss1_14_garage_door',
-		objCoords  = {x = -1272.12915, y = -3357.073, z = 14.8640938},
-		textCoords = {x = -1272.12915, y = -3357.073, z = 14.8640938},
-		authorizedJobs = {'marducaskey' , 'adminkey', },
-		locked = true,
-		distance = 15,
-	},
-
-	-- door 4
-	{
-		objName = 'prop_ss1_14_garage_door',
-		objCoords  = {x = -1246.80554, y = -3371.67676, z = 14.8665056},
-		textCoords = {x = -1246.80554, y = -3371.67676, z = 14.8665056},
-		authorizedJobs = {'marducaskey', 'adminkey', },
-		locked = true,
-		distance = 15,
-	},
-	-- door 5
-	{
-		objName = 'prop_ss1_14_garage_door',
-		objCoords  = {x = -1238.2771, y = -3376.61133, z = 14.8680754},
-		textCoords = {x = -1238.2771, y = -3376.61133, z = 14.8680754},
-		authorizedJobs = { 'marducaskey', 'adminkey', },
-		locked = true,
-		distance = 15,
-	},
-
-	-- door 6
-	{
-		objName = 'prop_ss1_14_garage_door',
-		objCoords  = {x = -1263.76147, y = -3361.99756, z = 14.8656559},
-		textCoords = {x = -1263.76147, y = -3361.99756, z = 14.8656559},
-		authorizedJobs = { 'marducaskey', 'adminkey', },
-		locked = true,
-		distance = 15,
-	},
-
-	-- door 7
-	{
-		objName = 'prop_ss1_14_garage_door',
-		objCoords  = {x = -1255.233, y = -3366.93213, z = 14.8663435},
-		textCoords = {x = -1255.233, y = -3366.93213, z = 14.8663435},
-		authorizedJobs = { 'marducaskey','adminkey', },
-		locked = true,
-		distance = 15,
-	},
 	--- villa del grapes
 
 	{--right front gate
@@ -2562,7 +2514,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
-		{--williams front door cabin 
+		{--williams front door cabin
 		objName = 'hei_prop_sync_door01a',
 		objCoords  = {x = -421.83493, y = 3838.65308, z = 65.9981155},
 		textCoords = {x = -421.83493, y = 3838.65308, z = 65.9981155},

@@ -7,119 +7,119 @@ files {
    	'80prelude/carvariations.meta',
 	'80prelude/carcols.meta',
     '80prelude/handling.meta',
-	
+
 	--180sx
 	'180sx/data/vehicles.meta',
     '180sx/data/carvariations.meta',
     '180sx/data/carcols.meta',
     '180sx/data/handlingb.meta',
-    
+
     --250gtcali
 	'250gtcali/vehicles.meta',
    	'250gtcali/carvariations.meta',
 	'250gtcali/carcols.meta',
     '250gtcali/handling.meta',
 	'250gtcali/dlctext.meta',
-	
+
 	--250gto
   	'250gto/vehicles.meta',
    	'250gto/carvariations.meta',
 	'250gto/carcols.meta',
     '250gto/handling.meta',
-	'250gto/dlctext.meta',	
-	
+	'250gto/dlctext.meta',
+
 	--air1
   	'air1/vehicles.meta',
    	'air1/carvariations.meta',
 	'air1/carcols.meta',
-    'air1/handling.meta',	
-	
+    'air1/handling.meta',
+
 	--anus
 	'anus/vehicles.meta',
    	'anus/carvariations.meta',
 	'anus/carcols.meta',
     'anus/handling.meta',
-	
+
 	--anus2
 	'anus2/vehicles.meta',
    	'anus2/carvariations.meta',
 	'anus2/carcols.meta',
     'anus2/handling.meta',
-	
+
 	--archer
 	'archer/vehicles.meta',
    	'archer/carvariations.meta',
 	'archer/carcols.meta',
     'archer/handling.meta',
-	
+
 	--archer2
   	'archer2/vehicles.meta',
    	'archer2/carvariations.meta',
 	'archer2/carcols.meta',
-    'archer2/handling.meta',	
-	
+    'archer2/handling.meta',
+
 	--archer3
   	'archer3/vehicles.meta',
    	'archer3/carvariations.meta',
 	'archer3/carcols.meta',
     'archer3/handling.meta',
-	
+
 	---arve
   	'arve/vehicles.meta',
    	'arve/carvariations.meta',
 	'arve/carcols.meta',
-    'arve/handling.meta',	
-	
+    'arve/handling.meta',
+
 	--audir8
   	'audir8/vehicles.meta',
    	'audir8/carvariations.meta',
 	'audir8/carcols.meta',
     'audir8/handling.meta',
-	'audir8/dlctext.meta',	
-	
+	'audir8/dlctext.meta',
+
 	--bag
   	'bag/vehicles.meta',
    	'bag/carvariations.meta',
 	'bag/carcols.meta',
-    'bag/handling.meta',	
-	
+    'bag/handling.meta',
+
 	--bazzatcha
   	'bazzatcha/vehicles.meta',
    	'bazzatcha/carvariations.meta',
 	'bazzatcha/contentunlocks.meta',
-    'bazzatcha/handling.meta',	
-	
+    'bazzatcha/handling.meta',
+
 	--brian
   	'brian/vehicles.meta',
    	'brian/carvariations.meta',
 	'brian/carcols.meta',
-    'brian/handling.meta',	
-	
+    'brian/handling.meta',
+
 	--brian2
   	'brian2/vehicles.meta',
    	'brian2/carvariations.meta',
 	'brian2/carcols.meta',
-    'brian2/handling.meta',	
-	
+    'brian2/handling.meta',
+
 	--broady
   	'broady/vehicles.meta',
    	'broady/carvariations.meta',
 	'broady/carcols.meta',
     'broady/handling.meta',
-	
+
 	--calvin
     'calvin/vehicles.meta',
     'calvin/carvariations.meta',
     'calvin/carcols.meta',
     'calvin/handling.meta',
-    'calvin/vehiclelayouts.meta',	
-	
+    'calvin/vehiclelayouts.meta',
+
 	--calvin2
   	'calvin2/vehicles.meta',
    	'calvin2/carvariations.meta',
 	'calvin2/carcols.meta',
-    'calvin2/handling.meta',	
-	
+    'calvin2/handling.meta',
+
 	--calvin3
   	'calvin3/vehicles.meta',
    	'calvin3/carvariations.meta',
@@ -132,32 +132,32 @@ files {
    	'charles/carvariations.meta',
 	'charles/carcols.meta',
     'charles/handling.meta',
-	
+
 	--code
     'code/vehicles.meta',
     'code/carvariations.meta',
     'code/carcols.meta',
-    'code/handling.meta',	
-	
+    'code/handling.meta',
+
 	--davidjames
   	'davidjames/vehicles.meta',
    	'davidjames/carvariations.meta',
 	'davidjames/carcols.meta',
-    'davidjames/handling.meta',	
-	
+    'davidjames/handling.meta',
+
 	--dude
   	'dude/vehicles.meta',
    	'dude/carvariations.meta',
 	'dude/carcols.meta',
     'dude/handling.meta',
 
-	
+
 	--dude3
   	'dude3/vehicles.meta',
    	'dude3/carvariations.meta',
 	'dude3/carcols.meta',
-    'dude3/handling.meta',	
-	
+    'dude3/handling.meta',
+
 	--farva
   	'farva/vehicles.meta',
    	'farva/carvariations.meta',
@@ -169,7 +169,7 @@ files {
    	'firm/carvariations.meta',
 	'firm/carcols.meta',
     'firm/handling.meta',
-	
+
 	--governor
   	'governor/vehicles.meta',
    	'governor/carvariations.meta',
@@ -181,19 +181,19 @@ files {
   	'gtrr/vehicles.meta',
    	'gtrr/carvariations.meta',
 	'gtrr/carcols.meta',
-    'gtrr/handling.meta',	
-	
+    'gtrr/handling.meta',
+
 	--integra
   	'integra/vehicles.meta',
    	'integra/carvariations.meta',
 	'integra/carcols.meta',
-    'integra/handling.meta',	
-	
+    'integra/handling.meta',
+
 	--ivy
   	'ivy/vehicles.meta',
    	'ivy/carvariations.meta',
 	'ivy/carcols.meta',
-    'ivy/handling.meta',	
+    'ivy/handling.meta',
 
 	--jax
   	'jax/vehicles.meta',
@@ -205,33 +205,33 @@ files {
   	'jeff/vehicles.meta',
    	'jeff/carvariations.meta',
 	'jeff/carcols.meta',
-    'jeff/handling.meta',	
-	
+    'jeff/handling.meta',
+
 	--jordan
   	'jordan/vehicles.meta',
    	'jordan/carvariations.meta',
 	'jordan/carcols.meta',
-    'jordan/handling.meta',		
+    'jordan/handling.meta',
 
-	
+
 	--jordan2
   	'jordan2/vehicles.meta',
    	'jordan2/carvariations.meta',
 	'jordan2/carcols.meta',
-    'jordan2/handling.meta',	
+    'jordan2/handling.meta',
 
 	--kosta
   	'kosta/vehicles.meta',
    	'kosta/carvariations.meta',
 	'kosta/carcols.meta',
     'kosta/handling.meta',
-	
+
 	--kosta2
   	'kosta2/vehicles.meta',
    	'kosta2/carvariations.meta',
 	'kosta2/carcols.meta',
-    'kosta2/handling.meta',	
-	
+    'kosta2/handling.meta',
+
 	--kymberley
   	'kymberley/vehicles.meta',
    	'kymberley/carvariations.meta',
@@ -244,77 +244,84 @@ files {
   	'lawson/vehicles.meta',
    	'lawson/carvariations.meta',
 	'lawson/carcols.meta',
-    'lawson/handling.meta',	
-	
+    'lawson/handling.meta',
+
 	--lawson2
   	'lawson2/vehicles.meta',
    	'lawson2/carvariations.meta',
 	'lawson2/carcols.meta',
-    'lawson2/handling.meta',	
+    'lawson2/handling.meta',
 
 	--lucas
   	'lucas/vehicles.meta',
    	'lucas/carvariations.meta',
 	'lucas/carcols.meta',
-    'lucas/handling.meta',	
-	
+    'lucas/handling.meta',
+
 	--lyla
   	'lyla/vehicles.meta',
    	'lyla/carvariations.meta',
 	'lyla/carcols.meta',
-    'lyla/handling.meta',		
-	
+    'lyla/handling.meta',
+
 	--noble
   	'noble/vehicles.meta',
    	'noble/carvariations.meta',
 	'noble/carcols.meta',
-    'noble/handling.meta',		
-	
+    'noble/handling.meta',
+
 	--pepega
   	'pepega/vehicles.meta',
    	'pepega/carvariations.meta',
 	'pepega/carcols.meta',
-    'pepega/handling.meta',		
-	
+    'pepega/handling.meta',
+
 	--pogle
   	'pogle/vehicles.meta',
    	'pogle/carvariations.meta',
 	'pogle/carcols.meta',
-    'pogle/handling.meta',		
-	
+    'pogle/handling.meta',
+
+
+	--raptor2017
+	'raptor2017/vehicles.meta',
+    'raptor2017/carvariations.meta',
+  'raptor2017/carcols.meta',
+    'raptor2017/handling.meta',
+
 	--rj
   	'rj/vehicles.meta',
    	'rj/carvariations.meta',
 	'rj/carcols.meta',
     'rj/handling.meta',
 	'rj/vehiclelayouts.meta',
-	'rj/dlctext.meta',	
-	
+	'rj/dlctext.meta',
+
 	--rrdawn
   	'rrdawn/vehicles.meta',
    	'rrdawn/carvariations.meta',
 	'rrdawn/carcols.meta',
     'rrdawn/handling.meta',
-	'rrdawn/dlctext.meta',	
-	
+	'rrdawn/dlctext.meta',
+
 	--sandkinglow
   	'sandkinglow/vehicles.meta',
    	'sandkinglow/carvariations.meta',
 	'sandkinglow/carcols.meta',
     'sandkinglow/handling.meta',
-	'sandkinglow/dlctext.meta',	
-	
+	'sandkinglow/dlctext.meta',
+
 	--sean
   	'sean/vehicles.meta',
    	'sean/carvariations.meta',
 	'sean/carcols.meta',
-    'sean/handling.meta',		
-	
+    'sean/handling.meta',
+
 	--simmons
   	'simmons/vehicles.meta',
    	'simmons/carvariations.meta',
 	'simmons/carcols.meta',
-    'simmons/handling.meta',	
+    'simmons/handling.meta',
 
 	--simmons2
   	'simmons2/vehicles.meta',
@@ -328,16 +335,16 @@ files {
   	'siquan/vehicles.meta',
    	'siquan/carvariations.meta',
 	'siquan/carcols.meta',
-    'siquan/handling.meta',	
-	
+    'siquan/handling.meta',
+
 	--unfavorstaff2
   	'unfavorstaff2/vehicles.meta',
    	'unfavorstaff2/carvariations.meta',
 	'unfavorstaff2/carcols.meta',
     'unfavorstaff2/handling.meta',
 	'unfavorstaff2/vehiclelayouts.meta',
-	'unfavorstaff2/dlctext.meta',	
-	
+	'unfavorstaff2/dlctext.meta',
+
 	--vito
   	'vito/vehicles.meta',
    	'vito/carvariations.meta',
@@ -348,16 +355,16 @@ files {
   	'wolf/vehicles.meta',
    	'wolf/carvariations.meta',
 	'wolf/carcols.meta',
-    'wolf/handling.meta',	
-	
+    'wolf/handling.meta',
+
 	--zerrza
    	'zerrza/vehicles.meta',
    	'zerrza/carvariations.meta',
 	'zerrza/carcols.meta',
     'zerrza/handling.meta'
-	
+
     --  THE LAST LINE ITEM ABOVE SHOULD NOT HAVE A COMMA ( , ) AT THE END
-    
+
     --'vehiclelayouts.meta',    -- Not Required, only used on some addons
 }
 
@@ -637,6 +644,11 @@ data_file 'VEHICLE_METADATA_FILE' 'pogle/vehicles.meta'
 data_file 'CARCOLS_FILE' 'pogle/carcols.meta'
 data_file 'VEHICLE_VARIATION_FILE' 'pogle/carvariations.meta'
 
+--raptor2017
+data_file 'HANDLING_FILE' 'raptor2017/handling.meta'
+data_file 'VEHICLE_METADATA_FILE' 'raptor2017/vehicles.meta'
+data_file 'CARCOLS_FILE' 'raptor2017/carcols.meta'
+data_file 'VEHICLE_VARIATION_FILE' 'raptor2017/carvariations.meta'
 --rj
 data_file 'HANDLING_FILE' 'rj/handling.meta'
 data_file 'VEHICLE_METADATA_FILE' 'rj/vehicles.meta'
@@ -710,6 +722,8 @@ data_file 'HANDLING_FILE' 'zerrza/handling.meta'
 data_file 'VEHICLE_METADATA_FILE' 'zerrza/vehicles.meta'
 data_file 'CARCOLS_FILE' 'zerrza/carcols.meta'
 data_file 'VEHICLE_VARIATION_FILE' 'zerrza/carvariations.meta'
+
+
 
 --data_file 'VEHICLE_LAYOUTS_FILE' 'vehiclelayouts.meta' --not required, only used on some addons
 
