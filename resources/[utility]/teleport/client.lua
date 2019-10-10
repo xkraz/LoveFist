@@ -75,6 +75,10 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -1528.78, ['y'] = 82.35, ['z'] = 56.43, nom = "garage"},
 		positionTo = { ['x'] = 231.53, ['y'] = -998.36, ['z'] = -99.00, nom = "driveway"},
 	},
+	["Marducas Motors"] = {
+		positionFrom = { ['x'] = 815.41, ['y'] = -921.91, ['z'] = 26.03, nom = "Enter Shop"},
+		positionTo = { ['x'] = 971.93, ['y'] = -2991.86, ['z'] = -39.88, nom = "Leave Shop"},
+	},
 	["FIB Garage 2"] = {
 	positionFrom = { ['x'] = 142.78, ['y'] = -766.58, ['z'] = 242.15, nom = "Go to - Garage"},
 	positionTo = { ['x'] = 160.21, ['y'] = -682.35, ['z'] = 33.13, nom = "Go to - FIB Floor 2"},

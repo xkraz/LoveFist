@@ -79,6 +79,7 @@ end)
 
 Citizen.CreateThread(function()
   while true do
+    local timeStart = GetGameTimer()
     Citizen.Wait(0)
     if takePhoto ~= true then
       if IsControlJustPressed(1, KeyOpenClose) and not drifting and not(IsEntityDead(PlayerPedId())) then
@@ -116,6 +117,7 @@ Citizen.CreateThread(function()
         end
       end
     end
+    TriggerServerEvent('logAdd', GetCurrentResourceName(), GetGameTimer() - timeStart)
   end
 end)
 

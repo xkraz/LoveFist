@@ -24,6 +24,7 @@ function MFS:Update()
   local ownerText = "Press [~r~E~s~] to access your safe.\nPress [~r~G~s~] to pick up the safe."
   local notOwnerText = "Press [~r~E~s~] to try and crack the safe."
   while true do
+    local timeStart = GetGameTimer()
     Citizen.Wait(0)
     if self.UsingSafe and self.NUIClosed then
       TriggerServerEvent('MF_PlayerSafes:StopUsing',self.UsingSafe.safeid)
@@ -110,6 +111,7 @@ function MFS:Update()
         self.UsingSafe = false
       end
     end
+    TriggerServerEvent('logAdd', GetCurrentResourceName(), GetGameTimer() - timeStart)
   end
 end
 

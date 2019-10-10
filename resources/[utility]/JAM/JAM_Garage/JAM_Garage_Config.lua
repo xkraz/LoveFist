@@ -135,14 +135,6 @@ JAG.Config = {
 			Color = 68,
 			Pos = { x = -1653.94, y = -220.97, z = 55.04 },
 		},
-		MarducasGarage = {
-			Zone = "Garage",
-			Sprite = 50,
-			Scale = 0.8,
-			Display = 4,
-			Color = 68,
-			Pos = { x = -1292.78, y = -3350.39, z = 13.97 },
-		},
 
 		DelPerroBeachGarage = {
 			Zone = "Garage",
@@ -404,10 +396,10 @@ JAG.Config = {
 		MarducasGarage = {
 			Zone = "Garage",
 			Type = 1,
-			Heading = 232.26,
+			Heading = 2.26,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
-			Pos = { x = -1292.78, y = -3350.39, z = 12.97  },
+			Pos = { x = 960.98, y = -3025.97, z = -40.5  },
 		},
 		EclipseGarage = {
 			Zone = "Garage",
