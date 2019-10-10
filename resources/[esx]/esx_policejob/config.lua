@@ -153,7 +153,7 @@ Config.PoliceStations = {
 
 		Vehicles = {
 			{
-				Spawner = vector3(-458.39, 6011.77, 31.49),
+				Spawner = vector3(-458.39, 6011.77, 3.49),
 				InsideShop = vector3(228.5, -993.5, -99.5),
 				SpawnPoints = {
 					{ coords = vector3(-454.47, 6001.80, 31.34), heading = 86.29, radius = 6.0 },

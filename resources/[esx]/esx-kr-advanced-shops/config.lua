@@ -108,10 +108,10 @@ Config.Zones = {
     Pos = {x = 1393.562,  y = 3605.684,  z = 33.980, number = 5},
   },
   Shop6 = {
-    Pos = {x = -2969.243, y = 391.910,   z = 14.043, number = 6},
+    Pos = {x = -2967.94, y = 391.01,   z = 14.04, number = 6},
   },
   Shop7 = {
-    Pos = {x = 2679.916,  y = 3281.671, z = 54.241, number = 7},
+    Pos = {x = 2678.87,  y = 3280.69, z = 54.24, number = 7},
   },
   Shop8 = {
     Pos = {x = -48.61,   y = -1757.46, z = 28.42, number = 8},
@@ -120,7 +120,7 @@ Config.Zones = {
     Pos = {x = 1163.24,   y = -323.79, z = 68.21, number = 9},
   },
   Shop10 = {
-    Pos = {x = -707.87,  y = -914.62,  z = 18.22, number = 10},
+    Pos = {x = -707.91,  y = -912.87,  z = 18.22, number = 10},
   },
   Shop11 = {
     Pos = {x = -1821.523, y = 793.518,   z = 137.118, number = 11},
@@ -129,7 +129,7 @@ Config.Zones = {
     Pos = {x = 1699.388,  y = 4925.404,  z = 41.063, number = 12},
   },
   Shop13 = {
-    Pos = {x = 1962.464,  y = 3741.672, z = 31.343, number = 13},
+    Pos = {x = 1961.35,  y = 3740.69, z = 31.34, number = 13},
   },
   Shop14 = {
     Pos = {x = 1136.808,  y = -983.281,  z = 45.415, number = 14},
@@ -180,7 +180,7 @@ Config.Zones = {
     Pos   = {x = 1161.15, y = -315.73, z = 68.21, number = 109, red = true},
   },
   Robbery10 = {
-    Pos   = {x = -708.29, y = -905.99, z = 18.22, number = 110, red = true},
+    Pos   = {x = -708.79, y = -904.65, z = 18.22, number = 110, red = true},
   },
   Robbery11 = {
     Pos   = {x = -1827.32, y = 798.78, z = 137.16, number = 111, red = true},

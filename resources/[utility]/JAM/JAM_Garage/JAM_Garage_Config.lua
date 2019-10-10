@@ -497,10 +497,10 @@ JAG.Config = {
 		PaletoImpound = {
 			Zone = "Impound",
 			Type = 1,
-			Heading = 310.00,
+			Heading = 314.11,
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 255, g = 165, b = 0 },
-			Pos = { x = -471.30, y = 6018.74, z = 30.30 },
+			Pos = { x = -360.61, y = 6074.43, z = 30.05 },
 		},
 		MedicalTowerGarage = {
 			Zone = "Garage",
@@ -703,6 +703,22 @@ JAG.Config = {
 			Scale = { x = 3.0, y = 3.0, z = 1.0 },
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = 3788.65, y = 4446.97, z = 3.67 },
+		},
+		NorthCity = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 364.87,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = 364.87, y = 288.75, z = 102.04 },
+		},
+		NorthBCSO = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 315.09,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -467.28, y = 6015.05, z = 30.34 },
 		},
 	},
 }
