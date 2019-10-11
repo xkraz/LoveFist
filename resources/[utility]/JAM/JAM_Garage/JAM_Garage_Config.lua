@@ -48,7 +48,7 @@ JAG.Config = {
 			Scale = 0.8,
 			Display = 4,
 			Color = 47,
-			Pos = { x = -458.17, y = 6024.81, z = 31.40 },
+			Pos = { x = -360.64, y = 6074.46, z = 31.05 },
 		},
 		MedicalTowerGarage = {
 			Zone = "Garage",
