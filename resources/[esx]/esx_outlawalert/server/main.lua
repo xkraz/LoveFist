@@ -14,6 +14,12 @@ AddEventHandler('esx_outlawalert:carJackInProgress', function(targetCoords, stre
 	TriggerClientEvent('esx_outlawalert:carJackInProgress', -1, targetCoords)
 end)
 
+RegisterServerEvent('esx_outlawalert:FelonySpeedingInProgress')
+AddEventHandler('esx_outlawalert:FelonySpeedingInProgress', function(targetCoords, streetName, vehicleLabel)
+	TriggerClientEvent('esx_outlawalert:outlawNotify', -1, _U('speeding', vehicleLabel, streetName))
+	TriggerClientEvent('esx_outlawalert:FelonySpeedingInProgress', -1, targetCoords)
+end)
+
 RegisterServerEvent('esx_outlawalert:combatInProgress')
 AddEventHandler('esx_outlawalert:combatInProgress', function(targetCoords, streetName, playerGender)
 	if playerGender == 0 then
