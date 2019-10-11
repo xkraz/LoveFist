@@ -2667,4 +2667,36 @@ Config.DoorList = {
 		locked = true,
 		distance = 5
 		},
+		{-- MM Bunker
+		objName = 'v_ilev_rc_door2',
+		objCoords  = {x = 1005.2922, y = -2998.266, z = -47.4969},
+		textCoords = {x = 1005.2922, y = -2998.266, z = -47.4969},
+		authorizedJobs = { 'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 3
+		},
+		{-- MM Back Door
+		objName = 'v_ilev_roc_door2',
+		objCoords  = {x = 960.6653, y = -2999.206, z = -39.4989},
+		textCoords = {x = 960.6653, y = -2998.2662, z = -39.4989},
+		authorizedJobs = { 'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 3
+		},
+		{-- MM Front Door
+		objName = 'v_ilev_roc_door3',
+		objCoords  = {x = 967.0292, y = -3006.720, z = -39.5032},
+		textCoords = {x = 967.0292, y = -3006.720, z = -39.5032},
+		authorizedJobs = { 'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 3
+		},
+		{-- Mitchell Law Office
+		objName = 'prop_sm_10_mp_door',
+		objCoords  = {x = -315.1127, y = -928.3168, z = 4.7183},
+		textCoords = {x = -315.1127, y = -928.3168, z = 4.7183},
+		authorizedJobs = { 'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 3
+		},
 }
