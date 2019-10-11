@@ -372,6 +372,7 @@ function ProcessDamage(ped)
         for k, v in pairs(injured) do
             if (v.part == 'LLEG' and v.severity >= 1) or (v.part == 'RLEG' and v.severity >= 1) or (v.part == 'LFOOT' and v.severity >= 2) or (v.part == 'RFOOT' and v.severity >= 2) then
                 if legCount >= 15 then
+                  --[[
                     if not IsPedRagdoll(ped) and IsPedOnFoot(ped) then
                         local chance = math.random(100)
                         if (IsPedRunning(ped) or IsPedSprinting(ped)) then
@@ -388,6 +389,7 @@ function ProcessDamage(ped)
                             end
                         end
                     end
+                    ]]
                     legCount = 0
                 else
                     legCount = legCount + 1
