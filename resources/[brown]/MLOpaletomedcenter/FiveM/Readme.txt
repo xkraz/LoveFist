@@ -1,1 +1,0 @@
-Copy this folder into your servers resources folder and add "start paletomedical" to your server.cfg

@@ -72,8 +72,8 @@ local TeleportFromTo = {
 		positionTo = { ['x'] = -1547.16, ['y'] = 89.38, ['z'] = 61.31, nom = "Enter house"},
 	},
 	["garage"] = {
-		positionFrom = { ['x'] = -1528.78, ['y'] = 82.35, ['z'] = 56.43, nom = "garage"},
-		positionTo = { ['x'] = 231.53, ['y'] = -998.36, ['z'] = -99.00, nom = "driveway"},
+		positionFrom = { ['x'] = -1528.78, ['y'] = 82.35, ['z'] = 56.43, nom = "Garage"},
+		positionTo = { ['x'] = 231.53, ['y'] = -998.36, ['z'] = -99.00, nom = "Driveway"},
 	},
 	["Marducas Motors"] = {
 		positionFrom = { ['x'] = 815.41, ['y'] = -921.91, ['z'] = 26.03, nom = "Enter Shop"},
@@ -141,9 +141,22 @@ local TeleportFromTo = {
 		positionTo = { ['x'] = 1841.90, ['y'] = 3670.74, ['z'] = 10.00, nom = "Exit Hospital"},
 		},
 	["beachapartment"] = {
-		positionFrom = { ['x'] = -1396.84, ['y'] = -1008.7, ['z'] = 24.70, nom = "to pool"},
-		positionTo = { ['x'] = -1399.37, ['y'] = -986.11, ['z'] = 19.38, nom = "back inside"},
+		positionFrom = { ['x'] = -1396.84, ['y'] = -1008.7, ['z'] = 24.70, nom = "To Pool"},
+		positionTo = { ['x'] = -1399.37, ['y'] = -986.11, ['z'] = 19.38, nom = "Back Inside"},
 		},
+	["Bahama Mamas"] = {
+		positionFrom = { ['x'] = -1388.70, ['y'] = -586.36, ['z'] = 30.22, nom = "Enter"},
+		positionTo = { ['x'] = -1387.38, ['y'] = -588.46, ['z'] = 30.32, nom = "Exit"},
+		},
+	["Mitchells Law Office"] = {
+		positionFrom = { ['x'] = -2222.67, ['y'] = -365.79, ['z'] = 13.00, nom = "Enter Office"},
+		positionTo = { ['x'] = -311.31, ['y'] = -930.02, ['z'] = 4.30, nom = "Exit Office"},
+		},
+	["Comedy Club"] = {
+		positionFrom = { ['x'] = -430.142, ['y'] = 261.665, ['z'] = 83.005, nom = "Enter Comedy Club"},
+		positionTo = { ['x'] = -458.790, ['y'] = 284.750, ['z'] = 78.521, nom = "Exit Comedy Club"},
+		},
+
 
 
 }
