@@ -8,7 +8,6 @@ function CreateExtendedPlayer(player, accounts, inventory, job, loadout, name, l
 	self.loadout      = loadout
 	self.name         = name
 	self.lastPosition = lastPosition
-	self.charName = {first = {}, last = {}}
 
 	self.source     = self.player.get('source')
 	self.identifier = self.player.get('identifier')
@@ -197,17 +196,6 @@ function CreateExtendedPlayer(player, accounts, inventory, job, loadout, name, l
 
 	self.setName = function(newName)
 		self.name = newName
-	end
-
-	self.getCharName = function()
-		--TriggerEvent('log', 'Get name: ' .. self.charName.first .. ' ' .. self.charName.last)
-		return self.charName
-	end
-
-	self.setCharName = function(first, last)
-		self.charName.first = first
-		self.charName.last = last
-		--TriggerEvent('log', 'Set name: ' .. self.charName.first .. ' ' .. self.charName.last)
 	end
 
 	self.getLastPosition = function()
