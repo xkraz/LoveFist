@@ -86,8 +86,7 @@ end)
 local justJoined = {}
 
 RegisterServerEvent('playerConnecting')
-AddEventHandler('playerConnecting', function(name, setKickReason, deferrals)
-deferrals.defer()
+AddEventHandler('playerConnecting', function(name, setKickReason)
 	local id
 	for k,v in ipairs(GetPlayerIdentifiers(source))do
 		if string.sub(v, 1, string.len("steam:")) == "steam:" then
@@ -97,9 +96,8 @@ deferrals.defer()
 	end
 
 	if not id then
-		deferrals.done("Unable to find SteamID, please relaunch FiveM with steam open or restart FiveM & Steam if steam is already open")
-	else
-		deferrals.done()
+		setKickReason("Unable to find SteamID, please relaunch FiveM with steam open or restart FiveM & Steam if steam is already open")
+		CancelEvent()
 	end
 end)
 

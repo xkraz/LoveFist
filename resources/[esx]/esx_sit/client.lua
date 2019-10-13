@@ -70,14 +70,22 @@ Citizen.CreateThread(function()
 					end
 				end
 
-				local txt = "ID: " .. id .. "\nHASH: " .. hash .. '\nMODEL: ' .. model .. ''
+				local txt = "ID: " .. id .. "\nHASH: " .. hash .. '\nMODEL: ' .. 
 				DrawText3D(coords.x, coords.y, coords.z + 2.0, txt, 0, 255, 255)
 			end
 		end
 
 		local playerPed = GetPlayerPed(-1)
 
-		if (GetLastInputMethod(2) and IsControlJustPressed(1, 38) and IsControlPressed(1, 21)) and not IsPedInAnyVehicle(playerPed, true) and not sitting then
+		if sitting and not IsPedUsingScenario(playerPed, currentScenario) then
+			wakeup()
+		end
+
+		if (GetLastInputMethod(2) and IsControlJustPressed(1, 38) and IsControlPressed(1, 21)) and not IsPedInAnyVehicle(playerPed, true) then			
+
+			if sitting then
+				wakeup()
+			else
 
 				local object, distance = ESX.Game.GetClosestObject(Config.Interactables)
 
@@ -106,18 +114,24 @@ Citizen.CreateThread(function()
 					end
 
 				end
-				
-		elseif (GetLastInputMethod(2) and IsControlJustPressed(1, 38) and IsControlPressed(1, 21)) and not IsPedInAnyVehicle(playerPed, true) and sitting then
-					ClearPedTasks(playerPed)
-					TriggerServerEvent('esx_interact:leavePlace', currentSitObj)
-					sitting = false
-					Citizen.Wait(4000) -- This gives the SHIFT+E command time to "cool down" so it doesn't reseat the player
+
 			end
 			
 		end
 
+	end
 end)
 
+function wakeup()
+	ClearPedTasks(playerPed)
+	sitting = false
+	SetEntityCoords(playerPed, lastPos)
+	FreezeEntityPosition(playerPed, false)
+	FreezeEntityPosition(currentSitObj, false)
+	TriggerServerEvent('esx_interact:leavePlace', currentSitObj)
+	currentSitObj = nil
+	currentScenario = nil
+end
 
 function sit(object, modelName, data)
 
@@ -134,6 +148,7 @@ function sit(object, modelName, data)
 			currentSitObj = id
 
 			TriggerServerEvent('esx_interact:takePlace', id)
+			FreezeEntityPosition(object, true)
 
 			currentScenario = data.scenario
 

@@ -134,10 +134,10 @@ function OpenActionMenuInteraction(target)
 
 	local elements = {}
 
-	table.insert(elements, {label = ('Get Dressed'), value = 'ubie'})
-	table.insert(elements, {label = ('Shirt'), value = 'tul'})
-	table.insert(elements, {label = ('Pants'), value = 'spo'})
-	table.insert(elements, {label = ('Shoes'), value = 'but'})
+	table.insert(elements, {label = ('Poner ropa'), value = 'ubie'})
+	table.insert(elements, {label = ('Quitar camiseta'), value = 'tul'})
+	table.insert(elements, {label = ('Quitar pantalones'), value = 'spo'})
+	table.insert(elements, {label = ('Quitar zapatos'), value = 'but'})
   		ESX.UI.Menu.CloseAll()	
 
 
@@ -145,7 +145,7 @@ function OpenActionMenuInteraction(target)
 		'default', GetCurrentResourceName(), 'action_menu',
 		{
 			title    = ('Clothes'),
-			align    = 'top',
+			align    = 'top-left',
 			elements = elements
 		},
     function(data, menu)
@@ -517,16 +517,3 @@ RegisterCommand("door", function(source, args, raw)
     end
 end)
 --- END VEHICLE COMMANDS ---
-
--- Stop Weapon Drops
-Citizen.CreateThread(function()
-  while true do
-    Citizen.Wait(1)
-    -- List of pickup hashes (https://pastebin.com/8EuSv2r1)
-    RemoveAllPickupsOfType(0xDF711959) -- carbine rifle
-    RemoveAllPickupsOfType(0xF9AFB48F) -- pistol
-    RemoveAllPickupsOfType(0xA9355DCD) -- pumpshotgun
-  end
-end)
-
----

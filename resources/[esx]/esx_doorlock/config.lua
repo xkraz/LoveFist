@@ -491,7 +491,7 @@ Config.DoorList = {
 		objCoords  = {x = -443.14, y = 6015.685, z = 31.716},
 		textCoords = {x = -443.14, y = 6015.685, z = 32.00},
 		authorizedJobs = {'police', 'fib', 'policekey', 'adminkey', },
-		locked = false,
+		locked = true,
 		distance = 2.5
 	},
 
@@ -499,116 +499,6 @@ Config.DoorList = {
 		objName = 'v_ilev_shrf2door',
 		objCoords  = {x = -443.951, y = 6016.622, z = 31.716},
 		textCoords = {x = -443.951, y = 6016.622, z = 32.00},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = false,
-		distance = 2.5
-	},
-
-	{-- PALETO CELL 1
-		objName = 'v_ilev_ph_cellgate',
-		objCoords  = {x = -428.06, y = 5996.67, z = 31.87},
-		textCoords = {x = -428.06, y = 5996.67, z = 31.87},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2.5
-		},
-
-			{-- PALETO CELL 2
-		objName = 'v_ilev_ph_cellgate',
-		objCoords  = {x = -431.19, y = 5999.74, z = 31.87},
-		textCoords = {x = -431.19, y = 5999.74, z = 31.87},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2.5
-		},
-
-	{ -- PALETO INT WATCH
-		objName = 'v_ilev_rc_door2',
-		objCoords  = {x = -449.7946, y = 6015.448, z = 31.86633},
-		textCoords = {x = -449.7946, y = 6015.448, z = 31.86633},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-	{ -- PALETO INT SUSPECT
-		objName = 'v_ilev_cd_entrydoor',
-		objCoords  = {x = -454.536, y = 6011.258, z = 31.86982},
-		textCoords = {x = -454.536, y = 6011.258, z = 31.86982},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-
-	{ -- PALETO BACKDOOR 1
-		objName = 'v_ilev_gc_door01',
-		objCoords  = {x = -450.97870, y = 6006.075, z = 31.99417},
-		textCoords = {x = -450.97870, y = 6006.075, z = 31.99417},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-	{ -- PALETO BACKDOOR 2
-		objName = 'v_ilev_gc_door01',
-		objCoords  = {x = -447.22630, y = 6002.329, z = 31.83943},
-		textCoords = {x = -447.22630, y = 6002.329, z = 31.83943},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-	{ -- PALETO OFFICE 1
-		objName = 'v_ilev_cf_officedoor',
-		objCoords  = {x = -441.0539, y = 6004.997, z = 31.8644},
-		textCoords = {x = -441.0539, y = 6004.997, z = 31.8644},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-		{ -- PALETO OFFICE 2
-		objName = 'v_ilev_cf_officedoor',
-		objCoords  = {x = -437.68910, y = 6008.364, z = 31.86407},
-		textCoords = {x = -437.68910, y = 6008.364, z = 31.86407},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-		{ -- PALETO ARMORY
-		objName = 'v_ilev_fingate',
-		objCoords  = {x = -437.6144, y = 5992.819, z = 31.93606},
-		textCoords = {x = -437.6144, y = 5992.819, z = 31.93606},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-
-	{ -- PALETO LOBBY LEFT 1
-		objName = 'v_ilev_bk_door2',
-		objCoords  = {x = -440.98070, y = 6012.771, z = 31.86633},
-		textCoords = {x = -440.98070, y = 6012.771, z = 31.86633},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-	{ -- PALETO LOBBY RIGHT 1
-		objName = 'v_ilev_bk_door2',
-		objCoords  = {x = -442.82150, y = 6010.931, z = 31.86633},
-		textCoords = {x = -442.82150, y = 6010.931, z = 31.86633},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-
-		{ -- PALETO LOBBY LEFT 2
-		objName = 'v_ilev_ss_door7',
-		objCoords  = {x = -449.55, y = 6008.558, z = 31.80887},
-		textCoords = {x = -449.55, y = 6008.558, z = 31.80887},
-		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
-		locked = true,
-		distance = 2.5
-	},
-	{ -- PALETO LOBBY RIGHT 2
-		objName = 'v_ilev_ss_door8',
-		objCoords  = {x = -447.70920, y = 6006.717, z = 31.80887},
-		textCoords = {x = -447.70920, y = 6006.717, z = 31.80887},
 		authorizedJobs = { 'police', 'fib', 'policekey', 'adminkey', },
 		locked = true,
 		distance = 2.5
@@ -797,7 +687,7 @@ Config.DoorList = {
 		objCoords  = {x = 283.00, y = -1341.54, z = 24.54},
 		textCoords = {x = 283.00, y = -1341.54, z = 25.00},
 		authorizedJobs = { 'ambulance', 'police' , 'fib', 'ambulancekey', 'adminkey', },
-		locked = false,
+		locked = true,
 		distance = 2.5
 	},
 
@@ -807,7 +697,7 @@ Config.DoorList = {
 		objCoords  = {x = 282.44, y = -1342.36, z = 24.54},
 		textCoords = {x = 282.44, y = -1342.36, z = 25.00},
 		authorizedJobs = { 'ambulance', 'police' , 'fib', 'ambulancekey', 'adminkey', },
-		locked = false,
+		locked = true,
 		distance = 2.5
 	},
 
@@ -1147,15 +1037,15 @@ Config.DoorList = {
 	size = 2
 },
 -- Paleto Bay Parking Lot Gate
--- {
-	-- objName = 'prop_gate_airport_01',
-	-- objCoords  = {x = -451.04, y = 6025.31, z = 30.12},
-	-- textCoords = {x = -453.6, y = 6027.87, z = 32.12},
-	-- authorizedJobs = {'police', 'offambulance', 'fib', 'policekey', 'adminkey', },
-	-- locked = true,
-	-- distance = 14,
-	-- size = 2
--- },
+{
+	objName = 'prop_gate_airport_01',
+	objCoords  = {x = -451.04, y = 6025.31, z = 30.12},
+	textCoords = {x = -453.6, y = 6027.87, z = 32.12},
+	authorizedJobs = {'police', 'offambulance', 'fib', 'policekey', 'adminkey', },
+	locked = true,
+	distance = 14,
+	size = 2
+},
 --[[ Mission Row PD Parking Lot Gate
 {
 	objName = 'prop_gate_airport_01',
@@ -1593,7 +1483,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 4,
 	},
-	{ -- Court Room
+	{ -- Court Room 
 		objName = 'v_ilev_ra_door2',
 		objCoords  = {x = -467.6623, y = 1166.1450, z = 329.1158},
 		textCoords = {x = -467.6623, y = 1166.1450, z = 329.1158},
@@ -1637,7 +1527,7 @@ Config.DoorList = {
 		distance = 3,
 	},
 
-	{ -- Court Garage
+	{ -- Court Garage 
 		objName = 'hei_prop_dt1_20_mp_gar2',
 		objCoords  = {x = -477.9643, y = 1168.3265, z = 325.7799},
 		textCoords = {x = -477.9643, y = 1168.3265, z = 325.7799},
@@ -1672,7 +1562,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3,
 	},
-
+	
 	{ -- Courtroom Door Left
 		objName = 'apa_p_mp_yacht_door',
 		objCoords  = {x = 1216.6008, y = 3599.1377, z = 37.1008},
@@ -1681,7 +1571,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 5,
 	},
-
+	
 	{ --Bank gate
 		objName = 'v_ilev_bk_vaultdoor',
 		objCoords  = {x = 255.2283, y = 223.976, z = 102.3932},
@@ -2045,7 +1935,7 @@ Config.DoorList = {
 	  -- door 1
 
 
-	--[[ door 2
+	-- door 2
 	{
 		objName = 'prop_ss1_14_garage_door',
 		objCoords  = {x = -1280.65723, y = -3352.1377, z = 14.8663607},
@@ -2053,8 +1943,56 @@ Config.DoorList = {
 		authorizedJobs = { 'marducaskey', 'adminkey', },
 		locked = true,
 		distance = 15,
-	},]]
+	},
 
+	-- door 3
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1272.12915, y = -3357.073, z = 14.8640938},
+		textCoords = {x = -1272.12915, y = -3357.073, z = 14.8640938},
+		authorizedJobs = {'marducaskey' , 'adminkey', },
+		locked = true,
+		distance = 15,
+	},
+
+	-- door 4
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1246.80554, y = -3371.67676, z = 14.8665056},
+		textCoords = {x = -1246.80554, y = -3371.67676, z = 14.8665056},
+		authorizedJobs = {'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 15,
+	},
+	-- door 5
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1238.2771, y = -3376.61133, z = 14.8680754},
+		textCoords = {x = -1238.2771, y = -3376.61133, z = 14.8680754},
+		authorizedJobs = { 'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 15,
+	},
+
+	-- door 6
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1263.76147, y = -3361.99756, z = 14.8656559},
+		textCoords = {x = -1263.76147, y = -3361.99756, z = 14.8656559},
+		authorizedJobs = { 'marducaskey', 'adminkey', },
+		locked = true,
+		distance = 15,
+	},
+
+	-- door 7
+	{
+		objName = 'prop_ss1_14_garage_door',
+		objCoords  = {x = -1255.233, y = -3366.93213, z = 14.8663435},
+		textCoords = {x = -1255.233, y = -3366.93213, z = 14.8663435},
+		authorizedJobs = { 'marducaskey','adminkey', },
+		locked = true,
+		distance = 15,
+	},
 	--- villa del grapes
 
 	{--right front gate
@@ -2514,7 +2452,7 @@ Config.DoorList = {
 		locked = true,
 		distance = 3
 		},
-		{--williams front door cabin
+		{--williams front door cabin 
 		objName = 'hei_prop_sync_door01a',
 		objCoords  = {x = -421.83493, y = 3838.65308, z = 65.9981155},
 		textCoords = {x = -421.83493, y = 3838.65308, z = 65.9981155},
@@ -2577,77 +2515,5 @@ Config.DoorList = {
 		authorizedJobs = { 'flightkey', 'adminkey' },
 		locked = true,
 		distance = 3
-		},
-		{-- BCSO Sandy Lockup L
-		objName = 'v_ilev_ph_gendoor004',
-		objCoords  = {x = 1850.38, y = 3683.454, z = 34.41},
-		textCoords = {x = 1850.38, y = 3683.454, z = 34.41},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2
-		},
-		{-- BCSO Sandy Lockup R
-		objName = 'v_ilev_ph_gendoor004',
-		objCoords  = {x = 1846.116, y = 3689.267, z = 34.41642},
-		textCoords = {x = 1846.116, y = 3689.267, z = 34.41642},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2
-		},
-			{-- BCSO Sandy Equp
-		objName = 'v_ilev_ph_gendoor004',
-		objCoords  = {x = 1843.258, y = 3690.314, z = 34.42620},
-		textCoords = {x = 1843.258, y = 3690.314, z = 34.42620},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2
-		},
-		{-- BCSO Sandy Back Room
-		objName = 'v_ilev_ph_gendoor004',
-		objCoords  = {x = 1849.333, y = 3691.132, z = 34.41433},
-		textCoords = {x = 1849.333, y = 3691.132, z = 34.41433},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2
-		},
-		{-- BCSO Sandy Office
-		objName = 'v_ilev_ph_gendoor004',
-		objCoords  = {x = 1850.836, y = 3694.54, z = 34.41260},
-		textCoords = {x = 1850.836, y = 3694.54, z = 34.41260},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2
-		},
-		{-- BCSO Sandy Office
-		objName = 'v_ilev_ph_gendoor004',
-		objCoords  = {x = 1854.926, y = 3694.339, z = 34.41634},
-		textCoords = {x = 1854.926, y = 3694.339, z = 34.41634},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2
-		},
-		{-- BCSO Sandy Brief
-		objName = 'v_ilev_ph_gendoor004',
-		objCoords  = {x = 1857.268, y = 3690.279, z = 34.41956},
-		textCoords = {x = 1857.268, y = 3690.279, z = 34.41956},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2
-		},
-		{-- BCSO Cell Gate 1
-		objName = 'v_ilev_ph_cellgate',
-		objCoords  = {x = 1847.99, y = 3681.69, z = 34.40},
-		textCoords = {x = 1847.99, y = 3681.69, z = 34.40},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2
-		},
-		{-- BCSO Cell Gate 2
-		objName = 'v_ilev_ph_cellgate',
-		objCoords  = {x = 1846.39, y = 3684.45, z = 34.40},
-		textCoords = {x = 1846.39, y = 3684.45, z = 34.40},
-		authorizedJobs = { 'police', 'adminkey', 'offpolice' },
-		locked = true,
-		distance = 2
 		},
 }

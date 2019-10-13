@@ -3,35 +3,6 @@ Config.MaxDistance = 1.5
 
 Config.BedList = {
 
--- SANDY SHORES
-	{
-		text = '[E] Lie on the bed',
-		heading = 33.57,
-		objCoords  = {x = 1828.277, y = 3678.782, z = 9.66},---pillbox 
-	},
-	
-	{
-		text = '[E] Lie on the bed',
-		heading = 30.71,
-		objCoords  = {x = 1825.087, y = 3677.098, z = 9.66},---pillbox 
-	},
-	{
-		text = '[E] Lie on the bed',
-		heading = 30.85,
-		objCoords  = {x = 1821.947, y = 3675.077, z = 9.66},---pillbox 
-	},
-	{
-		text = '[E] Lie on the bed',
-		heading = 215.30,
-		objCoords  = {x = 1828.557, y = 3663.679, z = 9.66},---pillbox 
-	},
-	{
-		text = '[E] Lie on the bed',
-		heading = 211.93,
-		objCoords  = {x = 1831.771, y = 3665.741, z = 9.66},---pillbox 
-	},
-	
---- PILLBOX
 	{
 		text = '[E] Lie on the bed',
 		heading = -20.0,

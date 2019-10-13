@@ -1,6 +1,6 @@
 RegisterCommand("jailmenu", function(source, args)
 
-	if PlayerData.job.name == "police" then
+	if PlayerData.job.name == "police" or PlayerData.job.name == "dea" or PlayerData.job.name == "fib" then
 		OpenJailMenu()
 	else
 		ESX.ShowNotification("You are not an officer!")

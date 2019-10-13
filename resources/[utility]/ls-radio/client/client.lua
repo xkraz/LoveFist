@@ -274,7 +274,6 @@ end)
 
 Citizen.CreateThread(function()
     while true do
-			local timeStart = GetGameTimer()
         if radioMenu then
             DisableControlAction(0, 1, guiEnabled) -- LookLeftRight
             DisableControlAction(0, 2, guiEnabled) -- LookUpDown
@@ -298,6 +297,5 @@ Citizen.CreateThread(function()
             end
         end
         Citizen.Wait(0)
-		    TriggerServerEvent('logAdd', GetCurrentResourceName(), GetGameTimer() - timeStart)
     end
 end)

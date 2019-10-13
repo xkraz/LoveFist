@@ -810,7 +810,7 @@ AddEventHandler('noIdentity', function()
 end)
 
 RegisterNUICallback('NUItoggleID', function(data)
-	TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()), 'driver')
+	TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(PlayerId()))
 end)
 
 RegisterNUICallback('NUIshowID', function(data)
@@ -822,7 +822,7 @@ function showID(data)
 	
 	if distance ~= -1 and distance <= 3.0 then
 		
-		TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(player), 'driver')
+		TriggerServerEvent('jsfour-idcard:open', GetPlayerServerId(PlayerId()), GetPlayerServerId(player))
 		ESX.ShowNotification('You showed your ID.')
 	else
 		ESX.ShowNotification('There is no one nearby.')

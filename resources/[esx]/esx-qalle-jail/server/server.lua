@@ -6,7 +6,7 @@ RegisterCommand("jail", function(src, args, raw)
 
 	local xPlayer = ESX.GetPlayerFromId(src)
 
-	if xPlayer["job"]["name"] == "police" then
+	if xPlayer["job"]["name"] == "police" or xPlayer["job"]["name"] == "dea" or xPlayer["job"]["name"] == "fib" then
 
 		local jailPlayer = args[1]
 		local jailTime = tonumber(args[2])
@@ -39,7 +39,7 @@ RegisterCommand("unjail", function(src, args)
 
 	local xPlayer = ESX.GetPlayerFromId(src)
 
-	if xPlayer["job"]["name"] == "police" then
+	if xPlayer["job"]["name"] == "police" or xPlayer["job"]["name"] == "dea" or xPlayer["job"]["name"] == "fib" then
 
 		local jailPlayer = args[1]
 
@@ -102,7 +102,7 @@ AddEventHandler("esx-qalle-jail:prisonWorkReward", function()
 
 	xPlayer.addMoney(math.random(13, 21))
 
-	TriggerClientEvent("esx:showNotification", src, "Thanks, here you have some cash!")
+	TriggerClientEvent("esx:showNotification", src, "Thanks, here you have som cash for food!")
 end)
 
 function JailPlayer(jailPlayer, jailTime)

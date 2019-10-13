@@ -597,5 +597,33 @@
     "bannedUntil": "3000-01-01T00:00:00",
     "banReason": "Banned by staff. dbag ",
     "bannedBy": "Not a Admin"
+  },
+  {
+    "playerName": "-Tom-",
+    "identifiers": [
+      "steam:11000011c83bc66",
+      "license:7dc6b783f2e31a470055e690a19e151a9e780ad4",
+      "xbl:2535428736099972",
+      "live:1688853863634630",
+      "discord:374614957649559552",
+      "ip:79.161.16.213"
+    ],
+    "bannedUntil": "3000-01-01T00:00:00",
+    "banReason": "Banned by staff.",
+    "bannedBy": "Rhai"
+  },
+  {
+    "playerName": "Lender",
+    "identifiers": [
+      "steam:11000010c586223",
+      "license:0f591a5d1d93208ae1a46b635b8276bf8470cb0d",
+      "xbl:2535442477035484",
+      "live:1829582806164650",
+      "discord:291197341354950666",
+      "ip:193.90.206.42"
+    ],
+    "bannedUntil": "3000-01-01T00:00:00",
+    "banReason": "Banned by staff. Hacking.",
+    "bannedBy": "Rhai"
   }
 ]

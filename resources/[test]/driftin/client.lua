@@ -9,7 +9,6 @@ local timeout = 200
 
 Citizen.CreateThread(function()
 	while true do
-		local timeStart = GetGameTimer()
 		if IsPedInAnyVehicle(GetPlayerPed(-1)) then
 	    if (IsControlJustReleased(1, 70)) and not onePressed.state then
 				onePressed.state = true
@@ -58,7 +57,5 @@ Citizen.CreateThread(function()
 			end
 		end
 		Citizen.Wait(0)
-
-		TriggerServerEvent('logAdd', GetCurrentResourceName(), GetGameTimer() - timeStart)
 	end
 end)

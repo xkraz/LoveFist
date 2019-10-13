@@ -37,6 +37,17 @@ AddEventHandler('esx_outlawalert:gunshotInProgress', function(targetCoords, stre
 	TriggerClientEvent('esx_outlawalert:outlawNotify', -1, _U('gunshot', playerGender, streetName))
 	TriggerClientEvent('esx_outlawalert:gunshotInProgress', -1, targetCoords)
 end)
+RegisterServerEvent('esx_outlawalert:cargoInProgress')
+AddEventHandler('esx_outlawalert:cargoInProgress', function(targetCoords, streetName, playerGender)
+	if playerGender == 0 then
+		playerGender = _U('male')
+	else
+		playerGender = _U('female')
+	end
+
+	TriggerClientEvent('esx_outlawalert:outlawNotify', -1, _U('cargo', playerGender, streetName))
+	TriggerClientEvent('esx_outlawalert:cargoInProgress', -1, targetCoords)
+end)
 
 ESX.RegisterServerCallback('esx_outlawalert:isVehicleOwner', function(source, cb, plate)
 	local identifier = GetPlayerIdentifier(source, 0)

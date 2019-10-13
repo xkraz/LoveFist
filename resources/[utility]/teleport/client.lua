@@ -19,6 +19,30 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = 3594.00, ['y'] = 3673.77, ['z'] = 33.57, nom = "Go to - Lab"},
 		positionTo = { ['x'] = 3540.72, ['y'] = 3676.00, ['z'] = 27.75, nom = "Go to - Surface"},
 	},
+	["CASINO"] = {
+		positionFrom = { ['x'] = 930.11, ['y'] = 41.6, ['z'] = 81.1, nom = "Enter Casino"},
+		positionTo = { ['x'] = 984.02, ['y'] = 20.48, ['z'] = 3.47, nom = "Leave Casino"},
+	},
+	["SANDYSHORESPD"] = {
+		positionFrom = { ['x'] = 1851.04, ['y'] = 3683.22, ['z'] = 34.27, nom = "Offices & Jail"},
+		positionTo = { ['x'] = 1854.37, ['y'] = 3716.53, ['z'] = 1.08, nom = "Back to Lobby"},
+	},
+	["YAKUZAARMORY"] = {
+		positionFrom = { ['x'] = -888.9, ['y'] = -1439.3, ['z'] = 7.53, nom = "Enter Armory"},
+		positionTo = { ['x'] = -893.76, ['y'] = -1441.36, ['z'] = 7.53, nom = "Exit Armory"},
+	},
+	["ADMINAPPSTPUP"] = {
+		positionFrom = { ['x'] = -1425.65, ['y'] = -1004.45, ['z'] = 4.93, nom = "Go Upstairs"},
+		positionTo = { ['x'] = -1399.39, ['y'] = -986.16, ['z'] = 19.38, nom = "Go Downstairs"},
+	},
+	["ADMINAPT1"] = {
+		positionFrom = { ['x'] = -1393.38, ['y'] = -995.68, ['z'] = 19.38, nom = "Red's Apartment"},
+		positionTo = { ['x'] = -1396.3, ['y'] = -1000.68, ['z'] = 34.7, nom = "Exit Apartment"},
+	},
+	["ADMINAPT3"] = {
+		positionFrom = { ['x'] = -1406.09, ['y'] = -977.45, ['z'] = 19.38, nom = "Admin Apt 3"},
+		positionTo = { ['x'] = -1418.22, ['y'] = -966.75, ['z'] = 34.7, nom = "Exit Apartment"},
+	},
 	["CHURCH"] = {
 		positionFrom = { ['x'] = -320.62, ['y'] = 2818.95, ['z'] = 59.45, nom = "Enter Church"},
 		positionTo = { ['x'] = -308.71, ['y'] = 2811.37, ['z'] = -185.26, nom = "Exit Church"},
@@ -75,10 +99,6 @@ local TeleportFromTo = {
 		positionFrom = { ['x'] = -1528.78, ['y'] = 82.35, ['z'] = 56.43, nom = "garage"},
 		positionTo = { ['x'] = 231.53, ['y'] = -998.36, ['z'] = -99.00, nom = "driveway"},
 	},
-	["Marducas Motors"] = {
-		positionFrom = { ['x'] = 815.41, ['y'] = -921.91, ['z'] = 26.03, nom = "Enter Shop"},
-		positionTo = { ['x'] = 971.93, ['y'] = -2991.86, ['z'] = -39.88, nom = "Leave Shop"},
-	},
 	["FIB Garage 2"] = {
 	positionFrom = { ['x'] = 142.78, ['y'] = -766.58, ['z'] = 242.15, nom = "Go to - Garage"},
 	positionTo = { ['x'] = 160.21, ['y'] = -682.35, ['z'] = 33.13, nom = "Go to - FIB Floor 2"},
@@ -121,8 +141,12 @@ local TeleportFromTo = {
 		},
 
 	["IllegalHospital"] = {
-		positionFrom = { ['x'] = 240.94, ['y'] = -1378.98, ['z'] = 33.74, nom = "Enter Morgue"},
-		positionTo = { ['x'] = 275.81, ['y'] = -1361.23, ['z'] = 24.54, nom = "Exit Morgue"},
+		positionFrom = { ['x'] = 240.94, ['y'] = -1378.98, ['z'] = 33.74, nom = "Enter Private Hospital"},
+		positionTo = { ['x'] = 275.81, ['y'] = -1361.23, ['z'] = 24.54, nom = "Exit Private Hospital"},
+		},
+	["RACE-SPA"] = {
+		positionFrom = { ['x'] = 1737.00, ['y'] = 3309.73, ['z'] = 41.22, nom = "Fly to Spa Racetrack"},
+		positionTo = { ['x'] = 4383.43, ['y'] = 8693.50, ['z'] = 93.66, nom = "Return to Los Santos"},
 		},
 	["RACE-MONACO"] = {
 		positionFrom = { ['x'] = 1730.57, ['y'] = 3307.26, ['z'] = 41.22, nom = "Fly to Monaco Racetrack"},
@@ -131,14 +155,6 @@ local TeleportFromTo = {
     ["TacoEscape"] = {
 		positionFrom = { ['x'] = -2772.03, ['y'] = -72.32, ['z'] = 4.03, nom = "Escape Frrom Taco"},
 		positionTo = { ['x'] = -2800.32, ['y'] = -70.09, ['z'] = 2.09, nom = "You made it"},
-		},
-	["SandyHospital"] = {
-		positionFrom = { ['x'] = 1839.14, ['y'] = 3673.41, ['z'] = 33.80, nom = "Enter Hospital"},
-		positionTo = { ['x'] = 1841.90, ['y'] = 3670.74, ['z'] = 10.00, nom = "Exit Hospital"},
-		},
-	["beachapartment"] = {
-		positionFrom = { ['x'] = -1396.84, ['y'] = -1008.7, ['z'] = 24.70, nom = "to pool"},
-		positionTo = { ['x'] = -1399.37, ['y'] = -986.11, ['z'] = 19.38, nom = "back inside"},
 		},
 
 

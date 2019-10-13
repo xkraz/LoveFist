@@ -29,8 +29,8 @@ client_scripts {
   'JAM_VehicleFinance/JAM_VehicleFinance_Client.lua',
   
   -- Race Mod
-	'JAM_RaceMod/JAM_RaceMod_Config.lua',
-	'JAM_RaceMod/JAM_RaceMod_Client.lua',
+	-- 'JAM_RaceMod/JAM_RaceMod_Config.lua',
+	-- 'JAM_RaceMod/JAM_RaceMod_Client.lua',
 
   -- Tuner Laptop
  -- 'JAM_TunerLaptop/JAM_TunerLaptop_Config.lua',
@@ -109,8 +109,8 @@ server_scripts {
 	'JAM_VehicleFinance/JAM_VehicleFinance_Server.lua',
 	
 		-- Race Mod
-	'JAM_RaceMod/JAM_RaceMod_Config.lua',
-	'JAM_RaceMod/JAM_RaceMod_Server.lua',
+	-- 'JAM_RaceMod/JAM_RaceMod_Config.lua',
+	-- 'JAM_RaceMod/JAM_RaceMod_Server.lua',
 
   -- Tuner Laptop
  -- 'JAM_TunerLaptop/JAM_TunerLaptop_Config.lua',

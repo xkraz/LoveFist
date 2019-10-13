@@ -1,36 +1,23 @@
 (function(){
-
+	// MODIFIED TO PROTECT AGAINST SPAM EXPLOITS
 	let MenuTpl =
-		'<div id="menu_{{_namespace}}_{{_name}}" class="dialog text-center {{#isBig}}big{{/isBig}}">' +
-			'<div class="card text-white bg-dark mb-3 ">'+
-				'<h5 class="card-header">{{title}}</h5>' +
-				'<div class="card-body">'+
-						'<div class="input-group mb-3">'+
-								'{{#isDefault}}<input type="text" name="value" class="form-control text-center" aria-label="Default"/>{{/isDefault}}' +
-								'{{#isBig}}<textarea name="value" class="form-control text-center" aria-label="With textarea"/>{{/isBig}}' +
-						'</div>' +
-						'<div class="card-footer">'+
-						'</div>'+
-					'<div class="row">'+	
-						'<div class="col-sm-6">'+	
-							'<button type="button" class="btn btn-success btn-sm btn-block text-center" name="submit">Confirmar</button>' +
-						'</div>' +
-						'<div class="col-sm-6">'+	
-							'<button type="button" class="btn btn-danger btn-sm btn-block text-center" name="cancel">Cancelar</button>'+
-						'</div>' +
-					'</div>' +
-				'</div>' +
+		'<div id="menu_{{_namespace}}_{{_name}}" class="dialog {{#isBig}}big{{/isBig}}">' +
+			'<div class="head"><span>{{title}}</span></div>' +
+				'{{#isDefault}}<input type="text" name="value" id="inputText"/>{{/isDefault}}' +
+				'{{#isBig}}<textarea name="value"/>{{/isBig}}' +
+				'<button type="button" name="submit" onClick="var t = this; t.disabled = true; setTimeout(function() {t.disabled = false;},10000);">Do it</button>' +
+				'<button type="button" name="cancel">Cancel</button>'
 			'</div>' +
 		'</div>'
 	;
-
+	// END EXPLOIT PROTECTION MOD
 	window.ESX_MENU       = {};
 	ESX_MENU.ResourceName = 'esx_menu_dialog';
 	ESX_MENU.opened       = {};
 	ESX_MENU.focus        = [];
 	ESX_MENU.pos          = {};
 
-	ESX_MENU.open = function(namespace, name, data){
+	ESX_MENU.open = function(namespace, name, data) {
 
 		if(typeof ESX_MENU.opened[namespace] == 'undefined')
 			ESX_MENU.opened[namespace] = {};
@@ -45,7 +32,7 @@
 			data.type = 'default';
 
 		if(typeof data.align == 'undefined')
-			data.align = 'bottom-right';
+			data.align = 'top-left';
 
 		data._index     = ESX_MENU.focus.length;
 		data._namespace = namespace;
@@ -58,11 +45,23 @@
 			namespace: namespace,
 			name     : name
 		});
-		
+		// MODIFIED TO PROTECT AGAINST SPAM EXPLOITS
+		last_clicked = 0;
+		document.onkeyup = function (key) {
+            if (key.which == 27) { // Escape key
+                $.post('http://' + ESX_MENU.ResourceName + '/menu_cancel', JSON.stringify(data));
+            } else if (key.which == 13) { // Enter key
+				if (Date.now() > last_clicked + 10000) {
+					last_clicked = Date.now();
+					$.post('http://' + ESX_MENU.ResourceName + '/menu_submit', JSON.stringify(data));
+				}
+			}
+		};
+		// END EXPLOIT PROTECTION MOD
 		ESX_MENU.render();
 	}
 
-	ESX_MENU.close = function(namespace, name){
+	ESX_MENU.close = function(namespace, name) {
 		
 		delete ESX_MENU.opened[namespace][name];
 
@@ -76,7 +75,7 @@
 		ESX_MENU.render();
 	}
 
-	ESX_MENU.render = function(){
+	ESX_MENU.render = function() {
 
 		let menuContainer = $('#menus')[0];
 		
@@ -107,13 +106,12 @@
 					}
 
 					default : break;
-
 				}
 
 				let menu = $(Mustache.render(MenuTpl, view))[0];
 
 				$(menu).css('z-index', 1000 + view._index);
-
+				
 				$(menu).find('button[name="submit"]').click(function() {
 					ESX_MENU.submit(this.namespace, this.name, this.data);
 				}.bind({namespace: namespace, name: name, data: menuData}));
@@ -135,21 +133,22 @@
 		}
 
 		$(menuContainer).show();
+		$("#inputText").focus();
 	}
 
-	ESX_MENU.submit = function(namespace, name, data){
+	ESX_MENU.submit = function(namespace, name, data) {
 		$.post('http://' + ESX_MENU.ResourceName + '/menu_submit', JSON.stringify(data));
 	}
 
-	ESX_MENU.cancel = function(namespace, name, data){
+	ESX_MENU.cancel = function(namespace, name, data) {
 		$.post('http://' + ESX_MENU.ResourceName + '/menu_cancel', JSON.stringify(data));
 	}
 
-	ESX_MENU.change = function(namespace, name, data){
+	ESX_MENU.change = function(namespace, name, data) {
 		$.post('http://' + ESX_MENU.ResourceName + '/menu_change', JSON.stringify(data));
 	}
 
-	ESX_MENU.getFocused = function(){
+	ESX_MENU.getFocused = function() {
 		return ESX_MENU.focus[ESX_MENU.focus.length - 1];
 	}
 

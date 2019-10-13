@@ -1,21 +1,18 @@
 (function(){
-
+ // A FINIR
 	let MenuTpl =
 		'<div id="menu_{{_namespace}}_{{_name}}" class="menu{{#align}} align-{{align}}{{/align}}">' +
-				'<div class="card text-white bg-dark mb-3 ">'+
-					'<h5 class="card-header text-center">{{{title}}}</h5>' +
-					'<div class="card-body">'+
-						'<div class="list-group menu-items text-center">' + 
-							'{{#elements}}' +
-								'<div class="list-group-item menu-item text-center {{#selected}}active{{/selected}}">' +
-									'{{{label}}}{{#isSlider}} : &lt;{{{sliderLabel}}}&gt;{{/isSlider}}' +
-								'</div>' +
-							'{{/elements}}' +
-						'</div>'+
-					'</div>' +
-				'</div>' +	
-			'</div>' +
-		'</div>'
+			'<div class="head_{{{css}}}"><span></span></div>' +
+				'<div class="categorie"><span>{{{title}}}</span></div>' +
+					'<div class="menu-items">' + 
+						'{{#elements}}' +
+							'<div class="menu-item {{#selected}}selected{{/selected}}">' +
+								'{{{label}}}{{#isSlider}} : &lt;{{{sliderLabel}}}&gt;{{/isSlider}}' +
+							'</div>' +
+						'{{/elements}}' +
+					'</div>'+
+				'</div>' +
+			'</div>'
 	;
 
 	window.ESX_MENU       = {};
@@ -65,7 +62,7 @@
 		
 		ESX_MENU.render();
 
-		$('#menu_' + namespace + '_' + name).find('.menu-item.active')[0].scrollIntoView();
+		$('#menu_' + namespace + '_' + name).find('.menu-item.selected')[0].scrollIntoView();
 	}
 
 	ESX_MENU.close = function(namespace, name){
@@ -240,7 +237,7 @@
 							ESX_MENU.change(focused.namespace, focused.name, elem)
 							ESX_MENU.render();
 
-							$('#menu_' + focused.namespace + '_' + focused.name).find('.menu-item.active')[0].scrollIntoView();
+							$('#menu_' + focused.namespace + '_' + focused.name).find('.menu-item.selected')[0].scrollIntoView();
 
 						}
 
@@ -275,7 +272,7 @@
 							ESX_MENU.change(focused.namespace, focused.name, elem)
 							ESX_MENU.render();
 
-							$('#menu_' + focused.namespace + '_' + focused.name).find('.menu-item.active')[0].scrollIntoView();
+							$('#menu_' + focused.namespace + '_' + focused.name).find('.menu-item.selected')[0].scrollIntoView();
 
 						}
 
@@ -314,7 +311,7 @@
 
 							}
 
-							$('#menu_' + focused.namespace + '_' + focused.name).find('.menu-item.active')[0].scrollIntoView();
+							$('#menu_' + focused.namespace + '_' + focused.name).find('.menu-item.selected')[0].scrollIntoView();
 
 						}
 
@@ -356,7 +353,7 @@
 
 							}
 
-							$('#menu_' + focused.namespace + '_' + focused.name).find('.menu-item.active')[0].scrollIntoView();
+							$('#menu_' + focused.namespace + '_' + focused.name).find('.menu-item.selected')[0].scrollIntoView();
 
 						}
 

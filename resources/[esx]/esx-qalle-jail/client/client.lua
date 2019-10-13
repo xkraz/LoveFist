@@ -110,7 +110,6 @@ function InJail()
 				UnJail()
 
 				TriggerServerEvent("esx-qalle-jail:updateJailTime", 0)
-		
 			end
 
 			Citizen.Wait(60000)

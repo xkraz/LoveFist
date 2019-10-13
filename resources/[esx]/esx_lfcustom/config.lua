@@ -49,7 +49,7 @@ Config.Zones = {
 		Name  = _U('blip_name'),
 		Hint  = _U('press_custom')
 	},
-
+	
 	ls6 = {
         Pos   = { x = -212.06674194336, y = -1326.6553955078, z = 30.886024475098},
         Size  = {x = 3.0, y = 3.0, z = 0.2},
@@ -58,6 +58,16 @@ Config.Zones = {
 		Name  = _U('blip_name5'),
         Hint  = _U('press_custom')
     },
+	
+	ls7 = {
+        Pos   = { x = -1269.78, y = -3415.83, z = 14.05},
+        Size  = {x = 3.0, y = 3.0, z = 0.2},
+        Color = {r = 204, g = 204, b = 0},
+        Marker= 1,
+		Name  = _U('blip_name4'),
+        Hint  = _U('press_custom')
+    }
+
 }
 
 Config.Colors = {

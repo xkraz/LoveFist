@@ -7,24 +7,11 @@
   font-family: pcdown;
   src: url('../fonts/pdown.ttf');
 }
-@font-face {
-  font-family: gzc;
-  src: url('../fonts/gzc.ttf');
-}
-@font-face {
-  font-family: inventario;
-  src: url('../fonts/sufrimeda.ttf');
-}
-#cursor {
-  position: absolute;
-  z-index: 999999999;
-  display:  none;
-}
 
 #controls {
-  font-family   : gzc;
+  font-family   : pcdown;
   font-size     : 3em;
-  color         : rgba(153, 0, 0, 0.7);
+  color         : #FFF;
   position      : absolute;
   bottom        : 40;
   right         : 40;
@@ -43,22 +30,25 @@
 
 .dialog {
 
-
+  font-family     : bankgothic;  
+  background-color: #fff;
+  color           : #fff;
+  box-shadow      : 0px 0px 50px 0px #000;
   position        : absolute;
   overflow        : hidden;
   top             : 50%;
   left            : 50%;
-  width           : 400px;
-  height          : 404px;
+  width           : 600px;
+  height          : 104px;
   transform       : translate(-50%, -50%);
 }
 
 .dialog.big {
-  height: 600px;
+  height: 200px;
 }
 
 .dialog .head {
-  background-color: #990000;
+  background-color: #506be6;
   text-align      : center;
   height          : 40px;
 }
@@ -81,9 +71,11 @@
 }
 
 .dialog button[name="submit"] {
-
+  width : 75%;
+  height: 32px;
 }
 
 .dialog button[name="cancel"] {
-
+  width : 25%;
+  height: 32px;
 }
