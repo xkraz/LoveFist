@@ -8,13 +8,13 @@ AddEventHandler('loffe-fishing:sellFish', function()
     local _source = source
     local xPlayer = ESX.GetPlayerFromId(_source)
 	local fishQuantity = xPlayer.getInventoryItem('fish').count
-	local randomMoney = math.random(20, 30)
+	local randomMoney = math.random(5, 10)
 	
 	if fishQuantity == 0 then
 	sendNotification(_source, 'You have no Fish', 'error', 2500)
 	else
 	xPlayer.removeInventoryItem('fish', fishQuantity)
-	xPlayer.addAccountMoney('bank', fishQuantity * 20)
+	xPlayer.addAccountMoney('bank', fishQuantity * 5)
 	sendNotification(_source, 'You sold ' .. fishQuantity .. ' fish to ' .. fishQuantity * randomMoney .. ' $', 'success', 3500)
 	end
 
