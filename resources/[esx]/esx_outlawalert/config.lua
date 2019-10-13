@@ -15,16 +15,16 @@ Config.CarJackingAlert = false
 Config.MeleeAlert = false
 
 -- In seconds
-Config.BlipGunTime = 5
+Config.BlipGunTime = 8
 
 -- Blip radius, in float value!
-Config.BlipGunRadius = 50.0
+Config.BlipGunRadius = 150.0
 
 -- In seconds
-Config.BlipMeleeTime = 7
+Config.BlipMeleeTime = 8
 
 -- Blip radius, in float value!
-Config.BlipMeleeRadius = 50.0
+Config.BlipMeleeRadius = 150.0
 
 -- In seconds
 Config.BlipJackingTime = 10
@@ -33,7 +33,7 @@ Config.BlipJackingTime = 10
 Config.BlipJackingRadius = 50.0
 
 -- Show notification when cops steal too?
-Config.ShowCopsMisbehave = true
+Config.ShowCopsMisbehave = false
 
 -- Jobs in this table are considered as cops
 Config.WhitelistedCops = {
