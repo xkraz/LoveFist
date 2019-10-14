@@ -76,6 +76,62 @@ Config.PoliceStations = {
 		},
 
 	},
+	
+	PPD = {
+
+		Blip = {
+			Coords  = vector3(-444.70, 6014.50, 31.72),
+			Sprite  = 60,
+			Display = 4,
+			Scale   = 1.2,
+			Colour  = 29
+		},
+
+		Cloakrooms = {
+			vector3(-438.72, 6011.72, 31.72)
+		},
+
+		Armories = {
+			vector3(-437.86, 5988.32, 31.72)
+		},
+
+		Vehicles = {
+			{
+				Spawner = vector3(454.6, -1017.4, -1028.4),
+				InsideShop = vector3(228.5, -993.5, -99.5),
+				SpawnPoints = {
+					{ coords = vector3(438.4, -1018.3, 27.7), heading = 90.0, radius = 6.0 },
+					{ coords = vector3(441.0, -1024.2, 28.3), heading = 90.0, radius = 6.0 },
+					{ coords = vector3(453.5, -1022.2, 28.0), heading = 90.0, radius = 6.0 },
+					{ coords = vector3(450.9, -1016.5, 28.1), heading = 90.0, radius = 6.0 }
+				}
+			},
+
+			{
+				Spawner = vector3(473.3, -1018.8, 28.0),
+				InsideShop = vector3(228.5, -993.5, -99.0),
+				SpawnPoints = {
+					{ coords = vector3(475.9, -1021.6, 28.0), heading = 276.1, radius = 6.0 },
+					{ coords = vector3(484.1, -1023.1, 27.5), heading = 302.5, radius = 6.0 }
+				}
+			}
+		},
+
+		Helicopters = {
+			{
+				Spawner = vector3(461.1, -981.5, 43.6),
+				InsideShop = vector3(477.0, -1106.4, 43.0),
+				SpawnPoints = {
+					{ coords = vector3(449.5, -981.2, 43.6), heading = 92.6, radius = 10.0 }
+				}
+			}
+		},
+
+		BossActions = {
+			vector3(-437.26, 5998.52, 31.72)
+		},
+
+	},
 
 	BCPD = {
 
@@ -88,20 +144,20 @@ Config.PoliceStations = {
 		},
 
 		Cloakrooms = {
-			vector3(1838.02, 3705.35, 1.06)
+			vector3(1840.94, 3691.55, 34.29)
 		},
 
 		Armories = {
-			vector3(1843.42, 3701.37, 1.06)
+			vector3(1840.31, 3688.60, 34.29)
 		},
 
 		Vehicles = {
 			{
-				Spawner = vector3(1866.19, 3688.22, 34.27),
+				Spawner = vector3(-458.39, 6011.77, 3.49),
 				InsideShop = vector3(228.5, -993.5, -99.5),
 				SpawnPoints = {
-					{ coords = vector3(1879.41, 3689.78, 33.34), heading = 114.3, radius = 6.0 },
-					{ coords = vector3(1868.73, 3694.99, 33.59), heading = 210.68, radius = 6.0 }
+					{ coords = vector3(-454.47, 6001.80, 31.34), heading = 86.29, radius = 6.0 },
+					{ coords = vector3(-451.34, 5998.26, 31.34), heading = 88.96, radius = 6.0 }
 
 				}
 			},
@@ -118,16 +174,16 @@ Config.PoliceStations = {
 
 		Helicopters = {
 			{
-				Spawner = vector3(1830.91, 3680.56, 39.43),
-				InsideShop = vector3(477.0, -1106.4, 43.0),
+				Spawner = vector3(-474.86, 5988.80, 31.34),
+				InsideShop = vector3(-474.86, 5988.80, 31.34),
 				SpawnPoints = {
-					{ coords = vector3(1832.23, 3690.43, 39.74), heading = 32.79, radius = 10.0 }
+					{ coords = vector3(-474.86, 5988.80, 31.34), heading = 32.79, radius = 10.0 }
 				}
 			}
 		},
 
 		BossActions = {
-			vector3(1855.07, 3707.52, 1.04)
+			vector3(1850.86, 3697.27, 34.29)
 		}
 
 	}
