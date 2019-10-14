@@ -4,7 +4,7 @@ Config.DrawDistance               = 100.0
 
 Config.Marker                     = { type = 1, x = 1.5, y = 1.5, z = 0.5, r = 102, g = 0, b = 102, a = 100, rotate = false }
 
-Config.ReviveReward               = 10  -- revive reward, set to 0 if you don't want it enabled
+Config.ReviveReward               = 250  -- revive reward, set to 0 if you don't want it enabled
 Config.AntiCombatLog              = true -- enable anti-combat logging?
 Config.LoadIpl                    = false -- disable if you're using fivem-ipl or other IPL loaders
 
@@ -101,7 +101,83 @@ Config.Hospitals = {
 				Prompt = 'Press ~INPUT_CONTEXT~ to fast travel to the hospital.'
 			}
 		}
-	}
+	},
+	
+	Paleto = {
+
+		Blip = {
+			coords = vector3(1836.57, 3671.65, 34.28),
+			sprite = 61,
+			scale  = 1.2,
+			color  = 2
+		},
+
+		AmbulanceActions = {
+			vector3(1819.92, 3673.95, 10.69)
+		},
+
+		Pharmacies = {
+			vector3(1835.14, 3669.92, 10.69)
+		},
+
+		Vehicles = {
+			{
+				Spawner = vector3(1834.16, 3669.64, 34.28),
+				InsideShop = vector3(446.7, -1355.6, 43.5),
+				Marker = { type = 36, x = 1.0, y = 1.0, z = 1.0, r = 100, g = 50, b = 200, a = 100, rotate = true },
+				SpawnPoints = {
+					{ coords = vector3(1835.5, 3664.33, 33.73), heading = 33.73, radius = 4.0 },
+					{ coords = vector3(1830.94, 3661.75, 33.90), heading = 33.90, radius = 4.0 },
+					{ coords = vector3(1825.94, 3659.37, 33.99), heading = 33.99, radius = 4.0 }
+				
+				}
+			}
+		},
+
+		Helicopters = {
+			{
+				Spawner = vector3(1837.37, 3645.49, 34.19),
+				InsideShop = vector3(305.6, -1419.7, 41.5),
+				Marker = { type = 34, x = 1.5, y = 1.5, z = 1.5, r = 100, g = 150, b = 150, a = 100, rotate = true },
+				SpawnPoints = {
+					{ coords = vector3(1831.65, 3633.56, 34.38), heading = 241.34, radius = 10.0 }
+				}
+			}
+		},
+		
+		FastTravels = {
+			{
+				From = vector3(1833.96,  3679.74, -6.06),
+				To = { coords = vector3(1843.96,  3689.74, -6.06), heading = 67.3 },
+				Marker = { type = 1, x = 1.5, y = 1.5, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			},
+
+			{
+				From = vector3(1863.96,  3699.74, -6.06),
+				To = { coords = vector3(1963.96,  3799.74, -6.06), heading = 247.08 },
+				Marker = { type = 1, x = 1.5, y = 1.5, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = false }
+			}
+		},
+
+		FastTravelsPrompt = {
+			{
+				From = vector3(1833.96,  3679.74, -6.06),
+				To = { coords = vector3(1843.96,  3689.74, -6.06), heading = 249.1 },
+				Marker = { type = 34, x = 1.0, y = 1.0, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = true },
+				Prompt = 'Press ~INPUT_CONTEXT~ to fast travel to the roof.'
+			},
+
+			{
+				From = vector3(1863.96,  3699.74, -6.06),
+				To = { coords = vector3(1963.96,  3799.74, -6.06), heading = 255.1 },
+				Marker = { type = 42, x = 1.0, y = 1.0, z = 1.0, r = 102, g = 0, b = 102, a = 100, rotate = true },
+				Prompt = 'Press ~INPUT_CONTEXT~ to fast travel to the hospital.'
+			}
+		}
+
+
+		
+	},
 }
 
 Config.AuthorizedVehicles = {
