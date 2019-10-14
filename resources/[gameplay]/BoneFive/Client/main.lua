@@ -1,28 +1,10 @@
 local hospitalCheckin = {x = 308.06161499023, y = -595.19683837891, z = 43.291839599609, h = 180.4409942627}
-local sandyCheckin = {x = 1840.12, y = 3673.33, z = 34.28, h = 27.55}
+local sandyCheckin = {x = 1839.20, y = 3672.78, z = 10.69, h = 27.55}
 local paletoCheckin = {x = -247.78, y = 6331.31, z = 32.43}
 local pillboxTeleports = {
-    {
-        x = 325.48892211914,
-        y = -598.75372314453,
-        z = 43.291839599609,
-        h = 64.513374328613,
-        text = "Press ~INPUT_CONTEXT~ ~s~to go to lower Pillbox Entrance"
-    },
-    {
-        x = 355.47183227539,
-        y = -596.26495361328,
-        z = 28.773477554321,
-        h = 245.85662841797,
-        text = "Press ~INPUT_CONTEXT~ ~s~to enter Pillbox Hospital"
-    },
-    {
-        x = 359.57849121094,
-        y = -584.90911865234,
-        z = 28.817169189453,
-        h = 245.85662841797,
-        text = "Press ~INPUT_CONTEXT~ ~s~to enter Pillbox Hospital"
-    }
+    {},
+    {},
+    {}
 }
 
 local bedOccupying = nil
@@ -198,7 +180,7 @@ Citizen.CreateThread(
                 --DrawMarker(27, hospitalCheckin.x, hospitalCheckin.y, hospitalCheckin.z - 0.99, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 1.0, 1, 157, 0, 155, false, false, 2, false, false, false, false)
 
                 if not IsPedInAnyVehicle(PlayerPedId(), true) then
-                    if pdistance < 10 then
+                    if pdistance < 2 then
                         --PrintHelpText('Press ~INPUT_CONTEXT~ ~s~to check in')
                         ESX.Game.Utils.DrawText3D(
                             vector3(paletoCheckin.x, paletoCheckin.y, paletoCheckin.z + 0.5),
@@ -255,7 +237,7 @@ Citizen.CreateThread(
                 --DrawMarker(27, hospitalCheckin.x, hospitalCheckin.y, hospitalCheckin.z - 0.99, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 1.0, 1, 157, 0, 155, false, false, 2, false, false, false, false)
 
                 if not IsPedInAnyVehicle(PlayerPedId(), true) then
-                    if sdistance < 10 then
+                    if sdistance < 2 then
                         --PrintHelpText('Press ~INPUT_CONTEXT~ ~s~to check in')
                         ESX.Game.Utils.DrawText3D(
                             vector3(sandyCheckin.x, sandyCheckin.y, sandyCheckin.z + 0.5),
@@ -312,7 +294,7 @@ Citizen.CreateThread(
                 --DrawMarker(27, hospitalCheckin.x, hospitalCheckin.y, hospitalCheckin.z - 0.99, 0, 0, 0, 0, 0, 0, 0.5, 0.5, 1.0, 1, 157, 0, 155, false, false, 2, false, false, false, false)
 
                 if not IsPedInAnyVehicle(PlayerPedId(), true) then
-                    if distance < 10 then
+                    if distance < 2 then
                         --PrintHelpText('Press ~INPUT_CONTEXT~ ~s~to check in')
                         ESX.Game.Utils.DrawText3D(
                             vector3(hospitalCheckin.x, hospitalCheckin.y, hospitalCheckin.z + 0.5),

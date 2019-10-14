@@ -1,11 +1,11 @@
 Citizen.CreateThread(function()
 	while true do
 		-- These natives has to be called every frame.
-		SetVehicleDensityMultiplierThisFrame(TrafficAmount/1000)
-		SetPedDensityMultiplierThisFrame(PedestrianAmount/100)
-		SetRandomVehicleDensityMultiplierThisFrame(TrafficAmount/1000)
-		SetParkedVehicleDensityMultiplierThisFrame(ParkedAmount/500)
-		SetScenarioPedDensityMultiplierThisFrame(PedestrianAmount/100, PedestrianAmount/100)
+		SetVehicleDensityMultiplierThisFrame(0.4)
+		SetPedDensityMultiplierThisFrame(0.4)
+		SetRandomVehicleDensityMultiplierThisFrame(0.4)
+		SetParkedVehicleDensityMultiplierThisFrame(0.4)
+		SetScenarioPedDensityMultiplierThisFrame(0.4)
 		for i = 1, 13 do
 			EnableDispatchService(i, EnableDispatch)
 		end

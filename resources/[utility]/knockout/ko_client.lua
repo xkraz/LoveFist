@@ -134,10 +134,10 @@ function OpenActionMenuInteraction(target)
 
 	local elements = {}
 
-	table.insert(elements, {label = ('Poner ropa'), value = 'ubie'})
-	table.insert(elements, {label = ('Quitar camiseta'), value = 'tul'})
-	table.insert(elements, {label = ('Quitar pantalones'), value = 'spo'})
-	table.insert(elements, {label = ('Quitar zapatos'), value = 'but'})
+	table.insert(elements, {label = ('Get Dressed'), value = 'ubie'})
+	table.insert(elements, {label = ('Shirt'), value = 'tul'})
+	table.insert(elements, {label = ('Pants'), value = 'spo'})
+	table.insert(elements, {label = ('Shoes'), value = 'but'})
   		ESX.UI.Menu.CloseAll()	
 
 
@@ -145,7 +145,7 @@ function OpenActionMenuInteraction(target)
 		'default', GetCurrentResourceName(), 'action_menu',
 		{
 			title    = ('Clothes'),
-			align    = 'top-left',
+			align    = 'top',
 			elements = elements
 		},
     function(data, menu)
