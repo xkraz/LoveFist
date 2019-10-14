@@ -115,10 +115,10 @@ Citizen.CreateThread(function()
 		local playerPed = PlayerPedId()
 		local playerCoords = GetEntityCoords(playerPed)
 		local vehicle = GetVehiclePedIsIn(playerPed, true)
-		local vehicleclass = GetVehicleClass(spvehicle)
+		local vehicleclass = GetVehicleClass(vehicle)
 		local speed = (GetEntitySpeed(vehicle) * 2.236936)
 		local report = 0
-		if (speed >= 100) then
+		if Config.FelonySpeedingAlert and (speed >= 100) and (vehicleclass ~=15 and vehicleclass ~=16 and vehicleclass ~=18) then
 			report = 10
 			if (speed >=110 and speed < 120) then
 				report = 15
@@ -135,19 +135,18 @@ Citizen.CreateThread(function()
 			end
 			report = report + math.random(0,100)
 			
-		end
-		if Config.FelonySpeedingAlert and (report >100) and (class~=15 and class~=16 and class~=18) then
-			if vehicle and ((isPlayerWhitelisted) or not isPlayerWhitelisted) then
-				local vehicleLabel = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))
-				vehicleLabel = GetLabelText(vehicleLabel)
-				DecorSetInt(playerPed, 'isOutlaw', 2)
-				TriggerServerEvent('esx_outlawalertspeeding:FelonySpeedingInProgress', {
-					x = ESX.Math.Round(playerCoords.x, 1),
-					y = ESX.Math.Round(playerCoords.y, 1),
-					z = ESX.Math.Round(playerCoords.z, 1)
-				}, streetName, vehicleLabel)
+			if (report > 100) then
+				if vehicle and ((isPlayerWhitelisted) or not isPlayerWhitelisted) then
+					local vehicleLabel = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))
+					vehicleLabel = GetLabelText(vehicleLabel)
+					DecorSetInt(playerPed, 'isOutlaw', 2)
+					TriggerServerEvent('esx_outlawalertspeeding:FelonySpeedingInProgress', {
+						x = ESX.Math.Round(playerCoords.x, 1),
+						y = ESX.Math.Round(playerCoords.y, 1),
+						z = ESX.Math.Round(playerCoords.z, 1)
+					}, streetName, vehicleLabel)
+				end
 			end
-			
 		end
 		Citizen.Wait(15000)
 	end
