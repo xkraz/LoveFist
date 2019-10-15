@@ -51,7 +51,6 @@ Config.Items = {
   [37] = {label = "Picnic Basket",      item = "picknick",       price = 15},
   [38] = {label = "Pack of Smokes",      item = "cigaretter",       price = 10},
   [38] = {label = "Scooby Snack",      item = "croquettes",       price = 300},
-  [39] = {label = "Donut",      item = "donut",       price = 2},
 }
 
 Config.Images = {
@@ -86,7 +85,6 @@ Config.Images = {
   [29] = {item = "Oxygen Mask", src = "img/items/oxygen_mask.png"},
   [30] = {item = "Car Cleaning Kit", src = "img/items/carcleankit.png"},
   [31] = {item = "Pack of Smokes", src = "img/items/cigaretter.png"},
-  [32] = {item = "donut", src = "img/items/donut.png"},
 }
 
 Config.Zones = {

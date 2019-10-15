@@ -66,38 +66,57 @@ function calcalarmrating(coordx, coordy)
 	local tempdis = 0.0
 	-- Calculate Distance to nearest PD Office or Pillbox
 	--davis
-	dis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, 368.0, -1599.0, 0.0, true))
+	dis = GetDistanceBetweenCoords(coordx, coordy, 0.0, 368.0, -1599.0, 0.0, true)
 	--del perro
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, -1631.0, -1016.0, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, -1631.0, -1016.0, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 	--la mesa
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, 825.0, -1290.0, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, 825.0, -1290.0, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 	--mission
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, 425.0, -979.0, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, 425.0, -979.0, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 	--paleto
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, -442.0, 6017.0, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, -442.0, 6017.0, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 	--rockford
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, -559.0, -135.0, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, -559.0, -135.0, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 	--sandy
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, 1857.0, 3681.0, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, 1857.0, 3681.0, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 	--vespuccibeach
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, -1313.0, -1529.0, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, -1313.0, -1529.0, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 	--vespucci
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, -1112.0, -825.0, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, -1112.0, -825.0, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 	--vinewood
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, 641.52, 1.0, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, 641.52, 1.0, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 	--Pillbox
-	tempdis = math.floor(GetDistanceBetweenCoords(coordx, coordy, 0.0, 296.25, -583.6, 0.0, true))
-	dis = (dis<tempdis) and dis or tempdis
-	
+	tempdis = GetDistanceBetweenCoords(coordx, coordy, 0.0, 296.25, -583.6, 0.0, true)
+	if tempdis < dis then
+		dis = tempdis
+	end
 -- Set Alert Percent Chance	
 	if dis<=50 then
 		return 100

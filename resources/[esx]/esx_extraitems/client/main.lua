@@ -44,7 +44,7 @@ AddEventHandler('esx_extraitems:oxygen_mask', function()
       TaskPlayAnim(playerped, dict, "pickupwait", 8.0, -16.0, -1, 1, 0, false, false, false)
 
 	-- exports['t0sic_loadingbar']:loadingbar ('Sätter på Syrgasmask...', 6500)
-        Citizen.Wait(24000)
+        Citizen.Wait(6500)
 	ClearPedTasks(GetPlayerPed(-1))
 	
 	ESX.Game.SpawnObject('p_s_scuba_mask_s', {
