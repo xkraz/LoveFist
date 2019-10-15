@@ -720,5 +720,21 @@ JAG.Config = {
 			Color = { r = 43, g = 187, b = 255 },
 			Pos = { x = -467.28, y = 6015.05, z = 30.34 },
 		},
+		RealEstate = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 153.54,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = -161.74, y = -628.33, z = 31.42 },
+		},
+		Block192 = {
+			Zone = "Garage",
+			Type = 1,
+			Heading = 247.37,
+			Scale = { x = 3.0, y = 3.0, z = 1.0 },
+			Color = { r = 43, g = 187, b = 255 },
+			Pos = { x = 1145.38, y = -466.27, z = 65.59 },
+		},
 	},
 }
