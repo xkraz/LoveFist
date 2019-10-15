@@ -74,7 +74,11 @@ Citizen.CreateThread(function()
     RequestIpl("CanyonRvrShallow")
         
     -- Pillbox hospital: 307.1680, -590.807, 43.280
-    RequestIpl("rc12b_default")
+   	RemoveIpl("rc12b_fixed")
+	RemoveIpl("rc12b_destroyed")
+	RemoveIpl("rc12b_default")
+	RequestIpl("rc12b_hospitalinterior_lod")
+	RequestIpl("rc12b_hospitalinterior")
         
     -- Josh's house: -1117.1632080078, 303.090698, 66.52217
     RequestIpl("bh1_47_joshhse_unburnt")
@@ -92,11 +96,6 @@ Citizen.CreateThread(function()
     RequestIpl("canyonriver01")
     RequestIpl("canyonriver01_lod")
 	
-	-- Pillbox
-	RemoveIpl("rc12b_fixed")
-	RemoveIpl("rc12b_destroyed")
-	RemoveIpl("rc12b_default")
-	RequestIpl("rc12b_hospitalinterior_lod")
-	RequestIpl("rc12b_hospitalinterior")
+
 
 end)
